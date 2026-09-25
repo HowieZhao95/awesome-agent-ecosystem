@@ -44,7 +44,7 @@
 
 ### Verification record
 
-- `python -m unittest discover -s tests -v`: 12 passing tests, including red-to-green checks for URL deduplication, pagination, optional-source failure, conditional GitHub requests, metadata capture, curated empty stars, and all-or-nothing API failure.
+- `python -m unittest discover -s tests -v`: 13 passing tests, including red-to-green checks for URL deduplication, pagination, optional-source failure, conditional GitHub requests, metadata capture, curated empty stars, missing references, and all-or-nothing API failure.
 - `python scripts/validate.py`: 803 entries pass.
 - `python scripts/build.py`: README and site output hashes unchanged.
 - Live one-repository scan using temporary files: an initial run returned data and a second request returned `304`. A later unauthenticated rerun hit GitHub's shared IP rate limit; Actions uses its built-in authenticated token.

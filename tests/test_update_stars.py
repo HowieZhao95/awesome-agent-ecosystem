@@ -184,6 +184,24 @@ class UpdateStarsTests(unittest.TestCase):
         self.assertEqual(yaml_before, self.data_file.read_bytes())
         self.assertEqual(state_before, self.state_file.read_bytes())
 
+    def test_missing_repository_is_reported_without_blocking_other_updates(self):
+        doc = resource_doc(stars=1)
+        doc["categories"][0]["entries"].append(
+            {"name": "Missing", "url": "https://github.com/old/missing", "stars": 2}
+        )
+        self.write_doc(doc)
+        session = FakeSession([
+            FakeResponse(200, {"stargazers_count": 10}, '"a"'),
+            FakeResponse(404),
+        ])
+
+        result = update_stars.run(self.data_file, self.state_file, session=session)
+
+        self.assertEqual(("old/missing",), result.missing_repos)
+        saved = yaml.safe_load(self.data_file.read_text(encoding="utf-8"))
+        self.assertEqual(10, saved["categories"][0]["entries"][0]["stars"])
+        self.assertEqual(2, saved["categories"][0]["entries"][-1]["stars"])
+
 
 if __name__ == "__main__":
     unittest.main()

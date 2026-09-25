@@ -28,6 +28,7 @@ class ScanResult:
     checked_repos: int
     not_modified_repos: int
     skipped_entries: int
+    missing_repos: tuple[str, ...]
 
 
 def repo_of(url):
@@ -94,6 +95,7 @@ def run(data_file=DATA, state_file=STATE, session=None, token=None, today=None):
 
     fetched = {}
     not_modified = 0
+    missing_repos = []
     next_state = json.loads(json.dumps(state))
     for repo in sorted(entries_by_repo):
         headers = dict(base_headers)
@@ -108,6 +110,9 @@ def run(data_file=DATA, state_file=STATE, session=None, token=None, today=None):
             raise ScanFailed(f"{repo}: {exc}") from exc
         if response.status_code == 304:
             not_modified += 1
+            continue
+        if response.status_code in (404, 410):
+            missing_repos.append(repo)
             continue
         if response.status_code != 200:
             raise ScanFailed(f"{repo}: HTTP {response.status_code}")
@@ -147,7 +152,7 @@ def run(data_file=DATA, state_file=STATE, session=None, token=None, today=None):
             json.dumps(next_state, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
         )
 
-    return ScanResult(updated_entries, len(entries_by_repo), not_modified, skipped)
+    return ScanResult(updated_entries, len(entries_by_repo), not_modified, skipped, tuple(missing_repos))
 
 
 def main():
@@ -164,6 +169,8 @@ def main():
         f"{result.checked_repos} unique repos; {result.not_modified_repos} not modified; "
         f"{result.skipped_entries} non-GitHub entries skipped."
     )
+    for repo in result.missing_repos:
+        print(f"::warning::GitHub reference unavailable (404/410): {repo}")
 
 
 if __name__ == "__main__":
