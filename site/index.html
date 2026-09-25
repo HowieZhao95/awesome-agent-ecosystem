@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Awesome Agent Ecosystem — AI Agent 生态策展</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-panel: #161b22;
+    --bg-hover: #1c2330;
+    --border: #2d333b;
+    --text: #e6edf3;
+    --text-dim: #9198a1;
+    --accent: #58a6ff;
+    --official: #3fb950;
+    --community: #d29922;
+    --vendor: #bc8cff;
+    --platform: #39c5cf;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "SF Pro SC", "PingFang SC", "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 32px 20px 80px; }
+
+  header { margin-bottom: 28px; }
+  .badge-row { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .awesome-badge {
+    background: #fc60a8; color: #fff; font-size: 12px; font-weight: 700;
+    padding: 3px 10px; border-radius: 4px; letter-spacing: .5px;
+  }
+  .updated { color: var(--text-dim); font-size: 13px; }
+  h1 { font-size: 30px; font-weight: 700; letter-spacing: -.5px; }
+  .subtitle { color: var(--text-dim); margin-top: 8px; max-width: 720px; font-size: 15px; }
+
+  .stats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px; margin: 24px 0;
+  }
+  .stat {
+    background: var(--bg-panel); border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px 16px;
+  }
+  .stat-num { font-size: 26px; font-weight: 700; color: var(--accent); }
+  .stat-label { font-size: 12px; color: var(--text-dim); margin-top: 2px; }
+
+  .controls { position: sticky; top: 0; background: var(--bg); padding: 12px 0; z-index: 10; }
+  .search {
+    width: 100%; background: var(--bg-panel); border: 1px solid var(--border);
+    border-radius: 10px; padding: 12px 16px; color: var(--text); font-size: 15px;
+    outline: none; margin-bottom: 12px;
+  }
+  .search:focus { border-color: var(--accent); }
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    background: var(--bg-panel); border: 1px solid var(--border); color: var(--text-dim);
+    border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+    transition: all .15s; user-select: none;
+  }
+  .chip:hover { border-color: var(--accent); color: var(--text); }
+  .chip.active { background: var(--accent); border-color: var(--accent); color: #0d1117; font-weight: 600; }
+  .chip-group-label { font-size: 12px; color: var(--text-dim); align-self: center; margin-right: 2px; }
+
+  section { margin-top: 32px; }
+  .section-title {
+    font-size: 20px; font-weight: 700; margin-bottom: 4px;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  .section-count { font-size: 13px; color: var(--text-dim); font-weight: 400; }
+  .section-desc { color: var(--text-dim); font-size: 13px; margin-bottom: 14px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
+  .card {
+    background: var(--bg-panel); border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px; display: flex; flex-direction: column; gap: 8px;
+    transition: border-color .15s, background .15s;
+  }
+  .card:hover { border-color: var(--accent); background: var(--bg-hover); }
+  .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+  .card-name { font-weight: 600; font-size: 15px; word-break: break-all; }
+  .card-name a { color: var(--text); text-decoration: none; }
+  .card-name a:hover { color: var(--accent); }
+  .tags { display: flex; gap: 6px; flex-shrink: 0; flex-wrap: wrap; justify-content: flex-end; }
+  .tag {
+    font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px;
+    white-space: nowrap;
+  }
+  .tag-official { background: rgba(63,185,80,.15); color: var(--official); border: 1px solid rgba(63,185,80,.4); }
+  .tag-community { background: rgba(210,153,34,.15); color: var(--community); border: 1px solid rgba(210,153,34,.4); }
+  .tag-vendor { background: rgba(188,140,255,.15); color: var(--vendor); border: 1px solid rgba(188,140,255,.4); }
+  .tag-sub { background: rgba(88,166,255,.1); color: var(--accent); border: 1px solid rgba(88,166,255,.3); }
+  .card-note { font-size: 13px; color: var(--text-dim); flex: 1; }
+  .card-meta { display: flex; gap: 12px; font-size: 12px; color: var(--text-dim); flex-wrap: wrap; align-items: center; }
+  .metric b { color: var(--text); font-weight: 600; }
+  .platform { color: var(--platform); }
+  .verified { margin-left: auto; }
+
+  .empty { text-align: center; color: var(--text-dim); padding: 48px 0; display: none; }
+
+  footer {
+    margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--border);
+    color: var(--text-dim); font-size: 13px; text-align: center;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="badge-row">
+      <span class="awesome-badge">AWESOME</span>
+      <span class="updated" id="updated"></span>
+    </div>
+    <h1>Agent Ecosystem 生态策展</h1>
+    <p class="subtitle">策展对象是具体资产：一个个 skill、CLI、MCP server、插件、规范模板、prompt 库。每条记录其分发平台与来源属性（官方/厂商/社区）。平台目录本身单列一区，仅作发现渠道参考。</p>
+  </header>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="controls">
+    <input class="search" id="search" type="text" placeholder="搜索资产名称、平台或点评关键词…">
+    <div class="filters" id="catFilters">
+      <span class="chip-group-label">分类</span>
+    </div>
+    <div class="filters" id="srcFilters" style="margin-top:8px">
+      <span class="chip-group-label">来源</span>
+    </div>
+    <div class="filters" id="subFilters" style="margin-top:8px"></div>
+  </div>
+
+  <main id="main"></main>
+  <div class="empty" id="empty">没有匹配的资源，试试放宽筛选条件。</div>
+
+  <footer>
+    数据由 <a href="../data/resources.yaml">data/resources.yaml</a> 经 build.py 生成 · 收录标准见 <a href="../CONTRIBUTING.md">CONTRIBUTING.md</a> · License CC0-1.0
+  </footer>
+</div>
+
+<script src="data.js"></script>
+<script>
+const SOURCE_LABELS = { official: "官方", community: "社区", vendor: "厂商" };
+
+let activeCat = "all";
+let activeSrc = "all";
+let activeSubcat = "all";
+let query = "";
+
+function fmt(n) {
+  if (n == null) return null;
+  if (n >= 1000) return (n / 1000).toFixed(n >= 10000 ? 0 : 1).replace(/\.0$/, "") + "k";
+  return String(n);
+}
+
+function renderStats() {
+  const assetCats = DATA.categories.filter(c => c.id !== "platforms");
+  const assets = assetCats.flatMap(c => c.entries);
+  const platforms = DATA.categories.find(c => c.id === "platforms").entries;
+  const stats = [
+    { num: assets.length, label: "具体资产" },
+    { num: platforms.length, label: "分发平台" },
+    { num: assets.filter(e => e.source === "official").length, label: "官方来源" },
+    { num: assets.filter(e => e.source === "vendor").length, label: "厂商来源" },
+    { num: assets.filter(e => e.source === "community").length, label: "社区来源" }
+  ];
+  document.getElementById("stats").innerHTML = stats.map(s =>
+    `<div class="stat"><div class="stat-num">${s.num}</div><div class="stat-label">${s.label}</div></div>`
+  ).join("");
+}
+
+function renderFilters() {
+  const catBox = document.getElementById("catFilters");
+  const cats = [{ id: "all", name: "全部" }, ...DATA.categories.map(c => ({ id: c.id, name: c.name }))];
+  catBox.innerHTML = '<span class="chip-group-label">分类</span>' + cats.map(c =>
+    `<span class="chip ${activeCat === c.id ? "active" : ""}" data-cat="${c.id}">${c.name}</span>`
+  ).join("");
+
+  const srcBox = document.getElementById("srcFilters");
+  const srcs = [["all", "全部"], ["official", "官方"], ["vendor", "厂商"], ["community", "社区"]];
+  srcBox.innerHTML = '<span class="chip-group-label">来源</span>' + srcs.map(([id, name]) =>
+    `<span class="chip ${activeSrc === id ? "active" : ""}" data-src="${id}">${name}</span>`
+  ).join("");
+
+  catBox.querySelectorAll(".chip").forEach(el => el.onclick = () => { activeCat = el.dataset.cat; activeSubcat = "all"; render(); });
+  srcBox.querySelectorAll(".chip").forEach(el => el.onclick = () => { activeSrc = el.dataset.src; render(); });
+
+  // 子分类筛选：选中具体分类时出现
+  const subBox = document.getElementById("subFilters");
+  if (activeCat !== "all") {
+    const cat = DATA.categories.find(c => c.id === activeCat);
+    const subs = [...new Set(cat.entries.map(e => e.subcat).filter(Boolean))].sort();
+    if (subs.length > 1) {
+      const all = ["all", ...subs];
+      subBox.innerHTML = '<span class="chip-group-label">子类</span>' + all.map(s =>
+        `<span class="chip ${activeSubcat === s ? "active" : ""}" data-sub="${s}">${s === "all" ? "全部" : s}</span>`
+      ).join("");
+      subBox.querySelectorAll(".chip").forEach(el => el.onclick = () => { activeSubcat = el.dataset.sub; render(); });
+      return;
+    }
+  }
+  subBox.innerHTML = "";
+}
+
+function cardHTML(e) {
+  const metrics = [];
+  if (e.stars != null) metrics.push(`<span class="metric">★ <b>${fmt(e.stars)}</b></span>`);
+  if (e.installs != null) metrics.push(`<span class="metric">安装 <b>${fmt(e.installs)}</b></span>`);
+  return `
+    <div class="card">
+      <div class="card-top">
+        <div class="card-name"><a href="${e.url}" target="_blank" rel="noopener">${e.name}</a></div>
+        <div class="tags">
+          ${e.subcat ? `<span class="tag tag-sub">${e.subcat}</span>` : ""}
+          <span class="tag tag-${e.source}">${SOURCE_LABELS[e.source]}</span>
+        </div>
+      </div>
+      <div class="card-note">${e.note}</div>
+      <div class="card-meta">
+        <span class="platform">⬢ ${e.platform}</span>
+        ${metrics.join("")}
+        <span class="verified">${e.vmethod === "manual" ? "人工验证" : "自动收录"} ${e.verified}</span>
+      </div>
+    </div>`;
+}
+
+function renderMain() {
+  const main = document.getElementById("main");
+  const q = query.trim().toLowerCase();
+  let total = 0;
+  const html = DATA.categories
+    .filter(c => activeCat === "all" || c.id === activeCat)
+    .map(c => {
+      const entries = c.entries.filter(e =>
+        (activeSrc === "all" || e.source === activeSrc) &&
+        (activeSubcat === "all" || e.subcat === activeSubcat) &&
+        (!q || e.name.toLowerCase().includes(q) || e.note.toLowerCase().includes(q) || e.platform.toLowerCase().includes(q) || (e.subcat || "").toLowerCase().includes(q))
+      );
+      if (!entries.length) return "";
+      total += entries.length;
+      return `
+        <section>
+          <div class="section-title">${c.name}<span class="section-count">${entries.length} 条</span></div>
+          <div class="section-desc">${c.desc}</div>
+          <div class="grid">${entries.map(cardHTML).join("")}</div>
+        </section>`;
+    }).join("");
+  main.innerHTML = html;
+  document.getElementById("empty").style.display = total ? "none" : "block";
+}
+
+function render() {
+  renderFilters();
+  renderMain();
+}
+
+document.getElementById("updated").textContent = "数据更新于 " + DATA.meta.updated;
+document.getElementById("search").addEventListener("input", e => { query = e.target.value; renderMain(); });
+
+renderStats();
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+name: weekly-sync
+
+on:
+  schedule:
+    - cron: "0 1 * * 1"   # 每周一 09:00 (UTC+8)
+  workflow_dispatch:        # 允许手动触发
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: weekly-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - run: pip install -r requirements.txt
+
+      - name: Test sync code
+        run: python -m unittest discover -s tests -v
+
+      - name: Import from marketplaces & registries
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN || github.token }}
+        run: |
+          python scripts/import-marketplace.py
+          python scripts/import-skills-mcp.py
+
+      - name: Refresh stars
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN || github.token }}
+        run: python scripts/update-stars.py
+
+      - name: Validate catalog
+        run: python scripts/validate.py
+
+      - name: Rebuild outputs
+        run: python scripts/build.py
+
+      - name: Sample link check (50 URLs)
+        run: python scripts/link-check.py --sample 50
+
+      - name: Open update PR
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GH_TOKEN || github.token }}
+          branch: bot/weekly-sync
+          delete-branch: true
+          title: "data: weekly sync ${{ github.run_number }}"
+          commit-message: "data: weekly sync (imports + resource scan + rebuild)"
+          body: |
+            自动数据同步：
+            - import-marketplace / import-skills-mcp 增量
+            - stars 刷新
+            - README 与 site/data.js 重新生成
+            - 链接抽样检查（见 workflow 日志）
+
+            人工确认无误后 merge 即可。
+          labels: data-sync

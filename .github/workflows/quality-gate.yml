@@ -1,0 +1,32 @@
+name: quality-gate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - run: pip install -r requirements.txt
+
+      - name: Sync tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Schema & rules validation
+        run: python scripts/validate.py
+
+      - name: Build reproducibility check
+        run: |
+          python scripts/build.py
+          if ! git diff --quiet README.md site/data.js; then
+            echo "::error::README.md / site/data.js 与 resources.yaml 不同步，请运行 scripts/build.py"
+            exit 1
+          fi
