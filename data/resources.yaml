@@ -1,14 +1,12 @@
 # Awesome Agent Ecosystem 机器可读数据源（唯一事实源）
-# 条目 = 具体资产（单个 skill / MCP server / 插件 / CLI / 模板 / prompt 库 / 设计规范）
+# 条目 = 具体资产（单个 skill / MCP server / 插件 / CLI / 模板 / prompt 库）
 # platform 字段 = 资产的分发渠道；平台目录本身仅收录于 platforms 分类（发现渠道，不计入资产统计）
-# 分类约定：AGENTS.md/CLAUDE.md 属 Prompt 资源（prompts 类）；DESIGN.md 是 Google Stitch 的 AI 设计系统规范（design-docs 类），
-#          与 SDD 流程的 design.md 设计文档不同；三者不要混淆
 # 维护方式：只手工编辑本文件；README.md 与 site/data.js 由 scripts/build.py 生成
 # stars 由 scripts/update-stars.py 定期刷新；市场/注册表数据由 import-*.py 增量导入
 
 meta:
   version: 2
-  updated: '2026-09-26'
+  updated: '2026-09-28'
   criteria:
     min_stars: 1000
     active_within_months: 6
@@ -23,7 +21,7 @@ categories:
     source: official
     platform: anthropics/skills 仓库
     note: Playwright 驱动的本地 Web 应用测试工具包
-    stars: 178247
+    stars: 178701
     installs: 166000
     last_verified: 2026-09-26
     subcat: 开发/测试
@@ -33,7 +31,7 @@ categories:
     source: official
     platform: anthropics/skills 仓库
     note: 构建新 Skill 的官方模板与引导器
-    stars: 178247
+    stars: 178701
     installs: 166000
     last_verified: 2026-09-26
     subcat: 通用
@@ -43,7 +41,7 @@ categories:
     source: vendor
     platform: Skills CLI (npx skills)
     note: Vercel 出品 React 最佳实践，前端栈安装量第一
-    stars: 31535
+    stars: 31637
     installs: 241000
     last_verified: 2026-09-26
     subcat: 前端/设计
@@ -53,7 +51,7 @@ categories:
     source: vendor
     platform: Skills CLI
     note: 微软 Azure 部署准备技能
-    stars: 1499
+    stars: 1503
     installs: 81000
     last_verified: 2026-09-26
     subcat: 云/运维
@@ -63,7 +61,7 @@ categories:
     source: community
     platform: GitHub / ComposioHQ 合集
     note: 智能整理本地文件与文件夹
-    stars: 75640
+    stars: 75754
     installs: 71700
     last_verified: 2026-09-26
     subcat: 通用
@@ -73,7 +71,7 @@ categories:
     source: community
     platform: GitHub / ComposioHQ 合集
     note: 发票收据自动归类，税务季刚需
-    stars: 75640
+    stars: 75754
     installs: 71700
     last_verified: 2026-09-26
     subcat: 金融/商业
@@ -83,7 +81,7 @@ categories:
     source: community
     platform: Skills CLI / wshobson 市场
     note: Tailwind 设计系统生成技能
-    stars: 39971
+    stars: 40045
     installs: 23000
     last_verified: 2026-09-26
     subcat: 前端/设计
@@ -103,7 +101,7 @@ categories:
     source: vendor
     platform: Skills CLI
     note: 微软 Playwright CLI 操作技能
-    stars: 13568
+    stars: 13628
     installs: 10300
     last_verified: 2026-09-26
     subcat: 开发/测试
@@ -113,7 +111,7 @@ categories:
     source: community
     platform: Skills CLI
     note: NestJS 后端最佳实践
-    stars: 280
+    stars: 282
     installs: 8800
     last_verified: 2026-09-26
     subcat: 通用
@@ -123,7 +121,7 @@ categories:
     source: community
     platform: GitHub
     note: 复盘近期会话，自动改进 CLAUDE.md
-    stars: 10143
+    stars: 10151
     installs: 9500
     last_verified: 2026-09-26
     subcat: 开发/测试
@@ -133,7 +131,7 @@ categories:
     source: vendor
     platform: Skills CLI
     note: Addy Osmani 出品的 Web 可访问性检查
-    stars: 2841
+    stars: 2850
     installs: 4000
     last_verified: 2026-09-26
     subcat: 通用
@@ -143,7 +141,7 @@ categories:
     source: community
     platform: Skills CLI
     note: Web 性能优化技能
-    stars: 46910
+    stars: 47004
     installs: 1300
     last_verified: 2026-09-26
     subcat: 通用
@@ -163,7 +161,7 @@ categories:
     source: vendor
     platform: GitHub
     note: 安全审计技能标杆，代码审计场景口碑最好
-    stars: 7243
+    stars: 7272
     installs: null
     last_verified: 2026-09-26
     subcat: 通用
@@ -203,7 +201,7 @@ categories:
     source: community
     platform: GitHub / awesomeclaude.ai
     note: 元技能：自动构建和改进你的其他技能（含自身）
-    stars: 2864
+    stars: 2988
     installs: 1300
     last_verified: 2026-09-26
     subcat: 通用
@@ -214,7 +212,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 前端/设计
     note: Agent skill for beautiful, verifiable architecture, workflow, sequence, data-flow, and…
-    stars: 71644
+    stars: 73000
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -224,7 +222,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 前端/设计
     note: Create beautiful slides on the web using a coding agent's frontend skills
-    stars: 29823
+    stars: 29905
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -234,7 +232,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 前端/设计
     note: 🪧 Claude Code / Codex skill — generate Xiaohongshu carousels & WeChat 21:9+1:1 cover…
-    stars: 7248
+    stars: 7283
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -244,7 +242,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 开发/测试
     note: The trust layer for agent-to-agent commerce — natural-language mandates, ERC-7710…
-    stars: 5981
+    stars: 6255
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -254,7 +252,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 开发/测试
     note: 'AI가 쓴 한글을 사람 글처럼 윤문하는 Claude 스킬 — Korean AI-text humanizer: detects and rewrites…'
-    stars: 5702
+    stars: 5766
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -264,7 +262,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 开发/测试
     note: Persistent memory for Claude Code and 6 other CLI agents, stored as plain markdown in…
-    stars: 4608
+    stars: 4627
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -274,7 +272,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 前端/设计
     note: One-ink editorial print image skill — warm paper, halftone photography, active negative…
-    stars: 3270
+    stars: 3291
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -284,7 +282,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 前端/设计
     note: 'AI logo animation skill: turn raster logos into smooth SVG animation, animated HTML…'
-    stars: 2340
+    stars: 2348
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -294,7 +292,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 前端/设计
     note: 'Claude Code blog skill suite: 30 sub-skills, 5 agents, 5-gate v1.9.0 Blog Delivery…'
-    stars: 2254
+    stars: 2274
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -304,7 +302,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 开发/测试
     note: Turn one topic into a finished Vox-style paper-collage explainer/ad video — automated end…
-    stars: 2036
+    stars: 2067
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -314,7 +312,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 通用
     note: 极致轻量｜阻止论文的防御性写作 | Anti-defensive writing for academic papers — 学术写作原则 Skill + prompt pack…
-    stars: 1727
+    stars: 1832
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -324,7 +322,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 开发/测试
     note: 'ELI5 — A Claude Code skill that explains anything to anyone: kids, managers, engineers,…'
-    stars: 1488
+    stars: 1508
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -334,7 +332,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 开发/测试
     note: Clone any .pptx into your own deck — OpenAI gpt-image-2 mimics the layout, you supply the…
-    stars: 1308
+    stars: 1311
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -344,7 +342,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 开发/测试
     note: An LLM-first SEO analysis skill for Antigravity, Codex, Claude with 16 specialized…
-    stars: 934
+    stars: 938
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -354,7 +352,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 开发/测试
     note: 'Skills that translate your coding agent''s output into plain language: honest reports,…'
-    stars: 916
+    stars: 979
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -364,7 +362,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 开发/测试
     note: Reddit research skills for Claude Code and AI agents
-    stars: 902
+    stars: 984
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -384,7 +382,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 开发/测试
     note: Turn a photo of your handwriting into a real font (TTF/WOFF/WOFF2) - free, open source,…
-    stars: 791
+    stars: 795
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -394,7 +392,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 前端/设计
     note: A Claude Code SKILL for designing beautiful, consistent web pages — spec first, code…
-    stars: 778
+    stars: 779
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -404,7 +402,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 前端/设计
     note: Project memory and workflows for Claude Code and Codex. Keep stories, plans, handovers,…
-    stars: 756
+    stars: 760
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -414,7 +412,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: AI/记忆
     note: 紫微斗数命盘解读 skill · 基于 iztro-py 精确排盘，生成可视化命盘 HTML
-    stars: 735
+    stars: 737
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -434,7 +432,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 开发/测试
     note: Claude AI skill for cinematic Higgsfield AI prompts — 32 sub-skills covering Seedance 2.5…
-    stars: 636
+    stars: 648
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -444,7 +442,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 前端/设计
     note: 'By a 12-year product manager who builds 0-to-1: takes a beginner from a vague idea to a…'
-    stars: 607
+    stars: 608
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -454,7 +452,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 前端/设计
     note: The design skill for Claude Code, Cursor and any coding agent. Stop shipping AI-slop UI:…
-    stars: 603
+    stars: 609
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -464,7 +462,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 前端/设计
     note: 实习.skill — 双非也能拿大厂 offer。帮你改简历、抠面经、准备面试，把真实背景翻译成面试官想要的样子。
-    stars: 594
+    stars: 602
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -474,7 +472,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 前端/设计
     note: Jetpack Compose Agent Skill — AI-powered coding guidance with actual androidx/androidx…
-    stars: 589
+    stars: 590
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -494,7 +492,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 前端/设计
     note: Agent skill that draws architecture, flowchart, sequence, data-flow and lifecycle…
-    stars: 582
+    stars: 590
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -504,7 +502,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 前端/设计
     note: 杜蕾斯式文案与海报 Skill for Claude Code —— 双层语义方法论 + 8 个文案公式 + 从 260 张原始海报拆解的视觉系统 + AI 出图/代码排版管线
-    stars: 577
+    stars: 578
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -514,7 +512,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 开发/测试
     note: Human + AI music production workflow for Suno - skills, templates, and tools
-    stars: 513
+    stars: 517
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -524,7 +522,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 前端/设计
     note: Full job-hunt Claude skill bundle — Job Description decoder + Resume builder (11…
-    stars: 501
+    stars: 506
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -534,7 +532,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 前端/设计
     note: 🏯 Claude Code / Codex skill — transform Chinese architecture, cultural places & travel…
-    stars: 460
+    stars: 464
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -544,7 +542,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 开发/测试
     note: Claude Code Skill that turns any idea into a cinematic, model-ready video prompt — Sora ·…
-    stars: 443
+    stars: 446
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -564,7 +562,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 开发/测试
     note: A CLAUDE.md Generator and Maintenance tool for for Claude Code to create high-quality…
-    stars: 429
+    stars: 430
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -574,7 +572,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 开发/测试
     note: Open source AI Employees. 8 scheduled business roles, 60 routines, on Claude Code and 10…
-    stars: 427
+    stars: 460
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -584,7 +582,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 前端/设计
     note: End-to-end humanities writing assistant — an Agent Skill (open SKILL.md format). 11 modes…
-    stars: 417
+    stars: 421
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -594,7 +592,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 开发/测试
     note: 数学建模竞赛完整工具链：从拿到赛题到交出论文，一条龙解决。 覆盖 国赛 CUMCM（A/B/C） 和 美赛 MCM/ICM（A-F） 全部题型。
-    stars: 417
+    stars: 418
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -604,7 +602,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 开发/测试
     note: Migo · 旅行领航 —— 把旅行行程生成为单文件、可离线、手机优先的 HTML（交互地图+每日时间轴+出发前提醒）。Claude Code / Codex 通用…
-    stars: 389
+    stars: 393
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -614,7 +612,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 通用
     note: 【Skill】视觉风格 PPT 生成工作流
-    stars: 388
+    stars: 389
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -624,7 +622,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 开发/测试
     note: 'humanizer-ru: очеловечить русский AI-текст для Claude Code, Cursor, Codex и других…'
-    stars: 389
+    stars: 391
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -634,7 +632,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 开发/测试
     note: 10 Claude skills that generate studio-quality AI video prompts for Seedance 2.0 on…
-    stars: 384
+    stars: 394
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -644,7 +642,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 安全
     note: Will ChatGPT cite your site? Score it in 20 seconds against an open, versioned GEO…
-    stars: 390
+    stars: 576
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -684,7 +682,7 @@ categories:
     platform: GitHub (topic:claude-skill)
     subcat: 开发/测试
     note: Agent skill for analyzing and improving prompts using 31 frameworks across 7 intent…
-    stars: 302
+    stars: 304
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -694,7 +692,7 @@ categories:
     platform: anthropics/skills 仓库
     subcat: 文档/办公
     note: 官方 Excel 文档处理技能（原 plugins 类错位条目）
-    stars: 178247
+    stars: 178701
     installs: null
     last_verified: '2026-09-26'
     vmethod: manual
@@ -704,7 +702,7 @@ categories:
     platform: anthropics/skills 仓库
     subcat: 文档/办公
     note: 官方 Word 文档处理技能（原 plugins 类错位条目）
-    stars: 178247
+    stars: 178701
     installs: null
     last_verified: '2026-09-26'
     vmethod: manual
@@ -714,7 +712,7 @@ categories:
     platform: anthropics/skills 仓库
     subcat: 文档/办公
     note: 官方 PDF 处理技能（原 plugins 类错位条目）
-    stars: 178247
+    stars: 178701
     installs: null
     last_verified: '2026-09-26'
     vmethod: manual
@@ -724,10 +722,20 @@ categories:
     platform: GitHub / ComposioHQ 合集
     subcat: 营销/社媒
     note: 内容研究与写作技能（原 plugins 类错位条目，链接已验证）
-    stars: 75640
+    stars: 75754
     installs: null
     last_verified: '2026-09-26'
     vmethod: manual
+  - name: onetake
+    url: https://github.com/feitangyuan/onetake
+    source: community
+    platform: GitHub (topic:claude-skill)
+    subcat: 前端/设计
+    note: 'Motion films that never cut to the next slide: every beat grows out of the one before,…'
+    stars: 586
+    installs: null
+    last_verified: '2026-09-28'
+    vmethod: automated
 - id: mcp
   name: MCP Servers（具体服务器）
   desc: 一个个可安装的 MCP 服务器，platform 记录分发渠道
@@ -737,7 +745,7 @@ categories:
     source: vendor
     platform: npm / 官方市场
     note: 微软官方浏览器自动化，Agent 测试场景标配
-    stars: 37566
+    stars: 37636
     installs: null
     last_verified: 2026-09-26
     subcat: 开发/测试
@@ -747,7 +755,7 @@ categories:
     source: vendor
     platform: npm / Smithery
     note: 实时拉取最新库文档，解决模型知识过时
-    stars: 62425
+    stars: 62490
     installs: null
     last_verified: 2026-09-26
     subcat: 通用
@@ -757,7 +765,7 @@ categories:
     source: official
     platform: GitHub / 官方市场
     note: GitHub 官方仓库/issue/PR 操作
-    stars: 33197
+    stars: 33247
     installs: null
     last_verified: 2026-09-26
     subcat: 开发/测试
@@ -767,7 +775,7 @@ categories:
     source: official
     platform: npm @modelcontextprotocol
     note: 受控目录文件读写（官方参考实现）
-    stars: 90596
+    stars: 90640
     installs: null
     last_verified: 2026-09-26
     subcat: 通用
@@ -777,7 +785,7 @@ categories:
     source: official
     platform: npm @modelcontextprotocol
     note: 网页抓取转 Markdown（官方参考实现）
-    stars: 90596
+    stars: 90640
     installs: null
     last_verified: 2026-09-26
     subcat: 文档/办公
@@ -787,7 +795,7 @@ categories:
     source: official
     platform: npm @modelcontextprotocol
     note: 跨会话知识图谱记忆（官方参考实现）
-    stars: 90596
+    stars: 90640
     installs: null
     last_verified: 2026-09-26
     subcat: AI/记忆
@@ -797,7 +805,7 @@ categories:
     source: official
     platform: npm @modelcontextprotocol
     note: 结构化分步推理（官方参考实现）
-    stars: 90596
+    stars: 90640
     installs: null
     last_verified: 2026-09-26
     subcat: 通用
@@ -807,7 +815,7 @@ categories:
     source: official
     platform: npm @modelcontextprotocol
     note: 时间与日期处理（官方参考实现）
-    stars: 90596
+    stars: 90640
     installs: null
     last_verified: 2026-09-26
     subcat: 通用
@@ -857,7 +865,7 @@ categories:
     source: vendor
     platform: npm / Smithery
     note: 网页爬取为 Agent 提供实时 Web 内容（注意 AGPL）
-    stars: 7514
+    stars: 7525
     installs: null
     last_verified: 2026-09-26
     subcat: 搜索/抓取
@@ -867,7 +875,7 @@ categories:
     source: vendor
     platform: npm / Smithery
     note: 错误监控数据直连 Agent，排障高效
-    stars: 862
+    stars: 867
     installs: null
     last_verified: 2026-09-26
     subcat: AI/记忆
@@ -887,7 +895,7 @@ categories:
     source: vendor
     platform: npm / Smithery
     note: Supabase 数据库与项目管理
-    stars: 2922
+    stars: 2926
     installs: null
     last_verified: 2026-09-26
     subcat: 云/运维
@@ -897,7 +905,7 @@ categories:
     source: vendor
     platform: npm / 官方市场
     note: Notion 页面与数据库操作
-    stars: 4646
+    stars: 4649
     installs: null
     last_verified: 2026-09-26
     subcat: 文档/办公
@@ -917,7 +925,7 @@ categories:
     source: vendor
     platform: npm / Smithery
     note: 为 Agent 提供隔离云端沙箱执行环境
-    stars: 394
+    stars: 395
     installs: null
     last_verified: 2026-09-26
     subcat: AI/记忆
@@ -927,7 +935,7 @@ categories:
     source: vendor
     platform: npm / 官方市场
     note: Stripe 支付与订阅数据操作
-    stars: 1833
+    stars: 1839
     installs: null
     last_verified: 2026-09-26
     subcat: 金融/商业
@@ -2138,7 +2146,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 开发/测试
     note: High-performance code intelligence MCP server. Indexes codebases into a persistent…
-    stars: 44908
+    stars: 45128
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2148,7 +2156,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 开发/测试
     note: 'Playwright MCP server undetected by anti-bots and captchas: AI agent browses the web on…'
-    stars: 31664
+    stars: 31685
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2158,7 +2166,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 前端/设计
     note: A MCP for Claude Desktop / Claude Code / Windsurf / Cursor to build n8n workflows for you
-    stars: 22997
+    stars: 23011
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2168,7 +2176,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 安全
     note: This open-source curriculum introduces the fundamentals of Model Context Protocol (MCP)…
-    stars: 17308
+    stars: 17336
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2178,7 +2186,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 营销/社媒
     note: MCP for xiaohongshu.com
-    stars: 15984
+    stars: 16015
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2188,7 +2196,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: AI/记忆
     note: AI-powered reverse engineering assistant that bridges IDA Pro with language models…
-    stars: 12323
+    stars: 12359
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2198,7 +2206,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 安全
     note: Expose your FastAPI endpoints as Model Context Protocol (MCP) tools, with Auth!
-    stars: 12007
+    stars: 12011
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2208,7 +2216,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 前端/设计
     note: The fullstack MCP framework to develop MCP Apps for ChatGPT / Claude & MCP Servers for AI…
-    stars: 10677
+    stars: 10683
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2218,7 +2226,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 云/运维
     note: Open source MCP Servers for AWS
-    stars: 9729
+    stars: 9734
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2228,7 +2236,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 开发/测试
     note: The Apify MCP server enables your AI agents to extract data from social media, search…
-    stars: 8489
+    stars: 8770
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2238,7 +2246,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 开发/测试
     note: 🔥 Official Firecrawl MCP Server - Adds powerful web scraping and search to Cursor, Claude…
-    stars: 7513
+    stars: 7525
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2258,7 +2266,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 前端/设计
     note: A Model Context Protocol (MCP) server and CLI that provides tools for agent use when…
-    stars: 6426
+    stars: 6435
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2268,7 +2276,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 开发/测试
     note: Exa MCP for web search and web crawling!
-    stars: 5049
+    stars: 5056
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2278,7 +2286,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 开发/测试
     note: TradingView MCP server — real-time market data, technical analysis, screeners &…
-    stars: 4636
+    stars: 4670
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2298,7 +2306,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 数据/数据库
     note: 🤖 A visualization mcp & skills contains 25+ visual charts using @antvis. Using for chart…
-    stars: 4383
+    stars: 4385
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2308,7 +2316,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 前端/设计
     note: AI Skills, MCP Tools, and CLI for Unity Engine. Full AI develop and test loop. Use cli…
-    stars: 4338
+    stars: 4346
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2318,7 +2326,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 文档/办公
     note: A Model Context Protocol server for Excel file manipulation
-    stars: 4196
+    stars: 4204
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2328,7 +2336,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 前端/设计
     note: Ghidra MCP Server — 200+ MCP tools for AI-powered reverse engineering. GUI plugin +…
-    stars: 3990
+    stars: 4025
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2338,7 +2346,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 开发/测试
     note: Open-source MCP server for LinkedIn. Give Claude and any MCP-compatible AI agent access…
-    stars: 3623
+    stars: 3643
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2348,7 +2356,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 前端/设计
     note: Model Context Protocol(MCP) 编程极速入门
-    stars: 3571
+    stars: 3572
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2358,7 +2366,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 前端/设计
     note: Control Gmail, Google Calendar, Docs, Sheets, Slides, Chat, Forms, Tasks, Search & Drive…
-    stars: 3226
+    stars: 3238
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2368,7 +2376,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 数据/数据库
     note: A local MCP server for agent literature work. Original-LaTeX section reads, BibTeX from…
-    stars: 3175
+    stars: 3177
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2378,7 +2386,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 前端/设计
     note: MCP server integration for DaVinci Resolve Studio
-    stars: 3138
+    stars: 3198
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2388,7 +2396,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 安全
     note: Plugin for JADX to integrate MCP server
-    stars: 2828
+    stars: 2834
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2398,7 +2406,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 开发/测试
     note: AI Agent-first JS 逆向 MCP Server：有头 Chrome 调试、断点、网络/WebSocket 分析、Patchright 反检测，可选…
-    stars: 2825
+    stars: 2841
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2408,7 +2416,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 通用
     note: A bridge between Streamable HTTP and stdio MCP transports
-    stars: 2767
+    stars: 2765
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2418,7 +2426,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 开发/测试
     note: Cut AI token costs 95%+ on code exploration. The leading MCP server for precise,…
-    stars: 2713
+    stars: 2716
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2428,7 +2436,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 搜索/抓取
     note: MCP, CLI, Skills for searching and downloading academic papers from multiple sources like…
-    stars: 2697
+    stars: 2713
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2438,7 +2446,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 开发/测试
     note: A powerful Model Context Protocol (MCP) server that provides an all-in-one solution for…
-    stars: 2656
+    stars: 2660
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2448,7 +2456,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 搜索/抓取
     note: 법제처 국가법령정보를 LLM에서 바로 조회하는 MCP 서버. 법령·판례·조례 검색과 인용 검증 | MCP server for Korean law — search…
-    stars: 2608
+    stars: 2611
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2458,7 +2466,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 通用
     note: Self-hosted MCP gateway and control plane for connecting, controlling, and operating MCP…
-    stars: 2471
+    stars: 2482
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2468,7 +2476,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 安全
     note: Google Ads MCP server + Meta Ads MCP (Facebook Ads MCP) + GA4 + Search Console in one…
-    stars: 2388
+    stars: 2920
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2478,7 +2486,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 前端/设计
     note: The only browser automation that bypasses anti-bot systems. AI writes network hooks,…
-    stars: 2148
+    stars: 2156
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2488,7 +2496,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 前端/设计
     note: Shrimp Task Manager is a task tool built for AI Agents, emphasizing chain-of-thought,…
-    stars: 2149
+    stars: 2148
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2498,7 +2506,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 安全
     note: MCP Router — development, support and security updates ended 2026-09-18. Historical…
-    stars: 2147
+    stars: 2146
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2508,7 +2516,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 通用
     note: Enable AI assistant clients like Cursor, Windsurf and Claude Desktop to control Unreal…
-    stars: 2086
+    stars: 2087
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2518,7 +2526,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 前端/设计
     note: x64dbg-MCP Server is a native MCP (Model Context Protocol) plugin for x64dbg that exposes…
-    stars: 2057
+    stars: 2121
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2528,7 +2536,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 开发/测试
     note: Open-source persistent memory for AI agent pipelines (LangGraph, CrewAI, AutoGen) and…
-    stars: 1965
+    stars: 1967
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2538,7 +2546,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 营销/社媒
     note: Unified real-time search MCP server supporting general web search, vertical domain…
-    stars: 1852
+    stars: 1853
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2558,7 +2566,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 开发/测试
     note: MCP Server para 70 APIs públicas brasileiras
-    stars: 1787
+    stars: 1791
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2568,7 +2576,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 前端/设计
     note: An MCP client for Neovim that seamlessly integrates MCP servers into your editing…
-    stars: 1785
+    stars: 1784
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2588,7 +2596,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 营销/社媒
     note: Google Search Console Insights with Claude AI for SEOs
-    stars: 1732
+    stars: 1771
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2598,7 +2606,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 通用
     note: A command-line interface for interacting with MCP (Model Context Protocol) servers using…
-    stars: 1625
+    stars: 1624
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2608,7 +2616,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 搜索/抓取
     note: This is a 12306 ticket search server based on the Model Context Protocol (MCP).
-    stars: 1618
+    stars: 1620
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2618,7 +2626,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 安全
     note: 'Free SEO MCP server + open-source SEO and GEO skills for Claude: keyword research, rank…'
-    stars: 1616
+    stars: 2476
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2638,7 +2646,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 数据/数据库
     note: Official data.gouv.fr Model Context Protocol (MCP) server that allows AI chatbots to…
-    stars: 1596
+    stars: 1597
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2648,7 +2656,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 数据/数据库
     note: Model Context Protocol for WinDbg.
-    stars: 1592
+    stars: 1594
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2658,7 +2666,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 开发/测试
     note: Official MiniMax Model Context Protocol (MCP) server that enables interaction with…
-    stars: 1585
+    stars: 1586
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2668,7 +2676,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 开发/测试
     note: Run MATLAB® using AI applications with the official MATLAB MCP Server from MathWorks®.…
-    stars: 1576
+    stars: 1587
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2688,7 +2696,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 安全
     note: Connect your favorite AI agents directly to Cheat Engine via MCP. Automate reverse…
-    stars: 1516
+    stars: 1533
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2698,7 +2706,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 通用
     note: Connect AI models like Claude & GPT with robots using MCP and ROS.
-    stars: 1473
+    stars: 1479
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2718,7 +2726,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 开发/测试
     note: Public Solana MCP registry metadata for Vybe Solana API
-    stars: 1380
+    stars: 1413
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2728,7 +2736,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 文档/办公
     note: 文颜 MCP Server 可以让 AI 自动将 Markdown 文章排版后发布至微信公众号。
-    stars: 1324
+    stars: 1327
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2748,7 +2756,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 云/运维
     note: One place to manage & connect to all your MCP servers
-    stars: 1280
+    stars: 1285
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2758,7 +2766,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 搜索/抓取
     note: Private web search for AI assistants via SearXNG — supports Claude, Cursor, and any MCP…
-    stars: 1261
+    stars: 1262
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2768,7 +2776,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 开发/测试
     note: It's a plugin extension in Zotero. Zotero MCP Plugin enables integration between AI…
-    stars: 1184
+    stars: 1193
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2778,7 +2786,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 文档/办公
     note: Helping coding agents never make mistakes working with public or private libraries…
-    stars: 1175
+    stars: 1176
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2788,7 +2796,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 开发/测试
     note: Give any AI agent the ability to code
-    stars: 1151
+    stars: 1158
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2808,7 +2816,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 营销/社媒
     note: 🚀MCP server for accessing RedNote(XiaoHongShu, xhs).
-    stars: 1111
+    stars: 1112
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2818,7 +2826,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 安全
     note: Official remote MCP server for Atlassian. Securely connect Jira, Confluence, Jira Service…
-    stars: 1064
+    stars: 1070
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2828,7 +2836,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 文档/办公
     note: MCP server and CLI tool for searching and downloading documents from Anna's Archive
-    stars: 1052
+    stars: 1054
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2838,7 +2846,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 前端/设计
     note: MCP Server Framework and Tool Development library for building custom capabilities into…
-    stars: 1033
+    stars: 1040
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2848,7 +2856,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 协作/通讯
     note: Query and Summarize your chat messages.
-    stars: 1027
+    stars: 1026
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2858,7 +2866,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 营销/社媒
     note: This MCP server integrates with your Google Drive and Google Sheets, to enable creating…
-    stars: 1005
+    stars: 1009
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2868,7 +2876,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 前端/设计
     note: Alpaca’s official MCP Server lets you trade stocks, ETFs, crypto, and options, run data…
-    stars: 992
+    stars: 995
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2878,7 +2886,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 数据/数据库
     note: Neo4j Labs Model Context Protocol servers
-    stars: 986
+    stars: 985
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2908,7 +2916,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 开发/测试
     note: A middleware to provide an openAI compatible endpoint that can call MCP tools
-    stars: 930
+    stars: 929
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2928,7 +2936,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 前端/设计
     note: A comprehensive Model Context Protocol (MCP) server that enables AI assistants to control…
-    stars: 888
+    stars: 891
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2938,7 +2946,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: AI/记忆
     note: 📦️ A fast, secure MCP server that extends its capabilities through WebAssembly plugins.
-    stars: 882
+    stars: 883
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2948,7 +2956,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 通用
     note: MCP Server for interacting with Android Devices.
-    stars: 870
+    stars: 872
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2958,7 +2966,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 开发/测试
     note: 这是一个金融领域相关的mcp,本项目通过集成 Tushare API 和 Binance API…
-    stars: 861
+    stars: 860
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2968,7 +2976,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 前端/设计
     note: MCP servers & Graph API for the UniFi suite of applications, Network, Protect, and Access
-    stars: 846
+    stars: 853
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2978,7 +2986,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 开发/测试
     note: Browse the web, directly from Cursor etc.
-    stars: 844
+    stars: 846
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -2998,7 +3006,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 开发/测试
     note: Clean, LLM-optimized Reddit MCP server. Browse posts, search content, analyze users. No…
-    stars: 836
+    stars: 839
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -3008,7 +3016,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 通用
     note: Headless IDA Pro MCP Server
-    stars: 836
+    stars: 842
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -3028,7 +3036,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 安全
     note: MCP configuration to connect AI agent to a Linux machine.
-    stars: 828
+    stars: 829
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -3038,9 +3046,449 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: 前端/设计
     note: Harness the power of local LLMs with this TUI MCP Client for Ollama. Featuring all core…
-    stars: 826
+    stars: 827
     installs: null
     last_verified: '2026-09-26'
+    vmethod: automated
+  - name: claude-wilder-mcp
+    url: https://claudereviews.com
+    source: community
+    platform: Smithery
+    subcat: 安全
+    note: '# Claude Wilder — Transmissions from the Garden An open MCP server for an AI-authored…'
+    stars: null
+    installs: 7380
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: ArXiv Scout
+    url: https://github.com/shawnnygoh/arxiv-scout
+    source: community
+    platform: Smithery
+    subcat: 开发/测试
+    note: Search and retrieve academic papers directly from arXiv with advanced query capabilities.…
+    stars: null
+    installs: 3426
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: IBANforge
+    url: https://ibanforge.com
+    source: community
+    platform: Smithery
+    subcat: 开发/测试
+    note: IBAN validation and bank-data tools for AI agents, ERP, invoicing and payroll workflows.…
+    stars: null
+    installs: 4179
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: fyndling
+    url: https://fyndling.de
+    source: community
+    platform: Smithery
+    subcat: 安全
+    note: '# fyndling-mcp Built for **medieval market fans, reenactors, and living-history…'
+    stars: null
+    installs: 3540
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: dominion-observatory
+    url: https://dominion-observatory.sgdata.workers.dev
+    source: community
+    platform: Smithery
+    subcat: 开发/测试
+    note: Behavioral trust scoring and MCP gateway proxy for 14,820+ MCP servers. Query real…
+    stars: null
+    installs: 3460
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: Paper Search (arXiv + Semantic Scholar + OpenAlex)
+    url: https://github.com/MCPServings/paper-mcp
+    source: community
+    platform: Smithery
+    subcat: 安全
+    note: Unified academic paper search for AI agents. search_all queries arXiv, Semantic Scholar…
+    stars: null
+    installs: 4064
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: LogicRoomX Crypto MCP
+    url: https://logicroomx.com
+    source: community
+    platform: Smithery
+    subcat: 前端/设计
+    note: Real-time crypto data for AI assistants. Get live price spreads between Binance and OKX,…
+    stars: null
+    installs: 3601
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: SpecLock - AI Constraint Engine
+    url: https://smithery.ai/servers/sgroy10/speclock
+    source: community
+    platform: Smithery
+    subcat: 开发/测试
+    note: AI Constraint Engine with AI Patch Firewall. 42 MCP tools. Patch Gateway…
+    stars: null
+    installs: 3564
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: OpenMM MCP
+    url: https://smithery.ai/servers/qbtlabs/openmm-mcp
+    source: community
+    platform: Smithery
+    subcat: 开发/测试
+    note: MCP server for OpenMM — exposes market data, account, trading, and strategy tools to AI…
+    stars: null
+    installs: 3674
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: GitHub Code Search
+    url: https://smithery.ai/servers/arjunkmrm/grep
+    source: community
+    platform: Smithery
+    subcat: 开发/测试
+    note: Search millions of public GitHub repositories for real-world code patterns and…
+    stars: null
+    installs: 3818
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: Infobip Search MCP
+    url: https://github.com/infobip/mcp
+    source: community
+    platform: Smithery
+    subcat: 前端/设计
+    note: Search Infobip documentation to quickly find guides, use cases, and best practices.…
+    stars: null
+    installs: 4015
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: AI Answer Copier
+    url: https://smithery.ai/servers/XJTLUmedia/x23
+    source: community
+    platform: Smithery
+    subcat: 前端/设计
+    note: AI Answer Copier is a Model Context Protocol (MCP) server that solves the "Final Mile"…
+    stars: null
+    installs: 3292
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: The STALL
+    url: https://smithery.ai/servers/thebrierfox/the-stall
+    source: community
+    platform: Smithery
+    subcat: 前端/设计
+    note: 293 AI-callable finance and data tools over MCP. No API keys required. US stocks, crypto,…
+    stars: null
+    installs: 3348
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: Korean Crypto
+    url: https://smithery.ai/servers/koreafintech/korean-crypto-mcp
+    source: community
+    platform: Smithery
+    subcat: 数据/数据库
+    note: Access real-time price data, order books, and candle information from major Korean…
+    stars: null
+    installs: 3930
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: iAeternum
+    url: https://iaeternum.ai/
+    source: community
+    platform: Smithery
+    subcat: 开发/测试
+    note: Intelligence Aeternum — AI training dataset marketplace with 100,000+ museum artwork…
+    stars: null
+    installs: 3350
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: ocean-schedules
+    url: https://schedulesmcp.com
+    source: community
+    platform: Smithery
+    subcat: 数据/数据库
+    note: Ocean freight sailing schedules & carrier on-time reliability. Compare carriers on any…
+    stars: null
+    installs: 3149
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: anchor-compliance
+    url: https://anchorcompliance.io/mcp
+    source: community
+    platform: Smithery
+    subcat: 安全
+    note: Australian advertising & marketing compliance for AI assistants. Scan websites, check…
+    stars: null
+    installs: 3121
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: Synmerco — Confidential Escrow for AI Agent Commerce
+    url: https://synmerco.com/enterprise
+    source: community
+    platform: Smithery
+    subcat: 前端/设计
+    note: The only MCP server with Confidential Escrow Mode — HIPAA/GDPR-ready encrypted…
+    stars: null
+    installs: 3239
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: Shirabe Calendar API
+    url: https://shirabe.dev
+    source: community
+    platform: Smithery
+    subcat: 开发/测试
+    note: Japanese calendar API for AI agents. Provides Rokuyo (六曜), Rekichu (暦注), Eto (干支), 24…
+    stars: null
+    installs: 2944
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: Most Recommended Books
+    url: https://mostrecommendedbooks.com/developers
+    source: community
+    platform: Smithery
+    subcat: 安全
+    note: Read-only MCP server for verified book recommendations and reading lists. Ask who…
+    stars: null
+    installs: 3060
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: openfoodfacts-mcp-server
+    url: https://openfoodfacts.caseyjhand.com/mcp
+    source: community
+    platform: Smithery
+    subcat: 开发/测试
+    note: Barcode lookup, nutrition search, and product comparison for 3M+ crowd-sourced food…
+    stars: null
+    installs: 3148
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: mainstreet
+    url: https://avisradar-production.up.railway.app/mainstreet.html
+    source: community
+    platform: Smithery
+    subcat: 安全
+    note: Onchain AI-agent reputation oracle on Base. Get a 0-100 score + SAFE/CAUTION/BLOCK…
+    stars: null
+    installs: 2881
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: Stexa Voice MCP
+    url: https://stexa.ru/en/voice-mcp
+    source: community
+    platform: Smithery
+    subcat: 安全
+    note: Connect voice telephony to your AI agent. Make outbound calls, get transcripts, check…
+    stars: null
+    installs: 3012
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: middleBrick | API-Security
+    url: https://middlebrick.com/
+    source: community
+    platform: Smithery
+    subcat: 安全
+    note: Scan any API for OWASP Top 10 vulnerabilities and get a security risk score. Covers…
+    stars: null
+    installs: 2930
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: WorldMonitor MCP
+    url: https://www.worldmonitor.app
+    source: community
+    platform: Smithery
+    subcat: 安全
+    note: 'Live global-intelligence data as a 74-tool MCP server: real-time markets, conflict…'
+    stars: null
+    installs: 2840
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: google-ads-meta-ads-mcp
+    url: https://github.com/irinabuht12-oss/google-ads-meta-ads-mcp
+    source: community
+    platform: GitHub (topic:mcp-server)
+    subcat: 安全
+    note: Google Ads MCP server + Meta Ads MCP (Facebook Ads MCP) + GA4 + Search Console in one…
+    stars: 2920
+    installs: null
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: next-devtools-mcp
+    url: https://github.com/vercel/next-devtools-mcp
+    source: community
+    platform: GitHub (topic:mcp-server)
+    subcat: AI/记忆
+    note: Next.js Development for Coding Agent
+    stars: 823
+    installs: null
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: idea-reality-mcp
+    url: https://github.com/mnemox-ai/idea-reality-mcp
+    source: community
+    platform: GitHub (topic:mcp-server)
+    subcat: 前端/设计
+    note: Pre-build reality check for AI coding agents. Scans GitHub, HN, npm, PyPI, Product Hunt.…
+    stars: 822
+    installs: null
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: mcp-security-hub
+    url: https://github.com/FuzzingLabs/mcp-security-hub
+    source: community
+    platform: GitHub (topic:mcp-server)
+    subcat: 安全
+    note: A growing collection of MCP servers bringing offensive security tools to AI assistants.…
+    stars: 796
+    installs: null
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: jadx-mcp-server
+    url: https://github.com/zinja-coder/jadx-mcp-server
+    source: community
+    platform: GitHub (topic:mcp-server)
+    subcat: 安全
+    note: MCP server for JADX-AI Plugin
+    stars: 794
+    installs: null
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: mcp-server-excel
+    url: https://github.com/sbroenne/mcp-server-excel
+    source: community
+    platform: GitHub (topic:mcp-server)
+    subcat: 开发/测试
+    note: Automate real Microsoft Excel with AI via MCP Server or CLI — Power Query, DAX, VBA,…
+    stars: 791
+    installs: null
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: line-bot-mcp-server
+    url: https://github.com/line/line-bot-mcp-server
+    source: community
+    platform: GitHub (topic:mcp-server)
+    subcat: 开发/测试
+    note: MCP server that integrates the LINE Messaging API to connect an AI Agent to the LINE…
+    stars: 783
+    installs: null
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: comfyui-mcp
+    url: https://github.com/artokun/comfyui-mcp
+    source: community
+    platform: GitHub (topic:mcp-server)
+    subcat: 安全
+    note: Local-first, agent-native control plane for ComfyUI — MCP server + sidebar agent that…
+    stars: 767
+    installs: null
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: minecraft-mcp-server
+    url: https://github.com/yuniko-software/minecraft-mcp-server
+    source: community
+    platform: GitHub (topic:mcp-server)
+    subcat: 前端/设计
+    note: A Minecraft MCP Server powered by Mineflayer API. It allows to control a Minecraft…
+    stars: 761
+    installs: null
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: GhidrAssistMCP
+    url: https://github.com/symgraph/GhidrAssistMCP
+    source: community
+    platform: GitHub (topic:mcp-server)
+    subcat: AI/记忆
+    note: An native MCP server extension for Ghidra
+    stars: 755
+    installs: null
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: mcpcan
+    url: https://github.com/Kymo-MCP/mcpcan
+    source: community
+    platform: GitHub (topic:mcp-server)
+    subcat: 安全
+    note: MCPCAN is a centralized management platform for MCP services. It deploys each MCP service…
+    stars: 728
+    installs: null
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: elementor-mcp
+    url: https://github.com/msrbuilds/elementor-mcp
+    source: community
+    platform: GitHub (topic:mcp-server)
+    subcat: 前端/设计
+    note: WordPress plugin that turns Elementor & WordPress into an MCP server. 500+ AI-ready tools…
+    stars: 725
+    installs: null
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: mcp-server-elasticsearch
+    url: https://github.com/elastic/mcp-server-elasticsearch
+    source: community
+    platform: GitHub (topic:mcp-server)
+    subcat: 数据/数据库
+    note: MCP 服务器
+    stars: 719
+    installs: null
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: mcp-google-ads
+    url: https://github.com/cohnen/mcp-google-ads
+    source: community
+    platform: GitHub (topic:mcp-server)
+    subcat: 数据/数据库
+    note: An MCP tool that connects Google Ads with Claude AI/Cursor and others, allowing you to…
+    stars: 709
+    installs: null
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: figma-mcp-bridge
+    url: https://github.com/gethopp/figma-mcp-bridge
+    source: community
+    platform: GitHub (topic:mcp-server)
+    subcat: 前端/设计
+    note: Figma Plugin & MCP server to bypass API limits
+    stars: 681
+    installs: null
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: maverick-mcp
+    url: https://github.com/wshobson/maverick-mcp
+    source: community
+    platform: GitHub (topic:mcp-server)
+    subcat: 开发/测试
+    note: MaverickMCP - Personal Stock Analysis MCP Server
+    stars: 678
+    installs: null
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: android-remote-control-mcp
+    url: https://github.com/danielealbano/android-remote-control-mcp
+    source: community
+    platform: GitHub (topic:mcp-server)
+    subcat: 营销/社媒
+    note: An MCP Server for Android running on the phone, optmized for token usage, supports also…
+    stars: 670
+    installs: null
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: claude-talk-to-figma-mcp
+    url: https://github.com/arinspunk/claude-talk-to-figma-mcp
+    source: community
+    platform: GitHub (topic:mcp-server)
+    subcat: 前端/设计
+    note: A Model Context Protocol (MCP) that allows Claude Desktop and other AI tools (Claude…
+    stars: 665
+    installs: null
+    last_verified: '2026-09-28'
+    vmethod: automated
+  - name: apktool-mcp-server
+    url: https://github.com/zinja-coder/apktool-mcp-server
+    source: community
+    platform: GitHub (topic:mcp-server)
+    subcat: 前端/设计
+    note: A MCP Server for APK Tool (Part of Android Reverse Engineering MCP Suites)
+    stars: 659
+    installs: null
+    last_verified: '2026-09-28'
     vmethod: automated
 - id: plugins
   name: Plugins（具体插件）
@@ -3159,7 +3607,7 @@ categories:
     source: community
     platform: wshobson 市场
     note: 数据库架构、Schema 设计与 SQL 优化
-    stars: 39971
+    stars: 40045
     installs: 35700
     last_verified: 2026-09-26
     subcat: 数据/数据库
@@ -3169,7 +3617,7 @@ categories:
     source: community
     platform: wshobson 市场
     note: 生产事故管理、分诊与自动化处置工作流
-    stars: 39971
+    stars: 40045
     installs: 35700
     last_verified: 2026-09-26
     subcat: operations
@@ -3179,7 +3627,7 @@ categories:
     source: community
     platform: wshobson 市场
     note: 防御式 Bash 编程、POSIX 合规与测试
-    stars: 39971
+    stars: 40045
     installs: 35700
     last_verified: 2026-09-26
     subcat: 开发
@@ -3189,7 +3637,7 @@ categories:
     source: community
     platform: GitHub / claude-plugins.dev
     note: 跨会话记忆：压缩历史注入新会话（Apache-2.0）
-    stars: 94692
+    stars: 94814
     installs: null
     last_verified: 2026-09-26
     vmethod: automated
@@ -3198,7 +3646,7 @@ categories:
     source: community
     platform: ruvnet/claude-flow-marketplace
     note: 企业级编排：150+ commands、74+ agents、swarm 协调
-    stars: 73270
+    stars: 73411
     installs: 13700
     last_verified: 2026-09-26
     subcat: 开发
@@ -3208,7 +3656,7 @@ categories:
     source: community
     platform: GitHub
     note: 多角色 Agent 框架：Architect/Dev/QA/Security/PM
-    stars: 53457
+    stars: 53563
     installs: null
     last_verified: 2026-09-26
     vmethod: manual
@@ -3217,7 +3665,7 @@ categories:
     source: community
     platform: PyPI (pipx)
     note: 老牌工作流自动化框架
-    stars: 23907
+    stars: 23905
     installs: null
     last_verified: 2026-09-26
     vmethod: manual
@@ -3236,7 +3684,7 @@ categories:
     source: vendor
     platform: 官方市场 claude-plugins-official
     note: Harness Adobe's creative AI-powered tools to edit images, automate design workflows, and…
-    stars: 189
+    stars: 190
     installs: null
     last_verified: '2026-09-26'
     subcat: 前端/设计
@@ -3246,7 +3694,7 @@ categories:
     source: official
     platform: 官方市场 claude-plugins-official
     note: Development kit for working with the Claude Agent SDK
-    stars: 36875
+    stars: 37111
     installs: null
     last_verified: '2026-09-26'
     subcat: 开发
@@ -3275,7 +3723,7 @@ categories:
     source: vendor
     platform: 官方市场 claude-plugins-official
     note: Aikido Security scanning for Claude Code — SAST, secrets, and IaC vulnerability detection…
-    stars: 13
+    stars: 14
     installs: null
     last_verified: '2026-09-26'
     vmethod: automated
@@ -3374,7 +3822,7 @@ categories:
     source: vendor
     platform: 官方市场 claude-plugins-official
     note: Use Amplitude as an expert analyst — instrument Amplitude, discover product…
-    stars: 37
+    stars: 38
     installs: null
     last_verified: '2026-09-26'
     subcat: monitoring
@@ -3414,7 +3862,7 @@ categories:
     source: vendor
     platform: 官方市场 claude-plugins-official
     note: Asana project management integration. Connects Claude Code to Asana's V2 MCP server to…
-    stars: 36875
+    stars: 37111
     installs: null
     last_verified: '2026-09-26'
     subcat: 生产力
@@ -3453,7 +3901,7 @@ categories:
     source: vendor
     platform: 官方市场 claude-plugins-official
     note: Comprehensive development workflow for building AI agents with the Atomic Agents…
-    stars: 6258
+    stars: 6261
     installs: null
     last_verified: '2026-09-26'
     subcat: 开发
@@ -3473,7 +3921,7 @@ categories:
     source: vendor
     platform: 官方市场 claude-plugins-official
     note: Build, deploy, and operate AI agents on AWS. Skills for scaffolding agents with Amazon…
-    stars: 2725
+    stars: 2738
     installs: null
     last_verified: '2026-09-26'
     subcat: 开发
@@ -3483,7 +3931,7 @@ categories:
     source: vendor
     platform: 官方市场 claude-plugins-official
     note: Investigate incidents, review code and execute UAT for release readiness, scan code for…
-    stars: 2725
+    stars: 2738
     installs: null
     last_verified: '2026-09-26'
     subcat: 开发
@@ -3503,7 +3951,7 @@ categories:
     source: vendor
     platform: 官方市场 claude-plugins-official
     note: Build, deploy, and operate applications on AWS. Skills to author infrastructure-as-code,…
-    stars: 2725
+    stars: 2738
     installs: null
     last_verified: '2026-09-26'
     subcat: 开发
@@ -3513,7 +3961,7 @@ categories:
     source: vendor
     platform: 官方市场 claude-plugins-official
     note: Data lake, analytics, and ETL workflows with S3 Tables, AWS Glue, and Athena.
-    stars: 2725
+    stars: 2738
     installs: null
     last_verified: '2026-09-26'
     subcat: 开发
@@ -3533,7 +3981,7 @@ categories:
     source: vendor
     platform: 官方市场 claude-plugins-official
     note: Personalized architecture, cost, security, and migration guidance for startups. From…
-    stars: 19
+    stars: 20
     installs: null
     last_verified: '2026-09-26'
     subcat: 开发
@@ -3553,7 +4001,7 @@ categories:
     source: vendor
     platform: 官方市场 claude-plugins-official
     note: Transform Claude into an Azure expert. This plugin integrates the Azure MCP server and…
-    stars: 1499
+    stars: 1503
     installs: null
     last_verified: '2026-09-26'
     subcat: deployment
@@ -3742,7 +4190,7 @@ categories:
     source: vendor
     platform: 官方市场 claude-plugins-official
     note: Control and inspect a live Chrome browser from your coding agent. Record performance…
-    stars: 52604
+    stars: 52677
     installs: null
     last_verified: '2026-09-26'
     subcat: 开发
@@ -3802,7 +4250,7 @@ categories:
     source: official
     platform: 官方市场 claude-plugins-official
     note: C/C++ language server (clangd) for code intelligence
-    stars: 36875
+    stars: 37111
     installs: null
     last_verified: '2026-09-26'
     subcat: 开发
@@ -3812,7 +4260,7 @@ categories:
     source: official
     platform: 官方市场 claude-plugins-official
     note: Analyze codebases and recommend tailored Claude Code automations such as hooks, skills,…
-    stars: 36875
+    stars: 37111
     installs: null
     last_verified: '2026-09-26'
     subcat: 生产力
@@ -3822,7 +4270,7 @@ categories:
     source: official
     platform: 官方市场 claude-plugins-official
     note: Tools to maintain and improve CLAUDE.md files - audit quality, capture session learnings,…
-    stars: 36875
+    stars: 37111
     installs: null
     last_verified: '2026-09-26'
     subcat: 生产力
@@ -3832,7 +4280,7 @@ categories:
     source: official
     platform: 官方市场 claude-plugins-official
     note: Deep vulnerability scanning of your own code, run entirely inside your Claude Code…
-    stars: 36875
+    stars: 37111
     installs: null
     last_verified: '2026-09-26'
     subcat: 安全
@@ -3902,7 +4350,7 @@ categories:
     source: vendor
     platform: 官方市场 claude-plugins-official
     note: 'Skills for the Cloudflare developer platform: Workers, Durable Objects, Agents SDK, MCP…'
-    stars: 2910
+    stars: 2919
     installs: null
     last_verified: '2026-09-26'
     subcat: deployment
@@ -3931,7 +4379,7 @@ categories:
     source: official
     platform: 官方市场 claude-plugins-official
     note: Modernize legacy codebases (COBOL, legacy Java/C++, monolith web apps) with a structured…
-    stars: 36875
+    stars: 37111
     installs: null
     last_verified: '2026-09-26'
     subcat: 开发
@@ -3941,7 +4389,7 @@ categories:
     source: official
     platform: 官方市场 claude-plugins-official
     note: Agent that simplifies and refines code for clarity, consistency, and maintainability…
-    stars: 36875
+    stars: 37111
     installs: null
     last_verified: '2026-09-26'
     subcat: 生产力
@@ -3951,7 +4399,7 @@ categories:
     source: vendor
     platform: 官方市场 claude-plugins-official
     note: Your code review partner. CodeRabbit provides external validation using a specialized AI…
-    stars: 184
+    stars: 183
     installs: null
     last_verified: '2026-09-26'
     subcat: 生产力
@@ -3971,7 +4419,7 @@ categories:
     source: official
     platform: 官方市场 claude-plugins-official
     note: Commands for git commit workflows including commit, push, and PR creation
-    stars: 36875
+    stars: 37111
     installs: null
     last_verified: '2026-09-26'
     subcat: 生产力
@@ -4031,7 +4479,7 @@ categories:
     source: official
     platform: 官方市场 claude-plugins-official
     note: C# language server for code intelligence
-    stars: 36875
+    stars: 37111
     installs: null
     last_verified: '2026-09-26'
     subcat: 开发
@@ -4071,7 +4519,7 @@ categories:
     source: vendor
     platform: 官方市场 claude-plugins-official
     note: This plugin provides a specialized suite of skills for data engineers and database…
-    stars: 194
+    stars: 197
     installs: null
     last_verified: '2026-09-26'
     subcat: 开发
@@ -6133,7 +6581,7 @@ categories:
     source: vendor
     platform: 官方市场 claude-plugins-official
     note: Connect 8,000+ apps to your AI workflow. Discover, enable, and execute Zapier actions…
-    stars: 417
+    stars: 421
     installs: null
     last_verified: '2026-09-26'
     subcat: 生产力
@@ -6183,7 +6631,7 @@ categories:
     source: vendor
     platform: 官方市场 claude-plugins-official
     note: Manage Zscaler cloud security platform including ZPA (private access), ZIA (internet…
-    stars: 51
+    stars: 50
     installs: null
     last_verified: '2026-09-26'
     subcat: 安全
@@ -6253,7 +6701,7 @@ categories:
     source: vendor
     platform: 官方市场 claude-plugins-official
     note: Connect your Amazon Seller Central account to Claude. Ask about sales, inventory, and…
-    stars: 9
+    stars: 11
     installs: null
     last_verified: '2026-09-26'
     subcat: 生产力
@@ -6263,7 +6711,7 @@ categories:
     source: community
     platform: '@EveryInc/every-marketplace'
     note: AI-powered development tools that get smarter with every use. Make each unit of…
-    stars: 25269
+    stars: 25305
     installs: 5973
     last_verified: '2026-09-26'
     vmethod: automated
@@ -6272,7 +6720,7 @@ categories:
     source: community
     platform: '@wshobson/claude-code-workflows'
     note: Backend API design, GraphQL architecture, workflow orchestration with Temporal, and…
-    stars: 39971
+    stars: 40045
     installs: 2290
     last_verified: '2026-09-26'
     subcat: 开发
@@ -6282,7 +6730,7 @@ categories:
     source: community
     platform: '@wshobson/claude-code-workflows'
     note: Code cleanup, refactoring automation, and technical debt management with context…
-    stars: 39971
+    stars: 40045
     installs: 2111
     last_verified: '2026-09-26'
     subcat: utilities
@@ -6292,7 +6740,7 @@ categories:
     source: community
     platform: '@wshobson/claude-code-workflows'
     note: JavaScript and TypeScript development with ES6+, Node.js, React, and modern web frameworks
-    stars: 39971
+    stars: 40045
     installs: 1950
     last_verified: '2026-09-26'
     subcat: 开发
@@ -6312,7 +6760,7 @@ categories:
     source: community
     platform: '@wshobson/claude-code-workflows'
     note: Documentation generation, code explanation, and technical writing with automated doc…
-    stars: 39971
+    stars: 40045
     installs: 1322
     last_verified: '2026-09-26'
     subcat: 文档/办公
@@ -6322,7 +6770,7 @@ categories:
     source: community
     platform: '@wshobson/claude-code-workflows'
     note: Context persistence, restoration, and long-running conversation management
-    stars: 39971
+    stars: 40045
     installs: 1236
     last_verified: '2026-09-26'
     subcat: ai-ml
@@ -6342,7 +6790,7 @@ categories:
     source: community
     platform: '@wshobson/claude-code-workflows'
     note: Multi-agent system optimization, agent improvement workflows, and context management
-    stars: 39971
+    stars: 40045
     installs: 1052
     last_verified: '2026-09-26'
     subcat: ai-ml
@@ -6352,7 +6800,7 @@ categories:
     source: community
     platform: '@daymade/daymade-skills'
     note: Create professional slide decks from topics or documents. Generates structured content…
-    stars: 1428
+    stars: 1432
     installs: 698
     last_verified: '2026-09-26'
     subcat: 生产力
@@ -6362,7 +6810,7 @@ categories:
     source: community
     platform: '@wshobson/claude-code-workflows'
     note: AI-powered architectural review and code quality analysis
-    stars: 39971
+    stars: 40045
     installs: 669
     last_verified: '2026-09-26'
     subcat: quality
@@ -6372,7 +6820,7 @@ categories:
     source: community
     platform: '@jeremylongshore/claude-code-plugins-plus'
     note: Professional financial modeling toolkit for Claude Code with auto-invoked Skills and…
-    stars: 2790
+    stars: 2794
     installs: 660
     last_verified: '2026-09-26'
     subcat: business-tools
@@ -6382,7 +6830,7 @@ categories:
     source: community
     platform: '@eyaltoledano/taskmaster'
     note: AI-powered task management system for ambitious development workflows with intelligent…
-    stars: 28090
+    stars: 28096
     installs: 607
     last_verified: '2026-09-26'
     subcat: 生产力
@@ -6392,7 +6840,7 @@ categories:
     source: community
     platform: '@wshobson/claude-code-workflows'
     note: End-to-end feature orchestration with testing, security, performance, and deployment
-    stars: 39971
+    stars: 40045
     installs: 595
     last_verified: '2026-09-26'
     subcat: workflows
@@ -6402,7 +6850,7 @@ categories:
     source: community
     platform: '@wshobson/claude-code-workflows'
     note: LLM application development with LangGraph, RAG systems, vector search, and AI agent…
-    stars: 39971
+    stars: 40045
     installs: 552
     last_verified: '2026-09-26'
     subcat: ai-ml
@@ -6412,7 +6860,7 @@ categories:
     source: community
     platform: '@wshobson/claude-code-workflows'
     note: Frontend UI development and mobile application implementation across platforms
-    stars: 39971
+    stars: 40045
     installs: 537
     last_verified: '2026-09-26'
     subcat: 开发
@@ -6422,7 +6870,7 @@ categories:
     source: community
     platform: '@wshobson/claude-code-workflows'
     note: Essential developer skills including Git workflows, SQL optimization, error handling,…
-    stars: 39971
+    stars: 40045
     installs: 517
     last_verified: '2026-09-26'
     subcat: 开发
@@ -6432,7 +6880,7 @@ categories:
     source: community
     platform: '@wshobson/claude-code-workflows'
     note: Business metrics analysis, KPI tracking, financial reporting, and data-driven decision…
-    stars: 39971
+    stars: 40045
     installs: 495
     last_verified: '2026-09-26'
     subcat: business
@@ -6442,7 +6890,7 @@ categories:
     source: community
     platform: '@nextlevelbuilder/ui-ux-pro-max-skill'
     note: Professional UI/UX design intelligence for AI coding assistants. Includes searchable…
-    stars: 130632
+    stars: 131074
     installs: 491
     last_verified: '2026-09-26'
     subcat: 前端/设计
@@ -6452,7 +6900,7 @@ categories:
     source: community
     platform: '@lc2panda/wps-mcp-skills'
     note: Complete WPS Office automation skills including Excel formula generation, Word…
-    stars: 626
+    stars: 629
     installs: 483
     last_verified: '2026-09-26'
     vmethod: automated
@@ -6461,7 +6909,7 @@ categories:
     source: community
     platform: '@wshobson/claude-code-workflows'
     note: SAST analysis, dependency vulnerability scanning, OWASP Top 10 compliance, container…
-    stars: 39971
+    stars: 40045
     installs: 470
     last_verified: '2026-09-26'
     subcat: 安全
@@ -6471,7 +6919,7 @@ categories:
     source: community
     platform: '@wshobson/claude-code-workflows'
     note: Technical debt reduction, dependency updates, and code refactoring automation
-    stars: 39971
+    stars: 40045
     installs: 450
     last_verified: '2026-09-26'
     subcat: modernization
@@ -6481,7 +6929,7 @@ categories:
     source: community
     platform: '@lackeyjb/playwright-skill'
     note: Claude Code Skill for general-purpose browser automation with Playwright. Claude…
-    stars: 3150
+    stars: 3151
     installs: 433
     last_verified: '2026-09-26'
     subcat: 开发
@@ -6491,7 +6939,7 @@ categories:
     source: community
     platform: '@vercel-labs/agent-browser'
     note: Automates browser interactions for web testing, form filling, screenshots, and data…
-    stars: 43190
+    stars: 43290
     installs: 416
     last_verified: '2026-09-26'
     subcat: 开发
@@ -6501,7 +6949,7 @@ categories:
     source: community
     platform: '@K-Dense-AI/claude-scientific-skills'
     note: Collection of scientific skills
-    stars: 46646
+    stars: 46888
     installs: 414
     last_verified: '2026-09-26'
     vmethod: automated
@@ -6510,7 +6958,7 @@ categories:
     source: community
     platform: '@mrgoonie/claudekit-skills'
     note: 'Document skills: docx (Word documents), pdf (PDF processing), pptx (PowerPoint), xlsx…'
-    stars: 2217
+    stars: 2220
     installs: 361
     last_verified: '2026-09-26'
     subcat: 生产力
@@ -6520,7 +6968,7 @@ categories:
     source: community
     platform: '@daymade/daymade-skills'
     note: Transform vague prompts into precise, well-structured specifications using EARS (Easy…
-    stars: 1428
+    stars: 1432
     installs: 337
     last_verified: '2026-09-26'
     subcat: 生产力
@@ -6530,7 +6978,7 @@ categories:
     source: community
     platform: '@wshobson/claude-code-workflows'
     note: Cloud architecture design for AWS/Azure/GCP/OCI, Kubernetes cluster configuration,…
-    stars: 39971
+    stars: 40045
     installs: 328
     last_verified: '2026-09-26'
     subcat: infrastructure
@@ -6550,7 +6998,7 @@ categories:
     source: community
     platform: '@f/prompts.chat'
     note: Access thousands of AI prompts and skills directly in your AI coding assistant. Search…
-    stars: 171268
+    stars: 171435
     installs: 298
     last_verified: '2026-09-26'
     subcat: AI/记忆
@@ -6560,7 +7008,7 @@ categories:
     source: community
     platform: '@feiskyer/claude-code-settings'
     note: Claude Code settings, commands, agent and skills (all in one)
-    stars: 1655
+    stars: 1656
     installs: 298
     last_verified: '2026-09-26'
     vmethod: automated
@@ -6569,7 +7017,7 @@ categories:
     source: community
     platform: '@wshobson/claude-code-workflows'
     note: Systems programming with Rust, Go, C, and C++ for performance-critical and low-level…
-    stars: 39971
+    stars: 40045
     installs: 277
     last_verified: '2026-09-26'
     subcat: 开发
@@ -6579,7 +7027,7 @@ categories:
     source: community
     platform: '@wshobson/claude-code-workflows'
     note: CI/CD pipeline configuration, GitHub Actions/GitLab CI workflow setup, and automated…
-    stars: 39971
+    stars: 40045
     installs: 264
     last_verified: '2026-09-26'
     subcat: infrastructure
@@ -6589,7 +7037,7 @@ categories:
     source: community
     platform: '@jezweb/jezweb-skills'
     note: Office document generation with office-docs agent for DOCX, XLSX, PDF, PPTX.
-    stars: 1030
+    stars: 1033
     installs: 250
     last_verified: '2026-09-26'
     subcat: 生产力
@@ -6599,7 +7047,7 @@ categories:
     source: community
     platform: '@daymade/daymade-skills'
     note: Convert documents (PDFs, Word, PowerPoint) to high-quality markdown with multi-tool…
-    stars: 1428
+    stars: 1432
     installs: 245
     last_verified: '2026-09-26'
     subcat: document-conversion
@@ -6609,7 +7057,7 @@ categories:
     source: community
     platform: '@wshobson/claude-code-workflows'
     note: Interactive debugging, developer experience optimization, and smart debugging workflows
-    stars: 39971
+    stars: 40045
     installs: 240
     last_verified: '2026-09-26'
     subcat: 开发
@@ -6619,7 +7067,7 @@ categories:
     source: community
     platform: '@davila7/claude-code-templates'
     note: Automated documentation generation with API docs, technical writing, and content…
-    stars: 31817
+    stars: 32010
     installs: 218
     last_verified: '2026-09-26'
     vmethod: automated
@@ -6628,7 +7076,7 @@ categories:
     source: community
     platform: '@wshobson/claude-code-workflows'
     note: Technical SEO optimization including meta tags, keywords, structure, and featured snippets
-    stars: 39971
+    stars: 40045
     installs: 216
     last_verified: '2026-09-26'
     subcat: 营销/社媒
@@ -6638,7 +7086,7 @@ categories:
     source: community
     platform: '@K-Dense-AI/claude-scientific-skills'
     note: Collection of scientific thinking methodologies
-    stars: 46646
+    stars: 46888
     installs: 215
     last_verified: '2026-09-26'
     vmethod: automated
@@ -6647,7 +7095,7 @@ categories:
     source: community
     platform: '@wshobson/claude-code-workflows'
     note: Application profiling, performance optimization, and observability for frontend and…
-    stars: 39971
+    stars: 40045
     installs: 210
     last_verified: '2026-09-26'
     subcat: performance
@@ -6657,7 +7105,7 @@ categories:
     source: community
     platform: '@wshobson/claude-code-workflows'
     note: ML model training pipelines, hyperparameter tuning, model deployment automation,…
-    stars: 39971
+    stars: 40045
     installs: 192
     last_verified: '2026-09-26'
     subcat: ai-ml
@@ -7131,7 +7579,7 @@ categories:
     source: community
     platform: GitHub
     note: Claude Code 会话全文搜索，省下重复解释项目的 token
-    stars: 752
+    stars: 751
     installs: null
     last_verified: 2026-09-26
     vmethod: manual
@@ -7149,7 +7597,7 @@ categories:
     source: community
     platform: GitHub
     note: Garry Tan 的 Claude Code 完整配置：23 个意见化技能
-    stars: 134210
+    stars: 134360
     installs: null
     last_verified: 2026-09-26
     vmethod: manual
@@ -7236,7 +7684,7 @@ categories:
     source: community
     platform: GitHub / promptingguide.ai
     note: 提示工程教科书：技术综述 + 论文 + 教程
-    stars: 60000
+    stars: 78680
     installs: null
     last_verified: 2026-09-26
     vmethod: manual
@@ -7433,7 +7881,7 @@ categories:
     platform: GitHub
     subcat: 规范
     note: Google 开源的 DESIGN.md 规范草案（alpha）：YAML token + Markdown 理由，GitHub 趋势榜第一
-    stars: 26800
+    stars: 28136
     installs: null
     last_verified: '2026-09-26'
     vmethod: manual
@@ -7756,7 +8204,7 @@ categories:
     source: official
     platform: Claude Code 内置
     note: 280+ 插件，默认预注册，Verified 徽章双层审核
-    stars: 30000
+    stars: 37111
     installs: null
     last_verified: 2026-09-26
     vmethod: manual
@@ -7783,7 +8231,7 @@ categories:
     source: official
     platform: GitHub
     note: MCP 官方参考服务器仓库
-    stars: 87300
+    stars: 90640
     installs: null
     last_verified: 2026-09-26
     vmethod: manual
@@ -7846,7 +8294,7 @@ categories:
     source: community
     platform: GitHub
     note: Claude Code 生态第一人工精选索引
-    stars: 54500
+    stars: 54724
     installs: null
     last_verified: 2026-09-26
     vmethod: manual
@@ -7855,7 +8303,7 @@ categories:
     source: community
     platform: GitHub
     note: 最全面 MCP 合集，200+ 服务器
-    stars: 85000
+    stars: 95610
     installs: null
     last_verified: 2026-09-26
     vmethod: manual
@@ -7864,7 +8312,7 @@ categories:
     source: community
     platform: GitHub
     note: 最热门 Skills 合集
-    stars: 65100
+    stars: 75754
     installs: null
     last_verified: 2026-09-26
     vmethod: manual
@@ -7873,7 +8321,7 @@ categories:
     source: community
     platform: GitHub
     note: 精选向 Skills 列表
-    stars: 22000
+    stars: 15194
     installs: null
     last_verified: 2026-09-26
     vmethod: manual
@@ -7882,7 +8330,7 @@ categories:
     source: community
     platform: GitHub / npx
     note: 最大单体模板库：600+ agents、200+ commands
-    stars: 25000
+    stars: 32010
     installs: null
     last_verified: 2026-09-26
     vmethod: manual
@@ -7939,7 +8387,7 @@ categories:
     platform: GitHub
     subcat: ''
     note: 73 个品牌 DESIGN.md 逆向提取（Stripe/Linear/Vercel/Apple 等），每个含明/暗 preview，2026 增长最快仓库之一
-    stars: 105000
+    stars: 118417
     installs: null
     last_verified: '2026-09-26'
     vmethod: manual
@@ -7958,7 +8406,7 @@ categories:
     source: community
     platform: GitHub / prompts.chat
     note: 最大现成 prompt 合集，按角色分类
-    stars: 100000
+    stars: 171435
     installs: null
     last_verified: 2026-09-26
     subcat: ''
@@ -7989,7 +8437,7 @@ categories:
     platform: GitHub (topic:mcp-server)
     subcat: ''
     note: 中文 MCP 服务器合集（从资产类移至平台区）
-    stars: 7685
+    stars: 7697
     installs: null
     last_verified: '2026-09-26'
     vmethod: manual
