@@ -340,6 +340,7 @@
 | [obsidian-mcp-tools](https://github.com/jacksteamdev/obsidian-mcp-tools) | 文档/办公 | 社区 | GitHub (topic:mcp-server) | ★832 | Add Obsidian integrations like semantic search and custom Templater prompts to Claude or… |
 | [MCP-Kali-Server](https://github.com/Wh0am123/MCP-Kali-Server) | 安全 | 社区 | GitHub (topic:mcp-server) | ★828 | MCP configuration to connect AI agent to a Linux machine. |
 | [mcp-client-for-ollama](https://github.com/jonigl/mcp-client-for-ollama) | 前端/设计 | 社区 | GitHub (topic:mcp-server) | ★826 | Harness the power of local LLMs with this TUI MCP Client for Ollama. Featuring all core… |
+| [statsnet-mcp](https://github.com/usenetstate/statsnet-mcp) | 金融/商业 | 社区 | 远程 MCP (`https://statsnet.co/mcp`) | - | Background check any company in the world: registration, executives, courts and finances. Registry: `io.github.usenetstate/statsnet` |
 
 ## Plugins（具体插件）
 
