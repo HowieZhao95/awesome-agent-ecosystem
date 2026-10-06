@@ -54,6 +54,56 @@ def _ids(items, where, errors):
     return result
 
 
+def _usable_blockers(item):
+    """Return the existing publication gates for a usable resource."""
+    blockers = []
+    review = item.get("review") or {}
+    verification = item.get("verification") or {}
+    license_data = item.get("license") or {}
+    classification = item.get("classification") or {}
+    provenance = item.get("provenance") or {}
+    upstream = provenance.get("upstream") or {}
+    ref = upstream.get("ref") or {}
+    kind, ref_kind = upstream.get("kind"), ref.get("kind")
+    locked = ref_kind in {"commit", "release", "content-hash", "immutable-entry"} and (kind != "git" or ref_kind == "commit")
+
+    if review.get("status") != "approved" or not review.get("by") or not review.get("at") or not review.get("evidence"):
+        blockers.append("review must be approved with reviewer, time and evidence")
+    if verification.get("level") != "usage-tested" or not verification.get("checked_at") or not verification.get("by") or not verification.get("evidence"):
+        blockers.append("verification must be usage-tested with date, tester and evidence")
+    tested_hosts = verification.get("tested_hosts")
+    if not isinstance(tested_hosts, list) or not tested_hosts:
+        blockers.append("verification must list at least one tested_host")
+    if license_data.get("status") != "verified" or license_data.get("redistribution") != "allowed":
+        blockers.append("license and redistribution must be verified and allowed")
+    if license_data.get("status") == "verified" and (
+        not license_data.get("expression") or not license_data.get("evidence")
+    ):
+        blockers.append("verified license needs expression and evidence")
+    if not locked:
+        blockers.append("upstream ref must be immutable")
+    hosts = (item.get("compatibility") or {}).get("hosts")
+    if not isinstance(hosts, list) or not hosts:
+        blockers.append("at least one host must be declared")
+    if classification.get("category") == "design-systems" and not (
+        {"design-md", "tokens"} <= set(classification.get("conventions") or [])
+        and "css" in (classification.get("formats") or [])
+    ):
+        blockers.append("design system minimum profile needs design-md, tokens and css")
+    return blockers
+
+
+def is_usable_for_host(resource, target_host):
+    """Whether a validated public resource is usable on this specifically tested host."""
+    if not isinstance(target_host, str) or not IDENTIFIER.fullmatch(target_host):
+        return False
+    if (resource.get("lifecycle") or {}).get("state") != "usable":
+        return False
+    if target_host not in ((resource.get("verification") or {}).get("tested_hosts") or []):
+        return False
+    return not _usable_blockers(resource)
+
+
 def validate_data(categories_doc, sources_doc, resources_doc):
     """Return contract violations for the three v3 YAML documents."""
     errors = []
@@ -275,21 +325,24 @@ def validate_data(categories_doc, sources_doc, resources_doc):
         level = verification.get("level")
         if level not in VERIFICATION:
             errors.append(f"resources.{rid}.verification.level: invalid")
+        tested_hosts = verification.get("tested_hosts")
+        if not isinstance(tested_hosts, list):
+            errors.append(f"resources.{rid}.verification.tested_hosts: expected a list")
+            tested_hosts = []
+        seen_tested_hosts = set()
+        for tested_host in tested_hosts:
+            if not isinstance(tested_host, str) or not IDENTIFIER.fullmatch(tested_host):
+                errors.append(f"resources.{rid}.verification.tested_hosts: invalid stable ASCII host id {tested_host!r}")
+            elif tested_host in seen_tested_hosts:
+                errors.append(f"resources.{rid}.verification.tested_hosts: duplicate host id {tested_host}")
+            else:
+                seen_tested_hosts.add(tested_host)
+        if level == "usage-tested" and not tested_hosts:
+            errors.append(f"resources.{rid}.verification.tested_hosts: usage-tested requires at least one tested host")
+        if level != "usage-tested" and tested_hosts:
+            errors.append(f"resources.{rid}.verification.tested_hosts: only usage-tested resources may list tested hosts")
         if state == "usable":
-            blockers = []
-            if review.get("status") != "approved" or not review.get("by") or not review.get("at") or not review.get("evidence"):
-                blockers.append("review must be approved with reviewer, time and evidence")
-            if verification.get("level") != "usage-tested" or not verification.get("checked_at") or not verification.get("by") or not verification.get("evidence"):
-                blockers.append("verification must be usage-tested with date, tester and evidence")
-            if license_status != "verified" or redistribution != "allowed":
-                blockers.append("license and redistribution must be verified and allowed")
-            if not locked:
-                blockers.append("upstream ref must be immutable")
-            hosts = compatibility.get("hosts")
-            if not isinstance(hosts, list) or not hosts:
-                blockers.append("at least one host must be declared")
-            if cid == "design-systems" and not ({"design-md", "tokens"} <= set(classification.get("conventions") or []) and "css" in (classification.get("formats") or [])):
-                blockers.append("design system minimum profile needs design-md, tokens and css")
+            blockers = _usable_blockers(item)
             if blockers:
                 errors.append(f"resources.{rid}: usable is blocked: {'; '.join(blockers)}")
 

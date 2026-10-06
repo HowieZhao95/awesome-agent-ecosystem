@@ -1,0 +1,8 @@
+{
+  "method": "Node VM executes generated data and actual page script against a synthetic DOM",
+  "records": 20,
+  "all_tested_hosts_empty": true,
+  "all_usable_for_hosts_empty": true,
+  "rendered_cards": 20,
+  "scope": "Metadata rendering smoke only; not browser visual or asset runtime acceptance"
+}

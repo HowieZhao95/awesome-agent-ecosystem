@@ -20,60 +20,60 @@
 
 > 可反复用于创建特定形态设计产物的结构、起始文件、约束与示例；交付重点是产物形态。
 
-| Resource | Subtype | Relation | Lifecycle | Verification | License |
-|---|---|---|---|---|---|
-| [Web Prototype](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/web-prototype/SKILL.md) (`opendesign.web-prototype`) | prototype | curated | candidate | source-inspected | verified |
-| [HTML Pitch Deck](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/html-ppt-pitch-deck/SKILL.md) (`opendesign.html-ppt-pitch-deck`) | deck | curated | candidate | source-inspected | verified |
-| [Live Dashboard](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/live-dashboard/SKILL.md) (`opendesign.live-dashboard`) | dashboard | curated | candidate | source-inspected | verified |
-| [Motion Frames](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/motion-frames/SKILL.md) (`opendesign.motion-frames`) | motion-graphics | curated | candidate | source-inspected | verified |
-| [Docs Page](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/docs-page/SKILL.md) (`opendesign.docs-page`) | document | curated | candidate | source-inspected | verified |
-| [Social Carousel](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/social-carousel/SKILL.md) (`opendesign.social-carousel`) | custom | curated | candidate | source-inspected | verified |
-| [Device 3D Showcase HTML](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/mockup-device-3d/example.html) (`opendesign.mockup-device-3d`) | three-d | curated | candidate | source-inspected | verified |
+| Resource | Subtype | Relation | Lifecycle | Verification | 可使用宿主 | License |
+|---|---|---|---|---|---|---|
+| [Web Prototype](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/web-prototype/SKILL.md) (`opendesign.web-prototype`) | prototype | curated | candidate | source-inspected | — | verified |
+| [HTML Pitch Deck](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/html-ppt-pitch-deck/SKILL.md) (`opendesign.html-ppt-pitch-deck`) | deck | curated | candidate | source-inspected | — | verified |
+| [Live Dashboard](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/live-dashboard/SKILL.md) (`opendesign.live-dashboard`) | dashboard | curated | candidate | source-inspected | — | verified |
+| [Motion Frames](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/motion-frames/SKILL.md) (`opendesign.motion-frames`) | motion-graphics | curated | candidate | source-inspected | — | verified |
+| [Docs Page](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/docs-page/SKILL.md) (`opendesign.docs-page`) | document | curated | candidate | source-inspected | — | verified |
+| [Social Carousel](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/social-carousel/SKILL.md) (`opendesign.social-carousel`) | custom | curated | candidate | source-inspected | — | verified |
+| [Device 3D Showcase HTML](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/mockup-device-3d/example.html) (`opendesign.mockup-device-3d`) | three-d | curated | candidate | source-inspected | — | verified |
 
 <a id="design-systems"></a>
 ### 设计系统
 
 > 可应用于产物的系统化视觉与交互规范，覆盖排版、色彩、间距、状态与可访问性，并能对应到 tokens 和 CSS 等实现文件。
 
-| Resource | Subtype | Relation | Lifecycle | Verification | License |
-|---|---|---|---|---|---|
-| [Agentic Design System](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-systems/agentic/DESIGN.md) (`opendesign.agentic-design-system`) | — | curated | candidate | source-inspected | unknown |
-| [ThusStyle Quiet Product Reference](https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/packages/asset-library/src/design-styles/official.ts) (`thusdesign.quiet-product-reference`) | — | curated | reference | source-inspected | unknown |
-| [Linear.app DESIGN.md 分析参考](https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/linear.app/DESIGN.md) (`voltagent.linear-design-reference`) | — | curated | reference | source-inspected | unknown |
+| Resource | Subtype | Relation | Lifecycle | Verification | 可使用宿主 | License |
+|---|---|---|---|---|---|---|
+| [Agentic Design System](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-systems/agentic/DESIGN.md) (`opendesign.agentic-design-system`) | — | curated | candidate | source-inspected | — | unknown |
+| [ThusStyle Quiet Product Reference](https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/packages/asset-library/src/design-styles/official.ts) (`thusdesign.quiet-product-reference`) | — | curated | reference | source-inspected | — | unknown |
+| [Linear.app DESIGN.md 分析参考](https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/linear.app/DESIGN.md) (`voltagent.linear-design-reference`) | — | curated | reference | source-inspected | — | unknown |
 
 <a id="skills"></a>
 ### Skills
 
 > 指导 Agent 完成具体任务的可复用方法、步骤与辅助资源，通常以 SKILL.md 为入口。
 
-| Resource | Subtype | Relation | Lifecycle | Verification | License |
-|---|---|---|---|---|---|
-| [Brand Extract Skill](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/brand-extract/SKILL.md) (`opendesign.brand-extract`) | — | curated | candidate | source-inspected | unknown |
-| [Image Poster Skill](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/image-poster/SKILL.md) (`opendesign.image-poster`) | — | curated | candidate | source-inspected | unknown |
-| [Remotion Best Practices](https://github.com/remotion-dev/skills/blob/473352613039e718e46655a26df224851e84c4aa/skills/remotion-best-practices/SKILL.md) (`remotion.best-practices`) | — | curated | candidate | source-inspected | unknown |
-| [Remotion Render](https://github.com/remotion-dev/skills/blob/473352613039e718e46655a26df224851e84c4aa/skills/remotion-render/SKILL.md) (`remotion.render`) | — | curated | candidate | source-inspected | unknown |
-| [ThusDesign Inspiration Scout](https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/packages/ai/skills/inspiration-scout/SKILL.md) (`thusdesign.inspiration-scout`) | — | curated | candidate | source-inspected | unknown |
+| Resource | Subtype | Relation | Lifecycle | Verification | 可使用宿主 | License |
+|---|---|---|---|---|---|---|
+| [Brand Extract Skill](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/brand-extract/SKILL.md) (`opendesign.brand-extract`) | — | curated | candidate | source-inspected | — | unknown |
+| [Image Poster Skill](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/image-poster/SKILL.md) (`opendesign.image-poster`) | — | curated | candidate | source-inspected | — | unknown |
+| [Remotion Best Practices](https://github.com/remotion-dev/skills/blob/473352613039e718e46655a26df224851e84c4aa/skills/remotion-best-practices/SKILL.md) (`remotion.best-practices`) | — | curated | candidate | source-inspected | — | unknown |
+| [Remotion Render](https://github.com/remotion-dev/skills/blob/473352613039e718e46655a26df224851e84c4aa/skills/remotion-render/SKILL.md) (`remotion.render`) | — | curated | candidate | source-inspected | — | unknown |
+| [ThusDesign Inspiration Scout](https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/packages/ai/skills/inspiration-scout/SKILL.md) (`thusdesign.inspiration-scout`) | — | curated | candidate | source-inspected | — | unknown |
 
 <a id="prompts"></a>
 ### 提示词
 
 > 可直接复用或填入变量的生成、编辑或行为指导文本。
 
-| Resource | Subtype | Relation | Lifecycle | Verification | License |
-|---|---|---|---|---|---|
-| [OpenDesign 仓库 AGENTS.md](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/AGENTS.md) (`opendesign.repo-agents-md`) | principle | curated | reference | source-inspected | unknown |
-| [Shinning GPT Image 2 Prompt Entry](https://x.com/Shinning1010/status/2048663549413921103) (`thusdesign.prompt.shinning-x2048663549413921103`) | image | curated | candidate | unverified | unknown |
-| [Atlas Seedance Video Prompt Entry](https://x.com/IHayato/status/2041839076354224178) (`thusdesign.prompt.atlas-2041839076354224178`) | video | curated | candidate | unverified | unknown |
+| Resource | Subtype | Relation | Lifecycle | Verification | 可使用宿主 | License |
+|---|---|---|---|---|---|---|
+| [OpenDesign 仓库 AGENTS.md](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/AGENTS.md) (`opendesign.repo-agents-md`) | principle | curated | reference | source-inspected | — | unknown |
+| [Shinning GPT Image 2 Prompt Entry](https://x.com/Shinning1010/status/2048663549413921103) (`thusdesign.prompt.shinning-x2048663549413921103`) | image | curated | candidate | unverified | — | unknown |
+| [Atlas Seedance Video Prompt Entry](https://x.com/IHayato/status/2041839076354224178) (`thusdesign.prompt.atlas-2041839076354224178`) | video | curated | candidate | unverified | — | unknown |
 
 <a id="plugins"></a>
 ### 插件
 
 > 具有稳定身份和安装或启用边界的能力分发单元，可包含一种或多种组件；MCP 或 CLI 可作为单组件插件，须能说明具体分发单元。
 
-| Resource | Subtype | Relation | Lifecycle | Verification | License |
-|---|---|---|---|---|---|
-| [td-drama-production](https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/packages/td-plugins/td-drama-production/plugin.json) (`thusdesign.td-drama-production`) | — | curated | candidate | source-inspected | unknown |
-| [@thusdesign/cli](https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/apps/aigc-cli/package.json) (`thusdesign.cli`) | — | curated | candidate | source-inspected | unknown |
+| Resource | Subtype | Relation | Lifecycle | Verification | 可使用宿主 | License |
+|---|---|---|---|---|---|---|
+| [td-drama-production](https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/packages/td-plugins/td-drama-production/plugin.json) (`thusdesign.td-drama-production`) | — | curated | candidate | source-inspected | — | unknown |
+| [@thusdesign/cli](https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/apps/aigc-cli/package.json) (`thusdesign.cli`) | — | curated | candidate | source-inspected | — | unknown |
 
 
 **Components in td-drama-production**

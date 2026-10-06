@@ -159,7 +159,7 @@ function renderStats() {
   const stats = [
     { num: assets.length, label: "资源" },
     { num: assets.filter(e => e.lifecycle.state === "candidate").length, label: "候选" },
-    { num: assets.filter(e => e.lifecycle.state === "usable").length, label: "可使用" },
+    { num: assets.filter(e => e.lifecycle.state === "usable").length, label: "至少一个宿主可用" },
     { num: assets.filter(e => e.review.status === "pending").length, label: "待审核" },
     { num: assets.filter(e => e.verification.level === "usage-tested").length, label: "已实测" }
   ];
@@ -204,6 +204,10 @@ function renderFilters() {
 
 function cardHTML(e) {
   const distribution = e.distribution.map(channel => channel.kind).join(" / ") || "未提供公开分发入口";
+  const lifecycleLabel = e.lifecycle.state === "usable"
+    ? `可使用（${e.usable_for_hosts.join("、")}）`
+    : (LIFECYCLE_LABELS[e.lifecycle.state] || e.lifecycle.state);
+  const testedHostLabel = e.tested_hosts.length ? ` · 宿主：${e.tested_hosts.join("、")}` : "";
   return `
     <div class="card">
       <div class="card-top">
@@ -216,9 +220,9 @@ function cardHTML(e) {
       <div class="card-note">${e.note}</div>
       <div class="card-meta">
         <span class="platform">分发：${distribution}</span>
-        <span class="verified">状态：${LIFECYCLE_LABELS[e.lifecycle.state] || e.lifecycle.state}</span>
+        <span class="verified">状态：${lifecycleLabel}</span>
         <span class="verified">审核：${e.review.status}</span>
-        <span class="verified">验证：${VERIFICATION_LABELS[e.verification.level] || e.verification.level}</span>
+        <span class="verified">验证：${VERIFICATION_LABELS[e.verification.level] || e.verification.level}${testedHostLabel}</span>
         <span class="verified">许可：${e.license.status} / ${e.license.redistribution}</span>
       </div>
     </div>`;

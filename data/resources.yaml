@@ -64,6 +64,7 @@ resources:
   review: {status: pending, by: null, at: null, evidence: []}
   verification:
     level: source-inspected
+    tested_hosts: []
     checked_at: '2026-10-07'
     by: ThusDesign cataloguer
     evidence:
@@ -132,6 +133,7 @@ resources:
   review: {status: pending, by: null, at: null, evidence: []}
   verification:
     level: source-inspected
+    tested_hosts: []
     checked_at: '2026-10-07'
     by: ThusDesign cataloguer
     evidence:
@@ -199,6 +201,7 @@ resources:
   review: {status: pending, by: null, at: null, evidence: []}
   verification:
     level: source-inspected
+    tested_hosts: []
     checked_at: '2026-10-07'
     by: ThusDesign cataloguer
     evidence:
@@ -266,6 +269,7 @@ resources:
   review: {status: pending, by: null, at: null, evidence: []}
   verification:
     level: source-inspected
+    tested_hosts: []
     checked_at: '2026-10-07'
     by: ThusDesign cataloguer
     evidence:
@@ -331,6 +335,7 @@ resources:
   review: {status: pending, by: null, at: null, evidence: []}
   verification:
     level: source-inspected
+    tested_hosts: []
     checked_at: '2026-10-07'
     by: ThusDesign cataloguer
     evidence:
@@ -392,6 +397,7 @@ resources:
   review: {status: pending, by: null, at: null, evidence: []}
   verification:
     level: source-inspected
+    tested_hosts: []
     checked_at: '2026-10-07'
     by: ThusDesign cataloguer
     evidence:
@@ -438,6 +444,7 @@ resources:
   review: {status: pending, by: null, at: null, evidence: []}
   verification:
     level: source-inspected
+    tested_hosts: []
     checked_at: '2026-10-07'
     by: ThusDesign cataloguer
     evidence:
@@ -482,6 +489,7 @@ resources:
   review: {status: pending, by: null, at: null, evidence: []}
   verification:
     level: source-inspected
+    tested_hosts: []
     checked_at: '2026-10-07'
     by: ThusDesign cataloguer
     evidence:
@@ -527,6 +535,7 @@ resources:
   review: {status: pending, by: null, at: null, evidence: []}
   verification:
     level: source-inspected
+    tested_hosts: []
     checked_at: '2026-10-07'
     by: ThusDesign cataloguer
     evidence:
@@ -561,6 +570,7 @@ resources:
   review: {status: pending, by: null, at: null, evidence: []}
   verification:
     level: source-inspected
+    tested_hosts: []
     checked_at: '2026-10-07'
     by: ThusDesign cataloguer
     evidence:
@@ -608,6 +618,7 @@ resources:
   review: {status: pending, by: null, at: null, evidence: []}
   verification:
     level: source-inspected
+    tested_hosts: []
     checked_at: '2026-10-07'
     by: ThusDesign cataloguer
     evidence:
@@ -656,6 +667,7 @@ resources:
   review: {status: pending, by: null, at: null, evidence: []}
   verification:
     level: source-inspected
+    tested_hosts: []
     checked_at: '2026-10-07'
     by: ThusDesign cataloguer
     evidence:
@@ -702,6 +714,7 @@ resources:
   review: {status: pending, by: null, at: null, evidence: []}
   verification:
     level: source-inspected
+    tested_hosts: []
     checked_at: '2026-10-07'
     by: ThusDesign cataloguer
     evidence:
@@ -740,6 +753,7 @@ resources:
   review: {status: pending, by: null, at: null, evidence: []}
   verification:
     level: unverified
+    tested_hosts: []
     checked_at: '2026-10-07'
     by: ThusDesign cataloguer
     evidence:
@@ -778,6 +792,7 @@ resources:
   review: {status: pending, by: null, at: null, evidence: []}
   verification:
     level: unverified
+    tested_hosts: []
     checked_at: '2026-10-07'
     by: ThusDesign cataloguer
     evidence:
@@ -921,6 +936,7 @@ resources:
   review: {status: pending, by: null, at: null, evidence: []}
   verification:
     level: source-inspected
+    tested_hosts: []
     checked_at: '2026-10-07'
     by: ThusDesign cataloguer
     evidence:
@@ -988,6 +1004,7 @@ resources:
   review: {status: pending, by: null, at: null, evidence: []}
   verification:
     level: source-inspected
+    tested_hosts: []
     checked_at: '2026-10-07'
     by: ThusDesign cataloguer
     evidence:
@@ -1027,6 +1044,7 @@ resources:
   review: {status: pending, by: null, at: null, evidence: []}
   verification:
     level: source-inspected
+    tested_hosts: []
     checked_at: '2026-10-07'
     by: ThusDesign cataloguer
     evidence:
@@ -1060,6 +1078,7 @@ resources:
   review: {status: pending, by: null, at: null, evidence: []}
   verification:
     level: source-inspected
+    tested_hosts: []
     checked_at: '2026-10-07'
     by: cataloguer
     evidence:
@@ -1123,6 +1142,7 @@ resources:
   review: {status: pending, by: null, at: null, evidence: []}
   verification:
     level: source-inspected
+    tested_hosts: []
     checked_at: '2026-10-07'
     by: ThusDesign cataloguer
     evidence:

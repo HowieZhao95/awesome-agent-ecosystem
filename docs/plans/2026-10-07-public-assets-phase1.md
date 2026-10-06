@@ -10,7 +10,7 @@
 
 - 工作位置：awesome-agent-ecosystem 现有干净 `main` 检出；不使用 worktree，不改 myApps。
 - 本阶段仅定义、来源登记、样例与必要的数据校验/生成接线，不实现站点账户、安装或 Agent runtime。
-- 尚未获用户终审：规范与样例保持 draft/pending；不得标成已审核或可使用。
+- 2026-10-07 用户已认可五类定义与总体边界；整体契约仍等待 P1/P1/P2 三处修正后的冻结审核。分类 review_status 记 approved，目录与资源 review 保持 pending，不能把规范认可当作资源实测或可使用批准。
 - 不 push、不发 release、不替用户审核或合并。提交前检查所有改动与暂存状态，按适用授权执行。
 - 来源查证、代码检查可由 GPT-6 Luna 分工；写文件前划分范围。主会话终审。
 
@@ -48,6 +48,17 @@
 
 ## 剩余关卡
 
-1. 用户审核分类、公共元数据与来源维护规则；未收到审核结论，目标保持 active。
+1. 用户已认可分类与总体边界；OpenDesign 跟踪范围、Skill 只读指针边界及可识别实测宿主三处修正后，再交用户批准契约冻结，不能把本次修正授权自动当作冻结批准。
 2. 两条原始 X 线索未独立核验，Remotion 许可及各候选使用验证未完成；这些是明确标注的候选缺口，不伪装成阶段 1 的已可安装资源。
 3. 尚未 push、发布或修改既有远端 PR；myApps 的 raw-main 历史消费者仍未迁移，后续接入须使用批准发布版本。
+
+## 2026-10-07 用户审核修正
+
+- [P1] OpenDesign tracking.scope 改相对路径数组；覆盖真实官方 examples 内容和 manifest、seed、example、素材/引用、设计系统及许可路径。另核对归档中存在的 `apps/web/public/community-templates/social-carousel.jpg` 并纳入跟踪，防预览证据漏跟踪。
+- [P1] 公共目录/上游引用锁版本与 Skill 安装解耦。Skill 仍用既有只读指针和重新安装，无安装版本、物化/分发快照、扫描、fork 或新的安装内核；依据产品 v4 收敛及当前指针安装代码。
+- [P2] 新增 verification.tested_hosts 稳定宿主 ID 数组；所有 20 条当前资源均为 []，不伪造实测。usable_for_hosts 为已验证记录派生的公开投影，只在具体 host 匹配且原门槛全满足时可用。仅测 OpenDesign 不得标 ThusDesign 可用，当前已有 Skill 安装裁定不被改写。
+- 只改公共数据/契约与必要校验/生成投影；不改 myApps 产品源码、DB 或安装机制，不进入阶段 2。
+- 修正验收：先红后绿，完整 41 tests PASS，日志 `docs/evidence/2026-10-07-review-fixes-tests.log`。涵盖实际 OpenDesign 路径/预览证据与 scope 覆盖、tested_hosts 类型/唯一性/验证层级、仅 OpenDesign 实测时 ThusDesign 两宿主均不可用及生成投影。
+- 新旧校验 PASS，20 条记录/18 来源生成通过，二次生成字节一致；旧发现队列 803 条原始字节保持。证据 `docs/evidence/2026-10-07-review-fixes-validation.json`。实际 20 条 tested_hosts 全为空且未增加任何 usable 标记。
+- 使用实际页面脚本与生成数据执行 Node VM 元数据渲染烟测：20 张卡、0 已实测/可用宿主，无泛化可用声明。此检查不是浏览器视觉验收或资源运行验证；见 `docs/evidence/2026-10-07-review-fixes-render-smoke.json`。
+- 分类认可已记录；三处修正准备复核，未代替用户批准契约冻结，未进入阶段 2，未 push/release。

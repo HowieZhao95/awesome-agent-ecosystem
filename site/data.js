@@ -134,6 +134,7 @@ const DATA = {
           },
           "verification": {
             "level": "source-inspected",
+            "tested_hosts": [],
             "checked_at": "2026-10-07",
             "by": "ThusDesign cataloguer",
             "evidence": [
@@ -160,6 +161,8 @@ const DATA = {
               "manifest 对自身示例声明 MIT；外部字体、媒体及品牌资源未完成逐项权利核查，整体再分发保持未知。"
             ]
           },
+          "tested_hosts": [],
+          "usable_for_hosts": [],
           "authors": {
             "status": "known",
             "identities": [
@@ -310,6 +313,7 @@ const DATA = {
           },
           "verification": {
             "level": "source-inspected",
+            "tested_hosts": [],
             "checked_at": "2026-10-07",
             "by": "ThusDesign cataloguer",
             "evidence": [
@@ -335,6 +339,8 @@ const DATA = {
               "manifest 对自身示例声明 MIT；外部字体、媒体及品牌资源未完成逐项权利核查，整体再分发保持未知。"
             ]
           },
+          "tested_hosts": [],
+          "usable_for_hosts": [],
           "authors": {
             "status": "known",
             "identities": [
@@ -484,6 +490,7 @@ const DATA = {
           },
           "verification": {
             "level": "source-inspected",
+            "tested_hosts": [],
             "checked_at": "2026-10-07",
             "by": "ThusDesign cataloguer",
             "evidence": [
@@ -509,6 +516,8 @@ const DATA = {
               "manifest 对自身示例声明 MIT；外部字体、媒体及品牌资源未完成逐项权利核查，整体再分发保持未知。"
             ]
           },
+          "tested_hosts": [],
+          "usable_for_hosts": [],
           "authors": {
             "status": "known",
             "identities": [
@@ -659,6 +668,7 @@ const DATA = {
           },
           "verification": {
             "level": "source-inspected",
+            "tested_hosts": [],
             "checked_at": "2026-10-07",
             "by": "ThusDesign cataloguer",
             "evidence": [
@@ -680,6 +690,8 @@ const DATA = {
               "manifest 对自身示例声明 MIT；外部字体、媒体及品牌资源未完成逐项权利核查，整体再分发保持未知。"
             ]
           },
+          "tested_hosts": [],
+          "usable_for_hosts": [],
           "authors": {
             "status": "known",
             "identities": [
@@ -829,6 +841,7 @@ const DATA = {
           },
           "verification": {
             "level": "source-inspected",
+            "tested_hosts": [],
             "checked_at": "2026-10-07",
             "by": "ThusDesign cataloguer",
             "evidence": [
@@ -850,6 +863,8 @@ const DATA = {
               "manifest 对自身示例声明 MIT；外部字体、媒体及品牌资源未完成逐项权利核查，整体再分发保持未知。"
             ]
           },
+          "tested_hosts": [],
+          "usable_for_hosts": [],
           "authors": {
             "status": "known",
             "identities": [
@@ -988,6 +1003,7 @@ const DATA = {
           },
           "verification": {
             "level": "source-inspected",
+            "tested_hosts": [],
             "checked_at": "2026-10-07",
             "by": "ThusDesign cataloguer",
             "evidence": [
@@ -1010,6 +1026,8 @@ const DATA = {
               "manifest 对自身示例声明 MIT；外部字体、媒体及品牌资源未完成逐项权利核查，整体再分发保持未知。"
             ]
           },
+          "tested_hosts": [],
+          "usable_for_hosts": [],
           "authors": {
             "status": "known",
             "identities": [
@@ -1150,6 +1168,7 @@ const DATA = {
           },
           "verification": {
             "level": "source-inspected",
+            "tested_hosts": [],
             "checked_at": "2026-10-07",
             "by": "ThusDesign cataloguer",
             "evidence": [
@@ -1168,6 +1187,8 @@ const DATA = {
               "manifest 对自身示例声明 MIT；外部字体、媒体及品牌资源未完成逐项权利核查，整体再分发保持未知。"
             ]
           },
+          "tested_hosts": [],
+          "usable_for_hosts": [],
           "authors": {
             "status": "known",
             "identities": [
@@ -1308,6 +1329,7 @@ const DATA = {
           },
           "verification": {
             "level": "source-inspected",
+            "tested_hosts": [],
             "checked_at": "2026-10-07",
             "by": "ThusDesign cataloguer",
             "evidence": [
@@ -1337,6 +1359,8 @@ const DATA = {
               "没有应用到具体项目的兼容验证。"
             ]
           },
+          "tested_hosts": [],
+          "usable_for_hosts": [],
           "authors": {
             "status": "unknown",
             "identities": [],
@@ -1424,6 +1448,7 @@ const DATA = {
           },
           "verification": {
             "level": "source-inspected",
+            "tested_hosts": [],
             "checked_at": "2026-10-07",
             "by": "ThusDesign cataloguer",
             "evidence": [
@@ -1437,6 +1462,8 @@ const DATA = {
               "作者与分发/复制许可未知；只作 reference。"
             ]
           },
+          "tested_hosts": [],
+          "usable_for_hosts": [],
           "authors": {
             "status": "unknown",
             "identities": [],
@@ -1536,6 +1563,7 @@ const DATA = {
           },
           "verification": {
             "level": "source-inspected",
+            "tested_hosts": [],
             "checked_at": "2026-10-07",
             "by": "cataloguer",
             "evidence": [
@@ -1553,6 +1581,8 @@ const DATA = {
               "未核实内容作者、发布者、许可、CSS/tokens、宿主兼容或使用效果；不声称 Linear 官方作者。"
             ]
           },
+          "tested_hosts": [],
+          "usable_for_hosts": [],
           "authors": {
             "status": "unknown",
             "identities": [],
@@ -1670,6 +1700,7 @@ const DATA = {
           },
           "verification": {
             "level": "source-inspected",
+            "tested_hosts": [],
             "checked_at": "2026-10-07",
             "by": "ThusDesign cataloguer",
             "evidence": [
@@ -1687,6 +1718,8 @@ const DATA = {
               "未执行 Skill。"
             ]
           },
+          "tested_hosts": [],
+          "usable_for_hosts": [],
           "authors": {
             "status": "unknown",
             "identities": [],
@@ -1803,6 +1836,7 @@ const DATA = {
           },
           "verification": {
             "level": "source-inspected",
+            "tested_hosts": [],
             "checked_at": "2026-10-07",
             "by": "ThusDesign cataloguer",
             "evidence": [
@@ -1820,6 +1854,8 @@ const DATA = {
               "未执行模型调用或模板。"
             ]
           },
+          "tested_hosts": [],
+          "usable_for_hosts": [],
           "authors": {
             "status": "unknown",
             "identities": [],
@@ -1942,6 +1978,7 @@ const DATA = {
           },
           "verification": {
             "level": "source-inspected",
+            "tested_hosts": [],
             "checked_at": "2026-10-07",
             "by": "ThusDesign cataloguer",
             "evidence": [
@@ -1960,6 +1997,8 @@ const DATA = {
               "本机历史 Skill 版本不明，不等同于此次锁定版本。"
             ]
           },
+          "tested_hosts": [],
+          "usable_for_hosts": [],
           "authors": {
             "status": "unknown",
             "identities": [],
@@ -2092,6 +2131,7 @@ const DATA = {
           },
           "verification": {
             "level": "source-inspected",
+            "tested_hosts": [],
             "checked_at": "2026-10-07",
             "by": "ThusDesign cataloguer",
             "evidence": [
@@ -2110,6 +2150,8 @@ const DATA = {
               "本机历史 Skill 版本不明，不等同于此次锁定版本。"
             ]
           },
+          "tested_hosts": [],
+          "usable_for_hosts": [],
           "authors": {
             "status": "unknown",
             "identities": [],
@@ -2229,6 +2271,7 @@ const DATA = {
           },
           "verification": {
             "level": "source-inspected",
+            "tested_hosts": [],
             "checked_at": "2026-10-07",
             "by": "ThusDesign cataloguer",
             "evidence": [
@@ -2242,6 +2285,8 @@ const DATA = {
               "不复制正文/私人源规则；author 与 license unknown。"
             ]
           },
+          "tested_hosts": [],
+          "usable_for_hosts": [],
           "authors": {
             "status": "unknown",
             "identities": [],
@@ -2349,6 +2394,7 @@ const DATA = {
           },
           "verification": {
             "level": "source-inspected",
+            "tested_hosts": [],
             "checked_at": "2026-10-07",
             "by": "ThusDesign cataloguer",
             "evidence": [
@@ -2361,6 +2407,8 @@ const DATA = {
               "未复制原文；适配性取决于目标仓库规则。"
             ]
           },
+          "tested_hosts": [],
+          "usable_for_hosts": [],
           "authors": {
             "status": "unknown",
             "identities": [],
@@ -2459,6 +2507,7 @@ const DATA = {
           },
           "verification": {
             "level": "unverified",
+            "tested_hosts": [],
             "checked_at": "2026-10-07",
             "by": "ThusDesign cataloguer",
             "evidence": [
@@ -2472,6 +2521,8 @@ const DATA = {
               "不包含或复制 prompt 正文和媒体；作者与许可未知。"
             ]
           },
+          "tested_hosts": [],
+          "usable_for_hosts": [],
           "authors": {
             "status": "unknown",
             "identities": [],
@@ -2570,6 +2621,7 @@ const DATA = {
           },
           "verification": {
             "level": "unverified",
+            "tested_hosts": [],
             "checked_at": "2026-10-07",
             "by": "ThusDesign cataloguer",
             "evidence": [
@@ -2583,6 +2635,8 @@ const DATA = {
               "不包含或复制 prompt 正文和媒体；作者与许可未知。"
             ]
           },
+          "tested_hosts": [],
+          "usable_for_hosts": [],
           "authors": {
             "status": "unknown",
             "identities": [],
@@ -2848,6 +2902,7 @@ const DATA = {
           },
           "verification": {
             "level": "source-inspected",
+            "tested_hosts": [],
             "checked_at": "2026-10-07",
             "by": "ThusDesign cataloguer",
             "evidence": [
@@ -2862,6 +2917,8 @@ const DATA = {
               "七个技能是否对外分发以及各组件作者/许可未知。"
             ]
           },
+          "tested_hosts": [],
+          "usable_for_hosts": [],
           "authors": {
             "status": "unknown",
             "identities": [],
@@ -3011,6 +3068,7 @@ const DATA = {
           },
           "verification": {
             "level": "source-inspected",
+            "tested_hosts": [],
             "checked_at": "2026-10-07",
             "by": "ThusDesign cataloguer",
             "evidence": [
@@ -3029,6 +3087,8 @@ const DATA = {
               "许可与各 MCP 客户端兼容尚未验证。"
             ]
           },
+          "tested_hosts": [],
+          "usable_for_hosts": [],
           "authors": {
             "status": "unknown",
             "identities": [],

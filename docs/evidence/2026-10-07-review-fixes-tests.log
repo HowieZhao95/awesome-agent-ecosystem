@@ -1,0 +1,31 @@
+## unit tests
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 -m unittest discover -s tests
+OK  no new plugins
+::warning::claude-plugins.dev skipped: <urlopen error rate limited>
+OK  official market imported:  +1
+OK  community (downloads>=100) imported: +0
+OK  plugins category now: 2 entries
+Discovery queue updated; review and promote candidates through the v3 catalog workflow.
+::warning::Smithery registry skipped: <urlopen error rate limited>
+OK  skills imported: +0  (now 1)
+OK  mcp imported:    +1  (now 1)
+Discovery queue updated; review and promote candidates through the v3 catalog workflow.
+OK  no new skills or MCP servers
+OK  skills imported: +101  (now 102)
+OK  mcp imported:    +0  (now 0)
+Discovery queue updated; review and promote candidates through the v3 catalog workflow.
+.........................................
+----------------------------------------------------------------------
+Ran 41 tests in 10.317s
+
+OK
+exit_code=0
+
+## schema validation
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 scripts/validate.py
+PASS: schema_version=3
+exit_code=0
+
+## git diff check
+$ git diff --check
+exit_code=0

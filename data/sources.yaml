@@ -5,11 +5,39 @@ sources:
   url: https://github.com/nexu-io/open-design
   roles: [content-upstream, distribution-channel]
   access: public
-  tracking: {scope: 'design-templates/{web-prototype,html-ppt-pitch-deck,live-dashboard,motion-frames,docs-page,social-carousel,image-poster}; design-systems/agentic; skills/brand-extract; AGENTS.md。只跟踪本轮样例选择的目录与文件，不声明全仓收录。;
-      plugins/_official/examples/mockup-device-3d/{open-design.json,SKILL.md,example.html} (three-d sample).', exclude: [], baseline: 'commit:53231d40b778d88eba23f35547bf99485d3ae9fc; 对照本地归档 open-design-53231d40b778d88eba23f35547bf99485d3ae9fc.tar.gz',
-    cadence: manual, method: 'Compare the new candidate commit with the previously pinned SHA only across scope paths; inspect per-example manifests, authors/license, seeds/examples, and external assets;
-      preserve old evidence if fetch fails and submit a review proposal without auto-promotion.', promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。, last_checked: '2026-10-07', limitations: [归档可读；本轮只审查选中路径和相应声明。根
-        LICENSE 为 Apache-2.0 不足以确认外部素材、嵌入品牌资产或逐项授权。, 作者与单项许可须逐条检查 manifest/源证据；未完成项维持 unknown。]}
+  tracking:
+    scope:
+      - design-templates/web-prototype/**
+      - design-templates/html-ppt-pitch-deck/**
+      - design-templates/html-ppt/templates/full-decks/pitch-deck/index.html
+      - design-templates/live-dashboard/**
+      - design-templates/motion-frames/**
+      - design-templates/docs-page/**
+      - design-templates/social-carousel/**
+      - design-templates/image-poster/**
+      - plugins/_official/examples/web-prototype/**
+      - plugins/_official/examples/html-ppt-pitch-deck/**
+      - plugins/_official/examples/live-dashboard/**
+      - plugins/_official/examples/motion-frames/**
+      - plugins/_official/examples/docs-page/**
+      - plugins/_official/examples/social-carousel/**
+      - plugins/_official/examples/mockup-device-3d/**
+      - apps/web/public/community-templates/social-carousel.jpg
+      - design-systems/agentic/**
+      - skills/brand-extract/**
+      - craft/**
+      - AGENTS.md
+      - LICENSE
+    exclude: []
+    baseline: 'commit:53231d40b778d88eba23f35547bf99485d3ae9fc; 对照本地归档 open-design-53231d40b778d88eba23f35547bf99485d3ae9fc.tar.gz'
+    cadence: manual
+    method: 'Resolve candidate upstream commits and compare every scoped path, including per-example manifests, skills, seeds, examples, assets, references, design-system manifests/tokens/CSS/previews/source, craft guidance, and root license/agent instructions. Inspect per-item author and license claims; preserve old evidence if fetch fails and submit a review proposal without auto-promotion.'
+    promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。
+    last_checked: '2026-10-07'
+    limitations:
+      - 仅跟踪本轮选定资源、设计系统和相关规范所依赖的明确路径；不声明全仓收录，也不纳入 OpenDesign 执行内核。
+      - 归档根 LICENSE 存在；根 NOTICE 不存在。根许可不足以确认外部素材、嵌入品牌资产或逐项授权。
+      - 作者与单项许可须逐条检查 manifest/源证据；未完成项维持 unknown。
 - id: remotion-dev.skills
   name: Remotion 官方 Skills 内容仓库
   url: https://github.com/remotion-dev/skills

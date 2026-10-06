@@ -1,6 +1,7 @@
 # 分类正本；标签/枚举/网站分类只能由此生成或引用。
 schema_version: 3
-review_status: pending
+review_status: approved
+# 2026-10-07 用户认可分类定义；整体契约仍等待三处修正后的冻结审核。
 categories:
   - id: templates
     label: 设计模板

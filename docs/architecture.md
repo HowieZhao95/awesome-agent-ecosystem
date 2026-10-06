@@ -1,6 +1,6 @@
 # 公共 Agent 资产：阶段 1 契约
 
-状态：**draft，待用户审核**。本阶段建立定义、来源与映射样例；未实现账户登录、安装、站点迁移或运行时接入。机器校验通过不能代替内容审核或真实运行验证。
+状态：**draft，分类与总体边界已获认可，契约修正后待冻结审核**。本阶段建立定义、来源与映射样例；未实现账户登录、安装、站点迁移或运行时接入。机器校验通过不能代替内容审核或真实运行验证。
 
 ## 正本与职责
 
@@ -44,13 +44,21 @@ README 与 `site/data.js`、`site/catalog.json` 由正本生成。未来的类�
 | `license` | `{status: verified/unknown, expression, scope, evidence, redistribution: allowed/blocked/unknown}`；只对证据覆盖的具体内容生效，字体、图片和第三方组件分别说明，不继承本目录 CC0 |
 | `distribution` | 分发渠道数组：`{kind, channel_source, url}`；渠道可为 repository、marketplace、npm、product-bundled、upstream-link。有登记来源时引用具有 distribution-channel 角色的 ID；内容出处仍由 upstream 描述，发现途径由 discovered_via 描述 |
 | `previews` | `{kind, url, status: reference/verified, evidence}` 数组；示例 HTML/媒体是 reference，只有检查实际可预览且写证据才是 verified；无预览写 [] 并在 verification.limits 说明 |
-| `compatibility` | `hosts` 明确目标宿主；`runtimes: [{name, version, status: declared/verified/unknown}]`；`dependencies: [{kind, name, version, source_id}]`；`constraints` 列出必要条件。null version 不代表兼容任何版本 |
+| `compatibility` | `hosts` 声明预期目标宿主，不代表已验证；`runtimes: [{name, version, status: declared/verified/unknown}]`；`dependencies: [{kind, name, version, source_id}]`；`constraints` 列出必要条件。null version 不代表兼容任何版本 |
 | `components` | 仅 plugins 非空：`{id, type, resource_id, upstream, subtype, delivery}`；type 来自分类正本，resource_id 可引用已登记组件或为 null，此时仍须给精确 upstream；delivery=contained/referenced/host-provided，避免把宿主模块说成插件携带的内容 |
 | `lifecycle` | `{state: reference/candidate/usable/withdrawn, reason, replacement_id}`；参考资料仅供阅读，candidate 待审核/适配/验证，usable 满足下面全部门槛，withdrawn 保留身份与原因 |
 | `review` | `{status: pending/approved/rejected, by, at, evidence}`；by/at 在 pending 时为 null，不冒充用户审批 |
-| `verification` | `{level: unverified/source-inspected/usage-tested, checked_at, by, evidence, limits}`；source-inspected 仅证明文件/声明查过，usage-tested 必须写实际版本、环境、操作和结果，不能从 README、热度或人工收录推导 |
+| `verification` | `{level: unverified/source-inspected/usage-tested, tested_hosts: [稳定宿主 ID], checked_at, by, evidence, limits}`；source-inspected 仅证明文件/声明查过；usage-tested 是总体概览，tested_hosts 明确在哪些宿主测过。实测必须写版本、环境、操作和结果，不能从兼容声明、README、热度或人工收录推导 |
 
 `verification.evidence` 为 `{locator, claim}` 数组。locator 可以是精确公开 URL、同仓文件路径、`product-source:<commit>:<path>#<selector>` 等审计定位符；受限产品源码证据必须在 limits 明示不可公开访问，不能伪装公开下载入口。阶段 1 不复制私有产品内容；许可未知的记录保持 reference/candidate。
+
+`verification.tested_hosts` 是可由程序精确匹配的 ASCII 宿主 ID 数组，例如 `opendesign`、`thusdesign-desktop`、`thusdesign-web`。显示名称或 `compatibility.hosts` 中的预期宿主不能填入此字段。无实测时明确为 `[]`，并保持 unverified/source-inspected；usage-tested 至少记录一个实测宿主，证据须能对应到该宿主与测试环境。Web 与 Desktop 分开记录，不自动互相扩展；跨宿主迁移需重新验证，不建设复杂兼容矩阵。
+
+目标宿主的可用标记及安装入口按 **资源满足 usable 的全部门槛，并且目标宿主 ID 属于 tested_hosts** 判断。公开目录可投影符合门槛的 `usable_for_hosts`，消费者不能把全局 lifecycle=usable 或 usage-tested 当作所有宿主可用。只在 OpenDesign 测过的对象可标为“可使用于 opendesign”，不得因此显示为 ThusDesign 可用。阶段 1 没有安装入口；本条约束后续接入的展示与入口判断，不实现安装或运行内核。
+
+该判断用于本公共目录的目标宿主可用投影及后续接入，不替换现有 Skill 商店的安装/重新安装裁定，也不追溯改写、删除或阻断既有安装指针。
+
+tested_hosts 描述该资源记录对应上游基线的验证结果，不保证 Skill 安装指针未来指向的变化内容也已验证。内容变化仍按既有人工审查和重新安装机制处理，本字段不引入安装版本跟踪、分发快照或自动扫描。
 
 upstream 的 url 必须指向具体文件、目录或不可变条目。git 记录必须有相对 path；Web/产品页面含多条目时必须有 selector；仓库首页本身、目录站搜索页不能作为唯一的具体出处。git ref.kind=commit 需完整 40 位 SHA；移动分支不能作为发布锁定引用。找不到公开分发入口时可以登记产品证据，但必须标为 candidate 并说明缺口。
 
@@ -60,7 +68,7 @@ upstream 的 url 必须指向具体文件、目录或不可变条目。git 记�
 
 一项来源可以具有多个角色，但每次引用必须明确用途。来源角色为 content-upstream、discovery-channel、distribution-channel 和 specification：内容上游负责内容；发现渠道帮助找到条目；分发渠道负责提供下载或安装入口；规范来源说明协议/格式，不提供该资源作者、许可或安装依赖。GitHub 或市场可能兼有发现与分发角色，两个字段仍分别表达实际行为。规范来源同样可以是需要关注变更的来源，具体范围见 sources 的 tracking。运行时依赖可以引用相应来源以便追踪，但 dependencies 仍是单独字段。
 
-来源记录包括 `id/name/url/roles/access`，以及 `tracking` 的 scope、exclude、baseline、cadence、method、promotion、last_checked 和 limitations。source ID 不含需要更新的版本，版本放 baseline。access 为 public/restricted/unknown；未知入口 url 可为 null，但必须同时 access=unknown 且 limitations 写原因，不能用别的网站首页占位。scope 是实际跟踪目录/条目，baseline 是此次查证基线，不能把“仓库存在”说成“全仓收录完成”。所有自动更新只产生发现结果或审查提案，不静默晋级为 usable。
+来源记录包括 `id/name/url/roles/access`，以及 `tracking` 的 scope、exclude、baseline、cadence、method、promotion、last_checked 和 limitations。source ID 不含需要更新的版本，版本放 baseline。access 为 public/restricted/unknown；未知入口 url 可为 null，但必须同时 access=unknown 且 limitations 写原因，不能用别的网站首页占位。scope 是实际跟踪目录/条目，baseline 是此次查证基线，不能把“仓库存在”说成“全仓收录完成”。代码仓库需要按路径比较时，scope 使用仓库相对路径数组，支持目录 `/**`；内容入口、manifest、seed、示例和许可证据的实际路径均须被覆盖，不能只跟踪另一个副本目录。其他发现/规范来源可保留可读的范围说明。所有自动更新只产生发现结果或审查提案，不静默晋级为 usable。
 
 Sources 中每个已知上游必须说明：更新时比较哪些文件，如何锁定引用，谁审核分类/许可/兼容变化，无法获取时怎样保留原证据。登记 weekly/manual 等节奏只是维护策略；只有现有 weekly-sync 旧发现脚本已接线，新上游持续监控未实现，不宣称已自动运行。
 
@@ -73,7 +81,7 @@ Sources 中每个已知上游必须说明：更新时比较哪些文件，如何
 5. **候选**：已找到具体对象但作者/许可/可复现内容/适配/验证/审批存在缺口。旧队列和热度只能帮助发现，不是准入门槛的替代品。
 6. **可使用**：必须有明确可复现内容、适用许可证据、source-inspected 以上证据、面向具体宿主/版本的 usage-tested 证据、approved 审核且 no unresolved blocker。设计系统须达到 minimum_profile，模板须有可复用结构，插件须解释全部组件及其提供方式。
 
-原生上游可使用与 ThusDesign 可使用分别限定 hosts 和证据；上游测试成功不能声称 ThusDesign 接入成功。文本原则的 usage-tested 可以是经审核后在具体 Agent/项目中应用并验证导引，不能只检查文件名。许可 unknown 或 redistribution unknown 禁止被自动安装或转存；reference 的链接不代表授予复制权限。
+原生上游可使用与 ThusDesign 可使用分别限定 tested_hosts 和证据；上游测试成功不能声称 ThusDesign 接入成功。文本原则的 usage-tested 可以是经审核后在具体 Agent/项目中应用并验证导引，不能只检查文件名。许可 unknown 或 redistribution unknown 禁止被自动安装或转存；reference 的链接不代表授予复制权限。
 
 ## 身份、版本与更新规则
 
@@ -88,7 +96,11 @@ Sources 中每个已知上游必须说明：更新时比较哪些文件，如何
 
 ## ThusDesign 接入约定
 
-ThusDesign 只消费**经审核的发布版本**，锁定 release/tag 及解析 commit 或校验值；不能动态拉取 main 或直接消费 draft。来源 ID、资源 ID 与 schema_version 一并存入公共目录投影，安装记录留在 ThusDesign 数据库并引用资源 ID 和选定内容版本。原始内容仍从已锁定上游取用，不能把目录版本当作内容包版本。
+ThusDesign 的公共目录投影只消费**经审核的发布版本**，锁定 release/tag 及解析 commit 或校验值；不能动态拉取 main 或直接消费 draft。来源 ID、资源 ID、schema_version 及目录中的上游引用属于公共来源信息，目录锁定引用不等于用户安装版本体系，不能把目录版本当作内容包版本。
+
+**Skill 安装保持现有产品契约：只读指针，更新靠用户重新安装，无安装版本体系。** 产品继续使用既有 listing/安装指针及 installedAt 等字段，公共资源 ID 可用于目录映射与来源投影；不要求 Skill 安装记录保存“选定内容版本”，不增加版本表、物化内容、分发快照、自动扫描/升级、fork 或第二套安装内核。公共目录和上游引用可以锁定版本，实际 Skill 内容获取、缓存与重新安装仍按既有 Skill 机制执行。依据为 myApps 的 `docs/plans/2026-09-12-skill-store-target-model-plan.md` §0 v4 收敛及当前 `packages/skill-catalog/store-listing-kernel.ts` 的指针安装/重新安装裁定。
+
+其他类型的添加、实例化和应用记录留在 ThusDesign 数据库，按各自现有产品契约确定；阶段 1 不统一重设计安装表、版本状态机或运行内核。
 
 当前 myApps 的设计风格目录仍引用此仓库 main 的旧 `site/data.js`；它是历史接入，尚未迁移，不符合新的发布约定。此阶段不改 myApps，也不伪造 release；发布获批后，后续接入必须换为固定发布版本并移除旧 raw-main 读取。旧 `design-docs` 栏目 ID 不作为新契约的兼容别名，避免形成第二套分类。
 

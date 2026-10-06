@@ -13,6 +13,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 PYTHON = sys.executable
+sys.path.insert(0, str(ROOT))
 
 
 def fixture_root():
@@ -72,7 +73,7 @@ def fixture_root():
         "lifecycle": {"state": "candidate", "reason": "Needs review.", "replacement_id": None},
         "review": {"status": "pending", "by": None, "at": None, "evidence": []},
         "verification": {"level": "unverified", "checked_at": None, "by": None,
-                         "evidence": [], "limits": ["No usage test."]},
+                         "evidence": [], "tested_hosts": [], "limits": ["No usage test."]},
     }
     (root / "data" / "resources.yaml").write_text(yaml.safe_dump({
         "schema_version": 3,
@@ -171,6 +172,126 @@ class Phase1CatalogTests(unittest.TestCase):
         )
         self.assertEqual(1, result.returncode)
         self.assertIn("usable", result.stdout + result.stderr)
+
+    def test_tested_hosts_must_be_unique_stable_ascii_ids(self):
+        for hosts in ("opendesign", ["ThusDesign Web"], ["opendesign", "opendesign"]):
+            with self.subTest(hosts=hosts):
+                temp, root = fixture_root()
+                self.addCleanup(temp.cleanup)
+                doc = read_yaml(root, "resources")
+                doc["resources"][0]["verification"]["tested_hosts"] = hosts
+                write_yaml(root, "resources", doc)
+                result = subprocess.run(
+                    [PYTHON, str(ROOT / "scripts" / "validate.py"), "--root", str(root)],
+                    capture_output=True, text=True,
+                )
+                self.assertEqual(1, result.returncode, result.stdout + result.stderr)
+                self.assertIn("tested_hosts", result.stdout + result.stderr)
+
+    def test_tested_hosts_must_match_verification_level_and_usable_gate(self):
+        temp, root = fixture_root()
+        self.addCleanup(temp.cleanup)
+        doc = read_yaml(root, "resources")
+        doc["resources"][0]["verification"]["tested_hosts"] = ["opendesign"]
+        write_yaml(root, "resources", doc)
+        result = subprocess.run(
+            [PYTHON, str(ROOT / "scripts" / "validate.py"), "--root", str(root)],
+            capture_output=True, text=True,
+        )
+        self.assertEqual(1, result.returncode)
+        self.assertIn("tested_hosts", result.stdout + result.stderr)
+
+    def test_usage_tested_resources_require_a_tested_host(self):
+        temp, root = fixture_root()
+        self.addCleanup(temp.cleanup)
+        doc = read_yaml(root, "resources")
+        doc["resources"][0]["verification"].update({
+            "level": "usage-tested", "checked_at": "2026-10-07", "by": "Reviewer",
+            "evidence": ["https://example.test/evidence"],
+        })
+        write_yaml(root, "resources", doc)
+        result = subprocess.run(
+            [PYTHON, str(ROOT / "scripts" / "validate.py"), "--root", str(root)],
+            capture_output=True, text=True,
+        )
+        self.assertEqual(1, result.returncode)
+        self.assertIn("tested_hosts", result.stdout + result.stderr)
+
+    def test_open_design_usage_test_only_projects_to_the_tested_host(self):
+        from scripts.validate import is_usable_for_host
+
+        temp, root = fixture_root()
+        self.addCleanup(temp.cleanup)
+        doc = read_yaml(root, "resources")
+        resource = doc["resources"][0]
+        resource["review"] = {"status": "approved", "by": "Reviewer", "at": "2026-10-07",
+                              "evidence": ["https://example.test/review"]}
+        resource["license"] = {"status": "verified", "expression": "MIT", "scope": "whole",
+                               "evidence": ["https://example.test/license"], "redistribution": "allowed"}
+        resource["verification"] = {"level": "usage-tested", "checked_at": "2026-10-07", "by": "Reviewer",
+                                    "evidence": ["https://example.test/usage"], "tested_hosts": ["opendesign"],
+                                    "limits": []}
+        resource["lifecycle"] = {"state": "usable", "reason": "Tested on OpenDesign.", "replacement_id": None}
+        self.assertTrue(is_usable_for_host(resource, "opendesign"))
+        self.assertFalse(is_usable_for_host(resource, "thusdesign-desktop"))
+        self.assertFalse(is_usable_for_host(resource, "thusdesign-web"))
+        self.assertFalse(is_usable_for_host(resource, "web"))
+
+    def test_opendesign_scope_covers_actual_upstream_and_evidence_paths(self):
+        sources = read_yaml(ROOT, "sources")
+        resources = read_yaml(ROOT, "resources")["resources"]
+        opendesign = next(source for source in sources["sources"] if source["id"] == "opendesign")
+        scope = opendesign["tracking"]["scope"]
+        self.assertIsInstance(scope, list, "OpenDesign scope should enumerate tracked paths")
+        tracked = set(scope)
+        paths = set()
+        repo_prefix = "https://github.com/nexu-io/open-design/"
+
+        def add_repo_url(url):
+            if not isinstance(url, str) or not url.startswith(repo_prefix):
+                return
+            match = re.search(r"/(?:blob|tree)/[^/]+/([^?#]+)", url)
+            if match:
+                paths.add(match.group(1))
+
+        for resource in resources:
+            if resource["provenance"]["content_source"] != "opendesign":
+                continue
+            upstream = resource["provenance"]["upstream"]
+            paths_and_manifest = [upstream.get("path")]
+            selector = upstream.get("selector")
+            if isinstance(selector, str) and "/" in selector:
+                paths_and_manifest.append(selector)
+            for value in paths_and_manifest:
+                if isinstance(value, str) and value:
+                    paths.add(value)
+            for field in ("verification", "license", "authors", "publisher"):
+                evidence_group = resource.get(field, {}).get("evidence", [])
+                for evidence in evidence_group:
+                    add_repo_url(evidence.get("locator", ""))
+            for preview in resource.get("previews", []):
+                add_repo_url(preview.get("url", ""))
+                for evidence in preview.get("evidence", []):
+                    locator = evidence.get("locator", "")
+                    if isinstance(locator, str) and locator.startswith(repo_prefix):
+                        add_repo_url(locator)
+                    elif isinstance(locator, str) and "://" not in locator:
+                        paths.add(locator)
+        self.assertTrue(paths, "expected OpenDesign resource paths in source records")
+
+        def covered(path):
+            return any(path == entry for entry in tracked) or any(
+                entry.endswith("/**") and path.startswith(entry.removesuffix("/**").rstrip("/") + "/")
+                for entry in tracked
+            )
+
+        self.assertTrue(all(covered(path) for path in paths),
+                        f"OpenDesign tracking scope misses: {sorted(path for path in paths if not covered(path))}")
+
+    def test_current_catalog_has_no_tested_host_claims(self):
+        resources = read_yaml(ROOT, "resources")["resources"]
+        self.assertEqual(20, len(resources))
+        self.assertTrue(all(resource["verification"].get("tested_hosts", []) == [] for resource in resources))
 
     def test_validator_rejects_wrong_source_role_and_unlocked_git_reference(self):
         temp, root = fixture_root()
@@ -380,10 +501,13 @@ class Phase1CatalogTests(unittest.TestCase):
         self.assertIn('"id": "templates"', site_data)
         self.assertIn('"relation": "curated"', site_data)
         self.assertIn('"state": "candidate"', site_data)
+        self.assertIn('"tested_hosts": []', site_data)
+        self.assertIn('"usable_for_hosts": []', site_data)
         self.assertNotIn("人工验证", site_data)
         readme = (root / "README.md").read_text(encoding="utf-8")
         self.assertIn("0.1.0-draft", readme)
         self.assertIn("candidate", readme)
+        self.assertIn("可使用宿主", readme)
         targets = re.findall(r"\[[^\]]+\]\(#([^)]+)\)", readme)
         anchors = set(re.findall(r'<a id="([^"]+)"></a>', readme))
         self.assertEqual(set(targets), set(categories["id"] for categories in read_yaml(root, "categories")["categories"]))

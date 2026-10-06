@@ -14,7 +14,7 @@ def build_outputs(root=ROOT):
     root = Path(root)
     # Validate before constructing or writing any generated output.
     sys.path.insert(0, str(Path(__file__).resolve().parent))
-    from validate import validate_catalog
+    from validate import is_usable_for_host, validate_catalog
 
     errors = validate_catalog(root)
     if errors:
@@ -73,6 +73,11 @@ def build_outputs(root=ROOT):
                 "lifecycle": resource["lifecycle"],
                 "review": resource["review"],
                 "verification": resource["verification"],
+                "tested_hosts": resource["verification"]["tested_hosts"],
+                "usable_for_hosts": [
+                    host for host in resource["verification"]["tested_hosts"]
+                    if is_usable_for_host(resource, host)
+                ],
                 "authors": resource["authors"],
                 "publisher": resource["publisher"],
             })
@@ -107,15 +112,19 @@ def build_outputs(root=ROOT):
         if not items:
             lines += ["No resources yet.", ""]
             continue
-        lines += ["| Resource | Subtype | Relation | Lifecycle | Verification | License |", "|---|---|---|---|---|---|"]
+        lines += ["| Resource | Subtype | Relation | Lifecycle | Verification | 可使用宿主 | License |", "|---|---|---|---|---|---|---|"]
         for resource in items:
             classification = resource["classification"]
             subtype = classification.get("subtype") or "—"
             life = resource["lifecycle"]["state"]
             verification = resource["verification"]["level"]
             license_status = resource["license"]["status"]
+            usable_hosts = [
+                host for host in resource["verification"]["tested_hosts"]
+                if is_usable_for_host(resource, host)
+            ]
             url = resource["provenance"]["upstream"]["url"]
-            lines.append(f"| [{resource['title']}]({url}) (`{resource['id']}`) | {subtype} | {resource['provenance']['relation']} | {life} | {verification} | {license_status} |")
+            lines.append(f"| [{resource['title']}]({url}) (`{resource['id']}`) | {subtype} | {resource['provenance']['relation']} | {life} | {verification} | {', '.join(usable_hosts) or '—'} | {license_status} |")
         lines.append("")
         if category["id"] == "plugins":
             for resource in items:

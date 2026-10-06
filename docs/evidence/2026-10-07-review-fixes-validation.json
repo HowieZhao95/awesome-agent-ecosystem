@@ -1,0 +1,19 @@
+{
+  "checks": {
+    "catalog_validation": "PASS",
+    "discovery_validation": "PASS:803",
+    "generated_outputs_deterministic": true,
+    "all_actual_tested_hosts_empty": true,
+    "legacy_original_bytes_preserved": true
+  },
+  "resources": 20,
+  "sources": 18,
+  "classification_review": "approved",
+  "contract_freeze": "pending",
+  "generated_sha256": {
+    "README.md": "301bfc3873ca316461708a14035f1bbdc5a8ed7340afdcf4f17c9c650a8fb309",
+    "site/data.js": "0fce8e33b37564cfb4aaaff436da91066695f30549126fbf7f3ae66fede83d60",
+    "site/catalog.json": "406ea610da911c149f7de250a8a5cfc72645f1e0d42de57e25aaaa96c215b462"
+  },
+  "scope": "Metadata contract and generated projections; no Skill installation/version implementation or asset runtime verification"
+}
