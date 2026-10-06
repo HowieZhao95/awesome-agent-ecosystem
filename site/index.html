@@ -258,7 +258,7 @@ function render() {
   renderMain();
 }
 
-document.getElementById("updated").textContent = `${DATA.meta.catalogVersion} · 审核 ${DATA.meta.review.status} · 数据更新于 ${DATA.meta.updated}`;
+document.getElementById("updated").textContent = `${DATA.meta.catalogVersion} · 契约审核 ${DATA.meta.review.status} · 数据更新于 ${DATA.meta.updated}`;
 document.getElementById("search").addEventListener("input", e => { query = e.target.value; renderMain(); });
 
 renderStats();

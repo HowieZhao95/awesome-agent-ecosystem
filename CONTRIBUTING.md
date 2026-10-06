@@ -1,6 +1,6 @@
 # 贡献公共资产
 
-阶段 1 规范目前待审核。主类、子类与维度只在 [data/categories.yaml](data/categories.yaml) 定义；记录字段、收录门槛及更新规则见 [docs/architecture.md](docs/architecture.md)。贡献时引用它们，不再手抄另一套分类或字段列表。
+阶段 1 分类与公共契约已冻结；逐项资源仍按各自证据审核，契约批准不等于资源许可、实测或可用批准。主类、子类与维度只在 [data/categories.yaml](data/categories.yaml) 定义；记录字段、收录门槛及更新规则见 [docs/architecture.md](docs/architecture.md)。贡献时引用它们，不再手抄另一套分类或字段列表。
 
 ## 提交流程
 

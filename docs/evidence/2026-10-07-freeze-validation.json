@@ -1,0 +1,23 @@
+{
+  "contract_status": "frozen",
+  "user_approval": "批准阶段 1 契约冻结",
+  "approval_date": "2026-10-07",
+  "reviewed_baseline": "16f06217e4d2fb1fe06c4d438d2391fc6dc4ccbf",
+  "checks": {
+    "catalog_validation": "PASS",
+    "legacy_validation": "PASS:803",
+    "generation_deterministic": true,
+    "resource_subtree_unchanged": true,
+    "resource_reviews_pending": true,
+    "actual_tested_hosts_empty": true,
+    "legacy_original_bytes_preserved": true
+  },
+  "resources": 20,
+  "sources": 18,
+  "published": false,
+  "generated_sha256": {
+    "README.md": "289234cb6301b4cfc95872803324e096194a6cbd15a27f2962455c8c397d63f5",
+    "site/data.js": "56f5650dbb020075b3ec24b57e12c2034619e7a7a1d7d5e46ecde1100e31fac7",
+    "site/catalog.json": "e95172dba35ce95c2b8c35fd7aad8908f5a9753765e11258efaa123f6de81008"
+  }
+}

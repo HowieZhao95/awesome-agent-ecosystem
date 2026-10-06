@@ -1,6 +1,6 @@
 # 公共 Agent 资产：阶段 1 契约
 
-状态：**draft，分类与总体边界已获认可，契约修正后待冻结审核**。本阶段建立定义、来源与映射样例；未实现账户登录、安装、站点迁移或运行时接入。机器校验通过不能代替内容审核或真实运行验证。
+状态：**frozen；用户于 2026-10-07 批准阶段 1 契约冻结**。本阶段完成定义、来源与映射样例；未实现账户登录、安装、站点迁移或运行时接入。契约冻结只批准分类、公共元数据契约、来源策略和映射定义，不批准逐项资源许可、运行验证、可用状态或发布。见[冻结证据](evidence/2026-10-07-contract-freeze.md)。
 
 ## 正本与职责
 
@@ -47,7 +47,7 @@ README 与 `site/data.js`、`site/catalog.json` 由正本生成。未来的类�
 | `compatibility` | `hosts` 声明预期目标宿主，不代表已验证；`runtimes: [{name, version, status: declared/verified/unknown}]`；`dependencies: [{kind, name, version, source_id}]`；`constraints` 列出必要条件。null version 不代表兼容任何版本 |
 | `components` | 仅 plugins 非空：`{id, type, resource_id, upstream, subtype, delivery}`；type 来自分类正本，resource_id 可引用已登记组件或为 null，此时仍须给精确 upstream；delivery=contained/referenced/host-provided，避免把宿主模块说成插件携带的内容 |
 | `lifecycle` | `{state: reference/candidate/usable/withdrawn, reason, replacement_id}`；参考资料仅供阅读，candidate 待审核/适配/验证，usable 满足下面全部门槛，withdrawn 保留身份与原因 |
-| `review` | `{status: pending/approved/rejected, by, at, evidence}`；by/at 在 pending 时为 null，不冒充用户审批 |
+| `review` | `{status: pending/approved/rejected, by, at, evidence}`；目录级 `meta.review` 只记录阶段 1 分类、公共契约、来源策略与映射定义的审核；逐资源 `review` 独立记录该资源的审核。目录级批准不隐式批准许可、实测、资源可用或发布。by/at 在 pending 时为 null，不冒充用户审批 |
 | `verification` | `{level: unverified/source-inspected/usage-tested, tested_hosts: [稳定宿主 ID], checked_at, by, evidence, limits}`；source-inspected 仅证明文件/声明查过；usage-tested 是总体概览，tested_hosts 明确在哪些宿主测过。实测必须写版本、环境、操作和结果，不能从兼容声明、README、热度或人工收录推导 |
 
 `verification.evidence` 为 `{locator, claim}` 数组。locator 可以是精确公开 URL、同仓文件路径、`product-source:<commit>:<path>#<selector>` 等审计定位符；受限产品源码证据必须在 limits 明示不可公开访问，不能伪装公开下载入口。阶段 1 不复制私有产品内容；许可未知的记录保持 reference/candidate。
@@ -62,7 +62,7 @@ tested_hosts 描述该资源记录对应上游基线的验证结果，不保证 
 
 upstream 的 url 必须指向具体文件、目录或不可变条目。git 记录必须有相对 path；Web/产品页面含多条目时必须有 selector；仓库首页本身、目录站搜索页不能作为唯一的具体出处。git ref.kind=commit 需完整 40 位 SHA；移动分支不能作为发布锁定引用。找不到公开分发入口时可以登记产品证据，但必须标为 candidate 并说明缺口。
 
-`meta.catalog_version` 是目录版本，upstream.ref 是资源内容版本，两者独立。schema 版本变化不等于资源内容更新。本次 `0.1.0-draft` 不是已发布版本；`meta.review.status=pending` 禁止生成已审核声明。
+`meta.catalog_version` 是目录版本，upstream.ref 是资源内容版本，两者独立。schema 版本变化不等于资源内容更新。本次 `0.1.0-draft` 保持未发布语义；`meta.review.status=approved` 仅表示阶段 1 契约获批，不代表目录已发布或资源已审核。逐资源 `review` 和 `lifecycle` 决定各项资源审核与状态，不得由目录级批准批量提升。
 
 ## 来源登记与维护
 
@@ -108,6 +108,6 @@ ThusDesign 的公共目录投影只消费**经审核的发布版本**，锁定 r
 
 ## 审核与发布
 
-目录维护者先检查结构、引用与证据，再由用户审核分类、数据契约和来源策略。审批通过后才更新 meta.review 与对应记录 review，不批量把候选改成 usable。用户批准规范并不自动批准所有内容或运行兼容。
+目录维护者先检查结构、引用与证据，再由用户审核分类、数据契约、来源策略和映射定义。用户批准阶段 1 契约后更新 `meta.review`；每项资源仍须单独审核并更新其 `review`，不得批量批准内容、许可、运行兼容或可用状态。
 
-发布前必须运行测试、validate 和 build，并核对生成结果与源文件一致；版本固定引用与来源可访问范围须记录。发布动作另行授权。本阶段完成以用户审核为最终关卡；本地 draft、机器 PASS 和 Git 提交均不足以宣称完成。
+发布前必须运行测试、validate 和 build，并核对生成结果与源文件一致；版本固定引用与来源可访问范围须记录。发布动作另行授权。阶段 1 契约已于 2026-10-07 获用户批准并冻结；该批准不等于资源逐项审核、目录发布或客户端接入。发布仍须执行发布前测试、validate、build、固定版本引用核对并另行取得发布授权。

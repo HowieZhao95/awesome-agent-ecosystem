@@ -30,7 +30,7 @@ python scripts/build.py
 
 ## 发布与接入
 
-此阶段是 `0.1.0-draft`，未发布，不允许 ThusDesign 将其当成已审查可安装目录。审核后才能发布固定版本，生成数据可作为 release 附件；消费者锁定 release/tag 对应的 commit 或内容校验值，不读取移动 main。
+阶段 1 契约已冻结，但 `0.1.0-draft` 仍未发布；逐项资源仍待独立审核，ThusDesign 不得将当前草稿当成已审查可安装目录。发布须另行授权并生成固定版本；消费者锁定 release/tag 对应的 commit 或内容校验值，不读取移动 main。
 
 当前 myApps 的旧设计风格适配器仍读取 main 的旧栏目。该接入尚未迁移；发布后另行替换为固定版本，不能声称阶段 1 已完成客户端接入。
 

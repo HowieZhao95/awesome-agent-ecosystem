@@ -3,7 +3,7 @@ meta:
   catalog_version: 0.1.0-draft
   updated: '2026-10-07'
   cataloguer: {name: ThusDesign, url: 'https://www.thusdesign.ai'}
-  review: {status: pending, by: null, at: null, evidence: []}
+  review: {status: approved, by: user, at: '2026-10-07', evidence: [{locator: docs/evidence/2026-10-07-contract-freeze.md, claim: '用户批准阶段 1 分类、公共契约、来源策略与映射定义；不批准任何单项资源许可、实测、可用状态或发布。'}]}
 resources:
 - id: opendesign.web-prototype
   title: Web Prototype
