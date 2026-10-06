@@ -1,0 +1,3489 @@
+{
+  "schema_version": 3,
+  "categories": {
+    "schema_version": 3,
+    "review_status": "pending",
+    "categories": [
+      {
+        "id": "templates",
+        "label": "设计模板",
+        "definition": "可反复用于创建特定形态设计产物的结构、起始文件、约束与示例；交付重点是产物形态。",
+        "excludes": [
+          "画布快照或画布布局模板",
+          "仅讲任务方法的 Skill",
+          "单独的图片或视频生成提示词"
+        ],
+        "subtypes": [
+          {
+            "id": "prototype",
+            "label": "原型",
+            "definition": "页面、网站或应用的界面与交互原型结构。"
+          },
+          {
+            "id": "deck",
+            "label": "Deck 演示",
+            "definition": "以离散幻灯片组织叙事的演示文稿模板；不限定 PPTX 或 HTML。"
+          },
+          {
+            "id": "three-d",
+            "label": "三维",
+            "definition": "三维场景、空间、模型展示或交互体验的起始结构；不等于已有完整 DCC 编辑器。"
+          },
+          {
+            "id": "dashboard",
+            "label": "仪表盘",
+            "definition": "以指标、图表、数据筛选和分析视图组织内容的产物结构。"
+          },
+          {
+            "id": "motion-graphics",
+            "label": "MG 动画",
+            "definition": "以图形、文字、数据或品牌元素的时间变化为核心的动画结构；可为代码动画或视频工程。"
+          },
+          {
+            "id": "document",
+            "label": "文档",
+            "definition": "报告、说明书、文章等阅读型产物的结构与版式；不限定 Word、Markdown 或 HTML。"
+          },
+          {
+            "id": "custom",
+            "label": "自定义",
+            "definition": "明确具有可复用产物结构、且不符合前六类的模板；必须说明其具体形态，不作未知类别兜底。"
+          }
+        ]
+      },
+      {
+        "id": "design-systems",
+        "label": "设计系统",
+        "definition": "可应用于产物的系统化视觉与交互规范，覆盖排版、色彩、间距、状态与可访问性，并能对应到 tokens 和 CSS 等实现文件。",
+        "minimum_profile": "DESIGN.md 或等价设计规范 + 可追溯的 tokens + CSS；文件不必同名，必须解释映射。",
+        "excludes": [
+          "只有风格描述或调色板的参考文档",
+          "产品自身 UI 代码库未经资产化的内部实现",
+          "Agent 通用行为原则"
+        ],
+        "subtypes": []
+      },
+      {
+        "id": "skills",
+        "label": "Skills",
+        "definition": "指导 Agent 完成具体任务的可复用方法、步骤与辅助资源，通常以 SKILL.md 为入口。",
+        "excludes": [
+          "以固定产物结构为核心的设计模板",
+          "只有约束原则而无任务方法的文本",
+          "运行该任务所需的工具本体"
+        ],
+        "subtypes": []
+      },
+      {
+        "id": "prompts",
+        "label": "提示词",
+        "definition": "可直接复用或填入变量的生成、编辑或行为指导文本。",
+        "subtypes": [
+          {
+            "id": "image",
+            "label": "图片提示词",
+            "definition": "面向图像生成或编辑的文本、变量和参数说明；具体模型是兼容条件。"
+          },
+          {
+            "id": "video",
+            "label": "视频提示词",
+            "definition": "面向视频生成或编辑的场景、镜头、运动、时序与参数文本。"
+          },
+          {
+            "id": "principle",
+            "label": "原则模板",
+            "definition": "AGENTS.md 等形式的重要 Agent 行为导引、工作约束与领域原则，如编码或设计原则；不包含用户私人记忆。"
+          }
+        ],
+        "excludes": [
+          "提示词生成器工具本体",
+          "未获公开授权的产品内部 system prompt",
+          "私人 AGENTS.md 与学习记忆"
+        ]
+      },
+      {
+        "id": "plugins",
+        "label": "插件",
+        "definition": "具有稳定身份和安装或启用边界的能力分发单元，可包含一种或多种组件；MCP 或 CLI 可作为单组件插件，须能说明具体分发单元。",
+        "excludes": [
+          "仅包含许多链接的合集",
+          "任意目录的自动打包",
+          "尚无分发边界的产品内部函数"
+        ],
+        "subtypes": []
+      }
+    ],
+    "classification_rules": [
+      "每个具体分发单元只有一个主类；以主要复用用途判断，不能仅凭文件名、仓库栏目或技术栈判断。",
+      "先判断是否为有稳定身份的插件分发单元；插件整体归 plugins，内部组件分别描述，不据此把所有 SKILL.md 都归插件。",
+      "单组件 MCP/CLI 只有独立安装、启用、版本或分发身份才单独登记为插件；仅随父插件提供的能力只记组件，外部要求只记依赖。已有独立资源的组件通过 resource_id 关联，不重复创建资源或把组件再加进资源计数。",
+      "同一 SKILL.md 若核心是固定产物结构则归 templates；若核心是完成任务的方法则归 skills；纯行为约束归 prompts/principle。",
+      "模板子类按主要产物选一个；仪表盘优先于一般原型，Deck 优先于一般文档；其他重叠须写 rationale。",
+      "Remotion 是技术/运行依赖；Remotion 方法是 Skill，具体可复用动画工程才是 MG 模板。",
+      "DESIGN.md 单文件可登记为 design-systems 的 reference 或 candidate，完整性不足不能标为 usable。",
+      "图片/视频提示词不因附带媒体预览而变成设计模板；预览结果不等于可复用工程。",
+      "MCP、CLI 不设主类；它们在 plugins 下通过 components.type 描述。纯工具和组合插件使用同一字段。",
+      "原则是 prompts 的子类；领域如编码/设计是 domains；AGENTS.md 是文件约定；三者分别记录。",
+      "general 仅在没有具体领域时使用，与其他 domains 互斥；跨多个明确领域时列出这些领域。",
+      "来源、发现渠道、分发渠道、规范与运行依赖独立；目录站和市场不是内容作者，也不计为资源。",
+      "不设资源包主类；组合分发使用插件概念。画布模板不在本次公共体系范围内。"
+    ],
+    "dimensions": {
+      "domains": [
+        {
+          "id": "general",
+          "label": "通用",
+          "definition": "跨领域或不依赖特定领域的资源。"
+        },
+        {
+          "id": "software-engineering",
+          "label": "编码与工程",
+          "definition": "编码、测试、构建、部署与工程协作。"
+        },
+        {
+          "id": "visual-design",
+          "label": "视觉与界面设计",
+          "definition": "品牌、视觉、排版与界面交互。"
+        },
+        {
+          "id": "motion-video",
+          "label": "动效与视频",
+          "definition": "MG、镜头、剪辑、字幕与影视生产。"
+        },
+        {
+          "id": "three-d",
+          "label": "三维",
+          "definition": "建模、三维场景与空间交互。"
+        },
+        {
+          "id": "data-visualization",
+          "label": "数据可视化",
+          "definition": "仪表盘、图表与数据叙事。"
+        },
+        {
+          "id": "documents",
+          "label": "文档",
+          "definition": "阅读型文档与演示内容生产。"
+        },
+        {
+          "id": "spatial-design",
+          "label": "空间设计",
+          "definition": "建筑、室内与景观。"
+        },
+        {
+          "id": "research",
+          "label": "研究",
+          "definition": "检索、证据整理与分析。"
+        },
+        {
+          "id": "marketing",
+          "label": "营销",
+          "definition": "宣传、广告与社交内容。"
+        },
+        {
+          "id": "audio",
+          "label": "音频",
+          "definition": "音乐、声音与语音。"
+        }
+      ],
+      "formats": [
+        {
+          "id": "markdown",
+          "label": "Markdown",
+          "extensions": [
+            ".md"
+          ],
+          "definition": "Markdown 文本；文件角色另用 conventions 记录。"
+        },
+        {
+          "id": "html",
+          "label": "HTML",
+          "extensions": [
+            ".html"
+          ],
+          "definition": "HTML 页面或预览；不承诺离线可用。"
+        },
+        {
+          "id": "css",
+          "label": "CSS",
+          "extensions": [
+            ".css"
+          ],
+          "definition": "样式表或 CSS tokens。"
+        },
+        {
+          "id": "json",
+          "label": "JSON",
+          "extensions": [
+            ".json"
+          ],
+          "definition": "结构化元数据或配置。"
+        },
+        {
+          "id": "yaml",
+          "label": "YAML",
+          "extensions": [
+            ".yaml",
+            ".yml"
+          ],
+          "definition": "结构化配置或规范。"
+        },
+        {
+          "id": "typescript",
+          "label": "TypeScript/TSX",
+          "extensions": [
+            ".ts",
+            ".tsx"
+          ],
+          "definition": "TypeScript 源码，包括 React 工程。"
+        },
+        {
+          "id": "javascript",
+          "label": "JavaScript/JSX",
+          "extensions": [
+            ".js",
+            ".jsx"
+          ],
+          "definition": "JavaScript 源码。"
+        },
+        {
+          "id": "shell",
+          "label": "Shell",
+          "extensions": [
+            ".sh"
+          ],
+          "definition": "Shell 脚本；CLI 是组件能力而非文件格式。"
+        },
+        {
+          "id": "python",
+          "label": "Python",
+          "extensions": [
+            ".py"
+          ],
+          "definition": "Python 源码。"
+        },
+        {
+          "id": "svg",
+          "label": "SVG",
+          "extensions": [
+            ".svg"
+          ],
+          "definition": "矢量图形。"
+        },
+        {
+          "id": "binary-project",
+          "label": "原生工程文件",
+          "extensions": [],
+          "definition": "具体工具工程，如 Blender、PPTX、DOCX；记录文件路径与必要软件条件。"
+        },
+        {
+          "id": "media",
+          "label": "媒体文件",
+          "extensions": [],
+          "definition": "图片、视频、音频等；标明实际 MIME，预览媒体不自动成为内容格式。"
+        }
+      ],
+      "conventions": [
+        {
+          "id": "skill-md",
+          "label": "SKILL.md",
+          "definition": "Agent Skill 入口约定；也可能用于封装模板。"
+        },
+        {
+          "id": "agents-md",
+          "label": "AGENTS.md",
+          "definition": "Agent 工作导引文件约定；私有上下文不在公共目录中。"
+        },
+        {
+          "id": "design-md",
+          "label": "DESIGN.md",
+          "definition": "Agent 可读设计规范约定，不包含所有名为 design.md 的工程设计文档。"
+        },
+        {
+          "id": "tokens",
+          "label": "Design Tokens",
+          "definition": "命名设计值及语义映射；不是主类或运行工具。"
+        },
+        {
+          "id": "plugin-manifest",
+          "label": "插件清单",
+          "definition": "上游插件身份、组件和声明的清单；不强制所有上游采用同一格式。"
+        },
+        {
+          "id": "mcp",
+          "label": "MCP",
+          "definition": "工具连接协议；MCP 配置通常为 JSON，服务器实现格式另记。"
+        }
+      ],
+      "plugin_component_types": [
+        {
+          "id": "skill",
+          "label": "Skill",
+          "definition": "插件内任务方法与辅助资源。"
+        },
+        {
+          "id": "mcp-server",
+          "label": "MCP Server",
+          "definition": "插件提供或连接的具体 MCP 服务；作为运行依赖的服务不重复列为组件。"
+        },
+        {
+          "id": "cli",
+          "label": "CLI",
+          "definition": "插件提供的命令行入口。"
+        },
+        {
+          "id": "template",
+          "label": "设计模板",
+          "definition": "插件内可复用产物结构。"
+        },
+        {
+          "id": "design-system",
+          "label": "设计系统",
+          "definition": "插件内设计规范和 tokens/CSS。"
+        },
+        {
+          "id": "prompt",
+          "label": "提示词",
+          "definition": "插件内图片、视频或原则文本，记录具体 subtype。"
+        },
+        {
+          "id": "host-module",
+          "label": "宿主模块",
+          "definition": "宿主提供的模块引用；不表示插件可独立携带或运行该模块。"
+        },
+        {
+          "id": "hook",
+          "label": "Hook",
+          "definition": "插件声明的生命周期脚本或回调。"
+        }
+      ]
+    }
+  },
+  "sources": {
+    "schema_version": 3,
+    "sources": [
+      {
+        "id": "opendesign",
+        "name": "OpenDesign 内容上游",
+        "url": "https://github.com/nexu-io/open-design",
+        "roles": [
+          "content-upstream",
+          "distribution-channel"
+        ],
+        "access": "public",
+        "tracking": {
+          "scope": "design-templates/{web-prototype,html-ppt-pitch-deck,live-dashboard,motion-frames,docs-page,social-carousel,image-poster}; design-systems/agentic; skills/brand-extract; AGENTS.md。只跟踪本轮样例选择的目录与文件，不声明全仓收录。; plugins/_official/examples/mockup-device-3d/{open-design.json,SKILL.md,example.html} (three-d sample).",
+          "exclude": [],
+          "baseline": "commit:53231d40b778d88eba23f35547bf99485d3ae9fc; 对照本地归档 open-design-53231d40b778d88eba23f35547bf99485d3ae9fc.tar.gz",
+          "cadence": "manual",
+          "method": "Compare the new candidate commit with the previously pinned SHA only across scope paths; inspect per-example manifests, authors/license, seeds/examples, and external assets; preserve old evidence if fetch fails and submit a review proposal without auto-promotion.",
+          "promotion": "发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。",
+          "last_checked": "2026-10-07",
+          "limitations": [
+            "归档可读；本轮只审查选中路径和相应声明。根 LICENSE 为 Apache-2.0 不足以确认外部素材、嵌入品牌资产或逐项授权。",
+            "作者与单项许可须逐条检查 manifest/源证据；未完成项维持 unknown。"
+          ]
+        }
+      },
+      {
+        "id": "remotion-dev.skills",
+        "name": "Remotion 官方 Skills 内容仓库",
+        "url": "https://github.com/remotion-dev/skills",
+        "roles": [
+          "content-upstream",
+          "distribution-channel"
+        ],
+        "access": "public",
+        "tracking": {
+          "scope": "skills/remotion-best-practices/** and skills/remotion-render/** only; official source repo contains more skills.",
+          "exclude": [],
+          "baseline": "commit:473352613039e718e46655a26df224851e84c4aa; GitHub main refInfo.currentOid read on 2026-10-07; both selected file pages opened at this fixed ref.",
+          "cadence": "manual",
+          "method": "Resolve the live main ref to a full Git SHA first; compare only named SKILL.md and referenced assets, frontmatter/version declarations, root/per-file license and auxiliary files; npx CLI and frontmatter version are not substitutes for a pinned commit.",
+          "promotion": "发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。",
+          "last_checked": "2026-10-07",
+          "limitations": [
+            "已锁定本轮文件基线；文件声明版本 4.0.533 不代表执行兼容验证。",
+            "根许可与逐文件许可尚未确认；不继承 Remotion 软件许可。",
+            "本机历史安装目录版本不明，不作为当前固定版本证据。"
+          ]
+        }
+      },
+      {
+        "id": "thusdesign.product-source",
+        "name": "ThusDesign 产品内受限 Skill/插件/CLI 源",
+        "url": "https://github.com/HowieZhao95/my-apps/tree/33a1feabbcd5129fc9c7f4a676e80c632f44bce1",
+        "roles": [
+          "content-upstream"
+        ],
+        "access": "restricted",
+        "tracking": {
+          "scope": "Metadata-only inventory: packages/ai/skills/{aigc-generation,canvas-programming,inspiration-scout,research-report,scape-render-skill}/SKILL.md (5 product Skills); packages/td-plugins/td-drama-production/plugin.json plus skills/td-{01-screenwriter,02-asset-breakdown,03-director-desk,04-shot-production,ref-camera-direction,ref-prompt-doctor,ref-sound-design}/ (7 plugin Skills); apps/aigc-cli/package.json and src entrypoint metadata; packages/asset-library/src/design-styles/official.ts (6 style presets) and community-catalog.json (28 community entries). Inventory counts are not catalogued resource counts. No private content copied.",
+          "exclude": [],
+          "baseline": "commit:33a1feabbcd5129fc9c7f4a676e80c632f44bce1; confirmed tracked by git show for named paths",
+          "cadence": "manual; re-check at product-source commit updates",
+          "method": "At each product source commit, verify tracked metadata paths and diffs; publish only explicitly approved public metadata fields, keep bodies/context private, and separately review authorship/license/distribution changes.",
+          "promotion": "发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。",
+          "last_checked": "2026-10-07",
+          "limitations": [
+            "Restricted product repository: retain only public metadata and exact audit locators, never skill body or private context.",
+            "Product publisher does not establish author identity or external redistribution rights.",
+            "Prompt datasets are discovery/mirror records, not original prompt sources."
+          ]
+        }
+      },
+      {
+        "id": "thusdesign.prompt-data",
+        "name": "ThusDesign 产品内提示词目录（受限元数据）",
+        "url": "https://github.com/HowieZhao95/my-apps/tree/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/apps/thusDesign/data",
+        "roles": [
+          "discovery-channel"
+        ],
+        "access": "restricted",
+        "tracking": {
+          "scope": "Metadata-only inventory of all five prompt files: apps/thusDesign/data/atlas-gpt-image-2-prompts.json (761), atlas-seedance-2-prompts.json (1719), gpt-image-2-prompts.json (320), jzxz-ai-design-agent-prompts.json (1156), jzxz-ai-video-camera-prompts.json (107). These counts are inventory, not resource curation.",
+          "exclude": [],
+          "baseline": "commit:33a1feabbcd5129fc9c7f4a676e80c632f44bce1; five paths checked with git cat-file; current worktree matches listed prompt selectors",
+          "cadence": "manual",
+          "method": "From each pinned product snapshot, inspect selector/sourceLink metadata, then independently open the original post and verify account/author, prompt/media scope, model and redistribution rights; if original fetch fails preserve previous evidence and keep candidate.",
+          "promotion": "发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。",
+          "last_checked": "2026-10-07",
+          "limitations": [
+            "The app stores external sourceLink metadata; it does not independently verify source post, author, or license.",
+            "Do not copy prompt text or media from private product files into this public catalog."
+          ]
+        }
+      },
+      {
+        "id": "discover.awesome-agent-ecosystem",
+        "name": "awesome-agent-ecosystem 历史/发现队列",
+        "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/f8da353b267033f97837d61d3bb95f96882b34aa/data/resources.yaml",
+        "roles": [
+          "discovery-channel"
+        ],
+        "access": "public",
+        "tracking": {
+          "scope": "data/discovery/legacy-v2.yaml (legacy discovery queue only); the active local repo origin is HowieZhao95/awesome-agent-ecosystem.",
+          "exclude": [],
+          "baseline": "目标仓库本地 HEAD f8da353b267033f97837d61d3bb95f96882b34aa（阶段起始）；旧正本 schema v2。",
+          "cadence": "manual",
+          "method": "Use the existing weekly discovery scan only to add lineage/possible entries to the discovery queue; do not write or promote public resources without manual source, classification, license and compatibility review.",
+          "promotion": "发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。",
+          "last_checked": "2026-10-07",
+          "limitations": [
+            "旧目录仅为发现渠道，不代表条目实际出处或作者。",
+            "新 discovery/legacy-v2.yaml 尚未发布；此 URL 指向实际存在的迁移前固定版本。"
+          ]
+        }
+      },
+      {
+        "id": "discover.skills-cli",
+        "name": "Skills CLI / skills.sh 分发发现入口",
+        "url": "https://github.com/vercel-labs/skills",
+        "roles": [
+          "discovery-channel"
+        ],
+        "access": "public",
+        "tracking": {
+          "scope": "由用户提供的发现来源名称；本轮未验证特定目录条目。npx skills 为 CLI 分发/安装工具，不是 Remotion 内容上游。",
+          "exclude": [],
+          "baseline": "项目提及；具体条目/CLI 版本 unknown。",
+          "cadence": "manual",
+          "method": "Check the exact listing and the named upstream repository/file; record CLI version and distribution locator separately; do not treat a registry install listing as content provenance.",
+          "promotion": "发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。",
+          "last_checked": "2026-10-07",
+          "limitations": [
+            "具体 listing 与目录服务入口未查明；无资源可仅凭此来源创建已核验记录。"
+          ]
+        }
+      },
+      {
+        "id": "discover.github",
+        "name": "GitHub 仓库/文件发现入口",
+        "url": "https://github.com",
+        "roles": [
+          "discovery-channel",
+          "distribution-channel"
+        ],
+        "access": "public",
+        "tracking": {
+          "scope": "按具体上游仓库路径发现文件；必须记录具体文件 selector 与固定 ref。",
+          "exclude": [],
+          "baseline": "通用入口；逐资源具体 URL 和 ref 另记 provenance。",
+          "cadence": "manual",
+          "method": "Resolve concrete repository paths and commit refs, compare candidate changes, and keep hosting/discovery separate from content authorship/license; propose metadata changes for human review.",
+          "promotion": "发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。",
+          "last_checked": "2026-10-07",
+          "limitations": [
+            "GitHub 是托管/发现入口，不自动代表作者、发布者或许可。"
+          ]
+        }
+      },
+      {
+        "id": "discover.product-showcase",
+        "name": "ThusDesign 产品展示入口",
+        "url": "https://www.thusdesign.ai/prompts/nano-banana",
+        "roles": [
+          "discovery-channel"
+        ],
+        "access": "public",
+        "tracking": {
+          "scope": "已有产品路由 /prompts/nano-banana（图片）、/prompts/seedance（视频）、/prompts/skills；具体条目仍须追溯 sourceLink 或 listingId。",
+          "exclude": [],
+          "baseline": "产品源码路由已查证；本轮未验证线上登录、安装或公开页面实际返回。",
+          "cadence": "manual",
+          "method": "Locate the exact public page/entry and follow its source links; until a selector and original content source are independently accessible, retain null/unknown fields and do not create a verified resource.",
+          "promotion": "发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。",
+          "last_checked": "2026-10-07",
+          "limitations": [
+            "路由登记不代表本轮线上验收。",
+            "展示入口不是内容作者或许可来源，资源具体 selector 另行审核。"
+          ]
+        }
+      },
+      {
+        "id": "discover.jzxz",
+        "name": "建筑学长提示词入口（来源线索）",
+        "url": "https://www.jianzhuxuezhang.com/ai/banana_modifier",
+        "roles": [
+          "discovery-channel"
+        ],
+        "access": "public",
+        "tracking": {
+          "scope": "sourceLink 指向 /ai/banana_modifier?templateId=<id> 与 /ai/advance_video/operate；前者可定位具体 templateId，后者仍需视频单元 selector。",
+          "exclude": [],
+          "baseline": "上述真实 URL 来自已读产品数据，不代表已独立访问原站。",
+          "cadence": "manual",
+          "method": "Trace each data sourceLink to its actual JZXZ page/post and specific selector; compare captured metadata only, then review author/license before proposing a resource.",
+          "promotion": "发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。",
+          "last_checked": "2026-10-07",
+          "limitations": [
+            "入口 URL 已从 sourceLink 查明；原站内容作者、许可和具体视频条目定位仍待查。"
+          ]
+        }
+      },
+      {
+        "id": "discover.atlas",
+        "name": "Atlas 命名集合的发现来源（待追溯）",
+        "url": null,
+        "roles": [
+          "discovery-channel"
+        ],
+        "access": "unknown",
+        "tracking": {
+          "scope": "由 ThusDesign 数据文件命名识别 atlas prompt collections；外部目录入口 unknown。",
+          "exclude": [],
+          "baseline": "apps/thusDesign/data/atlas-gpt-image-2-prompts.json 与 atlas-seedance-2-prompts.json 存在。",
+          "cadence": "manual",
+          "method": "Trace each Atlas sourceLink to its actual post and item selector; verify author/license and any model/redistribution conditions before proposing content records.",
+          "promotion": "发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。",
+          "last_checked": "2026-10-07",
+          "limitations": [
+            "具体发现站点、listing URL、源作者/许可待查。",
+            "实际条目入口尚未核实；url 保持 null。"
+          ]
+        }
+      },
+      {
+        "id": "spec.agent-skills",
+        "name": "Agent Skills 格式规范",
+        "url": "https://agentskills.io/specification",
+        "roles": [
+          "specification"
+        ],
+        "access": "public",
+        "tracking": {
+          "scope": "Agent Skills 规范：SKILL.md frontmatter、资源组织与渐进披露规则。仅跟踪标准内容，不追踪某个 Skill 的作者许可。",
+          "exclude": [],
+          "baseline": "2026-10-07 已读取官方 specification：SKILL.md 入口/frontmatter 与可选辅助目录；规范页面版本未提供可锁定提交。",
+          "cadence": "manual",
+          "method": "Monitor official specification revisions and SKILL.md metadata/resource rules; record version/schema deltas as compatibility recommendations, never as content assets or rights grants.",
+          "promotion": "发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。",
+          "last_checked": "2026-10-07",
+          "limitations": [
+            "规范用于解释文件约定，不授予被索引 Skill 的版权或再分发权。"
+          ]
+        }
+      },
+      {
+        "id": "spec.mcp",
+        "name": "Model Context Protocol 规范",
+        "url": "https://modelcontextprotocol.io/specification/2026-07-28",
+        "roles": [
+          "specification"
+        ],
+        "access": "public",
+        "tracking": {
+          "scope": "MCP 协议规范及其版本化页面；只作为 MCP component/依赖语义参考。",
+          "exclude": [],
+          "baseline": "Specification 2026-07-28；2026-10-07 从官方 specification 入口确认重定向至此版本。",
+          "cadence": "manual",
+          "method": "Monitor versioned MCP schema/protocol changes; submit compatibility notes for component records, never treat the spec as server content or license evidence.",
+          "promotion": "发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。",
+          "last_checked": "2026-10-07",
+          "limitations": [
+            "规范不是 MCP server 内容来源，也不授予组件许可。"
+          ]
+        }
+      },
+      {
+        "id": "spec.opendesign-manifest",
+        "name": "OpenDesign 插件 Manifest 规范",
+        "url": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/docs/schemas/open-design.plugin.v1.json",
+        "roles": [
+          "specification"
+        ],
+        "access": "public",
+        "tracking": {
+          "scope": "docs/schemas/open-design.plugin.v1.json 与 docs/schemas/open-design.marketplace.v1.json；只作 OpenDesign 上游包装规范来源，不约束 ThusDesign 执行内核。",
+          "exclude": [],
+          "baseline": "commit:53231d40b778d88eba23f35547bf99485d3ae9fc",
+          "cadence": "manual",
+          "method": "Compare manifest schema and example fields between pinned commits; report compatibility changes and per-item author/license fields for review, without implying all content is licensed by schema.",
+          "promotion": "发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。",
+          "last_checked": "2026-10-07",
+          "limitations": [
+            "Schema 只解释 manifest 结构；不能推导插件内容许可或运行兼容。"
+          ]
+        }
+      },
+      {
+        "id": "spec.agents-md",
+        "name": "AGENTS.md 文件约定参考",
+        "url": "https://agents.md/",
+        "roles": [
+          "specification"
+        ],
+        "access": "public",
+        "tracking": {
+          "scope": "AGENTS.md 文件公开约定；OpenDesign/AGENTS.md 是具体仓库规则样例，单列资源，不冒充通用格式标准。",
+          "exclude": [],
+          "baseline": "2026-10-07 已读取 agents.md 官方约定页面；未将具体宿主优先级或仓库规则当作公共目录能力。",
+          "cadence": "manual",
+          "method": "Track the repository-specific AGENTS.md changes as an example convention only; review applicability before any adaptation, and do not turn repository instructions into global policy.",
+          "promotion": "发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。",
+          "last_checked": "2026-10-07",
+          "limitations": [
+            "规范仅说明文件约定；具体规则、许可与宿主运行行为须按资源分别核验。"
+          ]
+        }
+      },
+      {
+        "id": "x.shinning",
+        "name": "X post attributed to Shinning",
+        "url": "https://x.com/Shinning1010/status/2048663549413921103",
+        "roles": [
+          "content-upstream"
+        ],
+        "access": "unknown",
+        "tracking": {
+          "scope": "X status 2048663549413921103 only",
+          "exclude": [],
+          "baseline": "immutable X status identifier recorded in ThusDesign prompt metadata; original post not independently opened",
+          "cadence": "manual",
+          "method": "Re-open the exact immutable status URL, confirm author identity and original content, inspect page-level license/terms and prompt/image scope; until then preserve the product-recorded URL only as an unverified lead.",
+          "promotion": "Keep as candidate until original post, author, license, and usable content are independently verified.",
+          "last_checked": "2026-10-07",
+          "limitations": [
+            "Original post visibility, account ownership, prompt text rights, image rights, and redistribution are unknown.",
+            "The post URL/identifier is a product-recorded lead and is not proof of independent source verification."
+          ]
+        }
+      },
+      {
+        "id": "x.ihayato",
+        "name": "X post attributed to IHayato",
+        "url": "https://x.com/IHayato/status/2041839076354224178",
+        "roles": [
+          "content-upstream"
+        ],
+        "access": "unknown",
+        "tracking": {
+          "scope": "X status 2041839076354224178 only",
+          "exclude": [],
+          "baseline": "immutable X status identifier recorded in ThusDesign prompt metadata; original post not independently opened",
+          "cadence": "manual",
+          "method": "Re-open the exact immutable status URL, confirm author identity and original content, inspect page-level license/terms and prompt/video scope; until then preserve the product-recorded URL only as an unverified lead.",
+          "promotion": "Keep as candidate until original post, author, license, and usable content are independently verified.",
+          "last_checked": "2026-10-07",
+          "limitations": [
+            "Original post visibility, account ownership, prompt text rights, media rights, and redistribution are unknown.",
+            "The post URL/identifier is a product-recorded lead and is not proof of independent source verification."
+          ]
+        }
+      },
+      {
+        "id": "dist.remotion-skills-cli",
+        "name": "Remotion Agent Skills install channels",
+        "url": "https://www.remotion.dev/docs/ai/skills",
+        "roles": [
+          "distribution-channel"
+        ],
+        "access": "public",
+        "tracking": {
+          "scope": "Official Remotion Agent Skills install options: npx skills add remotion-dev/skills and bun create video; CLI adds/removes/updates skills via npx remotion skills add/update.",
+          "exclude": [],
+          "baseline": "official documentation pages read 2026-10-07",
+          "cadence": "manual",
+          "method": "Check official install documentation and commands for changes, then verify they still point to the pinned content repository; update only install metadata and never infer permissions or content version from the CLI.",
+          "promotion": "Treat as distribution/install instructions only; never use as content provenance or skill license evidence.",
+          "last_checked": "2026-10-07",
+          "limitations": [
+            "npx skills is a distribution CLI, not the source repository/content.",
+            "Official skill repository full HEAD SHA was not retrieved this check."
+          ]
+        }
+      }
+    ]
+  },
+  "resources": {
+    "schema_version": 3,
+    "meta": {
+      "catalog_version": "0.1.0-draft",
+      "updated": "2026-10-07",
+      "cataloguer": {
+        "name": "ThusDesign",
+        "url": "https://www.thusdesign.ai"
+      },
+      "review": {
+        "status": "pending",
+        "by": null,
+        "at": null,
+        "evidence": []
+      }
+    },
+    "resources": [
+      {
+        "id": "opendesign.web-prototype",
+        "title": "Web Prototype",
+        "summary": "单文件网页界面原型方法，附 template seed、布局库和 example。",
+        "purpose": "以可复用起始 HTML 组装网页原型。",
+        "classification": {
+          "category": "templates",
+          "subtype": "prototype",
+          "domains": [
+            "visual-design",
+            "software-engineering"
+          ],
+          "formats": [
+            "markdown",
+            "html"
+          ],
+          "conventions": [
+            "skill-md"
+          ],
+          "rationale": "交付核心为网页界面结构；Skill 指定 assets/template.html 为 seed、example.html 为示例、项目输出通常为 index.html。 本记录只索引模板内容（指定 SKILL/seed/example），不索引其 OpenDesign 插件 pipeline/atom 包装；包装整体若另行收录则为独立插件分发单元。"
+        },
+        "provenance": {
+          "relation": "curated",
+          "content_source": "opendesign",
+          "discovered_via": [],
+          "upstream": {
+            "kind": "git",
+            "url": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/web-prototype/SKILL.md",
+            "path": "plugins/_official/examples/web-prototype/SKILL.md",
+            "selector": "plugins/_official/examples/web-prototype/open-design.json",
+            "ref": {
+              "kind": "commit",
+              "value": "53231d40b778d88eba23f35547bf99485d3ae9fc"
+            }
+          },
+          "derives_from": [],
+          "changes": null
+        },
+        "authors": {
+          "status": "known",
+          "identities": [
+            {
+              "name": "OpenDesign",
+              "url": "https://github.com/nexu-io"
+            }
+          ],
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/web-prototype/open-design.json",
+              "claim": "该条具体 manifest 明确声明 author.name=OpenDesign；只对 manifest 指定的示例包，不推断所嵌入第三方素材作者。"
+            }
+          ]
+        },
+        "publisher": {
+          "status": "known",
+          "identities": [
+            {
+              "name": "OpenDesign",
+              "url": "https://github.com/nexu-io"
+            }
+          ],
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/web-prototype/open-design.json",
+              "claim": "固定版本中的官方示例 manifest 发布该示例条目。"
+            }
+          ]
+        },
+        "license": {
+          "status": "verified",
+          "expression": "MIT",
+          "scope": "plugins/_official/examples/web-prototype/ package only, as declared by its open-design.json; embedded third-party fonts, images, brands, or external assets are excluded unless separately licensed.",
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/web-prototype/open-design.json",
+              "claim": "具体插件示例 manifest 声明 license=MIT 与 author=OpenDesign；权利范围限于该 manifest 标识内容。"
+            }
+          ],
+          "redistribution": "unknown"
+        },
+        "distribution": [
+          {
+            "kind": "repository",
+            "channel_source": "discover.github",
+            "url": "https://github.com/nexu-io/open-design/tree/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/web-prototype"
+          }
+        ],
+        "previews": [
+          {
+            "kind": "html",
+            "url": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/web-prototype/example.html",
+            "status": "reference",
+            "evidence": [
+              {
+                "locator": "design-templates/web-prototype/example.html",
+                "claim": "上游示例/预览位置；本目录没有执行或独立渲染。"
+              }
+            ]
+          }
+        ],
+        "compatibility": {
+          "hosts": [
+            "OpenDesign content workflow",
+            "Web browser preview"
+          ],
+          "runtimes": [
+            {
+              "name": "HTML/CSS-capable browser",
+              "version": null,
+              "status": "declared"
+            }
+          ],
+          "dependencies": [
+            {
+              "kind": "tool",
+              "name": "Agent file read/write",
+              "version": null,
+              "source_id": null
+            }
+          ],
+          "constraints": [
+            "此处登记上游声明的网页产物环境；浏览器版本和 ThusDesign 适配未实测。",
+            "模板正文需读取项目设计规范；相关 DESIGN.md/tokens 的适配由项目负责。"
+          ]
+        },
+        "components": [],
+        "lifecycle": {
+          "state": "candidate",
+          "reason": "阶段 1 样例；待内容许可、来源及适配/审核门槛完成。",
+          "replacement_id": null
+        },
+        "review": {
+          "status": "pending",
+          "by": null,
+          "at": null,
+          "evidence": []
+        },
+        "verification": {
+          "level": "source-inspected",
+          "checked_at": "2026-10-07",
+          "by": "ThusDesign cataloguer",
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/web-prototype/SKILL.md",
+              "claim": "技能将 assets/template.html 定义为 seed，将 example.html 定义为展示示例，用户任务输出写为 index.html。"
+            },
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/web-prototype/assets/template.html",
+              "claim": "实际可复用 seed 文件；不等于当前示例输出。"
+            },
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/web-prototype/example.html",
+              "claim": "静态展示示例；不等于用户生成结果。"
+            },
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/web-prototype/open-design.json",
+              "claim": "该具体示例 manifest 声明 MIT 与 OpenDesign 作者。"
+            }
+          ],
+          "limits": [
+            "未运行 Skill 或渲染模板。",
+            "OpenDesign根许可证不能推导第三方/嵌入素材许可。",
+            "manifest 对自身示例声明 MIT；外部字体、媒体及品牌资源未完成逐项权利核查，整体再分发保持未知。"
+          ]
+        }
+      },
+      {
+        "id": "opendesign.html-ppt-pitch-deck",
+        "title": "HTML Pitch Deck",
+        "summary": "HTML 演示文稿技能与示例，固定产物以离散幻灯片组织。",
+        "purpose": "生成 pitch deck 演示。",
+        "classification": {
+          "category": "templates",
+          "subtype": "deck",
+          "domains": [
+            "documents",
+            "visual-design"
+          ],
+          "formats": [
+            "markdown",
+            "html"
+          ],
+          "conventions": [
+            "skill-md"
+          ],
+          "rationale": "主要输出是离散幻灯片；不因 HTML 格式归为网页原型。 本记录只索引模板内容（指定 SKILL/seed/example），不索引其 OpenDesign 插件 pipeline/atom 包装；包装整体若另行收录则为独立插件分发单元。"
+        },
+        "provenance": {
+          "relation": "curated",
+          "content_source": "opendesign",
+          "discovered_via": [],
+          "upstream": {
+            "kind": "git",
+            "url": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/html-ppt-pitch-deck/SKILL.md",
+            "path": "plugins/_official/examples/html-ppt-pitch-deck/SKILL.md",
+            "selector": "plugins/_official/examples/html-ppt-pitch-deck/open-design.json",
+            "ref": {
+              "kind": "commit",
+              "value": "53231d40b778d88eba23f35547bf99485d3ae9fc"
+            }
+          },
+          "derives_from": [],
+          "changes": null
+        },
+        "authors": {
+          "status": "known",
+          "identities": [
+            {
+              "name": "OpenDesign",
+              "url": "https://github.com/nexu-io"
+            }
+          ],
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/html-ppt-pitch-deck/open-design.json",
+              "claim": "该条具体 manifest 明确声明 author.name=OpenDesign；只对 manifest 指定的示例包，不推断所嵌入第三方素材作者。"
+            }
+          ]
+        },
+        "publisher": {
+          "status": "known",
+          "identities": [
+            {
+              "name": "OpenDesign",
+              "url": "https://github.com/nexu-io"
+            }
+          ],
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/html-ppt-pitch-deck/open-design.json",
+              "claim": "固定版本中的官方示例 manifest 发布该示例条目。"
+            }
+          ]
+        },
+        "license": {
+          "status": "verified",
+          "expression": "MIT",
+          "scope": "plugins/_official/examples/html-ppt-pitch-deck/ package only, as declared by its open-design.json; embedded third-party fonts, images, brands, or external assets are excluded unless separately licensed.",
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/html-ppt-pitch-deck/open-design.json",
+              "claim": "具体插件示例 manifest 声明 license=MIT 与 author=OpenDesign；权利范围限于该 manifest 标识内容。"
+            }
+          ],
+          "redistribution": "unknown"
+        },
+        "distribution": [
+          {
+            "kind": "repository",
+            "channel_source": "discover.github",
+            "url": "https://github.com/nexu-io/open-design/tree/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/html-ppt-pitch-deck"
+          }
+        ],
+        "previews": [
+          {
+            "kind": "html",
+            "url": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-pitch-deck/example.html",
+            "status": "reference",
+            "evidence": [
+              {
+                "locator": "design-templates/html-ppt-pitch-deck/example.html",
+                "claim": "上游示例/预览位置；本目录没有执行或独立渲染。"
+              }
+            ]
+          }
+        ],
+        "compatibility": {
+          "hosts": [
+            "OpenDesign content workflow",
+            "Web browser preview"
+          ],
+          "runtimes": [
+            {
+              "name": "HTML/CSS-capable browser",
+              "version": null,
+              "status": "declared"
+            }
+          ],
+          "dependencies": [
+            {
+              "kind": "tool",
+              "name": "Agent file read/write",
+              "version": null,
+              "source_id": null
+            }
+          ],
+          "constraints": [
+            "此处登记上游声明的网页产物环境；浏览器版本和 ThusDesign 适配未实测。",
+            "模板正文需读取项目设计规范；相关 DESIGN.md/tokens 的适配由项目负责。",
+            "产物为 HTML Deck；不声称已有 PPTX 编辑或导出能力。"
+          ]
+        },
+        "components": [],
+        "lifecycle": {
+          "state": "candidate",
+          "reason": "阶段 1 样例；待内容许可、来源及适配/审核门槛完成。",
+          "replacement_id": null
+        },
+        "review": {
+          "status": "pending",
+          "by": null,
+          "at": null,
+          "evidence": []
+        },
+        "verification": {
+          "level": "source-inspected",
+          "checked_at": "2026-10-07",
+          "by": "ThusDesign cataloguer",
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-pitch-deck/SKILL.md",
+              "claim": "Skill 是 pitch deck 演示方法。"
+            },
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-pitch-deck/example.html",
+              "claim": "example 是演示样例。"
+            },
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt/templates/full-decks/pitch-deck/index.html",
+              "claim": "另有完整 deck HTML 起始/实例文件；与 example 分开记录。"
+            },
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/html-ppt-pitch-deck/open-design.json",
+              "claim": "该示例 manifest 明确声明作者 OpenDesign、许可 MIT；证据限于其示例包。"
+            }
+          ],
+          "limits": [
+            "未做 usage-tested，也没有用户审核；不得标为 usable。",
+            "manifest 对自身示例声明 MIT；外部字体、媒体及品牌资源未完成逐项权利核查，整体再分发保持未知。"
+          ]
+        }
+      },
+      {
+        "id": "opendesign.live-dashboard",
+        "title": "Live Dashboard",
+        "summary": "可复用实时仪表盘结构，含 seed、example 与参考资料。",
+        "purpose": "搭建带数据展示的 dashboard。",
+        "classification": {
+          "category": "templates",
+          "subtype": "dashboard",
+          "domains": [
+            "data-visualization",
+            "visual-design"
+          ],
+          "formats": [
+            "markdown",
+            "html"
+          ],
+          "conventions": [
+            "skill-md"
+          ],
+          "rationale": "主要产物按指标与数据视图组织，属于 dashboard；template.html 是骨架，example.html 是演示输出。 本记录只索引模板内容（指定 SKILL/seed/example），不索引其 OpenDesign 插件 pipeline/atom 包装；包装整体若另行收录则为独立插件分发单元。"
+        },
+        "provenance": {
+          "relation": "curated",
+          "content_source": "opendesign",
+          "discovered_via": [],
+          "upstream": {
+            "kind": "git",
+            "url": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/live-dashboard/SKILL.md",
+            "path": "plugins/_official/examples/live-dashboard/SKILL.md",
+            "selector": "plugins/_official/examples/live-dashboard/open-design.json",
+            "ref": {
+              "kind": "commit",
+              "value": "53231d40b778d88eba23f35547bf99485d3ae9fc"
+            }
+          },
+          "derives_from": [],
+          "changes": null
+        },
+        "authors": {
+          "status": "known",
+          "identities": [
+            {
+              "name": "OpenDesign",
+              "url": "https://github.com/nexu-io"
+            }
+          ],
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/live-dashboard/open-design.json",
+              "claim": "该条具体 manifest 明确声明 author.name=OpenDesign；只对 manifest 指定的示例包，不推断所嵌入第三方素材作者。"
+            }
+          ]
+        },
+        "publisher": {
+          "status": "known",
+          "identities": [
+            {
+              "name": "OpenDesign",
+              "url": "https://github.com/nexu-io"
+            }
+          ],
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/live-dashboard/open-design.json",
+              "claim": "固定版本中的官方示例 manifest 发布该示例条目。"
+            }
+          ]
+        },
+        "license": {
+          "status": "verified",
+          "expression": "MIT",
+          "scope": "plugins/_official/examples/live-dashboard/ package only, as declared by its open-design.json; embedded third-party fonts, images, brands, or external assets are excluded unless separately licensed.",
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/live-dashboard/open-design.json",
+              "claim": "具体插件示例 manifest 声明 license=MIT 与 author=OpenDesign；权利范围限于该 manifest 标识内容。"
+            }
+          ],
+          "redistribution": "unknown"
+        },
+        "distribution": [
+          {
+            "kind": "repository",
+            "channel_source": "discover.github",
+            "url": "https://github.com/nexu-io/open-design/tree/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/live-dashboard"
+          }
+        ],
+        "previews": [
+          {
+            "kind": "html",
+            "url": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/live-dashboard/example.html",
+            "status": "reference",
+            "evidence": [
+              {
+                "locator": "design-templates/live-dashboard/example.html",
+                "claim": "上游示例/预览位置；本目录没有执行或独立渲染。"
+              }
+            ]
+          }
+        ],
+        "compatibility": {
+          "hosts": [
+            "OpenDesign content workflow",
+            "Web browser preview"
+          ],
+          "runtimes": [
+            {
+              "name": "HTML/CSS-capable browser",
+              "version": null,
+              "status": "declared"
+            }
+          ],
+          "dependencies": [
+            {
+              "kind": "tool",
+              "name": "Agent file read/write",
+              "version": null,
+              "source_id": null
+            }
+          ],
+          "constraints": [
+            "此处登记上游声明的网页产物环境；浏览器版本和 ThusDesign 适配未实测。",
+            "模板正文需读取项目设计规范；相关 DESIGN.md/tokens 的适配由项目负责。"
+          ]
+        },
+        "components": [],
+        "lifecycle": {
+          "state": "candidate",
+          "reason": "阶段 1 样例；待内容许可、来源及适配/审核门槛完成。",
+          "replacement_id": null
+        },
+        "review": {
+          "status": "pending",
+          "by": null,
+          "at": null,
+          "evidence": []
+        },
+        "verification": {
+          "level": "source-inspected",
+          "checked_at": "2026-10-07",
+          "by": "ThusDesign cataloguer",
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/live-dashboard/SKILL.md",
+              "claim": "技能入口。"
+            },
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/live-dashboard/assets/template.html",
+              "claim": "template seed 文件。"
+            },
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/live-dashboard/example.html",
+              "claim": "示例输出文件。"
+            },
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/live-dashboard/open-design.json",
+              "claim": "该示例 manifest 明确声明作者 OpenDesign、许可 MIT；证据限于其示例包。"
+            }
+          ],
+          "limits": [
+            "未做 usage-tested，也没有用户审核；不得标为 usable。",
+            "manifest 对自身示例声明 MIT；外部字体、媒体及品牌资源未完成逐项权利核查，整体再分发保持未知。"
+          ]
+        }
+      },
+      {
+        "id": "opendesign.motion-frames",
+        "title": "Motion Frames",
+        "summary": "单幅图形构图与 CSS 循环动画的模板引导和示例。",
+        "purpose": "构建图形、文字或信息的时间变化动画。",
+        "classification": {
+          "category": "templates",
+          "subtype": "motion-graphics",
+          "domains": [
+            "motion-video",
+            "visual-design"
+          ],
+          "formats": [
+            "markdown",
+            "html"
+          ],
+          "conventions": [
+            "skill-md"
+          ],
+          "rationale": "主要产物是时间变化的图形/文字画面；该目录有 Skill 与 example，未见独立通用 seed 文件。 本记录只索引模板内容（指定 SKILL/seed/example），不索引其 OpenDesign 插件 pipeline/atom 包装；包装整体若另行收录则为独立插件分发单元。"
+        },
+        "provenance": {
+          "relation": "curated",
+          "content_source": "opendesign",
+          "discovered_via": [],
+          "upstream": {
+            "kind": "git",
+            "url": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/motion-frames/SKILL.md",
+            "path": "plugins/_official/examples/motion-frames/SKILL.md",
+            "selector": "plugins/_official/examples/motion-frames/open-design.json",
+            "ref": {
+              "kind": "commit",
+              "value": "53231d40b778d88eba23f35547bf99485d3ae9fc"
+            }
+          },
+          "derives_from": [],
+          "changes": null
+        },
+        "authors": {
+          "status": "known",
+          "identities": [
+            {
+              "name": "OpenDesign",
+              "url": "https://github.com/nexu-io"
+            }
+          ],
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/motion-frames/open-design.json",
+              "claim": "该条具体 manifest 明确声明 author.name=OpenDesign；只对 manifest 指定的示例包，不推断所嵌入第三方素材作者。"
+            }
+          ]
+        },
+        "publisher": {
+          "status": "known",
+          "identities": [
+            {
+              "name": "OpenDesign",
+              "url": "https://github.com/nexu-io"
+            }
+          ],
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/motion-frames/open-design.json",
+              "claim": "固定版本中的官方示例 manifest 发布该示例条目。"
+            }
+          ]
+        },
+        "license": {
+          "status": "verified",
+          "expression": "MIT",
+          "scope": "plugins/_official/examples/motion-frames/ package only, as declared by its open-design.json; embedded third-party fonts, images, brands, or external assets are excluded unless separately licensed.",
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/motion-frames/open-design.json",
+              "claim": "具体插件示例 manifest 声明 license=MIT 与 author=OpenDesign；权利范围限于该 manifest 标识内容。"
+            }
+          ],
+          "redistribution": "unknown"
+        },
+        "distribution": [
+          {
+            "kind": "repository",
+            "channel_source": "discover.github",
+            "url": "https://github.com/nexu-io/open-design/tree/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/motion-frames"
+          }
+        ],
+        "previews": [
+          {
+            "kind": "html",
+            "url": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/motion-frames/example.html",
+            "status": "reference",
+            "evidence": [
+              {
+                "locator": "design-templates/motion-frames/example.html",
+                "claim": "上游示例/预览位置；本目录没有执行或独立渲染。"
+              }
+            ]
+          }
+        ],
+        "compatibility": {
+          "hosts": [
+            "OpenDesign content workflow",
+            "Web browser preview"
+          ],
+          "runtimes": [
+            {
+              "name": "HTML/CSS-capable browser",
+              "version": null,
+              "status": "declared"
+            }
+          ],
+          "dependencies": [
+            {
+              "kind": "tool",
+              "name": "Agent file read/write",
+              "version": null,
+              "source_id": null
+            }
+          ],
+          "constraints": [
+            "此处登记上游声明的网页产物环境；浏览器版本和 ThusDesign 适配未实测。",
+            "模板正文需读取项目设计规范；相关 DESIGN.md/tokens 的适配由项目负责。",
+            "CSS 循环预览不证明 MP4 导出；视频导出器需单独验证。"
+          ]
+        },
+        "components": [],
+        "lifecycle": {
+          "state": "candidate",
+          "reason": "阶段 1 样例；待内容许可、来源及适配/审核门槛完成。",
+          "replacement_id": null
+        },
+        "review": {
+          "status": "pending",
+          "by": null,
+          "at": null,
+          "evidence": []
+        },
+        "verification": {
+          "level": "source-inspected",
+          "checked_at": "2026-10-07",
+          "by": "ThusDesign cataloguer",
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/motion-frames/SKILL.md",
+              "claim": "Motion Frames 资源入口。"
+            },
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/motion-frames/example.html",
+              "claim": "示例结果路径；未据此声称可运行工程。"
+            },
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/motion-frames/open-design.json",
+              "claim": "该示例 manifest 明确声明作者 OpenDesign、许可 MIT；证据限于其示例包。"
+            }
+          ],
+          "limits": [
+            "未做 usage-tested，也没有用户审核；不得标为 usable。",
+            "manifest 对自身示例声明 MIT；外部字体、媒体及品牌资源未完成逐项权利核查，整体再分发保持未知。"
+          ]
+        }
+      },
+      {
+        "id": "opendesign.docs-page",
+        "title": "Docs Page",
+        "summary": "文档站页面结构与内容展示模板。",
+        "purpose": "生成文档/说明页面。",
+        "classification": {
+          "category": "templates",
+          "subtype": "document",
+          "domains": [
+            "documents",
+            "visual-design"
+          ],
+          "formats": [
+            "markdown",
+            "html"
+          ],
+          "conventions": [
+            "skill-md"
+          ],
+          "rationale": "阅读型文档页面的产物结构；不选择财报或医疗样例。 本记录只索引模板内容（指定 SKILL/seed/example），不索引其 OpenDesign 插件 pipeline/atom 包装；包装整体若另行收录则为独立插件分发单元。"
+        },
+        "provenance": {
+          "relation": "curated",
+          "content_source": "opendesign",
+          "discovered_via": [],
+          "upstream": {
+            "kind": "git",
+            "url": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/docs-page/SKILL.md",
+            "path": "plugins/_official/examples/docs-page/SKILL.md",
+            "selector": "plugins/_official/examples/docs-page/open-design.json",
+            "ref": {
+              "kind": "commit",
+              "value": "53231d40b778d88eba23f35547bf99485d3ae9fc"
+            }
+          },
+          "derives_from": [],
+          "changes": null
+        },
+        "authors": {
+          "status": "known",
+          "identities": [
+            {
+              "name": "OpenDesign",
+              "url": "https://github.com/nexu-io"
+            }
+          ],
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/docs-page/open-design.json",
+              "claim": "该条具体 manifest 明确声明 author.name=OpenDesign；只对 manifest 指定的示例包，不推断所嵌入第三方素材作者。"
+            }
+          ]
+        },
+        "publisher": {
+          "status": "known",
+          "identities": [
+            {
+              "name": "OpenDesign",
+              "url": "https://github.com/nexu-io"
+            }
+          ],
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/docs-page/open-design.json",
+              "claim": "固定版本中的官方示例 manifest 发布该示例条目。"
+            }
+          ]
+        },
+        "license": {
+          "status": "verified",
+          "expression": "MIT",
+          "scope": "plugins/_official/examples/docs-page/ package only, as declared by its open-design.json; embedded third-party fonts, images, brands, or external assets are excluded unless separately licensed.",
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/docs-page/open-design.json",
+              "claim": "具体插件示例 manifest 声明 license=MIT 与 author=OpenDesign；权利范围限于该 manifest 标识内容。"
+            }
+          ],
+          "redistribution": "unknown"
+        },
+        "distribution": [
+          {
+            "kind": "repository",
+            "channel_source": "discover.github",
+            "url": "https://github.com/nexu-io/open-design/tree/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/docs-page"
+          }
+        ],
+        "previews": [
+          {
+            "kind": "html",
+            "url": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/docs-page/example.html",
+            "status": "reference",
+            "evidence": [
+              {
+                "locator": "design-templates/docs-page/example.html",
+                "claim": "上游示例/预览位置；本目录没有执行或独立渲染。"
+              }
+            ]
+          }
+        ],
+        "compatibility": {
+          "hosts": [
+            "OpenDesign content workflow",
+            "Web browser preview"
+          ],
+          "runtimes": [
+            {
+              "name": "HTML/CSS-capable browser",
+              "version": null,
+              "status": "declared"
+            }
+          ],
+          "dependencies": [
+            {
+              "kind": "tool",
+              "name": "Agent file read/write",
+              "version": null,
+              "source_id": null
+            }
+          ],
+          "constraints": [
+            "此处登记上游声明的网页产物环境；浏览器版本和 ThusDesign 适配未实测。",
+            "模板正文需读取项目设计规范；相关 DESIGN.md/tokens 的适配由项目负责。"
+          ]
+        },
+        "components": [],
+        "lifecycle": {
+          "state": "candidate",
+          "reason": "阶段 1 样例；待内容许可、来源及适配/审核门槛完成。",
+          "replacement_id": null
+        },
+        "review": {
+          "status": "pending",
+          "by": null,
+          "at": null,
+          "evidence": []
+        },
+        "verification": {
+          "level": "source-inspected",
+          "checked_at": "2026-10-07",
+          "by": "ThusDesign cataloguer",
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/docs-page/SKILL.md",
+              "claim": "文档页面模板 Skill。"
+            },
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/docs-page/example.html",
+              "claim": "文档页面示例。"
+            },
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/docs-page/open-design.json",
+              "claim": "该示例 manifest 明确声明作者 OpenDesign、许可 MIT；证据限于其示例包。"
+            }
+          ],
+          "limits": [
+            "未做 usage-tested，也没有用户审核；不得标为 usable。",
+            "manifest 对自身示例声明 MIT；外部字体、媒体及品牌资源未完成逐项权利核查，整体再分发保持未知。"
+          ]
+        }
+      },
+      {
+        "id": "opendesign.social-carousel",
+        "title": "Social Carousel",
+        "summary": "三张社交媒体图文卡片的编排模板。",
+        "purpose": "生成固定三张社交卡片序列。",
+        "classification": {
+          "category": "templates",
+          "subtype": "custom",
+          "domains": [
+            "marketing",
+            "visual-design"
+          ],
+          "formats": [
+            "markdown",
+            "html",
+            "media"
+          ],
+          "conventions": [
+            "skill-md"
+          ],
+          "rationale": "固定三张社交图文卡片，不是离散演示幻灯片，也不是界面原型；custom 形态明确。 本记录只索引模板内容（指定 SKILL/seed/example），不索引其 OpenDesign 插件 pipeline/atom 包装；包装整体若另行收录则为独立插件分发单元。"
+        },
+        "provenance": {
+          "relation": "curated",
+          "content_source": "opendesign",
+          "discovered_via": [],
+          "upstream": {
+            "kind": "git",
+            "url": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/social-carousel/SKILL.md",
+            "path": "plugins/_official/examples/social-carousel/SKILL.md",
+            "selector": "plugins/_official/examples/social-carousel/open-design.json",
+            "ref": {
+              "kind": "commit",
+              "value": "53231d40b778d88eba23f35547bf99485d3ae9fc"
+            }
+          },
+          "derives_from": [],
+          "changes": null
+        },
+        "authors": {
+          "status": "known",
+          "identities": [
+            {
+              "name": "OpenDesign",
+              "url": "https://github.com/nexu-io"
+            }
+          ],
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/social-carousel/open-design.json",
+              "claim": "该条具体 manifest 明确声明 author.name=OpenDesign；只对 manifest 指定的示例包，不推断所嵌入第三方素材作者。"
+            }
+          ]
+        },
+        "publisher": {
+          "status": "known",
+          "identities": [
+            {
+              "name": "OpenDesign",
+              "url": "https://github.com/nexu-io"
+            }
+          ],
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/social-carousel/open-design.json",
+              "claim": "固定版本中的官方示例 manifest 发布该示例条目。"
+            }
+          ]
+        },
+        "license": {
+          "status": "verified",
+          "expression": "MIT",
+          "scope": "plugins/_official/examples/social-carousel/ package only, as declared by its open-design.json; embedded third-party fonts, images, brands, or external assets are excluded unless separately licensed.",
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/social-carousel/open-design.json",
+              "claim": "具体插件示例 manifest 声明 license=MIT 与 author=OpenDesign；权利范围限于该 manifest 标识内容。"
+            }
+          ],
+          "redistribution": "unknown"
+        },
+        "distribution": [
+          {
+            "kind": "repository",
+            "channel_source": "discover.github",
+            "url": "https://github.com/nexu-io/open-design/tree/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/social-carousel"
+          }
+        ],
+        "previews": [],
+        "compatibility": {
+          "hosts": [
+            "OpenDesign content workflow",
+            "Web browser preview"
+          ],
+          "runtimes": [
+            {
+              "name": "HTML/CSS-capable browser",
+              "version": null,
+              "status": "declared"
+            }
+          ],
+          "dependencies": [
+            {
+              "kind": "tool",
+              "name": "Agent file read/write",
+              "version": null,
+              "source_id": null
+            }
+          ],
+          "constraints": [
+            "此处登记上游声明的网页产物环境；浏览器版本和 ThusDesign 适配未实测。",
+            "模板正文需读取项目设计规范；相关 DESIGN.md/tokens 的适配由项目负责。"
+          ]
+        },
+        "components": [],
+        "lifecycle": {
+          "state": "candidate",
+          "reason": "阶段 1 样例；待内容许可、来源及适配/审核门槛完成。",
+          "replacement_id": null
+        },
+        "review": {
+          "status": "pending",
+          "by": null,
+          "at": null,
+          "evidence": []
+        },
+        "verification": {
+          "level": "source-inspected",
+          "checked_at": "2026-10-07",
+          "by": "ThusDesign cataloguer",
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/social-carousel/SKILL.md",
+              "claim": "技能描述三张社交卡片输出。"
+            },
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/apps/web/public/community-templates/social-carousel.jpg",
+              "claim": "仓库中存在同名视觉预览资产，版权和来源待单独核验。"
+            },
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/social-carousel/open-design.json",
+              "claim": "该示例 manifest 明确声明作者 OpenDesign、许可 MIT；证据限于其示例包。"
+            }
+          ],
+          "limits": [
+            "Community template preview 可能含第三方作品，未证明其授权/再分发权。",
+            "需检查 social-carousel Skill 和 preview 的准确文件树及文本。",
+            "manifest 对自身示例声明 MIT；外部字体、媒体及品牌资源未完成逐项权利核查，整体再分发保持未知。"
+          ]
+        }
+      },
+      {
+        "id": "opendesign.agentic-design-system",
+        "title": "Agentic Design System",
+        "summary": "包含设计规范、tokens/CSS、组件示例、预览与 system kit 的完整系统候选。",
+        "purpose": "为产物应用一组可追溯的视觉 tokens 与设计规则。",
+        "classification": {
+          "category": "design-systems",
+          "subtype": null,
+          "domains": [
+            "visual-design"
+          ],
+          "formats": [
+            "markdown",
+            "json",
+            "css",
+            "html"
+          ],
+          "conventions": [
+            "design-md",
+            "tokens"
+          ],
+          "rationale": "含 DESIGN.md、manifest、design-tokens.json、tokens.css、components 及 system/kit 结构，满足完整性结构候选；内容版权和素材 usage 尚未查全。"
+        },
+        "provenance": {
+          "relation": "curated",
+          "content_source": "opendesign",
+          "discovered_via": [],
+          "upstream": {
+            "kind": "git",
+            "url": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-systems/agentic/DESIGN.md",
+            "path": "design-systems/agentic/DESIGN.md",
+            "selector": "agentic",
+            "ref": {
+              "kind": "commit",
+              "value": "53231d40b778d88eba23f35547bf99485d3ae9fc"
+            }
+          },
+          "derives_from": [],
+          "changes": null
+        },
+        "authors": {
+          "status": "unknown",
+          "identities": [],
+          "evidence": []
+        },
+        "publisher": {
+          "status": "unknown",
+          "identities": [],
+          "evidence": []
+        },
+        "license": {
+          "status": "unknown",
+          "expression": null,
+          "scope": null,
+          "evidence": [],
+          "redistribution": "unknown"
+        },
+        "distribution": [],
+        "previews": [
+          {
+            "kind": "html",
+            "url": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-systems/agentic/system/kit.html",
+            "status": "reference",
+            "evidence": [
+              {
+                "locator": "design-systems/agentic/system/kit.html",
+                "claim": "上游示例/预览位置；本目录没有执行或独立渲染。"
+              }
+            ]
+          }
+        ],
+        "compatibility": {
+          "hosts": [
+            "Agent design context",
+            "CSS-consuming artifact"
+          ],
+          "runtimes": [
+            {
+              "name": "CSS custom properties",
+              "version": null,
+              "status": "declared"
+            }
+          ],
+          "dependencies": [],
+          "constraints": [
+            "manifest 映射 DESIGN.md、tokens.css 与辅助文件；只查验结构，不宣称任意宿主已消费。",
+            "字体、预览和外部素材权利尚未核清。"
+          ]
+        },
+        "components": [],
+        "lifecycle": {
+          "state": "candidate",
+          "reason": "阶段 1 样例；待内容许可、来源及适配/审核门槛完成。",
+          "replacement_id": null
+        },
+        "review": {
+          "status": "pending",
+          "by": null,
+          "at": null,
+          "evidence": []
+        },
+        "verification": {
+          "level": "source-inspected",
+          "checked_at": "2026-10-07",
+          "by": "ThusDesign cataloguer",
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-systems/agentic/DESIGN.md",
+              "claim": "设计规则入口。"
+            },
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-systems/agentic/manifest.json",
+              "claim": "系统 manifest。"
+            },
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-systems/agentic/design-tokens.json",
+              "claim": "tokens 文件。"
+            },
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-systems/agentic/tokens.css",
+              "claim": "CSS tokens。"
+            },
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-systems/agentic/system/kit.html",
+              "claim": "包含完整 system kit 样例。"
+            }
+          ],
+          "limits": [
+            "结构完整性经路径核查；嵌入品牌/图片/字体/组件的来源和许可 usage 仍待逐项审计。",
+            "没有应用到具体项目的兼容验证。"
+          ]
+        }
+      },
+      {
+        "id": "opendesign.brand-extract",
+        "title": "Brand Extract Skill",
+        "summary": "从参考品牌材料提取并组织品牌视觉语言的方法 Skill，含模板辅助文件。",
+        "purpose": "抽取品牌设计语言/建立 brand kit。",
+        "classification": {
+          "category": "skills",
+          "subtype": null,
+          "domains": [
+            "visual-design"
+          ],
+          "formats": [
+            "markdown",
+            "html"
+          ],
+          "conventions": [
+            "skill-md"
+          ],
+          "rationale": "核心任务是分析并提取品牌属性的方法；附带的 brand-kit template 不使其成为固定产物模板。"
+        },
+        "provenance": {
+          "relation": "curated",
+          "content_source": "opendesign",
+          "discovered_via": [],
+          "upstream": {
+            "kind": "git",
+            "url": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/brand-extract/SKILL.md",
+            "path": "skills/brand-extract/SKILL.md",
+            "selector": "brand-extract",
+            "ref": {
+              "kind": "commit",
+              "value": "53231d40b778d88eba23f35547bf99485d3ae9fc"
+            }
+          },
+          "derives_from": [],
+          "changes": null
+        },
+        "authors": {
+          "status": "unknown",
+          "identities": [],
+          "evidence": []
+        },
+        "publisher": {
+          "status": "unknown",
+          "identities": [],
+          "evidence": []
+        },
+        "license": {
+          "status": "unknown",
+          "expression": null,
+          "scope": null,
+          "evidence": [],
+          "redistribution": "unknown"
+        },
+        "distribution": [],
+        "previews": [],
+        "compatibility": {
+          "hosts": [
+            "OpenDesign brand extraction workflow"
+          ],
+          "runtimes": [
+            {
+              "name": "Web browser",
+              "version": null,
+              "status": "declared"
+            }
+          ],
+          "dependencies": [
+            {
+              "kind": "tool",
+              "name": "agent-browser",
+              "version": null,
+              "source_id": null
+            },
+            {
+              "kind": "tool",
+              "name": "file read/write",
+              "version": null,
+              "source_id": null
+            }
+          ],
+          "constraints": [
+            "正文依赖 OpenDesign brand.html/brand.json 与项目预置；需适配后才能用于其他宿主。",
+            "已声明工具名称，不代表已安装或有访问任意网站权限。"
+          ]
+        },
+        "components": [],
+        "lifecycle": {
+          "state": "candidate",
+          "reason": "上游根许可及其中可能包含的第三方品牌视觉资料许可需分开核验；待审。",
+          "replacement_id": null
+        },
+        "review": {
+          "status": "pending",
+          "by": null,
+          "at": null,
+          "evidence": []
+        },
+        "verification": {
+          "level": "source-inspected",
+          "checked_at": "2026-10-07",
+          "by": "ThusDesign cataloguer",
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/brand-extract/SKILL.md",
+              "claim": "任务流程 Skill 文件。"
+            },
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/brand-extract/templates/brand-kit.html",
+              "claim": "辅助 brand kit 模板。"
+            }
+          ],
+          "limits": [
+            "模板包含品牌表达/示例素材的权利待查。",
+            "未执行 Skill。"
+          ]
+        }
+      },
+      {
+        "id": "opendesign.image-poster",
+        "title": "Image Poster Skill",
+        "summary": "调用图像生成能力制作单张海报或主视觉的步骤与示例提示。",
+        "purpose": "通过图像模型生成 poster/key art。",
+        "classification": {
+          "category": "skills",
+          "subtype": null,
+          "domains": [
+            "visual-design",
+            "marketing"
+          ],
+          "formats": [
+            "markdown",
+            "html"
+          ],
+          "conventions": [
+            "skill-md"
+          ],
+          "rationale": "核心流程是图像生成任务方法、提示组装和模型调用；不能因位于 design-templates 目录或带 example.html 就归模板。"
+        },
+        "provenance": {
+          "relation": "curated",
+          "content_source": "opendesign",
+          "discovered_via": [],
+          "upstream": {
+            "kind": "git",
+            "url": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/image-poster/SKILL.md",
+            "path": "design-templates/image-poster/SKILL.md",
+            "selector": "image-poster",
+            "ref": {
+              "kind": "commit",
+              "value": "53231d40b778d88eba23f35547bf99485d3ae9fc"
+            }
+          },
+          "derives_from": [],
+          "changes": null
+        },
+        "authors": {
+          "status": "unknown",
+          "identities": [],
+          "evidence": []
+        },
+        "publisher": {
+          "status": "unknown",
+          "identities": [],
+          "evidence": []
+        },
+        "license": {
+          "status": "unknown",
+          "expression": null,
+          "scope": null,
+          "evidence": [],
+          "redistribution": "unknown"
+        },
+        "distribution": [],
+        "previews": [
+          {
+            "kind": "html",
+            "url": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/image-poster/example.html",
+            "status": "reference",
+            "evidence": [
+              {
+                "locator": "design-templates/image-poster/example.html",
+                "claim": "上游示例/预览位置；本目录没有执行或独立渲染。"
+              }
+            ]
+          }
+        ],
+        "compatibility": {
+          "hosts": [
+            "OpenDesign image workflow"
+          ],
+          "runtimes": [],
+          "dependencies": [
+            {
+              "kind": "tool",
+              "name": "Image-generation dispatcher",
+              "version": null,
+              "source_id": null
+            },
+            {
+              "kind": "model",
+              "name": "gpt-image-2 or selected provider model",
+              "version": null,
+              "source_id": null
+            }
+          ],
+          "constraints": [
+            "任务方法依赖上游模型调度与项目元数据；具体模型可用性、计费与 ThusDesign 接入未验证。"
+          ]
+        },
+        "components": [],
+        "lifecycle": {
+          "state": "candidate",
+          "reason": "阶段 1 样例；待内容许可、来源及适配/审核门槛完成。",
+          "replacement_id": null
+        },
+        "review": {
+          "status": "pending",
+          "by": null,
+          "at": null,
+          "evidence": []
+        },
+        "verification": {
+          "level": "source-inspected",
+          "checked_at": "2026-10-07",
+          "by": "ThusDesign cataloguer",
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/image-poster/SKILL.md",
+              "claim": "Skill 正文定义单图生成工作流与输出图像；主用途为方法。"
+            },
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/image-poster/example.html",
+              "claim": "示例不等于可复用工程 seed。"
+            }
+          ],
+          "limits": [
+            "模型生成素材与潜在第三方图像许可未核。",
+            "未执行模型调用或模板。"
+          ]
+        }
+      },
+      {
+        "id": "opendesign.repo-agents-md",
+        "title": "OpenDesign 仓库 AGENTS.md",
+        "summary": "OpenDesign 根目录的项目专属 Agent 协作和仓库约束说明。",
+        "purpose": "作为原则文件约定和仓库特定指导的 reference。",
+        "classification": {
+          "category": "prompts",
+          "subtype": "principle",
+          "domains": [
+            "software-engineering"
+          ],
+          "formats": [
+            "markdown"
+          ],
+          "conventions": [
+            "agents-md"
+          ],
+          "rationale": "它是单仓库治理规则，适合引用研究，不适合作为可直接套用的全局通用原则。"
+        },
+        "provenance": {
+          "relation": "curated",
+          "content_source": "opendesign",
+          "discovered_via": [],
+          "upstream": {
+            "kind": "git",
+            "url": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/AGENTS.md",
+            "path": "AGENTS.md",
+            "selector": "root AGENTS.md",
+            "ref": {
+              "kind": "commit",
+              "value": "53231d40b778d88eba23f35547bf99485d3ae9fc"
+            }
+          },
+          "derives_from": [],
+          "changes": null
+        },
+        "authors": {
+          "status": "unknown",
+          "identities": [],
+          "evidence": []
+        },
+        "publisher": {
+          "status": "unknown",
+          "identities": [],
+          "evidence": []
+        },
+        "license": {
+          "status": "unknown",
+          "expression": null,
+          "scope": null,
+          "evidence": [],
+          "redistribution": "unknown"
+        },
+        "distribution": [],
+        "previews": [],
+        "compatibility": {
+          "hosts": [
+            "Agent reading OpenDesign repository AGENTS.md"
+          ],
+          "runtimes": [],
+          "dependencies": [],
+          "constraints": [
+            "这是特定仓库的导引参考，内含目录/命令约定；需人工提炼与适配后才可作为其他项目原则。",
+            "不直接写入私人规则或复制 OMP 行为优先级。"
+          ]
+        },
+        "components": [],
+        "lifecycle": {
+          "state": "reference",
+          "reason": "仓库专属导引 reference；必须按目标仓库改写和审核。",
+          "replacement_id": null
+        },
+        "review": {
+          "status": "pending",
+          "by": null,
+          "at": null,
+          "evidence": []
+        },
+        "verification": {
+          "level": "source-inspected",
+          "checked_at": "2026-10-07",
+          "by": "ThusDesign cataloguer",
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/AGENTS.md",
+              "claim": "OpenDesign 根 AGENTS 文件是仓库范围治理说明。"
+            }
+          ],
+          "limits": [
+            "未复制原文；适配性取决于目标仓库规则。"
+          ]
+        }
+      },
+      {
+        "id": "remotion.best-practices",
+        "title": "Remotion Best Practices",
+        "summary": "Remotion 官方多技能路由入口和最佳实践指引。",
+        "purpose": "按任务装载 Remotion markup/create/render 等具体指导。",
+        "classification": {
+          "category": "skills",
+          "subtype": null,
+          "domains": [
+            "motion-video",
+            "software-engineering"
+          ],
+          "formats": [
+            "markdown"
+          ],
+          "conventions": [
+            "skill-md"
+          ],
+          "rationale": "主体是 Remotion 工作方法；作为 Skill 收录，不是动画工程模板。"
+        },
+        "provenance": {
+          "relation": "curated",
+          "content_source": "remotion-dev.skills",
+          "discovered_via": [
+            "discover.github"
+          ],
+          "upstream": {
+            "kind": "git",
+            "url": "https://github.com/remotion-dev/skills/blob/473352613039e718e46655a26df224851e84c4aa/skills/remotion-best-practices/SKILL.md",
+            "path": "skills/remotion-best-practices/SKILL.md",
+            "selector": "skills/remotion-best-practices/SKILL.md",
+            "ref": {
+              "kind": "commit",
+              "value": "473352613039e718e46655a26df224851e84c4aa"
+            }
+          },
+          "derives_from": [],
+          "changes": null
+        },
+        "authors": {
+          "status": "unknown",
+          "identities": [],
+          "evidence": []
+        },
+        "publisher": {
+          "status": "known",
+          "identities": [
+            {
+              "name": "Remotion",
+              "url": "https://www.remotion.dev/docs/ai/skills"
+            }
+          ],
+          "evidence": [
+            {
+              "locator": "https://www.remotion.dev/docs/ai/skills",
+              "claim": "官方文档说明 Remotion 维护 Agent Skills 列表；publisher 仅记录发布组织，不推断单一作者。"
+            }
+          ]
+        },
+        "license": {
+          "status": "unknown",
+          "expression": null,
+          "scope": null,
+          "evidence": [],
+          "redistribution": "unknown"
+        },
+        "distribution": [
+          {
+            "kind": "repository",
+            "channel_source": "discover.github",
+            "url": "https://github.com/remotion-dev/skills/tree/main/skills/remotion-best-practices"
+          },
+          {
+            "kind": "upstream-link",
+            "channel_source": "dist.remotion-skills-cli",
+            "url": "https://www.remotion.dev/docs/ai/skills"
+          }
+        ],
+        "previews": [],
+        "compatibility": {
+          "hosts": [
+            "Agent with SKILL.md support"
+          ],
+          "runtimes": [
+            {
+              "name": "Remotion project",
+              "version": null,
+              "status": "declared"
+            },
+            {
+              "name": "Node.js",
+              "version": null,
+              "status": "declared"
+            }
+          ],
+          "dependencies": [
+            {
+              "kind": "tool",
+              "name": "Remotion CLI",
+              "version": null,
+              "source_id": null
+            }
+          ],
+          "constraints": [
+            "文件声明版本 4.0.533，只是技能内容版本；支持的 Remotion/Node.js 版本尚未实测。",
+            "Best Practices 路由的辅助文件须随锁定仓库完整读取，不把单一 SKILL.md 当完整依赖包。"
+          ]
+        },
+        "components": [],
+        "lifecycle": {
+          "state": "candidate",
+          "reason": "阶段 1 样例；待内容许可、来源及适配/审核门槛完成。",
+          "replacement_id": null
+        },
+        "review": {
+          "status": "pending",
+          "by": null,
+          "at": null,
+          "evidence": []
+        },
+        "verification": {
+          "level": "source-inspected",
+          "checked_at": "2026-10-07",
+          "by": "ThusDesign cataloguer",
+          "evidence": [
+            {
+              "locator": "https://github.com/remotion-dev/skills/blob/main/skills/remotion-best-practices/SKILL.md",
+              "claim": "官方仓库对应 SKILL.md 文件路径已查；内部 frontmatter 声明 version 4.0.533。仓库 commit SHA 尚未锁定。"
+            },
+            {
+              "locator": "https://github.com/remotion-dev/skills/blob/473352613039e718e46655a26df224851e84c4aa/skills/remotion-best-practices/SKILL.md",
+              "claim": "Root 使用浏览器核对 GitHub main 的完整 currentOid，随后打开固定引用的 Skill 文件；文件声明 version=4.0.533，未执行技能。"
+            }
+          ],
+          "limits": [
+            "上游许可尚未确认。",
+            "只查过固定版本文件，未在 Remotion 或 ThusDesign 中使用验证。",
+            "本机历史 Skill 版本不明，不等同于此次锁定版本。"
+          ]
+        }
+      },
+      {
+        "id": "remotion.render",
+        "title": "Remotion Render",
+        "summary": "Remotion 项目渲染流程与参数指导 Skill。",
+        "purpose": "了解并执行 Remotion 渲染操作。",
+        "classification": {
+          "category": "skills",
+          "subtype": null,
+          "domains": [
+            "motion-video",
+            "software-engineering"
+          ],
+          "formats": [
+            "markdown"
+          ],
+          "conventions": [
+            "skill-md"
+          ],
+          "rationale": "主体是 Remotion 工作方法；作为 Skill 收录，不是动画工程模板。"
+        },
+        "provenance": {
+          "relation": "curated",
+          "content_source": "remotion-dev.skills",
+          "discovered_via": [
+            "discover.github"
+          ],
+          "upstream": {
+            "kind": "git",
+            "url": "https://github.com/remotion-dev/skills/blob/473352613039e718e46655a26df224851e84c4aa/skills/remotion-render/SKILL.md",
+            "path": "skills/remotion-render/SKILL.md",
+            "selector": "skills/remotion-render/SKILL.md",
+            "ref": {
+              "kind": "commit",
+              "value": "473352613039e718e46655a26df224851e84c4aa"
+            }
+          },
+          "derives_from": [],
+          "changes": null
+        },
+        "authors": {
+          "status": "unknown",
+          "identities": [],
+          "evidence": []
+        },
+        "publisher": {
+          "status": "known",
+          "identities": [
+            {
+              "name": "Remotion",
+              "url": "https://www.remotion.dev/docs/ai/skills"
+            }
+          ],
+          "evidence": [
+            {
+              "locator": "https://www.remotion.dev/docs/ai/skills",
+              "claim": "官方文档说明 Remotion 维护 Agent Skills 列表；publisher 仅记录发布组织，不推断单一作者。"
+            }
+          ]
+        },
+        "license": {
+          "status": "unknown",
+          "expression": null,
+          "scope": null,
+          "evidence": [],
+          "redistribution": "unknown"
+        },
+        "distribution": [
+          {
+            "kind": "repository",
+            "channel_source": "discover.github",
+            "url": "https://github.com/remotion-dev/skills/tree/main/skills/remotion-render"
+          },
+          {
+            "kind": "upstream-link",
+            "channel_source": "dist.remotion-skills-cli",
+            "url": "https://www.remotion.dev/docs/ai/skills"
+          }
+        ],
+        "previews": [],
+        "compatibility": {
+          "hosts": [
+            "Agent with SKILL.md support"
+          ],
+          "runtimes": [
+            {
+              "name": "Remotion project",
+              "version": null,
+              "status": "declared"
+            },
+            {
+              "name": "Node.js",
+              "version": null,
+              "status": "declared"
+            }
+          ],
+          "dependencies": [
+            {
+              "kind": "tool",
+              "name": "Remotion CLI",
+              "version": null,
+              "source_id": null
+            }
+          ],
+          "constraints": [
+            "文件声明版本 4.0.533，只是技能内容版本；支持的 Remotion/Node.js 版本尚未实测。",
+            "Best Practices 路由的辅助文件须随锁定仓库完整读取，不把单一 SKILL.md 当完整依赖包。"
+          ]
+        },
+        "components": [],
+        "lifecycle": {
+          "state": "candidate",
+          "reason": "阶段 1 样例；待内容许可、来源及适配/审核门槛完成。",
+          "replacement_id": null
+        },
+        "review": {
+          "status": "pending",
+          "by": null,
+          "at": null,
+          "evidence": []
+        },
+        "verification": {
+          "level": "source-inspected",
+          "checked_at": "2026-10-07",
+          "by": "ThusDesign cataloguer",
+          "evidence": [
+            {
+              "locator": "https://github.com/remotion-dev/skills/blob/main/skills/remotion-render/SKILL.md",
+              "claim": "官方仓库对应 SKILL.md 文件路径已查；内部 frontmatter 声明 version 4.0.533。仓库 commit SHA 尚未锁定。"
+            },
+            {
+              "locator": "https://github.com/remotion-dev/skills/blob/473352613039e718e46655a26df224851e84c4aa/skills/remotion-render/SKILL.md",
+              "claim": "Root 使用浏览器核对 GitHub main 的完整 currentOid，随后打开固定引用的 Skill 文件；文件声明 version=4.0.533，未执行技能。"
+            }
+          ],
+          "limits": [
+            "上游许可尚未确认。",
+            "只查过固定版本文件，未在 Remotion 或 ThusDesign 中使用验证。",
+            "本机历史 Skill 版本不明，不等同于此次锁定版本。"
+          ]
+        }
+      },
+      {
+        "id": "thusdesign.inspiration-scout",
+        "title": "ThusDesign Inspiration Scout",
+        "summary": "受限产品源的灵感搜索/筛选/组织工作流 Skill 元数据。",
+        "purpose": "把用户 brief 路由到领域来源并整理可追溯参考。",
+        "classification": {
+          "category": "skills",
+          "subtype": null,
+          "domains": [
+            "visual-design",
+            "research"
+          ],
+          "formats": [
+            "markdown"
+          ],
+          "conventions": [
+            "skill-md"
+          ],
+          "rationale": "任务方法为主；路径定位精确但内容受限，未公开复制。"
+        },
+        "provenance": {
+          "relation": "curated",
+          "content_source": "thusdesign.product-source",
+          "discovered_via": [],
+          "upstream": {
+            "kind": "product",
+            "url": "https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/packages/ai/skills/inspiration-scout/SKILL.md",
+            "path": "packages/ai/skills/inspiration-scout/SKILL.md",
+            "selector": "inspiration-scout",
+            "ref": {
+              "kind": "commit",
+              "value": "33a1feabbcd5129fc9c7f4a676e80c632f44bce1"
+            }
+          },
+          "derives_from": [],
+          "changes": null
+        },
+        "authors": {
+          "status": "unknown",
+          "identities": [],
+          "evidence": []
+        },
+        "publisher": {
+          "status": "known",
+          "identities": [
+            {
+              "name": "ThusDesign",
+              "url": "https://www.thusdesign.ai"
+            }
+          ],
+          "evidence": [
+            {
+              "locator": "product-source:33a1feabbcd5129fc9c7f4a676e80c632f44bce1:packages/ai/skills/inspiration-scout/SKILL.md#inspiration-scout",
+              "claim": "受限产品源码中的包/目录元数据属于 ThusDesign 产品维护范围；只登记发布者，不推断作者或公共分发许可。"
+            }
+          ]
+        },
+        "license": {
+          "status": "unknown",
+          "expression": null,
+          "scope": null,
+          "evidence": [],
+          "redistribution": "unknown"
+        },
+        "distribution": [],
+        "previews": [],
+        "compatibility": {
+          "hosts": [
+            "ThusDesign Desktop OMP"
+          ],
+          "runtimes": [
+            {
+              "name": "OMP",
+              "version": null,
+              "status": "declared"
+            },
+            {
+              "name": "Python",
+              "version": null,
+              "status": "declared"
+            }
+          ],
+          "dependencies": [
+            {
+              "kind": "tool",
+              "name": "Web search/browser access",
+              "version": null,
+              "source_id": null
+            }
+          ],
+          "constraints": [
+            "任务需按用户 Brief 检索资料并在绑定工作区输出灵感板；网络访问、依赖版本和跨宿主兼容未实测。",
+            "来源许可不因收录灵感素材而改变。"
+          ]
+        },
+        "components": [],
+        "lifecycle": {
+          "state": "candidate",
+          "reason": "产品发布者已知；作者、外部分发许可及公开分享授权未知。",
+          "replacement_id": null
+        },
+        "review": {
+          "status": "pending",
+          "by": null,
+          "at": null,
+          "evidence": []
+        },
+        "verification": {
+          "level": "source-inspected",
+          "checked_at": "2026-10-07",
+          "by": "ThusDesign cataloguer",
+          "evidence": [
+            {
+              "locator": "product-source:33a1feabbcd5129fc9c7f4a676e80c632f44bce1:packages/ai/skills/inspiration-scout/SKILL.md#inspiration-scout",
+              "claim": "由提供的 ThusDesign 产品源 commit 与路径定位；只核实元数据/路径，不公开内容。"
+            }
+          ],
+          "limits": [
+            "来源为受限产品源码，定位符仅供内部审计。",
+            "不复制正文/私人源规则；author 与 license unknown。"
+          ]
+        }
+      },
+      {
+        "id": "thusdesign.prompt.shinning-x2048663549413921103",
+        "title": "Shinning GPT Image 2 Prompt Entry",
+        "summary": "产品提示词目录中带外部 X sourceLink 的单条图片提示记录。",
+        "purpose": "作为图片生成提示词来源线索供人工查证。",
+        "classification": {
+          "category": "prompts",
+          "subtype": "image",
+          "domains": [
+            "visual-design",
+            "marketing"
+          ],
+          "formats": [
+            "json"
+          ],
+          "conventions": [],
+          "rationale": "记录特定数据 selector；产品保存 sourceLink 不等于原帖、作者或许可已独立验证。"
+        },
+        "provenance": {
+          "relation": "curated",
+          "content_source": "x.shinning",
+          "discovered_via": [
+            "thusdesign.prompt-data"
+          ],
+          "upstream": {
+            "kind": "web",
+            "url": "https://x.com/Shinning1010/status/2048663549413921103",
+            "path": null,
+            "selector": "x-2048663549413921103",
+            "ref": {
+              "kind": "unknown",
+              "value": null
+            }
+          },
+          "derives_from": [],
+          "changes": null
+        },
+        "authors": {
+          "status": "unknown",
+          "identities": [],
+          "evidence": []
+        },
+        "publisher": {
+          "status": "unknown",
+          "identities": [],
+          "evidence": []
+        },
+        "license": {
+          "status": "unknown",
+          "expression": null,
+          "scope": null,
+          "evidence": [],
+          "redistribution": "unknown"
+        },
+        "distribution": [],
+        "previews": [],
+        "compatibility": {
+          "hosts": [
+            "image generation workflow"
+          ],
+          "runtimes": [],
+          "dependencies": [
+            {
+              "kind": "model",
+              "name": "gpt-image-2",
+              "version": null,
+              "source_id": null
+            }
+          ],
+          "constraints": [
+            "模型名称仅来自已保存的产品 metadata；原帖、原文完整性和实际生成条件未独立验证。",
+            "不声明适用于任意模型或已在 ThusDesign 成功生成。"
+          ]
+        },
+        "components": [],
+        "lifecycle": {
+          "state": "candidate",
+          "reason": "仅产品数据保存的外部帖子线索；原帖、作者身份、许可与再分发授权待独立核验。",
+          "replacement_id": null
+        },
+        "review": {
+          "status": "pending",
+          "by": null,
+          "at": null,
+          "evidence": []
+        },
+        "verification": {
+          "level": "unverified",
+          "checked_at": "2026-10-07",
+          "by": "ThusDesign cataloguer",
+          "evidence": [
+            {
+              "locator": "product-source:33a1feabbcd5129fc9c7f4a676e80c632f44bce1:apps/thusDesign/data/gpt-image-2-prompts.json#x-2048663549413921103",
+              "claim": "产品数据在固定源中保存 sourceLink=https://x.com/Shinning1010/status/2048663549413921103；此为待核外部来源线索，未独立访问原帖。"
+            }
+          ],
+          "limits": [
+            "产品 sourceLink 不是原帖独立查证。",
+            "不包含或复制 prompt 正文和媒体；作者与许可未知。"
+          ]
+        }
+      },
+      {
+        "id": "thusdesign.prompt.atlas-2041839076354224178",
+        "title": "Atlas Seedance Video Prompt Entry",
+        "summary": "产品视频提示目录中一条带 X sourceLink 的视频提示记录。",
+        "purpose": "作为视频生成提示词来源线索供人工查证。",
+        "classification": {
+          "category": "prompts",
+          "subtype": "video",
+          "domains": [
+            "motion-video",
+            "marketing"
+          ],
+          "formats": [
+            "json"
+          ],
+          "conventions": [],
+          "rationale": "具体 product selector；源帖和权属仍待核验。"
+        },
+        "provenance": {
+          "relation": "curated",
+          "content_source": "x.ihayato",
+          "discovered_via": [
+            "thusdesign.prompt-data"
+          ],
+          "upstream": {
+            "kind": "web",
+            "url": "https://x.com/IHayato/status/2041839076354224178",
+            "path": null,
+            "selector": "2041839076354224178",
+            "ref": {
+              "kind": "unknown",
+              "value": null
+            }
+          },
+          "derives_from": [],
+          "changes": null
+        },
+        "authors": {
+          "status": "unknown",
+          "identities": [],
+          "evidence": []
+        },
+        "publisher": {
+          "status": "unknown",
+          "identities": [],
+          "evidence": []
+        },
+        "license": {
+          "status": "unknown",
+          "expression": null,
+          "scope": null,
+          "evidence": [],
+          "redistribution": "unknown"
+        },
+        "distribution": [],
+        "previews": [],
+        "compatibility": {
+          "hosts": [
+            "video generation workflow"
+          ],
+          "runtimes": [],
+          "dependencies": [
+            {
+              "kind": "model",
+              "name": "seedance-2-0",
+              "version": null,
+              "source_id": null
+            }
+          ],
+          "constraints": [
+            "模型名称仅来自已保存的产品 metadata；原帖、原文完整性和实际生成条件未独立验证。",
+            "不声明适用于任意模型或已在 ThusDesign 成功生成。"
+          ]
+        },
+        "components": [],
+        "lifecycle": {
+          "state": "candidate",
+          "reason": "仅产品数据保存的外部帖子线索；原帖、作者身份、许可与再分发授权待独立核验。",
+          "replacement_id": null
+        },
+        "review": {
+          "status": "pending",
+          "by": null,
+          "at": null,
+          "evidence": []
+        },
+        "verification": {
+          "level": "unverified",
+          "checked_at": "2026-10-07",
+          "by": "ThusDesign cataloguer",
+          "evidence": [
+            {
+              "locator": "product-source:33a1feabbcd5129fc9c7f4a676e80c632f44bce1:apps/thusDesign/data/atlas-seedance-2-prompts.json#2041839076354224178",
+              "claim": "产品数据在固定源中保存 sourceLink=https://x.com/IHayato/status/2041839076354224178；此为待核外部来源线索，未独立访问原帖。"
+            }
+          ],
+          "limits": [
+            "产品 sourceLink 不是原帖独立查证。",
+            "不包含或复制 prompt 正文和媒体；作者与许可未知。"
+          ]
+        }
+      },
+      {
+        "id": "thusdesign.td-drama-production",
+        "title": "td-drama-production",
+        "summary": "产品 plugin.json 声明的制作工作流插件元数据，含 7 个技能、宿主 director-desk 模块和 tdcanvas CLI 命令。",
+        "purpose": "组合使用剧本、拆解、导演台与镜头制作工作流。",
+        "classification": {
+          "category": "plugins",
+          "subtype": null,
+          "domains": [
+            "motion-video",
+            "visual-design"
+          ],
+          "formats": [
+            "json"
+          ],
+          "conventions": [
+            "plugin-manifest"
+          ],
+          "rationale": "插件清单具稳定 id/version/组件声明；host module 明示宿主提供，不伪装为随包携带。"
+        },
+        "provenance": {
+          "relation": "curated",
+          "content_source": "thusdesign.product-source",
+          "discovered_via": [],
+          "upstream": {
+            "kind": "product",
+            "url": "https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/packages/td-plugins/td-drama-production/plugin.json",
+            "path": "packages/td-plugins/td-drama-production/plugin.json",
+            "selector": "td-drama-production",
+            "ref": {
+              "kind": "commit",
+              "value": "33a1feabbcd5129fc9c7f4a676e80c632f44bce1"
+            }
+          },
+          "derives_from": [],
+          "changes": null
+        },
+        "authors": {
+          "status": "unknown",
+          "identities": [],
+          "evidence": []
+        },
+        "publisher": {
+          "status": "known",
+          "identities": [
+            {
+              "name": "ThusDesign",
+              "url": "https://www.thusdesign.ai"
+            }
+          ],
+          "evidence": [
+            {
+              "locator": "product-source:33a1feabbcd5129fc9c7f4a676e80c632f44bce1:packages/td-plugins/td-drama-production/plugin.json#td-drama-production",
+              "claim": "受限产品源码中的包/目录元数据属于 ThusDesign 产品维护范围；只登记发布者，不推断作者或公共分发许可。"
+            }
+          ]
+        },
+        "license": {
+          "status": "unknown",
+          "expression": null,
+          "scope": null,
+          "evidence": [],
+          "redistribution": "unknown"
+        },
+        "distribution": [],
+        "previews": [],
+        "compatibility": {
+          "hosts": [
+            "ThusDesign Desktop"
+          ],
+          "runtimes": [
+            {
+              "name": "OMP",
+              "version": null,
+              "status": "declared"
+            }
+          ],
+          "dependencies": [
+            {
+              "kind": "tool",
+              "name": "tdcanvas director-desk",
+              "version": null,
+              "source_id": "thusdesign.product-source"
+            }
+          ],
+          "constraints": [
+            "构建期 Skill bundle；director-desk 宿主模块及 CLI 必须由产品提供。",
+            "组件清单不表示已实现用户动态安装、升级或卸载；当前版本兼容未实测。"
+          ]
+        },
+        "components": [
+          {
+            "id": "td-01-screenwriter",
+            "type": "skill",
+            "resource_id": null,
+            "upstream": {
+              "kind": "product",
+              "url": "https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/packages/td-plugins/td-drama-production/skills/td-01-screenwriter/SKILL.md",
+              "path": "packages/td-plugins/td-drama-production/skills/td-01-screenwriter/SKILL.md",
+              "selector": "td-01-screenwriter",
+              "ref": {
+                "kind": "commit",
+                "value": "33a1feabbcd5129fc9c7f4a676e80c632f44bce1"
+              }
+            },
+            "subtype": null,
+            "delivery": "contained"
+          },
+          {
+            "id": "td-02-asset-breakdown",
+            "type": "skill",
+            "resource_id": null,
+            "upstream": {
+              "kind": "product",
+              "url": "https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/packages/td-plugins/td-drama-production/skills/td-02-asset-breakdown/SKILL.md",
+              "path": "packages/td-plugins/td-drama-production/skills/td-02-asset-breakdown/SKILL.md",
+              "selector": "td-02-asset-breakdown",
+              "ref": {
+                "kind": "commit",
+                "value": "33a1feabbcd5129fc9c7f4a676e80c632f44bce1"
+              }
+            },
+            "subtype": null,
+            "delivery": "contained"
+          },
+          {
+            "id": "td-03-director-desk",
+            "type": "skill",
+            "resource_id": null,
+            "upstream": {
+              "kind": "product",
+              "url": "https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/packages/td-plugins/td-drama-production/skills/td-03-director-desk/SKILL.md",
+              "path": "packages/td-plugins/td-drama-production/skills/td-03-director-desk/SKILL.md",
+              "selector": "td-03-director-desk",
+              "ref": {
+                "kind": "commit",
+                "value": "33a1feabbcd5129fc9c7f4a676e80c632f44bce1"
+              }
+            },
+            "subtype": null,
+            "delivery": "contained"
+          },
+          {
+            "id": "td-04-shot-production",
+            "type": "skill",
+            "resource_id": null,
+            "upstream": {
+              "kind": "product",
+              "url": "https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/packages/td-plugins/td-drama-production/skills/td-04-shot-production/SKILL.md",
+              "path": "packages/td-plugins/td-drama-production/skills/td-04-shot-production/SKILL.md",
+              "selector": "td-04-shot-production",
+              "ref": {
+                "kind": "commit",
+                "value": "33a1feabbcd5129fc9c7f4a676e80c632f44bce1"
+              }
+            },
+            "subtype": null,
+            "delivery": "contained"
+          },
+          {
+            "id": "td-ref-camera-direction",
+            "type": "skill",
+            "resource_id": null,
+            "upstream": {
+              "kind": "product",
+              "url": "https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/packages/td-plugins/td-drama-production/skills/td-ref-camera-direction/SKILL.md",
+              "path": "packages/td-plugins/td-drama-production/skills/td-ref-camera-direction/SKILL.md",
+              "selector": "td-ref-camera-direction",
+              "ref": {
+                "kind": "commit",
+                "value": "33a1feabbcd5129fc9c7f4a676e80c632f44bce1"
+              }
+            },
+            "subtype": null,
+            "delivery": "contained"
+          },
+          {
+            "id": "td-ref-prompt-doctor",
+            "type": "skill",
+            "resource_id": null,
+            "upstream": {
+              "kind": "product",
+              "url": "https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/packages/td-plugins/td-drama-production/skills/td-ref-prompt-doctor/SKILL.md",
+              "path": "packages/td-plugins/td-drama-production/skills/td-ref-prompt-doctor/SKILL.md",
+              "selector": "td-ref-prompt-doctor",
+              "ref": {
+                "kind": "commit",
+                "value": "33a1feabbcd5129fc9c7f4a676e80c632f44bce1"
+              }
+            },
+            "subtype": null,
+            "delivery": "contained"
+          },
+          {
+            "id": "td-ref-sound-design",
+            "type": "skill",
+            "resource_id": null,
+            "upstream": {
+              "kind": "product",
+              "url": "https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/packages/td-plugins/td-drama-production/skills/td-ref-sound-design/SKILL.md",
+              "path": "packages/td-plugins/td-drama-production/skills/td-ref-sound-design/SKILL.md",
+              "selector": "td-ref-sound-design",
+              "ref": {
+                "kind": "commit",
+                "value": "33a1feabbcd5129fc9c7f4a676e80c632f44bce1"
+              }
+            },
+            "subtype": null,
+            "delivery": "contained"
+          },
+          {
+            "id": "director-desk",
+            "type": "host-module",
+            "resource_id": null,
+            "upstream": {
+              "kind": "product",
+              "url": "https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/packages/td-plugins/td-drama-production/plugin.json",
+              "path": "packages/td-plugins/td-drama-production/plugin.json",
+              "selector": "canvasModules[id=director-desk] provider=host",
+              "ref": {
+                "kind": "commit",
+                "value": "33a1feabbcd5129fc9c7f4a676e80c632f44bce1"
+              }
+            },
+            "subtype": null,
+            "delivery": "host-provided"
+          },
+          {
+            "id": "tdcanvas-director-desk",
+            "type": "cli",
+            "resource_id": null,
+            "upstream": {
+              "kind": "product",
+              "url": "https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/packages/td-plugins/td-drama-production/plugin.json",
+              "path": "packages/td-plugins/td-drama-production/plugin.json",
+              "selector": "cli[\"tdcanvas director-desk\"]",
+              "ref": {
+                "kind": "commit",
+                "value": "33a1feabbcd5129fc9c7f4a676e80c632f44bce1"
+              }
+            },
+            "subtype": null,
+            "delivery": "referenced"
+          }
+        ],
+        "lifecycle": {
+          "state": "candidate",
+          "reason": "发布者字段由产品仓库声明；作者/许可、公开分发入口、宿主版本兼容需核验。",
+          "replacement_id": null
+        },
+        "review": {
+          "status": "pending",
+          "by": null,
+          "at": null,
+          "evidence": []
+        },
+        "verification": {
+          "level": "source-inspected",
+          "checked_at": "2026-10-07",
+          "by": "ThusDesign cataloguer",
+          "evidence": [
+            {
+              "locator": "product-source:working-tree:packages/td-plugins/td-drama-production/plugin.json#id+version+skills+canvasModules+cli",
+              "claim": "只读插件 manifest 的 ID、版本和组件字段；不复制组件正文。"
+            }
+          ],
+          "limits": [
+            "受限产品 metadata-only 记录。",
+            "不表示插件可独立安装或宿主模块已包含。",
+            "七个技能是否对外分发以及各组件作者/许可未知。"
+          ]
+        }
+      },
+      {
+        "id": "thusdesign.cli",
+        "title": "@thusdesign/cli",
+        "summary": "package.json 元数据声明的 thusDesign CLI 包，含 CLI bin 和包内 stdio MCP 能力。",
+        "purpose": "从 CLI 及 stdio MCP 入口调用 ThusDesign AIGC 服务。",
+        "classification": {
+          "category": "plugins",
+          "subtype": null,
+          "domains": [
+            "software-engineering"
+          ],
+          "formats": [
+            "json",
+            "typescript"
+          ],
+          "conventions": [
+            "mcp"
+          ],
+          "rationale": "同一 npm 包身份下提供 CLI bin 和 stdio MCP 入口，作为组合插件元数据登记；package.json 是包元数据，并非 plugin.json 格式。发布与动态安装未验证。"
+        },
+        "provenance": {
+          "relation": "curated",
+          "content_source": "thusdesign.product-source",
+          "discovered_via": [],
+          "upstream": {
+            "kind": "product",
+            "url": "https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/apps/aigc-cli/package.json",
+            "path": "apps/aigc-cli/package.json",
+            "selector": "@thusdesign/cli",
+            "ref": {
+              "kind": "commit",
+              "value": "33a1feabbcd5129fc9c7f4a676e80c632f44bce1"
+            }
+          },
+          "derives_from": [],
+          "changes": null
+        },
+        "authors": {
+          "status": "unknown",
+          "identities": [],
+          "evidence": []
+        },
+        "publisher": {
+          "status": "known",
+          "identities": [
+            {
+              "name": "ThusDesign",
+              "url": "https://www.thusdesign.ai"
+            }
+          ],
+          "evidence": [
+            {
+              "locator": "product-source:33a1feabbcd5129fc9c7f4a676e80c632f44bce1:apps/aigc-cli/package.json#@thusdesign/cli",
+              "claim": "受限产品源码中的包/目录元数据属于 ThusDesign 产品维护范围；只登记发布者，不推断作者或公共分发许可。"
+            }
+          ]
+        },
+        "license": {
+          "status": "unknown",
+          "expression": null,
+          "scope": null,
+          "evidence": [],
+          "redistribution": "unknown"
+        },
+        "distribution": [],
+        "previews": [],
+        "compatibility": {
+          "hosts": [
+            "CLI",
+            "MCP-compatible client"
+          ],
+          "runtimes": [
+            {
+              "name": "Node.js",
+              "version": null,
+              "status": "declared"
+            }
+          ],
+          "dependencies": [
+            {
+              "kind": "service",
+              "name": "ThusDesign AIGC API",
+              "version": null,
+              "source_id": "thusdesign.product-source"
+            }
+          ],
+          "constraints": [
+            "需产品 API 凭证及相应模型/账户权限；本条仅检查源码入口，不宣称当前账户或任意客户端可用。"
+          ]
+        },
+        "components": [
+          {
+            "id": "cli",
+            "type": "cli",
+            "resource_id": null,
+            "upstream": {
+              "kind": "product",
+              "url": "https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/apps/aigc-cli/src/cli.ts",
+              "path": "apps/aigc-cli/src/cli.ts",
+              "selector": "buildProgram",
+              "ref": {
+                "kind": "commit",
+                "value": "33a1feabbcd5129fc9c7f4a676e80c632f44bce1"
+              }
+            },
+            "subtype": null,
+            "delivery": "contained"
+          },
+          {
+            "id": "stdio-mcp",
+            "type": "mcp-server",
+            "resource_id": null,
+            "upstream": {
+              "kind": "product",
+              "url": "https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/apps/aigc-cli/src/commands/mcp.ts",
+              "path": "apps/aigc-cli/src/commands/mcp.ts",
+              "selector": "createMcpServer + StdioServerTransport",
+              "ref": {
+                "kind": "commit",
+                "value": "33a1feabbcd5129fc9c7f4a676e80c632f44bce1"
+              }
+            },
+            "subtype": null,
+            "delivery": "contained"
+          }
+        ],
+        "lifecycle": {
+          "state": "candidate",
+          "reason": "已锁定包元数据和 CLI/MCP 源码入口；作者许可、公共发布状态和运行兼容仍待审核。",
+          "replacement_id": null
+        },
+        "review": {
+          "status": "pending",
+          "by": null,
+          "at": null,
+          "evidence": []
+        },
+        "verification": {
+          "level": "source-inspected",
+          "checked_at": "2026-10-07",
+          "by": "ThusDesign cataloguer",
+          "evidence": [
+            {
+              "locator": "product-source:working-tree:apps/aigc-cli/package.json#name+version+bin+files+description",
+              "claim": "元数据将包名设为 @thusdesign/cli，bin 指向 dist/cli.js，描述称含 stdio MCP；未检查动态安装或已构建产物。"
+            },
+            {
+              "locator": "product-source:33a1feabbcd5129fc9c7f4a676e80c632f44bce1:apps/aigc-cli/src/cli.ts#buildProgram",
+              "claim": "固定提交中 CLI 工程以此入口装配命令，包括 mcp 子命令；MCP 传输在 src/commands/mcp.ts 声明。"
+            }
+          ],
+          "limits": [
+            "受限产品源码仅供元数据审计，不能作为公开下载权限。",
+            "源码与 package.json 不代表已 npm 发布、安装成功或运行验证。",
+            "许可与各 MCP 客户端兼容尚未验证。"
+          ]
+        }
+      },
+      {
+        "id": "thusdesign.quiet-product-reference",
+        "title": "ThusStyle Quiet Product Reference",
+        "summary": "产品设计风格目录中被称为 quiet-product 的单一风格参考定位。",
+        "purpose": "作为风格参考，不视作完整设计系统。",
+        "classification": {
+          "category": "design-systems",
+          "subtype": null,
+          "domains": [
+            "visual-design"
+          ],
+          "formats": [
+            "markdown"
+          ],
+          "conventions": [
+            "design-md"
+          ],
+          "rationale": "目前只有参考项身份；缺少可追溯 tokens 与 CSS 的完整证据，不满足完整设计系统最低 profile。"
+        },
+        "provenance": {
+          "relation": "curated",
+          "content_source": "thusdesign.product-source",
+          "discovered_via": [],
+          "upstream": {
+            "kind": "product",
+            "url": "https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/packages/asset-library/src/design-styles/official.ts",
+            "path": "packages/asset-library/src/design-styles/official.ts",
+            "selector": "presets.id=quiet-product",
+            "ref": {
+              "kind": "commit",
+              "value": "33a1feabbcd5129fc9c7f4a676e80c632f44bce1"
+            }
+          },
+          "derives_from": [],
+          "changes": null
+        },
+        "authors": {
+          "status": "unknown",
+          "identities": [],
+          "evidence": []
+        },
+        "publisher": {
+          "status": "known",
+          "identities": [
+            {
+              "name": "ThusDesign",
+              "url": "https://www.thusdesign.ai"
+            }
+          ],
+          "evidence": [
+            {
+              "locator": "product-source:33a1feabbcd5129fc9c7f4a676e80c632f44bce1:packages/design-system/ (exact quiet-product source path unknown)#quiet-product (exact source file unknown)",
+              "claim": "受限产品源码中的包/目录元数据属于 ThusDesign 产品维护范围；只登记发布者，不推断作者或公共分发许可。"
+            }
+          ]
+        },
+        "license": {
+          "status": "unknown",
+          "expression": null,
+          "scope": null,
+          "evidence": [],
+          "redistribution": "unknown"
+        },
+        "distribution": [],
+        "previews": [],
+        "compatibility": {
+          "hosts": [
+            "ThusDesign design-style library"
+          ],
+          "runtimes": [],
+          "dependencies": [],
+          "constraints": [
+            "色板、字体类别和规则参考，未提供完整 DESIGN.md+tokens+CSS；不得晋级为完整设计系统。"
+          ]
+        },
+        "components": [],
+        "lifecycle": {
+          "state": "reference",
+          "reason": "仅供内部参考；具体源文件和作者许可未能查明。",
+          "replacement_id": null
+        },
+        "review": {
+          "status": "pending",
+          "by": null,
+          "at": null,
+          "evidence": []
+        },
+        "verification": {
+          "level": "source-inspected",
+          "checked_at": "2026-10-07",
+          "by": "ThusDesign cataloguer",
+          "evidence": [
+            {
+              "locator": "product-source:33a1feabbcd5129fc9c7f4a676e80c632f44bce1:packages/asset-library/src/design-styles/official.ts#presets.id=quiet-product",
+              "claim": "工作树内容与固定 commit 一致；定位到 Quiet Product 标题、摘要、配色和 rules。"
+            }
+          ],
+          "limits": [
+            "这是 style preset，而非含 DESIGN.md/tokens.css 完整结构的设计系统。",
+            "作者与分发/复制许可未知；只作 reference。"
+          ]
+        }
+      },
+      {
+        "id": "opendesign.mockup-device-3d",
+        "title": "Device 3D Showcase HTML",
+        "summary": "静态 CSS 三维设备展示 HTML，透视组合 iPhone 与 MacBook，并嵌入屏幕内容。",
+        "purpose": "参考或复用特定设备展示场景的 HTML/CSS 结构。",
+        "classification": {
+          "category": "templates",
+          "subtype": "three-d",
+          "domains": [
+            "three-d",
+            "visual-design"
+          ],
+          "formats": [
+            "html"
+          ],
+          "conventions": [],
+          "rationale": "登记单个 example.html 三维展示产物；主产物是 CSS 透视设备场景。manifest 描述为 3D-style，不能推断为 GLTF、Three.js 或 DCC 工程。 本记录只索引模板内容（指定 SKILL/seed/example），不索引其 OpenDesign 插件 pipeline/atom 包装；包装整体若另行收录则为独立插件分发单元。"
+        },
+        "provenance": {
+          "relation": "curated",
+          "content_source": "opendesign",
+          "discovered_via": [],
+          "upstream": {
+            "kind": "git",
+            "url": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/mockup-device-3d/example.html",
+            "path": "plugins/_official/examples/mockup-device-3d/example.html",
+            "selector": "plugins/_official/examples/mockup-device-3d/open-design.json",
+            "ref": {
+              "kind": "commit",
+              "value": "53231d40b778d88eba23f35547bf99485d3ae9fc"
+            }
+          },
+          "derives_from": [],
+          "changes": null
+        },
+        "authors": {
+          "status": "known",
+          "identities": [
+            {
+              "name": "OpenDesign",
+              "url": "https://github.com/nexu-io"
+            }
+          ],
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/mockup-device-3d/open-design.json",
+              "claim": "具体示例 manifest 声明 author.name=OpenDesign；不推断内嵌设备品牌或媒体作者。"
+            }
+          ]
+        },
+        "publisher": {
+          "status": "known",
+          "identities": [
+            {
+              "name": "OpenDesign",
+              "url": "https://github.com/nexu-io"
+            }
+          ],
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/mockup-device-3d/open-design.json",
+              "claim": "固定版本中的官方示例 manifest 发布该示例条目。"
+            }
+          ]
+        },
+        "license": {
+          "status": "verified",
+          "expression": "MIT",
+          "scope": "plugins/_official/examples/mockup-device-3d/ package only, as declared by its open-design.json; embedded third-party fonts, images, brands, or external assets are excluded unless separately licensed.",
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/mockup-device-3d/open-design.json",
+              "claim": "具体插件示例 manifest 声明 license=MIT 与 author=OpenDesign；权利范围限于 manifest 标识的示例包。"
+            }
+          ],
+          "redistribution": "unknown"
+        },
+        "distribution": [
+          {
+            "kind": "repository",
+            "channel_source": "discover.github",
+            "url": "https://github.com/nexu-io/open-design/tree/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/mockup-device-3d"
+          }
+        ],
+        "previews": [
+          {
+            "kind": "html",
+            "url": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/mockup-device-3d/example.html",
+            "status": "reference",
+            "evidence": [
+              {
+                "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/mockup-device-3d/example.html",
+                "claim": "具体静态展示示例文件；未独立执行或渲染。"
+              }
+            ]
+          }
+        ],
+        "compatibility": {
+          "hosts": [
+            "OpenDesign content workflow",
+            "Web browser preview"
+          ],
+          "runtimes": [
+            {
+              "name": "HTML/CSS-capable browser",
+              "version": null,
+              "status": "declared"
+            }
+          ],
+          "dependencies": [],
+          "constraints": [
+            "此处登记上游声明的网页产物环境；浏览器版本和 ThusDesign 适配未实测。",
+            "CSS 透视设备展示，不是 GLTF、Three.js 或 DCC 工程。",
+            "内嵌品牌/媒体的权利待核。"
+          ]
+        },
+        "components": [],
+        "lifecycle": {
+          "state": "candidate",
+          "reason": "MIT 仅覆盖 manifest 声明的示例包；嵌入素材权利和具体宿主运行仍待核。",
+          "replacement_id": null
+        },
+        "review": {
+          "status": "pending",
+          "by": null,
+          "at": null,
+          "evidence": []
+        },
+        "verification": {
+          "level": "source-inspected",
+          "checked_at": "2026-10-07",
+          "by": "ThusDesign cataloguer",
+          "evidence": [
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/mockup-device-3d/open-design.json",
+              "claim": "manifest 描述为静态 iPhone/MacBook 3D-style showcase，并声明 author OpenDesign、license MIT。"
+            },
+            {
+              "locator": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/mockup-device-3d/example.html",
+              "claim": "具体 CSS 透视展示 HTML；登记为 three-d 子类，未据此声称 3D library/DCC 工程。"
+            }
+          ],
+          "limits": [
+            "manifest 许可不涵盖另行嵌入的第三方素材，需逐项核查。",
+            "未执行 HTML 或检查目标浏览器运行结果。",
+            "manifest 对自身示例声明 MIT；外部字体、媒体及品牌资源未完成逐项权利核查，整体再分发保持未知。"
+          ]
+        }
+      }
+    ]
+  }
+}

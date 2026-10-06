@@ -1,82 +1,323 @@
 #!/usr/bin/env python3
-"""Quality gate: schema & curation-rule validation for data/resources.yaml.
-
-Rules (fail CI on violation):
-  1. required fields present: name / url / source / platform / note
-  2. source in {official, vendor, community}; vmethod in {manual, automated} when present
-  3. name globally unique (case-insensitive)
-  4. asset categories must not link to known collection/blacklist repos
-  5. platforms category is exempt from rule 4
-
-Exit 0 = pass, 1 = violations found.
-"""
-import os
+"""Validate the draft v3 public catalog without mutating its source files."""
+import argparse
+import re
 import sys
+from pathlib import Path
+from urllib.parse import urlsplit
 
 try:
     import yaml
 except ImportError:
     sys.exit("Missing dep: pip install pyyaml")
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA = os.path.join(ROOT, "data", "resources.yaml")
+ROOT = Path(__file__).resolve().parents[1]
+RESOURCE_REQUIRED = (
+    "id", "title", "summary", "purpose", "classification", "provenance",
+    "authors", "publisher", "license", "distribution", "previews",
+    "compatibility", "components", "lifecycle", "review", "verification",
+)
+SOURCE_ROLES = {"content-upstream", "discovery-channel", "distribution-channel", "specification"}
+RELATIONS = {"original", "adapted", "curated"}
+LIFECYCLE = {"reference", "candidate", "usable", "withdrawn"}
+REVIEW = {"pending", "approved", "rejected"}
+VERIFICATION = {"unverified", "source-inspected", "usage-tested"}
+IDENTIFIER = re.compile(r"^[a-z0-9][a-z0-9._-]*$")
+SHA1 = re.compile(r"^[0-9a-f]{40}$")
 
-REQUIRED = ["name", "url", "source", "platform", "note"]
-SOURCES = {"official", "vendor", "community"}
-VMETHODS = {"manual", "automated"}
 
-# 合集黑名单：资产类条目不得指向这些（发现渠道归 platforms）
-COLLECTION_BLACKLIST = [
-    "github.com/hesreallyhim/awesome-claude-code",
-    "github.com/punkpeye/awesome-mcp-servers",
-    "github.com/ComposioHQ/awesome-claude-skills",
-    "github.com/travisvn/awesome-claude-skills",
-    "github.com/kyrolabs/awesome-agents",
-    "github.com/quemsah/awesome-claude-plugins",
-    "github.com/rohitg00/awesome-claude-code-toolkit",
-    "github.com/f/awesome-chatgpt-prompts",
-    "github.com/PatrickJS/awesome-cursorrules",
-    "github.com/ItamarZand88/awesome-agent-conventions",
-    "github.com/VoltAgent/awesome-design-md",  # 合集本身；具体规范允许 tree/main/design-md/<brand>
-]
+def _read(path, errors):
+    try:
+        with path.open(encoding="utf-8") as handle:
+            return yaml.safe_load(handle)
+    except (OSError, yaml.YAMLError) as exc:
+        errors.append(f"{path}: cannot read YAML: {exc}")
+        return None
 
-doc = yaml.safe_load(open(DATA, encoding="utf-8"))
-errors = []
-seen = {}
 
-for cat in doc["categories"]:
-    is_platform = cat["id"] == "platforms"
-    for i, e in enumerate(cat["entries"]):
-        where = f"[{cat['id']}] #{i} {e.get('name', '?')}"
+def _ids(items, where, errors):
+    result = {}
+    if not isinstance(items, list):
+        errors.append(f"{where}: expected a list")
+        return result
+    for i, item in enumerate(items):
+        if not isinstance(item, dict):
+            errors.append(f"{where}[{i}]: expected a mapping")
+            continue
+        key = item.get("id")
+        if not isinstance(key, str) or not IDENTIFIER.fullmatch(key):
+            errors.append(f"{where}[{i}]: invalid id {key!r}")
+            continue
+        if key in result:
+            errors.append(f"{where}[{i}]: duplicate id {key}")
+        result[key] = item
+    return result
 
-        for f in REQUIRED:
-            if not e.get(f):
-                errors.append(f"{where}: missing required field '{f}'")
 
-        if e.get("source") not in SOURCES:
-            errors.append(f"{where}: bad source '{e.get('source')}'")
+def validate_data(categories_doc, sources_doc, resources_doc):
+    """Return contract violations for the three v3 YAML documents."""
+    errors = []
+    if not isinstance(categories_doc, dict) or categories_doc.get("schema_version") != 3:
+        errors.append("categories: schema_version must be 3")
+    if not isinstance(sources_doc, dict) or sources_doc.get("schema_version") != 3:
+        errors.append("sources: schema_version must be 3")
+    if not isinstance(resources_doc, dict) or resources_doc.get("schema_version") != 3:
+        errors.append("resources: schema_version must be 3")
+    if errors:
+        return errors
 
-        if e.get("vmethod") and e["vmethod"] not in VMETHODS:
-            errors.append(f"{where}: bad vmethod '{e['vmethod']}'")
+    category_list = categories_doc.get("categories")
+    categories = _ids(category_list, "categories", errors)
+    if len(categories) != 5:
+        errors.append("categories: phase-1 taxonomy must define five primary categories")
 
-        key = (e.get("name") or "").strip().lower()
-        if key in seen:
-            errors.append(f"{where}: duplicate name (also in [{seen[key]}])")
+    subtype_ids = {}
+    for cid, cat in categories.items():
+        subtype_ids[cid] = set(_ids(cat.get("subtypes", []), f"categories.{cid}.subtypes", errors))
+    for cid, expected_count in (("templates", 7), ("prompts", 3)):
+        if len(subtype_ids.get(cid, set())) != expected_count:
+            errors.append(f"categories.{cid}: expected {expected_count} subtypes")
+    for cid in ("design-systems", "skills", "plugins"):
+        if subtype_ids.get(cid):
+            errors.append(f"categories.{cid}: must not define subtypes")
+
+    dimensions = categories_doc.get("dimensions") or {}
+    dimensions_by_name = {}
+    for name in ("domains", "formats", "conventions", "plugin_component_types"):
+        dimensions_by_name[name] = _ids(dimensions.get(name, []), f"dimensions.{name}", errors)
+    domain_ids = set(dimensions_by_name["domains"])
+    format_ids = set(dimensions_by_name["formats"])
+    convention_ids = set(dimensions_by_name["conventions"])
+    component_types = set(dimensions_by_name["plugin_component_types"])
+
+    source_map = _ids(sources_doc.get("sources"), "sources", errors)
+    source_roles = {}
+    tracking_fields = {"scope", "exclude", "baseline", "cadence", "method", "promotion", "last_checked", "limitations"}
+    for sid, source in source_map.items():
+        roles = source.get("roles")
+        if not isinstance(roles, list) or not roles:
+            errors.append(f"sources.{sid}: roles must be a non-empty list")
+            roles = []
+        invalid = set(roles) - SOURCE_ROLES
+        if invalid:
+            errors.append(f"sources.{sid}: unknown roles {sorted(invalid)}")
+        source_roles[sid] = set(roles)
+        access = source.get("access")
+        source_url = source.get("url")
+        if not source.get("name") or access not in {"public", "restricted", "unknown"}:
+            errors.append(f"sources.{sid}: name and access (public/restricted/unknown) are required")
+        if source_url is None:
+            if access != "unknown":
+                errors.append(f"sources.{sid}.url: null is allowed only when access is unknown")
+        elif not isinstance(source_url, str) or urlsplit(source_url).scheme not in {"http", "https"} or not urlsplit(source_url).netloc:
+            errors.append(f"sources.{sid}.url: expected a valid HTTP(S) URL or an explained unknown")
+        tracking = source.get("tracking")
+        if not isinstance(tracking, dict):
+            errors.append(f"sources.{sid}: tracking must be a mapping")
         else:
-            seen[key] = cat["id"]
+            missing = tracking_fields - set(tracking)
+            if missing:
+                errors.append(f"sources.{sid}.tracking: missing {sorted(missing)}")
+            if access == "unknown" and (not isinstance(tracking.get("limitations"), list) or not tracking["limitations"]):
+                errors.append(f"sources.{sid}.tracking.limitations: unknown access needs an explanation")
 
-        if not is_platform:
-            url = e.get("url") or ""
-            for bad in COLLECTION_BLACKLIST:
-                # 指向合集内具体子路径（/tree/...、/blob/...）视为合法资产链接
-                if bad in url and "/tree/" not in url and "/blob/" not in url:
-                    errors.append(f"{where}: URL points to collection ({bad}), move to platforms or fix link")
+    resources = resources_doc.get("resources")
+    if not isinstance(resources, list):
+        errors.append("resources: expected a list")
+        resources = []
+    meta = resources_doc.get("meta") or {}
+    if not isinstance(meta, dict) or not meta.get("catalog_version") or not meta.get("updated"):
+        errors.append("resources.meta: catalog_version and updated are required")
+    elif not isinstance(meta.get("review"), dict) or meta["review"].get("status") not in REVIEW:
+        errors.append("resources.meta.review.status: invalid or missing")
+    resource_map = _ids(resources, "resources", errors)
+    upstream_owners = {}
 
-if errors:
-    print(f"FAIL: {len(errors)} violation(s)")
-    for line in errors[:50]:
-        print(" -", line)
-    sys.exit(1)
+    for rid, item in resource_map.items():
+        for field in RESOURCE_REQUIRED:
+            if field not in item:
+                errors.append(f"resources.{rid}: missing {field}")
+        classification = item.get("classification") or {}
+        cid = classification.get("category")
+        subtype = classification.get("subtype")
+        if cid not in categories:
+            errors.append(f"resources.{rid}.classification.category: unknown category {cid!r}")
+        elif subtype is not None and subtype not in subtype_ids.get(cid, set()):
+            errors.append(f"resources.{rid}.classification.subtype: unknown subtype {subtype!r} for {cid}")
+        elif cid in categories and subtype is None and subtype_ids.get(cid):
+            errors.append(f"resources.{rid}.classification.subtype: category {cid} requires one subtype")
+        for field, allowed in (("domains", domain_ids), ("formats", format_ids), ("conventions", convention_ids)):
+            values = classification.get(field)
+            if not isinstance(values, list):
+                errors.append(f"resources.{rid}.classification.{field}: expected a list")
+            else:
+                for value in values:
+                    if value not in allowed:
+                        errors.append(f"resources.{rid}.classification.{field}: unknown value {value!r}")
+        domains = classification.get("domains") or []
+        if "general" in domains and len(domains) > 1:
+            errors.append(f"resources.{rid}.classification.domains: general is exclusive with specific domains")
 
-total = sum(len(c["entries"]) for c in doc["categories"])
-print(f"PASS: {total} entries, all rules satisfied")
+        provenance = item.get("provenance") or {}
+        if provenance.get("relation") not in RELATIONS:
+            errors.append(f"resources.{rid}.provenance.relation: invalid")
+        content_source = provenance.get("content_source")
+        if content_source not in source_map or "content-upstream" not in source_roles.get(content_source, set()):
+            errors.append(f"resources.{rid}.provenance.content_source: must reference a content-upstream source")
+        discovered = provenance.get("discovered_via")
+        if not isinstance(discovered, list):
+            errors.append(f"resources.{rid}.provenance.discovered_via: expected a list")
+            discovered = []
+        for sid in discovered:
+            if sid not in source_map or "discovery-channel" not in source_roles.get(sid, set()):
+                errors.append(f"resources.{rid}.provenance.discovered_via: {sid!r} must reference a discovery-channel source")
+        upstream = provenance.get("upstream") or {}
+        kind, url = upstream.get("kind"), upstream.get("url")
+        path, selector = upstream.get("path"), upstream.get("selector")
+        upstream_identity = (content_source, path or "", selector or "")
+        if path or selector:
+            if upstream_identity in upstream_owners:
+                errors.append(f"resources.{rid}.provenance.upstream: duplicate distribution unit with {upstream_owners[upstream_identity]}")
+            else:
+                upstream_owners[upstream_identity] = rid
+        ref = upstream.get("ref") or {}
+        if kind not in {"git", "web", "product", "catalog"} or not url:
+            errors.append(f"resources.{rid}.provenance.upstream: kind and concrete URL are required")
+        if kind == "git":
+            if not isinstance(path, str) or not path or path.startswith("/") or ".." in Path(path).parts:
+                errors.append(f"resources.{rid}.provenance.upstream.path: git source needs a repository-relative path")
+        elif kind in {"web", "product", "catalog"} and not selector:
+            errors.append(f"resources.{rid}.provenance.upstream.selector: specific entry selector required")
+        ref_kind, ref_value = ref.get("kind"), ref.get("value")
+        if ref_kind not in {"commit", "release", "content-hash", "immutable-entry", "branch", "unknown"}:
+            errors.append(f"resources.{rid}.provenance.upstream.ref: invalid kind")
+        if ref_kind != "unknown" and not ref_value:
+            errors.append(f"resources.{rid}.provenance.upstream.ref: known ref kind needs value")
+        if ref_kind == "unknown" and ref_value is not None:
+            errors.append(f"resources.{rid}.provenance.upstream.ref: unknown ref value must be null")
+        if ref_kind == "commit" and (not isinstance(ref_value, str) or not SHA1.fullmatch(ref_value)):
+            errors.append(f"resources.{rid}.provenance.upstream.ref: commit must be a full 40-character SHA")
+        locked = ref_kind in {"commit", "release", "content-hash", "immutable-entry"} and (kind != "git" or ref_kind == "commit")
+
+        if provenance.get("relation") == "adapted" and (not provenance.get("derives_from") or not provenance.get("changes")):
+            errors.append(f"resources.{rid}.provenance: adapted resources need derives_from and changes")
+        if provenance.get("relation") == "curated" and provenance.get("derives_from"):
+            errors.append(f"resources.{rid}.provenance: curated resource must not declare derives_from")
+
+        for identity_field in ("authors", "publisher"):
+            identity = item.get(identity_field) or {}
+            identity_status = identity.get("status")
+            identities = identity.get("identities")
+            evidence = identity.get("evidence")
+            if identity_status not in {"known", "unknown"} or not isinstance(identities, list) or not isinstance(evidence, list):
+                errors.append(f"resources.{rid}.{identity_field}: status, identities and evidence are required")
+            elif identity_status == "known" and (not identities or not evidence):
+                errors.append(f"resources.{rid}.{identity_field}: known identity needs identities and evidence")
+            elif identity_status == "unknown" and identities:
+                errors.append(f"resources.{rid}.{identity_field}: unknown identity cannot include identities")
+
+        license_data = item.get("license") or {}
+        license_status = license_data.get("status")
+        if license_status not in {"verified", "unknown"}:
+            errors.append(f"resources.{rid}.license.status: invalid")
+        redistribution = license_data.get("redistribution")
+        if redistribution not in {"allowed", "blocked", "unknown"}:
+            errors.append(f"resources.{rid}.license.redistribution: invalid")
+        if license_status == "verified" and (not license_data.get("expression") or not license_data.get("evidence")):
+            errors.append(f"resources.{rid}.license: verified license needs expression and evidence")
+
+        for channel in item.get("distribution") or []:
+            sid = channel.get("channel_source")
+            if sid is not None and (sid not in source_map or "distribution-channel" not in source_roles.get(sid, set())):
+                errors.append(f"resources.{rid}.distribution.channel_source: must reference a distribution-channel source")
+        compatibility = item.get("compatibility") or {}
+        for dependency in compatibility.get("dependencies") or []:
+            sid = dependency.get("source_id")
+            if sid is not None and sid not in source_map:
+                errors.append(f"resources.{rid}.compatibility.dependencies: unknown source_id {sid!r}")
+
+        components = item.get("components")
+        if not isinstance(components, list):
+            errors.append(f"resources.{rid}.components: expected a list")
+            components = []
+        if cid == "plugins" and not components:
+            errors.append(f"resources.{rid}.components: plugins need at least one component")
+        if cid != "plugins" and components:
+            errors.append(f"resources.{rid}.components: only plugins may contain components")
+        component_ids = set()
+        for component in components:
+            component_id = component.get("id")
+            if not isinstance(component_id, str) or not IDENTIFIER.fullmatch(component_id):
+                errors.append(f"resources.{rid}.components: invalid component id {component_id!r}")
+            elif component_id in component_ids:
+                errors.append(f"resources.{rid}.components: duplicate component id {component_id}")
+            else:
+                component_ids.add(component_id)
+            if component.get("type") not in component_types:
+                errors.append(f"resources.{rid}.components: unknown component type {component.get('type')!r}")
+            component_resource = component.get("resource_id")
+            if component_resource is not None and component_resource not in resource_map:
+                errors.append(f"resources.{rid}.components: unknown resource_id {component_resource!r}")
+            component_upstream = component.get("upstream") or {}
+            if not component_upstream.get("url") or not component_upstream.get("ref") or not component_upstream.get("path"):
+                errors.append(f"resources.{rid}.components: each component needs a concrete upstream path and ref")
+            if component.get("delivery") not in {"contained", "referenced", "host-provided"}:
+                errors.append(f"resources.{rid}.components: invalid or missing delivery")
+
+        lifecycle = item.get("lifecycle") or {}
+        state = lifecycle.get("state")
+        if state not in LIFECYCLE:
+            errors.append(f"resources.{rid}.lifecycle.state: invalid")
+        review = item.get("review") or {}
+        if review.get("status") not in REVIEW:
+            errors.append(f"resources.{rid}.review.status: invalid")
+        verification = item.get("verification") or {}
+        level = verification.get("level")
+        if level not in VERIFICATION:
+            errors.append(f"resources.{rid}.verification.level: invalid")
+        if state == "usable":
+            blockers = []
+            if review.get("status") != "approved" or not review.get("by") or not review.get("at") or not review.get("evidence"):
+                blockers.append("review must be approved with reviewer, time and evidence")
+            if verification.get("level") != "usage-tested" or not verification.get("checked_at") or not verification.get("by") or not verification.get("evidence"):
+                blockers.append("verification must be usage-tested with date, tester and evidence")
+            if license_status != "verified" or redistribution != "allowed":
+                blockers.append("license and redistribution must be verified and allowed")
+            if not locked:
+                blockers.append("upstream ref must be immutable")
+            hosts = compatibility.get("hosts")
+            if not isinstance(hosts, list) or not hosts:
+                blockers.append("at least one host must be declared")
+            if cid == "design-systems" and not ({"design-md", "tokens"} <= set(classification.get("conventions") or []) and "css" in (classification.get("formats") or [])):
+                blockers.append("design system minimum profile needs design-md, tokens and css")
+            if blockers:
+                errors.append(f"resources.{rid}: usable is blocked: {'; '.join(blockers)}")
+
+    return errors
+
+
+def validate_catalog(root=ROOT):
+    root = Path(root)
+    errors = []
+    docs = [_read(root / "data" / f"{name}.yaml", errors) for name in ("categories", "sources", "resources")]
+    if errors:
+        return errors
+    return validate_data(*docs)
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--root", type=Path, default=ROOT, help="catalog root (defaults to this repository)")
+    args = parser.parse_args()
+    errors = validate_catalog(args.root)
+    if errors:
+        print(f"FAIL: {len(errors)} v3 catalog violation(s)")
+        for error in errors[:100]:
+            print(" -", error)
+        return 1
+    print("PASS: schema_version=3")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

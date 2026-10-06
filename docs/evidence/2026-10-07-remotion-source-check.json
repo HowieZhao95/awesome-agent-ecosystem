@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-10-07",
+  "method": "GitHub page DOM through ego-browser; read codeViewLayoutRoute.refInfo.currentOid and open fixed-ref file",
+  "source": "https://github.com/remotion-dev/skills",
+  "commit": "473352613039e718e46655a26df224851e84c4aa",
+  "files": [
+    "skills/remotion-best-practices/SKILL.md",
+    "skills/remotion-render/SKILL.md"
+  ],
+  "declared_skill_version": "4.0.533",
+  "license": "unknown",
+  "usage_tested": false
+}

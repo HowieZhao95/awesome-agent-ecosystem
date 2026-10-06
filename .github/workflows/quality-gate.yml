@@ -23,10 +23,13 @@ jobs:
       - name: Schema & rules validation
         run: python scripts/validate.py
 
+      - name: Legacy discovery queue validation
+        run: python scripts/validate-discovery.py
+
       - name: Build reproducibility check
         run: |
           python scripts/build.py
-          if ! git diff --quiet README.md site/data.js; then
-            echo "::error::README.md / site/data.js 与 resources.yaml 不同步，请运行 scripts/build.py"
+          if ! git diff --quiet README.md site/data.js site/catalog.json; then
+            echo "::error::README.md / site outputs 与 schema v3 sources 不同步，请运行 scripts/build.py"
             exit 1
           fi

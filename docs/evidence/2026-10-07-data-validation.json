@@ -1,0 +1,16 @@
+{
+  "checks": {
+    "catalog_validation": "PASS",
+    "discovery_validation": "PASS:803",
+    "generated_outputs_deterministic": true,
+    "legacy_preserved_bytes": true
+  },
+  "generated_sha256": {
+    "README.md": "308aca9049687ac42ecc67debfe5b478b6af2f246898ae981cfcacd5f8392cc2",
+    "site/data.js": "6ef8afe34d7d3405e18682be518d334bd6be7b3fe34f59959beaea06dd59ba59",
+    "site/catalog.json": "b9700fd469226cc777f593ec550ac395978d3eefe4dfa9d1ce6b98368b66f7a9"
+  },
+  "resources": 19,
+  "sources": 17,
+  "review": "pending"
+}

@@ -1,0 +1,51 @@
+# Public Assets Phase 1 Plan
+
+**Goal:** 建立公共资产的分类、元数据、来源、收录与更新正本，以真实样例检验定义，交用户审核。
+
+**Architecture:** `data/categories.yaml` 管分类与维度，`data/sources.yaml` 管来源与维护，`data/resources.yaml` 管具体记录与证据，`docs/architecture.md` 管职责和契约。保留旧目录为发现队列；生成文件只读新正本。原内容在上游，账户安装与私人资产在 ThusDesign 数据库。
+
+**Tech Stack:** YAML、Markdown、现有 Python/PyYAML 构建与 unittest。
+
+## 授权与关卡
+
+- 工作位置：awesome-agent-ecosystem 现有干净 `main` 检出；不使用 worktree，不改 myApps。
+- 本阶段仅定义、来源登记、样例与必要的数据校验/生成接线，不实现站点账户、安装或 Agent runtime。
+- 尚未获用户终审：规范与样例保持 draft/pending；不得标成已审核或可使用。
+- 不 push、不发 release、不替用户审核或合并。提交前检查所有改动与暂存状态，按适用授权执行。
+- 来源查证、代码检查可由 GPT-6 Luna 分工；写文件前划分范围。主会话终审。
+
+## 步骤与验收
+
+1. 核对本地与公开上游；保留旧 v2 数据全部字节，作为发现队列，不继承旧 manual 为运行验证。
+2. 定义五主类、模板七子类、提示词三子类；分别定义领域、文件格式、文件约定、插件组件。
+3. 定义完整记录契约、未知值、身份/版本/重复/下架规则；登记内容、发现和规范来源的独立角色与更新范围。
+4. 查证 OpenDesign 固定版本、Remotion 官方 Skills、ThusDesign 已有内容与原始提示词出处；记录精确路径/selector，不复制原内容或私人文件。
+5. 收录代表性映射；包括混合插件的组件与依赖区分、格式相同但用途不同、单文件规范与完整设计系统区分。
+6. 必要的脚本行为先写失败测试：引用完整性、未知许可阻断 usable、精确上游引用、组件和分类边界、旧扫描不写正本、生成可重复。
+7. 运行完整既有测试、规范校验、生成与幂等检查，审查差异及链接。机器检查仅证明结构和规则，不代表运行兼容或用户审核。
+8. 出示分类、来源策略和代表样例给用户审核；审核前目标保持 active，发布/接入仍是后续阶段。
+
+## 当前证据
+
+- 初始本地 HEAD：`f8da353`；初始工作区与暂存为空。
+- 公开仓库 main 页面可读取；本轮 `gh` API TLS 超时，不能据此断言远端分支/PR 或发布状态。
+- 实际验证与审核记录在工作完成后补充，禁止预填 PASS。
+
+## 2026-10-07 验收记录
+
+- 新正本：五主类、模板七子类、提示词三子类，领域/文件格式/文件约定/组件分开；公共契约包含身份、用途、作者/发布者、许可、引用、预览、兼容、验证、状态、收录与更新规则。
+- 17 个来源；19 个代表记录，17 candidate、2 reference、0 usable。目录和资源 review 全部 pending；作者/许可未明的记录没有伪造权利或实测状态。
+- OpenDesign 模板只索引内容，不搬其 atom/pipeline 包装；三维样例为 CSS 设备展示，非 DCC；原则样例为特定仓库参考；Remotion 技能非 MG 工程模板。
+- 组合插件记录覆盖 td-drama-production 的 7 Skills + 宿主模块 + 引用 CLI，以及 @thusdesign/cli 的 CLI + stdio MCP，逐项有路径、选择器和提供方式。
+- Remotion 浏览器查证取得固定 commit `473352613039e718e46655a26df224851e84c4aa`；文件声明版本 `4.0.533` 未被当成运行兼容；许可仍 unknown。见 `docs/evidence/2026-10-07-remotion-source-check.json`。
+- OpenDesign 各路径逐项在冻结归档查到；ThusDesign 主记录及 td-drama 组件路径在固定产品 commit 查到。没有读取真实 PGlite、生成模型、安装插件或改变私人资料。
+- 旧 803 条记录与 `f8da353:data/resources.yaml` 字节一致；发现导入、stars、link-check 已改默认目标，不写新正本。
+- TDD 红绿覆盖分类/来源角色、未知引用、身份重复、作者证据、适配关系、组件、usable 门槛、生成失败不写文件、幂等、README 锚点与混合插件投影。最终 35 tests PASS，完整日志 `docs/evidence/2026-10-07-tests.log`。
+- 新旧校验 PASS；真实 build 输出 19 记录；第二次生成字节一致，证据见 `docs/evidence/2026-10-07-data-validation.json`。
+- ego-browser 已打开实际本地目录页，显示 19 资源 / 17 候选 / 0 可使用 / 19 待审核 / 0 已实测；未实现新站点、账号或安装闭环。
+
+## 剩余关卡
+
+1. 用户审核分类、公共元数据与来源维护规则；未收到审核结论，目标保持 active。
+2. 两条原始 X 线索未独立核验，Remotion 许可及各候选使用验证未完成；这些是明确标注的候选缺口，不伪装成阶段 1 的已可安装资源。
+3. 尚未 push、发布或修改既有远端 PR；myApps 的 raw-main 历史消费者仍未迁移，后续接入须使用批准发布版本。

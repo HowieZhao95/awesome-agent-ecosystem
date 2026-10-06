@@ -1,0 +1,12 @@
+{
+  "checked_at": "2026-10-07",
+  "plugin_filter_count": 2,
+  "search": {
+    "cards": 1,
+    "title": "@thusdesign/cli",
+    "version": "0.1.0-draft · 审核 pending · 数据更新于 2026-10-07",
+    "stats": "19\n资源\n17\n候选\n0\n可使用\n19\n待审核\n0\n已实测"
+  },
+  "scope": "Existing static metadata projection only; no account, install or asset runtime verification",
+  "artifact": "site/index.html (local browser preview)"
+}

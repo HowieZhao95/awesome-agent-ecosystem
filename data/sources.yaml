@@ -1,0 +1,153 @@
+schema_version: 3
+sources:
+- id: opendesign
+  name: OpenDesign 内容上游
+  url: https://github.com/nexu-io/open-design
+  roles: [content-upstream, distribution-channel]
+  access: public
+  tracking: {scope: 'design-templates/{web-prototype,html-ppt-pitch-deck,live-dashboard,motion-frames,docs-page,social-carousel,image-poster}; design-systems/agentic; skills/brand-extract; AGENTS.md。只跟踪本轮样例选择的目录与文件，不声明全仓收录。;
+      plugins/_official/examples/mockup-device-3d/{open-design.json,SKILL.md,example.html} (three-d sample).', exclude: [], baseline: 'commit:53231d40b778d88eba23f35547bf99485d3ae9fc; 对照本地归档 open-design-53231d40b778d88eba23f35547bf99485d3ae9fc.tar.gz',
+    cadence: manual, method: 'Compare the new candidate commit with the previously pinned SHA only across scope paths; inspect per-example manifests, authors/license, seeds/examples, and external assets;
+      preserve old evidence if fetch fails and submit a review proposal without auto-promotion.', promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。, last_checked: '2026-10-07', limitations: [归档可读；本轮只审查选中路径和相应声明。根
+        LICENSE 为 Apache-2.0 不足以确认外部素材、嵌入品牌资产或逐项授权。, 作者与单项许可须逐条检查 manifest/源证据；未完成项维持 unknown。]}
+- id: remotion-dev.skills
+  name: Remotion 官方 Skills 内容仓库
+  url: https://github.com/remotion-dev/skills
+  roles: [content-upstream, distribution-channel]
+  access: public
+  tracking: {scope: skills/remotion-best-practices/** and skills/remotion-render/** only; official source repo contains more skills., exclude: [], baseline: 'commit:473352613039e718e46655a26df224851e84c4aa;
+      GitHub main refInfo.currentOid read on 2026-10-07; both selected file pages opened at this fixed ref.', cadence: manual, method: 'Resolve the live main ref to a full Git SHA first; compare only named
+      SKILL.md and referenced assets, frontmatter/version declarations, root/per-file license and auxiliary files; npx CLI and frontmatter version are not substitutes for a pinned commit.', promotion: 发现或差异只进入人工审核；不得自动批准、标记
+      usable 或覆盖已核证基线。, last_checked: '2026-10-07', limitations: [已锁定本轮文件基线；文件声明版本 4.0.533 不代表执行兼容验证。, 根许可与逐文件许可尚未确认；不继承 Remotion 软件许可。, 本机历史安装目录版本不明，不作为当前固定版本证据。]}
+- id: thusdesign.product-source
+  name: ThusDesign 产品内受限 Skill/插件/CLI 源
+  url: https://github.com/HowieZhao95/my-apps/tree/33a1feabbcd5129fc9c7f4a676e80c632f44bce1
+  roles: [content-upstream]
+  access: restricted
+  tracking: {scope: 'Metadata-only inventory: packages/ai/skills/{aigc-generation,canvas-programming,inspiration-scout,research-report,scape-render-skill}/SKILL.md (5 product Skills); packages/td-plugins/td-drama-production/plugin.json
+      plus skills/td-{01-screenwriter,02-asset-breakdown,03-director-desk,04-shot-production,ref-camera-direction,ref-prompt-doctor,ref-sound-design}/ (7 plugin Skills); apps/aigc-cli/package.json and src
+      entrypoint metadata; packages/asset-library/src/design-styles/official.ts (6 style presets) and community-catalog.json (28 community entries). Inventory counts are not catalogued resource counts.
+      No private content copied.', exclude: [], baseline: 'commit:33a1feabbcd5129fc9c7f4a676e80c632f44bce1; confirmed tracked by git show for named paths', cadence: manual; re-check at product-source commit
+      updates, method: 'At each product source commit, verify tracked metadata paths and diffs; publish only explicitly approved public metadata fields, keep bodies/context private, and separately review
+      authorship/license/distribution changes.', promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。, last_checked: '2026-10-07', limitations: ['Restricted product repository: retain only public metadata
+        and exact audit locators, never skill body or private context.', Product publisher does not establish author identity or external redistribution rights., 'Prompt datasets are discovery/mirror records,
+        not original prompt sources.']}
+- id: thusdesign.prompt-data
+  name: ThusDesign 产品内提示词目录（受限元数据）
+  url: https://github.com/HowieZhao95/my-apps/tree/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/apps/thusDesign/data
+  roles: [discovery-channel]
+  access: restricted
+  tracking: {scope: 'Metadata-only inventory of all five prompt files: apps/thusDesign/data/atlas-gpt-image-2-prompts.json (761), atlas-seedance-2-prompts.json (1719), gpt-image-2-prompts.json (320), jzxz-ai-design-agent-prompts.json
+      (1156), jzxz-ai-video-camera-prompts.json (107). These counts are inventory, not resource curation.', exclude: [], baseline: 'commit:33a1feabbcd5129fc9c7f4a676e80c632f44bce1; five paths checked with
+      git cat-file; current worktree matches listed prompt selectors', cadence: manual, method: 'From each pinned product snapshot, inspect selector/sourceLink metadata, then independently open the original
+      post and verify account/author, prompt/media scope, model and redistribution rights; if original fetch fails preserve previous evidence and keep candidate.', promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable
+      或覆盖已核证基线。, last_checked: '2026-10-07', limitations: ['The app stores external sourceLink metadata; it does not independently verify source post, author, or license.', Do not copy prompt text or media
+        from private product files into this public catalog.]}
+- id: discover.awesome-agent-ecosystem
+  name: awesome-agent-ecosystem 历史/发现队列
+  url: https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/f8da353b267033f97837d61d3bb95f96882b34aa/data/resources.yaml
+  roles: [discovery-channel]
+  access: public
+  tracking: {scope: data/discovery/legacy-v2.yaml (legacy discovery queue only); the active local repo origin is HowieZhao95/awesome-agent-ecosystem., exclude: [], baseline: 目标仓库本地 HEAD f8da353b267033f97837d61d3bb95f96882b34aa（阶段起始）；旧正本
+      schema v2。, cadence: manual, method: 'Use the existing weekly discovery scan only to add lineage/possible entries to the discovery queue; do not write or promote public resources without manual source,
+      classification, license and compatibility review.', promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。, last_checked: '2026-10-07', limitations: [旧目录仅为发现渠道，不代表条目实际出处或作者。, 新 discovery/legacy-v2.yaml
+        尚未发布；此 URL 指向实际存在的迁移前固定版本。]}
+- id: discover.skills-cli
+  name: Skills CLI / skills.sh 分发发现入口
+  url: https://github.com/vercel-labs/skills
+  roles: [discovery-channel]
+  access: public
+  tracking: {scope: 由用户提供的发现来源名称；本轮未验证特定目录条目。npx skills 为 CLI 分发/安装工具，不是 Remotion 内容上游。, exclude: [], baseline: 项目提及；具体条目/CLI 版本 unknown。, cadence: manual, method: Check the exact listing and the named
+      upstream repository/file; record CLI version and distribution locator separately; do not treat a registry install listing as content provenance., promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。,
+    last_checked: '2026-10-07', limitations: [具体 listing 与目录服务入口未查明；无资源可仅凭此来源创建已核验记录。]}
+- id: discover.github
+  name: GitHub 仓库/文件发现入口
+  url: https://github.com
+  roles: [discovery-channel, distribution-channel]
+  access: public
+  tracking: {scope: 按具体上游仓库路径发现文件；必须记录具体文件 selector 与固定 ref。, exclude: [], baseline: 通用入口；逐资源具体 URL 和 ref 另记 provenance。, cadence: manual, method: 'Resolve concrete repository paths and commit refs, compare
+      candidate changes, and keep hosting/discovery separate from content authorship/license; propose metadata changes for human review.', promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。, last_checked: '2026-10-07',
+    limitations: [GitHub 是托管/发现入口，不自动代表作者、发布者或许可。]}
+- id: discover.product-showcase
+  name: ThusDesign 产品展示入口
+  url: https://www.thusdesign.ai/prompts/nano-banana
+  roles: [discovery-channel]
+  access: public
+  tracking: {scope: 已有产品路由 /prompts/nano-banana（图片）、/prompts/seedance（视频）、/prompts/skills；具体条目仍须追溯 sourceLink 或 listingId。, exclude: [], baseline: 产品源码路由已查证；本轮未验证线上登录、安装或公开页面实际返回。, cadence: manual, method: 'Locate
+      the exact public page/entry and follow its source links; until a selector and original content source are independently accessible, retain null/unknown fields and do not create a verified resource.',
+    promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。, last_checked: '2026-10-07', limitations: [路由登记不代表本轮线上验收。, 展示入口不是内容作者或许可来源，资源具体 selector 另行审核。]}
+- id: discover.jzxz
+  name: 建筑学长提示词入口（来源线索）
+  url: https://www.jianzhuxuezhang.com/ai/banana_modifier
+  roles: [discovery-channel]
+  access: public
+  tracking: {scope: 'sourceLink 指向 /ai/banana_modifier?templateId=<id> 与 /ai/advance_video/operate；前者可定位具体 templateId，后者仍需视频单元 selector。', exclude: [], baseline: 上述真实 URL 来自已读产品数据，不代表已独立访问原站。, cadence: manual,
+    method: 'Trace each data sourceLink to its actual JZXZ page/post and specific selector; compare captured metadata only, then review author/license before proposing a resource.', promotion: 发现或差异只进入人工审核；不得自动批准、标记
+      usable 或覆盖已核证基线。, last_checked: '2026-10-07', limitations: [入口 URL 已从 sourceLink 查明；原站内容作者、许可和具体视频条目定位仍待查。]}
+- id: discover.atlas
+  name: Atlas 命名集合的发现来源（待追溯）
+  url: null
+  roles: [discovery-channel]
+  access: unknown
+  tracking: {scope: 由 ThusDesign 数据文件命名识别 atlas prompt collections；外部目录入口 unknown。, exclude: [], baseline: apps/thusDesign/data/atlas-gpt-image-2-prompts.json 与 atlas-seedance-2-prompts.json 存在。, cadence: manual,
+    method: Trace each Atlas sourceLink to its actual post and item selector; verify author/license and any model/redistribution conditions before proposing content records., promotion: 发现或差异只进入人工审核；不得自动批准、标记
+      usable 或覆盖已核证基线。, last_checked: '2026-10-07', limitations: [具体发现站点、listing URL、源作者/许可待查。, 实际条目入口尚未核实；url 保持 null。]}
+- id: spec.agent-skills
+  name: Agent Skills 格式规范
+  url: https://agentskills.io/specification
+  roles: [specification]
+  access: public
+  tracking: {scope: Agent Skills 规范：SKILL.md frontmatter、资源组织与渐进披露规则。仅跟踪标准内容，不追踪某个 Skill 的作者许可。, exclude: [], baseline: 2026-10-07 已读取官方 specification：SKILL.md 入口/frontmatter 与可选辅助目录；规范页面版本未提供可锁定提交。, cadence: manual,
+    method: 'Monitor official specification revisions and SKILL.md metadata/resource rules; record version/schema deltas as compatibility recommendations, never as content assets or rights grants.', promotion: 发现或差异只进入人工审核；不得自动批准、标记
+      usable 或覆盖已核证基线。, last_checked: '2026-10-07', limitations: [规范用于解释文件约定，不授予被索引 Skill 的版权或再分发权。]}
+- id: spec.mcp
+  name: Model Context Protocol 规范
+  url: https://modelcontextprotocol.io/specification/2026-07-28
+  roles: [specification]
+  access: public
+  tracking: {scope: MCP 协议规范及其版本化页面；只作为 MCP component/依赖语义参考。, exclude: [], baseline: Specification 2026-07-28；2026-10-07 从官方 specification 入口确认重定向至此版本。, cadence: manual, method: 'Monitor versioned MCP
+      schema/protocol changes; submit compatibility notes for component records, never treat the spec as server content or license evidence.', promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。, last_checked: '2026-10-07',
+    limitations: [规范不是 MCP server 内容来源，也不授予组件许可。]}
+- id: spec.opendesign-manifest
+  name: OpenDesign 插件 Manifest 规范
+  url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/docs/schemas/open-design.plugin.v1.json
+  roles: [specification]
+  access: public
+  tracking: {scope: docs/schemas/open-design.plugin.v1.json 与 docs/schemas/open-design.marketplace.v1.json；只作 OpenDesign 上游包装规范来源，不约束 ThusDesign 执行内核。, exclude: [], baseline: 'commit:53231d40b778d88eba23f35547bf99485d3ae9fc',
+    cadence: manual, method: 'Compare manifest schema and example fields between pinned commits; report compatibility changes and per-item author/license fields for review, without implying all content
+      is licensed by schema.', promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。, last_checked: '2026-10-07', limitations: [Schema 只解释 manifest 结构；不能推导插件内容许可或运行兼容。]}
+- id: spec.agents-md
+  name: AGENTS.md 文件约定参考
+  url: https://agents.md/
+  roles: [specification]
+  access: public
+  tracking: {scope: AGENTS.md 文件公开约定；OpenDesign/AGENTS.md 是具体仓库规则样例，单列资源，不冒充通用格式标准。, exclude: [], baseline: 2026-10-07 已读取 agents.md 官方约定页面；未将具体宿主优先级或仓库规则当作公共目录能力。, cadence: manual, method: 'Track the repository-specific
+      AGENTS.md changes as an example convention only; review applicability before any adaptation, and do not turn repository instructions into global policy.', promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable
+      或覆盖已核证基线。, last_checked: '2026-10-07', limitations: [规范仅说明文件约定；具体规则、许可与宿主运行行为须按资源分别核验。]}
+- id: x.shinning
+  name: X post attributed to Shinning
+  url: https://x.com/Shinning1010/status/2048663549413921103
+  roles: [content-upstream]
+  access: unknown
+  tracking: {scope: X status 2048663549413921103 only, exclude: [], baseline: immutable X status identifier recorded in ThusDesign prompt metadata; original post not independently opened, cadence: manual,
+    method: 'Re-open the exact immutable status URL, confirm author identity and original content, inspect page-level license/terms and prompt/image scope; until then preserve the product-recorded URL only
+      as an unverified lead.', promotion: 'Keep as candidate until original post, author, license, and usable content are independently verified.', last_checked: '2026-10-07', limitations: ['Original post
+        visibility, account ownership, prompt text rights, image rights, and redistribution are unknown.', The post URL/identifier is a product-recorded lead and is not proof of independent source verification.]}
+- id: x.ihayato
+  name: X post attributed to IHayato
+  url: https://x.com/IHayato/status/2041839076354224178
+  roles: [content-upstream]
+  access: unknown
+  tracking: {scope: X status 2041839076354224178 only, exclude: [], baseline: immutable X status identifier recorded in ThusDesign prompt metadata; original post not independently opened, cadence: manual,
+    method: 'Re-open the exact immutable status URL, confirm author identity and original content, inspect page-level license/terms and prompt/video scope; until then preserve the product-recorded URL only
+      as an unverified lead.', promotion: 'Keep as candidate until original post, author, license, and usable content are independently verified.', last_checked: '2026-10-07', limitations: ['Original post
+        visibility, account ownership, prompt text rights, media rights, and redistribution are unknown.', The post URL/identifier is a product-recorded lead and is not proof of independent source verification.]}
+- id: dist.remotion-skills-cli
+  name: Remotion Agent Skills install channels
+  url: https://www.remotion.dev/docs/ai/skills
+  roles: [distribution-channel]
+  access: public
+  tracking: {scope: 'Official Remotion Agent Skills install options: npx skills add remotion-dev/skills and bun create video; CLI adds/removes/updates skills via npx remotion skills add/update.', exclude: [],
+    baseline: official documentation pages read 2026-10-07, cadence: manual, method: 'Check official install documentation and commands for changes, then verify they still point to the pinned content repository;
+      update only install metadata and never infer permissions or content version from the CLI.', promotion: Treat as distribution/install instructions only; never use as content provenance or skill license
+      evidence., last_checked: '2026-10-07', limitations: ['npx skills is a distribution CLI, not the source repository/content.', Official skill repository full HEAD SHA was not retrieved this check.]}

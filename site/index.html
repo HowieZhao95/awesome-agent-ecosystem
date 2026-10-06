@@ -92,6 +92,9 @@
   .tag-official { background: rgba(63,185,80,.15); color: var(--official); border: 1px solid rgba(63,185,80,.4); }
   .tag-community { background: rgba(210,153,34,.15); color: var(--community); border: 1px solid rgba(210,153,34,.4); }
   .tag-vendor { background: rgba(188,140,255,.15); color: var(--vendor); border: 1px solid rgba(188,140,255,.4); }
+  .tag-original { background: rgba(63,185,80,.15); color: var(--official); border: 1px solid rgba(63,185,80,.4); }
+  .tag-adapted { background: rgba(188,140,255,.15); color: var(--vendor); border: 1px solid rgba(188,140,255,.4); }
+  .tag-curated { background: rgba(210,153,34,.15); color: var(--community); border: 1px solid rgba(210,153,34,.4); }
   .tag-sub { background: rgba(88,166,255,.1); color: var(--accent); border: 1px solid rgba(88,166,255,.3); }
   .card-note { font-size: 13px; color: var(--text-dim); flex: 1; }
   .card-meta { display: flex; gap: 12px; font-size: 12px; color: var(--text-dim); flex-wrap: wrap; align-items: center; }
@@ -116,7 +119,7 @@
       <span class="updated" id="updated"></span>
     </div>
     <h1>Agent Ecosystem 生态策展</h1>
-    <p class="subtitle">策展对象是具体资产：一个个 skill、CLI、MCP server、插件、规范模板、prompt 库。每条记录其分发平台与来源属性（官方/厂商/社区）。平台目录本身单列一区，仅作发现渠道参考。</p>
+    <p class="subtitle">收录可追溯的设计模板、设计系统、Skills、提示词与插件。每条记录展示与上游的关系、审核状态和验证证据。</p>
   </header>
 
   <div class="stats" id="stats"></div>
@@ -136,35 +139,29 @@
   <div class="empty" id="empty">没有匹配的资源，试试放宽筛选条件。</div>
 
   <footer>
-    数据由 <a href="../data/resources.yaml">data/resources.yaml</a> 经 build.py 生成 · 收录标准见 <a href="../CONTRIBUTING.md">CONTRIBUTING.md</a> · License CC0-1.0
+    数据由 <a href="../data/categories.yaml">分类正本</a>、<a href="../data/sources.yaml">来源正本</a> 与 <a href="../data/resources.yaml">资源正本</a> 生成 · <a href="../docs/architecture.md">阶段 1 契约</a>
   </footer>
 </div>
 
 <script src="data.js"></script>
 <script>
-const SOURCE_LABELS = { official: "官方", community: "社区", vendor: "厂商" };
+const SOURCE_LABELS = { original: "原创", adapted: "适配", curated: "精选" };
+const LIFECYCLE_LABELS = { reference: "参考", candidate: "候选", usable: "可使用", withdrawn: "已撤下" };
+const VERIFICATION_LABELS = { unverified: "未验证", "source-inspected": "已查阅上游", "usage-tested": "已实测" };
 
 let activeCat = "all";
 let activeSrc = "all";
 let activeSubcat = "all";
 let query = "";
 
-function fmt(n) {
-  if (n == null) return null;
-  if (n >= 1000) return (n / 1000).toFixed(n >= 10000 ? 0 : 1).replace(/\.0$/, "") + "k";
-  return String(n);
-}
-
 function renderStats() {
-  const assetCats = DATA.categories.filter(c => c.id !== "platforms");
-  const assets = assetCats.flatMap(c => c.entries);
-  const platforms = DATA.categories.find(c => c.id === "platforms").entries;
+  const assets = DATA.categories.flatMap(c => c.entries);
   const stats = [
-    { num: assets.length, label: "具体资产" },
-    { num: platforms.length, label: "分发平台" },
-    { num: assets.filter(e => e.source === "official").length, label: "官方来源" },
-    { num: assets.filter(e => e.source === "vendor").length, label: "厂商来源" },
-    { num: assets.filter(e => e.source === "community").length, label: "社区来源" }
+    { num: assets.length, label: "资源" },
+    { num: assets.filter(e => e.lifecycle.state === "candidate").length, label: "候选" },
+    { num: assets.filter(e => e.lifecycle.state === "usable").length, label: "可使用" },
+    { num: assets.filter(e => e.review.status === "pending").length, label: "待审核" },
+    { num: assets.filter(e => e.verification.level === "usage-tested").length, label: "已实测" }
   ];
   document.getElementById("stats").innerHTML = stats.map(s =>
     `<div class="stat"><div class="stat-num">${s.num}</div><div class="stat-label">${s.label}</div></div>`
@@ -179,7 +176,8 @@ function renderFilters() {
   ).join("");
 
   const srcBox = document.getElementById("srcFilters");
-  const srcs = [["all", "全部"], ["official", "官方"], ["vendor", "厂商"], ["community", "社区"]];
+  const relations = [...new Set(DATA.categories.flatMap(c => c.entries.map(e => e.relation)))];
+  const srcs = [["all", "全部"], ...relations.map(id => [id, SOURCE_LABELS[id] || id])];
   srcBox.innerHTML = '<span class="chip-group-label">来源</span>' + srcs.map(([id, name]) =>
     `<span class="chip ${activeSrc === id ? "active" : ""}" data-src="${id}">${name}</span>`
   ).join("");
@@ -205,23 +203,23 @@ function renderFilters() {
 }
 
 function cardHTML(e) {
-  const metrics = [];
-  if (e.stars != null) metrics.push(`<span class="metric">★ <b>${fmt(e.stars)}</b></span>`);
-  if (e.installs != null) metrics.push(`<span class="metric">安装 <b>${fmt(e.installs)}</b></span>`);
+  const distribution = e.distribution.map(channel => channel.kind).join(" / ") || "未提供公开分发入口";
   return `
     <div class="card">
       <div class="card-top">
         <div class="card-name"><a href="${e.url}" target="_blank" rel="noopener">${e.name}</a></div>
         <div class="tags">
           ${e.subcat ? `<span class="tag tag-sub">${e.subcat}</span>` : ""}
-          <span class="tag tag-${e.source}">${SOURCE_LABELS[e.source]}</span>
+          <span class="tag tag-${e.relation}">${SOURCE_LABELS[e.relation] || e.relation}</span>
         </div>
       </div>
       <div class="card-note">${e.note}</div>
       <div class="card-meta">
-        <span class="platform">⬢ ${e.platform}</span>
-        ${metrics.join("")}
-        <span class="verified">${e.vmethod === "manual" ? "人工验证" : "自动收录"} ${e.verified}</span>
+        <span class="platform">分发：${distribution}</span>
+        <span class="verified">状态：${LIFECYCLE_LABELS[e.lifecycle.state] || e.lifecycle.state}</span>
+        <span class="verified">审核：${e.review.status}</span>
+        <span class="verified">验证：${VERIFICATION_LABELS[e.verification.level] || e.verification.level}</span>
+        <span class="verified">许可：${e.license.status} / ${e.license.redistribution}</span>
       </div>
     </div>`;
 }
@@ -236,7 +234,7 @@ function renderMain() {
       const entries = c.entries.filter(e =>
         (activeSrc === "all" || e.source === activeSrc) &&
         (activeSubcat === "all" || e.subcat === activeSubcat) &&
-        (!q || e.name.toLowerCase().includes(q) || e.note.toLowerCase().includes(q) || e.platform.toLowerCase().includes(q) || (e.subcat || "").toLowerCase().includes(q))
+        (!q || e.name.toLowerCase().includes(q) || e.note.toLowerCase().includes(q) || e.purpose.toLowerCase().includes(q) || e.distribution.some(d => d.kind.toLowerCase().includes(q)) || (e.subcat || "").toLowerCase().includes(q))
       );
       if (!entries.length) return "";
       total += entries.length;
@@ -256,7 +254,7 @@ function render() {
   renderMain();
 }
 
-document.getElementById("updated").textContent = "数据更新于 " + DATA.meta.updated;
+document.getElementById("updated").textContent = `${DATA.meta.catalogVersion} · 审核 ${DATA.meta.review.status} · 数据更新于 ${DATA.meta.updated}`;
 document.getElementById("search").addEventListener("input", e => { query = e.target.value; renderMain(); });
 
 renderStats();

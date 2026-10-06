@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Incrementally refresh GitHub repository metadata in resources.yaml."""
+"""Incrementally refresh stars in the legacy discovery queue."""
 import argparse
 import datetime
 import json
@@ -13,8 +13,8 @@ import requests
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "data" / "resources.yaml"
-STATE = ROOT / "data" / "github-repo-state.json"
+DATA = ROOT / "data" / "discovery" / "legacy-v2.yaml"
+STATE = ROOT / "data" / "discovery" / "github-repo-state.json"
 REPO_RE = re.compile(r"github\.com/([^/]+)/([^/?#]+)", re.IGNORECASE)
 
 

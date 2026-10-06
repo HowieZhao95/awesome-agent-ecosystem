@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Import concrete plugin assets from distribution platforms into data/resources.yaml.
+"""Import legacy plugin candidates into the discovery queue.
 
 Sources:
   1. anthropics/claude-plugins-official marketplace.json (Anthropic-vetted, import all)
   2. claude-plugins.dev API top downloads (community side, import downloads >= MIN_DOWNLOADS)
 
 Rerunnable: dedupes against existing entries by normalized name.
-Run scripts/build.py afterwards to regenerate README + site data.
+The result remains a legacy discovery candidate. It is not promoted by build.py.
 
 Usage:
     python3 scripts/import-marketplace.py
@@ -25,7 +25,7 @@ except ImportError:
     sys.exit("Missing dep: pip install pyyaml")
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA_FILE = os.path.join(ROOT, "data", "resources.yaml")
+DATA_FILE = os.path.join(ROOT, "data", "discovery", "legacy-v2.yaml")
 
 OFFICIAL_URL = "https://raw.githubusercontent.com/anthropics/claude-plugins-official/main/.claude-plugin/marketplace.json"
 CPD_API = "https://claude-plugins.dev/api/plugins?limit=100&offset={}"
@@ -44,11 +44,10 @@ CATEGORY_MAP = {
     "languages": "开发", "workflow": "生产力", "testing": "开发",
 }
 
-HEADER = """# Awesome Agent Ecosystem 机器可读数据源（唯一事实源）
-# 条目 = 具体资产（单个 skill / MCP server / 插件 / CLI / 模板 / prompt 库）
-# platform 字段 = 资产的分发渠道；平台目录本身仅收录于 platforms 分类（发现渠道，不计入资产统计）
-# 维护方式：只手工编辑本文件；README.md 与 site/data.js 由 scripts/build.py 生成
-# stars 由 scripts/update-stars.py 定期刷新；官方市场/目录站数据由 import-marketplace.py 增量导入
+HEADER = """# Awesome Agent Ecosystem 历史发现队列（legacy v2）
+# 批量导入只添加候选线索；旧 source/platform/vmethod 不表示新许可、审阅或运行验证。
+# 新公共目录由 categories.yaml、sources.yaml、resources.yaml 单独定义。
+# 本文件由 import-*.py 和 update-stars.py 维护，不由新目录 build.py 发布。
 """
 
 
@@ -150,7 +149,7 @@ def main():
     print(f"OK  official market imported:  +{added_official}")
     print(f"OK  community (downloads>={MIN_DOWNLOADS}) imported: +{added_community}")
     print(f"OK  plugins category now: {len(plugins_cat['entries'])} entries")
-    print("Next: python3 scripts/build.py")
+    print("Discovery queue updated; review and promote candidates through the v3 catalog workflow.")
 
 
 if __name__ == "__main__":

@@ -1,54 +1,26 @@
-# 收录标准与贡献指南
+# 贡献公共资产
 
-## 收录标准（全部满足）
+阶段 1 规范目前待审核。主类、子类与维度只在 [data/categories.yaml](data/categories.yaml) 定义；记录字段、收录门槛及更新规则见 [docs/architecture.md](docs/architecture.md)。贡献时引用它们，不再手抄另一套分类或字段列表。
 
-1. **热度**：GitHub ★1k+，或细分领域公认标杆（需在 PR 中说明理由）；skill/插件以安装量为主要口径，stars 为辅助
-2. **活跃**：近 6 个月内有实质性 commit（非文档 typo 类）
-3. **质量**：README 完整、有安装/使用说明、有真实采用案例
-4. **可验证**：提供安装量、下载量或权威第三方背书之一
+## 提交流程
 
-## 核心归类规则（不可违反）
+1. 先从实际内容上游定位具体文件、目录或条目；发现目录和市场只记为 discovered_via/distribution，不替代原始出处。
+2. 查询现有资源 ID 及具体 path/selector，合并镜像或新分发渠道，避免因名称改变创建重复身份。
+3. 在 `data/sources.yaml` 登记尚未登记的来源角色、跟踪范围及维护策略；在 `data/resources.yaml` 填写完整记录结构。
+4. 不明作者、许可、版本或预览状态保留 unknown/null 和原因。普通提交以 candidate 或 reference、review pending 开始，不自行写成 approved/usable。
+5. 适配需写固定原引用、derives_from 和实质改动。精选不改原作者或许可，不能把目录维护者写成内容作者。
+6. 插件解释每个组件的具体出处、提供方式及外部依赖；不把宿主模块或所需工具冒充包内内容。
+7. 运行 `python scripts/validate.py`、`python -m unittest discover -s tests -v`、`python scripts/build.py`。README 和网站数据由正本生成，禁止手工编辑。
+8. 在 PR 说明新增/更新/下架的身份、证据、已验证范围和未知项；审核后再决定收录状态，发布动作另行处理。
 
-- **条目必须是资产本体**：单个 skill / MCP server / 插件 / CLI / 具体模板或规范文件
-- **合集、目录、市场一律进 platforms 分类**（发现渠道，不计入资产统计），即使它很知名
-- **生成器类工具归 prompts**（subcat=生成工具）；**设计 token 等工程工具归 cli**
-- 拿不准专有名词时**先查证再归类**，不按字面联想（教训：DESIGN.md ≠ SDD 的 design.md）
+## 发现队列
 
-## 分层标注
+`data/discovery/legacy-v2.yaml` 保留旧目录和现有自动发现流程。批量导入只进入这里，不写公共资源正本。旧名字、热度、source、platform 与 manual/automated 都是线索；不得据此自动补作者、许可证或验证结果。旧发现记录的 schema 由 `scripts/validate-discovery.py` 检查。
 
-- `source`: `official`（协议组织/模型厂商/基金会）/ `vendor`（商业公司）/ `community`（个人或社区）
-- `vmethod`: `manual`（人工复核过）/ `automated`（脚本批量收录，未经人工复核）——批量导入一律 automated
+发现队列中的条目需要逐条追溯后才能晋级。热度可用于安排审核优先级，不作为可使用资源的充分条件；合集与市场登记为来源，不统计成资产。
 
-## 条目字段（v2 schema）
+## 隐私与许可
 
-```yaml
-- name: webapp-testing              # 资产名
-  url: https://...                  # 项目本体链接（禁止指向合集页）
-  source: official                  # official / vendor / community
-  platform: "anthropics/skills 仓库" # 分发渠道
-  subcat: "开发/测试"                # 子分类（12 类关键词体系，见 import-skills-mcp.py）
-  note: "一句话点评，必须含差异化判断"  # 禁止裸抄官方简介
-  stars: 166000
-  installs: null
-  last_verified: 2026-09-26
-  vmethod: manual
-```
+不提交用户安装记录、凭证、本机绝对路径、私人工作导引或学习记忆。已有 ThusDesign 内容只在允许的范围登记公共元数据；没有公开分发/许可证据时保持候选。
 
-要求：
-- 点评必须说明"为什么是它"，不超过 40 字
-- 一个 PR 只加一个条目；官方/社区分区不要混
-- 批量导入条目的英文描述可由人工逐步润色为中文点评（精品层优先 Top 50）
-
-## 下架标准
-
-- 超过 12 个月无维护
-- 被证实存在恶意行为（数据回传、供应链投毒）
-- 规范已废弃（移入归档区并注明替代者）
-- URL 失效且找不到新地址
-
-## 数据维护
-
-- `data/resources.yaml` 是唯一事实源；README 与页面由 `scripts/build.py` 生成，**禁止手改**
-- `scripts/update-stars.py` 定期刷新 GitHub 引用仓库元数据与 stars；GitHub Actions 使用内置 token，本地全量运行请设置 `GITHUB_TOKEN`（当前约 340 个仓库，匿名额度不足）
-- `scripts/import-*.py` 从市场/注册表增量导入（自动去重，vmethod=automated）
-- 全量审计记录见 [AUDIT.md](AUDIT.md)
+本仓库的 CC0 只覆盖目录自身资料，不改变被引用内容、代码、字体或媒体的许可。许可未知的原始内容不转存、不自动安装，链接索引也不授予复制权。

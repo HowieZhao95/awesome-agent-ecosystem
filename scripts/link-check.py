@@ -1,49 +1,54 @@
 #!/usr/bin/env python3
-"""Sample-based link checker for data/resources.yaml.
-
-Usage:
-    python3 scripts/link-check.py --sample 50
-    python3 scripts/link-check.py            # full check (slow)
-
-Never blocks the pipeline by itself: exits 0 always, prints a report.
-Dead links are reported for human triage in the weekly PR.
-"""
+"""Sample-based link checker for the legacy discovery queue."""
 import argparse
-import os
 import random
 import sys
 import urllib.request
+from pathlib import Path
 
 try:
     import yaml
 except ImportError:
     sys.exit("Missing dep: pip install pyyaml")
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA = os.path.join(ROOT, "data", "resources.yaml")
+ROOT = Path(__file__).resolve().parents[1]
+DATA = ROOT / "data" / "discovery" / "legacy-v2.yaml"
 
-parser = argparse.ArgumentParser()
-parser.add_argument("--sample", type=int, default=0)
-args = parser.parse_args()
 
-doc = yaml.safe_load(open(DATA, encoding="utf-8"))
-entries = [(c["id"], e) for c in doc["categories"] for e in c["entries"]]
-if args.sample and args.sample < len(entries):
-    entries = random.Random(42).sample(entries, args.sample)
+def check_links(data=DATA, sample=0):
+    with Path(data).open(encoding="utf-8") as handle:
+        doc = yaml.safe_load(handle)
+    entries = [(category["id"], entry) for category in doc["categories"] for entry in category["entries"]]
+    if sample and sample < len(entries):
+        entries = random.Random(42).sample(entries, sample)
+    dead = []
+    for category_id, entry in entries:
+        url = entry.get("url", "")
+        try:
+            req = urllib.request.Request(url, method="HEAD", headers={"User-Agent": "link-check"})
+            with urllib.request.urlopen(req, timeout=15) as response:
+                code = response.status
+        except Exception as exc:
+            code = str(getattr(exc, "code", "ERR"))
+        if code != 200:
+            dead.append(f"[{category_id}] {entry['name']} -> {url} ({code})")
+    return len(entries), dead
 
-dead = []
-for i, (cid, e) in enumerate(entries):
-    url = e.get("url", "")
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--sample", type=int, default=0)
+    parser.add_argument("--data", type=Path, default=DATA)
+    args = parser.parse_args()
     try:
-        req = urllib.request.Request(url, method="HEAD",
-                                     headers={"User-Agent": "link-check"})
-        with urllib.request.urlopen(req, timeout=15) as r:
-            code = r.status
-    except Exception as ex:
-        code = str(getattr(ex, "code", "ERR"))
-    if code != 200:
-        dead.append(f"[{cid}] {e['name']} -> {url} ({code})")
+        checked, dead = check_links(args.data, args.sample)
+    except (OSError, yaml.YAMLError) as exc:
+        parser.exit(1, f"ERROR: cannot read discovery queue: {exc}\n")
+    print(f"checked {checked} urls, dead: {len(dead)}")
+    for line in dead:
+        print(" DEAD:", line)
+    return 0
 
-print(f"checked {len(entries)} urls, dead: {len(dead)}")
-for line in dead:
-    print(" DEAD:", line)
+
+if __name__ == "__main__":
+    sys.exit(main())
