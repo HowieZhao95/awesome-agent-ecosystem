@@ -34,7 +34,7 @@
 ## 2026-10-07 验收记录
 
 - 新正本：五主类、模板七子类、提示词三子类，领域/文件格式/文件约定/组件分开；公共契约包含身份、用途、作者/发布者、许可、引用、预览、兼容、验证、状态、收录与更新规则。
-- 17 个来源；19 个代表记录，17 candidate、2 reference、0 usable。目录和资源 review 全部 pending；作者/许可未明的记录没有伪造权利或实测状态。
+- 初始验收时为 17 个来源、19 个代表记录（17 candidate、2 reference）；2026-10-07 阶段1补漏后为 18 个来源、20 个代表记录（17 candidate、3 reference、0 usable）。目录和资源 review 全部 pending；作者/许可未明的记录没有伪造权利或实测状态。
 - OpenDesign 模板只索引内容，不搬其 atom/pipeline 包装；三维样例为 CSS 设备展示，非 DCC；原则样例为特定仓库参考；Remotion 技能非 MG 工程模板。
 - 组合插件记录覆盖 td-drama-production 的 7 Skills + 宿主模块 + 引用 CLI，以及 @thusdesign/cli 的 CLI + stdio MCP，逐项有路径、选择器和提供方式。
 - Remotion 浏览器查证取得固定 commit `473352613039e718e46655a26df224851e84c4aa`；文件声明版本 `4.0.533` 未被当成运行兼容；许可仍 unknown。见 `docs/evidence/2026-10-07-remotion-source-check.json`。
@@ -43,6 +43,8 @@
 - TDD 红绿覆盖分类/来源角色、未知引用、身份重复、作者证据、适配关系、组件、usable 门槛、生成失败不写文件、幂等、README 锚点与混合插件投影。最终 35 tests PASS，完整日志 `docs/evidence/2026-10-07-tests.log`。
 - 新旧校验 PASS；真实 build 输出 19 记录；第二次生成字节一致，证据见 `docs/evidence/2026-10-07-data-validation.json`。
 - ego-browser 已打开实际本地目录页，显示 19 资源 / 17 候选 / 0 可使用 / 19 待审核 / 0 已实测；未实现新站点、账号或安装闭环。
+- 2026-10-07 补漏：新增 `voltagent.linear-design-reference`，以 `data/discovery/legacy-v2.yaml#categories[id=design-docs].entries[name=linear.app DESIGN.md]` 追溯发现项，以 VoltAgent 实际 `design-md/linear.app/DESIGN.md` 文件作为内容上游。读取 main 文件但未锁定 SHA；只索引元数据，不复制正文，不推断作者、许可、官方身份或兼容性；历史 manual/stars 不继承为实测。修正 quiet-product 的发布者证据与格式为实际 TypeScript preset 路径，不再称其为 DESIGN.md，也不再声称源文件未查明。
+- 补漏验收：新记录与旧发现条目精确匹配，发现角色与实际内容角色分开；Quiet Product 格式/证据修正经核对。新正本校验 PASS，20 记录生成通过且二次生成字节一致，旧 803 条原始字节仍保持。详见 `docs/evidence/2026-10-07-discovery-lineage-check.json`。未改脚本或客户端逻辑，未扩大重复测试；此前 35 项脚本测试与浏览器检查保留其原验收范围。
 
 ## 剩余关卡
 

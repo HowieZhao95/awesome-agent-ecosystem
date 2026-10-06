@@ -39,6 +39,7 @@
 |---|---|---|---|---|---|
 | [Agentic Design System](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-systems/agentic/DESIGN.md) (`opendesign.agentic-design-system`) | — | curated | candidate | source-inspected | unknown |
 | [ThusStyle Quiet Product Reference](https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/packages/asset-library/src/design-styles/official.ts) (`thusdesign.quiet-product-reference`) | — | curated | reference | source-inspected | unknown |
+| [Linear.app DESIGN.md 分析参考](https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/linear.app/DESIGN.md) (`voltagent.linear-design-reference`) | — | curated | reference | source-inspected | unknown |
 
 <a id="skills"></a>
 ### Skills

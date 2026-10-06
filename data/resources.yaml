@@ -998,7 +998,7 @@ resources:
   title: ThusStyle Quiet Product Reference
   summary: 产品设计风格目录中被称为 quiet-product 的单一风格参考定位。
   purpose: 作为风格参考，不视作完整设计系统。
-  classification: {category: design-systems, subtype: null, domains: [visual-design], formats: [markdown], conventions: [design-md], rationale: 目前只有参考项身份；缺少可追溯 tokens 与 CSS 的完整证据，不满足完整设计系统最低 profile。}
+  classification: {category: design-systems, subtype: null, domains: [visual-design], formats: [typescript], conventions: [], rationale: 该资源是产品源码中的单个风格 preset；缺少可追溯 tokens 与 CSS 的完整证据，不满足完整设计系统最低 profile。}
   provenance:
     relation: curated
     content_source: thusdesign.product-source
@@ -1017,13 +1017,13 @@ resources:
     identities:
     - {name: ThusDesign, url: 'https://www.thusdesign.ai'}
     evidence:
-    - {locator: 'product-source:33a1feabbcd5129fc9c7f4a676e80c632f44bce1:packages/design-system/ (exact quiet-product source path unknown)#quiet-product (exact source file unknown)', claim: 受限产品源码中的包/目录元数据属于 ThusDesign 产品维护范围；只登记发布者，不推断作者或公共分发许可。}
+    - {locator: 'product-source:33a1feabbcd5129fc9c7f4a676e80c632f44bce1:packages/asset-library/src/design-styles/official.ts#presets.id=quiet-product', claim: 受限产品源码中的包/目录元数据属于 ThusDesign 产品维护范围；只登记发布者，不推断作者或公共分发许可。}
   license: {status: unknown, expression: null, scope: null, evidence: [], redistribution: unknown}
   distribution: []
   previews: []
   compatibility: {hosts: [ThusDesign design-style library], runtimes: [], dependencies: [], constraints: [色板、字体类别和规则参考，未提供完整 DESIGN.md+tokens+CSS；不得晋级为完整设计系统。]}
   components: []
-  lifecycle: {state: reference, reason: 仅供内部参考；具体源文件和作者许可未能查明。, replacement_id: null}
+  lifecycle: {state: reference, reason: 仅供内部参考；作者与分发许可待审，且不满足完整设计系统最低 profile。, replacement_id: null}
   review: {status: pending, by: null, at: null, evidence: []}
   verification:
     level: source-inspected
@@ -1032,6 +1032,40 @@ resources:
     evidence:
     - {locator: 'product-source:33a1feabbcd5129fc9c7f4a676e80c632f44bce1:packages/asset-library/src/design-styles/official.ts#presets.id=quiet-product', claim: 工作树内容与固定 commit 一致；定位到 Quiet Product 标题、摘要、配色和 rules。}
     limits: [这是 style preset，而非含 DESIGN.md/tokens.css 完整结构的设计系统。, 作者与分发/复制许可未知；只作 reference。]
+- id: voltagent.linear-design-reference
+  title: Linear.app DESIGN.md 分析参考
+  summary: 第三方针对 Linear 页面呈现与视觉风格的设计分析文档。
+  purpose: 作为设计分析参考阅读，不视作 Linear 官方规范或可直接应用的完整设计系统。
+  classification: {category: design-systems, subtype: null, domains: [visual-design], formats: [markdown], conventions: [design-md], rationale: 单个 DESIGN.md 可作为参考；未核实 tokens 与 CSS，不满足完整设计系统最低 profile。}
+  provenance:
+    relation: curated
+    content_source: voltagent.design-md
+    discovered_via: [discover.awesome-agent-ecosystem]
+    upstream:
+      kind: git
+      url: https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/linear.app/DESIGN.md
+      path: design-md/linear.app/DESIGN.md
+      selector: null
+      ref: {kind: unknown, value: null}
+    derives_from: []
+    changes: null
+  authors: {status: unknown, identities: [], evidence: []}
+  publisher: {status: unknown, identities: [], evidence: []}
+  license: {status: unknown, expression: null, scope: null, evidence: [], redistribution: unknown}
+  distribution: []
+  previews: []
+  compatibility: {hosts: [], runtimes: [], dependencies: [], constraints: [仅文档参考；未核准 CSS、tokens、宿主应用兼容性或许可，不可视为可用资源。]}
+  components: []
+  lifecycle: {state: reference, reason: 第三方单文件设计分析参考；作者、许可与使用兼容未审。, replacement_id: null}
+  review: {status: pending, by: null, at: null, evidence: []}
+  verification:
+    level: source-inspected
+    checked_at: '2026-10-07'
+    by: cataloguer
+    evidence:
+    - {locator: 'data/discovery/legacy-v2.yaml#categories[id=design-docs].entries[name=linear.app DESIGN.md]', claim: 旧发现队列记录该条目 URL；旧 manual/stars 等历史字段仅作发现线索，未继承为实测。}
+    - {locator: 'https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/linear.app/DESIGN.md', claim: 2026-10-07 读取实际文件；frontmatter 标为 alpha/Linear-design-analysis，正文说明参考 Linear 首页、intake、pricing、contact/sales、build 页面。}
+    limits: [main 的精确 commit SHA 未锁定。, 未核实内容作者、发布者、许可、CSS/tokens、宿主兼容或使用效果；不声称 Linear 官方作者。]
 - id: opendesign.mockup-device-3d
   title: Device 3D Showcase HTML
   summary: 静态 CSS 三维设备展示 HTML，透视组合 iPhone 与 MacBook，并嵌入屏幕内容。

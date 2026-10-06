@@ -52,6 +52,14 @@ sources:
       schema v2。, cadence: manual, method: 'Use the existing weekly discovery scan only to add lineage/possible entries to the discovery queue; do not write or promote public resources without manual source,
       classification, license and compatibility review.', promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。, last_checked: '2026-10-07', limitations: [旧目录仅为发现渠道，不代表条目实际出处或作者。, 新 discovery/legacy-v2.yaml
         尚未发布；此 URL 指向实际存在的迁移前固定版本。]}
+- id: voltagent.design-md
+  name: VoltAgent awesome-design-md 内容上游
+  url: https://github.com/VoltAgent/awesome-design-md
+  roles: [content-upstream]
+  access: public
+  tracking: {scope: 'design-md/linear.app/DESIGN.md only', exclude: [], baseline: 'main file read on 2026-10-07; exact commit SHA unknown', cadence: manual,
+    method: 'Resolve the actual file and ref, inspect the DESIGN.md, then manually review proposed metadata changes; do not infer authorship or license from the repository owner.',
+    promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。, last_checked: '2026-10-07', limitations: [仅核对 DESIGN.md 文件；作者、发布者、许可及固定 commit SHA 未知。]}
 - id: discover.skills-cli
   name: Skills CLI / skills.sh 分发发现入口
   url: https://github.com/vercel-labs/skills

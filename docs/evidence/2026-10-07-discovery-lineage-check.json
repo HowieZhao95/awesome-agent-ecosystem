@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-10-07",
+  "resource": "voltagent.linear-design-reference",
+  "discovery_entry": "https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/linear.app",
+  "content_file": "https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/linear.app/DESIGN.md",
+  "ref": "unknown",
+  "author": "unknown",
+  "license": "unknown",
+  "review": "pending",
+  "checks": {
+    "discovery_content_roles_separate": true,
+    "legacy_selector_exact": true,
+    "quiet_product_evidence_and_format_corrected": true,
+    "catalog_validation": "PASS",
+    "generated_outputs_byte_identical": true,
+    "legacy_original_bytes_preserved": true
+  },
+  "resources": 20,
+  "sources": 18,
+  "generated_sha256": {
+    "README.md": "c9f6d7e6cfdd380e3c3e8a17c5a41d5c46b777eaa2968145ec4b035a875dff91",
+    "site/data.js": "508ea26a2098ae301009ba82f140c6509420f678ba7908cc7af125b589641276",
+    "site/catalog.json": "2506d1c6aa9705c5a36e058b9fbcc729948032619486074b3ea7d925ec5aa0f9"
+  },
+  "scope": "Metadata-only review; no upstream runtime or public release verification"
+}
