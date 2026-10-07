@@ -1,0 +1,8 @@
+Query: design-systems/agentic|opendesign|remotion-best-practices|remotion-render
+Search roots: packages/, apps/, scripts/ (excluding Markdown and node_modules)
+rg exit code: 1 (1 means no matches)
+(no source references found)
+
+CSS boundary inspected at packages/design-system/styles/globals.css.
+Semantic names include --background, --primary, --ring, and --sidebar-primary.
+Private token values and implementation bodies are intentionally omitted from this public evidence.

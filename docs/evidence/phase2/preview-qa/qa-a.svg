@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">QA carousel fixture one</title>
+  <rect width="960" height="540" fill="#dcece6" />
+  <rect x="80" y="72" width="800" height="396" rx="36" fill="#276f64" />
+  <circle cx="298" cy="270" r="108" fill="#f5cb72" />
+  <path d="M470 344 580 170l110 174z" fill="#fff7e8" />
+  <text x="480" y="510" text-anchor="middle" font-family="sans-serif" font-size="24" fill="#123c36">QA fixture image 1</text>
+</svg>

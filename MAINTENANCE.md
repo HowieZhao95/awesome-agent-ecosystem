@@ -5,7 +5,7 @@
 ## 当前执行范围
 
 - `.github/workflows/weekly-sync.yml` 保留旧市场/注册表发现与 GitHub 元数据刷新，只更新 `data/discovery/legacy-v2.yaml` 和扫描缓存，走 `bot/weekly-sync` PR，不直接写新公共资源正本。
-- OpenDesign、Remotion 和 ThusDesign 的新来源策略已登记；本阶段未增加它们的持续抓取器或监控任务。cadence 是维护约定，不代表自动化已经执行。
+- OpenDesign、Remotion 的选定范围可通过基础来源工具手工读取并产生差异/候选，见 [来源工具](docs/source-tools.md)。持续调度和自动 PR 尚未接入，留在阶段 5；受限 ThusDesign 内容不被采集。cadence 是维护约定，不代表自动化已经执行。
 - `scripts/validate.py` 校验新分类、来源和具体记录契约；`scripts/validate-discovery.py` 校验旧发现队列。
 - `scripts/build.py` 从三份 YAML 正本生成 README、`site/data.js` 和 `site/catalog.json`；生成可重复，不把运行时校验或用户审核状态补为已通过。
 - `scripts/update-stars.py` 仍按仓库去重、ETag 请求和显式 API 失败策略刷新历史发现热度；仓库热度不代表单资源采用度或质量验证。
@@ -17,7 +17,12 @@ python -m pip install -r requirements.txt
 python -m unittest discover -s tests -v
 python scripts/validate-discovery.py
 python scripts/validate.py
-python scripts/build.py
+npm ci
+npm run generate
+npm test
+npm run typecheck
+npm run build
+npm run check:host
 ```
 
 自动发现用 GitHub Actions 内置 token；本地全量 GitHub 扫描需要足够配额的 GITHUB_TOKEN，只在运行环境读取，不写入文件或日志。来源抓取失败时保留旧基线，显示缺口，不把失败当作资源已下架。
@@ -39,3 +44,13 @@ python scripts/build.py
 2026-10-07 查到的 [PR #1 weekly-sync](https://github.com/HowieZhao95/awesome-agent-ecosystem/pull/1) 修改旧 resources.yaml、README 和网站数据，与本次正本切换冲突。不能原样合并其生成产物；后续需把增量变成发现队列更新，并重新生成新正本输出。[PR #2 Statsnet MCP](https://github.com/HowieZhao95/awesome-agent-ecosystem/pull/2) 是候选提案，仍需具体来源、组件与许可查证。
 
 本轮未关闭、合并或修改这些远端 PR。`AUDIT.md` 和旧计划是历史快照，不证明新目录全部审核通过。
+
+## 公共商店维护
+
+`npm run generate` 更新正本投影与类型枚举；构建结果是公共模块和独立站点，不是资源安装结果。来源工具提案不覆盖三份 YAML 正本，也不继承旧审批或许可结论。核对差异后人工修改数据、重新生成并执行检查。
+
+运行入口与独立安装步骤见 README；宿主接口与阶段 2+ 迁移边界见 [接入文档](docs/host-integration.md)。公开发布仍单独授权，不能把测试产物或 npm 打包成功当成已发布。
+
+## 验收证据
+
+阶段 2 记录见 [acceptance.md](docs/evidence/phase2/acceptance.md)。公共 Git 保留命令、结构与状态的检查记录；可能包含上游参考媒体的浏览器 PNG 只保留在本地，不随公共项目再分发。QA 夹具代码和生成方法位于 `docs/evidence/phase2/preview-qa/`，其临时站点输出已经按清单清理；正式目录没有夹具数据。

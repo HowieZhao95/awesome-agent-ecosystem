@@ -1,0 +1,179 @@
+.pas-app {
+  color-scheme: light;
+  --pas-bg: #f5f4f1;
+  --pas-surface: #fff;
+  --pas-surface-soft: #efeee9;
+  --pas-ink: #22241f;
+  --pas-muted: #6d716a;
+  --pas-line: #d9dbd3;
+  --pas-accent-default: #6e4bd1;
+  --pas-accent: var(--catalog-accent, var(--pas-accent-default));
+  --pas-accent-wash: color-mix(in srgb, var(--pas-accent) 11%, var(--pas-surface));
+  --pas-danger: #a43d32;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+.pas-app { min-height: 100vh; background: var(--pas-bg); color: var(--pas-ink); font-size: 14px; line-height: 1.55; }
+.pas-app[data-theme="dark"] { color-scheme: dark; --pas-bg: #171916; --pas-surface: #20231f; --pas-surface-soft: #292d28; --pas-ink: #f1f1e9; --pas-muted: #aaafa5; --pas-line: #3b4139; --pas-danger: #ff8c7d; }
+.pas-app *, .pas-app *::before, .pas-app *::after { box-sizing: border-box; }
+.pas-app button, .pas-app input, .pas-app select { font: inherit; }
+.pas-app button, .pas-app a, .pas-app select { accent-color: var(--pas-accent); }
+.pas-app a { color: var(--pas-accent); text-decoration-thickness: .08em; text-underline-offset: .18em; }
+.pas-app button { border: 1px solid var(--pas-line); border-radius: 8px; padding: 8px 12px; background: var(--pas-surface); color: var(--pas-ink); cursor: pointer; }
+.pas-app button:hover:not(:disabled) { border-color: var(--pas-accent); color: var(--pas-accent); }
+.pas-app button:disabled { cursor: not-allowed; opacity: .55; }
+.pas-app :focus-visible { outline: 3px solid var(--pas-accent); outline-offset: 2px; }
+.pas-layout { display: grid; grid-template-columns: 248px minmax(0, 1fr); min-height: 100vh; }
+.pas-sidebar { position: sticky; top: 0; display: flex; flex-direction: column; height: 100vh; padding: 28px 18px 18px; border-right: 1px solid var(--pas-line); background: var(--pas-surface); }
+.pas-brand { display: flex; align-items: center; gap: 10px; color: var(--pas-ink) !important; font-weight: 700; text-decoration: none !important; font-size: 15px; }
+.pas-brand-mark { display: grid; width: 32px; height: 32px; place-items: center; border-radius: 9px; color: #fff; background: var(--pas-accent); font-family: Georgia, serif; font-size: 19px; }
+.pas-eyebrow { margin: 0; color: var(--pas-muted); font-size: 10px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+.pas-category-nav { display: grid; gap: 5px; margin-top: 52px; }
+.pas-category-nav .pas-eyebrow { padding: 0 10px 9px; }
+.pas-category-nav button { display: flex; align-items: center; justify-content: space-between; width: 100%; border-color: transparent; padding: 10px; text-align: left; background: transparent; color: var(--pas-muted); }
+.pas-category-nav button span { font-variant-numeric: tabular-nums; font-size: 12px; }
+.pas-category-nav button[aria-pressed="true"] { color: var(--pas-accent); background: var(--pas-accent-wash); font-weight: 650; }
+.pas-sidebar-foot { display: flex; align-items: center; gap: 8px; margin-top: auto; padding: 12px 6px 0; border-top: 1px solid var(--pas-line); color: var(--pas-muted); font-size: 11px; }
+.pas-status-dot { width: 7px; height: 7px; border-radius: 50%; background: #488b63; }
+.pas-main { width: min(100%, 1440px); margin: 0 auto; padding: 32px clamp(22px, 4vw, 64px) 72px; }
+.pas-topbar { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding-bottom: 22px; border-bottom: 1px solid var(--pas-line); }
+.pas-topbar h1 { margin: 4px 0 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(24px, 3vw, 34px); font-weight: 500; letter-spacing: -.03em; }
+.pas-top-actions { display: flex; align-items: center; gap: 8px; color: var(--pas-muted); font-size: 12px; }
+.pas-app select { min-width: 112px; border: 1px solid var(--pas-line); border-radius: 7px; padding: 8px 10px; color: var(--pas-ink); background: var(--pas-surface); }
+.pas-intro { display: flex; justify-content: space-between; gap: 24px; align-items: end; padding: 24px 0 21px; }
+.pas-intro > p { max-width: 690px; margin: 0; color: var(--pas-muted); }
+.pas-catalog-meta { display: flex; flex-wrap: wrap; gap: 8px 15px; color: var(--pas-muted); font-size: 11px; white-space: nowrap; }
+.pas-catalog-meta span + span { padding-left: 14px; border-left: 1px solid var(--pas-line); }
+.pas-controls { display: grid; gap: 12px; padding: 16px; border: 1px solid var(--pas-line); border-radius: 12px; background: var(--pas-surface); }
+.pas-search { display: flex; align-items: center; gap: 10px; min-height: 42px; padding: 0 11px; border: 1px solid var(--pas-line); border-radius: 8px; background: var(--pas-bg); }
+.pas-search-icon { color: var(--pas-accent); font-size: 22px; }
+.pas-search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--pas-ink); }
+.pas-search:focus-within { border-color: var(--pas-accent); box-shadow: 0 0 0 2px color-mix(in srgb, var(--pas-accent) 25%, transparent); }
+.pas-search kbd { border: 1px solid var(--pas-line); border-radius: 4px; padding: 1px 5px; color: var(--pas-muted); font-size: 10px; }
+.pas-filter-grid { display: grid; grid-template-columns: repeat(5, minmax(110px, 1fr)); gap: 9px; }
+.pas-filter { display: grid; gap: 4px; color: var(--pas-muted); font-size: 11px; }
+.pas-filter select { width: 100%; min-width: 0; font-size: 12px; }
+.pas-result-heading { display: flex; align-items: center; justify-content: space-between; margin: 30px 0 13px; }
+.pas-result-heading > div { display: flex; align-items: baseline; gap: 10px; }
+.pas-result-heading h2 { margin: 0; font-family: Georgia, "Songti SC", serif; font-size: 21px; font-weight: 500; }
+.pas-result-heading span { color: var(--pas-muted); font-size: 12px; }
+.pas-text-button { border: 0 !important; padding: 4px 0 !important; color: var(--pas-accent) !important; background: transparent !important; }
+.pas-resource-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.pas-card { display: flex; min-height: 200px; flex-direction: column; gap: 12px; padding: 16px; border: 1px solid var(--pas-line); border-radius: 11px; background: var(--pas-surface); transition: border-color .15s, transform .15s; }
+.pas-card:hover { border-color: var(--pas-accent); transform: translateY(-2px); }
+.pas-card-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.pas-type-mark { display: grid; width: 30px; height: 30px; place-items: center; border-radius: 8px; color: var(--pas-accent); background: var(--pas-accent-wash); font-weight: 700; }
+.pas-card-tags { display: flex; flex-wrap: wrap; justify-content: end; gap: 5px; }
+.pas-pill { border: 1px solid color-mix(in srgb, var(--pas-accent) 35%, var(--pas-line)); border-radius: 999px; padding: 2px 7px; color: var(--pas-accent); font-size: 10px; }
+.pas-muted-pill { border-color: var(--pas-line); color: var(--pas-muted); }
+.pas-card h3 { margin: 0; font-size: 15px; line-height: 1.35; }
+.pas-card h3 a { color: var(--pas-ink); text-decoration: none; }
+.pas-card h3 a:hover { color: var(--pas-accent); }
+.pas-card-summary { display: -webkit-box; overflow: hidden; margin: 0; color: var(--pas-muted); font-size: 12px; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.pas-card-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 5px; margin-top: auto; padding-top: 10px; border-top: 1px solid var(--pas-line); color: var(--pas-muted); font-size: 10px; }
+.pas-pagination { display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 24px; color: var(--pas-muted); font-size: 12px; }
+.pas-state { margin: 28px 0; padding: 24px; border: 1px dashed var(--pas-line); border-radius: 10px; color: var(--pas-muted); text-align: center; }
+.pas-state-error, .pas-inline-error { color: var(--pas-danger); }
+.pas-detail { max-width: 1080px; margin: 28px auto 0; }
+.pas-back-link { display: inline-block; margin-bottom: 26px; color: var(--pas-muted) !important; text-decoration: none; }
+.pas-detail-heading { display: flex; justify-content: space-between; align-items: start; gap: 18px; padding-bottom: 23px; border-bottom: 1px solid var(--pas-line); }
+.pas-detail-heading h2, .pas-source-detail h2 { margin: 5px 0 8px; font-family: Georgia, "Songti SC", serif; font-size: clamp(28px, 4vw, 42px); font-weight: 500; letter-spacing: -.035em; }
+.pas-detail-summary { max-width: 700px; margin: 0; color: var(--pas-muted); }
+.pas-lifecycle { flex: none; border: 1px solid var(--pas-line); border-radius: 999px; padding: 5px 9px; color: var(--pas-muted); font-size: 11px; }
+.pas-detail-badges { display: flex; flex-wrap: wrap; justify-content: end; gap: 7px; }
+.pas-verification-badge { display: inline-flex; align-items: center; border: 1px solid color-mix(in srgb, var(--pas-accent) 38%, var(--pas-line)); border-radius: 999px; padding: 5px 9px; color: var(--pas-accent); background: var(--pas-accent-wash); font-size: 11px; }
+.pas-lifecycle-withdrawn { border-color: color-mix(in srgb, var(--pas-danger) 35%, var(--pas-line)); color: var(--pas-danger); }
+.pas-notice, .pas-host-actions { display: flex; align-items: center; gap: 12px; margin-top: 17px; padding: 11px 14px; border: 1px solid var(--pas-line); border-radius: 9px; background: var(--pas-surface); }
+.pas-notice { display: block; border-color: color-mix(in srgb, var(--pas-danger) 25%, var(--pas-line)); }
+.pas-notice p { margin: 4px 0 0; color: var(--pas-muted); }
+.pas-host-actions { justify-content: end; color: var(--pas-muted); font-size: 12px; }
+.pas-host-state { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin-right: auto; }
+.pas-state-chip { border: 1px solid var(--pas-line); border-radius: 999px; padding: 2px 6px; color: var(--pas-muted); font-size: 10px; }
+.pas-host-actions span { margin-right: auto; }
+.pas-host-actions button[data-action="add"] { border-color: var(--pas-accent); color: white; background: var(--pas-accent); }
+.pas-preview-section { margin-top: 26px; }
+.pas-section-title { display: flex; align-items: end; justify-content: space-between; margin-bottom: 10px; }
+.pas-section-title h3 { margin: 3px 0 0; font-family: Georgia, "Songti SC", serif; font-size: 21px; font-weight: 500; }
+.pas-section-title > span { color: var(--pas-muted); font-size: 11px; }
+.pas-preview-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.pas-preview-card { min-width: 0; overflow: hidden; padding: 12px; border: 1px solid var(--pas-line); border-radius: 10px; background: var(--pas-surface); }
+.pas-preview-title { display: flex; justify-content: space-between; margin-bottom: 9px; color: var(--pas-muted); font-size: 11px; }
+.pas-preview-card img, .pas-preview-card video, .pas-preview-card iframe { display: block; width: 100%; max-height: 480px; border: 0; border-radius: 6px; background: var(--pas-surface-soft); object-fit: contain; }
+.pas-preview-card iframe { min-height: 360px; }
+.pas-preview-card > button { margin: 8px 0; }
+.pas-source-text { max-height: 380px; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; padding: 12px; border-radius: 7px; background: var(--pas-surface-soft); color: var(--pas-ink); font: 12px/1.55 ui-monospace, SFMono-Regular, Menlo, monospace; }
+.pas-external-note { color: var(--pas-muted); font-size: 10px; }
+.pas-source-link { font-size: 11px; }
+.pas-preview-empty { padding: 20px; border: 1px dashed var(--pas-line); border-radius: 9px; color: var(--pas-muted); text-align: center; }
+.pas-gallery { display: grid; justify-items: center; gap: 8px; margin: 0 0 12px; padding: 12px; border: 1px solid var(--pas-line); border-radius: 10px; background: var(--pas-surface); }
+.pas-gallery-stage { display: grid; width: 100%; grid-template-columns: 40px minmax(0, 1fr) 40px; align-items: center; gap: 8px; }
+.pas-gallery-stage > a { display: grid; min-height: 220px; max-height: 520px; place-items: center; overflow: hidden; border-radius: 7px; background: var(--pas-surface-soft); }
+.pas-gallery-stage img { display: block; width: 100%; max-height: 520px; object-fit: contain; }
+.pas-gallery > p { margin: 0; color: var(--pas-muted); font-size: 11px; }
+.pas-gallery-stage > button { padding: 7px; font-size: 21px; }
+.pas-caution, .pas-host-availability { color: var(--pas-danger) !important; font-size: 11px !important; }
+.pas-card-image { display: block; width: 68px; height: 48px; overflow: hidden; border-radius: 6px; background: var(--pas-surface-soft); }
+.pas-card-image img { width: 100%; height: 100%; object-fit: cover; }
+.pas-source-resource-list { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; }
+.pas-source-resource-list li { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-top: 1px solid var(--pas-line); }
+.pas-source-resource-list span { color: var(--pas-muted); font-size: 11px; }
+.pas-demo-note { margin: 0; padding: 10px 20px; border-bottom: 1px solid var(--pas-line); background: #fff5d6; color: #473719; font: 13px/1.5 ui-sans-serif, system-ui, sans-serif; }
+.pas-detail-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(250px, .8fr); gap: 24px; margin-top: 28px; }
+.pas-detail-main, .pas-detail-aside { display: grid; align-content: start; gap: 14px; }
+.pas-meta-section { padding: 15px; border: 1px solid var(--pas-line); border-radius: 9px; background: var(--pas-surface); }
+.pas-meta-section h3 { margin: 0 0 10px; font-size: 13px; }
+.pas-acquisition { margin-top: 12px; padding-top: 11px; border-top: 1px solid var(--pas-line); }
+.pas-acquisition > b { color: var(--pas-muted); font-size: 11px; }
+.pas-meta-disclosure { margin-top: 10px; border: 1px solid var(--pas-line); border-radius: 8px; background: var(--pas-bg); }
+.pas-meta-disclosure > summary { padding: 10px 12px; color: var(--pas-accent); font-size: 12px; font-weight: 650; cursor: pointer; }
+.pas-meta-disclosure > summary::marker { color: var(--pas-accent); }
+.pas-meta-disclosure[open] > summary { border-bottom: 1px solid var(--pas-line); }
+.pas-disclosure-content { display: grid; gap: 8px; padding: 10px; }
+.pas-disclosure-content .pas-meta-section { padding: 10px; background: var(--pas-surface); }
+.pas-meta-section p { margin: 6px 0; color: var(--pas-muted); font-size: 12px; overflow-wrap: anywhere; }
+.pas-meta-section p b { margin-right: 5px; color: var(--pas-ink); }
+.pas-meta-section ul { display: grid; gap: 8px; margin: 9px 0 0; padding-left: 17px; color: var(--pas-muted); font-size: 11px; }
+.pas-link-list, .pas-component-list { list-style: none; padding: 0 !important; }
+.pas-link-list li { display: flex; justify-content: space-between; gap: 9px; padding: 7px 0; border-top: 1px solid var(--pas-line); }
+.pas-component-list li { display: grid; gap: 3px; padding: 9px 0; border-top: 1px solid var(--pas-line); }
+.pas-component-list li:first-child, .pas-link-list li:first-child { border-top: 0; }
+.pas-component-list b { color: var(--pas-ink); overflow-wrap: anywhere; }
+.pas-component-list span, .pas-component-list small { color: var(--pas-muted); }
+.pas-verification { color: var(--pas-accent) !important; font-weight: 700; }
+.pas-source-detail { max-width: 800px; }
+.pas-source-detail dl { display: grid; grid-template-columns: 150px 1fr; gap: 8px; font-size: 12px; }
+.pas-source-detail dt { color: var(--pas-muted); }
+.pas-source-detail dd { margin: 0; overflow-wrap: anywhere; }
+.pas-skip-link { position: absolute; z-index: 10; top: 8px; left: 8px; transform: translateY(-150%); border-radius: 5px; padding: 8px 11px; background: var(--pas-accent); color: white !important; }
+.pas-skip-link:focus { transform: translateY(0); }
+.pas-visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+
+@media (max-width: 1050px) {
+  .pas-resource-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pas-filter-grid { grid-template-columns: repeat(3, minmax(110px, 1fr)); }
+  .pas-intro { align-items: start; flex-direction: column; }
+}
+@media (max-width: 700px) {
+  .pas-layout { display: block; }
+  .pas-sidebar { position: static; width: 100%; height: auto; padding: 14px 16px 10px; border-right: 0; border-bottom: 1px solid var(--pas-line); }
+  .pas-brand { font-size: 13px; }
+  .pas-category-nav { display: flex; overflow-x: auto; gap: 5px; margin-top: 12px; padding-bottom: 2px; }
+  .pas-category-nav .pas-eyebrow, .pas-sidebar-foot { display: none; }
+  .pas-category-nav button { flex: none; width: auto; gap: 8px; white-space: nowrap; font-size: 12px; }
+  .pas-main { padding: 21px 16px 48px; }
+  .pas-topbar { align-items: start; }
+  .pas-top-actions { align-items: end; flex-direction: column; gap: 4px; }
+  .pas-filter-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pas-resource-grid { grid-template-columns: 1fr; }
+  .pas-card { min-height: 175px; }
+  .pas-preview-list, .pas-detail-grid { grid-template-columns: 1fr; }
+  .pas-detail-heading { flex-direction: column; }
+  .pas-host-actions { flex-wrap: wrap; }
+  .pas-catalog-meta { white-space: normal; }
+  .pas-catalog-meta span + span { padding-left: 0; border-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pas-app *, .pas-app *::before, .pas-app *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}

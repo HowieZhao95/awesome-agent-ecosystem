@@ -1,0 +1,14 @@
+test_build_projects_host_availability_without_changing_resource_records (test_phase1_catalog.Phase1CatalogTests) ... FAIL
+
+======================================================================
+FAIL: test_build_projects_host_availability_without_changing_resource_records (test_phase1_catalog.Phase1CatalogTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/howiez/Downloads/awesome-agent-ecosystem/tests/test_phase1_catalog.py", line 486, in test_build_projects_host_availability_without_changing_resource_records
+    self.assertEqual({"example.prototype": []}, exported.get("availability"))
+AssertionError: {'example.prototype': []} != None
+
+----------------------------------------------------------------------
+Ran 1 test in 0.374s
+
+FAILED (failures=1)

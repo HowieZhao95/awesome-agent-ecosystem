@@ -1,0 +1,27 @@
+test_archive_root_binds_snapshot_to_selected_repository_and_sha (test_source_sync.SourceSyncTests.test_archive_root_binds_snapshot_to_selected_repository_and_sha) ... ok
+test_cli_reads_new_locked_commit_against_catalog_baseline_ref (test_source_sync.SourceSyncTests.test_cli_reads_new_locked_commit_against_catalog_baseline_ref) ... ok
+test_cli_refuses_canonical_output_and_baseline_overwrite (test_source_sync.SourceSyncTests.test_cli_refuses_canonical_output_and_baseline_overwrite) ... FAIL
+test_duplicate_content_renames_pair_one_to_one_deterministically (test_source_sync.SourceSyncTests.test_duplicate_content_renames_pair_one_to_one_deterministically) ... ok
+test_failed_snapshot_does_not_replace_existing_baseline (test_source_sync.SourceSyncTests.test_failed_snapshot_does_not_replace_existing_baseline) ... ok
+test_identical_locked_snapshots_have_no_changes (test_source_sync.SourceSyncTests.test_identical_locked_snapshots_have_no_changes) ... ok
+test_identity_rename_detected_even_when_content_changes (test_source_sync.SourceSyncTests.test_identity_rename_detected_even_when_content_changes) ... ok
+test_legacy_discovery_exports_only_selected_public_metadata (test_source_sync.SourceSyncTests.test_legacy_discovery_exports_only_selected_public_metadata) ... ok
+test_metadata_fingerprint_is_stable (test_source_sync.SourceSyncTests.test_metadata_fingerprint_is_stable) ... ok
+test_mutable_ref_rejected_for_public_snapshot (test_source_sync.SourceSyncTests.test_mutable_ref_rejected_for_public_snapshot) ... ok
+test_partial_snapshot_lists_failures_without_dropping_successes (test_source_sync.SourceSyncTests.test_partial_snapshot_lists_failures_without_dropping_successes) ... ok
+test_partial_snapshot_suppresses_ambiguous_removals (test_source_sync.SourceSyncTests.test_partial_snapshot_suppresses_ambiguous_removals) ... ok
+test_reports_added_changed_removed_and_content_rename (test_source_sync.SourceSyncTests.test_reports_added_changed_removed_and_content_rename) ... ok
+
+======================================================================
+FAIL: test_cli_refuses_canonical_output_and_baseline_overwrite (test_source_sync.SourceSyncTests.test_cli_refuses_canonical_output_and_baseline_overwrite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$USER/Downloads/awesome-agent-ecosystem/tests/test_source_sync.py", line 132, in test_cli_refuses_canonical_output_and_baseline_overwrite
+    self.assertNotEqual(result.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+----------------------------------------------------------------------
+Ran 13 tests in 1.012s
+
+FAILED (failures=1)

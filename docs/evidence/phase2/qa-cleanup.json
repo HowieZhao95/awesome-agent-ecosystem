@@ -1,0 +1,12 @@
+{
+  "formalHashesUnchanged": true,
+  "removed": [
+    "qa-preview/index.html",
+    "qa-a.svg",
+    "qa-b.svg",
+    "qa-preview.mp4",
+    "qa-preview/assets/index-BFBJHRB6.css",
+    "qa-preview/assets/index-C-y_nuMw.js"
+  ],
+  "qaOutputsAbsent": true
+}

@@ -1,0 +1,24 @@
+✖ keeps acquisition and verification visible while secondary source metadata starts collapsed (118.759708ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 723.873417
+
+✖ failing tests:
+
+test at tests/ui.test.ts:1:5803
+✖ keeps acquisition and verification visible while secondary source metadata starts collapsed (118.759708ms)
+  AssertionError [ERR_ASSERTION]: the compact verification badge remains visible
+      at TestContext.<anonymous> (/Users/howiez/Downloads/awesome-agent-ecosystem/tests/ui.test.ts:126:12)
+      at async Test.run (node:internal/test_runner/test:1069:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:332:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: true,
+    operator: '=='
+  }

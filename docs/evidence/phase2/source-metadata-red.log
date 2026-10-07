@@ -1,0 +1,35 @@
+test_archive_root_binds_snapshot_to_selected_repository_and_sha (test_source_sync.SourceSyncTests.test_archive_root_binds_snapshot_to_selected_repository_and_sha) ... ok
+test_cli_reads_new_locked_commit_against_catalog_baseline_ref (test_source_sync.SourceSyncTests.test_cli_reads_new_locked_commit_against_catalog_baseline_ref) ... ok
+test_cli_refuses_canonical_output_and_baseline_overwrite (test_source_sync.SourceSyncTests.test_cli_refuses_canonical_output_and_baseline_overwrite) ... ok
+test_duplicate_content_renames_pair_one_to_one_deterministically (test_source_sync.SourceSyncTests.test_duplicate_content_renames_pair_one_to_one_deterministically) ... ok
+test_failed_snapshot_does_not_replace_existing_baseline (test_source_sync.SourceSyncTests.test_failed_snapshot_does_not_replace_existing_baseline) ... ok
+test_identical_locked_snapshots_have_no_changes (test_source_sync.SourceSyncTests.test_identical_locked_snapshots_have_no_changes) ... ok
+test_identity_rename_detected_even_when_content_changes (test_source_sync.SourceSyncTests.test_identity_rename_detected_even_when_content_changes) ... ok
+test_invalid_selected_frontmatter_marks_snapshot_incomplete (test_source_sync.SourceSyncTests.test_invalid_selected_frontmatter_marks_snapshot_incomplete) ... FAIL
+test_legacy_discovery_exports_only_selected_public_metadata (test_source_sync.SourceSyncTests.test_legacy_discovery_exports_only_selected_public_metadata) ... ok
+test_manifest_metadata_is_retained_without_manifest_body (test_source_sync.SourceSyncTests.test_manifest_metadata_is_retained_without_manifest_body) ... ok
+test_metadata_fingerprint_is_stable (test_source_sync.SourceSyncTests.test_metadata_fingerprint_is_stable) ... ok
+test_mutable_ref_rejected_for_public_snapshot (test_source_sync.SourceSyncTests.test_mutable_ref_rejected_for_public_snapshot) ... ok
+test_partial_snapshot_lists_failures_without_dropping_successes (test_source_sync.SourceSyncTests.test_partial_snapshot_lists_failures_without_dropping_successes) ... ok
+test_partial_snapshot_suppresses_ambiguous_removals (test_source_sync.SourceSyncTests.test_partial_snapshot_suppresses_ambiguous_removals) ... ok
+test_reports_added_changed_removed_and_content_rename (test_source_sync.SourceSyncTests.test_reports_added_changed_removed_and_content_rename) ... ok
+
+======================================================================
+FAIL: test_invalid_selected_frontmatter_marks_snapshot_incomplete (test_source_sync.SourceSyncTests.test_invalid_selected_frontmatter_marks_snapshot_incomplete)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$USER/Downloads/awesome-agent-ecosystem/tests/test_source_sync.py", line 88, in test_invalid_selected_frontmatter_marks_snapshot_incomplete
+    self.assertEqual(snapshot["files"], {})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'bad/SKILL.md': {'sha256': '6db3fa6174060[221 chars]1e'}} != {}
++ {}
+- {'bad/SKILL.md': {'identity': None,
+-                   'metadata': {'frontmatter_error': 'ParserError'},
+-                   'metadata_fingerprint': '2b831247979bde181f86b20b80c1875e01c14f722ca98deca93bd53ba5aa411e',
+-                   'sha256': '6db3fa6174060f6389c08708ec5c30d854f69dd32c91e3a8615369e0f7c058b4',
+-                   'size': 27}}
+
+----------------------------------------------------------------------
+Ran 15 tests in 4.039s
+
+FAILED (failures=1)

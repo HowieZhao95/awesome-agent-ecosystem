@@ -1,0 +1,14 @@
+{
+  "bodyMargin": "0px",
+  "catalogError": "目录加载失败：Failed to fetch重试",
+  "loading": "正在加载资源目录…",
+  "retriedCards": 12,
+  "previewError": {
+    "alert": [
+      "预览读取失败：Failed to fetch",
+      "读取失败。你可以直接打开原始来源。"
+    ],
+    "originalLinks": 2,
+    "frames": 0
+  }
+}

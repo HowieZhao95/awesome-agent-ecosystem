@@ -1,0 +1,42 @@
+test_failed_snapshot_does_not_replace_existing_baseline (test_source_sync.SourceSyncTests.test_failed_snapshot_does_not_replace_existing_baseline) ... ok
+test_identical_locked_snapshots_have_no_changes (test_source_sync.SourceSyncTests.test_identical_locked_snapshots_have_no_changes) ... ok
+test_identity_rename_detected_even_when_content_changes (test_source_sync.SourceSyncTests.test_identity_rename_detected_even_when_content_changes) ... ok
+test_metadata_fingerprint_is_stable (test_source_sync.SourceSyncTests.test_metadata_fingerprint_is_stable) ... ERROR
+test_mutable_ref_rejected_for_public_snapshot (test_source_sync.SourceSyncTests.test_mutable_ref_rejected_for_public_snapshot) ... ok
+test_partial_snapshot_lists_failures_without_dropping_successes (test_source_sync.SourceSyncTests.test_partial_snapshot_lists_failures_without_dropping_successes) ... FAIL
+test_reports_added_changed_removed_and_content_rename (test_source_sync.SourceSyncTests.test_reports_added_changed_removed_and_content_rename) ... ok
+
+======================================================================
+ERROR: test_metadata_fingerprint_is_stable (test_source_sync.SourceSyncTests.test_metadata_fingerprint_is_stable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$USER/Downloads/awesome-agent-ecosystem/scripts/source_tools/core.py", line 67, in _metadata
+    import yaml  # project dependency, used only for frontmatter metadata
+    ^^^^^^^^^^^
+ModuleNotFoundError: No module named 'yaml'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "$USER/Downloads/awesome-agent-ecosystem/tests/test_source_sync.py", line 62, in test_metadata_fingerprint_is_stable
+    left = core.file_record("x/SKILL.md", b"---\nname: Demo\ndescription: D\n---\nfirst body")
+  File "$USER/Downloads/awesome-agent-ecosystem/scripts/source_tools/core.py", line 92, in file_record
+    metadata, identity = _metadata(path, content)
+                         ~~~~~~~~~^^^^^^^^^^^^^^^
+  File "$USER/Downloads/awesome-agent-ecosystem/scripts/source_tools/core.py", line 74, in _metadata
+    raise SnapshotError("PyYAML is required to extract SKILL.md metadata") from exc
+source_sync_core.SnapshotError: PyYAML is required to extract SKILL.md metadata
+
+======================================================================
+FAIL: test_partial_snapshot_lists_failures_without_dropping_successes (test_source_sync.SourceSyncTests.test_partial_snapshot_lists_failures_without_dropping_successes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$USER/Downloads/awesome-agent-ecosystem/tests/test_source_sync.py", line 51, in test_partial_snapshot_lists_failures_without_dropping_successes
+    self.assertIn("x/SKILL.md", result["files"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'x/SKILL.md' not found in {}
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.009s
+
+FAILED (failures=1, errors=1)

@@ -1,0 +1,49 @@
+
+> @public-agent-store/catalog@0.1.0 test
+> node --import tsx --test tests/*.test.*
+
+✔ filters real catalog by category, subtype, domain, status, and search together (2.03725ms)
+✔ uses stable resource identity for lookup and detail URLs (0.362334ms)
+✔ paginates with clamped page bounds and retains total count (0.713084ms)
+✔ resolves only components linked by resource identity (9.686458ms)
+✔ rejects failed loads and schema version mismatch (97.096209ms)
+✔ loads the canonical generated catalog when the pinned catalog version matches (3.313459ms)
+✔ generated category and component literal sets cover canonical source values (4.153625ms)
+✔ public detail links encode resource identity without depending on its title (0.227167ms)
+✔ shows all five resource categories and filters cards when a category is selected (276.326ms)
+✖ combines search and metadata filters and gives resource details a stable direct route (55.941666ms)
+✔ shows withdrawn resources with their reason and without host actions (161.292583ms)
+✔ shows missing previews on a real resource detail page (84.190084ms)
+✖ renders a host operation failure as visible feedback (235.483958ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 11
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2409.642708
+
+✖ failing tests:
+
+test at tests/ui.test.ts:1:2104
+✖ combines search and metadata filters and gives resource details a stable direct route (55.941666ms)
+  TypeError [Error]: Cannot set properties of null (setting 'value')
+      at <anonymous> (/Users/howiez/Downloads/awesome-agent-ecosystem/tests/ui.test.ts:54:16)
+      at process.env.NODE_ENV.exports.act (/Users/howiez/Downloads/awesome-agent-ecosystem/node_modules/react/cjs/react.development.js:890:22)
+      at TestContext.<anonymous> (/Users/howiez/Downloads/awesome-agent-ecosystem/tests/ui.test.ts:50:11)
+      at async Test.run (node:internal/test_runner/test:1069:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:752:7)
+
+test at tests/ui.test.ts:1:4717
+✖ renders a host operation failure as visible feedback (235.483958ms)
+  AssertionError [ERR_ASSERTION]: false == true
+      at TestContext.<anonymous> (/Users/howiez/Downloads/awesome-agent-ecosystem/tests/ui.test.ts:118:12)
+      at async Test.run (node:internal/test_runner/test:1069:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:752:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '=='
+  }

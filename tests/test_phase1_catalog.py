@@ -476,6 +476,25 @@ class Phase1CatalogTests(unittest.TestCase):
         )
         self.assertEqual(0, result.returncode, result.stdout + result.stderr)
 
+    def test_build_projects_host_availability_without_changing_resource_records(self):
+        from scripts.build import build_outputs
+        temp, root = fixture_root()
+        self.addCleanup(temp.cleanup)
+        doc = read_yaml(root, "resources")
+        build_outputs(root)
+        exported = json.loads((root / "site/catalog.json").read_text())
+        self.assertEqual({"example.prototype": []}, exported.get("availability"))
+        resource = doc["resources"][0]
+        resource["review"] = {"status": "approved", "by": "Reviewer", "at": "2026-10-07", "evidence": ["https://example.test/review"]}
+        resource["license"] = {"status": "verified", "expression": "MIT", "scope": "whole", "evidence": ["https://example.test/license"], "redistribution": "allowed"}
+        resource["verification"] = {"level": "usage-tested", "checked_at": "2026-10-07", "by": "Reviewer", "evidence": ["https://example.test/usage"], "tested_hosts": ["opendesign"], "limits": []}
+        resource["lifecycle"] = {"state": "usable", "reason": "Tested on OpenDesign", "replacement_id": None}
+        write_yaml(root, "resources", doc)
+        build_outputs(root)
+        exported = json.loads((root / "site/catalog.json").read_text())
+        self.assertEqual({"example.prototype": ["opendesign"]}, exported["availability"])
+        self.assertEqual(doc, exported["resources"])
+
     def test_build_emits_compatibility_data_and_complete_draft_export(self):
         temp, root = fixture_root()
         self.addCleanup(temp.cleanup)

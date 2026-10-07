@@ -1,0 +1,17 @@
+{
+  "phase1DefinitionsUnchanged": true,
+  "resourceReviewAndVerificationUnchanged": true,
+  "previewAddition": "opendesign.social-carousel: upstream reference image",
+  "resources": 20,
+  "sources": 18,
+  "lifecycle": {
+    "candidate": 17,
+    "reference": 3,
+    "usable": 0,
+    "withdrawn": 0
+  },
+  "legacy803OriginalBytes": true,
+  "legacy_sha256": "1111aff8040a5dc2acee51aee8f0a5a145e92387efc145145db0eee17cacdc35",
+  "catalogSourceEquality": true,
+  "emptyHostAvailability": true
+}

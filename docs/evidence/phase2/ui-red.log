@@ -1,0 +1,3 @@
+Command: node --import tsx --test tests/ui.test.ts
+Expected red result before implementation: test runner failed to resolve `src/ui/index.tsx` imported by `tests/ui.test.ts` (`ERR_MODULE_NOT_FOUND`). This confirms the shared UI entry is the missing behavior under test.
+Environment setup: `npm install --ignore-scripts` completed successfully (116 packages added; 0 vulnerabilities).

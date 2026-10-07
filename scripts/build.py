@@ -32,6 +32,13 @@ def build_outputs(root=ROOT):
         "categories": categories_doc,
         "sources": sources_doc,
         "resources": resources_doc,
+        # Public display projection shares the canonical admission rule; it is
+        # not an installation kernel or a mutation of the source records.
+        "availability": {
+            resource["id"]: [host for host in resource["verification"]["tested_hosts"]
+                             if is_usable_for_host(resource, host)]
+            for resource in resources
+        },
     }
     site_data = {
         "meta": {
@@ -99,6 +106,31 @@ def build_outputs(root=ROOT):
         "",
         f"> Public asset catalog `{meta['catalog_version']}` · contract review: **{meta['review']['status']}** · updated {meta['updated']}.",
         "> Contract approval does not approve individual resources or runtime compatibility. Publication and installation are separate steps.",
+        "",
+        "## Run the public store",
+        "",
+        "Requires Node.js 22.12+ and Python 3.9+. No private ThusDesign code or production credentials are needed.",
+        "",
+        "```bash",
+        "python3 -m venv .venv",
+        "source .venv/bin/activate",
+        "python -m pip install -r requirements.txt",
+        "npm ci",
+        "npm run generate",
+        "python -m unittest discover -s tests -v",
+        "npm test",
+        "npm run typecheck",
+        "npm run build",
+        "npm run check:host",
+        "npm run start -- --port 3001",
+        "```",
+        "",
+        "Open http://localhost:3001. Development uses `npm run dev -- --port 3001`.",
+        "Use an available port among 3000/3001; the server fails rather than silently switching ports.",
+        "",
+        "The store shares its public UI and catalog logic with a minimal host example. Account integration and migration of the existing ThusDesign stores are Phase 2+ work.",
+        "See [host integration](docs/host-integration.md), [source tools](docs/source-tools.md), [maintenance](MAINTENANCE.md), and [contribution guidelines](CONTRIBUTING.md).",
+        "Generated outputs read the three YAML source files. Resource approval, usage verification and publication remain separate.",
         "",
         "## Categories",
         "",

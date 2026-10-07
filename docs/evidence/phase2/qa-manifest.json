@@ -1,0 +1,45 @@
+{
+  "purpose": "Temporary, isolated Phase 2 preview QA fixtures. Remove only qa_outputs paths after review.",
+  "entry_url": "http://127.0.0.1:3001/qa-preview/",
+  "preview_urls": [
+    "http://127.0.0.1:3001/qa-preview.mp4",
+    "http://127.0.0.1:3001/qa-a.svg",
+    "http://127.0.0.1:3001/qa-b.svg"
+  ],
+  "protected_formal_outputs": [
+    {
+      "path": "index.html",
+      "sha256": "5e706608469d4c7d744a9b877697f0f68ac7b486a4333f33a4d191cd34bc714a"
+    },
+    {
+      "path": "assets/catalog-zcboCfoS.json",
+      "sha256": "a82125058bbdfa30faf9b19ea9c52601a9486ffc40245ffb832409a09ffaf212"
+    }
+  ],
+  "qa_outputs": [
+    {
+      "path": "qa-preview/index.html",
+      "sha256": "3a1831f0caa9a8cdc5b2cead3073700ca261be94f7c80548368f58688d17e1a0"
+    },
+    {
+      "path": "qa-a.svg",
+      "sha256": "d24a7240d6a2ecf4418ef8c89b9e75b834efc645d5d2c6c512819122ac6f7181"
+    },
+    {
+      "path": "qa-b.svg",
+      "sha256": "9568b5a9a23d255d27417d21d2850d98b409b06df182bb0cfe407ad5c23049b5"
+    },
+    {
+      "path": "qa-preview.mp4",
+      "sha256": "ac003840ab4379a7f011a2836a46cde81e04083f5be2b3df49ae7814a4917e87"
+    },
+    {
+      "path": "qa-preview/assets/index-BFBJHRB6.css",
+      "sha256": "5e2874d1fbab3fed2e75ace136ad044d25ccafb77ea633243e3ce2bf7caf4339"
+    },
+    {
+      "path": "qa-preview/assets/index-C-y_nuMw.js",
+      "sha256": "20fad28461af76d0bfb1181c25e9ae01873b167d22f0daaa44e4293c8acbaf15"
+    }
+  ]
+}

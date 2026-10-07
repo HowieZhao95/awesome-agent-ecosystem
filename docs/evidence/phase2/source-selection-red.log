@@ -1,0 +1,27 @@
+test_archive_root_binds_snapshot_to_selected_repository_and_sha (test_source_sync.SourceSyncTests.test_archive_root_binds_snapshot_to_selected_repository_and_sha) ... ok
+test_cli_reads_new_locked_commit_against_catalog_baseline_ref (test_source_sync.SourceSyncTests.test_cli_reads_new_locked_commit_against_catalog_baseline_ref) ... ok
+test_cli_refuses_canonical_output_and_baseline_overwrite (test_source_sync.SourceSyncTests.test_cli_refuses_canonical_output_and_baseline_overwrite) ... ok
+test_duplicate_content_renames_pair_one_to_one_deterministically (test_source_sync.SourceSyncTests.test_duplicate_content_renames_pair_one_to_one_deterministically) ... ok
+test_failed_snapshot_does_not_replace_existing_baseline (test_source_sync.SourceSyncTests.test_failed_snapshot_does_not_replace_existing_baseline) ... ok
+test_identical_locked_snapshots_have_no_changes (test_source_sync.SourceSyncTests.test_identical_locked_snapshots_have_no_changes) ... ok
+test_identity_rename_detected_even_when_content_changes (test_source_sync.SourceSyncTests.test_identity_rename_detected_even_when_content_changes) ... ok
+test_legacy_discovery_exports_only_selected_public_metadata (test_source_sync.SourceSyncTests.test_legacy_discovery_exports_only_selected_public_metadata) ... FAIL
+test_metadata_fingerprint_is_stable (test_source_sync.SourceSyncTests.test_metadata_fingerprint_is_stable) ... ok
+test_mutable_ref_rejected_for_public_snapshot (test_source_sync.SourceSyncTests.test_mutable_ref_rejected_for_public_snapshot) ... ok
+test_partial_snapshot_lists_failures_without_dropping_successes (test_source_sync.SourceSyncTests.test_partial_snapshot_lists_failures_without_dropping_successes) ... ok
+test_partial_snapshot_suppresses_ambiguous_removals (test_source_sync.SourceSyncTests.test_partial_snapshot_suppresses_ambiguous_removals) ... ok
+test_reports_added_changed_removed_and_content_rename (test_source_sync.SourceSyncTests.test_reports_added_changed_removed_and_content_rename) ... ok
+
+======================================================================
+FAIL: test_legacy_discovery_exports_only_selected_public_metadata (test_source_sync.SourceSyncTests.test_legacy_discovery_exports_only_selected_public_metadata)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$USER/Downloads/awesome-agent-ecosystem/tests/test_source_sync.py", line 83, in test_legacy_discovery_exports_only_selected_public_metadata
+    self.assertNotIn("skills/two", json.dumps(snapshot))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'skills/two' unexpectedly found in '{"schema_version": 1, "source": "legacy", "repository": "HowieZhao95/awesome-agent-ecosystem", "ref": "ffffffffffffffffffffffffffffffffffffffff", "files": {"skills/one": {"sha256": "c8357dfc2e3ae72d6024f88920ed7b84bc1887a2869be7ddf2ebcc73381e99b2", "size": 61, "identity": "skills/one", "metadata": {"name": "one", "url": "https://example.org/one", "note": "first"}, "metadata_fingerprint": "c8357dfc2e3ae72d6024f88920ed7b84bc1887a2869be7ddf2ebcc73381e99b2"}}, "failures": [], "not_selected": ["skills/two"], "input_sha256": "c2bc6ed78310a30cf27a7ef81297170c3837b4293b28e2fd51cf9bc3bddad52f"}'
+
+----------------------------------------------------------------------
+Ran 13 tests in 1.695s
+
+FAILED (failures=1)

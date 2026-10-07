@@ -1,0 +1,77 @@
+test_marketplace_does_not_duplicate_a_renamed_resource_url (test_imports.ImportIdentityTests) ... ok
+test_marketplace_keeps_official_results_when_optional_directory_is_rate_limited (test_imports.ImportIdentityTests) ... ok
+test_mcp_github_search_continues_when_optional_registry_is_limited (test_imports.ImportIdentityTests) ... ok
+test_skills_import_does_not_duplicate_a_renamed_resource_url (test_imports.ImportIdentityTests) ... ok
+test_skills_search_reads_a_second_page (test_imports.ImportIdentityTests) ... ok
+test_branch_reference_is_allowed_for_a_candidate_but_does_not_claim_a_release (test_phase1_catalog.Phase1CatalogTests) ... ok
+test_build_emits_compatibility_data_and_complete_draft_export (test_phase1_catalog.Phase1CatalogTests) ... ok
+test_build_is_deterministic_and_validation_failure_preserves_outputs (test_phase1_catalog.Phase1CatalogTests) ... ok
+test_build_lists_mixed_plugin_components_without_copying_component_content (test_phase1_catalog.Phase1CatalogTests) ... ok
+test_build_projects_host_availability_without_changing_resource_records (test_phase1_catalog.Phase1CatalogTests) ... ok
+test_candidate_can_keep_unknown_upstream_reference_without_claiming_a_version (test_phase1_catalog.Phase1CatalogTests) ... ok
+test_current_catalog_has_no_tested_host_claims (test_phase1_catalog.Phase1CatalogTests) ... ok
+test_legacy_ingestion_scripts_default_to_discovery_queue (test_phase1_catalog.Phase1CatalogTests) ... ok
+test_link_checker_can_target_a_discovery_fixture (test_phase1_catalog.Phase1CatalogTests) ... ok
+test_open_design_usage_test_only_projects_to_the_tested_host (test_phase1_catalog.Phase1CatalogTests) ... ok
+test_opendesign_scope_covers_actual_upstream_and_evidence_paths (test_phase1_catalog.Phase1CatalogTests) ... ok
+test_source_url_may_be_unknown_only_with_explicit_access_limitation (test_phase1_catalog.Phase1CatalogTests) ... ok
+test_source_with_known_access_requires_http_url (test_phase1_catalog.Phase1CatalogTests) ... ok
+test_taxonomy_has_the_requested_phase_one_categories_and_subtypes (test_phase1_catalog.Phase1CatalogTests) ... ok
+test_tested_hosts_must_be_unique_stable_ascii_ids (test_phase1_catalog.Phase1CatalogTests) ... ok
+test_tested_hosts_must_match_verification_level_and_usable_gate (test_phase1_catalog.Phase1CatalogTests) ... ok
+test_usage_tested_resources_require_a_tested_host (test_phase1_catalog.Phase1CatalogTests) ... ok
+test_validator_accepts_a_complete_pending_candidate (test_phase1_catalog.Phase1CatalogTests) ... ok
+test_validator_blocks_usable_with_unknown_license_and_no_approval (test_phase1_catalog.Phase1CatalogTests) ... ok
+test_validator_distinguishes_discovery_and_distribution_source_roles (test_phase1_catalog.Phase1CatalogTests) ... ok
+test_validator_enforces_plugin_component_identity_type_and_delivery (test_phase1_catalog.Phase1CatalogTests) ... ok
+test_validator_makes_general_domain_exclusive (test_phase1_catalog.Phase1CatalogTests) ... ok
+test_validator_rejects_duplicate_identity_and_known_author_without_evidence (test_phase1_catalog.Phase1CatalogTests) ... ok
+test_validator_rejects_duplicate_upstream_distribution_unit_even_with_distinct_ids (test_phase1_catalog.Phase1CatalogTests) ... ok
+test_validator_rejects_source_role_confusion_and_components_on_non_plugin (test_phase1_catalog.Phase1CatalogTests) ... ok
+test_validator_rejects_unknown_subtype (test_phase1_catalog.Phase1CatalogTests) ... ok
+test_validator_rejects_wrong_source_role_and_unlocked_git_reference (test_phase1_catalog.Phase1CatalogTests) ... ok
+test_validator_requires_adaptation_lineage_and_change_description (test_phase1_catalog.Phase1CatalogTests) ... ok
+test_validator_requires_stable_ascii_component_ids (test_phase1_catalog.Phase1CatalogTests) ... ok
+test_archive_root_binds_snapshot_to_selected_repository_and_sha (test_source_sync.SourceSyncTests) ... ok
+test_cli_reads_new_locked_commit_against_catalog_baseline_ref (test_source_sync.SourceSyncTests) ... ok
+test_cli_refuses_canonical_output_and_baseline_overwrite (test_source_sync.SourceSyncTests) ... ok
+test_duplicate_content_renames_pair_one_to_one_deterministically (test_source_sync.SourceSyncTests) ... ok
+test_failed_snapshot_does_not_replace_existing_baseline (test_source_sync.SourceSyncTests) ... ok
+test_identical_locked_snapshots_have_no_changes (test_source_sync.SourceSyncTests) ... ok
+test_identity_rename_detected_even_when_content_changes (test_source_sync.SourceSyncTests) ... ok
+test_invalid_selected_frontmatter_marks_snapshot_incomplete (test_source_sync.SourceSyncTests) ... ok
+test_legacy_discovery_exports_only_selected_public_metadata (test_source_sync.SourceSyncTests) ... ok
+test_manifest_metadata_is_retained_without_manifest_body (test_source_sync.SourceSyncTests) ... ok
+test_metadata_fingerprint_is_stable (test_source_sync.SourceSyncTests) ... ok
+test_mutable_ref_rejected_for_public_snapshot (test_source_sync.SourceSyncTests) ... ok
+test_partial_snapshot_lists_failures_without_dropping_successes (test_source_sync.SourceSyncTests) ... ok
+test_partial_snapshot_suppresses_ambiguous_removals (test_source_sync.SourceSyncTests) ... ok
+test_remote_url_must_name_the_selected_repository_and_sha (test_source_sync.SourceSyncTests) ... ok
+test_reports_added_changed_removed_and_content_rename (test_source_sync.SourceSyncTests) ... ok
+test_200_with_same_stars_writes_only_changed_etag_state (test_update_stars.UpdateStarsTests) ... ok
+test_304_uses_etag_and_writes_nothing (test_update_stars.UpdateStarsTests) ... ok
+test_any_failure_prevents_partial_yaml_or_state_write (test_update_stars.UpdateStarsTests) ... ok
+test_fetch_records_referenced_repository_metadata (test_update_stars.UpdateStarsTests) ... ok
+test_missing_repository_is_reported_without_blocking_other_updates (test_update_stars.UpdateStarsTests) ... ok
+test_new_alias_without_stars_keeps_the_curated_empty_metric (test_update_stars.UpdateStarsTests) ... ok
+test_repo_metadata_does_not_fill_an_intentionally_empty_star_field (test_update_stars.UpdateStarsTests) ... ok
+test_unique_repo_is_requested_once_and_real_change_is_atomic (test_update_stars.UpdateStarsTests) ... ok
+
+----------------------------------------------------------------------
+Ran 58 tests in 11.154s
+
+OK
+OK  no new plugins
+::warning::claude-plugins.dev skipped: <urlopen error rate limited>
+OK  official market imported:  +1
+OK  community (downloads>=100) imported: +0
+OK  plugins category now: 2 entries
+Discovery queue updated; review and promote candidates through the v3 catalog workflow.
+::warning::Smithery registry skipped: <urlopen error rate limited>
+OK  skills imported: +0  (now 1)
+OK  mcp imported:    +1  (now 1)
+Discovery queue updated; review and promote candidates through the v3 catalog workflow.
+OK  no new skills or MCP servers
+OK  skills imported: +101  (now 102)
+OK  mcp imported:    +0  (now 0)
+Discovery queue updated; review and promote candidates through the v3 catalog workflow.

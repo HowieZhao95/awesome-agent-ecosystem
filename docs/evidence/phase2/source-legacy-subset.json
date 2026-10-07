@@ -1,0 +1,48 @@
+{
+  "diff": null,
+  "snapshot": {
+    "complete": true,
+    "failures": [],
+    "files": {
+      "skills/skill-creator": {
+        "identity": "skills/skill-creator",
+        "metadata": {
+          "name": "skill-creator",
+          "note": "构建新 Skill 的官方模板与引导器",
+          "platform": "anthropics/skills 仓库",
+          "source": "official",
+          "subcat": "通用",
+          "url": "https://github.com/anthropics/skills/tree/main/skills/skill-creator"
+        },
+        "metadata_fingerprint": "707831e939d848b2230177fd81260910d9e894fd0b2e9457159ed3e62e38e93a",
+        "sha256": "707831e939d848b2230177fd81260910d9e894fd0b2e9457159ed3e62e38e93a",
+        "size": 229
+      },
+      "skills/webapp-testing": {
+        "identity": "skills/webapp-testing",
+        "metadata": {
+          "name": "webapp-testing",
+          "note": "Playwright 驱动的本地 Web 应用测试工具包",
+          "platform": "anthropics/skills 仓库",
+          "source": "official",
+          "subcat": "开发/测试",
+          "url": "https://github.com/anthropics/skills/tree/main/skills/webapp-testing"
+        },
+        "metadata_fingerprint": "fd386230683405618509b8d150016437df979bac14ac9c55c97cc6bc172bca82",
+        "sha256": "fd386230683405618509b8d150016437df979bac14ac9c55c97cc6bc172bca82",
+        "size": 247
+      }
+    },
+    "input_path": "data/discovery/legacy-v2.yaml",
+    "input_sha256": "1111aff8040a5dc2acee51aee8f0a5a145e92387efc145145db0eee17cacdc35",
+    "ref": "f8da353b267033f97837d61d3bb95f96882b34aa",
+    "ref_binding": "local queue SHA-256 recorded; supplied ref is the legacy discovery baseline pointer",
+    "repository": "HowieZhao95/awesome-agent-ecosystem",
+    "schema_version": 1,
+    "selection": [
+      "skills/skill-creator",
+      "skills/webapp-testing"
+    ],
+    "source": "legacy"
+  }
+}

@@ -1,0 +1,4 @@
+
+> @public-agent-store/catalog@0.1.0 start
+> node scripts/serve.mjs start --port 3001
+

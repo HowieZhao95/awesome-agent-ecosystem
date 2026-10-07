@@ -1,0 +1,1219 @@
+{
+  "diff": null,
+  "snapshot": {
+    "catalog_baseline_refs": [
+      "53231d40b778d88eba23f35547bf99485d3ae9fc"
+    ],
+    "catalog_metadata_comparisons": [
+      {
+        "catalog_metadata": {
+          "license": {
+            "expression": "MIT",
+            "redistribution": "unknown",
+            "scope": "plugins/_official/examples/web-prototype/ package only, as declared by its open-design.json; embedded third-party fonts, images, brands, or external assets are excluded unless separately licensed.",
+            "status": "verified"
+          },
+          "purpose": "以可复用起始 HTML 组装网页原型。",
+          "summary": "单文件网页界面原型方法，附 template seed、布局库和 example。",
+          "title": "Web Prototype"
+        },
+        "path": "plugins/_official/examples/web-prototype/SKILL.md",
+        "resource_id": "opendesign.web-prototype",
+        "source_metadata": {
+          "description": "General-purpose desktop web prototype. Single self-contained HTML file built\nby copying the seed `assets/template.html` and pasting section layouts from\n`references/layouts.md`. Default for any landing / marketing / docs / SaaS\npage when no more specific skill matches.\n",
+          "name": "web-prototype"
+        },
+        "source_sha256": "a67a89159dc0182fdf58895067c95e68dd828afd38857f410bca41de7843778d"
+      },
+      {
+        "catalog_metadata": {
+          "license": {
+            "expression": "MIT",
+            "redistribution": "unknown",
+            "scope": "plugins/_official/examples/html-ppt-pitch-deck/ package only, as declared by its open-design.json; embedded third-party fonts, images, brands, or external assets are excluded unless separately licensed.",
+            "status": "verified"
+          },
+          "purpose": "生成 pitch deck 演示。",
+          "summary": "HTML 演示文稿技能与示例，固定产物以离散幻灯片组织。",
+          "title": "HTML Pitch Deck"
+        },
+        "path": "plugins/_official/examples/html-ppt-pitch-deck/SKILL.md",
+        "resource_id": "opendesign.html-ppt-pitch-deck",
+        "source_metadata": {
+          "description": "OpenDesign's demo-day pitch: hook, traction, moat, and the raise — built to make a partner sit up by page three. Built as a decision-grade fundraising pitch deck for accelerator partners, angels.\n",
+          "name": "html-ppt-pitch-deck"
+        },
+        "source_sha256": "ab7a1947b4ff9bcde30af7a1c68d1eaeb499c108e48cf6f787440af83dc2a981"
+      },
+      {
+        "catalog_metadata": {
+          "license": {
+            "expression": "MIT",
+            "redistribution": "unknown",
+            "scope": "plugins/_official/examples/live-dashboard/ package only, as declared by its open-design.json; embedded third-party fonts, images, brands, or external assets are excluded unless separately licensed.",
+            "status": "verified"
+          },
+          "purpose": "搭建带数据展示的 dashboard。",
+          "summary": "可复用实时仪表盘结构，含 seed、example 与参考资料。",
+          "title": "Live Dashboard"
+        },
+        "path": "plugins/_official/examples/live-dashboard/SKILL.md",
+        "resource_id": "opendesign.live-dashboard",
+        "source_metadata": {
+          "description": "Notion-style team dashboard rendered as a Live Artifact. A single-page,\nself-contained HTML dashboard with KPIs, a 7-day sparkline, a real-time\nactivity feed and a linked-database task table — wired to Notion via the\nComposio connector catalog. Refreshes on demand and when the artifact\nis opened. Falls back to seeded mock data when no connector is bound,\nso it works offline / in screenshots / in the picker preview.\n",
+          "name": "live-dashboard"
+        },
+        "source_sha256": "6a0409b63b52127f1e7d5d8078468dfd7e94777e1f6b3d3e0aa5df724539052d"
+      },
+      {
+        "catalog_metadata": {
+          "license": {
+            "expression": "MIT",
+            "redistribution": "unknown",
+            "scope": "plugins/_official/examples/motion-frames/ package only, as declared by its open-design.json; embedded third-party fonts, images, brands, or external assets are excluded unless separately licensed.",
+            "status": "verified"
+          },
+          "purpose": "构建图形、文字或信息的时间变化动画。",
+          "summary": "单幅图形构图与 CSS 循环动画的模板引导和示例。",
+          "title": "Motion Frames"
+        },
+        "path": "plugins/_official/examples/motion-frames/SKILL.md",
+        "resource_id": "opendesign.motion-frames",
+        "source_metadata": {
+          "description": "A single-frame motion-design composition with looping CSS animations —\nrotating type ring, animated globe, ticking timer, parallax labels.\nRenders as a hero video poster you can hand straight to HyperFrames or\nany keyframe-based exporter. Use when the brief asks for \"motion design\",\n\"animated hero\", \"loop\", \"video poster\", \"title card\", or pairs Open\nClaude Design with HyperFrames for a kinetic export.\n",
+          "name": "motion-frames"
+        },
+        "source_sha256": "e500c2459ab87d89aecd43420db48d549fdf819faac7655e9b7a084a91721e81"
+      },
+      {
+        "catalog_metadata": {
+          "license": {
+            "expression": "MIT",
+            "redistribution": "unknown",
+            "scope": "plugins/_official/examples/docs-page/ package only, as declared by its open-design.json; embedded third-party fonts, images, brands, or external assets are excluded unless separately licensed.",
+            "status": "verified"
+          },
+          "purpose": "生成文档/说明页面。",
+          "summary": "文档站页面结构与内容展示模板。",
+          "title": "Docs Page"
+        },
+        "path": "plugins/_official/examples/docs-page/SKILL.md",
+        "resource_id": "opendesign.docs-page",
+        "source_metadata": {
+          "description": "A documentation page — inline-start nav, scrollable article body,\ninline-end table of contents. Use when the brief mentions \"docs\",\n\"documentation\", \"guide\", \"API reference\", or \"tutorial\".\n",
+          "name": "docs-page"
+        },
+        "source_sha256": "2446a71d3513e764800d5bca07c7d718021413a412ed87dd5939ae36a9a2ee9b"
+      },
+      {
+        "catalog_metadata": {
+          "license": {
+            "expression": "MIT",
+            "redistribution": "unknown",
+            "scope": "plugins/_official/examples/social-carousel/ package only, as declared by its open-design.json; embedded third-party fonts, images, brands, or external assets are excluded unless separately licensed.",
+            "status": "verified"
+          },
+          "purpose": "生成固定三张社交卡片序列。",
+          "summary": "三张社交媒体图文卡片的编排模板。",
+          "title": "Social Carousel"
+        },
+        "path": "plugins/_official/examples/social-carousel/SKILL.md",
+        "resource_id": "opendesign.social-carousel",
+        "source_metadata": {
+          "description": "A three-card social-media carousel laid out as 1080×1080 squares —\nthree cinematic, on-brand panels with display headlines that connect\nacross the series (\"onwards.\" → \"to the next one.\" → \"looking ahead.\").\nEach card has a brand mark, a number / total, a caption, and a \"loop\"\naffordance. Use when the brief asks for a \"carousel post\", \"social\ncarousel\", \"Instagram carousel\", \"LinkedIn series\", \"X thread cards\",\nor \"三连发\".\n",
+          "name": "social-carousel"
+        },
+        "source_sha256": "cb0c3ac321cbd850a53da00a6ad1b901d40dc89e447c61ed697b456628776f28"
+      },
+      {
+        "catalog_metadata": {
+          "license": {
+            "expression": null,
+            "redistribution": "unknown",
+            "scope": null,
+            "status": "unknown"
+          },
+          "purpose": "为产物应用一组可追溯的视觉 tokens 与设计规则。",
+          "summary": "包含设计规范、tokens/CSS、组件示例、预览与 system kit 的完整系统候选。",
+          "title": "Agentic Design System"
+        },
+        "path": "design-systems/agentic/DESIGN.md",
+        "resource_id": "opendesign.agentic-design-system",
+        "source_metadata": {},
+        "source_sha256": "ce14e4eeab155ae072d31859a3a1867cc793ec2a725d0a5826ceaf417e919309"
+      },
+      {
+        "catalog_metadata": {
+          "license": {
+            "expression": null,
+            "redistribution": "unknown",
+            "scope": null,
+            "status": "unknown"
+          },
+          "purpose": "抽取品牌设计语言/建立 brand kit。",
+          "summary": "从参考品牌材料提取并组织品牌视觉语言的方法 Skill，含模板辅助文件。",
+          "title": "Brand Extract Skill"
+        },
+        "path": "skills/brand-extract/SKILL.md",
+        "resource_id": "opendesign.brand-extract",
+        "source_metadata": {
+          "description": "Extract a complete Brand Kit from a live website by driving the in-app\nbrowser. Use when a brand-extraction project opens with a site in the Browser\ntab, or when the user asks to \"extract a brand\", \"pull the brand from <url>\",\n\"get the colors/fonts/logo from this site\", or build a brand/design system\nfrom a reference website. Pairs with the agent-browser tool for measurement\nand pauses for the user when an anti-bot wall blocks the page.\n",
+          "name": "brand-extract"
+        },
+        "source_sha256": "8763d9941856b578302cc32990d0eee0b0b8f9a2afbe4b4bf0ec6307c38ebe85"
+      },
+      {
+        "catalog_metadata": {
+          "license": {
+            "expression": null,
+            "redistribution": "unknown",
+            "scope": null,
+            "status": "unknown"
+          },
+          "purpose": "通过图像模型生成 poster/key art。",
+          "summary": "调用图像生成能力制作单张海报或主视觉的步骤与示例提示。",
+          "title": "Image Poster Skill"
+        },
+        "path": "design-templates/image-poster/SKILL.md",
+        "resource_id": "opendesign.image-poster",
+        "source_metadata": {
+          "description": "Single-image generation skill for posters, key art, and editorial\nillustrations. Defaults to gpt-image-2 but is provider-agnostic — the\nsame workflow drives Flux, Imagen, or Midjourney via the active\nupstream tooling. Output is one or more PNG/JPEG files saved to the\nproject folder.\n",
+          "name": "image-poster"
+        },
+        "source_sha256": "20769996ade6c165d0865f086e441a91a3f88db14118cc06daed7a8ff24be366"
+      },
+      {
+        "catalog_metadata": {
+          "license": {
+            "expression": null,
+            "redistribution": "unknown",
+            "scope": null,
+            "status": "unknown"
+          },
+          "purpose": "作为原则文件约定和仓库特定指导的 reference。",
+          "summary": "OpenDesign 根目录的项目专属 Agent 协作和仓库约束说明。",
+          "title": "OpenDesign 仓库 AGENTS.md"
+        },
+        "path": "AGENTS.md",
+        "resource_id": "opendesign.repo-agents-md",
+        "source_metadata": {},
+        "source_sha256": "39266e6a558c409b815959898ac02d3ede4c1891b3c753e90d58baec485d7b8d"
+      },
+      {
+        "catalog_metadata": {
+          "license": {
+            "expression": "MIT",
+            "redistribution": "unknown",
+            "scope": "plugins/_official/examples/mockup-device-3d/ package only, as declared by its open-design.json; embedded third-party fonts, images, brands, or external assets are excluded unless separately licensed.",
+            "status": "verified"
+          },
+          "purpose": "参考或复用特定设备展示场景的 HTML/CSS 结构。",
+          "summary": "静态 CSS 三维设备展示 HTML，透视组合 iPhone 与 MacBook，并嵌入屏幕内容。",
+          "title": "Device 3D Showcase HTML"
+        },
+        "path": "plugins/_official/examples/mockup-device-3d/example.html",
+        "resource_id": "opendesign.mockup-device-3d",
+        "source_metadata": {},
+        "source_sha256": "75d2d08da3cc4894b214f516163b231ce8a485d9fef7871a15a4d5bbc0b53654"
+      }
+    ],
+    "catalog_missing_paths": [],
+    "catalog_records": [
+      {
+        "candidate_ref_matches_catalog_ref": true,
+        "catalog_metadata": {
+          "license": {
+            "expression": "MIT",
+            "redistribution": "unknown",
+            "scope": "plugins/_official/examples/web-prototype/ package only, as declared by its open-design.json; embedded third-party fonts, images, brands, or external assets are excluded unless separately licensed.",
+            "status": "verified"
+          },
+          "purpose": "以可复用起始 HTML 组装网页原型。",
+          "summary": "单文件网页界面原型方法，附 template seed、布局库和 example。",
+          "title": "Web Prototype"
+        },
+        "exists": true,
+        "path": "plugins/_official/examples/web-prototype/SKILL.md",
+        "ref": "53231d40b778d88eba23f35547bf99485d3ae9fc",
+        "resource_id": "opendesign.web-prototype",
+        "selector": "plugins/_official/examples/web-prototype/open-design.json"
+      },
+      {
+        "candidate_ref_matches_catalog_ref": true,
+        "catalog_metadata": {
+          "license": {
+            "expression": "MIT",
+            "redistribution": "unknown",
+            "scope": "plugins/_official/examples/html-ppt-pitch-deck/ package only, as declared by its open-design.json; embedded third-party fonts, images, brands, or external assets are excluded unless separately licensed.",
+            "status": "verified"
+          },
+          "purpose": "生成 pitch deck 演示。",
+          "summary": "HTML 演示文稿技能与示例，固定产物以离散幻灯片组织。",
+          "title": "HTML Pitch Deck"
+        },
+        "exists": true,
+        "path": "plugins/_official/examples/html-ppt-pitch-deck/SKILL.md",
+        "ref": "53231d40b778d88eba23f35547bf99485d3ae9fc",
+        "resource_id": "opendesign.html-ppt-pitch-deck",
+        "selector": "plugins/_official/examples/html-ppt-pitch-deck/open-design.json"
+      },
+      {
+        "candidate_ref_matches_catalog_ref": true,
+        "catalog_metadata": {
+          "license": {
+            "expression": "MIT",
+            "redistribution": "unknown",
+            "scope": "plugins/_official/examples/live-dashboard/ package only, as declared by its open-design.json; embedded third-party fonts, images, brands, or external assets are excluded unless separately licensed.",
+            "status": "verified"
+          },
+          "purpose": "搭建带数据展示的 dashboard。",
+          "summary": "可复用实时仪表盘结构，含 seed、example 与参考资料。",
+          "title": "Live Dashboard"
+        },
+        "exists": true,
+        "path": "plugins/_official/examples/live-dashboard/SKILL.md",
+        "ref": "53231d40b778d88eba23f35547bf99485d3ae9fc",
+        "resource_id": "opendesign.live-dashboard",
+        "selector": "plugins/_official/examples/live-dashboard/open-design.json"
+      },
+      {
+        "candidate_ref_matches_catalog_ref": true,
+        "catalog_metadata": {
+          "license": {
+            "expression": "MIT",
+            "redistribution": "unknown",
+            "scope": "plugins/_official/examples/motion-frames/ package only, as declared by its open-design.json; embedded third-party fonts, images, brands, or external assets are excluded unless separately licensed.",
+            "status": "verified"
+          },
+          "purpose": "构建图形、文字或信息的时间变化动画。",
+          "summary": "单幅图形构图与 CSS 循环动画的模板引导和示例。",
+          "title": "Motion Frames"
+        },
+        "exists": true,
+        "path": "plugins/_official/examples/motion-frames/SKILL.md",
+        "ref": "53231d40b778d88eba23f35547bf99485d3ae9fc",
+        "resource_id": "opendesign.motion-frames",
+        "selector": "plugins/_official/examples/motion-frames/open-design.json"
+      },
+      {
+        "candidate_ref_matches_catalog_ref": true,
+        "catalog_metadata": {
+          "license": {
+            "expression": "MIT",
+            "redistribution": "unknown",
+            "scope": "plugins/_official/examples/docs-page/ package only, as declared by its open-design.json; embedded third-party fonts, images, brands, or external assets are excluded unless separately licensed.",
+            "status": "verified"
+          },
+          "purpose": "生成文档/说明页面。",
+          "summary": "文档站页面结构与内容展示模板。",
+          "title": "Docs Page"
+        },
+        "exists": true,
+        "path": "plugins/_official/examples/docs-page/SKILL.md",
+        "ref": "53231d40b778d88eba23f35547bf99485d3ae9fc",
+        "resource_id": "opendesign.docs-page",
+        "selector": "plugins/_official/examples/docs-page/open-design.json"
+      },
+      {
+        "candidate_ref_matches_catalog_ref": true,
+        "catalog_metadata": {
+          "license": {
+            "expression": "MIT",
+            "redistribution": "unknown",
+            "scope": "plugins/_official/examples/social-carousel/ package only, as declared by its open-design.json; embedded third-party fonts, images, brands, or external assets are excluded unless separately licensed.",
+            "status": "verified"
+          },
+          "purpose": "生成固定三张社交卡片序列。",
+          "summary": "三张社交媒体图文卡片的编排模板。",
+          "title": "Social Carousel"
+        },
+        "exists": true,
+        "path": "plugins/_official/examples/social-carousel/SKILL.md",
+        "ref": "53231d40b778d88eba23f35547bf99485d3ae9fc",
+        "resource_id": "opendesign.social-carousel",
+        "selector": "plugins/_official/examples/social-carousel/open-design.json"
+      },
+      {
+        "candidate_ref_matches_catalog_ref": true,
+        "catalog_metadata": {
+          "license": {
+            "expression": null,
+            "redistribution": "unknown",
+            "scope": null,
+            "status": "unknown"
+          },
+          "purpose": "为产物应用一组可追溯的视觉 tokens 与设计规则。",
+          "summary": "包含设计规范、tokens/CSS、组件示例、预览与 system kit 的完整系统候选。",
+          "title": "Agentic Design System"
+        },
+        "exists": true,
+        "path": "design-systems/agentic/DESIGN.md",
+        "ref": "53231d40b778d88eba23f35547bf99485d3ae9fc",
+        "resource_id": "opendesign.agentic-design-system",
+        "selector": "agentic"
+      },
+      {
+        "candidate_ref_matches_catalog_ref": true,
+        "catalog_metadata": {
+          "license": {
+            "expression": null,
+            "redistribution": "unknown",
+            "scope": null,
+            "status": "unknown"
+          },
+          "purpose": "抽取品牌设计语言/建立 brand kit。",
+          "summary": "从参考品牌材料提取并组织品牌视觉语言的方法 Skill，含模板辅助文件。",
+          "title": "Brand Extract Skill"
+        },
+        "exists": true,
+        "path": "skills/brand-extract/SKILL.md",
+        "ref": "53231d40b778d88eba23f35547bf99485d3ae9fc",
+        "resource_id": "opendesign.brand-extract",
+        "selector": "brand-extract"
+      },
+      {
+        "candidate_ref_matches_catalog_ref": true,
+        "catalog_metadata": {
+          "license": {
+            "expression": null,
+            "redistribution": "unknown",
+            "scope": null,
+            "status": "unknown"
+          },
+          "purpose": "通过图像模型生成 poster/key art。",
+          "summary": "调用图像生成能力制作单张海报或主视觉的步骤与示例提示。",
+          "title": "Image Poster Skill"
+        },
+        "exists": true,
+        "path": "design-templates/image-poster/SKILL.md",
+        "ref": "53231d40b778d88eba23f35547bf99485d3ae9fc",
+        "resource_id": "opendesign.image-poster",
+        "selector": "image-poster"
+      },
+      {
+        "candidate_ref_matches_catalog_ref": true,
+        "catalog_metadata": {
+          "license": {
+            "expression": null,
+            "redistribution": "unknown",
+            "scope": null,
+            "status": "unknown"
+          },
+          "purpose": "作为原则文件约定和仓库特定指导的 reference。",
+          "summary": "OpenDesign 根目录的项目专属 Agent 协作和仓库约束说明。",
+          "title": "OpenDesign 仓库 AGENTS.md"
+        },
+        "exists": true,
+        "path": "AGENTS.md",
+        "ref": "53231d40b778d88eba23f35547bf99485d3ae9fc",
+        "resource_id": "opendesign.repo-agents-md",
+        "selector": "root AGENTS.md"
+      },
+      {
+        "candidate_ref_matches_catalog_ref": true,
+        "catalog_metadata": {
+          "license": {
+            "expression": "MIT",
+            "redistribution": "unknown",
+            "scope": "plugins/_official/examples/mockup-device-3d/ package only, as declared by its open-design.json; embedded third-party fonts, images, brands, or external assets are excluded unless separately licensed.",
+            "status": "verified"
+          },
+          "purpose": "参考或复用特定设备展示场景的 HTML/CSS 结构。",
+          "summary": "静态 CSS 三维设备展示 HTML，透视组合 iPhone 与 MacBook，并嵌入屏幕内容。",
+          "title": "Device 3D Showcase HTML"
+        },
+        "exists": true,
+        "path": "plugins/_official/examples/mockup-device-3d/example.html",
+        "ref": "53231d40b778d88eba23f35547bf99485d3ae9fc",
+        "resource_id": "opendesign.mockup-device-3d",
+        "selector": "plugins/_official/examples/mockup-device-3d/open-design.json"
+      }
+    ],
+    "complete": true,
+    "failures": [],
+    "files": {
+      "AGENTS.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "39266e6a558c409b815959898ac02d3ede4c1891b3c753e90d58baec485d7b8d",
+        "size": 56924
+      },
+      "LICENSE": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "9d95806a26532623360eb84bb17d298f394b55ef73fb4c0796d99b4319b2b0da",
+        "size": 11296
+      },
+      "apps/web/public/community-templates/social-carousel.jpg": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "39d508f131db000ba5be3301531588f367ff542a6ae419c9dfc5a63cdaca6b74",
+        "size": 195412
+      },
+      "craft/FUTURE_SECTIONS.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "e95ccf61e166cfc3dc7266bfaaabb3e8cec1dc9c8d134eb63ad064343aa7d9bc",
+        "size": 291
+      },
+      "craft/README.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "7b18e690c995226706c7f8f50229a9f9e170ad3b6675bd031c8d8751682c3c46",
+        "size": 6309
+      },
+      "craft/accessibility-baseline.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "ef6c5f670d114ceb4c347681bcf3be8637e5d1186165a9c79ca265f316c72d11",
+        "size": 12894
+      },
+      "craft/animation-discipline.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "075273e8404f7931adfe196d508461efdd303b54e0d9a9ef3f642a682c12a760",
+        "size": 9114
+      },
+      "craft/anti-ai-slop.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "d0f57d3064451663f9dca81af170fc754acc4b1e77280fd5cfb3a04afeef9a5c",
+        "size": 3918
+      },
+      "craft/color.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "fb45b59fa3055f13d6549f45ae52e88cd09d3facd0e5aaab63600e7fb024db6d",
+        "size": 3117
+      },
+      "craft/form-validation.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "a31410ce6ba8b7a762c2975386f2e93ae97b59a8bc85169aa58457927b0a88e6",
+        "size": 17186
+      },
+      "craft/laws-of-ux.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "9a4db0fe294a240920921111d43a6af5ea0c4df1bf979f6e780610a36a9c6d1c",
+        "size": 17339
+      },
+      "craft/rtl-and-bidi.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "713abc3707eb056ed1d40ca8f3e91c04afc4003251b9ed266650fd267cbf4391",
+        "size": 12159
+      },
+      "craft/state-coverage.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "79bda732b55b0f0e4a366ba934f4a01518d3576091422047690e269222f2b682",
+        "size": 7084
+      },
+      "craft/typography-hierarchy-editorial.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "df5beddb8cd3c2b8f15e74f57ada607f7a89ce9112aaa8f8fad22d89e452bea4",
+        "size": 8748
+      },
+      "craft/typography-hierarchy.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "e247ca0358dcbdc3921f2148cc44c6ddcc325429b8082f6ad033792b79e39e06",
+        "size": 7414
+      },
+      "craft/typography.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "5f8e634b35c6b27a5e86f748825da17efe6a0d2e96f68dc35f57f406420049a6",
+        "size": 4781
+      },
+      "design-systems/agentic/DESIGN.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "ce14e4eeab155ae072d31859a3a1867cc793ec2a725d0a5826ceaf417e919309",
+        "size": 3056
+      },
+      "design-systems/agentic/USAGE.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "ee3735d44127343c44b99231c0fedc3434dc8db3a70bc856b8c7647d196d5ded",
+        "size": 1481
+      },
+      "design-systems/agentic/components.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "4236ccf86f0d583d2c90e4b758cbd51e1c0e06afc2d90e7f54776eaa7fac5747",
+        "size": 10565
+      },
+      "design-systems/agentic/components.manifest.json": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "a9ba2b436d2a9964b97c8d3a761bb3a420a4a9cc34102d7ba1f4c3803200d21b",
+        "size": 8009
+      },
+      "design-systems/agentic/design-tokens.json": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "fc79db6461397524ad323e4b9c7abc3775ee9afb85051213422e338c385240e8",
+        "size": 20283
+      },
+      "design-systems/agentic/manifest.json": {
+        "identity": "agentic",
+        "metadata": {
+          "description": "Bundled OpenDesign package for Agentic, derived from curated DESIGN.md, tokens.css, and components.html fixtures.",
+          "id": "agentic",
+          "name": "Agentic"
+        },
+        "metadata_fingerprint": "0f91de517c1cb633476d883703d362ce128a9b44bf2ac4f40badfe9c02fce645",
+        "sha256": "74f6f434a43f6085910dac984d2a7f0a8649d3b6d8d28042ba5422965cd9a6de",
+        "size": 1330
+      },
+      "design-systems/agentic/preview/colors.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "537f6abc4aaad46795ce8e025a50741e66316e503a1a2317aec004f48dacdd68",
+        "size": 2662
+      },
+      "design-systems/agentic/preview/spacing.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "a14889bade136fad537c215f8a47afc035940afc2d7d6eabbc9e09e47632d9bc",
+        "size": 2347
+      },
+      "design-systems/agentic/preview/typography.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "a78b37bc521cc870929daeb92389c99123f5fe81fc92729992b61d4d2cb935ef",
+        "size": 1773
+      },
+      "design-systems/agentic/source/evidence.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "cd7426ab1d97319f636ecf93e53fa880d9e4c57938cec6cbd2b1c006d22db02b",
+        "size": 653
+      },
+      "design-systems/agentic/source/token-contract.report.json": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "b09e4efd52a1d7ead8d660ccef968dafa1e865c42e56138b010d5ca4befe9e88",
+        "size": 18750
+      },
+      "design-systems/agentic/source/tokens.source.json": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "1fdab51bdd269738c644f5fe71ea34a402631d10885ae95831a0e76ac71a0091",
+        "size": 7466
+      },
+      "design-systems/agentic/system/artifacts/deck.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "c2d3fac7335b5da579b4dd98f7d5688755de39d5d675d488a328354c51be7119",
+        "size": 5693
+      },
+      "design-systems/agentic/system/artifacts/email.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "0a9f595cfb0fd19d2d7dc85f0f92b8a38f7b0336e4585c9883643a25d0d549ea",
+        "size": 5682
+      },
+      "design-systems/agentic/system/artifacts/form.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "bfc44e25e05617262f0a5ba8a1bbd76debde25864a31e15d57a6dcf9ec081cb8",
+        "size": 5692
+      },
+      "design-systems/agentic/system/artifacts/landing.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "daef16f30f61995921ccc8ae33344d36b01e7a0d93708285a7b23f47459d8daf",
+        "size": 5714
+      },
+      "design-systems/agentic/system/artifacts/newsletter.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "ad3133400887e5f4368356c5c671c1e4300701df799cad1b2bbc6ffa7272a8d6",
+        "size": 5705
+      },
+      "design-systems/agentic/system/artifacts/poster.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "41896c094b7c778d68dc02e4e657089a0167834a5cb080e3bc9c49013e8d27e2",
+        "size": 5699
+      },
+      "design-systems/agentic/system/index.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "e2dcbbef6b7d071383efbf4a0fae3b1d02f56a7d8c9b32ea3aeae55324c60c5f",
+        "size": 5649
+      },
+      "design-systems/agentic/system/kit.dark.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "c319a2a6765ba9cc50299239eda9a33dce251814d98989c3af22e9f538618265",
+        "size": 6386
+      },
+      "design-systems/agentic/system/kit.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "ba044c4691a88540dc481346cb3b993162eee3fb473d37072101d8e506fd89be",
+        "size": 6381
+      },
+      "design-systems/agentic/system/tokens.default.json": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "0dc4828d2ba4b54568b13f97a3bfc51891fa484fe571619952d76746034c71bb",
+        "size": 247
+      },
+      "design-systems/agentic/tailwind-v4.css": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "a7b994dcb47b5b3e53f25f2b1de2bac12e2db95e8d09237a3d115e26806ece0b",
+        "size": 2235
+      },
+      "design-systems/agentic/tokens.css": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "c1d360c39f26ae02338c7292cf75aaa58ad017cc948f3bb31ffbf527ee82d5a6",
+        "size": 1733
+      },
+      "design-templates/docs-page/SKILL.md": {
+        "identity": "docs-page",
+        "metadata": {
+          "description": "A documentation page — inline-start nav, scrollable article body,\ninline-end table of contents. Use when the brief mentions \"docs\",\n\"documentation\", \"guide\", \"API reference\", or \"tutorial\".\n",
+          "name": "docs-page"
+        },
+        "metadata_fingerprint": "c6796eee3364093cff2c23b905ff5bdef53e8f67b8bb62b368bf11a629d5ced7",
+        "sha256": "2446a71d3513e764800d5bca07c7d718021413a412ed87dd5939ae36a9a2ee9b",
+        "size": 3015
+      },
+      "design-templates/docs-page/example.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "2af3a101dfb6664548e5985559e90e39b56ecb7c0e2f64217c90d5d5a8c37050",
+        "size": 6861
+      },
+      "design-templates/html-ppt-pitch-deck/SKILL.md": {
+        "identity": "html-ppt-pitch-deck",
+        "metadata": {
+          "description": "OpenDesign's demo-day pitch: hook, traction, moat, and the raise — built to make a partner sit up by page three. Built as a decision-grade fundraising pitch deck for accelerator partners, angels.\n",
+          "name": "html-ppt-pitch-deck"
+        },
+        "metadata_fingerprint": "d5f089633e2dbb817b36c04ed125b986cd9c391e6e4e2ceb0e97e11d1f13cc79",
+        "sha256": "23cc899c125a0ed8f241230c7fba6c3469079776c3e9f3371143b265f844d437",
+        "size": 5558
+      },
+      "design-templates/html-ppt-pitch-deck/example.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "ac22002d4e375afc7a16a8feffed9ba59a3e3fa51e9b4da26086d4e45125a62d",
+        "size": 29792
+      },
+      "design-templates/html-ppt/templates/full-decks/pitch-deck/index.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "05a02a090d18a0880b6b80269a0f8e85bd9e57610f650eb3f2c63bf1e3aa2879",
+        "size": 8040
+      },
+      "design-templates/image-poster/SKILL.md": {
+        "identity": "image-poster",
+        "metadata": {
+          "description": "Single-image generation skill for posters, key art, and editorial\nillustrations. Defaults to gpt-image-2 but is provider-agnostic — the\nsame workflow drives Flux, Imagen, or Midjourney via the active\nupstream tooling. Output is one or more PNG/JPEG files saved to the\nproject folder.\n",
+          "name": "image-poster"
+        },
+        "metadata_fingerprint": "bc194ef205c544e7b8f8a74a24971d73788da313e740987f1a2cac95a42ac317",
+        "sha256": "20769996ade6c165d0865f086e441a91a3f88db14118cc06daed7a8ff24be366",
+        "size": 3604
+      },
+      "design-templates/image-poster/example.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "bb92554cc843581586e0314e2930acbc6bea0922de5f79255ed401784f621dab",
+        "size": 3651
+      },
+      "design-templates/live-dashboard/SKILL.md": {
+        "identity": "live-dashboard",
+        "metadata": {
+          "description": "Notion-style team dashboard rendered as a Live Artifact. A single-page,\nself-contained HTML dashboard with KPIs, a 7-day sparkline, a real-time\nactivity feed and a linked-database task table — wired to Notion via the\nComposio connector catalog. Refreshes on demand and when the artifact\nis opened. Falls back to seeded mock data when no connector is bound,\nso it works offline / in screenshots / in the picker preview.\n",
+          "name": "live-dashboard"
+        },
+        "metadata_fingerprint": "6db0f97169af58d682fec0861258b5217ddf53c50d6e8b8c50931f8818f102d5",
+        "sha256": "e6220cd3fd28c097fffa56d1f9f8bc16a9f3523cc991c3e2ac389b97886ab3a7",
+        "size": 8391
+      },
+      "design-templates/live-dashboard/assets/template.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "9285e5fea96639c62039dc2411028c773693291569deecbb0e943ec24a0ff160",
+        "size": 30606
+      },
+      "design-templates/live-dashboard/example.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "e8bd69334c2e7abbeab1d2de2e601dace8642e2a3a23553184d2af6d4616fce2",
+        "size": 37327
+      },
+      "design-templates/live-dashboard/references/checklist.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "18f9ed3440e25ed503e43a889f7542d9073902e02920cfc4008a3620895d0a95",
+        "size": 4122
+      },
+      "design-templates/live-dashboard/references/components.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "080c35849e8c1fdad0911f26eed3eb5ecb4b08dbcf1a1a68d508a72ea0ec6e18",
+        "size": 6608
+      },
+      "design-templates/live-dashboard/references/connectors.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "e52b54ac87510691e621801570eaa3b342d653db7b8c05f823e52f5695340825",
+        "size": 7222
+      },
+      "design-templates/live-dashboard/references/layouts.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "6ccba8ebfc6c79c0d2955727dd10ef0cf9822fc252c0dacd2b1032dc9dee82be",
+        "size": 3237
+      },
+      "design-templates/motion-frames/SKILL.md": {
+        "identity": "motion-frames",
+        "metadata": {
+          "description": "A single-frame motion-design composition with looping CSS animations —\nrotating type ring, animated globe, ticking timer, parallax labels.\nRenders as a hero video poster you can hand straight to HyperFrames or\nany keyframe-based exporter. Use when the brief asks for \"motion design\",\n\"animated hero\", \"loop\", \"video poster\", \"title card\", or pairs Open\nClaude Design with HyperFrames for a kinetic export.\n",
+          "name": "motion-frames"
+        },
+        "metadata_fingerprint": "2cb29e7bc2eaf869191b9498283e4742c493e3e9e612e045df982067cd3e71cc",
+        "sha256": "c6ca317d618a67b55e4431552cca9b030df8229d22507ef51db51c6a00c82014",
+        "size": 3694
+      },
+      "design-templates/motion-frames/example.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "fa6a8376730990c64f792602638cff3075aa0c10eb5a938be998d850bc0124d6",
+        "size": 8402
+      },
+      "design-templates/social-carousel/SKILL.md": {
+        "identity": "social-carousel",
+        "metadata": {
+          "description": "A three-card social-media carousel laid out as 1080×1080 squares —\nthree cinematic, on-brand panels with display headlines that connect\nacross the series (\"onwards.\" → \"to the next one.\" → \"looking ahead.\").\nEach card has a brand mark, a number / total, a caption, and a \"loop\"\naffordance. Use when the brief asks for a \"carousel post\", \"social\ncarousel\", \"Instagram carousel\", \"LinkedIn series\", \"X thread cards\",\nor \"三连发\".\n",
+          "name": "social-carousel"
+        },
+        "metadata_fingerprint": "cf24e52a0915e1b40d1b198fa1a4ea3ce8980dc1c6e46a13f594fbe5dd95d387",
+        "sha256": "b2a0b27c1dbf1dfba5d80db3c08a14da482eac664342b8177d679b37ba633845",
+        "size": 3883
+      },
+      "design-templates/social-carousel/example.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "dc7b2506cc469d1f5b5f4d4b1f1e73b3a600b114faf9e65ea5772afa6994771d",
+        "size": 10020
+      },
+      "design-templates/web-prototype/SKILL.md": {
+        "identity": "web-prototype",
+        "metadata": {
+          "description": "General-purpose desktop web prototype. Single self-contained HTML file built\nby copying the seed `assets/template.html` and pasting section layouts from\n`references/layouts.md`. Default for any landing / marketing / docs / SaaS\npage when no more specific skill matches.\n",
+          "name": "web-prototype"
+        },
+        "metadata_fingerprint": "d665f44bff0b0facf2619432f9a30d39f76e802127b939197a46d51198dd9417",
+        "sha256": "8f36016a362c056b57ab7ded3ff3ab6048f9ce49980708aec468c351a0652855",
+        "size": 5554
+      },
+      "design-templates/web-prototype/assets/template.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "2927248194e18bb57ad0d30ad822b1c8e6e3162d27543c0e6934ed3403b55031",
+        "size": 16603
+      },
+      "design-templates/web-prototype/example.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "512b0831cfb992defbd1ca4eeaf1cc003b095e62f4fba8bf1e7e8303212b25b8",
+        "size": 4217
+      },
+      "design-templates/web-prototype/references/checklist.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "f89c6aa124b34dad999a8d350833d577e2d958e9f529c208c2130eee0369b636",
+        "size": 4685
+      },
+      "design-templates/web-prototype/references/layouts.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "d2bf617ee2d82048e7d2d6e9874be0f740fe5ebaed9402e4e699b24929d1d7d2",
+        "size": 10974
+      },
+      "plugins/_official/examples/docs-page/SKILL.md": {
+        "identity": "docs-page",
+        "metadata": {
+          "description": "A documentation page — inline-start nav, scrollable article body,\ninline-end table of contents. Use when the brief mentions \"docs\",\n\"documentation\", \"guide\", \"API reference\", or \"tutorial\".\n",
+          "name": "docs-page"
+        },
+        "metadata_fingerprint": "c6796eee3364093cff2c23b905ff5bdef53e8f67b8bb62b368bf11a629d5ced7",
+        "sha256": "2446a71d3513e764800d5bca07c7d718021413a412ed87dd5939ae36a9a2ee9b",
+        "size": 3015
+      },
+      "plugins/_official/examples/docs-page/example.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "2af3a101dfb6664548e5985559e90e39b56ecb7c0e2f64217c90d5d5a8c37050",
+        "size": 6861
+      },
+      "plugins/_official/examples/docs-page/open-design.json": {
+        "identity": null,
+        "metadata": {
+          "author": {
+            "name": "OpenDesign",
+            "url": "https://github.com/nexu-io"
+          },
+          "description": "A documentation page — inline-start nav, scrollable article body, inline-end table of contents. Use when the brief mentions \"docs\", \"documentation\", \"guide\", \"API reference\", or \"tutorial\".",
+          "license": "MIT",
+          "name": "example-docs-page",
+          "title": "Docs Page",
+          "version": "0.1.0"
+        },
+        "metadata_fingerprint": "16a7eff77e3de074c8b39cc9a30dfc20ca8952e69150b143fcc93c0c62345812",
+        "sha256": "d90e3a7544e0e6da514aec99e49354bcdc76e6a705388d757b58b4b869848aa9",
+        "size": 7161
+      },
+      "plugins/_official/examples/html-ppt-pitch-deck/SKILL.md": {
+        "identity": "html-ppt-pitch-deck",
+        "metadata": {
+          "description": "OpenDesign's demo-day pitch: hook, traction, moat, and the raise — built to make a partner sit up by page three. Built as a decision-grade fundraising pitch deck for accelerator partners, angels.\n",
+          "name": "html-ppt-pitch-deck"
+        },
+        "metadata_fingerprint": "d5f089633e2dbb817b36c04ed125b986cd9c391e6e4e2ceb0e97e11d1f13cc79",
+        "sha256": "ab7a1947b4ff9bcde30af7a1c68d1eaeb499c108e48cf6f787440af83dc2a981",
+        "size": 5573
+      },
+      "plugins/_official/examples/html-ppt-pitch-deck/example.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "9a52d723e31ad87c28708865ec533221176317e905af95fa0c4260f72ce31a53",
+        "size": 16751
+      },
+      "plugins/_official/examples/html-ppt-pitch-deck/open-design.json": {
+        "identity": null,
+        "metadata": {
+          "author": {
+            "name": "OpenDesign",
+            "url": "https://github.com/nexu-io"
+          },
+          "description": "OpenDesign's demo-day pitch: hook, traction, moat, and the raise — built to make a partner sit up by page three. Built as a decision-grade fundraising pitch deck for accelerator partners, angels.",
+          "license": "MIT",
+          "name": "example-html-ppt-pitch-deck",
+          "title": "Write a Demo Day Pitch like a Top Accelerator Partner",
+          "version": "0.1.0"
+        },
+        "metadata_fingerprint": "4fa3e2874c690dc69927ec5fcd6f3f4fc60ae85973e0d4b30e392608ebd29e56",
+        "sha256": "67b51f2760e574c0cb2a1df0fcaffe686dbe51f4741aed1641351f063e54bbb3",
+        "size": 4985
+      },
+      "plugins/_official/examples/live-dashboard/SKILL.md": {
+        "identity": "live-dashboard",
+        "metadata": {
+          "description": "Notion-style team dashboard rendered as a Live Artifact. A single-page,\nself-contained HTML dashboard with KPIs, a 7-day sparkline, a real-time\nactivity feed and a linked-database task table — wired to Notion via the\nComposio connector catalog. Refreshes on demand and when the artifact\nis opened. Falls back to seeded mock data when no connector is bound,\nso it works offline / in screenshots / in the picker preview.\n",
+          "name": "live-dashboard"
+        },
+        "metadata_fingerprint": "6db0f97169af58d682fec0861258b5217ddf53c50d6e8b8c50931f8818f102d5",
+        "sha256": "6a0409b63b52127f1e7d5d8078468dfd7e94777e1f6b3d3e0aa5df724539052d",
+        "size": 8405
+      },
+      "plugins/_official/examples/live-dashboard/assets/template.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "9285e5fea96639c62039dc2411028c773693291569deecbb0e943ec24a0ff160",
+        "size": 30606
+      },
+      "plugins/_official/examples/live-dashboard/example.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "e8bd69334c2e7abbeab1d2de2e601dace8642e2a3a23553184d2af6d4616fce2",
+        "size": 37327
+      },
+      "plugins/_official/examples/live-dashboard/open-design.json": {
+        "identity": null,
+        "metadata": {
+          "author": {
+            "name": "OpenDesign",
+            "url": "https://github.com/nexu-io"
+          },
+          "description": "Notion-style team dashboard rendered as a Live Artifact. A single-page, self-contained HTML dashboard with KPIs, a 7-day sparkline, a real-time activity feed and a linked-database task table — wired to Notion via the Composio connector catalog. Refreshes on demand and when the artifact is opened. Falls back to seeded mock data when no connector is bound, so it works offline / in screenshots / in the picker preview.",
+          "license": "MIT",
+          "name": "example-live-dashboard",
+          "title": "Live Dashboard",
+          "version": "0.1.0"
+        },
+        "metadata_fingerprint": "ee6016ccaf266616da132d66406b5410f701ae677c28f8ba019f9d7163fb4148",
+        "sha256": "5102da6670081344223c898fc01375837ddeb87e977f404e7882d116464c1419",
+        "size": 12315
+      },
+      "plugins/_official/examples/live-dashboard/references/checklist.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "18f9ed3440e25ed503e43a889f7542d9073902e02920cfc4008a3620895d0a95",
+        "size": 4122
+      },
+      "plugins/_official/examples/live-dashboard/references/components.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "080c35849e8c1fdad0911f26eed3eb5ecb4b08dbcf1a1a68d508a72ea0ec6e18",
+        "size": 6608
+      },
+      "plugins/_official/examples/live-dashboard/references/connectors.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "10e87bcb13408f12d023f8a6aa35dc27935ba9d1a7e1732faf34d735a2fc59f8",
+        "size": 7228
+      },
+      "plugins/_official/examples/live-dashboard/references/layouts.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "6ccba8ebfc6c79c0d2955727dd10ef0cf9822fc252c0dacd2b1032dc9dee82be",
+        "size": 3237
+      },
+      "plugins/_official/examples/mockup-device-3d/SKILL.md": {
+        "identity": "mockup-device-3d",
+        "metadata": {
+          "description": "Static iPhone and MacBook 3D-style showcase with real HTML embedded on screens, glass-lens refraction, and 360-degree turntable composition.",
+          "name": "mockup-device-3d"
+        },
+        "metadata_fingerprint": "8072057f9a7c8384e82b5895ea68f0eb7cf41f26ec5fd9a5b80b6935326b4a08",
+        "sha256": "76437e765e69ce4574605eccce8503cb189d2a71643b9b2161af55984a144389",
+        "size": 4469
+      },
+      "plugins/_official/examples/mockup-device-3d/example.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "75d2d08da3cc4894b214f516163b231ce8a485d9fef7871a15a4d5bbc0b53654",
+        "size": 8957
+      },
+      "plugins/_official/examples/mockup-device-3d/open-design.json": {
+        "identity": null,
+        "metadata": {
+          "author": {
+            "name": "OpenDesign",
+            "url": "https://github.com/nexu-io"
+          },
+          "description": "Static iPhone and MacBook 3D-style showcase with real HTML embedded on screens, glass-lens refraction, and 360-degree turntable composition.",
+          "license": "MIT",
+          "name": "example-mockup-device-3d",
+          "title": "Device 3D Showcase",
+          "version": "0.1.0"
+        },
+        "metadata_fingerprint": "8915b2871549155f43dd17ff96f69a641d19fde239c9a1a199abda191b672ff6",
+        "sha256": "02529f35dfd6235959d33d616743b00156bff501be59c6cb38f4b1b88517818e",
+        "size": 6376
+      },
+      "plugins/_official/examples/motion-frames/SKILL.md": {
+        "identity": "motion-frames",
+        "metadata": {
+          "description": "A single-frame motion-design composition with looping CSS animations —\nrotating type ring, animated globe, ticking timer, parallax labels.\nRenders as a hero video poster you can hand straight to HyperFrames or\nany keyframe-based exporter. Use when the brief asks for \"motion design\",\n\"animated hero\", \"loop\", \"video poster\", \"title card\", or pairs Open\nClaude Design with HyperFrames for a kinetic export.\n",
+          "name": "motion-frames"
+        },
+        "metadata_fingerprint": "2cb29e7bc2eaf869191b9498283e4742c493e3e9e612e045df982067cd3e71cc",
+        "sha256": "e500c2459ab87d89aecd43420db48d549fdf819faac7655e9b7a084a91721e81",
+        "size": 3708
+      },
+      "plugins/_official/examples/motion-frames/example.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "fa6a8376730990c64f792602638cff3075aa0c10eb5a938be998d850bc0124d6",
+        "size": 8402
+      },
+      "plugins/_official/examples/motion-frames/open-design.json": {
+        "identity": null,
+        "metadata": {
+          "author": {
+            "name": "OpenDesign",
+            "url": "https://github.com/nexu-io"
+          },
+          "description": "A single-frame motion-design composition with looping CSS animations — rotating type ring, animated globe, ticking timer, parallax labels. Renders as a hero video poster you can hand straight to HyperFrames or any keyframe-based exporter. Use when the brief asks for \"motion design\", \"animated hero\", \"loop\", \"video poster\", \"title card\", or pairs Open Claude Design with HyperFrames for a kinetic export.",
+          "license": "MIT",
+          "name": "example-motion-frames",
+          "title": "Motion Frames",
+          "version": "0.1.0"
+        },
+        "metadata_fingerprint": "7f6ade0f69163611bd6682628b81d0affaa172844bfe17a129dbac4b599284e8",
+        "sha256": "d289ad31504c41455a0107d7c7ae001b12f0d88751aafafff23138dfe5d2af81",
+        "size": 10360
+      },
+      "plugins/_official/examples/social-carousel/SKILL.md": {
+        "identity": "social-carousel",
+        "metadata": {
+          "description": "A three-card social-media carousel laid out as 1080×1080 squares —\nthree cinematic, on-brand panels with display headlines that connect\nacross the series (\"onwards.\" → \"to the next one.\" → \"looking ahead.\").\nEach card has a brand mark, a number / total, a caption, and a \"loop\"\naffordance. Use when the brief asks for a \"carousel post\", \"social\ncarousel\", \"Instagram carousel\", \"LinkedIn series\", \"X thread cards\",\nor \"三连发\".\n",
+          "name": "social-carousel"
+        },
+        "metadata_fingerprint": "cf24e52a0915e1b40d1b198fa1a4ea3ce8980dc1c6e46a13f594fbe5dd95d387",
+        "sha256": "cb0c3ac321cbd850a53da00a6ad1b901d40dc89e447c61ed697b456628776f28",
+        "size": 3897
+      },
+      "plugins/_official/examples/social-carousel/example.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "dc7b2506cc469d1f5b5f4d4b1f1e73b3a600b114faf9e65ea5772afa6994771d",
+        "size": 10020
+      },
+      "plugins/_official/examples/social-carousel/open-design.json": {
+        "identity": null,
+        "metadata": {
+          "author": {
+            "name": "OpenDesign",
+            "url": "https://github.com/nexu-io"
+          },
+          "description": "A three-card social-media carousel laid out as 1080×1080 squares — three cinematic, on-brand panels with display headlines that connect across the series (\"onwards.\" → \"to the next one.\" → \"looking ahead.\"). Each card has a brand mark, a number / total, a caption, and a \"loop\" affordance. Use when the brief asks for a \"carousel post\", \"social carousel\", \"Instagram carousel\", \"LinkedIn series\", \"X thread cards\", or \"三连发\".",
+          "license": "MIT",
+          "name": "example-social-carousel",
+          "title": "Social Carousel",
+          "version": "0.1.0"
+        },
+        "metadata_fingerprint": "abb8fa372fb850432a6b8664e57bb4447ff65cc6d60e58449f536a7da8025fa6",
+        "sha256": "9c23d3305699a0999e1eeaef5048e8bd850dc8a3869f144581737a4c1493e052",
+        "size": 12858
+      },
+      "plugins/_official/examples/web-prototype/SKILL.md": {
+        "identity": "web-prototype",
+        "metadata": {
+          "description": "General-purpose desktop web prototype. Single self-contained HTML file built\nby copying the seed `assets/template.html` and pasting section layouts from\n`references/layouts.md`. Default for any landing / marketing / docs / SaaS\npage when no more specific skill matches.\n",
+          "name": "web-prototype"
+        },
+        "metadata_fingerprint": "d665f44bff0b0facf2619432f9a30d39f76e802127b939197a46d51198dd9417",
+        "sha256": "a67a89159dc0182fdf58895067c95e68dd828afd38857f410bca41de7843778d",
+        "size": 5865
+      },
+      "plugins/_official/examples/web-prototype/assets/template.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "2927248194e18bb57ad0d30ad822b1c8e6e3162d27543c0e6934ed3403b55031",
+        "size": 16603
+      },
+      "plugins/_official/examples/web-prototype/example.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "512b0831cfb992defbd1ca4eeaf1cc003b095e62f4fba8bf1e7e8303212b25b8",
+        "size": 4217
+      },
+      "plugins/_official/examples/web-prototype/open-design.json": {
+        "identity": null,
+        "metadata": {
+          "author": {
+            "name": "OpenDesign",
+            "url": "https://github.com/nexu-io"
+          },
+          "description": "General-purpose desktop web prototype. Single self-contained HTML file built by copying the seed `assets/template.html` and pasting section layouts from `references/layouts.md`. Default for any landing / marketing / docs / SaaS page when no more specific skill matches.",
+          "license": "MIT",
+          "name": "example-web-prototype",
+          "title": "Web Prototype",
+          "version": "0.1.1"
+        },
+        "metadata_fingerprint": "a8918404b26bc231aa707f5ab9695be527dcb945f69292ad4d824a6c689e6efd",
+        "sha256": "d191159294d39cc8b45d404d2ba04f659757cf20505b3f313ff05ffea606a54b",
+        "size": 9637
+      },
+      "plugins/_official/examples/web-prototype/references/checklist.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "c052dd57859e3448c4fca368188198d67cbc1e19350c6360069b49d10616f006",
+        "size": 4679
+      },
+      "plugins/_official/examples/web-prototype/references/layouts.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "8f6d97fcc2d29a7298cccb4f117c6979604a4ce4e452a1d44b0ee97fae23302b",
+        "size": 10995
+      },
+      "skills/brand-extract/SKILL.md": {
+        "identity": "brand-extract",
+        "metadata": {
+          "description": "Extract a complete Brand Kit from a live website by driving the in-app\nbrowser. Use when a brand-extraction project opens with a site in the Browser\ntab, or when the user asks to \"extract a brand\", \"pull the brand from <url>\",\n\"get the colors/fonts/logo from this site\", or build a brand/design system\nfrom a reference website. Pairs with the agent-browser tool for measurement\nand pauses for the user when an anti-bot wall blocks the page.\n",
+          "name": "brand-extract"
+        },
+        "metadata_fingerprint": "2735bfc51063b2ec560c32b70d6989f3438687d54ff493cc6d364968dba99299",
+        "sha256": "8763d9941856b578302cc32990d0eee0b0b8f9a2afbe4b4bf0ec6307c38ebe85",
+        "size": 12523
+      },
+      "skills/brand-extract/templates/brand-kit.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "8de5fc435d4f63e886a3d1570f9e91f55094b22a8c39ea5955a6e029c217a8ca",
+        "size": 56656
+      }
+    },
+    "ref": "53231d40b778d88eba23f35547bf99485d3ae9fc",
+    "ref_binding": "archive root matched repository name and full commit SHA",
+    "repository": "nexu-io/open-design",
+    "schema_version": 1,
+    "source": "opendesign"
+  }
+}

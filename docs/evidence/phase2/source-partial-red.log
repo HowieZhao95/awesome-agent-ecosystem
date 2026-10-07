@@ -1,0 +1,23 @@
+test_failed_snapshot_does_not_replace_existing_baseline (test_source_sync.SourceSyncTests.test_failed_snapshot_does_not_replace_existing_baseline) ... ok
+test_identical_locked_snapshots_have_no_changes (test_source_sync.SourceSyncTests.test_identical_locked_snapshots_have_no_changes) ... ok
+test_identity_rename_detected_even_when_content_changes (test_source_sync.SourceSyncTests.test_identity_rename_detected_even_when_content_changes) ... ok
+test_legacy_discovery_exports_only_selected_public_metadata (test_source_sync.SourceSyncTests.test_legacy_discovery_exports_only_selected_public_metadata) ... ok
+test_metadata_fingerprint_is_stable (test_source_sync.SourceSyncTests.test_metadata_fingerprint_is_stable) ... ok
+test_mutable_ref_rejected_for_public_snapshot (test_source_sync.SourceSyncTests.test_mutable_ref_rejected_for_public_snapshot) ... ok
+test_partial_snapshot_lists_failures_without_dropping_successes (test_source_sync.SourceSyncTests.test_partial_snapshot_lists_failures_without_dropping_successes) ... ok
+test_partial_snapshot_suppresses_ambiguous_removals (test_source_sync.SourceSyncTests.test_partial_snapshot_suppresses_ambiguous_removals) ... ERROR
+test_reports_added_changed_removed_and_content_rename (test_source_sync.SourceSyncTests.test_reports_added_changed_removed_and_content_rename) ... ok
+
+======================================================================
+ERROR: test_partial_snapshot_suppresses_ambiguous_removals (test_source_sync.SourceSyncTests.test_partial_snapshot_suppresses_ambiguous_removals)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$USER/Downloads/awesome-agent-ecosystem/tests/test_source_sync.py", line 79, in test_partial_snapshot_suppresses_ambiguous_removals
+    diff = core.review_diff(old, new)
+           ^^^^^^^^^^^^^^^^
+AttributeError: module 'source_sync_core' has no attribute 'review_diff'
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.047s
+
+FAILED (errors=1)

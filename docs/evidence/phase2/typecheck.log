@@ -1,0 +1,5 @@
+
+> @public-agent-store/catalog@0.1.0 typecheck
+> tsc --noEmit
+
+tests/ui.test.ts(50,49): error TS2353: Object literal may only specify known properties, and 'error' does not exist in type '{ catalog?: Catalog | undefined; host?: HostAdapter | undefined; status?: "loading" | "error" | "ready" | undefined; onRetry?: (() => void) | undefined; messages?: Record<...> | undefined; }'.

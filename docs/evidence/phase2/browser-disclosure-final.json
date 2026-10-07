@@ -1,0 +1,25 @@
+{
+  "before": {
+    "bundle": "http://localhost:3001/assets/index-B8RmBWIF.js",
+    "disclosures": [
+      {
+        "id": "source-metadata",
+        "open": false
+      },
+      {
+        "id": "verification-details",
+        "open": false
+      },
+      {
+        "id": "compatibility-details",
+        "open": false
+      }
+    ],
+    "entryVisible": true,
+    "badge": "已检查来源"
+  },
+  "after": {
+    "open": true,
+    "versionVisible": true
+  }
+}

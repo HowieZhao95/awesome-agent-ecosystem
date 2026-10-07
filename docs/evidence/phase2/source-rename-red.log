@@ -1,0 +1,38 @@
+test_cli_reads_new_locked_commit_against_catalog_baseline_ref (test_source_sync.SourceSyncTests.test_cli_reads_new_locked_commit_against_catalog_baseline_ref) ... FAIL
+test_duplicate_content_renames_pair_one_to_one_deterministically (test_source_sync.SourceSyncTests.test_duplicate_content_renames_pair_one_to_one_deterministically) ... ERROR
+test_failed_snapshot_does_not_replace_existing_baseline (test_source_sync.SourceSyncTests.test_failed_snapshot_does_not_replace_existing_baseline) ... ok
+test_identical_locked_snapshots_have_no_changes (test_source_sync.SourceSyncTests.test_identical_locked_snapshots_have_no_changes) ... ok
+test_identity_rename_detected_even_when_content_changes (test_source_sync.SourceSyncTests.test_identity_rename_detected_even_when_content_changes) ... ok
+test_legacy_discovery_exports_only_selected_public_metadata (test_source_sync.SourceSyncTests.test_legacy_discovery_exports_only_selected_public_metadata) ... ok
+test_metadata_fingerprint_is_stable (test_source_sync.SourceSyncTests.test_metadata_fingerprint_is_stable) ... ok
+test_mutable_ref_rejected_for_public_snapshot (test_source_sync.SourceSyncTests.test_mutable_ref_rejected_for_public_snapshot) ... ok
+test_partial_snapshot_lists_failures_without_dropping_successes (test_source_sync.SourceSyncTests.test_partial_snapshot_lists_failures_without_dropping_successes) ... ok
+test_partial_snapshot_suppresses_ambiguous_removals (test_source_sync.SourceSyncTests.test_partial_snapshot_suppresses_ambiguous_removals) ... ok
+test_reports_added_changed_removed_and_content_rename (test_source_sync.SourceSyncTests.test_reports_added_changed_removed_and_content_rename) ... ok
+
+======================================================================
+ERROR: test_duplicate_content_renames_pair_one_to_one_deterministically (test_source_sync.SourceSyncTests.test_duplicate_content_renames_pair_one_to_one_deterministically)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$USER/Downloads/awesome-agent-ecosystem/tests/test_source_sync.py", line 34, in test_duplicate_content_renames_pair_one_to_one_deterministically
+    changes = core.diff_snapshots(old, new)["changes"]
+              ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "$USER/Downloads/awesome-agent-ecosystem/scripts/source_tools/core.py", line 207, in diff_snapshots
+    added.remove(right)
+    ~~~~~~~~~~~~^^^^^^^
+KeyError: 'a/2'
+
+======================================================================
+FAIL: test_cli_reads_new_locked_commit_against_catalog_baseline_ref (test_source_sync.SourceSyncTests.test_cli_reads_new_locked_commit_against_catalog_baseline_ref)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$USER/Downloads/awesome-agent-ecosystem/tests/test_source_sync.py", line 104, in test_cli_reads_new_locked_commit_against_catalog_baseline_ref
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : source-sync: catalog paths are locked to ['473352613039e718e46655a26df224851e84c4aa'], requested aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.701s
+
+FAILED (failures=1, errors=1)

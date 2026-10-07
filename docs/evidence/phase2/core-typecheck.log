@@ -1,0 +1,6 @@
+
+> @public-agent-store/catalog@0.1.0 typecheck
+> tsc --noEmit
+
+src/ui/index.tsx(170,242): error TS2322: Type '{ resource: Resource; sourceRecords: Source[]; host: HostAdapter | undefined; operationError: string; onOperation: (action: "add" | "install" | "apply" | "configure", item: Resource) => Promise<...>; onLoadPreview: (item: Resource, index: number, preview: { ...; }) => Promise<...>; previewState: Record<...>; preview...' is not assignable to type 'IntrinsicAttributes & { resource: Resource; sourceRecords: Source[]; host?: HostAdapter | undefined; operationError: string; onOperation: (action: "add" | ... 2 more ... | "configure", resource: Resource) => Promise<...>; onLoadPreview: (resource: Resource, index: number, preview: { ...; }) => Promise<...>; previewS...'.
+  Property 'onHostLink' does not exist on type 'IntrinsicAttributes & { resource: Resource; sourceRecords: Source[]; host?: HostAdapter | undefined; operationError: string; onOperation: (action: "add" | ... 2 more ... | "configure", resource: Resource) => Promise<...>; onLoadPreview: (resource: Resource, index: number, preview: { ...; }) => Promise<...>; previewS...'.

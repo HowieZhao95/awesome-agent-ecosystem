@@ -1,0 +1,41 @@
+{
+  "categories": [
+    {
+      "category": "templates",
+      "resource": "opendesign.web-prototype",
+      "directReload": false,
+      "installButtons": 0
+    },
+    {
+      "category": "design-systems",
+      "resource": "opendesign.agentic-design-system",
+      "directReload": false,
+      "installButtons": 0
+    },
+    {
+      "category": "skills",
+      "resource": "opendesign.brand-extract",
+      "directReload": false,
+      "installButtons": 0
+    },
+    {
+      "category": "prompts",
+      "resource": "opendesign.repo-agents-md",
+      "directReload": false,
+      "installButtons": 0
+    },
+    {
+      "category": "plugins",
+      "resource": "thusdesign.td-drama-production",
+      "directReload": false,
+      "installButtons": 0
+    }
+  ],
+  "combined": {
+    "cards": 1,
+    "title": "Web Prototype"
+  },
+  "empty": true,
+  "productionUrl": "http://localhost:3001",
+  "account": "public browser; no simulated account"
+}

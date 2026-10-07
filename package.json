@@ -1,0 +1,38 @@
+{
+  "name": "@public-agent-store/catalog",
+  "version": "0.1.0",
+  "license": "CC0-1.0",
+  "files": ["dist", "README.md", "LICENSE"],
+  "engines": { "node": ">=22.12" },
+  "type": "module",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./contracts": { "types": "./dist/contracts.d.ts", "import": "./dist/contracts.js" },
+    "./catalog": { "types": "./dist/catalog.d.ts", "import": "./dist/catalog.js" },
+    "./ui": { "types": "./dist/ui/index.d.ts", "import": "./dist/ui/index.js" },
+    "./ui/styles.css": "./dist/ui/styles.css"
+  },
+  "scripts": {
+    "generate": "node scripts/generate.mjs",
+    "test": "node --import tsx --test tests/*.test.*",
+    "typecheck": "tsc --noEmit",
+    "build": "node scripts/build-package.mjs",
+    "check:host": "node scripts/check-host.mjs",
+    "dev": "node scripts/serve.mjs dev",
+    "start": "node scripts/serve.mjs start"
+  },
+  "peerDependencies": { "react": ">=18", "react-dom": ">=18" },
+  "devDependencies": {
+    "@types/jsdom": "^21.1.7",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "jsdom": "^26.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.8.0",
+    "vite": "^7.1.0",
+    "yaml": "^2.8.0"
+  }
+}

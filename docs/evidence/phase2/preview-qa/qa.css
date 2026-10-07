@@ -1,0 +1,28 @@
+.qa-banner {
+  align-items: center;
+  background: #fff4d6;
+  border-bottom: 2px solid #9a5b00;
+  color: #33200b;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  padding: 0.8rem 1rem;
+}
+
+.qa-banner strong {
+  font-size: 0.95rem;
+}
+
+.qa-banner nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-left: auto;
+}
+
+.qa-banner a {
+  color: #174f49;
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}

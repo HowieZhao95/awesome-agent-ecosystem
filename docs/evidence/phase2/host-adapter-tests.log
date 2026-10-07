@@ -1,0 +1,12 @@
+✔ waits for the host login callback before showing signed-in state (115.77275ms)
+✔ uses host theme and translated filter labels and reports a requested theme change (59.165834ms)
+✔ routes external links and preview requests through the host adapter (28.195125ms)
+✔ withdrawn resources suppress every host action even when the host grants availability (34.551209ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 936.193041

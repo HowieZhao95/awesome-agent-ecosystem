@@ -1,0 +1,19 @@
+{
+  "completionCriteria": 8,
+  "allDocumentLinksExist": true,
+  "privateRuntimeImportsAbsent": true,
+  "sourceMaximumLines": [
+    474,
+    "src/ui/index.tsx"
+  ],
+  "independentSetupPassed": true,
+  "sourceGenerationHashes": {
+    "README.md": "39ce8010bb7b5e3e00252afc5fe969191c7a316d17387122e38a76f588c2b78e",
+    "site/data.js": "eb56f8d3bab020c03f27b2c90c0211af645f47865011fe90aa333a910486e840",
+    "site/catalog.json": "a82125058bbdfa30faf9b19ea9c52601a9486ffc40245ffb832409a09ffaf212",
+    "src/generated/enums.ts": "55ff521aa1c8520c48175a14c34fe2ea72cce1516e7dfb4afb34285c0a76a149"
+  },
+  "qaFilesCleaned": true,
+  "branch": "main",
+  "publication": "not pushed or deployed"
+}

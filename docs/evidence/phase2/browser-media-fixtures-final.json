@@ -1,0 +1,19 @@
+{
+  "fixtureOnly": true,
+  "video": {
+    "controls": true,
+    "duration": 1.5,
+    "readyState": 4,
+    "codec": "probably",
+    "source": "http://127.0.0.1:3001/qa-preview.mp4",
+    "progress": 0.252002
+  },
+  "carousel": {
+    "image": "http://127.0.0.1:3001/qa-b.svg",
+    "counter": "2 / 2 · 来源引用"
+  },
+  "withdrawn": {
+    "notice": "此资源已撤回QA-only fixture to verify withdrawn messaging; this is not a real withdrawn asset.",
+    "actions": 0
+  }
+}

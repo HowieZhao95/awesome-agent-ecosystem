@@ -1,0 +1,28 @@
+✔ shows all five resource categories and filters cards when a category is selected (240.107416ms)
+✔ renders loading and error states and invokes the host retry callback (56.15175ms)
+✔ combines category navigation with search and links by stable resource identity (51.283709ms)
+✔ applies subtype, domain, source, verification, and lifecycle select filters (81.9015ms)
+✔ opens a stable resource hash directly after refresh (21.835917ms)
+✔ keeps acquisition and verification visible while secondary source metadata starts collapsed (24.375042ms)
+✔ opens source records directly and lists resources by source identity (19.230416ms)
+✔ category navigation from a direct resource route returns to the filtered catalog (52.847291ms)
+✔ shows withdrawn resources with their reason and without host actions (30.065ms)
+✔ shows missing previews on a real resource detail page (18.484625ms)
+✔ renders a host operation failure as visible feedback (41.910666ms)
+✔ routes all four approved host callbacks and refreshes projected host state (78.813375ms)
+✔ does not expose install for a host without a resource availability grant (57.562167ms)
+✔ waits for the host login callback before showing signed-in state (48.429833ms)
+✔ uses host theme and translated filter labels and reports a requested theme change (129.055583ms)
+✔ routes external links and preview requests through the host adapter (111.291583ms)
+✔ withdrawn resources suppress every host action even when the host grants availability (61.951791ms)
+✔ loads public HTML only after click and keeps the preview sandbox without same-origin access (108.892041ms)
+✔ renders fetched Skill source as plain text after an explicit click (39.759667ms)
+✔ shows multiple real preview references in a navigable image carousel (27.172584ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1985.733625

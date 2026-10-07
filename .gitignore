@@ -3,3 +3,10 @@ __pycache__/
 .DS_Store
 .env
 venv/
+.venv/
+node_modules/
+dist/
+web-dist/
+
+# Local visual QA may contain upstream reference media; do not redistribute it.
+docs/evidence/phase2/*.png

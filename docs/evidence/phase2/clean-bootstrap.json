@@ -1,0 +1,69 @@
+{
+  "steps": [
+    {
+      "step": "venv",
+      "exit_code": 0,
+      "log": "bootstrap-venv.log"
+    },
+    {
+      "step": "python-install",
+      "exit_code": 0,
+      "log": "bootstrap-python-install.log"
+    },
+    {
+      "step": "npm-ci",
+      "exit_code": 0,
+      "log": "bootstrap-npm-ci.log"
+    },
+    {
+      "step": "generate",
+      "exit_code": 0,
+      "log": "bootstrap-generate.log"
+    },
+    {
+      "step": "python-tests",
+      "exit_code": 0,
+      "log": "bootstrap-python-tests.log"
+    },
+    {
+      "step": "node-tests",
+      "exit_code": 0,
+      "log": "bootstrap-node-tests.log"
+    },
+    {
+      "step": "typecheck",
+      "exit_code": 0,
+      "log": "bootstrap-typecheck.log"
+    },
+    {
+      "step": "build",
+      "exit_code": 0,
+      "log": "bootstrap-build.log"
+    },
+    {
+      "step": "host",
+      "exit_code": 0,
+      "log": "bootstrap-host.log"
+    },
+    {
+      "step": "start",
+      "exit_code": 0,
+      "http_status": 200,
+      "resource_count": 20,
+      "assets": {
+        "./assets/index-B8RmBWIF.js": 261770,
+        "./assets/index-hTTx9qvt.css": 15305
+      }
+    }
+  ],
+  "source_generated_and_entry_equal": {
+    "README.md": true,
+    "site/catalog.json": true,
+    "site/data.js": true,
+    "src/generated/enums.ts": true,
+    "web-dist/index.html": true
+  },
+  "fresh_dependencies": true,
+  "private_source_required": false,
+  "temporary_source_copy_cleaned": true
+}

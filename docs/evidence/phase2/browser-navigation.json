@@ -1,0 +1,62 @@
+{
+  "categories": [
+    {
+      "category": "templates",
+      "resource": "opendesign.web-prototype",
+      "directReload": true,
+      "installButtons": 0,
+      "actual": {
+        "hash": "#/resource/opendesign.web-prototype",
+        "title": "Web Prototype"
+      }
+    },
+    {
+      "category": "design-systems",
+      "resource": "opendesign.agentic-design-system",
+      "directReload": true,
+      "installButtons": 0,
+      "actual": {
+        "hash": "#/resource/opendesign.agentic-design-system",
+        "title": "Agentic Design System"
+      }
+    },
+    {
+      "category": "skills",
+      "resource": "opendesign.brand-extract",
+      "directReload": true,
+      "installButtons": 0,
+      "actual": {
+        "hash": "#/resource/opendesign.brand-extract",
+        "title": "Brand Extract Skill"
+      }
+    },
+    {
+      "category": "prompts",
+      "resource": "opendesign.repo-agents-md",
+      "directReload": true,
+      "installButtons": 0,
+      "actual": {
+        "hash": "#/resource/opendesign.repo-agents-md",
+        "title": "OpenDesign 仓库 AGENTS.md"
+      }
+    },
+    {
+      "category": "plugins",
+      "resource": "thusdesign.td-drama-production",
+      "directReload": true,
+      "installButtons": 0,
+      "actual": {
+        "hash": "#/resource/thusdesign.td-drama-production",
+        "title": "td-drama-production"
+      }
+    }
+  ],
+  "combined": {
+    "cards": 1,
+    "title": "Web Prototype"
+  },
+  "empty": true,
+  "productionUrl": "http://localhost:3001",
+  "account": "public browser; no simulated account",
+  "instrumentationCorrection": "Initial check required the ID as visible prose; corrected to route ID plus exact catalog title. No application code change."
+}

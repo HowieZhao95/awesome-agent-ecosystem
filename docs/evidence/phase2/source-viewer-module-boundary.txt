@@ -1,0 +1,20 @@
+Read-only module-boundary evidence for the ThusDesign workspace
+
+Image viewer:
+- packages/design-system/components/media/components/ImageViewer/resolve-viewer-image-src.ts imports buildStorageImageThumbnailUrl from @repo/storage/url-utils.
+- packages/design-system/components/media/types.ts imports LocalMediaRef from @repo/relay-kit/agent-media; MediaItem exposes an optional localMedia reference.
+- packages/design-system/package.json declares @repo/design-system private and lists workspace dependencies including @repo/relay-kit, @repo/canvas-engine, @repo/canvas-persistence, @repo/ai, and @repo/internationalization.
+Conclusion: the complete ImageViewer package is coupled to product storage, relay media references, and a private workspace package.
+
+Video player:
+- packages/design-system/components/media/components/VideoPlayer/VideoPlayer.tsx wraps media-chrome/react, imports the package-local cn helper, and binds control colors to CSS variables such as --primary, --background, and --foreground.
+Conclusion: implementation reference only; native video controls or a separately reviewed public dependency are suitable for a public catalog viewer.
+
+HTML preview:
+- packages/browser-sandbox/package.json declares @repo/browser-sandbox private and depends on comlink, idb-keyval, and memfs.
+- packages/browser-sandbox/src/preview.ts defines IframePreview over the app's Blob URL and console-message bridge.
+Conclusion: do not import this workspace package into the public catalog package. A site-owned iframe can implement the public preview boundary.
+
+CSS boundary inspected at packages/design-system/styles/globals.css.
+Semantic names include --background, --primary, --ring, and --sidebar-primary.
+Private token values and implementation bodies are intentionally omitted from this public evidence.

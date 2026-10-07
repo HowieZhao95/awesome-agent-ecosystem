@@ -1715,7 +1715,19 @@
             "url": "https://github.com/nexu-io/open-design/tree/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/social-carousel"
           }
         ],
-        "previews": [],
+        "previews": [
+          {
+            "kind": "image",
+            "url": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/apps/web/public/community-templates/social-carousel.jpg",
+            "status": "reference",
+            "evidence": [
+              {
+                "locator": "apps/web/public/community-templates/social-carousel.jpg",
+                "claim": "固定上游归档中的真实效果图（195412 bytes）；只作为上游参考预览，不证明模板执行或再分发许可。"
+              }
+            ]
+          }
+        ],
         "compatibility": {
           "hosts": [
             "OpenDesign content workflow",
@@ -3649,5 +3661,27 @@
         }
       }
     ]
+  },
+  "availability": {
+    "opendesign.web-prototype": [],
+    "opendesign.html-ppt-pitch-deck": [],
+    "opendesign.live-dashboard": [],
+    "opendesign.motion-frames": [],
+    "opendesign.docs-page": [],
+    "opendesign.social-carousel": [],
+    "opendesign.agentic-design-system": [],
+    "opendesign.brand-extract": [],
+    "opendesign.image-poster": [],
+    "opendesign.repo-agents-md": [],
+    "remotion.best-practices": [],
+    "remotion.render": [],
+    "thusdesign.inspiration-scout": [],
+    "thusdesign.prompt.shinning-x2048663549413921103": [],
+    "thusdesign.prompt.atlas-2041839076354224178": [],
+    "thusdesign.td-drama-production": [],
+    "thusdesign.cli": [],
+    "thusdesign.quiet-product-reference": [],
+    "voltagent.linear-design-reference": [],
+    "opendesign.mockup-device-3d": []
   }
 }

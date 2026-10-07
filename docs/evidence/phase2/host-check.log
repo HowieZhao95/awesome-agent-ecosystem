@@ -1,0 +1,28 @@
+
+> @public-agent-store/catalog@0.1.0 check:host
+> node scripts/check-host.mjs
+
+file:///Users/howiez/Downloads/awesome-agent-ecosystem/scripts/check-host.mjs:12
+  if (result.status !== 0) throw new Error(`${command} ${args.join(' ')} failed:\n${result.stdout}\n${result.stderr}`);
+                                 ^
+
+Error: /opt/homebrew/Cellar/node/24.3.0/bin/node /var/folders/qt/mr_07_c50mb5ndp1wrbhphqc0000gp/T/public-agent-store-host-rPrmeD/consumer/node_modules/typescript/bin/tsc --noEmit --strict --skipLibCheck --allowSyntheticDefaultImports --jsx react-jsx --target ES2022 --module ESNext --moduleResolution Bundler main.tsx host-adapter.ts failed:
+host-adapter.ts(1,34): error TS7016: Could not find a declaration file for module '@public-agent-store/catalog/contracts'. '/private/var/folders/qt/mr_07_c50mb5ndp1wrbhphqc0000gp/T/public-agent-store-host-rPrmeD/consumer/node_modules/@public-agent-store/catalog/dist/contracts.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/public-agent-store__catalog` if it exists or add a new declaration (.d.ts) file containing `declare module '@public-agent-store/catalog/contracts';`
+host-adapter.ts(21,40): error TS7006: Parameter 'key' implicitly has an 'any' type.
+host-adapter.ts(22,19): error TS7006: Parameter 'url' implicitly has an 'any' type.
+host-adapter.ts(23,21): error TS7006: Parameter '_resource' implicitly has an 'any' type.
+host-adapter.ts(23,32): error TS7006: Parameter 'previewUrl' implicitly has an 'any' type.
+main.tsx(3,29): error TS7016: Could not find a declaration file for module '@public-agent-store/catalog/catalog'. '/private/var/folders/qt/mr_07_c50mb5ndp1wrbhphqc0000gp/T/public-agent-store-host-rPrmeD/consumer/node_modules/@public-agent-store/catalog/dist/catalog.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/public-agent-store__catalog` if it exists or add a new declaration (.d.ts) file containing `declare module '@public-agent-store/catalog/catalog';`
+main.tsx(4,30): error TS7016: Could not find a declaration file for module '@public-agent-store/catalog/contracts'. '/private/var/folders/qt/mr_07_c50mb5ndp1wrbhphqc0000gp/T/public-agent-store-host-rPrmeD/consumer/node_modules/@public-agent-store/catalog/dist/contracts.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/public-agent-store__catalog` if it exists or add a new declaration (.d.ts) file containing `declare module '@public-agent-store/catalog/contracts';`
+main.tsx(5,28): error TS7016: Could not find a declaration file for module '@public-agent-store/catalog/ui'. '/private/var/folders/qt/mr_07_c50mb5ndp1wrbhphqc0000gp/T/public-agent-store-host-rPrmeD/consumer/node_modules/@public-agent-store/catalog/dist/ui/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/public-agent-store__catalog` if it exists or add a new declaration (.d.ts) file containing `declare module '@public-agent-store/catalog/ui';`
+main.tsx(15,70): error TS7006: Parameter 'value' implicitly has an 'any' type.
+
+
+    at run (file:///Users/howiez/Downloads/awesome-agent-ecosystem/scripts/check-host.mjs:12:34)
+    at file:///Users/howiez/Downloads/awesome-agent-ecosystem/scripts/check-host.mjs:34:3
+
+Node.js v24.3.0

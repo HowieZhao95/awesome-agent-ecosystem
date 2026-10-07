@@ -10,26 +10,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
-
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
       - run: pip install -r requirements.txt
-
-      - name: Sync tests
+      - run: npm ci
+      - name: Python catalog and source tests
         run: python -m unittest discover -s tests -v
-
-      - name: Schema & rules validation
-        run: python scripts/validate.py
-
-      - name: Legacy discovery queue validation
-        run: python scripts/validate-discovery.py
-
-      - name: Build reproducibility check
+      - name: Schema and discovery validation
         run: |
-          python scripts/build.py
-          if ! git diff --quiet README.md site/data.js site/catalog.json; then
-            echo "::error::README.md / site outputs 与 schema v3 sources 不同步，请运行 scripts/build.py"
-            exit 1
-          fi
+          python scripts/validate.py
+          python scripts/validate-discovery.py
+      - name: Generated contract consistency
+        run: |
+          npm run generate
+          git diff --exit-code -- README.md site/data.js site/catalog.json src/generated
+      - name: Public logic and shared UI tests
+        run: |
+          npm test
+          npm run typecheck
+      - name: Public package and standalone production build
+        run: npm run build
+      - name: External host consumes packaged exports
+        run: npm run check:host

@@ -968,7 +968,19 @@ const DATA = {
               "url": "https://github.com/nexu-io/open-design/tree/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/social-carousel"
             }
           ],
-          "previews": [],
+          "previews": [
+            {
+              "kind": "image",
+              "url": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/apps/web/public/community-templates/social-carousel.jpg",
+              "status": "reference",
+              "evidence": [
+                {
+                  "locator": "apps/web/public/community-templates/social-carousel.jpg",
+                  "claim": "固定上游归档中的真实效果图（195412 bytes）；只作为上游参考预览，不证明模板执行或再分发许可。"
+                }
+              ]
+            }
+          ],
           "compatibility": {
             "hosts": [
               "OpenDesign content workflow",

@@ -1,0 +1,36 @@
+
+> @public-agent-store/catalog@0.1.0 test
+> node --import tsx --test tests/*.test.*
+
+✔ filters real catalog by category, subtype, domain, status, and search together (20.757833ms)
+✔ uses stable resource identity for lookup and detail URLs (1.147542ms)
+✔ gates host availability from the generated catalog projection (5.797459ms)
+✔ paginates with clamped page bounds and retains total count (0.449541ms)
+✔ resolves only components linked by resource identity (3.520083ms)
+✔ rejects failed loads and schema version mismatch (58.548042ms)
+✔ loads the canonical generated catalog when the pinned catalog version matches (21.781458ms)
+✔ every generated literal set exactly matches the YAML source of truth (56.033291ms)
+✔ public detail links encode resource identity without depending on its title (0.391708ms)
+✔ shows all five resource categories and filters cards when a category is selected (283.397416ms)
+✔ renders loading and error states and invokes the host retry callback (33.79425ms)
+✔ combines category navigation with search and links by stable resource identity (103.689ms)
+✔ applies subtype, domain, source, verification, and lifecycle select filters (142.547417ms)
+✔ opens a stable resource hash directly after refresh (37.828208ms)
+✔ opens source records directly and lists resources by source identity (28.83675ms)
+✔ category navigation from a direct resource route returns to the filtered catalog (72.933584ms)
+✔ shows withdrawn resources with their reason and without host actions (40.480375ms)
+✔ shows missing previews on a real resource detail page (25.303917ms)
+✔ renders a host operation failure as visible feedback (61.304834ms)
+✔ routes all four approved host callbacks and refreshes projected host state (111.921917ms)
+✔ does not expose install for a host without a resource availability grant (38.049334ms)
+✔ loads public HTML only after click and keeps the preview sandbox without same-origin access (107.724833ms)
+✔ renders fetched Skill source as plain text after an explicit click (82.543ms)
+✔ shows multiple real preview references in a navigable image carousel (52.327416ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3351.218375

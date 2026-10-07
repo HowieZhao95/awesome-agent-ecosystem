@@ -1,0 +1,38 @@
+{
+  "source": {
+    "scope": true,
+    "resourceLinks": 11,
+    "maintenance": true
+  },
+  "ds": {
+    "kit": 6381,
+    "plainText": 3034,
+    "tokensLinks": 2,
+    "verification": {
+      "badge": "已检查来源",
+      "hostLine": "检验宿主 无",
+      "installButtons": 0
+    }
+  },
+  "dark": {
+    "theme": "dark",
+    "accent": "#80cbb8",
+    "overflow": false
+  },
+  "narrow": {
+    "width": 390,
+    "overflow": false,
+    "columns": "342px"
+  },
+  "keyboard": {
+    "selected": "true",
+    "focusTag": "BUTTON",
+    "focusOutline": "solid"
+  },
+  "narrowDetail": {
+    "overflow": false,
+    "restricted": true,
+    "hostProvided": true,
+    "components": 9
+  }
+}

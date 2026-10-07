@@ -1,0 +1,6 @@
+test_build_projects_host_availability_without_changing_resource_records (test_phase1_catalog.Phase1CatalogTests) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.661s
+
+OK

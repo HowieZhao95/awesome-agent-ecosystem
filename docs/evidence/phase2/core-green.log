@@ -1,0 +1,17 @@
+✔ filters real catalog by category, subtype, domain, status, and search together (1.965292ms)
+✔ uses stable resource identity for lookup and detail URLs (8.436834ms)
+✔ gates host availability from the generated catalog projection (0.171375ms)
+✔ paginates with clamped page bounds and retains total count (0.170833ms)
+✔ resolves only components linked by resource identity (3.7935ms)
+✔ rejects failed loads and schema version mismatch (79.520458ms)
+✔ loads the canonical generated catalog when the pinned catalog version matches (5.767375ms)
+✔ every generated literal set exactly matches the YAML source of truth (61.270417ms)
+✔ public detail links encode resource identity without depending on its title (0.9175ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1643.268458
