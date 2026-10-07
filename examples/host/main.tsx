@@ -21,7 +21,7 @@ function HostExample() {
   }, []);
   return <>
     <aside className="pas-demo-note" role="note">宿主接入示例：账户和资源操作回调尚未连接实际服务；此页面不会登录、安装或更改资源。</aside>
-    <CatalogApp catalog={catalog} status={status} error={error} host={demoHostAdapter} theme="system" accent="#276f64" locale="zh-CN" messages={{ brand: '宿主资源目录示例' }} />
+    <CatalogApp catalog={catalog} status={status} error={error} host={demoHostAdapter} theme="system" locale="zh-CN" messages={{ brand: '宿主资源目录示例' }} />
   </>;
 }
 

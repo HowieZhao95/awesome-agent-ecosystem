@@ -22,7 +22,7 @@ function Site() {
     });
     return () => { current = false; };
   }, [attempt]);
-  return <CatalogApp catalog={catalog} status={status} error={error} onRetry={() => setAttempt((value) => value + 1)} locale="zh-CN" theme="system" accent="#6850c9" messages={{ brand: 'Agent 创作资源' }} />;
+  return <CatalogApp catalog={catalog} status={status} error={error} onRetry={() => setAttempt((value) => value + 1)} locale="zh-CN" theme="system" messages={{ brand: 'Agent 创作资源' }} />;
 }
 
 createRoot(document.getElementById('root')!).render(<React.StrictMode><Site /></React.StrictMode>);

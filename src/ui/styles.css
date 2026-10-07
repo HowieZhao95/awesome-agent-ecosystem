@@ -1,22 +1,23 @@
 .pas-app {
   color-scheme: light;
-  --pas-bg: #f5f4f1;
+  --pas-bg: #f5f5f5;
   --pas-surface: #fff;
-  --pas-surface-soft: #efeee9;
-  --pas-ink: #22241f;
-  --pas-muted: #6d716a;
-  --pas-line: #d9dbd3;
-  --pas-accent-default: #6e4bd1;
+  --pas-surface-soft: #eeeeee;
+  --pas-ink: #222222;
+  --pas-muted: #6b6b6b;
+  --pas-line: #d8d8d8;
+  --pas-accent-default: #171717;
+  --pas-accent-on: #ffffff;
   --pas-accent: var(--catalog-accent, var(--pas-accent-default));
   --pas-accent-wash: color-mix(in srgb, var(--pas-accent) 11%, var(--pas-surface));
-  --pas-danger: #a43d32;
+  --pas-danger: #555555;
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
 
 .pas-app { min-height: 100vh; background: var(--pas-bg); color: var(--pas-ink); font-size: 14px; line-height: 1.55; }
-.pas-app[data-theme="dark"] { color-scheme: dark; --pas-bg: #171916; --pas-surface: #20231f; --pas-surface-soft: #292d28; --pas-ink: #f1f1e9; --pas-muted: #aaafa5; --pas-line: #3b4139; --pas-danger: #ff8c7d; }
+.pas-app[data-theme="dark"] { color-scheme: dark; --pas-bg: #171717; --pas-surface: #202020; --pas-surface-soft: #292929; --pas-ink: #f1f1f1; --pas-muted: #aaaaaa; --pas-line: #3b3b3b; --pas-accent-default: #e5e5e5; --pas-accent-on: #171717; --pas-danger: #bdbdbd; }
 .pas-app *, .pas-app *::before, .pas-app *::after { box-sizing: border-box; }
 .pas-app button, .pas-app input, .pas-app select { font: inherit; }
 .pas-app button, .pas-app a, .pas-app select { accent-color: var(--pas-accent); }
@@ -28,7 +29,7 @@
 .pas-layout { display: grid; grid-template-columns: 248px minmax(0, 1fr); min-height: 100vh; }
 .pas-sidebar { position: sticky; top: 0; display: flex; flex-direction: column; height: 100vh; padding: 28px 18px 18px; border-right: 1px solid var(--pas-line); background: var(--pas-surface); }
 .pas-brand { display: flex; align-items: center; gap: 10px; color: var(--pas-ink) !important; font-weight: 700; text-decoration: none !important; font-size: 15px; }
-.pas-brand-mark { display: grid; width: 32px; height: 32px; place-items: center; border-radius: 9px; color: #fff; background: var(--pas-accent); font-family: Georgia, serif; font-size: 19px; }
+.pas-brand-mark { display: grid; width: 32px; height: 32px; place-items: center; border-radius: 9px; color: var(--pas-accent-on); background: var(--pas-accent); font-family: Georgia, serif; font-size: 19px; }
 .pas-eyebrow { margin: 0; color: var(--pas-muted); font-size: 10px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
 .pas-category-nav { display: grid; gap: 5px; margin-top: 52px; }
 .pas-category-nav .pas-eyebrow { padding: 0 10px 9px; }
@@ -36,7 +37,7 @@
 .pas-category-nav button span { font-variant-numeric: tabular-nums; font-size: 12px; }
 .pas-category-nav button[aria-pressed="true"] { color: var(--pas-accent); background: var(--pas-accent-wash); font-weight: 650; }
 .pas-sidebar-foot { display: flex; align-items: center; gap: 8px; margin-top: auto; padding: 12px 6px 0; border-top: 1px solid var(--pas-line); color: var(--pas-muted); font-size: 11px; }
-.pas-status-dot { width: 7px; height: 7px; border-radius: 50%; background: #488b63; }
+.pas-status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--pas-muted); }
 .pas-main { width: min(100%, 1440px); margin: 0 auto; padding: 32px clamp(22px, 4vw, 64px) 72px; }
 .pas-topbar { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding-bottom: 22px; border-bottom: 1px solid var(--pas-line); }
 .pas-topbar h1 { margin: 4px 0 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(24px, 3vw, 34px); font-weight: 500; letter-spacing: -.03em; }
@@ -96,7 +97,7 @@
 .pas-host-state { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin-right: auto; }
 .pas-state-chip { border: 1px solid var(--pas-line); border-radius: 999px; padding: 2px 6px; color: var(--pas-muted); font-size: 10px; }
 .pas-host-actions span { margin-right: auto; }
-.pas-host-actions button[data-action="add"] { border-color: var(--pas-accent); color: white; background: var(--pas-accent); }
+.pas-host-actions button[data-action="add"] { border-color: var(--pas-accent); color: var(--pas-accent-on); background: var(--pas-accent); }
 .pas-preview-section { margin-top: 26px; }
 .pas-section-title { display: flex; align-items: end; justify-content: space-between; margin-bottom: 10px; }
 .pas-section-title h3 { margin: 3px 0 0; font-family: Georgia, "Songti SC", serif; font-size: 21px; font-weight: 500; }
@@ -131,7 +132,7 @@
 .pas-source-resource-list { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; }
 .pas-source-resource-list li { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-top: 1px solid var(--pas-line); }
 .pas-source-resource-list span { color: var(--pas-muted); font-size: 11px; }
-.pas-demo-note { margin: 0; padding: 10px 20px; border-bottom: 1px solid var(--pas-line); background: #fff5d6; color: #473719; font: 13px/1.5 ui-sans-serif, system-ui, sans-serif; }
+.pas-demo-note { margin: 0; padding: 10px 20px; border-bottom: 1px solid var(--pas-line); background: var(--pas-surface-soft); color: var(--pas-ink); font: 13px/1.5 ui-sans-serif, system-ui, sans-serif; }
 .pas-detail-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(250px, .8fr); gap: 24px; margin-top: 28px; }
 .pas-detail-main, .pas-detail-aside { display: grid; align-content: start; gap: 14px; }
 .pas-meta-section { padding: 15px; border: 1px solid var(--pas-line); border-radius: 9px; background: var(--pas-surface); }
@@ -158,7 +159,7 @@
 .pas-source-detail dl { display: grid; grid-template-columns: 150px 1fr; gap: 8px; font-size: 12px; }
 .pas-source-detail dt { color: var(--pas-muted); }
 .pas-source-detail dd { margin: 0; overflow-wrap: anywhere; }
-.pas-skip-link { position: absolute; z-index: 10; top: 8px; left: 8px; transform: translateY(-150%); border-radius: 5px; padding: 8px 11px; background: var(--pas-accent); color: white !important; }
+.pas-skip-link { position: absolute; z-index: 10; top: 8px; left: 8px; transform: translateY(-150%); border-radius: 5px; padding: 8px 11px; background: var(--pas-accent); color: var(--pas-accent-on) !important; }
 .pas-skip-link:focus { transform: translateY(0); }
 .pas-visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
 
