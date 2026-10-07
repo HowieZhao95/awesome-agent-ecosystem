@@ -3,7 +3,7 @@ sources:
 - id: opendesign
   name: OpenDesign 内容上游
   url: https://github.com/nexu-io/open-design
-  roles: [content-upstream, distribution-channel]
+  roles: [content-upstream, distribution-channel, discovery-channel]
   access: public
   tracking:
     scope:
@@ -29,6 +29,8 @@ sources:
       - LICENSE
       - design-systems/**
       - design-templates/html-ppt/**
+      - design-templates/**
+      - skills/**
     exclude: []
     baseline: 'commit:53231d40b778d88eba23f35547bf99485d3ae9fc; 对照本地归档 open-design-53231d40b778d88eba23f35547bf99485d3ae9fc.tar.gz'
     cadence: manual
@@ -36,7 +38,7 @@ sources:
     promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。
     last_checked: '2026-10-07'
     limitations:
-      - 跟踪本轮已查明的独立设计系统核心文件及选定模板/Skill 框架；不纳入 OpenDesign 执行内核，不以目录范围推导资源实测。
+      - 本轮完整盘点固定提交下114个design-template指令入口、163个Skill入口和152套设计系统；按实际框架、方法或发现参考登记，不纳入执行内核，不推导许可和宿主实测。
       - 归档根 LICENSE 存在；根 NOTICE 不存在。根许可不足以确认外部素材、嵌入品牌资产或逐项授权。
       - 作者与单项许可须逐条检查 manifest/源证据；未完成项维持 unknown。
 - id: remotion-dev.skills

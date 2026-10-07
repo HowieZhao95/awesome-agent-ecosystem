@@ -40,7 +40,45 @@ export interface Catalog {
   categories: { schema_version: number; review_status: ReviewStatus; categories: Category[]; classification_rules: string[]; dimensions: { domains: { id: DomainId; label: string; definition: string }[]; formats: { id: FormatId; label: string; definition: string; extensions?: string[] }[]; conventions: { id: ConventionId; label: string; definition: string }[]; plugin_component_types: { id: ComponentTypeId; label: string; definition: string }[] } };
   sources: { schema_version: number; sources: Source[] };
   resources: { schema_version: number; meta: { catalog_version: string; updated: string; review: { status: ReviewStatus; by: string | null; at: string | null; evidence: Evidence[] } }; resources: Resource[] };
+  discovery?: DiscoveryCatalog;
 }
+export interface DiscoveryEntry {
+  id: string;
+  title: string;
+  summary: string;
+  classification: { category: CategoryId; subtype: SubtypeId | null; domains: DomainId[]; formats: FormatId[]; conventions: ConventionId[]; rationale: string };
+  source_url: string | null;
+  channel_source: string | null;
+  legacy_keys: string[];
+  legacy: { category: string; subcat: string | null; platform: string | null; source_label: string | null; stars: number | null; installs: number | null; last_verified: string | null; vmethod: string | null };
+  content_kind: 'asset' | 'reference' | 'collection' | 'specification';
+  expected_components: string[];
+  missing: string[];
+  mapped_resource_id?: string;
+}
+export interface DiscoveryPlatform {
+  id: string;
+  name: string;
+  url: string | null;
+  summary: string;
+  legacy_key: string;
+  source_label: string | null;
+}
+export interface DiscoveryCatalog {
+  schema_version: 1;
+  source_id: string;
+  input_sha256: string;
+  entries: DiscoveryEntry[];
+  platforms: DiscoveryPlatform[];
+  additional_sources?: { source_id: string; ref: Upstream["ref"]; entries: number }[];
+  coverage: { total_assets: number; total_platforms: number; outcomes: { legacy_key: string; target_id: string; disposition: 'mapped' | 'merged' | 'discovery'; reason: string }[] };
+}
+export type BrowseResource = Omit<Resource, 'provenance'> & {
+  directory_origin: 'catalog' | 'discovery';
+  provenance: Omit<Resource['provenance'], 'content_source' | 'upstream'> & { content_source: string | null; upstream: Upstream | null };
+  discovery?: DiscoveryEntry;
+  discovery_aliases?: DiscoveryEntry[];
+};
 export interface Source {
   id: string; name: string; url: string | null;
   roles: ('content-upstream' | 'discovery-channel' | 'distribution-channel' | 'specification')[];

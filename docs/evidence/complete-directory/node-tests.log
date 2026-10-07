@@ -1,0 +1,62 @@
+
+> @public-agent-store/catalog@0.1.0 test
+> node --import tsx --test tests/*.test.*
+
+✔ filters real catalog by category, subtype, domain, status, and search together (1.295ms)
+✔ uses stable resource identity for lookup and detail URLs (0.153958ms)
+✔ gates host availability from the generated catalog projection (0.090834ms)
+✔ paginates with clamped page bounds and retains total count (0.112833ms)
+✔ resolves only components linked by resource identity (22.117625ms)
+✔ rejects failed loads and schema version mismatch (115.908584ms)
+✔ loads the canonical generated catalog when the pinned catalog version matches (48.862875ms)
+✔ rejects malformed discovery metadata instead of failing while rendering the browse view (36.34375ms)
+✔ loads the complete historical discovery payload with all 777 asset outcomes and 26 platform records (47.795042ms)
+✔ rejects malformed optional discovery add-ons and missing discovery arrays (143.552458ms)
+✔ keeps strict canonical filtering separate from a merged discovery browse projection (16.213ms)
+✔ does not duplicate a discovery entry already mapped to a canonical resource (19.373375ms)
+✔ shows discovery entries in the default browse and keeps platform records out of the asset count (661.000125ms)
+✔ renders every target from the complete 777-entry legacy index in one browse result set (557.064916ms)
+✔ filters discovery origin and opens the historical source page with all platform records (100.786708ms)
+✔ direct refresh shows discovery evidence and gaps without fabricated provenance or host operations (13.757792ms)
+✔ keeps unknown source URLs empty on a direct discovery route (23.534125ms)
+✔ direct legacy aliases open the canonical resource once and retain historical source lineage (14.753583ms)
+✔ every generated literal set exactly matches the YAML source of truth (20.069167ms)
+✔ public detail links encode resource identity without depending on its title (0.205041ms)
+✔ canonical template and design-system profiles appear in both generated v3 views (5.4105ms)
+✔ ordinary v3 resources remain valid without optional profiles (0.122583ms)
+✔ shows all five resource categories and filters cards when a category is selected (135.043125ms)
+✔ labels registered resources, discovery entries, and total directory items separately (26.698458ms)
+✔ renders loading and error states and invokes the host retry callback (16.247ms)
+✔ combines category navigation with search and links by stable resource identity (51.651333ms)
+✔ applies subtype, domain, source, verification, and lifecycle select filters (70.465125ms)
+✔ opens a stable resource hash directly after refresh (19.844583ms)
+✔ keeps acquisition and verification visible while secondary source metadata starts collapsed (20.93325ms)
+✔ opens source records directly and lists resources by source identity (67.914ms)
+✔ category navigation from a direct resource route returns to the filtered catalog (43.536584ms)
+✔ shows withdrawn resources with their reason and without host actions (46.418875ms)
+✔ shows missing previews on a real resource detail page (25.009875ms)
+✔ renders a host operation failure as visible feedback (39.704834ms)
+✔ routes all four approved host callbacks and refreshes projected host state (78.9595ms)
+✔ does not expose install for a host without a resource availability grant (28.576625ms)
+✔ waits for the host login callback before showing signed-in state (42.88525ms)
+✔ uses host theme and translated filter labels and reports a requested theme change (35.886458ms)
+✔ routes external links and preview requests through the host adapter (27.752875ms)
+✔ withdrawn resources suppress every host action even when the host grants availability (37.22125ms)
+✔ loads public HTML only after click and keeps the preview sandbox without same-origin access (62.592042ms)
+✔ resolves relative stylesheet links in HTML previews against their exact upstream directory (50.361041ms)
+✔ inlines pinned raw GitHub CSS dependencies in a design system preview with source provenance (53.952708ms)
+✔ renders fetched Skill source as plain text after an explicit click (33.844084ms)
+✔ shows multiple real preview references in a navigable image carousel (34.670708ms)
+✔ shows template framework files separately from reference examples and labels mixed upstream honestly (39.408333ms)
+✔ keeps legacy template records without profiles readable and shows profile completion as pending (30.778167ms)
+✔ lists the design system core files and makes missing core roles explicit (24.908625ms)
+✔ keeps an explicitly previewable design system example available when the profile names the same URL (27.339458ms)
+✔ shows the canonical category definition when a category is selected (16.501041ms)
+ℹ tests 50
+ℹ suites 0
+ℹ pass 50
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2072.412416

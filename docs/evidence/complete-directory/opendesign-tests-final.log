@@ -1,0 +1,15 @@
+test_editorial_variant_requires_matching_real_scene_and_navigation_code (test_opendesign_inventory.OpenDesignInventoryTests) ... ok
+test_every_entry_has_content_grounded_classification_and_body_hash (test_opendesign_inventory.OpenDesignInventoryTests) ... ok
+test_every_nonresource_entry_has_a_linked_reference_target (test_opendesign_inventory.OpenDesignInventoryTests) ... ok
+test_existing_ids_are_checked_by_exact_path_or_body_hash_and_hash_mismatches_are_visible (test_opendesign_inventory.OpenDesignInventoryTests) ... ok
+test_explicit_manifest_claims_are_asset_scoped_and_unknowns_stay_unknown (test_opendesign_inventory.OpenDesignInventoryTests) ... ok
+test_missing_framework_and_thin_metadata_remain_browsable_references (test_opendesign_inventory.OpenDesignInventoryTests) ... ok
+test_repeated_runs_are_deterministic_and_source_urls_are_pinned (test_opendesign_inventory.OpenDesignInventoryTests) ... ok
+test_resource_proposals_match_resource_profile_without_auto_approval (test_opendesign_inventory.OpenDesignInventoryTests) ... ok
+test_style_variant_points_to_shared_framework_without_creating_template (test_opendesign_inventory.OpenDesignInventoryTests) ... ok
+test_wrong_snapshot_root_fails_before_replacing_existing_reports (test_opendesign_inventory.OpenDesignInventoryTests) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.104s
+
+OK

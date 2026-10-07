@@ -1,0 +1,30 @@
+
+> @public-agent-store/catalog@0.1.0 build
+> node scripts/build-package.mjs
+
+
+> @public-agent-store/catalog@0.1.0 generate
+> node scripts/generate.mjs
+
+OK  README.md, site/data.js and site/catalog.json (367 resources)
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 4 modules transformed.
+Generated an empty chunk: "contracts".
+rendering chunks...
+computing gzip size...
+dist/contracts.js   0.00 kB │ gzip:  0.02 kB
+dist/index.js       0.53 kB │ gzip:  0.23 kB
+dist/catalog.js     7.86 kB │ gzip:  2.38 kB
+dist/ui/index.js   67.11 kB │ gzip: 15.73 kB
+✓ built in 139ms
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 31 modules transformed.
+rendering chunks...
+computing gzip size...
+../web-dist/index.html                        0.58 kB │ gzip:   0.41 kB
+../web-dist/assets/catalog-DIIhuZ6K.json  3,958.20 kB │ gzip: 254.03 kB
+../web-dist/assets/index-BQ04EBF2.css        16.35 kB │ gzip:   3.78 kB
+../web-dist/assets/index-9Tf1wpOG.js        279.87 kB │ gzip:  85.32 kB
+✓ built in 1.28s

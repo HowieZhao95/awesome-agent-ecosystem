@@ -1,0 +1,22 @@
+{
+  "allRequirementsMet": true,
+  "dataCoverage": "777 legacy assets + 26 platforms; 114 + 163 OpenDesign inputs; 152 independent design systems retained",
+  "browseEntries": 1166,
+  "strictResourceCount": 367,
+  "independentDiscoveryCount": 799,
+  "linkedAliasesNotDoubleCounted": 60,
+  "documentLinksValid": true,
+  "privateRuntimeImportsAbsent": true,
+  "maximumRuntimeFileLines": [
+    612,
+    "src/ui/index.tsx"
+  ],
+  "sourceGenerationHashes": {
+    "README.md": "618645cec86a91e265f4bc58973065b2d51d03ab164e9cd2ab87577cb201ba7b",
+    "site/catalog.json": "9b09cfc5f2fb7f1a06a214876a20efc34c0ba02fa4652d242381a02635d86ecb",
+    "site/data.js": "90fa49a36c92cbb74e0c5c0db1f955da6ba28cc9ffe7de211bdd00d3735ebfb3",
+    "src/generated/enums.ts": "22b2442c30dee5c5dfa9ca5ee31fe0ded38655c8ae66d6081c1c0ecd1726b07e"
+  },
+  "branch": "main",
+  "publication": "not pushed or deployed"
+}

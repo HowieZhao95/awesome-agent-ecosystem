@@ -1,0 +1,6 @@
+test_build_includes_discovery_index_and_keeps_strict_resource_source_unchanged (test_discovery_build.DiscoveryBuildTests) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.127s
+
+OK

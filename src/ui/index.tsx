@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
-import type { Catalog, DesignSystemProfile, HostAdapter, ProfileFile, Resource, TemplateProfile } from '../contracts.js';
-import { filterResources, getResource, isAvailableForHost } from '../catalog.js';
+import type { BrowseResource, Catalog, DesignSystemProfile, HostAdapter, ProfileFile, Resource, TemplateProfile } from '../contracts.js';
+import { filterBrowseResources, getBrowseResource, getBrowseResources, getResource, isAvailableForHost } from '../catalog.js';
 
 export interface CatalogAppProps {
   catalog?: Catalog;
@@ -16,14 +16,15 @@ export interface CatalogAppProps {
 }
 
 type Route = { type: 'catalog' } | { type: 'resource'; id: string } | { type: 'source'; id: string };
-type Filters = { category: string; subtype: string; domain: string; source: string; verification: string; lifecycle: string; query: string };
+type Filters = { category: string; subtype: string; domain: string; source: string; verification: string; lifecycle: string; origin: string; query: string };
 
-const EMPTY_FILTERS: Filters = { category: '', subtype: '', domain: '', source: '', verification: '', lifecycle: '', query: '' };
+const EMPTY_FILTERS: Filters = { category: '', subtype: '', domain: '', source: '', verification: '', lifecycle: '', origin: '', query: '' };
 const DEFAULT_MESSAGES: Record<string, string> = {
   'skip.main': '跳到主要内容', 'categories.title': '资源类别', 'category.all': '全部资源',
   'brand': 'Agent 资源目录', 'page.title': 'Agent 创作资源', 'theme.label': '界面主题', 'theme.light': '浅色', 'theme.dark': '深色',
   'catalog.eyebrow': 'PUBLIC RESOURCE CATALOG', 'catalog.intro': '从公开来源发现的模板、设计系统、Skills、提示词和插件，按真实来源与验证状态浏览。',
   'resource.count': '{count} 项资源', 'catalog.version': '目录版本 {version}', 'catalog.updated': '更新于 {date}',
+  'browse.count': '{count} 个目录条目', 'browse.breakdown': '{registered} 个已登记资源 · {discovery} 条发现线索',
   'search.label': '搜索资源', 'search.placeholder': '搜索名称、用途或简介…',
   'filter.subtype': '子类型', 'filter.domain': '领域', 'filter.source': '来源', 'filter.verification': '验证', 'filter.lifecycle': '生命周期', 'filter.all': '全部',
   'result.all': '全部资源', 'result.count': '{count} 项结果', 'filter.clear': '清除筛选', 'result.empty': '没有符合条件的资源。',
@@ -45,6 +46,8 @@ const DEFAULT_MESSAGES: Record<string, string> = {
   'template.framework': '内容与代码框架', 'template.examples': '参考示例（样式不属于模板）', 'template.pending': '文件角色待补充', 'template.independent': '上游框架与风格已独立', 'template.mixed': '上游框架与风格待拆分', 'template.unknown': '上游框架与风格关系未知', 'template.policy': '风格策略', 'template.policy.external-design-system': '由独立设计系统提供', 'template.note': '来源说明',
   'designSystem.files': '设计系统文件', 'designSystem.missing': '缺少核心文件角色：{roles}', 'designSystem.role.manifest': 'manifest.json', 'designSystem.role.rules': 'DESIGN.md / 设计规范', 'designSystem.role.tokens-css': 'tokens.css', 'designSystem.role.example': '示例', 'designSystem.role.support': '辅助文件',
   'fileRole.instructions': '操作指南', 'fileRole.framework': '框架文件', 'fileRole.example': '参考示例', 'fileRole.support': '辅助文件', 'category.definition': '分类定义',
+  'discovery.origin': '发现线索', 'catalog.origin': '已登记资源', 'filter.origin': '收录状态', 'discovery.kind.asset': '资源候选', 'discovery.kind.reference': '参考资料', 'discovery.kind.collection': '合集 / 库', 'discovery.kind.specification': '规范来源', 'discovery.contentKind': '历史记录内容类型', 'discovery.sourceLink': '发现线索链接 ↗', 'discovery.reason': '分类依据', 'discovery.gaps': '待核查与缺失信息', 'discovery.legacy': '原始发现记录', 'discovery.aliases': '关联发现记录', 'discovery.aliasCount': '{count} 个关联发现入口', 'discovery.sourceChannel': '收录来源', 'discovery.noSourceUrl': '尚未定位到具体内容来源链接', 'discovery.platforms': '历史来源平台', 'discovery.platformCount': '{count} 个平台来源（不计入资源数）', 'discovery.platformDisclaimer': '平台名称与来源标签保留自历史目录记录，未单独核验官方身份。', 'discovery.mappedTarget': '已关联资源：{id}', 'discovery.expected': '历史类别提示的组成类型（未核验）', 'discovery.historyDisclaimer': '历史来源标签仅保留原记录信息，不代表已核验官方身份或作者身份。', 'discovery.rightsDisclaimer': '作者、许可、上游路径和可安装性均未通过发现索引确认。',
+  'legacy.category': '旧类别', 'legacy.subcat': '旧子类', 'legacy.platform': '平台', 'legacy.source_label': '历史来源标签', 'legacy.stars': '星数记录', 'legacy.installs': '安装量记录', 'legacy.last_verified': '历史核查时间', 'legacy.vmethod': '历史核查方式', 'legacy.key': '历史条目键',
   'source.viewResource': '查看关联资源 ↗', 'source.componentSource': '组件来源 ↗', 'source.hostProvided': '宿主提供 · 查看声明 ↗', 'source.type': '资源类别', 'source.testedHost': '检验宿主', 'source.verified': '已核实', 'source.reference': '来源引用', 'source.redistribution': '再分发', 'source.open': '打开',
 };
 type Translator = (key: string, fallback?: string) => string;
@@ -153,7 +156,9 @@ export function CatalogApp({ catalog, host, status = catalog ? 'ready' : 'loadin
     setThemeValue(resolveTheme());
   }, [theme, host]);
 
-  const resources = catalog?.resources.resources ?? [];
+  const browseResources = useMemo(() => catalog ? getBrowseResources(catalog) : [], [catalog]);
+  const registeredCount = catalog?.resources.resources.length ?? 0;
+  const discoveryCount = browseResources.filter((item) => item.directory_origin === 'discovery').length;
   const categories = catalog?.categories.categories ?? [];
   const dimensions = catalog?.categories.dimensions;
   const sourceRecords = catalog?.sources.sources ?? [];
@@ -161,11 +166,12 @@ export function CatalogApp({ catalog, host, status = catalog ? 'ready' : 'loadin
   const selectedCategory = categories.find((item) => item.id === filters.category);
   const subtypeOptions = selectedCategory?.subtypes ?? [];
   const domainOptions = dimensions?.domains ?? [];
-  const filtered = useMemo(() => catalog ? filterResources(catalog, filters) : [], [catalog, filters]);
+  const filtered = useMemo(() => catalog ? filterBrowseResources(catalog, filters) : [], [catalog, filters]);
   const pageCount = Math.max(1, Math.ceil(filtered.length / Math.max(1, pageSize)));
   const safePage = Math.min(page, pageCount);
   const pageResources = filtered.slice((safePage - 1) * pageSize, safePage * pageSize);
-  const resource = route.type === 'resource' && catalog ? getResource(catalog, route.id) : undefined;
+  const browseResource = route.type === 'resource' && catalog ? getBrowseResource(catalog, route.id) : undefined;
+  const resource = route.type === 'resource' && browseResource?.directory_origin === 'catalog' && catalog ? getResource(catalog, browseResource.id) : undefined;
   const source = route.type === 'source' ? sourceRecords.find((item) => item.id === route.id) : undefined;
   const t: Translator = (key, fallback = '') => {
     if (messages[key] !== undefined) return messages[key]!;
@@ -231,9 +237,9 @@ export function CatalogApp({ catalog, host, status = catalog ? 'ready' : 'loadin
         </a>
         <nav aria-label={t('categories.title', '资源类别')} className="pas-category-nav">
           <p className="pas-eyebrow">{t('categories.title', '资源类别')}</p>
-          <button type="button" data-category="" aria-pressed={!filters.category} onClick={() => selectCategory('')}>{t('category.all', '全部资源')} <span>{resources.length}</span></button>
+          <button type="button" data-category="" aria-pressed={!filters.category} onClick={() => selectCategory('')}>{t('category.all', '全部资源')} <span>{browseResources.length}</span></button>
           {visibleCategories.map((category) => <button key={category.id} type="button" data-category={category.id} aria-pressed={filters.category === category.id} onClick={() => selectCategory(category.id)}>
-            {t(`category.${category.id}`, category.label)}<span>{resources.filter((item) => item.classification.category === category.id).length}</span>
+            {t(`category.${category.id}`, category.label)}<span>{browseResources.filter((item) => item.classification.category === category.id).length}</span>
           </button>)}
         </nav>
         <div className="pas-sidebar-foot"><span className="pas-status-dot" />{t('catalog.traceable', '来源和状态可追溯')}</div>
@@ -256,14 +262,15 @@ export function CatalogApp({ catalog, host, status = catalog ? 'ready' : 'loadin
 
         {status === 'ready' && catalog && route.type === 'source' && <SourceDetail source={source} catalog={catalog} />}
         {status === 'ready' && catalog && route.type === 'resource' && <>
-          {resource ? <ResourceDetail resource={resource} sourceRecords={sourceRecords} host={host} availableForHost={Boolean(host && isAvailableForHost(catalog, resource.id, host.hostId))} catalog={catalog} operationError={operationError} onOperation={runOperation} onLoadPreview={loadPreview} previewState={previewState} previewText={previewText} onHostLink={hostLink} />
+          {resource && browseResource ? <ResourceDetail resource={resource} discoveryAliases={browseResource.discovery_aliases ?? []} sourceRecords={sourceRecords} host={host} availableForHost={Boolean(host && isAvailableForHost(catalog, resource.id, host.hostId))} catalog={catalog} operationError={operationError} onOperation={runOperation} onLoadPreview={loadPreview} previewState={previewState} previewText={previewText} onHostLink={hostLink} />
+            : browseResource?.directory_origin === 'discovery' ? <DiscoveryDetail resource={browseResource} sourceRecords={sourceRecords} onHostLink={hostLink} />
             : <div className="pas-state" role="status">{t('detail.notFound', '找不到这个资源。')}<a href="#/">{t('detail.back', '返回目录')}</a></div>}
         </>}
 
         {status === 'ready' && catalog && route.type === 'catalog' && <>
           <section className="pas-intro">
             <p>{t('catalog.intro', '从公开来源发现的模板、设计系统、Skills、提示词和插件，按真实来源与验证状态浏览。')}</p>
-            <div className="pas-catalog-meta"><span>{t('resource.count', '{count} 项资源').replace('{count}', String(resources.length))}</span><span>{t('catalog.version', `目录版本 ${catalog.resources.meta.catalog_version}`).replace('{version}', catalog.resources.meta.catalog_version)}</span><span>{t('catalog.updated', `更新于 ${catalog.resources.meta.updated}`).replace('{date}', catalog.resources.meta.updated)}</span></div>
+            <div className="pas-catalog-meta"><span>{t('browse.count', '{count} 个目录条目').replace('{count}', String(browseResources.length))}</span><span>{t('browse.breakdown', '{registered} 个已登记资源 · {discovery} 条发现线索').replace('{registered}', String(registeredCount)).replace('{discovery}', String(discoveryCount))}</span><span>{t('catalog.version', `目录版本 ${catalog.resources.meta.catalog_version}`).replace('{version}', catalog.resources.meta.catalog_version)}</span><span>{t('catalog.updated', `更新于 ${catalog.resources.meta.updated}`).replace('{date}', catalog.resources.meta.updated)}</span></div>
           </section>
           <section className="pas-controls" aria-label="目录筛选">
             <label className="pas-search"><span className="pas-search-icon" aria-hidden="true">⌕</span><span className="pas-visually-hidden">{t('search.label', '搜索资源')}</span>
@@ -272,9 +279,10 @@ export function CatalogApp({ catalog, host, status = catalog ? 'ready' : 'loadin
             <div className="pas-filter-grid">
               <FilterSelect label={t('filter.subtype', '子类型')} name="subtype" value={filters.subtype} options={subtypeOptions.map((item) => [item.id, item.label])} onChange={(value) => setFilter('subtype', value)} />
               <FilterSelect label={t('filter.domain', '领域')} name="domain" value={filters.domain} options={domainOptions.map((item) => [item.id, item.label])} onChange={(value) => setFilter('domain', value)} />
-              <FilterSelect label={t('filter.source', '来源')} name="source" value={filters.source} options={unique(resources.map((item) => item.provenance.content_source)).map((id) => [id, sourceRecords.find((item) => item.id === id)?.name ?? id])} onChange={(value) => setFilter('source', value)} />
-              <FilterSelect label={t('filter.verification', '验证')} name="verification" value={filters.verification} options={unique(resources.map((item) => item.verification.level)).map((id) => [id, t(`verification.${id}`, human(id))])} onChange={(value) => setFilter('verification', value)} />
-              <FilterSelect label={t('filter.lifecycle', '生命周期')} name="lifecycle" value={filters.lifecycle} options={unique(resources.map((item) => item.lifecycle.state)).map((id) => [id, t(`lifecycle.${id}`, human(id))])} onChange={(value) => setFilter('lifecycle', value)} />
+              <FilterSelect label={t('filter.source', '来源')} name="source" value={filters.source} options={unique([...browseResources.map((item) => item.provenance.content_source), ...browseResources.map((item) => item.discovery?.channel_source), ...browseResources.flatMap((item) => item.discovery_aliases?.map((entry) => entry.channel_source) ?? [])]).map((id) => [id, sourceRecords.find((item) => item.id === id)?.name ?? id])} onChange={(value) => setFilter('source', value)} />
+              <FilterSelect label={t('filter.verification', '验证')} name="verification" value={filters.verification} options={unique(browseResources.map((item) => item.verification.level)).map((id) => [id, t(`verification.${id}`, human(id))])} onChange={(value) => setFilter('verification', value)} />
+              <FilterSelect label={t('filter.lifecycle', '生命周期')} name="lifecycle" value={filters.lifecycle} options={unique(browseResources.map((item) => item.lifecycle.state)).map((id) => [id, t(`lifecycle.${id}`, human(id))])} onChange={(value) => setFilter('lifecycle', value)} />
+              <FilterSelect label={t('filter.origin', '收录状态')} name="origin" value={filters.origin} options={[["catalog", t('catalog.origin', '正式资源')], ["discovery", t('discovery.origin', '发现线索')]]} onChange={(value) => setFilter('origin', value)} />
             </div>
           </section>
           <div className="pas-result-heading"><div><h2>{filters.category ? t(`category.${filters.category}`, categories.find((item) => item.id === filters.category)?.label ?? filters.category) : t('result.all', '全部资源')}</h2><span>{t('result.count', '{count} 项结果').replace('{count}', String(filtered.length))}</span>{selectedCategory?.definition && <p className="pas-category-definition"><b>{t('category.definition', '分类定义')}</b> {selectedCategory.definition}</p>}</div>
@@ -359,7 +367,7 @@ function ImageCarousel({ resource, previews, onHostLink }: { resource: Resource;
   </section>;
 }
 
-function ResourceCard({ resource, categories, onLinkClick }: { resource: Resource; categories: Catalog['categories']['categories']; onLinkClick: (event: React.MouseEvent<HTMLAnchorElement>, url: string) => void }) {
+function ResourceCard({ resource, categories, onLinkClick }: { resource: BrowseResource; categories: Catalog['categories']['categories']; onLinkClick: (event: React.MouseEvent<HTMLAnchorElement>, url: string) => void }) {
   const t = useText();
   const preview = resource.previews.find((item) => isImagePreview(item) && safeExternalUrl(item.url));
   return <article className="pas-card" data-resource-card data-resource-id={resource.id} data-category={resource.classification.category}>
@@ -368,12 +376,43 @@ function ResourceCard({ resource, categories, onLinkClick }: { resource: Resourc
     </div>
     <h3><a href={stableRoute('resource', resource.id)}>{resource.title}</a></h3>
     <p className="pas-card-summary">{resource.summary}</p>
-    <div className="pas-card-meta"><span>{resource.provenance.content_source}</span><span>{t(`verification.${resource.verification.level}`, human(resource.verification.level))}</span></div>
+    {resource.directory_origin === 'discovery' && <p className="pas-card-kind">{t(`discovery.kind.${resource.discovery!.content_kind}`, resource.discovery!.content_kind)}</p>}
+    {resource.discovery_aliases && <p className="pas-card-kind">{t('discovery.aliasCount', '{count} 条历史目录记录关联到此资源').replace('{count}', String(resource.discovery_aliases.length))}</p>}
+    <div className="pas-card-meta"><span>{resource.discovery ? t('discovery.origin', '发现线索') : resource.provenance.content_source}</span><span>{t(`verification.${resource.verification.level}`, human(resource.verification.level))}</span></div>
   </article>;
 }
 
-function ResourceDetail({ resource, sourceRecords, host, availableForHost, catalog, operationError, onOperation, onLoadPreview, previewState, previewText, onHostLink }: {
-  resource: Resource; sourceRecords: Catalog['sources']['sources']; host?: HostAdapter; availableForHost: boolean; catalog: Catalog; operationError: string;
+function DiscoveryDetail({ resource, sourceRecords, onHostLink }: { resource: BrowseResource; sourceRecords: Catalog['sources']['sources']; onHostLink: (event: React.MouseEvent<HTMLAnchorElement>, url: string) => void }) {
+  const t = useText();
+  const entry = resource.discovery!;
+  const source = entry.channel_source ? sourceRecords.find((item) => item.id === entry.channel_source) : undefined;
+  const sourceUrl = entry.source_url && safeExternalUrl(entry.source_url) ? entry.source_url : undefined;
+  const legacyRows: [string, string | number | null][] = [
+    ['legacy.category', entry.legacy.category], ['legacy.subcat', entry.legacy.subcat], ['legacy.platform', entry.legacy.platform], ['legacy.source_label', entry.legacy.source_label],
+    ['legacy.stars', entry.legacy.stars], ['legacy.installs', entry.legacy.installs], ['legacy.last_verified', entry.legacy.last_verified], ['legacy.vmethod', entry.legacy.vmethod],
+  ];
+  return <article data-discovery-detail className="pas-detail">
+    <a className="pas-back-link" href="#/">{t('detail.back', '← 返回资源目录')}</a>
+    <header className="pas-detail-heading"><div><p className="pas-eyebrow">{t(`category.${resource.classification.category}`, human(resource.classification.category))} / {t(`discovery.kind.${entry.content_kind}`, entry.content_kind)}</p><h2>{entry.title}</h2><p className="pas-detail-summary">{entry.summary}</p></div>
+      <div className="pas-detail-badges"><span className="pas-lifecycle">{t('lifecycle.candidate', '候选')}</span><span className="pas-verification-badge" data-verification-badge>{t('verification.unverified', '未验证')}</span></div>
+    </header>
+    <div className="pas-notice" role="note"><strong>{t('discovery.origin', '发现线索')}</strong><p>{resource.lifecycle.reason}</p></div>
+    <section className="pas-detail-grid"><div className="pas-detail-main">
+      <MetaSection title={t('section.classification', '分类与用途')}><p>{entry.classification.rationale}</p><p><b>{t('discovery.contentKind', '历史记录内容类型')}</b> {t(`discovery.kind.${entry.content_kind}`, entry.content_kind)}</p><p><b>{t('field.domains', '领域')}</b> {entry.classification.domains.join(' · ') || '—'}</p><p><b>{t('field.formats', '格式')}</b> {entry.classification.formats.join(' · ') || '—'}</p><p><b>{t('field.conventions', '约定')}</b> {entry.classification.conventions.join(' · ') || '—'}</p><p><b>{t('discovery.expected', '历史类别提示的组成类型（未核验）')}</b> {entry.expected_components.join(' · ') || '—'}</p></MetaSection>
+      <MetaSection title={t('discovery.gaps', '待核查与缺失信息')}><ul>{(entry.missing.length ? entry.missing : ['尚待审核来源、许可和内容状态。']).map((item) => <li key={item}>{item}</li>)}</ul></MetaSection>
+      <MetaSection title={t('discovery.legacy', '历史目录记录')}><dl>{legacyRows.filter(([, value]) => value !== null).map(([key, value]) => <React.Fragment key={key}><dt>{t(key, key)}</dt><dd>{value}</dd></React.Fragment>)}</dl><p>{t('discovery.historyDisclaimer', '历史来源标签仅保留原记录信息，不代表已核验官方身份或作者身份。')}</p><p><b>{t('legacy.key', '历史条目键')}</b> {entry.legacy_keys.join(' · ')}</p></MetaSection>
+    </div><aside className="pas-detail-aside">
+      <MetaSection title={t('section.sourceRights', '原始来源与权利')}>
+        <p><b>{t('discovery.sourceChannel', '收录来源')}</b> {source ? <a href={stableRoute('source', source.id)}>{source.name}</a> : entry.channel_source ?? '未知'}</p>
+        {sourceUrl ? <p><a data-discovery-source href={sourceUrl} target="_blank" rel="noreferrer" onClick={(event) => onHostLink(event, sourceUrl)}>{t('discovery.sourceLink', '发现线索链接 ↗')}</a></p> : <p>{t('discovery.noSourceUrl', '尚未定位到具体内容来源链接')}</p>}
+        <p className="pas-caution">{t('discovery.rightsDisclaimer', '作者、许可、上游路径和可安装性均未通过发现索引确认。')}</p>
+      </MetaSection>
+    </aside></section>
+  </article>;
+}
+
+function ResourceDetail({ resource, discoveryAliases, sourceRecords, host, availableForHost, catalog, operationError, onOperation, onLoadPreview, previewState, previewText, onHostLink }: {
+  resource: Resource; discoveryAliases: BrowseResource['discovery_aliases']; sourceRecords: Catalog['sources']['sources']; host?: HostAdapter; availableForHost: boolean; catalog: Catalog; operationError: string;
   onOperation: (action: 'add' | 'install' | 'apply' | 'configure', resource: Resource) => Promise<void>;
   onLoadPreview: (resource: Resource, index: number, preview: Resource['previews'][number]) => Promise<void>;
   previewState: Record<string, 'loading' | 'error' | 'ready'>; previewText: Record<string, string>;
@@ -470,6 +509,15 @@ function ResourceDetail({ resource, sourceRecords, host, availableForHost, catal
         return <Preview key={`${preview.url}-${index}`} resource={resource} preview={preview} index={index} state={previewState[`${resource.id}:${index}`]} text={previewText[`${resource.id}:${index}`]} onLoad={() => void onLoadPreview(resource, index, preview)} onHostPreview={host ? () => host.preview.open(resource, preview.url) : undefined} onHostLink={onHostLink} />;
       })}</div>}
     </section>
+    {discoveryAliases && discoveryAliases.length > 0 && <section className="pas-discovery-aliases"><MetaSection title={t('discovery.aliases', '关联发现记录')}>{discoveryAliases.map((entry) => {
+      const sourceUrl = entry.source_url && safeExternalUrl(entry.source_url) ? entry.source_url : undefined;
+      return <article data-discovery-alias key={entry.id}><h4>{entry.title}</h4><p>{entry.summary}</p><p>{entry.classification.category}{entry.classification.subtype ? ` · ${entry.classification.subtype}` : ''} · {t(`discovery.kind.${entry.content_kind}`, entry.content_kind)}</p>
+        {sourceUrl ? <p><a href={sourceUrl} target="_blank" rel="noreferrer" onClick={(event) => onHostLink(event, sourceUrl)}>{t('discovery.sourceLink', '发现线索链接 ↗')}</a></p> : <p>{t('discovery.noSourceUrl', '尚未定位到具体内容来源链接')}</p>}
+        <p><b>{t('discovery.sourceChannel', '收录来源')}</b> {entry.channel_source ?? '未知'} · <b>{t('legacy.key', '历史条目键')}</b> {entry.legacy_keys.join(' · ')}</p>
+        <p><b>{t('legacy.source_label', '历史来源标签')}</b> {entry.legacy.source_label ?? '未知'} · {t('discovery.historyDisclaimer', '历史来源标签仅保留原记录信息，不代表已核验官方身份或作者身份。')}</p>
+        {entry.missing.length > 0 && <ul>{entry.missing.map((item) => <li key={item}>{item}</li>)}</ul>}
+      </article>;
+    })}</MetaSection></section>}
     <section className="pas-detail-grid">
       <div className="pas-detail-main"><MetaSection title={t('section.classification', '分类与用途')}><p>{resource.summary}</p><p>{resource.purpose}</p><p><b>{t('field.domains', '领域')}</b> {resource.classification.domains.map(domainLabel).join(' · ')}</p><p><b>{t('field.formats', '格式')}</b> {resource.classification.formats.map(formatLabel).join(' · ')}</p></MetaSection>
         <MetaSection title={t('section.sourceRights', '原始来源与获取')}>
@@ -551,11 +599,14 @@ function SourceDetail({ source, catalog }: { source?: Catalog['sources']['source
   const t = useText();
   if (!source) return <div className="pas-state" role="status">{t('source.notFound', '找不到这个来源。')}<a href="#/">{t('detail.back', '返回目录')}</a></div>;
   const sourceResources = catalog.resources.resources.filter((resource) => resource.provenance.content_source === source.id);
+  const discoveries = (catalog.discovery?.entries ?? []).filter((entry) => entry.channel_source === source.id);
+  const platforms = source.id === catalog.discovery?.source_id ? catalog.discovery.platforms : [];
   return <article data-source-detail className="pas-detail pas-source-detail"><a className="pas-back-link" href="#/">{t('detail.back', '← 返回资源目录')}</a><p className="pas-eyebrow">{t('source.archive', '来源档案')}</p><h2>{source.name}</h2>
     <p>{t('source.access', '访问状态')}：{source.access === 'public' ? t('source.public', '公开') : source.access === 'restricted' ? t('source.restricted', '受限') : t('source.unknown', '未知')}</p><p>{t('source.roles', '来源角色')}：{source.roles.join(' · ') || t('source.unknown', '未说明')}</p>
     {source.access !== 'public' && <div className="pas-notice" role="note">{t('source.accessWarning', '来源访问受限或尚未确认公开。页面只展示已登记的公开元数据，不承诺来源内容可获取。')}</div>}
     {source.url && /^https?:\/\//i.test(source.url) && <p><a href={source.url} target="_blank" rel="noreferrer">{t('source.openWebsite', '打开来源网站 ↗')}</a></p>}
     <section className="pas-meta-section"><h3>{t('source.tracking', '来源追踪')}</h3><dl>{Object.entries(source.tracking).map(([key, value]) => <React.Fragment key={key}><dt>{key}</dt><dd>{Array.isArray(value) ? value.join(', ') : value ?? '—'}</dd></React.Fragment>)}</dl></section>
-    <section className="pas-meta-section"><h3>{t('source.resources', '目录中的资源')}</h3>{sourceResources.length === 0 ? <p>{t('source.noResources', '当前目录没有关联资源。')}</p> : <ul className="pas-source-resource-list">{sourceResources.map((resource) => <li key={resource.id}><a href={stableRoute('resource', resource.id)}>{resource.title}</a><span>{t(`lifecycle.${resource.lifecycle.state}`, human(resource.lifecycle.state))} · {t(`verification.${resource.verification.level}`, human(resource.verification.level))}</span></li>)}</ul>}</section>
+    <section className="pas-meta-section"><h3>{t('source.resources', '目录中的资源')}</h3>{sourceResources.length + discoveries.length === 0 ? <p>{t('source.noResources', '当前目录没有关联资源。')}</p> : <ul className="pas-source-resource-list">{sourceResources.map((resource) => <li key={resource.id}><a href={stableRoute('resource', resource.id)}>{resource.title}</a><span>{t(`lifecycle.${resource.lifecycle.state}`, human(resource.lifecycle.state))} · {t(`verification.${resource.verification.level}`, human(resource.verification.level))}</span></li>)}{discoveries.map((entry) => <li key={entry.id} data-discovery-record><a href={stableRoute('resource', entry.mapped_resource_id ?? entry.id)}>{entry.title}</a><span>{entry.mapped_resource_id ? t('discovery.mappedTarget', '已关联资源：{id}').replace('{id}', entry.mapped_resource_id) : t('discovery.origin', '发现线索')} · {t(`discovery.kind.${entry.content_kind}`, entry.content_kind)}</span></li>)}</ul>}</section>
+    {platforms.length > 0 && <section className="pas-meta-section"><h3>{t('discovery.platforms', '历史来源平台')} <small>{t('discovery.platformCount', '{count} 个平台来源（不计入资源数）').replace('{count}', String(platforms.length))}</small></h3><p>{t('discovery.platformDisclaimer', '平台名称与来源标签保留自历史目录记录，未单独核验官方身份。')}</p><ul className="pas-source-resource-list">{platforms.map((platform) => <li key={platform.id} data-platform-record><span><b>{platform.name}</b><small>{platform.summary}</small>{platform.source_label && <small>历史标签：{platform.source_label}</small>}</span>{platform.url && safeExternalUrl(platform.url) ? <a href={platform.url} target="_blank" rel="noreferrer">{t('source.openWebsite', '打开来源网站 ↗')}</a> : <span>{platform.legacy_key}</span>}</li>)}</ul></section>}
   </article>;
 }

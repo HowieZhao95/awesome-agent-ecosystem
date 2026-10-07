@@ -58,3 +58,20 @@ npm run check:host
 ## 框架身份维护
 
 2026-10-07 用户追加模板与风格解耦裁定，正本定义与文件角色见 architecture。上游重复的视觉入口不直接新增模板；先核对是否共享同一框架、只有外观差异，或属于调用框架的任务配方。来源工具仍只输出差异提案，不能自动把 SKILL.md/HTML 示例判为框架。
+
+## 完整浏览覆盖
+
+历史发现队列由 `scripts/discovery-index.py` 只读生成独立发现索引，随 `npm run generate` 纳入公开目录。它保留逐条去向、输入哈希和未知内容出处；语义覆盖通过 `data/discovery/classification-overrides.yaml` 审查。来源可浏览与资源可安装分别判断，不因目录地址不够具体而让整个历史队列在UI消失。
+
+OpenDesign框架/Skill的全入口清单由 `scripts/opendesign-inventory.py` 按固定归档生成；人工审核提案后才写资源正本，主题入口不新增模板身份。贡献与更新需要核对777旧条目和上游入口的覆盖报告，不能只对数量总和或几项夹具做验收。
+
+本轮覆盖结果和数量以 [完整目录验收](docs/evidence/complete-directory/acceptance.md) 为准。旧777条和26平台不因未审核而消失；发现条目的状态与安装资格分别维护。
+
+维护命令示例（先运行常规生成/测试）：
+
+```sh
+python scripts/discovery-index.py --data data/discovery/legacy-v2.yaml --resources data/resources.yaml --categories data/categories.yaml --overrides data/discovery/classification-overrides.yaml --output /tmp/legacy-review-index.json
+python scripts/opendesign-inventory.py --archive /path/to/open-design-53231d40b778d88eba23f35547bf99485d3ae9fc.tar.gz --resource-data data/resources.yaml --json /tmp/opendesign-review.json --coverage /tmp/opendesign-review.md
+```
+
+需要复现某次提案时使用显式 `--resource-data-ref <commit>` 读取当时的资源基线；默认读取当前正本用于新维护，不能把合入后的条目数与旧提案输入混为一谈。CLI只产生提案，不修改已审核数据。不要把这些一次性读取当作阶段5持续调度已上线。

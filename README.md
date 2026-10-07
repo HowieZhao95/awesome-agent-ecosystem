@@ -28,7 +28,7 @@ Use an available port among 3000/3001; the server fails rather than silently swi
 
 The store shares its public UI and catalog logic with a minimal host example. Account integration and migration of the existing ThusDesign stores are Phase 2+ work.
 See [host integration](docs/host-integration.md), [source tools](docs/source-tools.md), [maintenance](MAINTENANCE.md), and [contribution guidelines](CONTRIBUTING.md).
-Generated outputs read the three YAML source files. Resource approval, usage verification and publication remain separate.
+Generated outputs read the resource source files and the public discovery queue. Discovery visibility does not grant resource approval, usage verification or publication.
 
 ## Categories
 
@@ -52,6 +52,28 @@ Templates are reusable content and code frameworks. Their examples are reference
 | [Web Prototype](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/web-prototype/SKILL.md) (`opendesign.web-prototype`) | prototype | curated | candidate | source-inspected | — | verified |
 | [HTML Deck 内容与代码框架](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt/SKILL.md) (`opendesign.html-ppt`) | deck | curated | candidate | source-inspected | — | verified |
 | [Live Dashboard](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/live-dashboard/SKILL.md) (`opendesign.live-dashboard`) | dashboard | curated | candidate | source-inspected | — | verified |
+| [flowai-live-dashboard-template](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/flowai-live-dashboard-template/SKILL.md) (`opendesign.flowai-live-dashboard-template`) | dashboard | curated | candidate | source-inspected | — | unknown |
+| [Write a Brand-to-Revenue Story like a Growth Strategy Lead](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/guizang-ppt/SKILL.md) (`opendesign.guizang-ppt`) | deck | curated | candidate | source-inspected | — | unknown |
+| [Write an Investor Pitch Book like a Growth-Equity Analyst](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/ib-pitch-book/SKILL.md) (`opendesign.ib-pitch-book`) | deck | curated | candidate | source-inspected | — | unknown |
+| [live-artifact](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/live-artifact/SKILL.md) (`opendesign.live-artifact`) | dashboard | curated | candidate | source-inspected | — | unknown |
+| [mobile-app](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/mobile-app/SKILL.md) (`opendesign.mobile-app`) | prototype | curated | candidate | source-inspected | — | unknown |
+| [Write a Brand-Story Deck like a Founder Storyteller](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/open-design-landing-deck/SKILL.md) (`opendesign.open-design-landing-deck`) | deck | curated | candidate | source-inspected | — | unknown |
+| [open-design-landing](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/open-design-landing/SKILL.md) (`opendesign.open-design-landing`) | prototype | curated | candidate | source-inspected | — | unknown |
+| [Write a Feature Business Case like a Principal PM](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/replit-deck/SKILL.md) (`opendesign.replit-deck`) | deck | curated | candidate | source-inspected | — | unknown |
+| [Write an Operating Review like a Disciplined COO](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/simple-deck/SKILL.md) (`opendesign.simple-deck`) | deck | curated | candidate | source-inspected | — | unknown |
+| [social-media-matrix-tracker-template](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/social-media-matrix-tracker-template/SKILL.md) (`opendesign.social-media-matrix-tracker-template`) | dashboard | curated | candidate | source-inspected | — | unknown |
+| [trading-analysis-dashboard-template](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/trading-analysis-dashboard-template/SKILL.md) (`opendesign.trading-analysis-dashboard-template`) | dashboard | curated | candidate | source-inspected | — | unknown |
+| [waitlist-page](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/waitlist-page/SKILL.md) (`opendesign.waitlist-page`) | prototype | curated | candidate | source-inspected | — | unknown |
+| [8-bit-orbit-video-template](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/8-bit-orbit-video-template/SKILL.md) (`opendesign.8-bit-orbit-video-template`) | motion-graphics | curated | candidate | source-inspected | — | unknown |
+| [chat-motion-overlay](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/chat-motion-overlay/SKILL.md) (`opendesign.chat-motion-overlay`) | motion-graphics | curated | candidate | source-inspected | — | unknown |
+| [digits-fintech-swiss-template](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/digits-fintech-swiss-template/SKILL.md) (`opendesign.digits-fintech-swiss-template`) | motion-graphics | curated | candidate | source-inspected | — | unknown |
+| [editorial-burgundy-principles-template](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/editorial-burgundy-principles-template/SKILL.md) (`opendesign.editorial-burgundy-principles-template`) | motion-graphics | curated | candidate | source-inspected | — | unknown |
+| [field-notes-editorial-template](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/field-notes-editorial-template/SKILL.md) (`opendesign.field-notes-editorial-template`) | motion-graphics | curated | candidate | source-inspected | — | unknown |
+| [html-ppt-retro-quarterly-review](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/html-ppt-retro-quarterly-review/SKILL.md) (`opendesign.html-ppt-retro-quarterly-review`) | motion-graphics | curated | candidate | source-inspected | — | unknown |
+| [release-notes-one-pager](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/release-notes-one-pager/SKILL.md) (`opendesign.release-notes-one-pager`) | document | curated | candidate | source-inspected | — | unknown |
+| [swiss-creative-mode-template](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/swiss-creative-mode-template/SKILL.md) (`opendesign.swiss-creative-mode-template`) | motion-graphics | curated | candidate | source-inspected | — | unknown |
+| [swiss-user-research-video-template](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/swiss-user-research-video-template/SKILL.md) (`opendesign.swiss-user-research-video-template`) | motion-graphics | curated | candidate | source-inspected | — | unknown |
+| [weread-year-in-review-video-template](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/weread-year-in-review-video-template/SKILL.md) (`opendesign.weread-year-in-review-video-template`) | motion-graphics | curated | candidate | source-inspected | — | unknown |
 
 <a id="design-systems"></a>
 ### 设计系统
@@ -234,6 +256,175 @@ Design-system profiles link the actual manifest, design rules and token CSS file
 | [Remotion Render](https://github.com/remotion-dev/skills/blob/473352613039e718e46655a26df224851e84c4aa/skills/remotion-render/SKILL.md) (`remotion.render`) | — | curated | candidate | source-inspected | — | unknown |
 | [ThusDesign Inspiration Scout](https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/packages/ai/skills/inspiration-scout/SKILL.md) (`thusdesign.inspiration-scout`) | — | curated | candidate | source-inspected | — | unknown |
 | [Device Showcase Skill](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/mockup-device-3d/SKILL.md) (`opendesign.mockup-device-3d`) | — | curated | candidate | source-inspected | — | verified |
+| [audio-jingle](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/audio-jingle/SKILL.md) (`opendesign.audio-jingle`) | — | curated | candidate | source-inspected | — | unknown |
+| [blog-post](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/blog-post/SKILL.md) (`opendesign.blog-post`) | — | curated | candidate | source-inspected | — | unknown |
+| [clinical-case-report](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/clinical-case-report/SKILL.md) (`opendesign.clinical-case-report`) | — | curated | candidate | source-inspected | — | unknown |
+| [contact-widget](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/contact-widget/SKILL.md) (`opendesign.contact-widget`) | — | curated | candidate | source-inspected | — | unknown |
+| [critique](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/critique/SKILL.md) (`opendesign.critique`) | — | curated | candidate | source-inspected | — | unknown |
+| [dashboard](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/dashboard/SKILL.md) (`opendesign.dashboard`) | — | curated | candidate | source-inspected | — | unknown |
+| [dating-web](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/dating-web/SKILL.md) (`opendesign.dating-web`) | — | curated | candidate | source-inspected | — | unknown |
+| [dcf-valuation](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/dcf-valuation/SKILL.md) (`opendesign.dcf-valuation`) | — | curated | candidate | source-inspected | — | unknown |
+| [digital-eguide](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/digital-eguide/SKILL.md) (`opendesign.digital-eguide`) | — | curated | candidate | source-inspected | — | unknown |
+| [email-marketing](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/email-marketing/SKILL.md) (`opendesign.email-marketing`) | — | curated | candidate | source-inspected | — | unknown |
+| [eng-runbook](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/eng-runbook/SKILL.md) (`opendesign.eng-runbook`) | — | curated | candidate | source-inspected | — | unknown |
+| [finance-report](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/finance-report/SKILL.md) (`opendesign.finance-report`) | — | curated | candidate | source-inspected | — | unknown |
+| [gamified-app](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/gamified-app/SKILL.md) (`opendesign.gamified-app`) | — | curated | candidate | source-inspected | — | unknown |
+| [github-dashboard](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/github-dashboard/SKILL.md) (`opendesign.github-dashboard`) | — | curated | candidate | source-inspected | — | unknown |
+| [hr-onboarding](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/hr-onboarding/SKILL.md) (`opendesign.hr-onboarding`) | — | curated | candidate | source-inspected | — | unknown |
+| [hyperframes](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/hyperframes/SKILL.md) (`opendesign.hyperframes`) | — | curated | candidate | source-inspected | — | unknown |
+| [invoice](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/invoice/SKILL.md) (`opendesign.invoice`) | — | curated | candidate | source-inspected | — | unknown |
+| [kami-landing](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/kami-landing/SKILL.md) (`opendesign.kami-landing`) | — | curated | candidate | source-inspected | — | unknown |
+| [kanban-board](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/kanban-board/SKILL.md) (`opendesign.kanban-board`) | — | curated | candidate | source-inspected | — | unknown |
+| [last30days](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/last30days/SKILL.md) (`opendesign.last30days`) | — | curated | candidate | source-inspected | — | unknown |
+| [magazine-poster](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/magazine-poster/SKILL.md) (`opendesign.magazine-poster`) | — | curated | candidate | source-inspected | — | unknown |
+| [meeting-notes](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/meeting-notes/SKILL.md) (`opendesign.meeting-notes`) | — | curated | candidate | source-inspected | — | unknown |
+| [mobile-onboarding](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/mobile-onboarding/SKILL.md) (`opendesign.mobile-onboarding`) | — | curated | candidate | source-inspected | — | unknown |
+| [orbit-general](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/orbit-general/SKILL.md) (`opendesign.orbit-general`) | — | curated | candidate | source-inspected | — | unknown |
+| [orbit-github](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/orbit-github/SKILL.md) (`opendesign.orbit-github`) | — | curated | candidate | source-inspected | — | unknown |
+| [orbit-gmail](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/orbit-gmail/SKILL.md) (`opendesign.orbit-gmail`) | — | curated | candidate | source-inspected | — | unknown |
+| [orbit-linear](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/orbit-linear/SKILL.md) (`opendesign.orbit-linear`) | — | curated | candidate | source-inspected | — | unknown |
+| [orbit-notion](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/orbit-notion/SKILL.md) (`opendesign.orbit-notion`) | — | curated | candidate | source-inspected | — | unknown |
+| [pm-spec](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/pm-spec/SKILL.md) (`opendesign.pm-spec`) | — | curated | candidate | source-inspected | — | unknown |
+| [pricing-page](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/pricing-page/SKILL.md) (`opendesign.pricing-page`) | — | curated | candidate | source-inspected | — | unknown |
+| [saas-landing](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/saas-landing/SKILL.md) (`opendesign.saas-landing`) | — | curated | candidate | source-inspected | — | unknown |
+| [social-media-dashboard](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/social-media-dashboard/SKILL.md) (`opendesign.social-media-dashboard`) | — | curated | candidate | source-inspected | — | unknown |
+| [sprite-animation](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/sprite-animation/SKILL.md) (`opendesign.sprite-animation`) | — | curated | candidate | source-inspected | — | unknown |
+| [team-okrs](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/team-okrs/SKILL.md) (`opendesign.team-okrs`) | — | curated | candidate | source-inspected | — | unknown |
+| [tweaks](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/tweaks/SKILL.md) (`opendesign.tweaks`) | — | curated | candidate | source-inspected | — | unknown |
+| [video-shortform](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/video-shortform/SKILL.md) (`opendesign.video-shortform`) | — | curated | candidate | source-inspected | — | unknown |
+| [webgl-experience](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/webgl-experience/SKILL.md) (`opendesign.webgl-experience`) | — | curated | candidate | source-inspected | — | unknown |
+| [Run a Metrics Standup like a Data-Driven Ops Lead](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/weekly-update/SKILL.md) (`opendesign.weekly-update`) | — | curated | candidate | source-inspected | — | unknown |
+| [wireframe-annotated](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/wireframe-annotated/SKILL.md) (`opendesign.wireframe-annotated`) | — | curated | candidate | source-inspected | — | unknown |
+| [wireframe-greybox](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/wireframe-greybox/SKILL.md) (`opendesign.wireframe-greybox`) | — | curated | candidate | source-inspected | — | unknown |
+| [wireframe-mobile-flow](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/wireframe-mobile-flow/SKILL.md) (`opendesign.wireframe-mobile-flow`) | — | curated | candidate | source-inspected | — | unknown |
+| [wireframe-sketch](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/wireframe-sketch/SKILL.md) (`opendesign.wireframe-sketch`) | — | curated | candidate | source-inspected | — | unknown |
+| [worker-visualizer](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/worker-visualizer/SKILL.md) (`opendesign.worker-visualizer`) | — | curated | candidate | source-inspected | — | unknown |
+| [x-research](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/x-research/SKILL.md) (`opendesign.x-research`) | — | curated | candidate | source-inspected | — | unknown |
+| [ad-creative](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/ad-creative/SKILL.md) (`opendesign.ad-creative`) | — | curated | candidate | source-inspected | — | unknown |
+| [agent-browser](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/agent-browser/SKILL.md) (`opendesign.agent-browser`) | — | curated | candidate | source-inspected | — | unknown |
+| [ai-music-album](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/ai-music-album/SKILL.md) (`opendesign.ai-music-album`) | — | curated | candidate | source-inspected | — | unknown |
+| [algorithmic-art](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/algorithmic-art/SKILL.md) (`opendesign.algorithmic-art`) | — | curated | candidate | source-inspected | — | unknown |
+| [apple-hig](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/apple-hig/SKILL.md) (`opendesign.apple-hig`) | — | curated | candidate | source-inspected | — | unknown |
+| [artifacts-builder](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/artifacts-builder/SKILL.md) (`opendesign.artifacts-builder`) | — | curated | candidate | source-inspected | — | unknown |
+| [brainstorming](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/brainstorming/SKILL.md) (`opendesign.brainstorming`) | — | curated | candidate | source-inspected | — | unknown |
+| [brand-guidelines](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/brand-guidelines/SKILL.md) (`opendesign.brand-guidelines`) | — | curated | candidate | source-inspected | — | unknown |
+| [brandkit](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/brandkit/SKILL.md) (`opendesign.brandkit`) | — | curated | candidate | source-inspected | — | unknown |
+| [industrial-brutalist-ui](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/brutalist-skill/SKILL.md) (`opendesign.brutalist-skill`) | — | curated | candidate | source-inspected | — | unknown |
+| [color-expert](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/color-expert/SKILL.md) (`opendesign.color-expert`) | — | curated | candidate | source-inspected | — | unknown |
+| [competitive-ads-extractor](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/competitive-ads-extractor/SKILL.md) (`opendesign.competitive-ads-extractor`) | — | curated | candidate | source-inspected | — | unknown |
+| [copywriting](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/copywriting/SKILL.md) (`opendesign.copywriting`) | — | curated | candidate | source-inspected | — | unknown |
+| [creative-director](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/creative-director/SKILL.md) (`opendesign.creative-director`) | — | curated | candidate | source-inspected | — | unknown |
+| [d3-visualization](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/d3-visualization/SKILL.md) (`opendesign.d3-visualization`) | — | curated | candidate | source-inspected | — | unknown |
+| [design-brief](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/design-brief/SKILL.md) (`opendesign.design-brief`) | — | curated | candidate | source-inspected | — | unknown |
+| [design-consultation](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/design-consultation/SKILL.md) (`opendesign.design-consultation`) | — | curated | candidate | source-inspected | — | unknown |
+| [design-md](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/design-md/SKILL.md) (`opendesign.design-md`) | — | curated | candidate | source-inspected | — | unknown |
+| [design-review](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/design-review/SKILL.md) (`opendesign.design-review`) | — | curated | candidate | source-inspected | — | unknown |
+| [doc](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/doc/SKILL.md) (`opendesign.doc`) | — | curated | candidate | source-inspected | — | unknown |
+| [docx](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/docx/SKILL.md) (`opendesign.docx`) | — | curated | candidate | source-inspected | — | unknown |
+| [domain-name-brainstormer](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/domain-name-brainstormer/SKILL.md) (`opendesign.domain-name-brainstormer`) | — | curated | candidate | source-inspected | — | unknown |
+| [Ecommerce Image Workflow](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/ecommerce-image-workflow/SKILL.md) (`opendesign.ecommerce-image-workflow`) | — | curated | candidate | source-inspected | — | unknown |
+| [emil-design-eng](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/emil-design-eng/SKILL.md) (`opendesign.emil-design-eng`) | — | curated | candidate | source-inspected | — | unknown |
+| [emilkowalski-motion](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/emilkowalski-motion/SKILL.md) (`opendesign.emilkowalski-motion`) | — | curated | candidate | source-inspected | — | unknown |
+| [enhance-prompt](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/enhance-prompt/SKILL.md) (`opendesign.enhance-prompt`) | — | curated | candidate | source-inspected | — | unknown |
+| [export-download-debugging](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/export-download-debugging/SKILL.md) (`opendesign.export-download-debugging`) | — | curated | candidate | source-inspected | — | unknown |
+| [fal-3d](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/fal-3d/SKILL.md) (`opendesign.fal-3d`) | — | curated | candidate | source-inspected | — | unknown |
+| [fal-generate](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/fal-generate/SKILL.md) (`opendesign.fal-generate`) | — | curated | candidate | source-inspected | — | unknown |
+| [fal-image-edit](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/fal-image-edit/SKILL.md) (`opendesign.fal-image-edit`) | — | curated | candidate | source-inspected | — | unknown |
+| [fal-kling-o3](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/fal-kling-o3/SKILL.md) (`opendesign.fal-kling-o3`) | — | curated | candidate | source-inspected | — | unknown |
+| [fal-lip-sync](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/fal-lip-sync/SKILL.md) (`opendesign.fal-lip-sync`) | — | curated | candidate | source-inspected | — | unknown |
+| [fal-realtime](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/fal-realtime/SKILL.md) (`opendesign.fal-realtime`) | — | curated | candidate | source-inspected | — | unknown |
+| [fal-restore](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/fal-restore/SKILL.md) (`opendesign.fal-restore`) | — | curated | candidate | source-inspected | — | unknown |
+| [fal-train](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/fal-train/SKILL.md) (`opendesign.fal-train`) | — | curated | candidate | source-inspected | — | unknown |
+| [fal-tryon](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/fal-tryon/SKILL.md) (`opendesign.fal-tryon`) | — | curated | candidate | source-inspected | — | unknown |
+| [fal-upscale](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/fal-upscale/SKILL.md) (`opendesign.fal-upscale`) | — | curated | candidate | source-inspected | — | unknown |
+| [fal-video-edit](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/fal-video-edit/SKILL.md) (`opendesign.fal-video-edit`) | — | curated | candidate | source-inspected | — | unknown |
+| [fal-vision](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/fal-vision/SKILL.md) (`opendesign.fal-vision`) | — | curated | candidate | source-inspected | — | unknown |
+| [faq-page](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/faq-page/SKILL.md) (`opendesign.faq-page`) | — | curated | candidate | source-inspected | — | unknown |
+| [figma-code-connect-components](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/figma-code-connect-components/SKILL.md) (`opendesign.figma-code-connect-components`) | — | curated | candidate | source-inspected | — | unknown |
+| [figma-create-design-system-rules](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/figma-create-design-system-rules/SKILL.md) (`opendesign.figma-create-design-system-rules`) | — | curated | candidate | source-inspected | — | unknown |
+| [figma-create-new-file](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/figma-create-new-file/SKILL.md) (`opendesign.figma-create-new-file`) | — | curated | candidate | source-inspected | — | unknown |
+| [figma-generate-design](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/figma-generate-design/SKILL.md) (`opendesign.figma-generate-design`) | — | curated | candidate | source-inspected | — | unknown |
+| [figma-generate-library](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/figma-generate-library/SKILL.md) (`opendesign.figma-generate-library`) | — | curated | candidate | source-inspected | — | unknown |
+| [figma-implement-design](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/figma-implement-design/SKILL.md) (`opendesign.figma-implement-design`) | — | curated | candidate | source-inspected | — | unknown |
+| [figma-use](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/figma-use/SKILL.md) (`opendesign.figma-use`) | — | curated | candidate | source-inspected | — | unknown |
+| [flutter-animating-apps](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/flutter-animating-apps/SKILL.md) (`opendesign.flutter-animating-apps`) | — | curated | candidate | source-inspected | — | unknown |
+| [frontend-design](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/frontend-design/SKILL.md) (`opendesign.frontend-design`) | — | curated | candidate | source-inspected | — | unknown |
+| [frontend-dev](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/frontend-dev/SKILL.md) (`opendesign.frontend-dev`) | — | curated | candidate | source-inspected | — | unknown |
+| [frontend-skill](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/frontend-skill/SKILL.md) (`opendesign.frontend-skill`) | — | curated | candidate | source-inspected | — | unknown |
+| [frontend-slides](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/frontend-slides/SKILL.md) (`opendesign.frontend-slides`) | — | curated | candidate | source-inspected | — | unknown |
+| [full-page-screenshot](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/full-page-screenshot/SKILL.md) (`opendesign.full-page-screenshot`) | — | curated | candidate | source-inspected | — | unknown |
+| [gif-sticker-maker](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/gif-sticker-maker/SKILL.md) (`opendesign.gif-sticker-maker`) | — | curated | candidate | source-inspected | — | unknown |
+| [gpt-taste](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/gpt-tasteskill/SKILL.md) (`opendesign.gpt-tasteskill`) | — | curated | candidate | source-inspected | — | unknown |
+| [gsap-core](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/gsap-core/SKILL.md) (`opendesign.gsap-core`) | — | curated | candidate | source-inspected | — | unknown |
+| [gsap-frameworks](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/gsap-frameworks/SKILL.md) (`opendesign.gsap-frameworks`) | — | curated | candidate | source-inspected | — | unknown |
+| [gsap-performance](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/gsap-performance/SKILL.md) (`opendesign.gsap-performance`) | — | curated | candidate | source-inspected | — | unknown |
+| [gsap-plugins](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/gsap-plugins/SKILL.md) (`opendesign.gsap-plugins`) | — | curated | candidate | source-inspected | — | unknown |
+| [gsap-react](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/gsap-react/SKILL.md) (`opendesign.gsap-react`) | — | curated | candidate | source-inspected | — | unknown |
+| [gsap-scrolltrigger](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/gsap-scrolltrigger/SKILL.md) (`opendesign.gsap-scrolltrigger`) | — | curated | candidate | source-inspected | — | unknown |
+| [gsap-timeline](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/gsap-timeline/SKILL.md) (`opendesign.gsap-timeline`) | — | curated | candidate | source-inspected | — | unknown |
+| [gsap-utils](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/gsap-utils/SKILL.md) (`opendesign.gsap-utils`) | — | curated | candidate | source-inspected | — | unknown |
+| [hand-drawn-diagrams](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/hand-drawn-diagrams/SKILL.md) (`opendesign.hand-drawn-diagrams`) | — | curated | candidate | source-inspected | — | unknown |
+| [hatch-pet](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/hatch-pet/SKILL.md) (`opendesign.hatch-pet`) | — | curated | candidate | source-inspected | — | unknown |
+| [image-enhancer](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/image-enhancer/SKILL.md) (`opendesign.image-enhancer`) | — | curated | candidate | source-inspected | — | unknown |
+| [image-to-code](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/image-to-code-skill/SKILL.md) (`opendesign.image-to-code-skill`) | — | curated | candidate | source-inspected | — | unknown |
+| [imagegen-frontend-mobile](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/imagegen-frontend-mobile/SKILL.md) (`opendesign.imagegen-frontend-mobile`) | — | curated | candidate | source-inspected | — | unknown |
+| [imagegen-frontend-web](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/imagegen-frontend-web/SKILL.md) (`opendesign.imagegen-frontend-web`) | — | curated | candidate | source-inspected | — | unknown |
+| [imagegen](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/imagegen/SKILL.md) (`opendesign.imagegen`) | — | curated | candidate | source-inspected | — | unknown |
+| [imagen](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/imagen/SKILL.md) (`opendesign.imagen`) | — | curated | candidate | source-inspected | — | unknown |
+| [impeccable-design-polish](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/impeccable-design-polish/SKILL.md) (`opendesign.impeccable-design-polish`) | — | curated | candidate | source-inspected | — | unknown |
+| [library-curator](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/library-curator/SKILL.md) (`opendesign.library-curator`) | — | curated | candidate | source-inspected | — | unknown |
+| [login-flow](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/login-flow/SKILL.md) (`opendesign.login-flow`) | — | curated | candidate | source-inspected | — | unknown |
+| [minimalist-ui](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/minimalist-skill/SKILL.md) (`opendesign.minimalist-skill`) | — | curated | candidate | source-inspected | — | unknown |
+| [minimax-docx](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/minimax-docx/SKILL.md) (`opendesign.minimax-docx`) | — | curated | candidate | source-inspected | — | unknown |
+| [minimax-pdf](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/minimax-pdf/SKILL.md) (`opendesign.minimax-pdf`) | — | curated | candidate | source-inspected | — | unknown |
+| [nanobanana-ppt](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/nanobanana-ppt/SKILL.md) (`opendesign.nanobanana-ppt`) | — | curated | candidate | source-inspected | — | unknown |
+| [OD Next Media Inputs](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/od-next-media-inputs/SKILL.md) (`opendesign.od-next-media-inputs`) | — | curated | candidate | source-inspected | — | unknown |
+| [full-output-enforcement](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/output-skill/SKILL.md) (`opendesign.output-skill`) | — | curated | candidate | source-inspected | — | unknown |
+| [paywall-upgrade-cro](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/paywall-upgrade-cro/SKILL.md) (`opendesign.paywall-upgrade-cro`) | — | curated | candidate | source-inspected | — | unknown |
+| [pdf](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/pdf/SKILL.md) (`opendesign.pdf`) | — | curated | candidate | source-inspected | — | unknown |
+| [pixelbin-media](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/pixelbin-media/SKILL.md) (`opendesign.pixelbin-media`) | — | curated | candidate | source-inspected | — | unknown |
+| [plan-design-review](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/plan-design-review/SKILL.md) (`opendesign.plan-design-review`) | — | curated | candidate | source-inspected | — | unknown |
+| [platform-design](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/platform-design/SKILL.md) (`opendesign.platform-design`) | — | curated | candidate | source-inspected | — | unknown |
+| [pptx-generator](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/pptx-generator/SKILL.md) (`opendesign.pptx-generator`) | — | curated | candidate | source-inspected | — | unknown |
+| [pptx-html-fidelity-audit](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/pptx-html-fidelity-audit/SKILL.md) (`opendesign.pptx-html-fidelity-audit`) | — | curated | candidate | source-inspected | — | unknown |
+| [pptx](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/pptx/SKILL.md) (`opendesign.pptx`) | — | curated | candidate | source-inspected | — | unknown |
+| [pr-feedback-quality-gate](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/pr-feedback-quality-gate/SKILL.md) (`opendesign.pr-feedback-quality-gate`) | — | curated | candidate | source-inspected | — | unknown |
+| [redesign-existing-projects](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/redesign-skill/SKILL.md) (`opendesign.redesign-skill`) | — | curated | candidate | source-inspected | — | unknown |
+| [Reference Design Contract](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/reference-design-contract/SKILL.md) (`opendesign.reference-design-contract`) | — | curated | candidate | source-inspected | — | unknown |
+| [remotion](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/remotion/SKILL.md) (`opendesign.remotion`) | — | curated | candidate | source-inspected | — | unknown |
+| [replicate](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/replicate/SKILL.md) (`opendesign.replicate`) | — | curated | candidate | source-inspected | — | unknown |
+| [research-decision-room](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/research-decision-room/SKILL.md) (`opendesign.research-decision-room`) | — | curated | candidate | source-inspected | — | unknown |
+| [review-animations](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/review-animations/SKILL.md) (`opendesign.review-animations`) | — | curated | candidate | source-inspected | — | unknown |
+| [screenshot](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/screenshot/SKILL.md) (`opendesign.screenshot`) | — | curated | candidate | source-inspected | — | unknown |
+| [screenshots-marketing](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/screenshots-marketing/SKILL.md) (`opendesign.screenshots-marketing`) | — | curated | candidate | source-inspected | — | unknown |
+| [shadcn-ui](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/shadcn-ui/SKILL.md) (`opendesign.shadcn-ui`) | — | curated | candidate | source-inspected | — | unknown |
+| [shader-dev](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/shader-dev/SKILL.md) (`opendesign.shader-dev`) | — | curated | candidate | source-inspected | — | unknown |
+| [slack-gif-creator](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/slack-gif-creator/SKILL.md) (`opendesign.slack-gif-creator`) | — | curated | candidate | source-inspected | — | unknown |
+| [slides](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/slides/SKILL.md) (`opendesign.slides`) | — | curated | candidate | source-inspected | — | unknown |
+| [high-end-visual-design](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/soft-skill/SKILL.md) (`opendesign.soft-skill`) | — | curated | candidate | source-inspected | — | unknown |
+| [sora](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/sora/SKILL.md) (`opendesign.sora`) | — | curated | candidate | source-inspected | — | unknown |
+| [speech](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/speech/SKILL.md) (`opendesign.speech`) | — | curated | candidate | source-inspected | — | unknown |
+| [stitch-loop](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/stitch-loop/SKILL.md) (`opendesign.stitch-loop`) | — | curated | candidate | source-inspected | — | unknown |
+| [stitch-design-taste](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/stitch-skill/SKILL.md) (`opendesign.stitch-skill`) | — | curated | candidate | source-inspected | — | unknown |
+| [swiftui-design](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/swiftui-design/SKILL.md) (`opendesign.swiftui-design`) | — | curated | candidate | source-inspected | — | unknown |
+| [design-taste-frontend-v1](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/taste-skill-v1/SKILL.md) (`opendesign.taste-skill-v1`) | — | curated | candidate | source-inspected | — | unknown |
+| [design-taste-frontend](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/taste-skill/SKILL.md) (`opendesign.taste-skill`) | — | curated | candidate | source-inspected | — | unknown |
+| [theme-factory](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/theme-factory/SKILL.md) (`opendesign.theme-factory`) | — | curated | candidate | source-inspected | — | unknown |
+| [threejs](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/threejs/SKILL.md) (`opendesign.threejs`) | — | curated | candidate | source-inspected | — | unknown |
+| [ui-skills](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/ui-skills/SKILL.md) (`opendesign.ui-skills`) | — | curated | candidate | source-inspected | — | unknown |
+| [ui-ux-pro-max](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/ui-ux-pro-max/SKILL.md) (`opendesign.ui-ux-pro-max`) | — | curated | candidate | source-inspected | — | unknown |
+| [venice-audio-music](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/venice-audio-music/SKILL.md) (`opendesign.venice-audio-music`) | — | curated | candidate | source-inspected | — | unknown |
+| [venice-audio-speech](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/venice-audio-speech/SKILL.md) (`opendesign.venice-audio-speech`) | — | curated | candidate | source-inspected | — | unknown |
+| [venice-image-edit](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/venice-image-edit/SKILL.md) (`opendesign.venice-image-edit`) | — | curated | candidate | source-inspected | — | unknown |
+| [venice-image-generate](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/venice-image-generate/SKILL.md) (`opendesign.venice-image-generate`) | — | curated | candidate | source-inspected | — | unknown |
+| [venice-video](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/venice-video/SKILL.md) (`opendesign.venice-video`) | — | curated | candidate | source-inspected | — | unknown |
+| [video-downloader](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/video-downloader/SKILL.md) (`opendesign.video-downloader`) | — | curated | candidate | source-inspected | — | unknown |
+| [web-artifacts-builder](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/web-artifacts-builder/SKILL.md) (`opendesign.web-artifacts-builder`) | — | curated | candidate | source-inspected | — | unknown |
+| [Website Clone](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/web-clone/SKILL.md) (`opendesign.web-clone`) | — | curated | candidate | source-inspected | — | unknown |
+| [web-design-guidelines](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/web-design-guidelines/SKILL.md) (`opendesign.web-design-guidelines`) | — | curated | candidate | source-inspected | — | unknown |
+| [wpds](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/wpds/SKILL.md) (`opendesign.wpds`) | — | curated | candidate | source-inspected | — | unknown |
+| [writing-guidelines](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/writing-guidelines/SKILL.md) (`opendesign.writing-guidelines`) | — | curated | candidate | source-inspected | — | unknown |
+| [youtube-clipper](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/youtube-clipper/SKILL.md) (`opendesign.youtube-clipper`) | — | curated | candidate | source-inspected | — | unknown |
 
 <a id="prompts"></a>
 ### 提示词
@@ -245,6 +436,10 @@ Design-system profiles link the actual manifest, design rules and token CSS file
 | [OpenDesign 仓库 AGENTS.md](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/AGENTS.md) (`opendesign.repo-agents-md`) | principle | curated | reference | source-inspected | — | unknown |
 | [Shinning GPT Image 2 Prompt Entry](https://x.com/Shinning1010/status/2048663549413921103) (`thusdesign.prompt.shinning-x2048663549413921103`) | image | curated | candidate | unverified | — | unknown |
 | [Atlas Seedance Video Prompt Entry](https://x.com/IHayato/status/2041839076354224178) (`thusdesign.prompt.atlas-2041839076354224178`) | video | curated | candidate | unverified | — | unknown |
+| [canvas-design](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/canvas-design/SKILL.md) (`opendesign.canvas-design`) | principle | curated | candidate | source-inspected | — | unknown |
+| [Guizang Editorial E-Ink Deck](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/deck-guizang-editorial/SKILL.md) (`opendesign.deck-guizang-editorial`) | principle | curated | candidate | source-inspected | — | unknown |
+| [Kami Parchment Document](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/doc-kami-parchment/SKILL.md) (`opendesign.doc-kami-parchment`) | principle | curated | candidate | source-inspected | — | unknown |
+| [marketing-psychology](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/marketing-psychology/SKILL.md) (`opendesign.marketing-psychology`) | principle | curated | candidate | source-inspected | — | unknown |
 
 <a id="plugins"></a>
 ### 插件
@@ -278,6 +473,862 @@ Design-system profiles link the actual manifest, design rules and token CSS file
 |---|---|---|---|
 | `cli` | `cli` | `contained` | `—` |
 | `stdio-mcp` | `mcp-server` | `contained` | `—` |
+
+## Discovery entries
+
+The store also browses the complete historical discovery queue. These are unverified leads, collections or reference entries; they are not approved installation records.
+
+859 indexed discovery entries (777 historical asset leads), 799 additional browser entries after existing-resource matches; 26 platforms are listed as discovery channels.
+
+### Discovery · 设计系统
+
+| Entry | Content kind | Discovery URL | Review |
+|---|---|---|---|
+| apple DESIGN.md (`discovery.legacy.35b9fc07c57978f2`) | specification | [Original listing](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/apple) | Unverified |
+| claude DESIGN.md (`discovery.legacy.b9bcd176c2bcfed1`) | specification | [Original listing](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/claude) | Unverified |
+| cohere DESIGN.md (`discovery.legacy.b89653573e8da9ef`) | specification | [Original listing](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/cohere) | Unverified |
+| coinbase DESIGN.md (`discovery.legacy.da5c83d0ecb0db8f`) | specification | [Original listing](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/coinbase) | Unverified |
+| cursor DESIGN.md (`discovery.legacy.985d84ff02afb336`) | specification | [Original listing](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/cursor) | Unverified |
+| dell-1996 DESIGN.md (`discovery.legacy.e682d225343d8db6`) | specification | [Original listing](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/dell-1996) | Unverified |
+| elevenlabs DESIGN.md (`discovery.legacy.c6e6602582759120`) | specification | [Original listing](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/elevenlabs) | Unverified |
+| ferrari DESIGN.md (`discovery.legacy.c9c78e6fb2e63b5f`) | specification | [Original listing](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/ferrari) | Unverified |
+| figma DESIGN.md (`discovery.legacy.5caffd2a852966db`) | specification | [Original listing](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/figma) | Unverified |
+| google-labs-code/design.md (`discovery.legacy.b6ef58c4d555e919`) | specification | [Original listing](https://github.com/google-labs-code/design.md) | Unverified |
+| linear.app DESIGN.md (`discovery.legacy.2bec6fc171e825f2`) | specification | [Original listing](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/linear.app) | Unverified |
+| mistral.ai DESIGN.md (`discovery.legacy.f662941ed96e6872`) | specification | [Original listing](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/mistral.ai) | Unverified |
+| nike DESIGN.md (`discovery.legacy.c7c20129055b5021`) | specification | [Original listing](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/nike) | Unverified |
+| nintendo-2001 DESIGN.md (`discovery.legacy.7837042d85f148ce`) | specification | [Original listing](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/nintendo-2001) | Unverified |
+| notion DESIGN.md (`discovery.legacy.f9a08941f3d044a5`) | specification | [Original listing](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/notion) | Unverified |
+| ollama DESIGN.md (`discovery.legacy.b3658573dc44ce68`) | specification | [Original listing](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/ollama) | Unverified |
+| posthog DESIGN.md (`discovery.legacy.2f3593d82e5792a4`) | specification | [Original listing](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/posthog) | Unverified |
+| raycast DESIGN.md (`discovery.legacy.dcad92612167fa50`) | specification | [Original listing](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/raycast) | Unverified |
+| revolut DESIGN.md (`discovery.legacy.345d850196051021`) | specification | [Original listing](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/revolut) | Unverified |
+| sentry DESIGN.md (`discovery.legacy.31bd55fa441daf25`) | specification | [Original listing](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/sentry) | Unverified |
+| spotify DESIGN.md (`discovery.legacy.5d0bbd0eff2fd168`) | specification | [Original listing](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/spotify) | Unverified |
+| Stitch (`discovery.legacy.dc912373f5cc6f01`) | reference | [Original listing](https://stitch.withgoogle.com) | Unverified |
+| stripe DESIGN.md (`discovery.legacy.7fc41a02874e56d2`) | specification | [Original listing](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/stripe) | Unverified |
+| supabase DESIGN.md (`discovery.legacy.e136040df01d7704`) | specification | [Original listing](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/supabase) | Unverified |
+| tesla DESIGN.md (`discovery.legacy.a2eed087aad2b65b`) | specification | [Original listing](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/tesla) | Unverified |
+| together.ai DESIGN.md (`discovery.legacy.113c4e27086db7e2`) | specification | [Original listing](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/together.ai) | Unverified |
+| vercel DESIGN.md (`discovery.legacy.25f651063837d409`) | specification | [Original listing](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/vercel) | Unverified |
+| W3C Design Tokens (DTCG) (`discovery.legacy.775125667ed3e54d`) | specification | [Original listing](https://github.com/design-tokens/community-group) | Unverified |
+| warp DESIGN.md (`discovery.legacy.eb1149ed50888a61`) | specification | [Original listing](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/warp) | Unverified |
+| wise DESIGN.md (`discovery.legacy.b840e5ee5ec626c2`) | specification | [Original listing](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/wise) | Unverified |
+| x.ai DESIGN.md (`discovery.legacy.64c68ccd8e36471b`) | specification | [Original listing](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/x.ai) | Unverified |
+
+### Discovery · Skills
+
+| Entry | Content kind | Discovery URL | Review |
+|---|---|---|---|
+| accessibility (`discovery.legacy.c215657d7543e683`) | asset | [Original listing](https://github.com/addyosmani/web-quality-skills) | Unverified |
+| Agentic-SEO-Skill (`discovery.legacy.98ac0a5d1dcf6645`) | asset | [Original listing](https://github.com/Bhanunamikaze/Agentic-SEO-Skill) | Unverified |
+| ai-employees (`discovery.legacy.940e33b86f96af10`) | asset | [Original listing](https://github.com/markfulton/ai-employees) | Unverified |
+| ai-shortfilm-prompts (`discovery.legacy.52790475f60e8a59`) | asset | [Original listing](https://github.com/jnMetaCode/ai-shortfilm-prompts) | Unverified |
+| ai-video-generator-claude (`discovery.legacy.2b06a9065737b280`) | asset | [Original listing](https://github.com/rediumvex/ai-video-generator-claude) | Unverified |
+| anti-defensive-writing-Skill (`discovery.legacy.05bf8804c5896fa4`) | asset | [Original listing](https://github.com/Adkid-Zephyr/anti-defensive-writing-Skill) | Unverified |
+| archify (`discovery.legacy.d9540cb00ec2628b`) | asset | [Original listing](https://github.com/tt-a1i/archify) | Unverified |
+| azure-prepare (`discovery.legacy.2531266c1ea2d067`) | asset | [Original listing](https://github.com/microsoft/azure-skills) | Unverified |
+| browser-search (`discovery.legacy.cc8da58c11e67b62`) | asset | [Original listing](https://github.com/Johell1NS/browser-search) | Unverified |
+| claude-ai-music-skills (`discovery.legacy.b0d5f32541ff61ff`) | asset | [Original listing](https://github.com/bitwize-music-studio/claude-ai-music-skills) | Unverified |
+| claude-android-skill (`discovery.legacy.4442e36c938db5b9`) | asset | [Original listing](https://github.com/dpconde/claude-android-skill) | Unverified |
+| claude-blog (`discovery.legacy.d1b22bad27fc8693`) | asset | [Original listing](https://github.com/AgriciDaniel/claude-blog) | Unverified |
+| claude-code-aso-skill (`discovery.legacy.30e646c34ecd6b90`) | asset | [Original listing](https://github.com/alirezarezvani/claude-code-aso-skill) | Unverified |
+| claude-skill-social-post (`discovery.legacy.3e0d1d3180850559`) | asset | [Original listing](https://github.com/Hao0321/claude-skill-social-post) | Unverified |
+| ClaudeForge (`discovery.legacy.12aa12d9091e2f35`) | asset | [Original listing](https://github.com/alirezarezvani/ClaudeForge) | Unverified |
+| compose-skill (`discovery.legacy.e5c038720217cd3b`) | asset | [Original listing](https://github.com/aldefy/compose-skill) | Unverified |
+| content-research-writer (`discovery.legacy.12cfa2d8195ab5b7`) | asset | [Original listing](https://github.com/ComposioHQ/awesome-claude-skills/tree/master/content-research-writer) | Unverified |
+| docx (`discovery.legacy.d9ebc79a73f48a43`) | asset | [Original listing](https://github.com/anthropics/skills/tree/main/skills/docx) | Unverified |
+| draw-your-font (`discovery.legacy.ff4d4ad8cd515b4b`) | asset | [Original listing](https://github.com/danilo-znamerovszkij/draw-your-font) | Unverified |
+| ELI5 (`discovery.legacy.696c4adbb133b44a`) | asset | [Original listing](https://github.com/DreambigOu/ELI5) | Unverified |
+| file-organizer (`discovery.legacy.b692e9a9453e7184`) | asset | [Original listing](https://github.com/ComposioHQ/awesome-claude-skills/tree/master/file-organizer) | Unverified |
+| frontend-slides (`discovery.legacy.aa2c2071ad5ddf4e`) | asset | [Original listing](https://github.com/zarazhangrui/frontend-slides) | Unverified |
+| geo-score (`discovery.legacy.e804afdeb981738b`) | asset | [Original listing](https://github.com/jianruntech/geo-score) | Unverified |
+| get-job.skill (`discovery.legacy.491a1830737508f2`) | asset | [Original listing](https://github.com/agentenatalie/get-job.skill) | Unverified |
+| gpt-image2-ppt-skills (`discovery.legacy.e13e4874aff7fd8d`) | asset | [Original listing](https://github.com/JuneYaooo/gpt-image2-ppt-skills) | Unverified |
+| guizang-social-card-skill (`discovery.legacy.3efaf4da3ae48672`) | asset | [Original listing](https://github.com/op7418/guizang-social-card-skill) | Unverified |
+| guizang-yingzao-skill (`discovery.legacy.37ed47ae86b0a83c`) | asset | [Original listing](https://github.com/op7418/guizang-yingzao-skill) | Unverified |
+| higgsfield-ai-prompt-skill (`discovery.legacy.b20816e904bc6bc9`) | asset | [Original listing](https://github.com/OSideMedia/higgsfield-ai-prompt-skill) | Unverified |
+| hue (`discovery.legacy.9ddf17c9bf233759`) | asset | [Original listing](https://github.com/dominikmartn/hue) | Unverified |
+| humanities-writing-companion (`discovery.legacy.db681b7b7ea0a1cf`) | asset | [Original listing](https://github.com/tizzy916/humanities-writing-companion) | Unverified |
+| humanizer-ru (`discovery.legacy.ac9c466032803f45`) | asset | [Original listing](https://github.com/ilyautov/humanizer-ru) | Unverified |
+| im-not-ai (`discovery.legacy.d0ca1cbbab15c9d7`) | asset | [Original listing](https://github.com/epoko77-ai/im-not-ai) | Unverified |
+| Imprint (`discovery.legacy.c0c46dee85781502`) | asset | [Original listing](https://github.com/ilang-ai/Imprint) | Unverified |
+| internet-court-skill (`discovery.legacy.0e5f9afe4ab3ef31`) | asset | [Original listing](https://github.com/internet-court/internet-court-skill) | Unverified |
+| invoice-organizer (`discovery.legacy.40abfd282b95bb06`) | asset | [Original listing](https://github.com/ComposioHQ/awesome-claude-skills/blob/master/invoice-organizer/SKILL.md) | Unverified |
+| ir-search (`discovery.legacy.9ec939a2713759fc`) | asset | [Original listing](https://github.com/djfksjd/ir-search) | Unverified |
+| korean-privacy-terms (`discovery.legacy.4287261d9011a369`) | asset | [Original listing](https://github.com/kimlawtech/korean-privacy-terms) | Unverified |
+| math-modeling-skills (`discovery.legacy.e86763420e97eae5`) | asset | [Original listing](https://github.com/Lupynow/math-modeling-skills) | Unverified |
+| mingli-master (`discovery.legacy.6da1db40c7caac4f`) | asset | [Original listing](https://github.com/learnwithu/mingli-master) | Unverified |
+| mono-color-skill (`discovery.legacy.c768e7381515372d`) | asset | [Original listing](https://github.com/yanliudesign/mono-color-skill) | Unverified |
+| nestjs-best-practices (`discovery.legacy.bc36d2bfd714e7a3`) | asset | [Original listing](https://github.com/kadajett/agent-nestjs-skills) | Unverified |
+| obsidian-second-brain (`discovery.legacy.9fe875e75cf67ebc`) | asset | [Original listing](https://github.com/eugeniughelbur/obsidian-second-brain) | Unverified |
+| offer-toolkit-skill (`discovery.legacy.d77800420a2d5510`) | asset | [Original listing](https://github.com/yanliudesign/offer-toolkit-skill) | Unverified |
+| open-steps (`discovery.legacy.6d72289b210ed1cc`) | asset | [Original listing](https://github.com/kharmanskyi/open-steps) | Unverified |
+| owasp-security (`discovery.legacy.47c7594e080f8767`) | asset | [Original listing](https://github.com/hoodini/ai-agents-skills) | Unverified |
+| pdf (`discovery.legacy.86bcfe9d6583b399`) | asset | [Original listing](https://github.com/anthropics/skills/tree/main/skills/pdf) | Unverified |
+| pixel2motion (`discovery.legacy.0dd7e1adbe13fece`) | asset | [Original listing](https://github.com/nolangz/pixel2motion) | Unverified |
+| playwright-best-practices-skill (`discovery.legacy.ba8b17e58e49a7a9`) | asset | [Original listing](https://github.com/currents-dev/playwright-best-practices-skill) | Unverified |
+| playwright-cli (`discovery.legacy.301893c361c96ef2`) | asset | [Original listing](https://github.com/microsoft/playwright-cli) | Unverified |
+| project-butler (`discovery.legacy.38d718e93383a037`) | asset | [Original listing](https://github.com/JamesShi96/project-butler) | Unverified |
+| prompt-architect (`discovery.legacy.9b1a4b5aed5a0c4f`) | asset | [Original listing](https://github.com/ckelsoe/prompt-architect) | Unverified |
+| react-best-practices (`discovery.legacy.e49119ec920a3820`) | asset | [Original listing](https://github.com/vercel-labs/agent-skills) | Unverified |
+| reddit-research-skills (`discovery.legacy.86de1428d7035955`) | asset | [Original listing](https://github.com/lignertys/reddit-research-skills) | Unverified |
+| review-claudemd (`discovery.legacy.1124082e3d47f80e`) | asset | [Original listing](https://github.com/ykdojo/claude-code-tips/tree/main/skills/review-claudemd) | Unverified |
+| skill-creator (`discovery.legacy.214408684d419d5c`) | asset | [Original listing](https://github.com/anthropics/skills/tree/main/skills/skill-creator) | Unverified |
+| storybloq (`discovery.legacy.ddbb4bec9eeffbcc`) | asset | [Original listing](https://github.com/Storybloq/storybloq) | Unverified |
+| superdesign-skill (`discovery.legacy.a3b5858443c2ed3c`) | asset | [Original listing](https://github.com/superdesigndev/superdesign-skill) | Unverified |
+| svg-diagram (`discovery.legacy.8610a6f05cea4599`) | asset | [Original listing](https://github.com/bybit-exchange/svg-diagram) | Unverified |
+| tailwind-design-system (`discovery.legacy.1d0013be8be56daa`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| task-observer (`discovery.legacy.f0b1ffdf9293caa9`) | asset | [Original listing](https://github.com/rebelytics/one-skill-to-rule-them-all) | Unverified |
+| Trail of Bits 安全技能集 (`discovery.legacy.d0cbbc47ab98ced4`) | asset | [Original listing](https://github.com/trailofbits/skills) | Unverified |
+| travel-plan-viz (`discovery.legacy.07767fb18c678578`) | asset | [Original listing](https://github.com/zexuanw958-svg/travel-plan-viz) | Unverified |
+| varlock-claude-skill (`discovery.legacy.12842143b9193962`) | asset | [Original listing](https://github.com/wrsmith108/varlock-claude-skill) | Unverified |
+| vibe-check (`discovery.legacy.8a64018143781cd6`) | asset | [Original listing](https://github.com/TexasBedouin/vibe-check) | Unverified |
+| visual-style-ppt-skill (`discovery.legacy.9170d55ded5da098`) | asset | [Original listing](https://github.com/irenerachel/visual-style-ppt-skill) | Unverified |
+| vox-director (`discovery.legacy.da7c32f8160a20f5`) | asset | [Original listing](https://github.com/Alisa0808/vox-director) | Unverified |
+| web-design (`discovery.legacy.1be968826bf57287`) | asset | [Original listing](https://github.com/xiaopu-ai/web-design) | Unverified |
+| web-performance-optimization (`discovery.legacy.b7b24ee0524d6c17`) | asset | [Original listing](https://github.com/sickn33/antigravity-awesome-skills) | Unverified |
+| webapp-testing (`discovery.legacy.dd839fc4a26c5529`) | asset | [Original listing](https://github.com/anthropics/skills/tree/main/skills/webapp-testing) | Unverified |
+| xiaoma-durex-copywriter (`discovery.legacy.a75d32292857ca1a`) | asset | [Original listing](https://github.com/crawfordxx/xiaoma-durex-copywriter) | Unverified |
+| xlsx (`discovery.legacy.cf9568c18a596aca`) | asset | [Original listing](https://github.com/anthropics/skills/tree/main/skills/xlsx) | Unverified |
+| Turn a Study into a Lab Meeting Deck like a Senior Postdoc (`discovery.opendesign.1375ca792f7d006d`) | reference | [Original listing](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/kami-deck/SKILL.md) | Unverified |
+| Magazine Article (`discovery.opendesign.814c4987655f71be`) | reference | [Original listing](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/article-magazine/SKILL.md) | Unverified |
+| Twitter Share Card (`discovery.opendesign.b9ace183a5517a10`) | reference | [Original listing](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/card-twitter/SKILL.md) | Unverified |
+| Xiaohongshu Card (`discovery.opendesign.8186be84551d241d`) | reference | [Original listing](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/card-xiaohongshu/SKILL.md) | Unverified |
+| Data Visualization Report (`discovery.opendesign.31522de4f1be8a7d`) | reference | [Original listing](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/data-report/SKILL.md) | Unverified |
+| Open-Slide 1920 Canvas Deck (`discovery.opendesign.a210881a0cd58720`) | reference | [Original listing](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/deck-open-slide-canvas/SKILL.md) | Unverified |
+| Swiss International Deck (`discovery.opendesign.71bba8a831e0bd32`) | reference | [Original listing](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/deck-swiss-international/SKILL.md) | Unverified |
+| NYT-Style Data Chart Frame (`discovery.opendesign.65f3def763c9c901`) | reference | [Original listing](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/frame-data-chart-nyt/SKILL.md) | Unverified |
+| Sticky Flowchart Frame (`discovery.opendesign.36237b2b507b8084`) | reference | [Original listing](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/frame-flowchart-sticky/SKILL.md) | Unverified |
+| Glitch Title Frame (`discovery.opendesign.5576d6a33a29cdce`) | reference | [Original listing](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/frame-glitch-title/SKILL.md) | Unverified |
+| Light-Leak Cinematic Frame (`discovery.opendesign.26df59bc52f707d3`) | reference | [Original listing](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/frame-light-leak-cinema/SKILL.md) | Unverified |
+| Liquid Background Hero (`discovery.opendesign.9e3e569acd9caed0`) | reference | [Original listing](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/frame-liquid-bg-hero/SKILL.md) | Unverified |
+| Logo Outro Frame (`discovery.opendesign.000773151b6986bc`) | reference | [Original listing](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/frame-logo-outro/SKILL.md) | Unverified |
+| macOS Notification Banner (`discovery.opendesign.9dccc74f87662f22`) | reference | [Original listing](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/frame-macos-notification/SKILL.md) | Unverified |
+| Marketing Poster (`discovery.opendesign.1b9ad2db666d12c6`) | reference | [Original listing](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/poster-hero/SKILL.md) | Unverified |
+| Keynote-style Slides (`discovery.opendesign.433468fbdd9f6f33`) | reference | [Original listing](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/ppt-keynote/SKILL.md) | Unverified |
+| Modern Resume (`discovery.opendesign.e7587f0fe01ee3b5`) | reference | [Original listing](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/resume-modern/SKILL.md) | Unverified |
+| Reddit Post Card (`discovery.opendesign.fe62c6ba89ad80f3`) | reference | [Original listing](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/social-reddit-card/SKILL.md) | Unverified |
+| Spotify Now-Playing Card (`discovery.opendesign.c1d9f07ee4a6dd2d`) | reference | [Original listing](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/social-spotify-card/SKILL.md) | Unverified |
+| X / Twitter Post Card (`discovery.opendesign.113eb83352126b66`) | reference | [Original listing](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/social-x-post-card/SKILL.md) | Unverified |
+| VFX Text Cursor (`discovery.opendesign.c1fe59817855c038`) | reference | [Original listing](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/vfx-text-cursor/SKILL.md) | Unverified |
+| Hyperframes Video (`discovery.opendesign.2cb501627d12c8e7`) | reference | [Original listing](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/video-hyperframes/SKILL.md) | Unverified |
+
+### Discovery · 提示词
+
+| Entry | Content kind | Discovery URL | Review |
+|---|---|---|---|
+| AGENTS.md 规范文本 (`discovery.legacy.d4ac757902ee862e`) | specification | [Original listing](https://agents.md) | Unverified |
+| ai-notes (`discovery.legacy.93822bf551f9ec1e`) | asset | [Original listing](https://github.com/swyxio/ai-notes) | Unverified |
+| Anthropic 交互式提示工程教程 (`discovery.legacy.f1c05b3b53cd77b7`) | collection | [Original listing](https://github.com/anthropics/prompt-eng-interactive-tutorial) | Unverified |
+| apache/airflow 的 AGENTS.md (`discovery.legacy.fd1dc0f7ee457a22`) | specification | [Original listing](https://github.com/apache/airflow/blob/main/AGENTS.md) | Unverified |
+| Awesome-Prompt-Engineering (`discovery.legacy.2c32a86cea56e67d`) | collection | [Original listing](https://github.com/promptslab/Awesome-Prompt-Engineering) | Unverified |
+| Brex Prompt Engineering 指南 (`discovery.legacy.ecb799f985c79aba`) | collection | [Original listing](https://github.com/brexhq/prompt-engineering) | Unverified |
+| Claude Cookbooks (`discovery.legacy.643d4b64d79aac47`) | collection | [Original listing](https://github.com/anthropics/claude-cookbooks) | Unverified |
+| codingagents.md 对比指南 (`discovery.legacy.4dcd12c1965bd00f`) | collection | [Original listing](https://codingagents.md/formats/agents-md/) | Unverified |
+| explainx.ai DESIGN.md Generator (`discovery.legacy.5fccb0b422986d9d`) | specification | [Original listing](https://explainx.ai/generate/design-md) | Unverified |
+| getdesign.md 定制提取 (`discovery.legacy.7944cb762ac2235e`) | collection | [Original listing](https://getdesign.md/request) | Unverified |
+| guidance (`discovery.legacy.bcd59eebc7cefddd`) | reference | [Original listing](https://github.com/guidance-ai/guidance) | Unverified |
+| OpenAI Cookbook (`discovery.legacy.5c513a88ff9cbc72`) | collection | [Original listing](https://github.com/openai/openai-cookbook) | Unverified |
+| openai/codex 的 AGENTS.md (`discovery.legacy.c407ac2b44cbc793`) | specification | [Original listing](https://github.com/openai/codex/blob/main/AGENTS.md) | Unverified |
+| Prompt-Engineering-Guide (`discovery.legacy.f75abdc378441143`) | collection | [Original listing](https://github.com/dair-ai/Prompt-Engineering-Guide) | Unverified |
+| PromptLayer (`discovery.legacy.4ea09906bd7d95eb`) | reference | [Original listing](https://www.promptlayer.com) | Unverified |
+| PromptPapers (`discovery.legacy.89e41eac67de40dc`) | collection | [Original listing](https://github.com/thunlp/PromptPapers) | Unverified |
+| PromptWizard (`discovery.legacy.05c933a18d80bd1a`) | reference | [Original listing](https://github.com/microsoft/PromptWizard) | Unverified |
+| r/PromptEngineering (`discovery.legacy.d85713950dd403d3`) | asset | [Original listing](https://www.reddit.com/r/PromptEngineering/) | Unverified |
+| 模板：Full-stack Monorepo (`discovery.legacy.e3eed4a317c35a5b`) | collection | [Original listing](https://github.com/ao92265/claude-code-playbook) | Unverified |
+| 模板：General / TypeScript (`discovery.legacy.051a1c1a1d2d2649`) | collection | [Original listing](https://github.com/ao92265/claude-code-playbook) | Unverified |
+| 模板：Go / Rust / RN / DevOps (`discovery.legacy.d516787eea8a14e9`) | collection | [Original listing](https://github.com/ao92265/claude-code-playbook) | Unverified |
+| 模板：Node.js API (`discovery.legacy.bef05d8895fd939d`) | collection | [Original listing](https://github.com/ao92265/claude-code-playbook) | Unverified |
+| 模板：Python (`discovery.legacy.be423a6f54d823b3`) | collection | [Original listing](https://github.com/ao92265/claude-code-playbook) | Unverified |
+| 模板：React / Next.js (`discovery.legacy.7fe6779298517318`) | collection | [Original listing](https://github.com/ao92265/claude-code-playbook) | Unverified |
+
+### Discovery · 插件
+
+| Entry | Content kind | Discovery URL | Review |
+|---|---|---|---|
+| 10x-fullstack-engineer (`discovery.legacy.95dc237ae94dcac1`) | asset | [Original listing](https://github.com/dhofheinz/open-plugins) | Unverified |
+| 12306-mcp (`discovery.legacy.9bb6fdbaeb80a5cd`) | asset | [Original listing](https://github.com/Joooook/12306-mcp) | Unverified |
+| 42crunch-api-security-testing (`discovery.legacy.23ce1f6a72506bc0`) | asset | [Original listing](https://42crunch.com) | Unverified |
+| @google/design.md CLI (`discovery.legacy.f6f2e2988e7ea50f`) | reference | [Original listing](https://github.com/google-labs-code/design.md) | Unverified |
+| activecampaign (`discovery.legacy.49a46651edd43a68`) | asset | [Original listing](https://www.activecampaign.com) | Unverified |
+| adobe-for-creativity (`discovery.legacy.588316748399b734`) | asset | [Original listing](https://github.com/adobe/skills/tree/main/plugins/creative-cloud/adobe-for-creativity) | Unverified |
+| Agent News (`discovery.legacy.50b1da6c6af0a99d`) | asset | [Original listing](https://theagenttimes.com) | Unverified |
+| agent-browser (`discovery.legacy.b973704630ad0467`) | asset | [Original listing](https://github.com/vercel-labs/agent-browser) | Unverified |
+| agent-orchestration (`discovery.legacy.744a8c4a568ec5e2`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| agent-sdk-dev (`discovery.legacy.c587623051347bbc`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-public/tree/main/plugins/agent-sdk-dev) | Unverified |
+| agentforce-adlc (`discovery.legacy.3586f4991fa6f0fe`) | asset | [Original listing](https://github.com/SalesforceAIResearch/agentforce-adlc) | Unverified |
+| AgentNDX (`discovery.legacy.702932e3246ce675`) | asset | [Original listing](https://agentndx.ai) | Unverified |
+| AI Research Assistant (`discovery.legacy.0804747ada4b44fc`) | asset | [Original listing](http://lit-review-assistant.streamlit.app) | Unverified |
+| ai-plugins (`discovery.legacy.340904007877fd23`) | asset | [Original listing](https://www.endorlabs.com) | Unverified |
+| Aider (`discovery.legacy.18dfdcc394b122cf`) | asset | [Original listing](https://github.com/Aider-AI/aider) | Unverified |
+| aikido (`discovery.legacy.54fb53e1818e9ad0`) | asset | [Original listing](https://github.com/AikidoSec/aikido-claude-plugin) | Unverified |
+| airtable (`discovery.legacy.3d3631424f229f4f`) | asset | [Original listing](https://www.airtable.com) | Unverified |
+| airwallex-agentos (`discovery.legacy.c665a7526a2e71db`) | asset | [Original listing](https://www.airwallex.com/docs) | Unverified |
+| airwallex-dev (`discovery.legacy.1ca23ec855b1d0fd`) | asset | [Original listing](https://www.airwallex.com/docs) | Unverified |
+| aiven (`discovery.legacy.7d133da58fa80626`) | asset | [Original listing](https://aiven.io) | Unverified |
+| Aiwyn Tax (`discovery.legacy.c258d5f0f13a0e43`) | asset | [Original listing](https://smithery.ai/servers/aiwyn) | Unverified |
+| all-skills (`discovery.legacy.7f94650d91749bae`) | asset | [Original listing](https://github.com/jamesrochabrun/skills) | Unverified |
+| alloydb (`discovery.legacy.ad5fdd15e1c6a52d`) | asset | [Original listing](https://cloud.google.com/alloydb) | Unverified |
+| alloydb-omni (`discovery.legacy.0424b2b1dc80e7c2`) | asset | [Original listing](https://github.com/gemini-cli-extensions/alloydb-omni) | Unverified |
+| alpaca-mcp-server (`discovery.legacy.8bc5766dbac7d303`) | asset | [Original listing](https://github.com/alpacahq/alpaca-mcp-server) | Unverified |
+| altimate-code (`discovery.legacy.8bbfe1c8d24f8401`) | asset | [Original listing](https://www.altimate.ai) | Unverified |
+| amazon-location-service (`discovery.legacy.1fb2365226960411`) | asset | [Original listing](https://github.com/awslabs/agent-plugins) | Unverified |
+| amazon-selling-partner (`discovery.legacy.40d95e2c4f23add1`) | asset | [Original listing](https://github.com/amzn/selling-partner-agentic-toolkit) | Unverified |
+| amd-skills (`discovery.legacy.74a6d483a683be63`) | asset | [Original listing](https://developer.amd.com/) | Unverified |
+| amplitude (`discovery.legacy.4fd52bd1aa16dff4`) | asset | [Original listing](https://github.com/amplitude/mcp-marketplace) | Unverified |
+| Android-MCP (`discovery.legacy.5638025501691542`) | asset | [Original listing](https://github.com/CursorTouch/Android-MCP) | Unverified |
+| annas-mcp (`discovery.legacy.c159e02efe9248fb`) | asset | [Original listing](https://github.com/iosifache/annas-mcp) | Unverified |
+| anysearch-mcp-server (`discovery.legacy.8fca06c978b351e8`) | asset | [Original listing](https://github.com/anysearch-ai/anysearch-mcp-server) | Unverified |
+| api-scaffolding (`discovery.legacy.30a391cf9eddab56`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| apify-mcp-server (`discovery.legacy.982edca81efe3124`) | asset | [Original listing](https://github.com/apify/apify-mcp-server) | Unverified |
+| apollo (`discovery.legacy.332c85d9e9917315`) | asset | [Original listing](https://www.apollo.io/) | Unverified |
+| apollo-skills (`discovery.legacy.58ae787ad4fe6f21`) | asset | [Original listing](https://www.apollographql.com) | Unverified |
+| application-performance (`discovery.legacy.d4276d4478876893`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| appwrite (`discovery.legacy.a3f52381d82fe3fd`) | asset | [Original listing](https://appwrite.io) | Unverified |
+| arcade-mcp (`discovery.legacy.8b46e42daa4e62bf`) | asset | [Original listing](https://github.com/ArcadeAI/arcade-mcp) | Unverified |
+| arxiv-mcp-server (`discovery.legacy.fed6ac3e075defcc`) | asset | [Original listing](https://github.com/blazickjp/arxiv-mcp-server) | Unverified |
+| asana (`discovery.legacy.eaff52d78b3ebe42`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/asana) | Unverified |
+| astronomer-data-agents (`discovery.legacy.c2904733a97d28ea`) | asset | [Original listing](https://github.com/astronomer/agents) | Unverified |
+| atlan (`discovery.legacy.0db2c29dc572938e`) | asset | [Original listing](https://docs.atlan.com/) | Unverified |
+| atlassian (`discovery.legacy.00ac3e0c6d3a6e0b`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official) | Unverified |
+| atlassian-mcp-server (`discovery.legacy.5eadf067fd4e579f`) | asset | [Original listing](https://github.com/atlassian/atlassian-mcp-server) | Unverified |
+| atlassian-twg-cli (`discovery.legacy.5e37bf8f66022cd7`) | asset | [Original listing](https://developer.atlassian.com/cloud/twg-cli/) | Unverified |
+| atomic-agents (`discovery.legacy.88407ee500b2f00e`) | asset | [Original listing](https://github.com/BrainBlend-AI/atomic-agents) | Unverified |
+| auth0 (`discovery.legacy.b25e36ba9f934765`) | asset | [Original listing](https://auth0.com) | Unverified |
+| authorprofilemcp (`discovery.legacy.2f7a524814b2ff19`) | asset | [Original listing](https://github.com/alperenkocyigit/AuthorProfileMCP) | Unverified |
+| AWS Docs and Regions (`discovery.legacy.2918066ce75e8609`) | asset | [Original listing](https://awslabs.github.io/mcp/servers/aws-knowledge-mcp-server/) | Unverified |
+| aws-agents (`discovery.legacy.afec21ddf9793a21`) | asset | [Original listing](https://github.com/aws/agent-toolkit-for-aws) | Unverified |
+| aws-agents-for-devsecops (`discovery.legacy.573da0a0382ddcf3`) | asset | [Original listing](https://github.com/aws/agent-toolkit-for-aws) | Unverified |
+| aws-amplify (`discovery.legacy.b5a48fab900e0f74`) | asset | [Original listing](https://github.com/awslabs/agent-plugins) | Unverified |
+| aws-core (`discovery.legacy.2ad5a432b68be108`) | asset | [Original listing](https://github.com/aws/agent-toolkit-for-aws) | Unverified |
+| aws-data-analytics (`discovery.legacy.4c3b3c136df0939f`) | asset | [Original listing](https://github.com/aws/agent-toolkit-for-aws) | Unverified |
+| aws-serverless (`discovery.legacy.f6b378801c445077`) | asset | [Original listing](https://github.com/awslabs/agent-plugins) | Unverified |
+| aws-startup-advisor (`discovery.legacy.904e9a3d20f511a0`) | asset | [Original listing](https://github.com/awslabs/startups) | Unverified |
+| aws-transform (`discovery.legacy.13bc79869800b54d`) | asset | [Original listing](https://github.com/awslabs/agent-plugins) | Unverified |
+| azure (`discovery.legacy.25cc82885ef58c87`) | asset | [Original listing](https://github.com/microsoft/azure-skills) | Unverified |
+| azure-cosmos-db-assistant (`discovery.legacy.d84ac29545b29dd3`) | asset | [Original listing](https://github.com/AzureCosmosDB/cosmosdb-claude-code-plugin) | Unverified |
+| azure-sql-developer (`discovery.legacy.0fce9ece9728a674`) | asset | [Original listing](https://github.com/microsoft/azure-sql-database-container) | Unverified |
+| backend-api-security (`discovery.legacy.6b6f21f15e2ca1bc`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| backend-development (`discovery.legacy.f814312422a64d4b`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| backtesting-arena (`discovery.legacy.2383b1942e3016c8`) | asset | [Original listing](https://tradingstrategies.work/api) | Unverified |
+| base44 (`discovery.legacy.85bd01a67f03d6c3`) | asset | [Original listing](https://docs.base44.com) | Unverified |
+| bigdata-com (`discovery.legacy.42355d0374131189`) | asset | [Original listing](https://docs.bigdata.com) | Unverified |
+| bigquery-data-analytics (`discovery.legacy.929761427aa10d38`) | asset | [Original listing](https://github.com/gemini-cli-extensions/bigquery-data-analytics) | Unverified |
+| bjj-belt-progress (`discovery.legacy.b25f72d730cd72ec`) | asset | [Original listing](https://bjj-belt-progress.web.app/) | Unverified |
+| blackrock-advisor-center-plugin (`discovery.legacy.1d11f75445846df8`) | asset | [Original listing](https://github.com/blackrock/advisor-center-agent-skills) | Unverified |
+| BMAD (`discovery.legacy.5bcdd54ab686cb89`) | asset | [Original listing](https://github.com/bmadcode/BMAD-METHOD) | Unverified |
+| BMKG MCP (`discovery.legacy.eb43429cb4359344`) | asset | [Original listing](https://bmkg-restapi.vercel.app) | Unverified |
+| Boar blockchain MCP (basic) (`discovery.legacy.a871ee85855d8066`) | asset | [Original listing](https://github.com/boar-network/blockchain-mcp) | Unverified |
+| boltz (`discovery.legacy.32448e0bdc108724`) | asset | [Original listing](https://boltz.bio) | Unverified |
+| box (`discovery.legacy.a1d76237ea762032`) | asset | [Original listing](https://github.com/box/skills) | Unverified |
+| Brave Search (`discovery.legacy.db4365de95a4071b`) | asset | [Original listing](https://brave.com/search/api/) | Unverified |
+| brave-search (`discovery.legacy.c8f2b88d1b3adc63`) | asset | [Original listing](https://github.com/modelcontextprotocol/servers-archived/tree/main/src/brave-search) | Unverified |
+| brightdata-mcp (`discovery.legacy.aab7015afdbe6f2c`) | asset | [Original listing](https://github.com/brightdata/brightdata-mcp) | Unverified |
+| brightdata-plugin (`discovery.legacy.8c6e827886c3b55e`) | asset | [Original listing](https://docs.brightdata.com) | Unverified |
+| browser-automation (`discovery.legacy.0cff5f0bc048e681`) | asset | [Original listing](https://github.com/browserbase/agent-browse) | Unverified |
+| browser-tools-mcp (`discovery.legacy.4ac0206f616253a0`) | asset | [Original listing](https://github.com/AgentDeskAI/browser-tools-mcp) | Unverified |
+| browser-use (`discovery.legacy.86345e92133093b2`) | asset | [Original listing](https://browser-use.com) | Unverified |
+| browser-use-mcp-server (`discovery.legacy.f838bcb143013603`) | asset | [Original listing](https://github.com/kontext-security/browser-use-mcp-server) | Unverified |
+| build-with-wordpress (`discovery.legacy.5d347c0889b03a22`) | asset | [Original listing](https://developer.wordpress.com/wordpress-com-claude-code-plugin/) | Unverified |
+| buildkite (`discovery.legacy.4545be6e61a22050`) | asset | [Original listing](https://buildkite.com) | Unverified |
+| business-analytics (`discovery.legacy.cf6ed64f059d8322`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| canva (`discovery.legacy.82ae0584f5e28459`) | asset | [Original listing](https://www.canva.com) | Unverified |
+| cap-rate-signals (`discovery.legacy.c01efe2c77f81a4e`) | asset | [Original listing](https://smithery.ai/servers/capratesignals/cap-rate-signals) | Unverified |
+| carbone-skill (`discovery.legacy.a3196f71380cd8d6`) | asset | [Original listing](https://carbone.io) | Unverified |
+| carta-cap-table (`discovery.legacy.35ab941c928d6770`) | asset | [Original listing](https://carta.com) | Unverified |
+| carta-crm (`discovery.legacy.a15d267cd37b6fd8`) | asset | [Original listing](https://carta.com) | Unverified |
+| carta-investors (`discovery.legacy.4c9afd20eadddd04`) | asset | [Original listing](https://carta.com) | Unverified |
+| catalyst-by-zoho (`discovery.legacy.cee1efea0133b474`) | asset | [Original listing](https://catalyst.zoho.com/) | Unverified |
+| ccexp (`discovery.legacy.65050ad4165105ba`) | asset | [Original listing](https://github.com/nyatinte/ccexp) | Unverified |
+| ccpi (`discovery.legacy.652157c5891f84bc`) | asset | [Original listing](https://github.com/jeremylongshore/claude-code-plugins-plus-skills) | Unverified |
+| ccusage (`discovery.legacy.f0b119315c4b21ed`) | asset | [Original listing](https://github.com/ryoppippi/ccusage) | Unverified |
+| cds-mcp (`discovery.legacy.038f999a54b2d1b2`) | asset | [Original listing](https://cap.cloud.sap/) | Unverified |
+| census-mcp-server (`discovery.legacy.21e0b95848969a59`) | asset | [Original listing](https://census.caseyjhand.com/mcp) | Unverified |
+| cheatengine-mcp-bridge (`discovery.legacy.4bb745baf3aa30cc`) | asset | [Original listing](https://github.com/miscusi-peek/cheatengine-mcp-bridge) | Unverified |
+| Chessagine (`discovery.legacy.dc105271dedcaca2`) | asset | [Original listing](https://smithery.ai/servers/jalpp/chessagine) | Unverified |
+| chrome-devtools-mcp (`discovery.legacy.907b4823d2bd5fa8`) | asset | [Original listing](https://github.com/ChromeDevTools/chrome-devtools-mcp) | Unverified |
+| chronograph-gp (`discovery.legacy.015880f889a192a0`) | asset | [Original listing](https://www.chronograph.pe/) | Unverified |
+| chronograph-lp (`discovery.legacy.3fa46bc421eddab9`) | asset | [Original listing](https://www.chronograph.pe/) | Unverified |
+| cicd-automation (`discovery.legacy.e72ffe99c4a17261`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| circle-skills (`discovery.legacy.e7a95d0ae547da4a`) | asset | [Original listing](https://www.circle.com) | Unverified |
+| circleback (`discovery.legacy.a383f161c8fe79ac`) | asset | [Original listing](https://github.com/circlebackai/claude-code-plugin.git) | Unverified |
+| cityparity (`discovery.legacy.c90b1c758c761afc`) | asset | [Original listing](https://cityparity.com/mcp/) | Unverified |
+| ckeditor (`discovery.legacy.b1ebf97926498290`) | asset | [Original listing](https://ckeditor.com) | Unverified |
+| clangd-lsp (`discovery.legacy.1339df2045da6124`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official) | Unverified |
+| Claude Code (`discovery.legacy.d892cf2f713ff6d2`) | asset | [Original listing](https://docs.anthropic.com/en/docs/claude-code) | Unverified |
+| claude-code-settings (`discovery.legacy.f01aace1dc99bd04`) | asset | [Original listing](https://github.com/feiskyer/claude-code-settings) | Unverified |
+| claude-code-setup (`discovery.legacy.dc40b555cf63cdc3`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-code-setup) | Unverified |
+| claude-flow (`discovery.legacy.20aaa6469e84bb4e`) | asset | [Original listing](https://github.com/ruvnet/claude-flow) | Unverified |
+| claude-md-management (`discovery.legacy.bf96b531c989601a`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-md-management) | Unverified |
+| claude-mem (`discovery.legacy.d2266924787fac5c`) | asset | [Original listing](https://github.com/thedotmack/claude-mem) | Unverified |
+| claude-plugins CLI (`discovery.legacy.8059270164b940bb`) | asset | [Original listing](https://claude-plugins.dev) | Unverified |
+| claude-security (`discovery.legacy.a868e0e34f22610e`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-security) | Unverified |
+| clay (`discovery.legacy.724f0392e02a7ef6`) | asset | [Original listing](https://github.com/clay-run/agent-plugins/tree/main/clay) | Unverified |
+| clickhouse (`discovery.legacy.ca7a0fe841858da5`) | asset | [Original listing](https://github.com/ClickHouse/clickhouse-claude-code-plugin) | Unverified |
+| clickhouse-best-practices (`discovery.legacy.a1aed1faaea15354`) | asset | [Original listing](https://clickhouse.com) | Unverified |
+| cloud-infrastructure (`discovery.legacy.560c45ee2d81deea`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| cloud-sql-mysql (`discovery.legacy.cc1c08cfedf0f039`) | asset | [Original listing](https://github.com/gemini-cli-extensions/cloud-sql-mysql) | Unverified |
+| cloud-sql-postgresql (`discovery.legacy.19f40e7f5c5af3ca`) | asset | [Original listing](https://cloud.google.com/sql) | Unverified |
+| cloud-sql-sqlserver (`discovery.legacy.ff787fd8ab9d1cd7`) | asset | [Original listing](https://github.com/gemini-cli-extensions/cloud-sql-sqlserver) | Unverified |
+| cloudflare (`discovery.legacy.b42ffffe80b2b673`) | asset | [Original listing](https://github.com/cloudflare/skills) | Unverified |
+| cloudinary (`discovery.legacy.e5c35d96bcb1ccd2`) | asset | [Original listing](https://cloudinary.com/documentation) | Unverified |
+| cmux (`discovery.legacy.2d9e5dabf1f35b0d`) | asset | [Original listing](https://github.com/craigsc/cmux) | Unverified |
+| cockroachdb (`discovery.legacy.37a9cb11fa7b8007`) | asset | [Original listing](https://github.com/cockroachdb/claude-plugin) | Unverified |
+| code-documentation (`discovery.legacy.63979843b0f70f8f`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| code-modernization (`discovery.legacy.8b301a293e93ae03`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/code-modernization) | Unverified |
+| code-refactoring (`discovery.legacy.8d7cd116cdaf29d2`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| code-review (`discovery.legacy.e51805b78ef29799`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official) | Unverified |
+| code-review-ai (`discovery.legacy.ba85def03dbcbc4c`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| code-simplifier (`discovery.legacy.f07021a9cee68291`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/code-simplifier) | Unverified |
+| codebase-cleanup (`discovery.legacy.7211fa7e8fcfe6db`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| codebase-memory-mcp (`discovery.legacy.352021da554736a2`) | asset | [Original listing](https://github.com/DeusData/codebase-memory-mcp) | Unverified |
+| coderabbit (`discovery.legacy.d15730ca1d476d9b`) | asset | [Original listing](https://github.com/coderabbitai/skills) | Unverified |
+| Codex CLI (`discovery.legacy.5a2654a443b035e6`) | asset | [Original listing](https://github.com/openai/codex) | Unverified |
+| coding-tools-mcp (`discovery.legacy.1c798a13dc939bce`) | asset | [Original listing](https://github.com/xyTom/coding-tools-mcp) | Unverified |
+| codspeed (`discovery.legacy.cf83663bc7b2641c`) | asset | [Original listing](https://codspeed.io) | Unverified |
+| Coin Railz (`discovery.legacy.335ea5dfede3739c`) | asset | [Original listing](https://coinrailz.com) | Unverified |
+| Colour Memory - Cultural Color Intelligence for AI (`discovery.legacy.ebb6a87b246dc024`) | asset | [Original listing](https://colourmemory.com) | Unverified |
+| commit-commands (`discovery.legacy.28ff288cdd650a2e`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-public/tree/main/plugins/commit-commands) | Unverified |
+| ComplianceCheckup (`discovery.legacy.6b7c07af31f4958f`) | asset | [Original listing](https://compliancecheckup.org/) | Unverified |
+| compound-engineering (`discovery.legacy.99e7784906f37991`) | asset | [Original listing](https://github.com/EveryInc/compound-engineering-plugin) | Unverified |
+| comprehensive-review (`discovery.legacy.58b5b8cf5511a357`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| confidence (`discovery.legacy.04c1fa660563e642`) | asset | [Original listing](https://confidence.spotify.com) | Unverified |
+| content-marketing (`discovery.legacy.f3313e84f90632e6`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| context-management (`discovery.legacy.60c2316c5b1e3203`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| context7 (`discovery.legacy.857b5e7dfaaec5d0`) | asset | [Original listing](https://github.com/upstash/context7) | Unverified |
+| context7-docs-fetcher (`discovery.legacy.75b9cf5da56663bc`) | asset | [Original listing](https://github.com/ananddtyagi/claude-code-marketplace) | Unverified |
+| convex (`discovery.legacy.3ab3ea2b761dfb69`) | asset | [Original listing](https://github.com/get-convex/convex-backend-skill) | Unverified |
+| crowdsec (`discovery.legacy.8645b48277a47a5a`) | asset | [Original listing](https://www.crowdsec.net) | Unverified |
+| crowdstrike-falcon-foundry (`discovery.legacy.8fe1371b3eb8d2b5`) | asset | [Original listing](https://github.com/CrowdStrike/foundry-skills) | Unverified |
+| crowdstrike-falcon-fusion (`discovery.legacy.00a7ccbc0cb4e7cd`) | asset | [Original listing](https://github.com/CrowdStrike/fusion-skills) | Unverified |
+| csharp-lsp (`discovery.legacy.0553b695c4cbef29`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official) | Unverified |
+| cultural-intelligence (`discovery.legacy.b57c0513e89d6b6a`) | asset | [Original listing](https://sincetmw.ai) | Unverified |
+| cwc-makers (`discovery.legacy.cb733abea0e3a37d`) | asset | [Original listing](https://claude.com/cwc-makers) | Unverified |
+| dash0 (`discovery.legacy.c0e34c4074763c8a`) | asset | [Original listing](https://dash0.com/) | Unverified |
+| data (`discovery.legacy.70923e4894fa82cc`) | asset | [Original listing](https://github.com/astronomer/agents) | Unverified |
+| Data Wallet Verification (`discovery.legacy.b16aad7340310e8f`) | asset | [Original listing](https://smithery.ai/servers/ThierryThevenet/talao) | Unverified |
+| data-agent-kit-starter-pack (`discovery.legacy.0ef0469e1ebc40d6`) | asset | [Original listing](https://github.com/gemini-cli-extensions/data-agent-kit-starter-pack) | Unverified |
+| data-engineering (`discovery.legacy.a23cb87eef7ca65f`) | asset | [Original listing](https://github.com/astronomer/agents) | Unverified |
+| database-design (`discovery.legacy.f12fd1d1f0782c71`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| databases-on-aws (`discovery.legacy.f124dee96276c78f`) | asset | [Original listing](https://github.com/awslabs/agent-plugins) | Unverified |
+| databricks (`discovery.legacy.f93a5bc88fc3497b`) | asset | [Original listing](https://developers.databricks.com/) | Unverified |
+| datadog (`discovery.legacy.2b05705117ff6244`) | asset | [Original listing](https://www.datadoghq.com/) | Unverified |
+| datagouv-mcp (`discovery.legacy.65ab9963c3e46807`) | asset | [Original listing](https://github.com/datagouv/datagouv-mcp) | Unverified |
+| datahub-skills (`discovery.legacy.d9bb8372b2b4279f`) | asset | [Original listing](https://datahub.com) | Unverified |
+| DataNexus MCP (`discovery.legacy.b1da72504a98a7ab`) | asset | [Original listing](https://datanexusmcp.com) | Unverified |
+| dataproc (`discovery.legacy.fa5925aa6c9e9cf8`) | asset | [Original listing](https://github.com/gemini-cli-extensions/dataproc) | Unverified |
+| datarobot-agent-skills (`discovery.legacy.2fc6fff1b4b5bc8e`) | asset | [Original listing](https://datarobot.com) | Unverified |
+| dataverse (`discovery.legacy.9e840abe94725663`) | asset | [Original listing](https://github.com/microsoft/Dataverse-skills) | Unverified |
+| davinci-resolve-mcp (`discovery.legacy.f8b3e51d31212a6b`) | asset | [Original listing](https://github.com/samuelgursky/davinci-resolve-mcp) | Unverified |
+| debugging-toolkit (`discovery.legacy.e7c01a41d2d69a1c`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| deepeval (`discovery.legacy.bce946df36fccf3c`) | asset | [Original listing](https://github.com/confident-ai/deepeval) | Unverified |
+| deer-flow (`discovery.legacy.c081fda4f8f15ca7`) | asset | [Original listing](https://github.com/bytedance/deer-flow) | Unverified |
+| defi-intel (`discovery.legacy.4fffb56aa5411e85`) | asset | [Original listing](https://paragraph.com/dashboard/@0x836c370ab3ca72a823ec7f1a9c148305db3e5812/metrics/post/yzf7MbpMJr9LMKnNqdHa) | Unverified |
+| Delx MCP Server (`discovery.legacy.cf5d62a41f1b3776`) | asset | [Original listing](https://smithery.ai/servers/delx/delx-mcp) | Unverified |
+| deploy-on-aws (`discovery.legacy.84df606256334d2d`) | asset | [Original listing](https://github.com/awslabs/agent-plugins) | Unverified |
+| deployment-strategies (`discovery.legacy.dccde6da9cce53f0`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| desktop-commander (`discovery.legacy.f0c6d5dab33cd522`) | asset | [Original listing](https://desktopcommander.app) | Unverified |
+| Developer Utilities (`discovery.legacy.465ca5bdec7e436d`) | asset | [Original listing](https://smithery.ai/servers/aparajithn/agent-utils) | Unverified |
+| developer-essentials (`discovery.legacy.72a694569e2ed73c`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| DevMatch (`discovery.legacy.bd1becd229ea3b1b`) | asset | [Original listing](https://dev-match.xyz/) | Unverified |
+| discord (`discovery.legacy.d3ae192ffbc1d5a9`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official) | Unverified |
+| discource-mcp-tools (`discovery.legacy.51bab293bbdfcced`) | asset | [Original listing](https://smithery.ai/servers/king-of-the-grackles/discourse-forum-mcp) | Unverified |
+| document-processing (`discovery.legacy.d893ac4318ba187b`) | asset | [Original listing](https://github.com/mrgoonie/claudekit-skills) | Unverified |
+| document-skills (`discovery.legacy.5c85c60305ae9160`) | asset | [Original listing](https://github.com/partme-ai/full-stack-skills) | Unverified |
+| documentation-generation (`discovery.legacy.95c883752393343c`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| documentation-generator (`discovery.legacy.b3ff30f52aaa441c`) | asset | [Original listing](https://github.com/davila7/claude-code-templates) | Unverified |
+| DomainKits MCP - the domain name intelligence (`discovery.legacy.0e14022f63a6493d`) | asset | [Original listing](https://domainkits.com/) | Unverified |
+| dominodatalab (`discovery.legacy.e3fcb5e4078f8ff1`) | asset | [Original listing](https://www.domino.ai) | Unverified |
+| dropbox (`discovery.legacy.ba035b927030e0ae`) | asset | [Original listing](https://www.dropbox.com) | Unverified |
+| duckdb-skills (`discovery.legacy.5a84cc094fb620c0`) | asset | [Original listing](https://duckdb.org) | Unverified |
+| DuckDuckGo & Felo AI Search (`discovery.legacy.565e6baff5425126`) | asset | [Original listing](https://smithery.ai/servers/OEvortex/ddg_search) | Unverified |
+| duende-skills (`discovery.legacy.47981b5f0d29bcfc`) | asset | [Original listing](https://duendesoftware.com) | Unverified |
+| dynatrace (`discovery.legacy.2d26b84830e439d3`) | asset | [Original listing](https://www.dynatrace.com/hub/detail/claude-code-cli/) | Unverified |
+| e2b-mcp (`discovery.legacy.979fc3f6dd385179`) | asset | [Original listing](https://github.com/e2b-dev/mcp-server) | Unverified |
+| e3d.ai (`discovery.legacy.34b3fae36953db57`) | asset | [Original listing](https://e3d.ai) | Unverified |
+| emblem-mcp (`discovery.legacy.996b9da612776a48`) | asset | [Original listing](https://emblemvault.ai) | Unverified |
+| entity-verification (`discovery.legacy.2800fe8bfc316e5f`) | asset | [Original listing](https://entia.systems) | Unverified |
+| error-debugging (`discovery.legacy.665e79b7d1706606`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| everything-claude-code (`discovery.legacy.5b131e36a7f23dd4`) | asset | [Original listing](https://github.com/affaan-m/everything-claude-code) | Unverified |
+| exa (`discovery.legacy.23aa1aa255e608ab`) | asset | [Original listing](https://exa.ai/docs/reference/exa-mcp) | Unverified |
+| exa-mcp-server (`discovery.legacy.87fa437d880b49aa`) | asset | [Original listing](https://github.com/exa-labs/exa-mcp-server) | Unverified |
+| excel-analyst-pro (`discovery.legacy.fee770012cfb8984`) | asset | [Original listing](https://github.com/jeremylongshore/tons-of-skills-marketplace) | Unverified |
+| excel-analyzer (`discovery.legacy.c76ba377123c6a1a`) | asset | [Original listing](https://github.com/nibzard/skills-marketplace) | Unverified |
+| excel-mcp-server (`discovery.legacy.882bdc2b6cc5c950`) | asset | [Original listing](https://github.com/haris-musa/excel-mcp-server) | Unverified |
+| explanatory-output-style (`discovery.legacy.48b469ec054a5cba`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-public/tree/main/plugins/explanatory-output-style) | Unverified |
+| expo (`discovery.legacy.4e49c8e78e8ecb34`) | asset | [Original listing](https://github.com/expo/skills/blob/main/plugins/expo/README.md) | Unverified |
+| fakechat (`discovery.legacy.ee35ff0264d6a5e7`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official) | Unverified |
+| fastapi_mcp (`discovery.legacy.d2ce7ea793cf36e7`) | asset | [Original listing](https://github.com/tadata-org/fastapi_mcp) | Unverified |
+| fastly-agent-toolkit (`discovery.legacy.bfbcb225274d6c9a`) | asset | [Original listing](https://github.com/fastly/fastly-agent-toolkit/blob/main/README.md) | Unverified |
+| FavCRM — Agentic CRM (`discovery.legacy.6575799f35c7edcf`) | asset | [Original listing](https://favcrm.io) | Unverified |
+| feature-dev (`discovery.legacy.cbd2a666ce27d775`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official) | Unverified |
+| fetch (`discovery.legacy.24df442fc9373284`) | asset | [Original listing](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | Unverified |
+| fiftyone (`discovery.legacy.395f316ad5614735`) | asset | [Original listing](https://docs.voxel51.com/) | Unverified |
+| figma (`discovery.legacy.b9088cfa9c0dbd4a`) | asset | [Original listing](https://github.com/figma/mcp-server-guide) | Unverified |
+| filesystem (`discovery.legacy.0d0cf421fa3573d8`) | asset | [Original listing](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | Unverified |
+| Finance MCP — Stocks, Crypto, FX, Portfolio Math (`discovery.legacy.aad1a5765141366c`) | asset | [Original listing](https://thenextgennexus.com) | Unverified |
+| FinanceMCP (`discovery.legacy.3023ae3e21b43729`) | asset | [Original listing](https://github.com/guangxiangdebizi/FinanceMCP) | Unverified |
+| firebase (`discovery.legacy.896e771de1881212`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/firebase) | Unverified |
+| firecrawl (`discovery.legacy.d2ec1ac340b5e012`) | asset | [Original listing](https://github.com/firecrawl/firecrawl-claude-plugin.git) | Unverified |
+| firecrawl-mcp (`discovery.legacy.9ea8225dad0a6d12`) | asset | [Original listing](https://github.com/mendableai/firecrawl-mcp-server) | Unverified |
+| firecrawl-mcp-server (`discovery.legacy.f37aa8b09e6ad944`) | asset | [Original listing](https://github.com/firecrawl/firecrawl-mcp-server) | Unverified |
+| firestore-native (`discovery.legacy.ce01a03443f05b46`) | asset | [Original listing](https://github.com/gemini-cli-extensions/firestore-native) | Unverified |
+| forge-skills (`discovery.legacy.224610c459c6a155`) | asset | [Original listing](https://developer.atlassian.com/platform/forge/) | Unverified |
+| Framesail (`discovery.legacy.1e45e714987483cf`) | asset | [Original listing](https://framesail.com/developers) | Unverified |
+| frontend-design (`discovery.legacy.5ddc75ba7b6b9927`) | asset | [Original listing](https://github.com/anthropics/claude-code-plugins) | Unverified |
+| frontend-excellence (`discovery.legacy.eb61b8afb2877b69`) | asset | [Original listing](https://github.com/dotclaude/marketplace) | Unverified |
+| frontend-mobile-development (`discovery.legacy.3127cc67ce7b6318`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| full-stack-orchestration (`discovery.legacy.d089b3d090f68780`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| fullstory (`discovery.legacy.9948be3b442693f0`) | asset | [Original listing](https://www.fullstory.com) | Unverified |
+| Gapup MCP — 270+ Agent-payable AI Tools (`discovery.legacy.d7c3e67b79d1c2a4`) | asset | [Original listing](https://hub.gapup.io/agents-api) | Unverified |
+| gc-ai (`discovery.legacy.272fe2533948522c`) | asset | [Original listing](https://docs.gc.ai/api-reference/mcp/overview) | Unverified |
+| Gemini CLI (`discovery.legacy.480286d7ab085f7a`) | asset | [Original listing](https://github.com/google-gemini/gemini-cli) | Unverified |
+| gemini-cli (`discovery.legacy.48bd5488e4e36b87`) | asset | [Original listing](https://github.com/cexll/myclaude) | Unverified |
+| Geppetto-Robot-Directory (`discovery.legacy.e95e3244efd6db83`) | asset | [Original listing](https://geppettorobotdirectory.com) | Unverified |
+| ghidra-mcp (`discovery.legacy.22d89b21c089b81b`) | asset | [Original listing](https://github.com/bethington/ghidra-mcp) | Unverified |
+| github (`discovery.legacy.7ad75c00b7b270c3`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/github) | Unverified |
+| GitHub Analytics MCP — Repo & Trend Research (`discovery.legacy.fb5212e9df24e419`) | asset | [Original listing](https://thenextgennexus.com) | Unverified |
+| github-mcp-server (`discovery.legacy.adbb87e540bf0af3`) | asset | [Original listing](https://github.com/github/github-mcp-server) | Unverified |
+| gitkraken (`discovery.legacy.3df4679723600685`) | asset | [Original listing](https://www.gitkraken.com) | Unverified |
+| gitlab (`discovery.legacy.a14eac508e3d00c4`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/gitlab) | Unverified |
+| Gmail (`discovery.legacy.f832ab7dd605ce95`) | asset | [Original listing](https://smithery.ai/servers/gmail) | Unverified |
+| golf (`discovery.legacy.ce814638b90f154e`) | asset | [Original listing](https://github.com/golf-mcp/golf) | Unverified |
+| Google BigQuery (`discovery.legacy.844ae1aef53a316f`) | asset | [Original listing](https://smithery.ai/servers/bigquery) | Unverified |
+| Google Calendar (`discovery.legacy.596e0e91cd100f9b`) | asset | [Original listing](https://smithery.ai/servers/googlecalendar) | Unverified |
+| Google Drive (`discovery.legacy.72e27661cbac730d`) | asset | [Original listing](https://smithery.ai/servers/googledrive) | Unverified |
+| Google Maps Lead Gen MCP — Local Business Enrichment (`discovery.legacy.e5a1ad4fe3f7202d`) | asset | [Original listing](https://thenextgennexus.com) | Unverified |
+| Google News (`discovery.legacy.71e5ba277b2fce51`) | asset | [Original listing](https://smithery.ai/server/google/news) | Unverified |
+| Google Sheets (`discovery.legacy.344217dda827ea75`) | asset | [Original listing](https://smithery.ai/servers/googlesheets) | Unverified |
+| google-cloud-storage (`discovery.legacy.b6a5ac59f2ed040d`) | asset | [Original listing](https://cloud.google.com/storage) | Unverified |
+| google-meta-ads-ga4-mcp (`discovery.legacy.5a0e6e50b63ae30d`) | asset | [Original listing](https://github.com/irinabuht12-oss/google-meta-ads-ga4-mcp) | Unverified |
+| google_workspace_mcp (`discovery.legacy.700f45fa94f69d67`) | asset | [Original listing](https://github.com/taylorwilsdon/google_workspace_mcp) | Unverified |
+| gopls-lsp (`discovery.legacy.69df0e9110a70ef9`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official) | Unverified |
+| Govbase (`discovery.legacy.0b0e6f106f7b671c`) | asset | [Original listing](https://govbase.com) | Unverified |
+| govtribe (`discovery.legacy.988058e1432766ba`) | asset | [Original listing](https://govtribe.com) | Unverified |
+| grafana-assistant (`discovery.legacy.91d2c51d00ad8588`) | asset | [Original listing](https://grafana.com) | Unverified |
+| grafana-cloud-mcp (`discovery.legacy.633dbac3360d4dea`) | asset | [Original listing](https://grafana.com) | Unverified |
+| grafana-mcp (`discovery.legacy.f9ff4079d5df2cd9`) | asset | [Original listing](https://grafana.com) | Unverified |
+| Gread (`discovery.legacy.931605d0cdfde87d`) | asset | [Original listing](https://gread.dev/) | Unverified |
+| greptile (`discovery.legacy.a6644080c8c2873a`) | asset | [Original listing](https://www.greptile.com/docs/mcp-v2/overview) | Unverified |
+| growthbook (`discovery.legacy.e882e9098e786484`) | asset | [Original listing](https://growthbook.io) | Unverified |
+| gstack (`discovery.legacy.1c4faaf01b964349`) | asset | [Original listing](https://github.com/garrytan/gstack) | Unverified |
+| honeycomb (`discovery.legacy.b51a93574607d1d9`) | asset | [Original listing](https://www.honeycomb.io) | Unverified |
+| hookify (`discovery.legacy.457bca2f136ac970`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-public/tree/main/plugins/hookify) | Unverified |
+| hostinger (`discovery.legacy.944251eb7d461d9a`) | asset | [Original listing](https://www.hostinger.com) | Unverified |
+| hubspot-sales (`discovery.legacy.dd93e7b1580ca202`) | asset | [Original listing](https://www.hubspot.com) | Unverified |
+| huggingface-skills (`discovery.legacy.4b808e9a1b660538`) | asset | [Original listing](https://github.com/huggingface/skills.git) | Unverified |
+| humanizer (`discovery.legacy.910b96237c6a4cd9`) | asset | [Original listing](https://github.com/softaworks/agent-toolkit) | Unverified |
+| hunter (`discovery.legacy.e256be86b4caf18c`) | asset | [Original listing](https://hunter.io) | Unverified |
+| hyper-mcp (`discovery.legacy.9b8157a77a14430b`) | asset | [Original listing](https://github.com/hyper-mcp-rs/hyper-mcp) | Unverified |
+| hyperframes (`discovery.legacy.9b29a81ea7efbdaf`) | asset | [Original listing](https://hyperframes.heygen.com) | Unverified |
+| ia-qa.com/mcp llm and RAG testing - Dev/QA toolbox (`discovery.legacy.0b79ee7391674e2b`) | asset | [Original listing](https://www.ia-qa.com/mcp-server) | Unverified |
+| ida-mcp-rs (`discovery.legacy.29c396b1110d19e4`) | asset | [Original listing](https://github.com/blacktop/ida-mcp-rs) | Unverified |
+| ida-pro-mcp (`discovery.legacy.69e857cc280bda36`) | asset | [Original listing](https://github.com/mrexodia/ida-pro-mcp) | Unverified |
+| idmp-plugin (`discovery.legacy.75dd35d035db6884`) | asset | [Original listing](https://github.com/taosdata/agent-skills) | Unverified |
+| Ignav Flights (`discovery.legacy.d0c61764470d240e`) | asset | [Original listing](https://ignav.com/docs/mcp) | Unverified |
+| imessage (`discovery.legacy.47a5cb9399f197ea`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official) | Unverified |
+| incident-io (`discovery.legacy.a735b49ea92419e9`) | asset | [Original listing](https://incident.io) | Unverified |
+| incident-response (`discovery.legacy.a609b1a2e037bcb2`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| IndustryLens (`discovery.legacy.2b96145add8f3cc2`) | asset | [Original listing](https://industry-lens.com) | Unverified |
+| informatica-for-claude-platform (`discovery.legacy.25fdc93719e9c474`) | asset | [Original listing](https://github.com/forcedotcom/informatica-claude-plugins/tree/main/informatica-for-claude-platform) | Unverified |
+| intercom (`discovery.legacy.4da22a277236a1a3`) | asset | [Original listing](https://github.com/intercom/claude-plugin-external) | Unverified |
+| intuit-quickbooks (`discovery.legacy.421fb0a3945a2025`) | asset | [Original listing](https://github.com/intuit/quickbooks-claude-plugin) | Unverified |
+| invisible_playwright_mcp (`discovery.legacy.c69c37426d08364f`) | asset | [Original listing](https://github.com/feder-cr/invisible_playwright_mcp) | Unverified |
+| iwant.fyi (`discovery.legacy.f7635d1db45ff807`) | asset | [Original listing](https://iwant.fyi) | Unverified |
+| jadx-ai-mcp (`discovery.legacy.dcccc1b74fdc8599`) | asset | [Original listing](https://github.com/zinja-coder/jadx-ai-mcp) | Unverified |
+| javascript-typescript (`discovery.legacy.a4505854e943e34f`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| jcodemunch-mcp (`discovery.legacy.74ec0e77fd7b2349`) | asset | [Original listing](https://github.com/jgravelle/jcodemunch-mcp) | Unverified |
+| jdtls-lsp (`discovery.legacy.bacaa6d839f014bc`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official) | Unverified |
+| jfrog (`discovery.legacy.f86e1fda616f5e86`) | asset | [Original listing](https://jfrog.com) | Unverified |
+| js-reverse-mcp (`discovery.legacy.10ff3a19abd5bf8c`) | asset | [Original listing](https://github.com/zhizhuodemao/js-reverse-mcp) | Unverified |
+| jupyter-mcp-server (`discovery.legacy.2208d6948fccd103`) | asset | [Original listing](https://github.com/datalayer/jupyter-mcp-server) | Unverified |
+| kdata-gate (`discovery.legacy.6670968e44297176`) | asset | [Original listing](https://kdata-gate.vercel.app) | Unverified |
+| knowledge-catalog (`discovery.legacy.102782e04da63993`) | asset | [Original listing](https://github.com/gemini-cli-extensions/knowledge-catalog) | Unverified |
+| ko-financial-data (`discovery.legacy.381584368c78bdb6`) | asset | [Original listing](https://ko.io) | Unverified |
+| Korean Law Search (`discovery.legacy.c15b97756b17c069`) | asset | [Original listing](https://velog.io/@zvezda/LexLink-MCP-%EA%B0%9C%EB%B0%9C%EA%B8%B0) | Unverified |
+| korean-law-mcp (`discovery.legacy.f1120097162a66f5`) | asset | [Original listing](https://github.com/chrisryugj/korean-law-mcp) | Unverified |
+| kotlin-lsp (`discovery.legacy.68df3b10c5f03bf7`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official) | Unverified |
+| kubectl-mcp-server (`discovery.legacy.3876ed0265f96ea5`) | asset | [Original listing](https://github.com/rohitg00/kubectl-mcp-server) | Unverified |
+| kubernetes-operations (`discovery.legacy.4751150036d07c3f`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| lad-lviv-ua (`discovery.legacy.0c4b4f68f259b37e`) | asset | [Original listing](https://lad.lviv.ua/) | Unverified |
+| langfuse (`discovery.legacy.b27f4fd93b829c00`) | asset | [Original listing](https://langfuse.com) | Unverified |
+| langfuse-observability (`discovery.legacy.f1bd6a071cf3cacd`) | asset | [Original listing](https://langfuse.com/integrations/other/claude-code) | Unverified |
+| laravel-boost (`discovery.legacy.db790161635b2f59`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/laravel-boost) | Unverified |
+| leadfeeder (`discovery.legacy.cb20e88ff6a313de`) | asset | [Original listing](https://www.leadfeeder.com) | Unverified |
+| learn-with-coursera (`discovery.legacy.c934f411651aa42a`) | asset | [Original listing](https://github.com/coursera/skills) | Unverified |
+| learning-output-style (`discovery.legacy.52a03cc9279573fc`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-public/tree/main/plugins/learning-output-style) | Unverified |
+| Legal Research MCP — Court Records Lookup (`discovery.legacy.18ca29121fdc2f93`) | asset | [Original listing](https://thenextgennexus.com) | Unverified |
+| legalzoom (`discovery.legacy.b28c26fd50530861`) | asset | [Original listing](https://www.legalzoom.com/) | Unverified |
+| linear (`discovery.legacy.c751a1eb4829c150`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/linear) | Unverified |
+| linear-mcp (`discovery.legacy.00576fea782360bf`) | asset | [Original listing](https://linear.app/docs/mcp) | Unverified |
+| linkedin-mcp-server (`discovery.legacy.94c94c4e0c7db68a`) | asset | [Original listing](https://github.com/stickerdaniel/linkedin-mcp-server) | Unverified |
+| linq-alpha (`discovery.legacy.3c622f1092ca8e09`) | asset | [Original listing](https://www.linqalpha.com) | Unverified |
+| liquid-lsp (`discovery.legacy.b99a7b910cf202cf`) | asset | [Original listing](https://github.com/Shopify/liquid-skills/tree/main/plugins/liquid-lsp) | Unverified |
+| liquid-skills (`discovery.legacy.ce719d77e19abb71`) | asset | [Original listing](https://github.com/Shopify/liquid-skills/tree/main/plugins/liquid-skills) | Unverified |
+| Listen to Sadhu (`discovery.legacy.039cf9e0bd6329c1`) | asset | [Original listing](https://mcp.listentosadhu.app) | Unverified |
+| llm-application-dev (`discovery.legacy.b82b3213d6a1dd36`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| LMK.today MCP (`discovery.legacy.774e078a05e5a9e9`) | asset | [Original listing](https://lmk.today/mcp) | Unverified |
+| logfire (`discovery.legacy.c2a9e77055ce092b`) | asset | [Original listing](https://github.com/pydantic/skills/tree/main/plugins/logfire) | Unverified |
+| logrocket (`discovery.legacy.a5a84b5a38a12df6`) | asset | [Original listing](https://logrocket.com) | Unverified |
+| looker (`discovery.legacy.1fe61dce4f07f082`) | asset | [Original listing](https://github.com/gemini-cli-extensions/looker) | Unverified |
+| lovable (`discovery.legacy.d9a21c0f174fc4fe`) | asset | [Original listing](https://lovable.dev) | Unverified |
+| lua-lsp (`discovery.legacy.6330edeab0168c57`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official) | Unverified |
+| lumen (`discovery.legacy.c35fcdf78014eae0`) | asset | [Original listing](https://www.ory.sh) | Unverified |
+| lusha (`discovery.legacy.4ed61e50f9401321`) | asset | [Original listing](https://www.lusha.com) | Unverified |
+| machine-learning-ops (`discovery.legacy.f811fe4cac05dc5f`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| Malaysia Transit MCP (`discovery.legacy.8d3d98436c45ca8b`) | asset | [Original listing](https://techmavie.digital/mcp-malaysiatransit) | Unverified |
+| mapbox (`discovery.legacy.4bcf12c1f40c35b0`) | asset | [Original listing](https://www.mapbox.com) | Unverified |
+| markdown-tools (`discovery.legacy.adcd8d1ae4b65da7`) | asset | [Original listing](https://github.com/daymade/claude-code-skills) | Unverified |
+| Math-MCP (`discovery.legacy.4c30e87b0488d579`) | asset | [Original listing](https://smithery.ai/servers/EthanHenrickson/math-mcp) | Unverified |
+| math-olympiad (`discovery.legacy.ab2f86adad5b1c38`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/math-olympiad) | Unverified |
+| matlab-mcp-server (`discovery.legacy.783bd62773b2fef5`) | asset | [Original listing](https://github.com/matlab/matlab-mcp-server) | Unverified |
+| mattpocock-skills (`discovery.legacy.c9040190d4d95e60`) | asset | [Original listing](https://github.com/mattpocock/skills) | Unverified |
+| mcp (`discovery.legacy.c8316e723952ddf9`) | asset | [Original listing](https://github.com/awslabs/mcp) | Unverified |
+| MCP Seeker (`discovery.legacy.449a235a62cd746c`) | asset | [Original listing](https://smithery.ai/servers/agonzalez/prueba-mcp-seeker) | Unverified |
+| mcp-apps (`discovery.legacy.69fea0d02f1a677b`) | asset | [Original listing](https://modelcontextprotocol.io) | Unverified |
+| mcp-brasil (`discovery.legacy.ac127f36c957092c`) | asset | [Original listing](https://github.com/Mcp-Brasil/mcp-brasil) | Unverified |
+| MCP-Bridge (`discovery.legacy.262f90fb5955c205`) | asset | [Original listing](https://github.com/SecretiveShell/MCP-Bridge) | Unverified |
+| MCP-Chinese-Getting-Started-Guide (`discovery.legacy.6dd4666fa1fa3843`) | asset | [Original listing](https://github.com/liaokongVFX/MCP-Chinese-Getting-Started-Guide) | Unverified |
+| mcp-client-for-ollama (`discovery.legacy.96032143e22a10e4`) | asset | [Original listing](https://github.com/jonigl/mcp-client-for-ollama) | Unverified |
+| mcp-for-beginners (`discovery.legacy.c02d465b7aa0553b`) | asset | [Original listing](https://github.com/microsoft/mcp-for-beginners) | Unverified |
+| mcp-google-sheets (`discovery.legacy.f7c4738cb9542bda`) | asset | [Original listing](https://github.com/xing5/mcp-google-sheets) | Unverified |
+| mcp-graphql-enhanced (`discovery.legacy.6e63a3ab1678a97b`) | asset | [Original listing](https://smithery.ai/servers/letoribo/mcp-graphql-enhanced) | Unverified |
+| mcp-gsc (`discovery.legacy.86229c4901e9cdb2`) | asset | [Original listing](https://github.com/AminForou/mcp-gsc) | Unverified |
+| mcp-jetbrains (`discovery.legacy.f118dad71cb315c4`) | asset | [Original listing](https://github.com/JetBrains/mcp-jetbrains) | Unverified |
+| MCP-Kali-Server (`discovery.legacy.1eae58426d5d457d`) | asset | [Original listing](https://github.com/Wh0am123/MCP-Kali-Server) | Unverified |
+| mcp-language-server (`discovery.legacy.7a83ac0f2b175224`) | asset | [Original listing](https://github.com/isaacphi/mcp-language-server) | Unverified |
+| mcp-memory-service (`discovery.legacy.f122011ee74e83e1`) | asset | [Original listing](https://github.com/doobidoo/mcp-memory-service) | Unverified |
+| mcp-neo4j (`discovery.legacy.90e8f5afe7483f96`) | asset | [Original listing](https://github.com/neo4j-contrib/mcp-neo4j) | Unverified |
+| mcp-proxy (`discovery.legacy.8ad20cfef05f47d6`) | asset | [Original listing](https://github.com/sparfenyuk/mcp-proxy) | Unverified |
+| mcp-router (`discovery.legacy.db752796b0e454f7`) | asset | [Original listing](https://github.com/mcp-router/mcp-router) | Unverified |
+| mcp-searxng (`discovery.legacy.e5668559aac0662c`) | asset | [Original listing](https://github.com/ihor-sokoliuk/mcp-searxng) | Unverified |
+| mcp-server-chart (`discovery.legacy.54b854c0ed1a5f34`) | asset | [Original listing](https://github.com/antvis/mcp-server-chart) | Unverified |
+| mcp-server-chatsum (`discovery.legacy.015da041521d9129`) | asset | [Original listing](https://github.com/chatmcp/mcp-server-chatsum) | Unverified |
+| mcp-server-dev (`discovery.legacy.9c703621c995c766`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/mcp-server-dev) | Unverified |
+| mcp-server-qdrant (`discovery.legacy.b5a054f6bb9bf4b7`) | asset | [Original listing](https://github.com/qdrant/mcp-server-qdrant) | Unverified |
+| mcp-shrimp-task-manager (`discovery.legacy.50ab9755bb194995`) | asset | [Original listing](https://github.com/cjo4m06/mcp-shrimp-task-manager) | Unverified |
+| mcp-tunnels (`discovery.legacy.b3bbfc901e2a0c6b`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/mcp-tunnels) | Unverified |
+| mcp-use (`discovery.legacy.432410ae0799ab9a`) | asset | [Original listing](https://github.com/mcp-use/mcp-use) | Unverified |
+| mcp-windbg (`discovery.legacy.70339cf1262e805d`) | asset | [Original listing](https://github.com/svnscha/mcp-windbg) | Unverified |
+| mcphub (`discovery.legacy.70ade143108dcaf3`) | asset | [Original listing](https://github.com/samanhappy/mcphub) | Unverified |
+| mcphub.nvim (`discovery.legacy.5f3bbc54c0967c81`) | asset | [Original listing](https://github.com/ravitemer/mcphub.nvim) | Unverified |
+| MCPJungle (`discovery.legacy.78323e1df1079c6e`) | asset | [Original listing](https://github.com/mcpjungle/MCPJungle) | Unverified |
+| mcpo (`discovery.legacy.769ee77c1ee2afa5`) | asset | [Original listing](https://github.com/open-webui/mcpo) | Unverified |
+| mcptools (`discovery.legacy.00011e26ede28346`) | asset | [Original listing](https://github.com/f/mcptools) | Unverified |
+| MeiGen-AI-Design-MCP (`discovery.legacy.b1f24ca8980c1d27`) | asset | [Original listing](https://github.com/jau123/MeiGen-AI-Design-MCP) | Unverified |
+| memory (`discovery.legacy.dac6ac64c3fb9a7c`) | asset | [Original listing](https://github.com/modelcontextprotocol/servers/tree/main/src/memory) | Unverified |
+| memory-bank-mcp (`discovery.legacy.6f32752b6646f469`) | asset | [Original listing](https://github.com/alioshr/memory-bank-mcp) | Unverified |
+| memxus (`discovery.legacy.779861220101ac4d`) | asset | [Original listing](https://www.memxus.com/) | Unverified |
+| menjometre (`discovery.legacy.cc18d018047671bf`) | asset | [Original listing](https://menjometre.cat) | Unverified |
+| mercadopago (`discovery.legacy.bbafc6c8b80a864c`) | asset | [Original listing](https://github.com/mercadopago/mercadopago-claude-marketplace/tree/main/plugins/mercadopago) | Unverified |
+| mergify (`discovery.legacy.e59b3e76538b9077`) | asset | [Original listing](https://mergify.com) | Unverified |
+| microsoft-docs (`discovery.legacy.dc90dd57166e1175`) | asset | [Original listing](https://github.com/microsoftdocs/mcp) | Unverified |
+| migration-to-aws (`discovery.legacy.0fddc9d6c3fb3adc`) | asset | [Original listing](https://github.com/awslabs/startups) | Unverified |
+| MiniMax-MCP (`discovery.legacy.16c449f4ff6e896d`) | asset | [Original listing](https://github.com/MiniMax-AI/MiniMax-MCP) | Unverified |
+| mintlify (`discovery.legacy.cce06b35be338b37`) | asset | [Original listing](https://www.mintlify.com/) | Unverified |
+| miro (`discovery.legacy.813ac4f798c0699b`) | asset | [Original listing](https://miro.com) | Unverified |
+| MLB Stats Server (`discovery.legacy.9304ea0c10fb5842`) | asset | [Original listing](https://smithery.ai/servers/etweisberg/mlb-mcp) | Unverified |
+| mlflow (`discovery.legacy.0ecd95265b795f4d`) | asset | [Original listing](https://mlflow.org/) | Unverified |
+| MobileBuildMCP (`discovery.legacy.64cceb49d28dc6e6`) | asset | [Original listing](https://github.com/getsentry/MobileBuildMCP) | Unverified |
+| modern-web-guidance (`discovery.legacy.ed017509cbdc5b1c`) | asset | [Original listing](https://goo.gle/modern-web-guidance) | Unverified |
+| monday-crm (`discovery.legacy.095799b3f06d3472`) | asset | [Original listing](https://monday.com) | Unverified |
+| mongodb (`discovery.legacy.8a1f8106cddb9103`) | asset | [Original listing](https://www.mongodb.com/docs/mcp-server/overview/) | Unverified |
+| mongodb-atlas (`discovery.legacy.76fd1752ebca0660`) | asset | [Original listing](https://www.mongodb.com/docs/mcp-server/get-started/) | Unverified |
+| mongodb-mcp-server (`discovery.legacy.e9568c3b8e35b9db`) | asset | [Original listing](https://github.com/mongodb-js/mongodb-mcp-server) | Unverified |
+| moodtrip-hotel-search (`discovery.legacy.778c9ef4c511d0f6`) | asset | [Original listing](https://moodtrip.ai/) | Unverified |
+| MTG MCP Server (`discovery.legacy.4049248ace712f8e`) | asset | [Original listing](https://github.com/j4th/mtg-mcp-server) | Unverified |
+| Multi-Carrier Shipping API — powered by Secureship (`discovery.legacy.bcf3fe1646a36ed0`) | asset | [Original listing](https://secureship.ca) | Unverified |
+| multi-platform-apps (`discovery.legacy.e53a25fef41ad771`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| mysql_mcp_server (`discovery.legacy.0e3ae30e27082bb9`) | asset | [Original listing](https://github.com/designcomputer/mysql_mcp_server) | Unverified |
+| n8n-mcp (`discovery.legacy.8ac70800fec7cdbe`) | asset | [Original listing](https://github.com/czlonkowski/n8n-mcp) | Unverified |
+| n8n-workflow-designer (`discovery.legacy.9c57e6b07273f6cc`) | asset | [Original listing](https://github.com/jeremylongshore/tons-of-skills-marketplace) | Unverified |
+| nausika (`discovery.legacy.1df725e93f2dc62f`) | asset | [Original listing](https://nausika.app) | Unverified |
+| Naver Search (`discovery.legacy.a4388032591b11c1`) | asset | [Original listing](https://search.naver.com) | Unverified |
+| neon (`discovery.legacy.071c7ae4ecedd764`) | asset | [Original listing](https://github.com/neondatabase/agent-skills/tree/main/plugins/neon-postgres) | Unverified |
+| netlify-skills (`discovery.legacy.50c3cc1f57eba68a`) | asset | [Original listing](https://github.com/netlify/context-and-tools) | Unverified |
+| netsuite-ai-companion (`discovery.legacy.fa18f9af4bcbd871`) | asset | [Original listing](https://github.com/oracle/netsuite-suitecloud-sdk/tree/ai-plugins-dist/anthropic/netsuite-ai-companion) | Unverified |
+| netsuite-finance-analyst (`discovery.legacy.2c6c97f2c733ed03`) | asset | [Original listing](https://github.com/oracle/netsuite-suitecloud-sdk/tree/ai-plugins-dist/anthropic/netsuite-finance-analyst) | Unverified |
+| netsuite-suitecloud (`discovery.legacy.4b6a8c9034704998`) | asset | [Original listing](https://github.com/oracle/netsuite-suitecloud-sdk/tree/ai-plugins-dist/anthropic/netsuite-suitecloud) | Unverified |
+| newrelic (`discovery.legacy.93a34017a4274a31`) | asset | [Original listing](https://newrelic.com) | Unverified |
+| NEXUS Intelligence API (`discovery.legacy.2b7b878117a8824d`) | asset | [Original listing](https://nexus-agent-xa12.onrender.com) | Unverified |
+| nightvision (`discovery.legacy.dff3468f067ed333`) | asset | [Original listing](https://github.com/nvsecurity/nightvision-skills) | Unverified |
+| nimble (`discovery.legacy.4683db9b5ae07ccc`) | asset | [Original listing](https://docs.nimbleway.com/integrations/agent-skills/plugin-installation) | Unverified |
+| nist-nvd-mcp-server (`discovery.legacy.91b2b962f8756ac8`) | asset | [Original listing](https://nist-nvd.caseyjhand.com/mcp) | Unverified |
+| noibu (`discovery.legacy.3f995cfd2775ae14`) | asset | [Original listing](https://help.noibu.com/articles/3918362002-overview-of-the-noibu-plugin-for-claude) | Unverified |
+| notion (`discovery.legacy.472b87e3c0b82141`) | asset | [Original listing](https://github.com/makenotion/claude-code-notion-plugin) | Unverified |
+| notion-mcp (`discovery.legacy.bdc0c5c1dbf5f56d`) | asset | [Original listing](https://github.com/makenotion/notion-mcp-server) | Unverified |
+| NPM Sentinel MCP (`discovery.legacy.393e6cc97c4f5dc2`) | asset | [Original listing](https://github.com/Nekzus/npm-sentinel-mcp#readme) | Unverified |
+| nutribalance-mcp (`discovery.legacy.7c3214491ba68240`) | asset | [Original listing](https://thenutritrackerapp-creator-nutribal.vercel.app) | Unverified |
+| nvidia-skills (`discovery.legacy.83b4e706cb30177e`) | asset | [Original listing](https://build.nvidia.com/skills/) | Unverified |
+| NWS Weather & Aviation (`discovery.legacy.c31635f782125e2d`) | asset | [Original listing](https://smithery.ai/servers/ahmed2real/thinkzone) | Unverified |
+| observability-monitoring (`discovery.legacy.f3d9ec05bb5efec6`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| obsidian (`discovery.legacy.9e4e34176818810d`) | asset | [Original listing](https://github.com/kepano/obsidian-skills) | Unverified |
+| obsidian-mcp-tools (`discovery.legacy.a9d2a91c66db33f1`) | asset | [Original listing](https://github.com/jacksteamdev/obsidian-mcp-tools) | Unverified |
+| office (`discovery.legacy.d6da2800c0f055d5`) | asset | [Original listing](https://github.com/jezweb/claude-skills) | Unverified |
+| OneSignal (`discovery.legacy.f11de80a6a5e2eb4`) | asset | [Original listing](https://onesignal.com/) | Unverified |
+| open-meteo-mcp-server (`discovery.legacy.6752212c4ea538f6`) | asset | [Original listing](https://open-meteo.caseyjhand.com/mcp) | Unverified |
+| open-seo-mcp-skills (`discovery.legacy.0137ffab160ea62b`) | asset | [Original listing](https://github.com/Ryze-AI-Adgent/open-seo-mcp-skills) | Unverified |
+| openalex-mcp-server (`discovery.legacy.5a4b7611399406b1`) | asset | [Original listing](https://openalex.caseyjhand.com/mcp) | Unverified |
+| OpenCode (`discovery.legacy.c5e5ddd94d6002f4`) | asset | [Original listing](https://github.com/sst/opencode) | Unverified |
+| openfda-mcp-server (`discovery.legacy.cc54e89786423955`) | asset | [Original listing](https://openfda.caseyjhand.com/mcp) | Unverified |
+| openstreetmap-mcp-server (`discovery.legacy.c3aca4c49c0a9915`) | asset | [Original listing](https://openstreetmap.caseyjhand.com/mcp) | Unverified |
+| options-analytics (`discovery.legacy.ddd509a472990ceb`) | asset | [Original listing](https://flashalpha.com) | Unverified |
+| oracle-ai-data-platform-workbench-databricks-migrator (`discovery.legacy.43b5194e121d8847`) | asset | [Original listing](https://docs.oracle.com/en/cloud/paas/ai-data-platform/index.html) | Unverified |
+| oracle-ai-data-platform-workbench-engineer-agent (`discovery.legacy.e07598d877f61d22`) | asset | [Original listing](https://docs.oracle.com/en/cloud/paas/ai-data-platform/index.html) | Unverified |
+| oracle-ai-data-platform-workbench-spark-connectors (`discovery.legacy.f2249e93cb9999b2`) | asset | [Original listing](https://docs.oracle.com/en/cloud/paas/ai-data-platform/index.html) | Unverified |
+| oracledb (`discovery.legacy.1e872c80c3552ab4`) | asset | [Original listing](https://github.com/gemini-cli-extensions/oracledb) | Unverified |
+| outputai (`discovery.legacy.c36ad390872310e8`) | asset | [Original listing](https://output.ai) | Unverified |
+| pagerduty (`discovery.legacy.10becea4725cabe0`) | asset | [Original listing](https://github.com/PagerDuty/claude-code-plugins) | Unverified |
+| Paper Search (`discovery.legacy.563982b7213470fd`) | asset | [Original listing](https://github.com/adamamer20/paper-search-mcp-openai) | Unverified |
+| paper-search-mcp (`discovery.legacy.a33f809d0d70cd2d`) | asset | [Original listing](https://github.com/openags/paper-search-mcp) | Unverified |
+| paper-search-mcp-openai-v2 (`discovery.legacy.29dc4a58b6de0571`) | asset | [Original listing](https://github.com/TitanSneaker/paper-search-mcp-openai) | Unverified |
+| payment-processing (`discovery.legacy.3dba3529d5a7bf25`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| paypal (`discovery.legacy.149d055e844920e9`) | asset | [Original listing](https://developer.paypal.com/) | Unverified |
+| pendo-analytics (`discovery.legacy.6e5db5aa066f748e`) | asset | [Original listing](https://github.com/pendo-io/claude-pendo-plugin/tree/main/plugins/pendo-analytics) | Unverified |
+| pendo-guides (`discovery.legacy.fd5000c121a5686d`) | asset | [Original listing](https://github.com/pendo-io/claude-pendo-plugin/tree/main/plugins/pendo-guides) | Unverified |
+| pendo-orchestrate (`discovery.legacy.0b549d2d2f5b1d38`) | asset | [Original listing](https://github.com/pendo-io/claude-pendo-plugin/tree/main/plugins/pendo-orchestrate) | Unverified |
+| php-lsp (`discovery.legacy.f1a95deb9db858a7`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official) | Unverified |
+| pigment (`discovery.legacy.34d9e465dd64f7b1`) | asset | [Original listing](https://www.pigment.com) | Unverified |
+| pinecone (`discovery.legacy.f5b5a0b121ff6560`) | asset | [Original listing](https://github.com/pinecone-io/pinecone-claude-code-plugin) | Unverified |
+| pinescript (`discovery.legacy.7a291a84928b01c3`) | asset | [Original listing](https://bouch.dev/products/pinescript-mcp/) | Unverified |
+| pipeworx (`discovery.legacy.5dc5109f3406c65d`) | asset | [Original listing](https://pipeworx.io) | Unverified |
+| pipeworx gateway (`discovery.legacy.c524e881b532bafa`) | asset | [Original listing](https://smithery.ai/servers/pipeworx/gateway) | Unverified |
+| pixeltable (`discovery.legacy.73080475fa16ddf8`) | asset | [Original listing](https://docs.pixeltable.com) | Unverified |
+| planetscale (`discovery.legacy.1feb3345eab01ab1`) | asset | [Original listing](https://planetscale.com/) | Unverified |
+| playground (`discovery.legacy.690d0f5918ad8dba`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/playground) | Unverified |
+| playwright (`discovery.legacy.db616548e0e347bc`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/playwright) | Unverified |
+| playwright-mcp (`discovery.legacy.f2b14f1d9f94b27e`) | asset | [Original listing](https://github.com/microsoft/playwright-mcp) | Unverified |
+| playwright-skill (`discovery.legacy.d449e9388513907e`) | asset | [Original listing](https://github.com/lackeyjb/playwright-skill) | Unverified |
+| plugin-dev (`discovery.legacy.906fd966e8e79999`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-public/tree/main/plugins/plugin-dev) | Unverified |
+| plugin-orchestrator (`discovery.legacy.7710d0b6cb3963d5`) | asset | [Original listing](https://github.com/jeremylongshore/claude-code-plugins-plus) | Unverified |
+| Polymarket (`discovery.legacy.66197106d250747f`) | asset | [Original listing](https://github.com/aryankeluskar/polymarket-mcp) | Unverified |
+| Polymarket Data by PolymarketScan (`discovery.legacy.0ac9aea0b1386a4b`) | asset | [Original listing](https://PolymarketScan.org/API) | Unverified |
+| postgres (`discovery.legacy.3dafa1775979ba0a`) | asset | [Original listing](https://github.com/modelcontextprotocol/servers-archived/tree/main/src/postgres) | Unverified |
+| posthog (`discovery.legacy.b880bcad56dcc2d2`) | asset | [Original listing](https://posthog.com/docs/model-context-protocol) | Unverified |
+| postiz (`discovery.legacy.36e05498593bbbb3`) | asset | [Original listing](https://postiz.com/agent) | Unverified |
+| postman (`discovery.legacy.9cb758a955af5da5`) | asset | [Original listing](https://learning.postman.com/docs/developer/postman-mcp-server/) | Unverified |
+| ppt-agent (`discovery.legacy.0f8c7237c4effd90`) | asset | [Original listing](https://github.com/zengwenliang416/ppt-agent) | Unverified |
+| ppt-creator (`discovery.legacy.9ba03d03fe154546`) | asset | [Original listing](https://github.com/daymade/claude-code-skills) | Unverified |
+| pr-review-toolkit (`discovery.legacy.c3afce9dafd1f5af`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-public/tree/main/plugins/pr-review-toolkit) | Unverified |
+| preset-cli-skills (`discovery.legacy.9a1586773b9bfa6d`) | asset | [Original listing](https://www.preset.io) | Unverified |
+| primitive.dev (`discovery.legacy.31337ddf08cd1e66`) | asset | [Original listing](https://primitive.dev) | Unverified |
+| prisma (`discovery.legacy.d896143ea12a97f0`) | asset | [Original listing](https://prisma.io) | Unverified |
+| problem-solver-specialist (`discovery.legacy.717ea89a93520c1e`) | asset | [Original listing](https://github.com/ananddtyagi/claude-code-marketplace) | Unverified |
+| product-management (`discovery.legacy.7199a0f20af2f220`) | asset | [Original listing](https://github.com/slgoodrich/agents) | Unverified |
+| project-artifact (`discovery.legacy.ada2ec229e205549`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-public/tree/main/plugins/project-artifact) | Unverified |
+| prompt-optimizer (`discovery.legacy.f6f84a983231d647`) | asset | [Original listing](https://github.com/daymade/claude-code-skills) | Unverified |
+| promptfoo (`discovery.legacy.4e5a678b1ea01411`) | asset | [Original listing](https://github.com/promptfoo/promptfoo) | Unverified |
+| prompts.chat (`discovery.legacy.1581a23a6b695517`) | asset | [Original listing](https://github.com/f/prompts.chat) | Unverified |
+| prompts.chat 插件 (`discovery.legacy.9aae2dff5737af0c`) | asset | [Original listing](https://github.com/f/prompts.chat) | Unverified |
+| PubMed (`discovery.legacy.0e1c9c0ddc9b6856`) | asset | [Original listing](https://smithery.ai/servers/pubmed) | Unverified |
+| pubmed-mcp-server (`discovery.legacy.f99f2d10fc0fbed7`) | asset | [Original listing](https://pubmed.caseyjhand.com/mcp) | Unverified |
+| puppeteer (`discovery.legacy.70f09f458d6d09a4`) | asset | [Original listing](https://github.com/modelcontextprotocol/servers-archived/tree/main/src/puppeteer) | Unverified |
+| pydantic-ai (`discovery.legacy.d80732f7a3ed08a3`) | asset | [Original listing](https://github.com/pydantic/skills/tree/main/plugins/ai) | Unverified |
+| pyright-lsp (`discovery.legacy.185d1f5117224ced`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official) | Unverified |
+| python-development (`discovery.legacy.0e48fb4a9e84bbab`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| python-expert (`discovery.legacy.8e3f571a226f1962`) | asset | [Original listing](https://github.com/ananddtyagi/claude-code-marketplace) | Unverified |
+| qdrant-skills (`discovery.legacy.ce8181badfb48fcf`) | asset | [Original listing](https://skills.qdrant.tech) | Unverified |
+| qodo (`discovery.legacy.546c0d71c037085f`) | asset | [Original listing](https://github.com/qodo-ai/qodo-skills.git) | Unverified |
+| qodo-standards (`discovery.legacy.b7902561cee48a2a`) | asset | [Original listing](https://github.com/qodo-ai/qodo-skills.git) | Unverified |
+| qt-development-skills (`discovery.legacy.df19f897766e220c`) | asset | [Original listing](https://www.qt.io/) | Unverified |
+| quantitative-trading (`discovery.legacy.6ae655ab40f986a0`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| quarkus-agent (`discovery.legacy.4b294d51af2b5bc4`) | asset | [Original listing](https://quarkus.io) | Unverified |
+| Quelvio (`discovery.legacy.bc0384ff9fa92619`) | asset | [Original listing](https://quelvio.com) | Unverified |
+| railway (`discovery.legacy.585d9bc124103e64`) | asset | [Original listing](https://docs.railway.com/ai/claude-code-plugin) | Unverified |
+| ralph-loop (`discovery.legacy.805851f770c269b0`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official) | Unverified |
+| rc (`discovery.legacy.bea73b0ecf60de46`) | asset | [Original listing](https://www.revenuecat.com) | Unverified |
+| recall (`discovery.legacy.1ae65ca305687f83`) | asset | [Original listing](https://github.com/raiyanyahya/recall) | Unverified |
+| receipts (`discovery.legacy.1beaca85512e1308`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/receipts) | Unverified |
+| reddit-mcp-buddy (`discovery.legacy.76f514b0918210e6`) | asset | [Original listing](https://github.com/karanb192/reddit-mcp-buddy) | Unverified |
+| Redfin Property MCP — Single-Address Deep Dive (`discovery.legacy.8ac4bea14b3bbb6b`) | asset | [Original listing](https://thenextgennexus.com) | Unverified |
+| redis-development (`discovery.legacy.51c8ff5b5b79a8ab`) | asset | [Original listing](https://redis.io) | Unverified |
+| RedNote-MCP (`discovery.legacy.0ebabcbd9ab0fc14`) | asset | [Original listing](https://github.com/iFurySt/RedNote-MCP) | Unverified |
+| ref-tools-mcp (`discovery.legacy.52cca0106637ef59`) | asset | [Original listing](https://github.com/ref-tools/ref-tools-mcp) | Unverified |
+| remember (`discovery.legacy.cfb5bc77eb3b4e64`) | asset | [Original listing](https://github.com/Digital-Process-Tools/claude-remember) | Unverified |
+| render (`discovery.legacy.dc201cf0a39ec70d`) | asset | [Original listing](https://render.com) | Unverified |
+| requirements-clarity (`discovery.legacy.d1be836c18e0b389`) | asset | [Original listing](https://github.com/cexll/myclaude) | Unverified |
+| resend (`discovery.legacy.b499e207d1c0b520`) | asset | [Original listing](https://resend.com) | Unverified |
+| ResultRail by LarryBuildsAI (`discovery.legacy.4a43f3b4cc7eb2af`) | asset | [Original listing](https://resultrail-larrybuildsai.vercel.app/resultrail) | Unverified |
+| revenuecat (`discovery.legacy.a326d5febdf4c72b`) | asset | [Original listing](https://www.revenuecat.com) | Unverified |
+| revnuvo-mcp (`discovery.legacy.677fe463c1ff8288`) | asset | [Original listing](https://mcp.revnuvo.site) | Unverified |
+| rill (`discovery.legacy.6018185793ec2cac`) | asset | [Original listing](https://docs.rilldata.com/developers/build/ai-configuration) | Unverified |
+| romulus-31780 (`discovery.legacy.4cbd5a122e4e8d50`) | asset | [Original listing](https://romulus.rocks) | Unverified |
+| rootly (`discovery.legacy.7f80779fa8368168`) | asset | [Original listing](https://rootly.com) | Unverified |
+| ros-mcp-server (`discovery.legacy.89cb09f552742e19`) | asset | [Original listing](https://github.com/robotmcp/ros-mcp-server) | Unverified |
+| ruby-lsp (`discovery.legacy.5309c524b6bc6bbb`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official) | Unverified |
+| Rulesync (`discovery.legacy.d72b1c42625db80e`) | asset | [Original listing](https://github.com/dyoshikawa/rulesync) | Unverified |
+| runway-api (`discovery.legacy.2b6b636a86df197e`) | asset | [Original listing](https://runwayml.com) | Unverified |
+| rust-analyzer-lsp (`discovery.legacy.726648046988f893`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official) | Unverified |
+| sagemaker-ai (`discovery.legacy.1b5933d9098e4c3b`) | asset | [Original listing](https://github.com/awslabs/agent-plugins) | Unverified |
+| Saju Insights (`discovery.legacy.199497c35a37ef89`) | asset | [Original listing](https://github.com/hjsh200219/fortuneteller) | Unverified |
+| salesforce-development (`discovery.legacy.e7b0a3eab9eaa6cc`) | asset | [Original listing](https://github.com/forcedotcom/sf-skills/tree/main/plugins/builder/salesforce-development) | Unverified |
+| sanity (`discovery.legacy.6b7ecd00da2f5eda`) | asset | [Original listing](https://www.sanity.io) | Unverified |
+| sap-cds-mcp (`discovery.legacy.6601337309b729d8`) | asset | [Original listing](https://cap.cloud.sap/) | Unverified |
+| sap-fiori-mcp-server (`discovery.legacy.988bbecc5df6b301`) | asset | [Original listing](https://github.com/SAP/open-ux-tools/tree/main/packages/fiori-mcp-server) | Unverified |
+| sap-hana-cli (`discovery.legacy.f81ebb61f6d7cec6`) | asset | [Original listing](https://github.com/SAP-samples/hana-cli-claude-plugin) | Unverified |
+| sap-mcp (`discovery.legacy.3fffd4fc77bbb708`) | asset | [Original listing](https://mcp.sap.oobeprotocol.ai/) | Unverified |
+| sap-mdk-server (`discovery.legacy.2f5f15c36d16673d`) | asset | [Original listing](https://help.sap.com/docs/MDK) | Unverified |
+| save-to-spotify (`discovery.legacy.21c67ac636a46ccc`) | asset | [Original listing](https://github.com/spotify/save-to-spotify) | Unverified |
+| scandit-sdk (`discovery.legacy.c954490c4c656a7d`) | asset | [Original listing](https://www.scandit.com) | Unverified |
+| scientific-skills (`discovery.legacy.1a7fcbb68222987d`) | asset | [Original listing](https://github.com/K-Dense-AI/claude-scientific-skills) | Unverified |
+| scientific-thinking (`discovery.legacy.5d25c1ab83950d56`) | asset | [Original listing](https://github.com/K-Dense-AI/claude-scientific-skills) | Unverified |
+| search-specialist (`discovery.legacy.a9e93db4cc32724d`) | asset | [Original listing](https://github.com/Whamp/whamp-claude-tools) | Unverified |
+| security-guidance (`discovery.legacy.932c2a9ef6b957e5`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official) | Unverified |
+| security-scanning (`discovery.legacy.251576b2afa99e58`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| self-improving-agent (`discovery.legacy.4f61a709ff5e0a45`) | asset | [Original listing](https://github.com/alirezarezvani/claude-skills) | Unverified |
+| semgrep (`discovery.legacy.a30b98671e6c3774`) | asset | [Original listing](https://github.com/semgrep/mcp-marketplace.git) | Unverified |
+| sentry (`discovery.legacy.a53eec21a56614b3`) | asset | [Original listing](https://github.com/getsentry/plugin-claude) | Unverified |
+| sentry-cli (`discovery.legacy.825e4209998271ff`) | asset | [Original listing](https://sentry.io) | Unverified |
+| sentry-mcp (`discovery.legacy.277ff350cfbfcba9`) | asset | [Original listing](https://github.com/getsentry/sentry-mcp) | Unverified |
+| seo-content-creation (`discovery.legacy.f0a8cdf65ec45f79`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| seo-technical-optimization (`discovery.legacy.95e7695084e3da90`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| sequential-thinking (`discovery.legacy.30945015a0463282`) | asset | [Original listing](https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking) | Unverified |
+| serena (`discovery.legacy.d253b7a991abdefd`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/serena) | Unverified |
+| servicenow-sdk (`discovery.legacy.0aa283faf18eff2a`) | asset | [Original listing](https://servicenow.github.io/sdk/) | Unverified |
+| session-report (`discovery.legacy.574c46a3e28cbe83`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/session-report) | Unverified |
+| setup-agent-analytics (`discovery.legacy.4e46785f959906dd`) | asset | [Original listing](https://github.com/pendo-io/claude-pendo-plugin/tree/main/plugins/setup-agent-analytics) | Unverified |
+| setup-mcp-agent-analytics (`discovery.legacy.393ffb5c10aec760`) | asset | [Original listing](https://github.com/pendo-io/claude-pendo-plugin/tree/main/plugins/setup-mcp-agent-analytics) | Unverified |
+| shell-scripting (`discovery.legacy.6ab3eac45ed37e49`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| shippo (`discovery.legacy.f421f6dcc8b965fd`) | asset | [Original listing](https://docs.goshippo.com) | Unverified |
+| shopify-ai-toolkit (`discovery.legacy.11554a46a5896838`) | asset | [Original listing](https://shopify.dev) | Unverified |
+| SkillAudit (`discovery.legacy.e5051f4e2738a591`) | asset | [Original listing](https://skillaudit.vercel.app) | Unverified |
+| Skills CLI (`discovery.legacy.93e3e52b3e5f6849`) | asset | [Original listing](https://github.com/vercel-labs/skills) | Unverified |
+| slack (`discovery.legacy.940fff2b46f25b20`) | asset | [Original listing](https://github.com/slackapi/slack-mcp-plugin/tree/main) | Unverified |
+| slack-mcp (`discovery.legacy.c847db5516d6a0da`) | asset | [Original listing](https://github.com/modelcontextprotocol/servers-archived/tree/main/src/slack) | Unverified |
+| slack-mcp-server (`discovery.legacy.4cc346f45398a71a`) | asset | [Original listing](https://github.com/korotovsky/slack-mcp-server) | Unverified |
+| snowflake-cortex-code (`discovery.legacy.0ae19bbc386aa27e`) | asset | [Original listing](https://docs.snowflake.com/en/user-guide/cortex-code) | Unverified |
+| social-superpowers (`discovery.legacy.dffc03dca36ead20`) | asset | [Original listing](https://superpowers.social) | Unverified |
+| solana-mcp-vybe (`discovery.legacy.8ae3d1dbdd8f498c`) | asset | [Original listing](https://github.com/vybenetwork/solana-mcp-vybe) | Unverified |
+| sonarqube (`discovery.legacy.ca8fdf2ff2474e44`) | asset | [Original listing](https://www.sonarsource.com) | Unverified |
+| sonatype-guide (`discovery.legacy.7dac45e19b8127be`) | asset | [Original listing](https://github.com/sonatype/sonatype-guide-claude-plugin.git) | Unverified |
+| sourcegraph (`discovery.legacy.1ed3a2cdb92309b0`) | asset | [Original listing](https://sourcegraph.com) | Unverified |
+| spanner (`discovery.legacy.a09f3fbc0f3071c9`) | asset | [Original listing](https://github.com/gemini-cli-extensions/spanner) | Unverified |
+| SparkForge (`discovery.legacy.27bc30be0778d13b`) | asset | [Original listing](https://smithery.ai/servers/henry-ships/sparkforge) | Unverified |
+| spotify-ads-api (`discovery.legacy.373e02d6ac48d5c0`) | asset | [Original listing](https://github.com/spotify/ads-claude-plugin) | Unverified |
+| sqlite (`discovery.legacy.21a87d6c3d8db07c`) | asset | [Original listing](https://github.com/modelcontextprotocol/servers-archived/tree/main/src/sqlite) | Unverified |
+| stackhawk-api (`discovery.legacy.c4a6ad1e0751f611`) | asset | [Original listing](https://docs.stackhawk.com/ai-security/) | Unverified |
+| stackhawk-hawkscan (`discovery.legacy.d4ec8fcc6d88c40c`) | asset | [Original listing](https://docs.stackhawk.com/ai-security/) | Unverified |
+| SteadyFetch (`discovery.legacy.25a2637267f32978`) | asset | [Original listing](https://smithery.ai/servers/intake-triage/steadyfetch) | Unverified |
+| stealth-browser-mcp (`discovery.legacy.bf0089fd00f0de51`) | asset | [Original listing](https://github.com/vibheksoni/stealth-browser-mcp) | Unverified |
+| streaming-skills-plugin (`discovery.legacy.0ae1dacbc0bc8e46`) | asset | [Original listing](https://www.confluent.io) | Unverified |
+| stripe (`discovery.legacy.5953fb663ddc9259`) | asset | [Original listing](https://github.com/stripe/ai/tree/main/providers/claude/plugin) | Unverified |
+| stripe-mcp (`discovery.legacy.a02ce1a0587497d0`) | asset | [Original listing](https://github.com/stripe/agent-toolkit) | Unverified |
+| Style Dictionary (`discovery.legacy.b927d28b36a11093`) | asset | [Original listing](https://github.com/amzn/style-dictionary) | Unverified |
+| SubwayInfo NYC (`discovery.legacy.09e5f3b13b704cdd`) | asset | [Original listing](https://subwayinfo.nyc) | Unverified |
+| sumup (`discovery.legacy.740d94bbac372a3f`) | asset | [Original listing](https://www.sumup.com/) | Unverified |
+| supabase (`discovery.legacy.c1775228a78a3957`) | asset | [Original listing](https://github.com/supabase-community/supabase-plugin) | Unverified |
+| supabase-mcp (`discovery.legacy.9be5e6e8eacb21a9`) | asset | [Original listing](https://github.com/supabase-community/supabase-mcp) | Unverified |
+| supabase-toolkit (`discovery.legacy.5aecccc0e1cf36b0`) | asset | [Original listing](https://github.com/davila7/claude-code-templates) | Unverified |
+| SuperClaude Framework (`discovery.legacy.e68405ab24aeebec`) | asset | [Original listing](https://github.com/SuperClaude-Org/SuperClaude_Framework) | Unverified |
+| superdesign (`discovery.legacy.a04435aa6ee6881e`) | asset | [Original listing](https://superdesign.dev) | Unverified |
+| superpowers (`discovery.legacy.4514a4ef49e882ea`) | asset | [Original listing](https://github.com/obra/superpowers) | Unverified |
+| Surprise Buddy (`discovery.legacy.cd25694b98a811cc`) | asset | [Original listing](https://surprise-buddy.com) | Unverified |
+| swift-lsp (`discovery.legacy.5a5c471cc39daece`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official) | Unverified |
+| synthflow (`discovery.legacy.722272b1fee4ce3e`) | asset | [Original listing](https://synthflow.ai) | Unverified |
+| systems-programming (`discovery.legacy.5d2d0a9076cb0e0e`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| task-master (`discovery.legacy.4038b573c3784dcb`) | asset | [Original listing](https://github.com/eyaltoledano/claude-task-master) | Unverified |
+| taskmaster (`discovery.legacy.5d77c9ab71bf89d9`) | asset | [Original listing](https://github.com/eyaltoledano/claude-task-master) | Unverified |
+| tavily (`discovery.legacy.9501248cf390c05a`) | asset | [Original listing](https://www.tavily.com/) | Unverified |
+| tdd-workflows (`discovery.legacy.389c9d649bc6b5a5`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| teamcity-cli (`discovery.legacy.d30681ea0c8050cd`) | asset | [Original listing](https://www.jetbrains.com/teamcity/) | Unverified |
+| telegram (`discovery.legacy.467fc03427ee7f2f`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official) | Unverified |
+| terraform (`discovery.legacy.eb39eecd3a6b1161`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/terraform) | Unverified |
+| time (`discovery.legacy.2e4e6eff89d44e4c`) | asset | [Original listing](https://github.com/modelcontextprotocol/servers/tree/main/src/time) | Unverified |
+| tls-radar (`discovery.legacy.ad7796eae253d972`) | asset | [Original listing](https://tlsradar.com/cli) | Unverified |
+| togetherai-skills (`discovery.legacy.ca15b6bc76799ea9`) | asset | [Original listing](https://www.together.ai) | Unverified |
+| Tokens Studio (`discovery.legacy.946d32bd5b1db0cf`) | asset | [Original listing](https://github.com/tokens-studio/figma-plugin) | Unverified |
+| tracepass-mcp-server (`discovery.legacy.f648096d93da30ee`) | asset | [Original listing](https://www.tracepass.eu) | Unverified |
+| tradingview-mcp (`discovery.legacy.e49219612ec1a3dc`) | asset | [Original listing](https://github.com/atilaahmettaner/tradingview-mcp) | Unverified |
+| Tribune (`discovery.legacy.10d4844a20906b74`) | asset | [Original listing](https://github.com/ao92265/claude-code-playbook) | Unverified |
+| twilio-developer-kit (`discovery.legacy.899362be2b66a3bd`) | asset | [Original listing](https://www.twilio.com) | Unverified |
+| TypeScript LSP (`discovery.legacy.e4fcf31d4685d788`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official) | Unverified |
+| typescript-lsp (`discovery.legacy.044d755cd76a5c1c`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official) | Unverified |
+| ui-designer (`discovery.legacy.0ae1a132bf9d58fd`) | asset | [Original listing](https://github.com/ananddtyagi/claude-code-marketplace) | Unverified |
+| ui-theme-designer (`discovery.legacy.683e34b3ff36ec31`) | asset | [Original listing](https://github.com/SAP/ui-theme-designer-plugins-for-coding-agents) | Unverified |
+| ui-ux-pro-max (`discovery.legacy.da32611b51966969`) | asset | [Original listing](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | Unverified |
+| ui5 (`discovery.legacy.f078d9bdfb4a3eb5`) | asset | [Original listing](https://github.com/UI5/plugins-coding-agents) | Unverified |
+| ui5-modernization (`discovery.legacy.31eed6270b54862a`) | asset | [Original listing](https://github.com/UI5/plugins-coding-agents) | Unverified |
+| ui5-typescript-conversion (`discovery.legacy.d8a1334ae566deb4`) | asset | [Original listing](https://github.com/UI5/plugins-coding-agents) | Unverified |
+| uk-due-diligence (`discovery.legacy.aba281fe65865f17`) | asset | [Original listing](https://bouch.dev/products/uk-due-diligence-mcp/) | Unverified |
+| UnClick (`discovery.legacy.e6c521b8545b45ea`) | asset | [Original listing](https://unclick.world) | Unverified |
+| unifi-mcp (`discovery.legacy.a8276c4924b5cc74`) | asset | [Original listing](https://github.com/sirkirby/unifi-mcp) | Unverified |
+| unit-testing (`discovery.legacy.8684f07ff2d20872`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
+| United States Weather (`discovery.legacy.865e278881b1a120`) | asset | [Original listing](https://www.weather.gov) | Unverified |
+| unity (`discovery.legacy.f82378fa0ef87d8b`) | asset | [Original listing](https://unity.com) | Unverified |
+| Unity-MCP (`discovery.legacy.3e39becdaf6f5ba7`) | asset | [Original listing](https://github.com/IvanMurzak/Unity-MCP) | Unverified |
+| unreal-engine-skills-for-claude-code (`discovery.legacy.51456d70c4d106bf`) | asset | [Original listing](https://dev.epicgames.com/documentation/unreal-engine/unreal-mcp-in-unreal-editor) | Unverified |
+| unreal-mcp (`discovery.legacy.8cae1eda0694900f`) | asset | [Original listing](https://github.com/chongdashu/unreal-mcp) | Unverified |
+| Unreal_mcp (`discovery.legacy.9e894be73802fd22`) | asset | [Original listing](https://github.com/ChiR24/Unreal_mcp) | Unverified |
+| valtown (`discovery.legacy.47a8d1f192951c52`) | asset | [Original listing](https://val.town) | Unverified |
+| vanguard-advisor-tools (`discovery.legacy.d93938c4c231aaf2`) | asset | [Original listing](https://advisors.vanguard.com) | Unverified |
+| vanta (`discovery.legacy.93fdb55b636d79a6`) | asset | [Original listing](https://help.vanta.com/en/articles/14094979-connecting-to-vanta-mcp#h_887ce3f337) | Unverified |
+| vanta-mcp-plugin (`discovery.legacy.13adfad309a3fac6`) | asset | [Original listing](https://help.vanta.com/en/articles/14094979-connecting-to-vanta-mcp#h_887ce3f337) | Unverified |
+| vercel (`discovery.legacy.a2137285dd5fa37b`) | asset | [Original listing](https://github.com/vercel/vercel-plugin) | Unverified |
+| vibe-pay (`discovery.legacy.81c776dd52385e5d`) | asset | [Original listing](https://xqb.io/mcp) | Unverified |
+| vibe-prospecting (`discovery.legacy.4e3b7e851b636752`) | asset | [Original listing](https://www.vibeprospecting.ai/product/claude-plugin) | Unverified |
+| VirtualSMS (`discovery.legacy.6a1fa8a8fa1862d4`) | asset | [Original listing](https://virtualsms.io/mcp) | Unverified |
+| visual-documentation-skills (`discovery.legacy.a3da9c9bdf156e5c`) | asset | [Original listing](https://github.com/mhattingpete/claude-skills-marketplace) | Unverified |
+| Vivaldo Product Discovery (`discovery.legacy.6a7a06fa4352fd43`) | asset | [Original listing](https://www.vivaldo.shop/) | Unverified |
+| Voidly (`discovery.legacy.525ec698d2175d31`) | asset | [Original listing](https://voidly.ai) | Unverified |
+| vsql-extension-builder (`discovery.legacy.705eef892da0504c`) | asset | [Original listing](https://villagesql.com) | Unverified |
+| Weather MCP Server (`discovery.legacy.d425aedc09b6fb4e`) | asset | [Original listing](https://github.com/isdaniel/mcp_weather_server) | Unverified |
+| Web Scout (`discovery.legacy.381630cde54aa5a9`) | asset | [Original listing](https://github.com/pinkpixel-dev/web-scout-mcp) | Unverified |
+| websearch-tools (`discovery.legacy.ae3d030ebc9cc7e3`) | asset | [Original listing](https://github.com/fcakyon/claude-codex-settings) | Unverified |
+| wenyan-mcp (`discovery.legacy.2f9904c1de923221`) | asset | [Original listing](https://github.com/caol64/wenyan-mcp) | Unverified |
+| wikipedia-mcp-server (`discovery.legacy.3ce7d7bbec52632e`) | asset | [Original listing](https://wikipedia.caseyjhand.com/mcp) | Unverified |
+| windsor-ai (`discovery.legacy.66fa19bdd16e1cc2`) | asset | [Original listing](https://windsor.ai) | Unverified |
+| wingspan (`discovery.legacy.cad4407c4b048a3a`) | asset | [Original listing](https://github.com/wingspanHQ/mcp-claude-plugin) | Unverified |
+| witness-protocol (`discovery.legacy.8d5837fa16e666dd`) | asset | [Original listing](https://smithery.ai/servers/delx/witness-protocol) | Unverified |
+| wix (`discovery.legacy.a353c0357c953e0e`) | asset | [Original listing](https://dev.wix.com/docs/wix-cli/guides/development/about-wix-skills) | Unverified |
+| workos (`discovery.legacy.3d774aced6c0c493`) | asset | [Original listing](https://workos.com) | Unverified |
+| wps-office-skills (`discovery.legacy.c9e3321831cb8085`) | asset | [Original listing](https://github.com/lc2panda/wps-skills) | Unverified |
+| x64dbg-mcp-server (`discovery.legacy.cf694ef4d643069a`) | asset | [Original listing](https://github.com/duty1g/x64dbg-mcp-server) | Unverified |
+| x711io - universal gas station market and intelligence (`discovery.legacy.c9c6310e3731533e`) | asset | [Original listing](https://x711.io) | Unverified |
+| xiaohongshu-mcp (`discovery.legacy.f08da6db315b625d`) | asset | [Original listing](https://github.com/xpzouying/xiaohongshu-mcp) | Unverified |
+| xpoz (`discovery.legacy.0642fe9cff7770d0`) | asset | [Original listing](https://xpoz.ai) | Unverified |
+| youdotcom-agent-skills (`discovery.legacy.87d4c1a233c736dc`) | asset | [Original listing](https://you.com) | Unverified |
+| Your-Echo-Agent- (`discovery.legacy.59409341b0f4c623`) | asset | [Original listing](https://yourechoagent.com) | Unverified |
+| zapier (`discovery.legacy.5451fb1be9b862fd`) | asset | [Original listing](https://github.com/zapier/zapier-mcp/tree/main/plugins/zapier) | Unverified |
+| zilliz (`discovery.legacy.e9304d1bbdd3b56c`) | asset | [Original listing](https://docs.zilliz.com) | Unverified |
+| Zipp (`discovery.legacy.12b2d9449aeab745`) | asset | [Original listing](https://zippfeed.com) | Unverified |
+| zocks-advisor (`discovery.legacy.9acb610b622a2ae2`) | asset | [Original listing](https://github.com/zocks-communications/zocks-agent-plugins) | Unverified |
+| zoom-plugin (`discovery.legacy.1851d2c822677a38`) | asset | [Original listing](https://developers.zoom.us/) | Unverified |
+| zoominfo (`discovery.legacy.8eaa9afad8bc129d`) | asset | [Original listing](https://www.zoominfo.com) | Unverified |
+| zotero-mcp (`discovery.legacy.a05d7bfb09e4848b`) | asset | [Original listing](https://github.com/cookjohn/zotero-mcp) | Unverified |
+| zscaler (`discovery.legacy.36a421c77e647a55`) | asset | [Original listing](https://github.com/zscaler/zscaler-mcp-server) | Unverified |
+| zyte-web-data (`discovery.legacy.d36a37612b65a14c`) | asset | [Original listing](https://www.zyte.com) | Unverified |
+
+### Discovery platforms
+
+| Platform | Source |
+|---|---|
+| aitmpl.com | [Discovery channel](https://aitmpl.com) |
+| anthropics/skills | [Discovery channel](https://github.com/anthropics/skills) |
+| Awesome Agentic UI | [Discovery channel](https://github.com/e2b-dev/awesome-agentic-ui) |
+| awesome-agent-conventions | [Discovery channel](https://github.com/ItamarZand88/awesome-agent-conventions) |
+| awesome-chatgpt-prompts | [Discovery channel](https://github.com/f/awesome-chatgpt-prompts) |
+| awesome-cursorrules | [Discovery channel](https://github.com/PatrickJS/awesome-cursorrules) |
+| Awesome-MCP-ZH | [Discovery channel](https://github.com/yzfly/Awesome-MCP-ZH) |
+| awesomeclaude.ai | [Discovery channel](https://awesomeclaude.ai/awesome-claude-skills) |
+| buildwithclaude.com | [Discovery channel](https://buildwithclaude.com) |
+| claude-plugins.dev | [Discovery channel](https://claude-plugins.dev) |
+| ComposioHQ/awesome-claude-skills | [Discovery channel](https://github.com/ComposioHQ/awesome-claude-skills) |
+| davila7/claude-code-templates | [Discovery channel](https://github.com/davila7/claude-code-templates) |
+| explainx.ai Design Registry | [Discovery channel](https://explainx.ai/designs) |
+| hesreallyhim/awesome-claude-code | [Discovery channel](https://github.com/hesreallyhim/awesome-claude-code) |
+| kyrolabs/awesome-agents | [Discovery channel](https://github.com/kyrolabs/awesome-agents) |
+| mcp.so | [Discovery channel](https://mcp.so) |
+| modelcontextprotocol/servers | [Discovery channel](https://github.com/modelcontextprotocol/servers) |
+| punkpeye/awesome-mcp-servers | [Discovery channel](https://github.com/punkpeye/awesome-mcp-servers) |
+| Smithery | [Discovery channel](https://smithery.ai) |
+| superpowers-marketplace | [Discovery channel](https://github.com/obra/superpowers-marketplace) |
+| travisvn/awesome-claude-skills | [Discovery channel](https://github.com/travisvn/awesome-claude-skills) |
+| VoltAgent/awesome-design-md | [Discovery channel](https://github.com/VoltAgent/awesome-design-md) |
+| whyashthakker/design-md-templates-skills | [Discovery channel](https://github.com/whyashthakker/design-md-templates-skills) |
+| wshobson/claude-code-workflows | [Discovery channel](https://github.com/wshobson/agents) |
+| 官方市场 claude-plugins-official | [Discovery channel](https://github.com/anthropics/claude-plugins-official) |
+| 官方社区市场 claude-plugins-community | [Discovery channel](https://github.com/anthropics/claude-plugins-community) |
 
 ## Sources
 

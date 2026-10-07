@@ -1,0 +1,31 @@
+{
+  "top": {
+    "bundle": "http://localhost:3001/assets/index-9Tf1wpOG.js",
+    "count": "1166 个目录条目367 个已登记资源 · 799 条发现线索目录版本 0.1.0-draft更新于 2026-10-07",
+    "nav": [
+      "全部资源 1166",
+      "设计模板25",
+      "设计系统185",
+      "Skills272",
+      "提示词31",
+      "插件653"
+    ]
+  },
+  "aliasSearch": {
+    "title": "HTML Deck 内容与代码框架",
+    "resourceID": "opendesign.html-ppt"
+  },
+  "aliasDetail": {
+    "aliases": 47,
+    "hasOriginal": true,
+    "hasInstall": false
+  },
+  "pagination": "上一页第 2 / 55 页下一页",
+  "narrow": {
+    "width": 390,
+    "overflow": false,
+    "theme": "dark",
+    "accent": "#80cbb8"
+  },
+  "keyboard": "true"
+}

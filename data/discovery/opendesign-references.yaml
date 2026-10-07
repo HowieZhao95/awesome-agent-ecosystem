@@ -1,0 +1,2733 @@
+schema_version: 1
+source_id: opendesign
+ref:
+  kind: commit
+  value: 53231d40b778d88eba23f35547bf99485d3ae9fc
+entries:
+- id: discovery.opendesign.63ae19258cbb2291
+  title: docs-page
+  summary: A documentation page — inline-start nav, scrollable article body, inline-end table of contents. Use when the brief mentions "docs", "documentation", "guide",
+    "API reference", or "tutorial".
+  classification:
+    category: skills
+    subtype: null
+    domains:
+    - documents
+    - visual-design
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Existing canonical resource ID opendesign.docs-page is retained instead of creating a duplicate. Substantive task guidance in the actual instructions
+      body; classified as skills because it describes a reusable method and contains no separate framework seed. Evidence: A documentation page — inline-start nav,
+      scrollable article body, inline-end table of contents. Use when the brief mentions "docs", "documentation", "guide", "API reference", or "t'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/docs-page/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/docs-page/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: existing_resource
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.docs-page
+- id: discovery.opendesign.6ee2293386a4302f
+  title: Build a New-Hire Onboarding Module like a Top Enablement Lead
+  summary: A first-30-days onboarding module for new hospitality hires — the behaviors, the practice, the checks, and the manager follow-up. Built as a decision-grade
+    professional training deck for new hires, managers.
+  classification:
+    category: templates
+    subtype: deck
+    domains: &id001
+    - documents
+    - visual-design
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: Task/content recipe calls or points to shared html-ppt instructions; no independent reusable seed/code framework is present in this entry directory.
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-course-module/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-course-module/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.dc743875ee668a01
+  title: Write a Feature Business Case like a Principal PM
+  summary: 'OpenDesign''s feature business case for the plugin marketplace: the user pain, options, tradeoffs, and the measure of success. Built as a decision-grade
+    product management deck for PM, eng, design, leadership.'
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: Task/content recipe calls or points to shared html-ppt instructions; no independent reusable seed/code framework is present in this entry directory.
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-graphify-dark-graph/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-graphify-dark-graph/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.583a88251a5cb799
+  title: Run a BYOK Model-Choice Session like an Applied-AI Engineer
+  summary: 'OpenDesign + BYOK: choosing and wiring your own model, hands-on — cost, quality, and the routing decision. Built as a decision-grade AI literacy deck
+    for engineers, IT, applied-AI teams.'
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: Task/content recipe calls or points to shared html-ppt instructions; no independent reusable seed/code framework is present in this entry directory.
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-hermes-cyber-terminal/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-hermes-cyber-terminal/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.f0e85a091d453590
+  title: Turn an Incident Retro into a Learning Deck like a Platform VP
+  summary: 'OpenDesign''s incident retro: the daemon-restart data bug, the root cause, the fix, and the systemic follow-ups. Built as a decision-grade product management
+    deck for engineering, SRE, leadership.'
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: Task/content recipe calls or points to shared html-ppt instructions; no independent reusable seed/code framework is present in this entry directory.
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-knowledge-arch-blueprint/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-knowledge-arch-blueprint/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.2fac46241530e0b7
+  title: Write an Enterprise AI Adoption Brief like a Transformation Lead
+  summary: 'OpenDesign''s enterprise AI-adoption brief: local-first agents at work, the risk controls, the ROI, and the rollout plan. Built as a decision-grade AI
+    literacy deck for leadership, IT, security.'
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: Task/content recipe calls or points to shared html-ppt instructions; no independent reusable seed/code framework is present in this entry directory.
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-obsidian-claude-gradient/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-obsidian-claude-gradient/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.068a702dbad5b43d
+  title: Write a Demo Day Pitch like a Top Accelerator Partner
+  summary: 'OpenDesign''s demo-day pitch: hook, traction, moat, and the raise — built to make a partner sit up by page three. Built as a decision-grade fundraising
+    pitch deck for accelerator partners, angels.'
+  classification:
+    category: skills
+    subtype: null
+    domains:
+    - documents
+    - visual-design
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: Existing canonical resource ID opendesign.html-ppt-pitch-deck is retained instead of creating a duplicate. Task/content recipe calls or points to shared
+      html-ppt instructions; no independent reusable seed/code framework is present in this entry directory.
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-pitch-deck/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-pitch-deck/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: existing_resource
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt-pitch-deck
+- id: discovery.opendesign.f498bc0ad9cad733
+  title: Run a Live AI Product Demo like a Founding DevRel Lead
+  summary: 'OpenDesign live demo: from a one-line prompt to runnable design in a single session — the flow, live. Built as a decision-grade AI literacy deck for developers,
+    prospects, community.'
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: Task/content recipe calls or points to shared html-ppt instructions; no independent reusable seed/code framework is present in this entry directory.
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-presenter-mode-reveal/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-presenter-mode-reveal/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.740010ec2b3dbd83
+  title: Pitch a Team Rollout like a Strategic Account Executive
+  summary: 'OpenDesign Teams: a launch-and-adoption proposal for a mid-market design team weighing a switch from closed cloud tools. Built as a decision-grade B2B
+    sales deck for design team lead, IT.'
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: Task/content recipe calls or points to shared html-ppt instructions; no independent reusable seed/code framework is present in this entry directory.
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-product-launch/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-product-launch/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.3acbfb9e759c31eb
+  title: html-ppt-taste-brutalist
+  summary: 16:9 HTML deck in tactical-telemetry / CRT-terminal taste. Deactivated-CRT charcoal slides, white-phosphor monospace, hazard-red accent, scanline overlay,
+    ASCII syntax, density over decoration. Distilled from Leonxlnx/taste-skill `brutalist-skill` (Tactical Telemetry mode).
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-taste-brutalist/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-taste-brutalist/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.297a557fc35a006e
+  title: html-ppt-taste-editorial
+  summary: 16:9 HTML deck in editorial-minimalist taste. Warm cream slides, serif display + grotesque body, hairline rules, monospace meta, generous macro-whitespace,
+    one accent. Distilled from Leonxlnx/taste-skill `minimalist-skill`.
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-taste-editorial/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-taste-editorial/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.12d30a20545a11c4
+  title: Give an Engineering Tech Talk like a Staff Developer-Advocate
+  summary: 'OpenDesign internals: how the agent stream, sandbox, and artifacts work — an engineering deep-dive talk. Built as a decision-grade AI literacy deck for
+    engineers, dev community.'
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: Task/content recipe calls or points to shared html-ppt instructions; no independent reusable seed/code framework is present in this entry directory.
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-tech-sharing/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-tech-sharing/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.425fd8673cd3eeb2
+  title: Brief a Health-System Board on Data Governance like a Chief Compliance Officer
+  summary: 'A hospital data-governance briefing: patient-data risk, the control framework, accountability, and the approval the board must give. Built as a decision-grade
+    policy briefing deck for health-system board, regulators.'
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: Task/content recipe calls or points to shared html-ppt instructions; no independent reusable seed/code framework is present in this entry directory.
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-testing-safety-alert/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-testing-safety-alert/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.02a7658e6aa15cee
+  title: Write a Weekly Growth Review like a Head of Analytics
+  summary: 'OpenDesign''s weekly growth review: stars, installs, activation — the number, the driver, and the recommended move. Built as a decision-grade data & finance
+    deck for growth & product team.'
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: Task/content recipe calls or points to shared html-ppt instructions; no independent reusable seed/code framework is present in this entry directory.
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-weekly-report/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-weekly-report/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.7d510b8aed37e2cf
+  title: Write a Personal Manifesto Talk like a Narrative Podcast Producer
+  summary: 'A personal manifesto: a year of saying yes — the premise, the scenes, the turn, and the meaning that lands. Built as a decision-grade story deck for community,
+    talk audience.'
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: Task/content recipe calls or points to shared html-ppt instructions; no independent reusable seed/code framework is present in this entry directory.
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-xhs-pastel-card/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-xhs-pastel-card/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.e1bf2048a0b9e3be
+  title: Write a Staff-Engineer Promotion Case like a Calibration-Committee Insider
+  summary: A staff-engineer promotion packet — scope, the proof moments, the artifacts, and the impact that clears the bar. Built as a decision-grade career deck
+    for manager, calibration committee.
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: Task/content recipe calls or points to shared html-ppt instructions; no independent reusable seed/code framework is present in this entry directory.
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-xhs-white-editorial/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-xhs-white-editorial/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.79712a4026419ce3
+  title: Turn a Hobby into a Story Deck like a Passion-Project Storyteller
+  summary: A gamer's journey building a retro-arcade collection — the obsession, the hunt, and what the machines came to mean. Built as a decision-grade story deck
+    for friends, hobby community.
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-8-bit-orbit/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-8-bit-orbit/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.9ef34a686d17c8bd
+  title: Curate an Art Biennale Deck like a Museum Exhibition Director
+  summary: A curatorial deck for a contemporary art biennale — the thesis, the rooms, the works, and the visitor journey. Built as a decision-grade design craft deck
+    for museum board, curators.
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-biennale-yellow/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-biennale-yellow/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.3e64592fc5bd127c
+  title: Rescue a Messy Deck to Board-Grade like an Executive Design Director
+  summary: Rescuing a messy startup deck into a board-grade system — the diagnosis, the page grammar, and the rebuilt proof pages. Built as a decision-grade design
+    craft deck for founders, exec presenter.
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-block-frame/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-block-frame/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.5c35a8a27d11534d
+  title: Present a Quarterly Business Review like a Chief of Staff
+  summary: 'OpenDesign''s QBR for the executive committee: what moved, what stalled, and the resource reallocation ask. Built as a decision-grade corporate strategy
+    deck for executive committee.'
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-blue-professional/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-blue-professional/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.3b9787a60556ca0b
+  title: Write a Series A Growth Story like a Tier-1 VC Partner
+  summary: 'OpenDesign''s Series A growth story: the traction curve, the expansion motion, and why it''s venture-scale. Built as a decision-grade fundraising pitch
+    deck for Series A partners.'
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-bold-poster/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-bold-poster/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.8f07464982cf5ab0
+  title: Write a Product-Launch Announcement like a PR & Comms Director
+  summary: OpenDesign's product-launch announcement and press narrative — the headline, the proof points, and the call to action. Built as a decision-grade marketing
+    & GTM deck for press, community, prospects.
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-broadside/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-broadside/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.4596a33465aab0d3
+  title: Write a Year-End Self-Review like a Promotion-Committee Insider
+  summary: A year-end self-review for a product manager — the role, the outcomes, the learning, and the ask, all evidence-backed. Built as a decision-grade career
+    deck for manager, review committee.
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-capsule/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-capsule/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.bc0ed99577df8324
+  title: Present a Senior Thesis Defense like a Distinction-Grade Economics Student
+  summary: An economics senior thesis on the employment effects of local minimum-wage increases — identification strategy, evidence, and limitations. Built as a decision-grade
+    coursework defense deck for thesis committee.
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-cartesian/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-cartesian/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.dd86f63f00a09bcc
+  title: Write a Renewal & Expansion Business Case like an Account Director
+  summary: 'OpenDesign renewal + seat-expansion business case for a growing customer: realized value, usage proof, and the expansion ROI. Built as a decision-grade
+    B2B sales deck for champion, finance approver.'
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-cobalt-grid/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-cobalt-grid/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.f5ae9a6d8cb64cc9
+  title: Plan a Community-Growth Campaign like a Head of Growth
+  summary: 'OpenDesign''s community-growth campaign across GitHub, Discord, and X: the loops, the content calendar, and the pipeline math. Built as a decision-grade
+    marketing & GTM deck for growth team, community lead.'
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-coral/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-coral/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.e2e88917dad20550
+  title: Present a Visual-Identity System like a Lead Brand Designer
+  summary: A brand visual-identity system reveal for an outdoor label — logo, color, type, and the rules that keep it consistent. Built as a decision-grade design
+    craft deck for brand team, client.
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-creative-mode/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-creative-mode/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.1e4a56cb4b03e41c
+  title: Write a Customer Onboarding Workshop like a Field Enablement Director
+  summary: A customer-success workshop onboarding users to a project-management app — the first-value path and the habits that retain. Built as a decision-grade professional
+    training deck for new customers, CS team.
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-daisy-days/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-daisy-days/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.a944f7fb942e54fe
+  title: Build an Editorial Design System like a Magazine Art Director
+  summary: A type-and-color system for a culture magazine relaunch — the grid, the tri-tone palette, and the layout kit. Built as a decision-grade design craft deck
+    for editorial & design team.
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-editorial-tri-tone/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-editorial-tri-tone/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.44794cfc7b1dcc76
+  title: Write an Urban Green-Space Policy Brief like a City Sustainability Director
+  summary: A municipal urban-tree-canopy policy proposal — the public need, the evidence, the options, and the funding decision. Built as a decision-grade policy
+    briefing deck for city council, agency reviewers.
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-grove/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-grove/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.4db28710cdc001f9
+  title: Present a Unit-Economics Model like an FP&A Partner
+  summary: 'OpenDesign''s unit-economics and BYOK cost model: the assumptions, the sensitivity, and why it scales. Built as a decision-grade data & finance deck for
+    CFO, investors.'
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-long-table/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-long-table/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.00cc601052a78e9d
+  title: Write a Margin-Recovery Final Deck like a McKinsey Engagement Manager
+  summary: A margin-recovery diagnosis for a regional grocery chain — the governing thought, the driver tree, the priorities, and the roadmap. Built as a decision-grade
+    consulting deck for client sponsor, steering committee.
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-mat/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-mat/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.c82479cd80d045f7
+  title: Write a Grant Committee Brief like a Funded Principal Investigator
+  summary: A grant proposal on CRISPR base-editing for sickle-cell disease — the hypothesis, the approach, the milestones, and the risk. Built as a decision-grade
+    academic research deck for grant review committee.
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-monochrome/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-monochrome/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.babd882d324d6935
+  title: Build a Designer Portfolio Narrative like a Hiring Bar-Raiser
+  summary: A designer's portfolio narrative for a senior interview — three case studies, the craft, and the judgment behind each. Built as a decision-grade career
+    deck for hiring panel.
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-neo-grid-bold/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-neo-grid-bold/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.aeb83810ac884b36
+  title: Make a Public-Transit Funding Case like a Transportation Policy Lead
+  summary: A public-transit funding proposal for a city council — ridership need, the plan, the risk controls, and the ask. Built as a decision-grade policy briefing
+    deck for city council, public board.
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-peoples-platform/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-peoples-platform/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.fafdf71f57dac433
+  title: Turn a Field-Study Capstone into a Defense Deck like a Star Biology Major
+  summary: A field-biology capstone on urban pollinator decline — the survey design, the data, the contribution, and the caveats. Built as a decision-grade coursework
+    defense deck for faculty reviewers.
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-pin-and-paper/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-pin-and-paper/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.0acad5ecc4831674
+  title: Turn an Anniversary into a Photo Essay like a Wedding Storyteller
+  summary: A wedding-anniversary tribute photo essay — a decade in scenes, the turning points, and the quiet meaning of staying. Built as a decision-grade story deck
+    for couple, family, friends.
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-pink-script/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-pink-script/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.f405b814c0388485
+  title: Run a Sales-Floor Training like a Top Retail Coach
+  summary: A retail sales-floor training on consultative selling — the flow, the role-plays, and the daily habit that lifts conversion. Built as a decision-grade
+    professional training deck for store associates, floor managers.
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-playful/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-playful/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.d14d8ea426406431
+  title: Present a Poster-Series Case Study like a Festival Art Director
+  summary: A brutalist poster-series case study for a music festival — the concept, the system, and how it scaled across formats. Built as a decision-grade design
+    craft deck for design peers, client.
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-raw-grid/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-raw-grid/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.51fb8cc75fc108bd
+  title: Deliver a Security-Awareness Training like a CISO Enablement Team
+  summary: An IT security-awareness training on spotting phishing — the tells, the drill, and what to do in the first 60 seconds. Built as a decision-grade professional
+    training deck for all employees.
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-retro-windows/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-retro-windows/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.acfef13d5fefbd1b
+  title: Make a Neighborhood Zine Story like an Indie Photo Editor
+  summary: A neighborhood zine on the disappearing corner shops — portraits, voices, and what a block loses when they close. Built as a decision-grade story deck
+    for community, local readers.
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-retro-zine/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-retro-zine/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.e8333a6526cec3e1
+  title: Turn a Cherry-Blossom Trip into a Photo Essay like a Travel Editorial Director
+  summary: A cherry-blossom-season travel photo essay through Kyoto — the arrival, the peak bloom, and the moment that made the trip. Built as a decision-grade story
+    deck for friends, travel readers.
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-sakura-chroma/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-sakura-chroma/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.4bcbfe96e46b8fb1
+  title: Pitch a Graduation Design Project like a Portfolio-Ready Design Student
+  summary: 'A design-school graduation project: a civic wayfinding system for a transit hub — the brief, the process, and the outcome. Built as a decision-grade coursework
+    defense deck for crit panel, faculty.'
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-scatterbrain/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-scatterbrain/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.2171c62b80aab317
+  title: Write a Strategy Decision Memo like a Corp-Dev Lead
+  summary: 'OpenDesign''s strategy memo: should it monetize the plugin registry now or hold — options, risks, and the recommendation. Built as a decision-grade corporate
+    strategy deck for CEO, strategy team.'
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-signal/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-signal/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.49cd78a502d4bac8
+  title: Deliver a Digital-Transformation Roadmap like a Big-Four Partner
+  summary: A digital-transformation roadmap for a legacy insurer — the diagnosis, the sequenced bets, and the operating rhythm to land them. Built as a decision-grade
+    consulting deck for client executives.
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-soft-editorial/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-soft-editorial/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.5790d2397418954a
+  title: Present a Workplace-Safety Compliance Review like a Senior Regulator
+  summary: A workplace-safety compliance review for a manufacturing regulator — findings, the evidence chain, and the corrective mandate. Built as a decision-grade
+    policy briefing deck for regulator, plant leadership.
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-stencil-tablet/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-stencil-tablet/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.d6cb6023c67f6979
+  title: Build a Studio Portfolio & Rate Deck like a Creative Studio Owner
+  summary: A photography studio's portfolio-and-rate deck — the signature work, the process, and the packages that win the brief. Built as a decision-grade design
+    craft deck for prospective clients.
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-studio/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-studio/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.03e99f937981e8e4
+  title: Deliver a Humanities Research Lecture like a Tenured Art Historian
+  summary: 'A humanities lecture: how Renaissance linear perspective reshaped early cartography — sources, argument, and evidence. Built as a decision-grade academic
+    research deck for faculty, graduate seminar.'
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.html-ppt.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-zhangzara-vellum/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt-zhangzara-vellum/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.0c7c843b0d0c8f66
+  title: Brief AI in Your Industry like a Tier-1 Consulting AI Vertical Lead
+  summary: 'For consulting delivery work: turn diagnosis, frameworks, and project work into a client-adoptable action plan. Built around the core query "consulting-final-deck",
+    with engagement manager judgment, buyer-ready proof, and this outcome: accept the recommendation and commit owners to the roadmap.'
+  classification:
+    category: templates
+    subtype: deck
+    domains: *id001
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: Existing canonical resource ID opendesign.html-ppt is retained instead of creating a duplicate. Reusable deck framework confirmed by the instruction
+      body and real files design-templates/html-ppt/assets/animations/animations.css, design-templates/html-ppt/examples/demo-deck/index.html, and design-templates/html-ppt/.clawscan-allow;
+      inspected artifact structure shows navigation/sidebar layout, interactive controls, visualization/scene surface, time-based motion.
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/html-ppt/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: existing_resource
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.html-ppt
+- id: discovery.opendesign.4aed4214124d1af3
+  title: image-poster
+  summary: Single-image generation skill for posters, key art, and editorial illustrations. Defaults to gpt-image-2 but is provider-agnostic — the same workflow drives
+    Flux, Imagen, or Midjourney via the active upstream tooling. Output is one or more PNG/JPEG files saved to the project folder.
+  classification:
+    category: skills
+    subtype: null
+    domains:
+    - visual-design
+    - marketing
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Existing canonical resource ID opendesign.image-poster is retained instead of creating a duplicate. Substantive task guidance in the actual instructions
+      body; classified as skills because it describes a reusable method and contains no separate framework seed. Evidence: Single-image generation skill for posters,
+      key art, and editorial illustrations. Defaults to gpt-image-2 but is provider-agnostic — the same workflow drives Flux, Imagen, or Midjou'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/image-poster/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/image-poster/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: existing_resource
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.image-poster
+- id: discovery.opendesign.1375ca792f7d006d
+  title: Turn a Study into a Lab Meeting Deck like a Senior Postdoc
+  summary: A lab-meeting deck on gut-microbiome links to sleep quality — the design, the results, the caveats, and the next experiment. Built as a decision-grade
+    academic research deck for lab group, PI.
+  classification:
+    category: skills
+    subtype: null
+    domains:
+    - visual-design
+    - documents
+    - research
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: Task/content recipe calls or points to shared open-design-landing instructions; no independent reusable seed/code framework is present in this entry
+      directory.
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/kami-deck/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/kami-deck/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: reference
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+- id: discovery.opendesign.a0593230eb4ad3d0
+  title: live-dashboard
+  summary: Notion-style team dashboard rendered as a Live Artifact. A single-page, self-contained HTML dashboard with KPIs, a 7-day sparkline, a real-time activity
+    feed and a linked-database task table — wired to Notion via the Composio connector catalog. Refreshes on demand and when the artifact is opened. Falls back to
+    seeded mock data when no connector is bound, so it works offline / in screenshots / in the picker preview.
+  classification:
+    category: templates
+    subtype: dashboard
+    domains:
+    - data-visualization
+    - visual-design
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: Existing canonical resource ID opendesign.live-dashboard is retained instead of creating a duplicate. Reusable dashboard framework confirmed by the
+      instruction body and real files design-templates/live-dashboard/assets/template.html, design-templates/live-dashboard/example.html, and design-templates/live-dashboard/references/checklist.md;
+      inspected artifact structure shows navigation/sidebar layout, interactive controls, visualization/scene surface, time-based motion.
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/live-dashboard/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/live-dashboard/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: existing_resource
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.live-dashboard
+- id: discovery.opendesign.900e8cd1236a9e55
+  title: motion-frames
+  summary: A single-frame motion-design composition with looping CSS animations — rotating type ring, animated globe, ticking timer, parallax labels. Renders as a
+    hero video poster you can hand straight to HyperFrames or any keyframe-based exporter. Use when the brief asks for "motion design", "animated hero", "loop", "video
+    poster", "title card", or pairs Open Claude Design with HyperFrames for a kinetic export.
+  classification:
+    category: skills
+    subtype: null
+    domains:
+    - motion-video
+    - visual-design
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Existing canonical resource ID opendesign.motion-frames is retained instead of creating a duplicate. Substantive task guidance in the actual instructions
+      body; classified as skills because it describes a reusable method and contains no separate framework seed. Evidence: A single-frame motion-design composition
+      with looping CSS animations — rotating type ring, animated globe, ticking timer, parallax labels. Renders as a hero video poster you can ha'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/motion-frames/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/motion-frames/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: existing_resource
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.motion-frames
+- id: discovery.opendesign.15e30ad67cbe2b46
+  title: social-carousel
+  summary: A three-card social-media carousel laid out as 1080×1080 squares — three cinematic, on-brand panels with display headlines that connect across the series
+    ("onwards." → "to the next one." → "looking ahead."). Each card has a brand mark, a number / total, a caption, and a "loop" affordance. Use when the brief asks
+    for a "carousel post", "social carousel", "Instagram carousel", "LinkedIn series", "X thread cards", or "三连发".
+  classification:
+    category: skills
+    subtype: null
+    domains:
+    - marketing
+    - visual-design
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Existing canonical resource ID opendesign.social-carousel is retained instead of creating a duplicate. Substantive task guidance in the actual instructions
+      body; classified as skills because it describes a reusable method and contains no separate framework seed. Evidence: A three-card social-media carousel laid
+      out as 1080×1080 squares — three cinematic, on-brand panels with display headlines that connect across the series ("onwards." → "to the next'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/social-carousel/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/social-carousel/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: existing_resource
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.social-carousel
+- id: discovery.opendesign.10a6f7d3997c48a9
+  title: web-prototype-taste-brutalist
+  summary: Swiss industrial-print web prototype. Newsprint canvas, monolithic black grotesque, viewport-bleeding numerals, hairline grid dividers, hazard-red accent,
+    ASCII syntax decoration. Distilled from Leonxlnx/taste-skill `brutalist-skill` (Swiss Industrial Print mode).
+  classification:
+    category: templates
+    subtype: prototype
+    domains: &id002
+    - visual-design
+    - software-engineering
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.web-prototype.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/web-prototype-taste-brutalist/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/web-prototype-taste-brutalist/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.web-prototype
+- id: discovery.opendesign.b0a1f06b29b11b2a
+  title: web-prototype-taste-editorial
+  summary: Editorial-minimalist web prototype. Warm monochrome canvas, serif display + grotesque body, 1px hairline borders, muted pastel chips, generous macro-whitespace,
+    ambient micro-motion. Distilled from Leonxlnx/taste-skill `minimalist-skill`.
+  classification:
+    category: templates
+    subtype: prototype
+    domains: *id002
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.web-prototype.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/web-prototype-taste-editorial/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/web-prototype-taste-editorial/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.web-prototype
+- id: discovery.opendesign.436f2f015ac341ce
+  title: web-prototype-taste-soft
+  summary: Apple-tier soft web prototype. Silver/cream canvas, double-bezel cards, button-in-button CTAs, generous squircle radii, spring motion, ambient mesh. Distilled
+    from Leonxlnx/taste-skill `soft-skill` + sections 4–8 of `taste-skill`.
+  classification:
+    category: templates
+    subtype: prototype
+    domains: *id002
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Style variant: the actual Skill describes visual direction while its sibling tree has no independent content/code seed; relates to shared framework
+      opendesign.web-prototype.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/web-prototype-taste-soft/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/web-prototype-taste-soft/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.web-prototype
+- id: discovery.opendesign.13925abebe15ce92
+  title: web-prototype
+  summary: General-purpose desktop web prototype. Single self-contained HTML file built by copying the seed `assets/template.html` and pasting section layouts from
+    `references/layouts.md`. Default for any landing / marketing / docs / SaaS page when no more specific skill matches.
+  classification:
+    category: templates
+    subtype: prototype
+    domains: *id002
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: Existing canonical resource ID opendesign.web-prototype is retained instead of creating a duplicate. Reusable prototype framework confirmed by the
+      instruction body and real files design-templates/web-prototype/assets/template.html, design-templates/web-prototype/example.html, and design-templates/web-prototype/references/checklist.md;
+      inspected artifact structure shows navigation/sidebar layout, interactive controls.
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/web-prototype/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - design-templates/web-prototype/SKILL.md
+  legacy:
+    category: opendesign/design-templates
+    subcat: existing_resource
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.web-prototype
+- id: discovery.opendesign.3824c09a2a9f4367
+  title: after-hours-editorial-template
+  summary: Luxury dark-editorial HyperFrames template for three-page cinematic storyboards, inspired by haute couture title cards and magazine chapter spreads. Use
+    when the user asks for premium fashion-style motion pages, moody serif-led storytelling, or a high-end dark presentation aesthetic with rich transitions.
+  classification:
+    category: templates
+    subtype: motion-graphics
+    domains:
+    - visual-design
+    - motion-video
+    - documents
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: The fixed Skill describes a dark editorial HyperFrames look. Its real seed and the 8-bit sibling both contain three `section.scene` stages and the
+      same pager/keyboard/addEventListener controls, while no separate schema or interaction model appears; treat the palette/type treatment as a source-linked style
+      variant, not another template identity.
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/after-hours-editorial-template/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - skills/after-hours-editorial-template/SKILL.md
+  legacy:
+    category: opendesign/skills
+    subcat: style-variant-or-content-recipe
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.8-bit-orbit-video-template
+- id: discovery.opendesign.814c4987655f71be
+  title: Magazine Article
+  summary: Huashu / huashu-md-html-inspired magazine article layout for turning Markdown or notes into a polished long-form HTML essay.
+  classification:
+    category: skills
+    subtype: null
+    domains:
+    - visual-design
+    - documents
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'The body points to an external tool/model/software surface but this entry contains no implementation or substantive task workflow; retain it as a
+      source reference, not a fabricated plugin. Evidence: Huashu / huashu-md-html-inspired magazine article layout for turning Markdown or notes into a polished
+      long-form HTML essay.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/article-magazine/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - skills/article-magazine/SKILL.md
+  legacy:
+    category: opendesign/skills
+    subcat: reference
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+- id: discovery.opendesign.1ce51f02c16c557b
+  title: brand-extract
+  summary: Extract a complete Brand Kit from a live website by driving the in-app browser. Use when a brand-extraction project opens with a site in the Browser tab,
+    or when the user asks to "extract a brand", "pull the brand from <url>", "get the colors/fonts/logo from this site", or build a brand/design system from a reference
+    website. Pairs with the agent-browser tool for measurement and pauses for the user when an anti-bot wall blocks the page.
+  classification:
+    category: skills
+    subtype: null
+    domains:
+    - visual-design
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Existing canonical resource ID opendesign.brand-extract is retained instead of creating a duplicate. Substantive task guidance in the actual instructions
+      body; classified as skills because it describes a reusable method and contains no separate framework seed. Evidence: Extract a complete Brand Kit from a live
+      website by driving the in-app browser. Use when a brand-extraction project opens with a site in the Browser tab, or when the user asks to "'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/brand-extract/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - skills/brand-extract/SKILL.md
+  legacy:
+    category: opendesign/skills
+    subcat: existing_resource
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.brand-extract
+- id: discovery.opendesign.b9ace183a5517a10
+  title: Twitter Share Card
+  summary: Twitter quote or data card designed to pair with a post.
+  classification:
+    category: skills
+    subtype: null
+    domains:
+    - general
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'The body points to an external tool/model/software surface but this entry contains no implementation or substantive task workflow; retain it as a
+      source reference, not a fabricated plugin. Evidence: Twitter quote or data card designed to pair with a post.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/card-twitter/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - skills/card-twitter/SKILL.md
+  legacy:
+    category: opendesign/skills
+    subcat: reference
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+- id: discovery.opendesign.8186be84551d241d
+  title: Xiaohongshu Card
+  summary: Xiaohongshu-style knowledge cards, arranged as a swipeable multi-card carousel.
+  classification:
+    category: skills
+    subtype: null
+    domains:
+    - visual-design
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'The body points to an external tool/model/software surface but this entry contains no implementation or substantive task workflow; retain it as a
+      source reference, not a fabricated plugin. Evidence: Xiaohongshu-style knowledge cards, arranged as a swipeable multi-card carousel.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/card-xiaohongshu/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - skills/card-xiaohongshu/SKILL.md
+  legacy:
+    category: opendesign/skills
+    subcat: reference
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+- id: discovery.opendesign.31522de4f1be8a7d
+  title: Data Visualization Report
+  summary: Turns CSV, Excel, or JSON data into a polished visual report page.
+  classification:
+    category: skills
+    subtype: null
+    domains:
+    - visual-design
+    - documents
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'The body points to an external tool/model/software surface but this entry contains no implementation or substantive task workflow; retain it as a
+      source reference, not a fabricated plugin. Evidence: Turns CSV, Excel, or JSON data into a polished visual report page.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/data-report/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - skills/data-report/SKILL.md
+  legacy:
+    category: opendesign/skills
+    subcat: reference
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+- id: discovery.opendesign.a210881a0cd58720
+  title: Open-Slide 1920 Canvas Deck
+  summary: Locked 1920x1080 canvas deck with React component-level free composition, not bound to a fixed template.
+  classification:
+    category: skills
+    subtype: null
+    domains:
+    - documents
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'The body points to an external tool/model/software surface but this entry contains no implementation or substantive task workflow; retain it as a
+      source reference, not a fabricated plugin. Evidence: Locked 1920x1080 canvas deck with React component-level free composition, not bound to a fixed template.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/deck-open-slide-canvas/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - skills/deck-open-slide-canvas/SKILL.md
+  legacy:
+    category: opendesign/skills
+    subcat: reference
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+- id: discovery.opendesign.71bba8a831e0bd32
+  title: Swiss International Deck
+  summary: 16-column grid, one saturated accent, and 22 locked layouts (Klein Blue, Lemon, Mint, Safety Orange).
+  classification:
+    category: skills
+    subtype: null
+    domains:
+    - documents
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'The body points to an external tool/model/software surface but this entry contains no implementation or substantive task workflow; retain it as a
+      source reference, not a fabricated plugin. Evidence: 16-column grid, one saturated accent, and 22 locked layouts (Klein Blue, Lemon, Mint, Safety Orange).'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/deck-swiss-international/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - skills/deck-swiss-international/SKILL.md
+  legacy:
+    category: opendesign/skills
+    subcat: reference
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+- id: discovery.opendesign.65f3def763c9c901
+  title: NYT-Style Data Chart Frame
+  summary: NYT-newsroom typography, staggered reveal animation, and editorial-grade charts (line, bar, or range band).
+  classification:
+    category: skills
+    subtype: null
+    domains:
+    - visual-design
+    - motion-video
+    - data-visualization
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'The body points to an external tool/model/software surface but this entry contains no implementation or substantive task workflow; retain it as a
+      source reference, not a fabricated plugin. Evidence: NYT-newsroom typography, staggered reveal animation, and editorial-grade charts (line, bar, or range band).'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/frame-data-chart-nyt/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - skills/frame-data-chart-nyt/SKILL.md
+  legacy:
+    category: opendesign/skills
+    subcat: reference
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+- id: discovery.opendesign.36237b2b507b8084
+  title: Sticky Flowchart Frame
+  summary: SVG curve connectors, sticky-note nodes, and cursor interaction with a whiteboard-brainstorm feel.
+  classification:
+    category: skills
+    subtype: null
+    domains:
+    - motion-video
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'The body points to an external tool/model/software surface but this entry contains no implementation or substantive task workflow; retain it as a
+      source reference, not a fabricated plugin. Evidence: SVG curve connectors, sticky-note nodes, and cursor interaction with a whiteboard-brainstorm feel.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/frame-flowchart-sticky/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - skills/frame-flowchart-sticky/SKILL.md
+  legacy:
+    category: opendesign/skills
+    subcat: reference
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+- id: discovery.opendesign.5576d6a33a29cdce
+  title: Glitch Title Frame
+  summary: Digital glitch, chromatic offset, and data-corruption title frame for video transitions or cyberpunk heroes.
+  classification:
+    category: skills
+    subtype: null
+    domains:
+    - motion-video
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'The body points to an external tool/model/software surface but this entry contains no implementation or substantive task workflow; retain it as a
+      source reference, not a fabricated plugin. Evidence: Digital glitch, chromatic offset, and data-corruption title frame for video transitions or cyberpunk heroes.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/frame-glitch-title/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - skills/frame-glitch-title/SKILL.md
+  legacy:
+    category: opendesign/skills
+    subcat: reference
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+- id: discovery.opendesign.26df59bc52f707d3
+  title: Light-Leak Cinematic Frame
+  summary: Film light leaks, grain, 16:9 letterbox, and large serif type for cinematic openings or chapter cards.
+  classification:
+    category: skills
+    subtype: null
+    domains:
+    - motion-video
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'The body points to an external tool/model/software surface but this entry contains no implementation or substantive task workflow; retain it as a
+      source reference, not a fabricated plugin. Evidence: Film light leaks, grain, 16:9 letterbox, and large serif type for cinematic openings or chapter cards.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/frame-light-leak-cinema/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - skills/frame-light-leak-cinema/SKILL.md
+  legacy:
+    category: opendesign/skills
+    subcat: reference
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+- id: discovery.opendesign.9e3e569acd9caed0
+  title: Liquid Background Hero
+  summary: WebGL-style fluid displacement background with a quote overlay, suited to video intros, landing heroes, or posters.
+  classification:
+    category: skills
+    subtype: null
+    domains:
+    - visual-design
+    - motion-video
+    - three-d
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'The body points to an external tool/model/software surface but this entry contains no implementation or substantive task workflow; retain it as a
+      source reference, not a fabricated plugin. Evidence: WebGL-style fluid displacement background with a quote overlay, suited to video intros, landing heroes,
+      or posters.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/frame-liquid-bg-hero/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - skills/frame-liquid-bg-hero/SKILL.md
+  legacy:
+    category: opendesign/skills
+    subcat: reference
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+- id: discovery.opendesign.000773151b6986bc
+  title: Logo Outro Frame
+  summary: Segmented logo assembly, glow bloom, and tagline reveal for video outros or brand closing frames.
+  classification:
+    category: skills
+    subtype: null
+    domains:
+    - visual-design
+    - motion-video
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'The body points to an external tool/model/software surface but this entry contains no implementation or substantive task workflow; retain it as a
+      source reference, not a fabricated plugin. Evidence: Segmented logo assembly, glow bloom, and tagline reveal for video outros or brand closing frames.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/frame-logo-outro/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - skills/frame-logo-outro/SKILL.md
+  legacy:
+    category: opendesign/skills
+    subcat: reference
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+- id: discovery.opendesign.9dccc74f87662f22
+  title: macOS Notification Banner
+  summary: Realistic macOS notification banner with app icon, title, and body, suited to video overlays or product teasers.
+  classification:
+    category: skills
+    subtype: null
+    domains:
+    - software-engineering
+    - motion-video
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'The body points to an external tool/model/software surface but this entry contains no implementation or substantive task workflow; retain it as a
+      source reference, not a fabricated plugin. Evidence: Realistic macOS notification banner with app icon, title, and body, suited to video overlays or product
+      teasers.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/frame-macos-notification/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - skills/frame-macos-notification/SKILL.md
+  legacy:
+    category: opendesign/skills
+    subcat: reference
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+- id: discovery.opendesign.ec5cc06918ed3083
+  title: Device 3D Showcase
+  summary: Static iPhone and MacBook 3D-style showcase with real HTML embedded on screens, glass-lens refraction, and 360-degree turntable composition.
+  classification:
+    category: skills
+    subtype: null
+    domains:
+    - three-d
+    - visual-design
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'Existing canonical resource ID opendesign.mockup-device-3d is retained instead of creating a duplicate. The body points to an external tool/model/software
+      surface but this entry contains no implementation or substantive task workflow; retain it as a source reference, not a fabricated plugin. Evidence: Static iPhone
+      and MacBook 3D-style showcase with real HTML embedded on screens, glass-lens refraction, and 360-degree turntable composition.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/mockup-device-3d/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - skills/mockup-device-3d/SKILL.md
+  legacy:
+    category: opendesign/skills
+    subcat: existing_resource
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+  mapped_resource_id: opendesign.mockup-device-3d
+- id: discovery.opendesign.1b9ad2db666d12c6
+  title: Marketing Poster
+  summary: Vertical poster or Moments-style share image with strong visual impact.
+  classification:
+    category: skills
+    subtype: null
+    domains:
+    - visual-design
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'The body points to an external tool/model/software surface but this entry contains no implementation or substantive task workflow; retain it as a
+      source reference, not a fabricated plugin. Evidence: Vertical poster or Moments-style share image with strong visual impact.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/poster-hero/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - skills/poster-hero/SKILL.md
+  legacy:
+    category: opendesign/skills
+    subcat: reference
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+- id: discovery.opendesign.433468fbdd9f6f33
+  title: Keynote-style Slides
+  summary: Apple Keynote-quality slides, one card per screen, with keyboard left/right navigation.
+  classification:
+    category: skills
+    subtype: null
+    domains:
+    - documents
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'The body points to an external tool/model/software surface but this entry contains no implementation or substantive task workflow; retain it as a
+      source reference, not a fabricated plugin. Evidence: Apple Keynote-quality slides, one card per screen, with keyboard left/right navigation.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/ppt-keynote/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - skills/ppt-keynote/SKILL.md
+  legacy:
+    category: opendesign/skills
+    subcat: reference
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+- id: discovery.opendesign.e7587f0fe01ee3b5
+  title: Modern Resume
+  summary: Modern minimal resume, single A4 page, ready for print or PDF export.
+  classification:
+    category: skills
+    subtype: null
+    domains:
+    - documents
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'The body points to an external tool/model/software surface but this entry contains no implementation or substantive task workflow; retain it as a
+      source reference, not a fabricated plugin. Evidence: Modern minimal resume, single A4 page, ready for print or PDF export.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/resume-modern/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - skills/resume-modern/SKILL.md
+  legacy:
+    category: opendesign/skills
+    subcat: reference
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+- id: discovery.opendesign.fe62c6ba89ad80f3
+  title: Reddit Post Card
+  summary: Realistic Reddit post card with vote rail and comment count, suited to video overlays or story sharing.
+  classification:
+    category: skills
+    subtype: null
+    domains:
+    - motion-video
+    - marketing
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'The body points to an external tool/model/software surface but this entry contains no implementation or substantive task workflow; retain it as a
+      source reference, not a fabricated plugin. Evidence: Realistic Reddit post card with vote rail and comment count, suited to video overlays or story sharing.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/social-reddit-card/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - skills/social-reddit-card/SKILL.md
+  legacy:
+    category: opendesign/skills
+    subcat: reference
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+- id: discovery.opendesign.c1d9f07ee4a6dd2d
+  title: Spotify Now-Playing Card
+  summary: Spotify Now Playing-style card with album art, progress bar, and playback controls, suited to video overlays or personal homepages.
+  classification:
+    category: skills
+    subtype: null
+    domains:
+    - visual-design
+    - motion-video
+    - marketing
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'The body points to an external tool/model/software surface but this entry contains no implementation or substantive task workflow; retain it as a
+      source reference, not a fabricated plugin. Evidence: Spotify Now Playing-style card with album art, progress bar, and playback controls, suited to video overlays
+      or personal homepages.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/social-spotify-card/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - skills/social-spotify-card/SKILL.md
+  legacy:
+    category: opendesign/skills
+    subcat: reference
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+- id: discovery.opendesign.113eb83352126b66
+  title: X / Twitter Post Card
+  summary: Realistic X post card with engagement metrics (likes, reposts, views), suited to video overlays or shareable image cards.
+  classification:
+    category: skills
+    subtype: null
+    domains:
+    - motion-video
+    - marketing
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'The body points to an external tool/model/software surface but this entry contains no implementation or substantive task workflow; retain it as a
+      source reference, not a fabricated plugin. Evidence: Realistic X post card with engagement metrics (likes, reposts, views), suited to video overlays or shareable
+      image cards.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/social-x-post-card/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - skills/social-x-post-card/SKILL.md
+  legacy:
+    category: opendesign/skills
+    subcat: reference
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+- id: discovery.opendesign.c1fe59817855c038
+  title: VFX Text Cursor
+  summary: Cursor light trail, chromatic rays, and directional flares for word-by-word quote reveals in video intros.
+  classification:
+    category: skills
+    subtype: null
+    domains:
+    - motion-video
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'The body points to an external tool/model/software surface but this entry contains no implementation or substantive task workflow; retain it as a
+      source reference, not a fabricated plugin. Evidence: Cursor light trail, chromatic rays, and directional flares for word-by-word quote reveals in video intros.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/vfx-text-cursor/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - skills/vfx-text-cursor/SKILL.md
+  legacy:
+    category: opendesign/skills
+    subcat: reference
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。
+- id: discovery.opendesign.2cb501627d12c8e7
+  title: Hyperframes Video
+  summary: Hyperframes / Remotion-compatible continuous frame animation with autoplay support.
+  classification:
+    category: skills
+    subtype: null
+    domains:
+    - motion-video
+    formats:
+    - markdown
+    conventions:
+    - skill-md
+    rationale: 'The body points to an external tool/model/software surface but this entry contains no implementation or substantive task workflow; retain it as a
+      source reference, not a fabricated plugin. Evidence: Hyperframes / Remotion-compatible continuous frame animation with autoplay support.'
+  source_url: https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/video-hyperframes/SKILL.md
+  channel_source: opendesign
+  legacy_keys:
+  - skills/video-hyperframes/SKILL.md
+  legacy:
+    category: opendesign/skills
+    subcat: reference
+    platform: OpenDesign upstream repository
+    source_label: null
+    stars: null
+    installs: null
+    last_verified: null
+    vmethod: null
+  content_kind: reference
+  expected_components: []
+  missing:
+  - 此入口作为共享框架的配方/风格参考或尚未确认独立框架的指令；不建立重复模板身份。
+  - 作者、许可与再分发尚未逐项确认；没有目标宿主运行验证。

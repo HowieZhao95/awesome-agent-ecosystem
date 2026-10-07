@@ -1,0 +1,9 @@
+test_all_legacy_assets_and_platforms_have_deterministic_browse_outcomes (test_discovery_index.DiscoveryIndexTests) ... ok
+test_identity_keeps_template_selectors_and_distinct_packages (test_discovery_index.DiscoveryIndexTests) ... ok
+test_legacy_input_bytes_are_unchanged (test_discovery_index.DiscoveryIndexTests) ... ok
+test_unknown_provenance_and_collection_content_are_not_promoted_to_resources (test_discovery_index.DiscoveryIndexTests) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 22.538s
+
+OK

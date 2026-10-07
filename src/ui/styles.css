@@ -72,6 +72,10 @@
 .pas-card h3 a { color: var(--pas-ink); text-decoration: none; }
 .pas-card h3 a:hover { color: var(--pas-accent); }
 .pas-card-summary { display: -webkit-box; overflow: hidden; margin: 0; color: var(--pas-muted); font-size: 12px; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.pas-card-kind { margin: 0; color: var(--pas-muted); font-size: 11px; }
+.pas-discovery-aliases { margin-top: 20px; }
+.pas-discovery-aliases article { padding: 10px 0; border-top: 1px solid var(--pas-line); }
+.pas-discovery-aliases article h4 { margin: 0; font-size: 13px; }
 .pas-card-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 5px; margin-top: auto; padding-top: 10px; border-top: 1px solid var(--pas-line); color: var(--pas-muted); font-size: 10px; }
 .pas-pagination { display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 24px; color: var(--pas-muted); font-size: 12px; }
 .pas-state { margin: 28px 0; padding: 24px; border: 1px dashed var(--pas-line); border-radius: 10px; color: var(--pas-muted); text-align: center; }

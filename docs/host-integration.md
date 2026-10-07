@@ -70,3 +70,11 @@ CSS 变量限定在 `.pas-app` 内，`accent` 控制链接、选择与焦点等�
 `Resource.template` 可选提供 instructions/framework/example/support 的文件位置及独立风格策略；`Resource.design_system` 可选提供 manifest/rules/tokens-css/example/support 的文件位置。宿主不能把示例外观固化为模板身份或向公共模板写入固定 design_system_id。模板与系统的选择/应用仍由宿主现有能力处理，公共包没有新的样式执行器或安装内核。
 
 这两种 profile 是 v3 的可选扩展；旧候选可以继续浏览并显示待补充。当前上游 mixed 候选仅显示真实文件与限制，不能因预览成功开放安装。具体来源/分类修订见 [最新验收](evidence/template-decoupling/acceptance.md)。
+
+## 全目录浏览与未审核发现记录
+
+`Catalog.discovery` 是可选的独立发现索引，不是严格 `Resource` 数组。公共包新增 `getBrowseResources`、`filterBrowseResources`、`getBrowseResource`；它们输出 `BrowseResource` 供同一UI展示。未知内容上游保持null，具体核查缺口和原链接由发现记录说明；`getResource`/`filterResources` 继续只处理严格资源。
+
+发现入口映射已登记资源时，通过只读 `discovery_aliases` 保留原始名称、分类和URL，旧ID能访问目标详情，搜索能命中旧名，但只产生一张资源卡片。分类按目标资源的当前主类，不因历史别名把同一资源放进多个主类。
+
+发现条目不提供安装、应用或伪造个人状态；宿主操作仍只接收原始真实Resource。26个平台来源单列在来源档案，未算成资产。集合/规范/教程入口与单条资源分别说明，不能把它们的项目级许可、热度或历史official标签推导成逐项验证。

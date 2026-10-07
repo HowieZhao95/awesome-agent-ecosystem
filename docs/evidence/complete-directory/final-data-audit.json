@@ -1,0 +1,22 @@
+{
+  "strict_resources": 367,
+  "discovery_records": 859,
+  "standalone_discoveries": 799,
+  "aliases": 60,
+  "browse_total": 1166,
+  "category_counts": {
+    "templates": 25,
+    "skills": 272,
+    "design-systems": 185,
+    "prompts": 31,
+    "plugins": 653
+  },
+  "legacy_covered": 777,
+  "platforms": 26,
+  "original172RecordsUnchanged": true,
+  "legacy803BytesUnchanged": true,
+  "allBrowseTargetsExist": true,
+  "allTestedHostsEmpty": true,
+  "catalogGeneratedEquality": true,
+  "publicDataNoAbsolutePaths": true
+}

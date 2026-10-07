@@ -1,0 +1,52 @@
+{
+  "counts": [
+    "全部资源 1166",
+    "设计模板25",
+    "设计系统185",
+    "Skills272",
+    "提示词31",
+    "插件653"
+  ],
+  "skills": {
+    "hash": "#/resource/discovery.legacy.c215657d7543e683",
+    "title": "accessibility",
+    "source": "https://github.com/addyosmani/web-quality-skills",
+    "actions": 0,
+    "hasUnknownGaps": true
+  },
+  "mcp": {
+    "hash": "#/resource/discovery.legacy.9bb6fdbaeb80a5cd",
+    "title": "12306-mcp",
+    "source": "https://github.com/Joooook/12306-mcp",
+    "actions": 0,
+    "hasUnknownGaps": true
+  },
+  "cli": {
+    "hash": "#/resource/discovery.legacy.18dfdcc394b122cf",
+    "title": "Aider",
+    "source": "https://github.com/Aider-AI/aider",
+    "actions": 0,
+    "hasUnknownGaps": true
+  },
+  "prompts": {
+    "hash": "#/resource/discovery.legacy.d4ac757902ee862e",
+    "title": "AGENTS.md 规范文本",
+    "source": "https://agents.md",
+    "actions": 0,
+    "hasUnknownGaps": true
+  },
+  "design-docs": {
+    "hash": "#/resource/discovery.legacy.f6f2e2988e7ea50f",
+    "title": "@google/design.md CLI",
+    "source": "https://github.com/google-labs-code/design.md",
+    "actions": 0,
+    "hasUnknownGaps": true
+  },
+  "source": {
+    "records": 777,
+    "platforms": 26
+  },
+  "skillSourceFilter": "Skills71 项结果分类定义 指导 Agent 完成具体任务的可复用方法、步骤与辅助资源，通常以 SKILL.md 为入口。清除筛选",
+  "search": "webapp-testing",
+  "empty": "没有符合条件的资源。清除筛选"
+}

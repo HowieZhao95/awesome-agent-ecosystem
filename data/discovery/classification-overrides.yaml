@@ -1,0 +1,453 @@
+schema_version: 1
+# Manually classified ambiguous prompt and design-document entries; other legacy rows use historical category defaults.
+overrides:
+  prompts/Anthropic 交互式提示工程教程:
+    category: prompts
+    subtype: null
+    domains:
+    - software-engineering
+    formats: []
+    conventions: []
+    rationale: 历史条目“Anthropic 交互式提示工程教程”的用途概述为：体系最完整的 prompt 入门到进阶教程；此分类仅用于发现浏览，未据此确认上游组件、许可或可运行性。
+  prompts/OpenAI Cookbook:
+    category: prompts
+    subtype: null
+    domains:
+    - general
+    formats: []
+    conventions: []
+    rationale: 历史条目“OpenAI Cookbook”的用途概述为：官方可运行 prompt 模式库；此分类仅用于发现浏览，未据此确认上游组件、许可或可运行性。
+  prompts/Claude Cookbooks:
+    category: prompts
+    subtype: null
+    domains:
+    - general
+    formats: []
+    conventions: []
+    rationale: 历史条目“Claude Cookbooks”的用途概述为：Anthropic 官方模式配方集；此分类仅用于发现浏览，未据此确认上游组件、许可或可运行性。
+  prompts/Brex Prompt Engineering 指南:
+    category: prompts
+    subtype: null
+    domains:
+    - software-engineering
+    formats: []
+    conventions: []
+    rationale: 历史条目“Brex Prompt Engineering 指南”的用途概述为：生产环境经验浓缩，工程口碑极佳；此分类仅用于发现浏览，未据此确认上游组件、许可或可运行性。
+  prompts/Prompt-Engineering-Guide:
+    category: prompts
+    subtype: null
+    domains:
+    - research
+    - software-engineering
+    formats: []
+    conventions: []
+    rationale: 历史条目“Prompt-Engineering-Guide”的用途概述为：提示工程教科书：技术综述 + 论文 + 教程；此分类仅用于发现浏览，未据此确认上游组件、许可或可运行性。
+  prompts/Awesome-Prompt-Engineering:
+    category: prompts
+    subtype: null
+    domains:
+    - software-engineering
+    formats: []
+    conventions: []
+    rationale: 历史条目“Awesome-Prompt-Engineering”的用途概述为：提示工程资源总索引；此分类仅用于发现浏览，未据此确认上游组件、许可或可运行性。
+  prompts/PromptPapers:
+    category: prompts
+    subtype: null
+    domains:
+    - research
+    formats: []
+    conventions: []
+    rationale: 历史条目“PromptPapers”的用途概述为：清华整理的 prompt 论文清单，研究向；此分类仅用于发现浏览，未据此确认上游组件、许可或可运行性。
+  prompts/PromptWizard:
+    category: prompts
+    subtype: null
+    domains:
+    - general
+    formats: []
+    conventions: []
+    rationale: 历史条目“PromptWizard”的用途概述为：微软 prompt 自动优化框架；此分类仅用于发现浏览，未据此确认上游组件、许可或可运行性。
+  prompts/guidance:
+    category: prompts
+    subtype: null
+    domains:
+    - general
+    formats: []
+    conventions: []
+    rationale: 历史条目“guidance”的用途概述为：结构化生成控制库，约束输出格式；此分类仅用于发现浏览，未据此确认上游组件、许可或可运行性。
+  prompts/ai-notes:
+    category: prompts
+    subtype: null
+    domains:
+    - software-engineering
+    formats: []
+    conventions: []
+    rationale: 历史条目“ai-notes”的用途概述为：swyx 的 AI 工程笔记，实战洞察；此分类仅用于发现浏览，未据此确认上游组件、许可或可运行性。
+  prompts/r/PromptEngineering:
+    category: prompts
+    subtype: null
+    domains:
+    - general
+    formats: []
+    conventions: []
+    rationale: 历史条目“r/PromptEngineering”的用途概述为：活跃社区，评论区验证 prompt 真实效果；此分类仅用于发现浏览，未据此确认上游组件、许可或可运行性。
+  prompts/PromptLayer:
+    category: prompts
+    subtype: null
+    domains:
+    - general
+    formats: []
+    conventions: []
+    rationale: 历史条目“PromptLayer”的用途概述为：prompt 版本管理与观测平台；此分类仅用于发现浏览，未据此确认上游组件、许可或可运行性。
+  prompts/AGENTS.md 规范文本:
+    category: prompts
+    subtype: principle
+    domains:
+    - general
+    formats: []
+    conventions: []
+    rationale: 该旧记录明确指向 Agent 工作规则或其格式说明，按原则型指导资料浏览；不把目录描述当作作者、许可或实测证据。
+  prompts/openai/codex 的 AGENTS.md:
+    category: prompts
+    subtype: principle
+    domains:
+    - software-engineering
+    formats: []
+    conventions: []
+    rationale: 该旧记录明确指向 Agent 工作规则或其格式说明，按原则型指导资料浏览；不把目录描述当作作者、许可或实测证据。
+  prompts/apache/airflow 的 AGENTS.md:
+    category: prompts
+    subtype: principle
+    domains:
+    - software-engineering
+    formats: []
+    conventions: []
+    rationale: 该旧记录明确指向 Agent 工作规则或其格式说明，按原则型指导资料浏览；不把目录描述当作作者、许可或实测证据。
+  prompts/模板：General / TypeScript:
+    category: prompts
+    subtype: principle
+    domains:
+    - software-engineering
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向项目级 Agent 编码指导模板/规则集合，属于可复用行为指导文本；由于源 URL 只到仓库，浏览时标为合集且不声称存在单个可安装资产。
+  prompts/模板：React / Next.js:
+    category: prompts
+    subtype: principle
+    domains:
+    - software-engineering
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向项目级 Agent 编码指导模板/规则集合，属于可复用行为指导文本；由于源 URL 只到仓库，浏览时标为合集且不声称存在单个可安装资产。
+  prompts/模板：Node.js API:
+    category: prompts
+    subtype: principle
+    domains:
+    - software-engineering
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向项目级 Agent 编码指导模板/规则集合，属于可复用行为指导文本；由于源 URL 只到仓库，浏览时标为合集且不声称存在单个可安装资产。
+  prompts/模板：Python:
+    category: prompts
+    subtype: principle
+    domains:
+    - software-engineering
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向项目级 Agent 编码指导模板/规则集合，属于可复用行为指导文本；由于源 URL 只到仓库，浏览时标为合集且不声称存在单个可安装资产。
+  prompts/模板：Full-stack Monorepo:
+    category: prompts
+    subtype: principle
+    domains:
+    - software-engineering
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向项目级 Agent 编码指导模板/规则集合，属于可复用行为指导文本；由于源 URL 只到仓库，浏览时标为合集且不声称存在单个可安装资产。
+  prompts/模板：Go / Rust / RN / DevOps:
+    category: prompts
+    subtype: principle
+    domains:
+    - software-engineering
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向项目级 Agent 编码指导模板/规则集合，属于可复用行为指导文本；由于源 URL 只到仓库，浏览时标为合集且不声称存在单个可安装资产。
+  prompts/codingagents.md 对比指南:
+    category: prompts
+    subtype: principle
+    domains:
+    - software-engineering
+    formats: []
+    conventions: []
+    rationale: 该旧记录明确指向 Agent 工作规则或其格式说明，按原则型指导资料浏览；不把目录描述当作作者、许可或实测证据。
+  prompts/explainx.ai DESIGN.md Generator:
+    category: prompts
+    subtype: principle
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 历史条目“explainx.ai DESIGN.md Generator”的用途概述为：描述产品气质即生成合规 DESIGN.md，输出可直接过官方 lint；此分类仅用于发现浏览，未据此确认上游组件、许可或可运行性。
+  prompts/getdesign.md 定制提取:
+    category: prompts
+    subtype: principle
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 历史条目“getdesign.md 定制提取”的用途概述为：awesome-design-md 团队的私有/定制 DESIGN.md 提取服务；此分类仅用于发现浏览，未据此确认上游组件、许可或可运行性。
+  design-docs/google-labs-code/design.md:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 DESIGN.md 风格/品牌规范页面，可作为设计系统参考；单条文档不证明具备 manifest、tokens.css 或完整可用系统。
+  design-docs/@google/design.md CLI:
+    category: plugins
+    subtype: null
+    domains:
+    - software-engineering
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录描述一个可独立调用的设计规范 CLI（lint、diff、export、spec），按工具入口归入插件浏览；旧描述未验证发布包、manifest、作者或许可。
+  design-docs/Stitch:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录描述在线设计工具，是设计系统相关参考入口；不把产品本身伪装成可安装插件或完整设计系统。
+  design-docs/W3C Design Tokens (DTCG):
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 Design Tokens 格式标准，是设计系统的规范来源；它不是完整的设计系统资产或可安装组件。
+  design-docs/claude DESIGN.md:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 DESIGN.md 风格/品牌规范页面，可作为设计系统参考；单条文档不证明具备 manifest、tokens.css 或完整可用系统。
+  design-docs/mistral.ai DESIGN.md:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 DESIGN.md 风格/品牌规范页面，可作为设计系统参考；单条文档不证明具备 manifest、tokens.css 或完整可用系统。
+  design-docs/ollama DESIGN.md:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 DESIGN.md 风格/品牌规范页面，可作为设计系统参考；单条文档不证明具备 manifest、tokens.css 或完整可用系统。
+  design-docs/x.ai DESIGN.md:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 DESIGN.md 风格/品牌规范页面，可作为设计系统参考；单条文档不证明具备 manifest、tokens.css 或完整可用系统。
+  design-docs/together.ai DESIGN.md:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 DESIGN.md 风格/品牌规范页面，可作为设计系统参考；单条文档不证明具备 manifest、tokens.css 或完整可用系统。
+  design-docs/cohere DESIGN.md:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 DESIGN.md 风格/品牌规范页面，可作为设计系统参考；单条文档不证明具备 manifest、tokens.css 或完整可用系统。
+  design-docs/elevenlabs DESIGN.md:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 DESIGN.md 风格/品牌规范页面，可作为设计系统参考；单条文档不证明具备 manifest、tokens.css 或完整可用系统。
+  design-docs/vercel DESIGN.md:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 DESIGN.md 风格/品牌规范页面，可作为设计系统参考；单条文档不证明具备 manifest、tokens.css 或完整可用系统。
+  design-docs/cursor DESIGN.md:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 DESIGN.md 风格/品牌规范页面，可作为设计系统参考；单条文档不证明具备 manifest、tokens.css 或完整可用系统。
+  design-docs/linear.app DESIGN.md:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 DESIGN.md 风格/品牌规范页面，可作为设计系统参考；单条文档不证明具备 manifest、tokens.css 或完整可用系统。
+  design-docs/raycast DESIGN.md:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 DESIGN.md 风格/品牌规范页面，可作为设计系统参考；单条文档不证明具备 manifest、tokens.css 或完整可用系统。
+  design-docs/warp DESIGN.md:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 DESIGN.md 风格/品牌规范页面，可作为设计系统参考；单条文档不证明具备 manifest、tokens.css 或完整可用系统。
+  design-docs/supabase DESIGN.md:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 DESIGN.md 风格/品牌规范页面，可作为设计系统参考；单条文档不证明具备 manifest、tokens.css 或完整可用系统。
+  design-docs/sentry DESIGN.md:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 DESIGN.md 风格/品牌规范页面，可作为设计系统参考；单条文档不证明具备 manifest、tokens.css 或完整可用系统。
+  design-docs/figma DESIGN.md:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 DESIGN.md 风格/品牌规范页面，可作为设计系统参考；单条文档不证明具备 manifest、tokens.css 或完整可用系统。
+  design-docs/posthog DESIGN.md:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 DESIGN.md 风格/品牌规范页面，可作为设计系统参考；单条文档不证明具备 manifest、tokens.css 或完整可用系统。
+  design-docs/stripe DESIGN.md:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 DESIGN.md 风格/品牌规范页面，可作为设计系统参考；单条文档不证明具备 manifest、tokens.css 或完整可用系统。
+  design-docs/coinbase DESIGN.md:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 DESIGN.md 风格/品牌规范页面，可作为设计系统参考；单条文档不证明具备 manifest、tokens.css 或完整可用系统。
+  design-docs/wise DESIGN.md:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 DESIGN.md 风格/品牌规范页面，可作为设计系统参考；单条文档不证明具备 manifest、tokens.css 或完整可用系统。
+  design-docs/revolut DESIGN.md:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 DESIGN.md 风格/品牌规范页面，可作为设计系统参考；单条文档不证明具备 manifest、tokens.css 或完整可用系统。
+  design-docs/apple DESIGN.md:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 DESIGN.md 风格/品牌规范页面，可作为设计系统参考；单条文档不证明具备 manifest、tokens.css 或完整可用系统。
+  design-docs/nike DESIGN.md:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 DESIGN.md 风格/品牌规范页面，可作为设计系统参考；单条文档不证明具备 manifest、tokens.css 或完整可用系统。
+  design-docs/spotify DESIGN.md:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 DESIGN.md 风格/品牌规范页面，可作为设计系统参考；单条文档不证明具备 manifest、tokens.css 或完整可用系统。
+  design-docs/notion DESIGN.md:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 DESIGN.md 风格/品牌规范页面，可作为设计系统参考；单条文档不证明具备 manifest、tokens.css 或完整可用系统。
+  design-docs/tesla DESIGN.md:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 DESIGN.md 风格/品牌规范页面，可作为设计系统参考；单条文档不证明具备 manifest、tokens.css 或完整可用系统。
+  design-docs/ferrari DESIGN.md:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 DESIGN.md 风格/品牌规范页面，可作为设计系统参考；单条文档不证明具备 manifest、tokens.css 或完整可用系统。
+  design-docs/dell-1996 DESIGN.md:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 DESIGN.md 风格/品牌规范页面，可作为设计系统参考；单条文档不证明具备 manifest、tokens.css 或完整可用系统。
+  design-docs/nintendo-2001 DESIGN.md:
+    category: design-systems
+    subtype: null
+    domains:
+    - visual-design
+    formats: []
+    conventions: []
+    rationale: 该旧记录指向 DESIGN.md 风格/品牌规范页面，可作为设计系统参考；单条文档不证明具备 manifest、tokens.css 或完整可用系统。

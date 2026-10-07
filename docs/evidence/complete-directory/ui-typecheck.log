@@ -1,0 +1,3 @@
+command: npx tsc --noEmit
+exit_code: 0
+stdout/stderr: no diagnostics
