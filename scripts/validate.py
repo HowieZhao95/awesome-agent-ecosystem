@@ -90,7 +90,107 @@ def _usable_blockers(item):
         and "css" in (classification.get("formats") or [])
     ):
         blockers.append("design system minimum profile needs design-md, tokens and css")
+    if classification.get("category") == "templates":
+        template = item.get("template") or {}
+        files = template.get("files") or [] if isinstance(template, dict) else []
+        roles = {entry.get("role") for entry in files if isinstance(entry, dict)}
+        if not {"instructions", "framework", "example", "support"} <= roles:
+            blockers.append("usable template needs instructions, framework, example and support files")
+        style = template.get("style") or {} if isinstance(template, dict) else {}
+        if not isinstance(style, dict) or style.get("upstream_status") != "independent":
+            blockers.append("usable template requires an independent upstream style boundary")
+    if classification.get("category") == "design-systems":
+        design_system = item.get("design_system") or {}
+        files = design_system.get("files", []) if isinstance(design_system, dict) else []
+        roles = {entry.get("role") for entry in files if isinstance(entry, dict)}
+        if not {"manifest", "rules", "tokens-css"} <= roles:
+            blockers.append("usable design system needs manifest, rules and tokens-css files")
     return blockers
+
+
+def _profile_file_errors(resource_id, profile_name, profile, allowed_roles, upstream):
+    """Validate shared path/URL fields for one resource profile."""
+    errors = []
+    if not isinstance(profile, dict):
+        return [f"resources.{resource_id}.{profile_name}: expected a mapping"]
+    if profile_name == "design_system" and set(profile) != {"files"}:
+        return [f"resources.{resource_id}.{profile_name}: expected only a files list"]
+    files = profile.get("files")
+    if not isinstance(files, list) or not files:
+        return [f"resources.{resource_id}.{profile_name}.files: expected a non-empty list"]
+    ref = (upstream.get("ref") or {}).get("value")
+    is_git = upstream.get("kind") == "git"
+    upstream_url = upstream.get("url") or ""
+    upstream_parts = urlsplit(upstream_url)
+    upstream_path = upstream_parts.path.rstrip("/")
+    path_segments = [segment for segment in upstream_path.split("/") if segment]
+    marker_index = next((i for i, segment in enumerate(path_segments) if segment in {"blob", "tree"}), None)
+    if marker_index is not None and marker_index >= 2:
+        repo_path = "/" + "/".join(path_segments[:marker_index])
+    else:
+        repo_path = upstream_path
+    seen = set()
+    for index, entry in enumerate(files):
+        where = f"resources.{resource_id}.{profile_name}.files[{index}]"
+        if not isinstance(entry, dict) or set(entry) != {"role", "path", "url"}:
+            errors.append(f"{where}: expected role, path and url")
+            continue
+        role, path, url = entry.get("role"), entry.get("path"), entry.get("url")
+        if role not in allowed_roles:
+            errors.append(f"{where}.role: invalid role {role!r}")
+        if not isinstance(path, str) or not path or path.startswith("/") or ".." in Path(path).parts:
+            errors.append(f"{where}.path: expected repository-relative path")
+        elif (role, path) in seen:
+            errors.append(f"{where}: duplicate role/path")
+        else:
+            seen.add((role, path))
+        parsed = urlsplit(url) if isinstance(url, str) else None
+        if not parsed or parsed.scheme not in {"http", "https"} or not parsed.netloc:
+            errors.append(f"{where}.url: expected a concrete HTTP(S) file reference")
+        elif is_git:
+            valid_ref = isinstance(ref, str) and bool(ref)
+            expected_paths = {f"{repo_path}/{kind}/{ref}/{path}" for kind in ("blob", "tree")} if valid_ref else set()
+            exact_unknown_locator = (
+                not valid_ref
+                and url == upstream_url
+                and path == upstream.get("path")
+            )
+            if not exact_unknown_locator and (
+                parsed.scheme != upstream_parts.scheme
+                or parsed.netloc != upstream_parts.netloc
+                or parsed.path not in expected_paths
+                or parsed.query
+                or parsed.fragment
+            ):
+                errors.append(f"{where}.url: git reference must use the upstream repository, locked ref and matching path")
+    return errors
+
+
+def _resource_profile_errors(resource_id, item, category, upstream):
+    errors = []
+    if "template" in item:
+        if category != "templates":
+            errors.append(f"resources.{resource_id}.template: only templates may declare this profile")
+        profile = item["template"]
+        if not isinstance(profile, dict) or set(profile) != {"files", "style"}:
+            errors.append(f"resources.{resource_id}.template: expected only files and style")
+        else:
+            errors.extend(_profile_file_errors(resource_id, "template", profile, {"instructions", "framework", "example", "support"}, upstream))
+            style = profile.get("style")
+            if not isinstance(style, dict) or set(style) != {"policy", "upstream_status", "note"}:
+                errors.append(f"resources.{resource_id}.template.style: expected policy, upstream_status and note")
+            else:
+                if style.get("policy") != "external-design-system":
+                    errors.append(f"resources.{resource_id}.template.style.policy: must be external-design-system")
+                if style.get("upstream_status") not in {"independent", "mixed", "unknown"}:
+                    errors.append(f"resources.{resource_id}.template.style.upstream_status: invalid")
+                if not isinstance(style.get("note"), str) or not style["note"].strip():
+                    errors.append(f"resources.{resource_id}.template.style.note: explanation is required")
+    if "design_system" in item:
+        if category != "design-systems":
+            errors.append(f"resources.{resource_id}.design_system: only design-systems may declare this profile")
+        errors.extend(_profile_file_errors(resource_id, "design_system", item["design_system"], {"manifest", "rules", "tokens-css", "example", "support"}, upstream))
+    return errors
 
 
 def is_usable_for_host(resource, target_host):
@@ -231,6 +331,7 @@ def validate_data(categories_doc, sources_doc, resources_doc):
             else:
                 upstream_owners[upstream_identity] = rid
         ref = upstream.get("ref") or {}
+        errors.extend(_resource_profile_errors(rid, item, cid, upstream))
         if kind not in {"git", "web", "product", "catalog"} or not url:
             errors.append(f"resources.{rid}.provenance.upstream: kind and concrete URL are required")
         if kind == "git":

@@ -1,0 +1,23 @@
+{
+  "resources": 172,
+  "sources": 18,
+  "categories": {
+    "templates": 3,
+    "skills": 10,
+    "design-systems": 154,
+    "prompts": 3,
+    "plugins": 2
+  },
+  "lifecycle": {
+    "candidate": 169,
+    "reference": 3
+  },
+  "templateSubtypes": 7,
+  "unchangedOriginalIDs": 20,
+  "originalReviewsLicensesAndLifecycleUnchanged": true,
+  "actualArchiveProfilePathsChecked": 1825,
+  "designSystemsWithVerifiedCoreFileLocations": 152,
+  "privateBodiesCopied": false,
+  "legacyBytesUnchanged": true,
+  "allTestedHostsEmpty": true
+}

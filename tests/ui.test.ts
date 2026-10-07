@@ -429,6 +429,55 @@ test('loads public HTML only after click and keeps the preview sandbox without s
   } finally { globalThis.fetch = originalFetch; ui.close(); }
 });
 
+test('resolves relative stylesheet links in HTML previews against their exact upstream directory', async () => {
+  const previewed = structuredClone(catalog);
+  const resource = previewed.resources.resources.find((item) => item.classification.category === 'design-systems')!;
+  const ref = resource.provenance.upstream.ref.value!;
+  const sourceUrl = `https://github.com/nexu-io/open-design/blob/${ref}/design-systems/agentic/system/previews/colors.html`;
+  const cssUrl = `https://raw.githubusercontent.com/nexu-io/open-design/${ref}/design-systems/agentic/system/tokens.css`;
+  resource.previews = [{ kind: 'html', url: sourceUrl, status: 'reference', evidence: [] }];
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async (input) => String(input) === cssUrl
+    ? new Response(':root { --accent: #ff385c; }', { status: 200 })
+    : new Response('<!doctype html><html><head><base href="https://old.invalid/"><link rel="stylesheet" href="../tokens.css"></head><body><main>Color reference</main></body></html>', { status: 200 });
+  const ui = await mount({ catalog: previewed }, `#/resource/${encodeURIComponent(resource.id)}`);
+  try {
+    const load = ui.container.querySelector<HTMLButtonElement>('button[data-preview-load="html"]')!;
+    await act(async () => { load.click(); await new Promise((resolve) => setTimeout(resolve, 0)); });
+    const frame = ui.container.querySelector<HTMLIFrameElement>('iframe')!;
+    const parsed = new ui.dom.window.DOMParser().parseFromString(frame.srcdoc, 'text/html');
+    const expectedDirectory = `https://raw.githubusercontent.com/nexu-io/open-design/${ref}/design-systems/agentic/system/previews/`;
+    assert.equal(parsed.querySelectorAll('base').length, 1);
+    assert.equal(parsed.querySelector('base')?.getAttribute('href'), expectedDirectory);
+    assert.equal(parsed.querySelector('style')?.getAttribute('data-source-url'), new URL('../tokens.css', expectedDirectory).href);
+  } finally { globalThis.fetch = originalFetch; ui.close(); }
+});
+
+test('inlines pinned raw GitHub CSS dependencies in a design system preview with source provenance', async () => {
+  const previewed = structuredClone(catalog);
+  const resource = previewed.resources.resources.find((item) => item.classification.category === 'design-systems')!;
+  const ref = resource.provenance.upstream.ref.value!;
+  const sourceUrl = `https://github.com/nexu-io/open-design/blob/${ref}/design-systems/agentic/system/previews/colors.html`;
+  const cssUrl = `https://raw.githubusercontent.com/nexu-io/open-design/${ref}/design-systems/agentic/system/tokens.css`;
+  resource.previews = [{ kind: 'html', url: sourceUrl, status: 'reference', evidence: [] }];
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async (input) => String(input) === cssUrl
+    ? new Response(':root { --accent: #ff385c; }', { status: 200, headers: { 'content-type': 'text/plain' } })
+    : new Response('<!doctype html><html><head><link rel="stylesheet" href="../tokens.css"></head><body><main>Color swatch</main></body></html>', { status: 200 });
+  const ui = await mount({ catalog: previewed }, `#/resource/${encodeURIComponent(resource.id)}`);
+  try {
+    const load = ui.container.querySelector<HTMLButtonElement>('button[data-preview-load="html"]')!;
+    await act(async () => { load.click(); await new Promise((resolve) => setTimeout(resolve, 0)); });
+    const frame = ui.container.querySelector<HTMLIFrameElement>('iframe')!;
+    assert.ok(frame.srcdoc.includes('<style data-source-url="https://raw.githubusercontent.com/nexu-io/open-design/'));
+    assert.ok(frame.srcdoc.includes(':root { --accent: #ff385c; }'));
+    assert.ok(frame.srcdoc.includes(`data-source-url="${cssUrl}"`));
+    assert.ok(!frame.srcdoc.includes('href="../tokens.css"'));
+    assert.equal(frame.getAttribute('sandbox'), 'allow-scripts');
+    assert.ok(!frame.getAttribute('sandbox')?.includes('allow-same-origin'));
+  } finally { globalThis.fetch = originalFetch; ui.close(); }
+});
+
 test('renders fetched Skill source as plain text after an explicit click', async () => {
   const resource = catalog.resources.resources.find((item) => item.classification.category === 'skills' && item.provenance.upstream.url.endsWith('.md'))!;
   const originalFetch = globalThis.fetch;
@@ -459,5 +508,90 @@ test('shows multiple real preview references in a navigable image carousel', asy
     await act(async () => ui.container.querySelector<HTMLButtonElement>('[aria-label="下一张"]')?.click());
     assert.ok(ui.container.querySelector<HTMLImageElement>('.pas-gallery img')?.src.endsWith('/second.png'));
     assert.ok(ui.container.querySelector('video[controls]'));
+  } finally { ui.close(); }
+});
+
+test('shows template framework files separately from reference examples and labels mixed upstream honestly', async () => {
+  const profiled = structuredClone(catalog);
+  const resource = profiled.resources.resources.find((item) => item.classification.category === 'templates')!;
+  Object.assign(resource, {
+    template: {
+      files: [
+        { role: 'instructions', path: 'SKILL.md', url: 'https://example.test/SKILL.md' },
+        { role: 'framework', path: 'assets/seed.html', url: 'https://example.test/seed.html' },
+        { role: 'example', path: 'examples/demo.html', url: 'https://example.test/demo.html' },
+        { role: 'support', path: 'references/checklist.md', url: 'https://example.test/checklist.md' },
+      ],
+      style: { policy: 'external-design-system', upstream_status: 'mixed', note: 'Prompt still preserves the upstream visual signature.' },
+    },
+  });
+  const ui = await mount({ catalog: profiled }, `#/resource/${encodeURIComponent(resource.id)}`);
+  try {
+    const detail = ui.container.querySelector('[data-resource-detail]')!;
+    assert.ok(detail.textContent?.includes('内容与代码框架'));
+    assert.ok(detail.textContent?.includes('参考示例（样式不属于模板）'));
+    assert.ok(detail.textContent?.includes('上游框架与风格待拆分'));
+    assert.ok(detail.textContent?.includes('Prompt still preserves the upstream visual signature.'));
+    assert.ok(detail.querySelector('a[href="https://example.test/seed.html"]'));
+    assert.ok(detail.querySelector('a[href="https://example.test/demo.html"]'));
+    assert.ok(!detail.textContent?.includes('样式已解耦'));
+  } finally { ui.close(); }
+});
+
+test('keeps legacy template records without profiles readable and shows profile completion as pending', async () => {
+  const legacy = structuredClone(catalog);
+  const resource = legacy.resources.resources.find((item) => item.classification.category === 'templates')!;
+  delete resource.template;
+  const ui = await mount({ catalog: legacy }, `#/resource/${encodeURIComponent(resource.id)}`);
+  try {
+    const detail = ui.container.querySelector('[data-resource-detail]')!;
+    assert.ok(detail.textContent?.includes(resource.title));
+    assert.ok(detail.textContent?.includes('文件角色待补充'));
+  } finally { ui.close(); }
+});
+
+test('lists the design system core files and makes missing core roles explicit', async () => {
+  const profiled = structuredClone(catalog);
+  const resource = profiled.resources.resources.find((item) => item.classification.category === 'design-systems')!;
+  Object.assign(resource, {
+    design_system: {
+      files: [
+        { role: 'manifest', path: 'manifest.json', url: 'https://example.test/manifest.json' },
+        { role: 'rules', path: 'DESIGN.md', url: 'https://example.test/DESIGN.md' },
+      ],
+    },
+  });
+  const ui = await mount({ catalog: profiled }, `#/resource/${encodeURIComponent(resource.id)}`);
+  try {
+    const detail = ui.container.querySelector('[data-resource-detail]')!;
+    assert.ok(detail.textContent?.includes('设计系统文件'));
+    assert.ok(detail.querySelector('a[href="https://example.test/manifest.json"]'));
+    assert.ok(detail.querySelector('a[href="https://example.test/DESIGN.md"]'));
+    assert.ok(detail.textContent?.includes('缺少核心文件角色：tokens.css'));
+  } finally { ui.close(); }
+});
+
+test('keeps an explicitly previewable design system example available when the profile names the same URL', async () => {
+  const resource = catalog.resources.resources.find((item) => item.classification.category === 'design-systems'
+    && item.design_system?.files.some((file) => file.role === 'example' && item.previews.some((preview) => preview.url === file.url))
+    && item.previews.some((preview) => preview.kind === 'html'))!;
+  assert.ok(resource, 'uses a real design system record whose example profile file is also an HTML preview');
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => new Response('<!doctype html><html><head><link rel="stylesheet" href="../tokens.css"></head><body><main>Design system example</main></body></html>', { status: 200 });
+  const ui = await mount({ catalog }, `#/resource/${encodeURIComponent(resource.id)}`);
+  try {
+    const load = ui.container.querySelector<HTMLButtonElement>('button[data-preview-load="html"]');
+    assert.ok(load, 'the profile example remains available in the explicit preview area');
+    await act(async () => { load.click(); await new Promise((resolve) => setTimeout(resolve, 0)); });
+    assert.ok(ui.container.querySelector('iframe[title*="隔离预览"]'));
+  } finally { globalThis.fetch = originalFetch; ui.close(); }
+});
+
+test('shows the canonical category definition when a category is selected', async () => {
+  const ui = await mount({ catalog });
+  try {
+    const category = catalog.categories.categories.find((item) => item.id === 'templates')!;
+    await act(async () => ui.container.querySelector<HTMLButtonElement>('button[data-category="templates"]')?.click());
+    assert.ok(ui.container.textContent?.includes(category.definition));
   } finally { ui.close(); }
 });

@@ -1,6 +1,6 @@
 # 公共 Agent 资产：阶段 1 契约
 
-状态：**frozen；用户于 2026-10-07 批准阶段 1 契约冻结**。本阶段完成定义、来源与映射样例；未实现账户登录、安装、站点迁移或运行时接入。契约冻结只批准分类、公共元数据契约、来源策略和映射定义，不批准逐项资源许可、运行验证、可用状态或发布。见[冻结证据](evidence/2026-10-07-contract-freeze.md)。
+状态：**阶段 1 契约已冻结；2026-10-07 用户追加模板/风格解耦裁定并授权实施**。本阶段完成定义、来源与映射样例；未实现账户登录、安装、站点迁移或运行时接入。契约冻结只批准分类、公共元数据契约、来源策略和映射定义，不批准逐项资源许可、运行验证、可用状态或发布。见[冻结证据](evidence/2026-10-07-contract-freeze.md)。
 
 ## 正本与职责
 
@@ -21,7 +21,15 @@ README 与 `site/data.js`、`site/catalog.json` 由正本生成。未来的类�
 
 定义与标签直接见 [分类正本](../data/categories.yaml)。每条资源只有一个主类和一个适用子类；主类表达主要复用用途，domains 可多选。文件扩展名属于 formats，SKILL.md、AGENTS.md 等角色属于 conventions，运行依赖另记。插件的 components 描述它实际包含或声明的能力，dependencies 描述它需要的外部能力。
 
-主类判断顺序是：具体插件分发单元 → 固定产物形态 → 完整设计系统 → 任务方法 → 图片/视频/原则文本。歧义必须写 `classification.rationale`，不能拿 custom 或 general 掩盖尚未查明的资源。上游栏目只作证据，不直接决定归类。一个插件及其可单独分发的 Skill 可以分别登记，但通过组件引用关联；不能把相同分发单元重复收录。单组件 MCP/CLI 要有独立安装、启用、版本或分发身份才建立插件资源；仅随父插件提供的能力只记组件，外部要求只记依赖。组件不另加进资源计数，已登记组件通过 resource_id 关联。general 仅在没有具体领域时使用，与具体领域互斥。
+主类判断顺序是：具体插件分发单元 → 内容与代码框架 → 独立完整设计系统 → 任务方法 → 图片/视频/原则文本。歧义必须写 `classification.rationale`，不能拿 custom 或 general 掩盖尚未查明的资源。上游栏目只作证据，不直接决定归类。一个插件及其可单独分发的 Skill 可以分别登记，但通过组件引用关联；不能把相同分发单元重复收录。单组件 MCP/CLI 要有独立安装、启用、版本或分发身份才建立插件资源；仅随父插件提供的能力只记组件，外部要求只记依赖。组件不另加进资源计数，已登记组件通过 resource_id 关联。general 仅在没有具体领域时使用，与具体领域互斥。
+
+## 模板与设计系统（2026-10-07 追加裁定）
+
+模板是一套可复用的内容与代码框架，包含 `SKILL.md`、框架代码、示例和辅助文件。七类按产物结构与行为划分，不按视觉风格划分。同一个框架应用不同设计系统时，模板身份不变；独立业务配方若只调用共享框架，归任务 Skill，不作为另一套通用框架。
+
+设计系统独立登记，核心为 `manifest.json + DESIGN.md + tokens.css`。manifest 定义系统身份与文件映射，DESIGN.md 说明排版、色彩、交互状态及可访问性，tokens.css 提供语义变量。模板不绑定特定系统 ID 或具体品牌/颜色/字体。默认样式与示例外观只帮助理解，不决定框架身份。
+
+本次用户裁定是对相关冻结条款的明确修订；历史冻结证据保留，详见 [实施计划](plans/2026-10-07-template-style-decoupling.md)。此授权不批准逐项资源许可、运行或发布。上游风格耦合不能靠目录改名消除：有可复用框架但入口仍锁定样式的保持候选并注明待拆分；只有方法与成品示例的按真实用途改为 Skill。没有实际框架文件时不得以示例代替。
 
 ## 公共元数据契约
 
@@ -44,6 +52,8 @@ README 与 `site/data.js`、`site/catalog.json` 由正本生成。未来的类�
 | `license` | `{status: verified/unknown, expression, scope, evidence, redistribution: allowed/blocked/unknown}`；只对证据覆盖的具体内容生效，字体、图片和第三方组件分别说明，不继承本目录 CC0 |
 | `distribution` | 分发渠道数组：`{kind, channel_source, url}`；渠道可为 repository、marketplace、npm、product-bundled、upstream-link。有登记来源时引用具有 distribution-channel 角色的 ID；内容出处仍由 upstream 描述，发现途径由 discovered_via 描述 |
 | `previews` | `{kind, url, status: reference/verified, evidence}` 数组；示例 HTML/媒体是 reference，只有检查实际可预览且写证据才是 verified；无预览写 [] 并在 verification.limits 说明 |
+| `template`（可选） | 仅模板：`files: [{role: instructions/framework/example/support, path, url}]` 与 `style: {policy: external-design-system, upstream_status: independent/mixed/unknown, note}`。文件角色与位置必须有证据。mixed/unknown 不宣称已解耦，usable 需完整框架且 independent。候选缺少 profile 时显示资料待补充，不自动判为完整模板。 |
+| `design_system`（可选） | 仅设计系统：`files: [{role: manifest/rules/tokens-css/example/support, path, url}]`。完整可用系统需三核心角色及具体文件；单文档参考仍保留且说明缺口。 |
 | `compatibility` | `hosts` 声明预期目标宿主，不代表已验证；`runtimes: [{name, version, status: declared/verified/unknown}]`；`dependencies: [{kind, name, version, source_id}]`；`constraints` 列出必要条件。null version 不代表兼容任何版本 |
 | `components` | 仅 plugins 非空：`{id, type, resource_id, upstream, subtype, delivery}`；type 来自分类正本，resource_id 可引用已登记组件或为 null，此时仍须给精确 upstream；delivery=contained/referenced/host-provided，避免把宿主模块说成插件携带的内容 |
 | `lifecycle` | `{state: reference/candidate/usable/withdrawn, reason, replacement_id}`；参考资料仅供阅读，candidate 待审核/适配/验证，usable 满足下面全部门槛，withdrawn 保留身份与原因 |

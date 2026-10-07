@@ -23,11 +23,12 @@ sources:
       - plugins/_official/examples/social-carousel/**
       - plugins/_official/examples/mockup-device-3d/**
       - apps/web/public/community-templates/social-carousel.jpg
-      - design-systems/agentic/**
       - skills/brand-extract/**
       - craft/**
       - AGENTS.md
       - LICENSE
+      - design-systems/**
+      - design-templates/html-ppt/**
     exclude: []
     baseline: 'commit:53231d40b778d88eba23f35547bf99485d3ae9fc; 对照本地归档 open-design-53231d40b778d88eba23f35547bf99485d3ae9fc.tar.gz'
     cadence: manual
@@ -35,7 +36,7 @@ sources:
     promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。
     last_checked: '2026-10-07'
     limitations:
-      - 仅跟踪本轮选定资源、设计系统和相关规范所依赖的明确路径；不声明全仓收录，也不纳入 OpenDesign 执行内核。
+      - 跟踪本轮已查明的独立设计系统核心文件及选定模板/Skill 框架；不纳入 OpenDesign 执行内核，不以目录范围推导资源实测。
       - 归档根 LICENSE 存在；根 NOTICE 不存在。根许可不足以确认外部素材、嵌入品牌资产或逐项授权。
       - 作者与单项许可须逐条检查 manifest/源证据；未完成项维持 unknown。
 - id: remotion-dev.skills

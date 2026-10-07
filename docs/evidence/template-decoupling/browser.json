@@ -1,0 +1,44 @@
+{
+  "template": {
+    "bundle": "http://localhost:3001/assets/index-BrqP3SxG.js",
+    "frameworkPaths": [
+      "design-templates/html-ppt/SKILL.md",
+      "design-templates/html-ppt/templates/deck.html",
+      "design-templates/html-ppt/assets/runtime.js",
+      "design-templates/html-ppt/assets/base.css",
+      "design-templates/html-ppt/scripts/new-deck.sh",
+      "design-templates/html-ppt/references/authoring-guide.md",
+      "design-templates/html-ppt/references/layouts.md",
+      "design-templates/html-ppt/templates/layout-showcase.html"
+    ],
+    "styleNotice": true,
+    "exampleSeparately": true,
+    "hostInstall": 0
+  },
+  "recipe": {
+    "id": "#/resource/opendesign.html-ppt-pitch-deck",
+    "title": "Pitch Deck 内容配方 Skill",
+    "hasTemplateProfile": false,
+    "kind": "Skills"
+  },
+  "systemList": {
+    "count": "设计系统154 项结果分类定义 独立于模板登记的视觉与交互规范，核心为 manifest.json + DESIGN.md + tokens.css，覆盖排版、色彩、间距、状态与可访问性；可供不同内容与代码框架使用。清除筛选",
+    "pagination": "上一页第 1 / 13 页下一页",
+    "definition": "分类定义 独立于模板登记的视觉与交互规范，核心为 manifest.json + DESIGN.md + tokens.css，覆盖排版、色彩、间距、状态与可访问性；可供不同内容与代码框架使用。",
+    "visible": 12
+  },
+  "system": {
+    "coreLinks": [
+      "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-systems/airbnb/manifest.json",
+      "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-systems/airbnb/DESIGN.md",
+      "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-systems/airbnb/tokens.css"
+    ],
+    "templateBinding": false,
+    "title": "Airbnb"
+  },
+  "systemPreview": {
+    "sandbox": "allow-scripts",
+    "base": "<base href=\"https://raw.githubusercontent.com/nexu-io/open-design/53231d40b778d88eba23f35547bf99485d3ae9fc/design-systems/airbnb/preview/\">",
+    "contentBytes": 2790
+  }
+}

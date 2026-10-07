@@ -1,0 +1,38 @@
+Command: node --import tsx --test tests/ui.test.ts
+Result: exit 0; 27 passed, 0 failed (includes pinned raw GitHub stylesheet inlining and preview provenance)
+
+✔ shows all five resource categories and filters cards when a category is selected (106.492792ms)
+✔ renders loading and error states and invokes the host retry callback (16.215958ms)
+✔ combines category navigation with search and links by stable resource identity (31.30025ms)
+✔ applies subtype, domain, source, verification, and lifecycle select filters (48.10425ms)
+✔ opens a stable resource hash directly after refresh (16.756916ms)
+✔ keeps acquisition and verification visible while secondary source metadata starts collapsed (16.39875ms)
+✔ opens source records directly and lists resources by source identity (30.692791ms)
+✔ category navigation from a direct resource route returns to the filtered catalog (41.037584ms)
+✔ shows withdrawn resources with their reason and without host actions (21.380542ms)
+✔ shows missing previews on a real resource detail page (16.373709ms)
+✔ renders a host operation failure as visible feedback (31.599334ms)
+✔ routes all four approved host callbacks and refreshes projected host state (64.96325ms)
+✔ does not expose install for a host without a resource availability grant (20.910625ms)
+✔ waits for the host login callback before showing signed-in state (32.600583ms)
+✔ uses host theme and translated filter labels and reports a requested theme change (24.961667ms)
+✔ routes external links and preview requests through the host adapter (22.238416ms)
+✔ withdrawn resources suppress every host action even when the host grants availability (28.951292ms)
+✔ loads public HTML only after click and keeps the preview sandbox without same-origin access (53.2555ms)
+✔ resolves relative stylesheet links in HTML previews against their exact upstream directory (37.800666ms)
+✔ inlines pinned raw GitHub CSS dependencies in a design system preview with source provenance (33.437042ms)
+✔ renders fetched Skill source as plain text after an explicit click (28.725292ms)
+✔ shows multiple real preview references in a navigable image carousel (23.021125ms)
+✔ shows template framework files separately from reference examples and labels mixed upstream honestly (20.174208ms)
+✔ keeps legacy template records without profiles readable and shows profile completion as pending (25.434875ms)
+✔ lists the design system core files and makes missing core roles explicit (20.46575ms)
+✔ keeps an explicitly previewable design system example available when the profile names the same URL (29.021958ms)
+✔ shows the canonical category definition when a category is selected (22.517917ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1394.834708

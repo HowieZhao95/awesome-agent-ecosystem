@@ -64,3 +64,9 @@ export const Store = ({ host }: { host: HostAdapter }) =>
 `CatalogApp` 接受 `locale/messages/theme/accent`；宿主也可通过 `HostAdapter.i18n/theme` 提供它们。默认文案键由 `src/ui/index.tsx` 的 `DEFAULT_MESSAGES` 管理；宿主翻译器对未知键返回键本身，组件回退到默认文案。资源作者的正文与描述保持原文。分类标签可用 `category.<id>`、子类标签可用 `subtype.<id>` 覆盖，ID 仍由正本生成。
 
 CSS 变量限定在 `.pas-app` 内，`accent` 控制链接、选择与焦点等语义交互色。宿主可按主题提供合适的强调色，不需要复制页面或导入私有设计系统。
+
+## 模板与设计系统 profile（2026-10-07）
+
+`Resource.template` 可选提供 instructions/framework/example/support 的文件位置及独立风格策略；`Resource.design_system` 可选提供 manifest/rules/tokens-css/example/support 的文件位置。宿主不能把示例外观固化为模板身份或向公共模板写入固定 design_system_id。模板与系统的选择/应用仍由宿主现有能力处理，公共包没有新的样式执行器或安装内核。
+
+这两种 profile 是 v3 的可选扩展；旧候选可以继续浏览并显示待补充。当前上游 mixed 候选仅显示真实文件与限制，不能因预览成功开放安装。具体来源/分类修订见 [最新验收](evidence/template-decoupling/acceptance.md)。

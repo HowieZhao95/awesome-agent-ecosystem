@@ -1,0 +1,5 @@
+
+> @public-agent-store/catalog@0.1.0 generate
+> node scripts/generate.mjs
+
+OK  README.md, site/data.js and site/catalog.json (172 resources)

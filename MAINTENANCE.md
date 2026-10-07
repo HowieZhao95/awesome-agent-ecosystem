@@ -54,3 +54,7 @@ npm run check:host
 ## 验收证据
 
 阶段 2 记录见 [acceptance.md](docs/evidence/phase2/acceptance.md)。公共 Git 保留命令、结构与状态的检查记录；可能包含上游参考媒体的浏览器 PNG 只保留在本地，不随公共项目再分发。QA 夹具代码和生成方法位于 `docs/evidence/phase2/preview-qa/`，其临时站点输出已经按清单清理；正式目录没有夹具数据。
+
+## 框架身份维护
+
+2026-10-07 用户追加模板与风格解耦裁定，正本定义与文件角色见 architecture。上游重复的视觉入口不直接新增模板；先核对是否共享同一框架、只有外观差异，或属于调用框架的任务配方。来源工具仍只输出差异提案，不能自动把 SKILL.md/HTML 示例判为框架。

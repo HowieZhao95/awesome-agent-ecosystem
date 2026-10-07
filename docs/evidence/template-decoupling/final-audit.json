@@ -1,0 +1,11 @@
+{
+  "documentLinksValid": true,
+  "sourceGenerationHashes": {
+    "README.md": "6b2e688f2b916bd13d18f378b8a164e960aeaef7243403e4203a1e678fa89245",
+    "site/catalog.json": "b6aeed69182c72340ca2b63b279edb22212d7e0d5a221a4fc30dfc103e33e076",
+    "site/data.js": "de8b592a3788b41f4ee88e097e4c31a1cdefc6a531659b5def0fadd96696d7b1",
+    "src/generated/enums.ts": "22b2442c30dee5c5dfa9ca5ee31fe0ded38655c8ae66d6081c1c0ecd1726b07e"
+  },
+  "branch": "main",
+  "privateRuntimeImportsAbsent": true
+}

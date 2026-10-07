@@ -1,0 +1,50 @@
+
+> @public-agent-store/catalog@0.1.0 test
+> node --import tsx --test tests/*.test.*
+
+✔ filters real catalog by category, subtype, domain, status, and search together (1.184625ms)
+✔ uses stable resource identity for lookup and detail URLs (0.144292ms)
+✔ gates host availability from the generated catalog projection (0.095334ms)
+✔ paginates with clamped page bounds and retains total count (0.126792ms)
+✔ resolves only components linked by resource identity (8.820833ms)
+✔ rejects failed loads and schema version mismatch (56.491667ms)
+✔ loads the canonical generated catalog when the pinned catalog version matches (23.419541ms)
+✔ every generated literal set exactly matches the YAML source of truth (29.18975ms)
+✔ public detail links encode resource identity without depending on its title (0.443375ms)
+✔ canonical template and design-system profiles appear in both generated v3 views (4.863583ms)
+✔ ordinary v3 resources remain valid without optional profiles (0.316ms)
+✔ shows all five resource categories and filters cards when a category is selected (108.029291ms)
+✔ renders loading and error states and invokes the host retry callback (15.040416ms)
+✔ combines category navigation with search and links by stable resource identity (30.977667ms)
+✔ applies subtype, domain, source, verification, and lifecycle select filters (49.487708ms)
+✔ opens a stable resource hash directly after refresh (16.107417ms)
+✔ keeps acquisition and verification visible while secondary source metadata starts collapsed (16.579083ms)
+✔ opens source records directly and lists resources by source identity (36.085583ms)
+✔ category navigation from a direct resource route returns to the filtered catalog (38.682791ms)
+✔ shows withdrawn resources with their reason and without host actions (68.999583ms)
+✔ shows missing previews on a real resource detail page (30.932417ms)
+✔ renders a host operation failure as visible feedback (35.736042ms)
+✔ routes all four approved host callbacks and refreshes projected host state (59.014459ms)
+✔ does not expose install for a host without a resource availability grant (22.286125ms)
+✔ waits for the host login callback before showing signed-in state (31.232291ms)
+✔ uses host theme and translated filter labels and reports a requested theme change (24.1355ms)
+✔ routes external links and preview requests through the host adapter (24.128792ms)
+✔ withdrawn resources suppress every host action even when the host grants availability (29.764209ms)
+✔ loads public HTML only after click and keeps the preview sandbox without same-origin access (46.184125ms)
+✔ resolves relative stylesheet links in HTML previews against their exact upstream directory (44.295166ms)
+✔ inlines pinned raw GitHub CSS dependencies in a design system preview with source provenance (33.864583ms)
+✔ renders fetched Skill source as plain text after an explicit click (28.390417ms)
+✔ shows multiple real preview references in a navigable image carousel (23.352541ms)
+✔ shows template framework files separately from reference examples and labels mixed upstream honestly (20.312792ms)
+✔ keeps legacy template records without profiles readable and shows profile completion as pending (24.902375ms)
+✔ lists the design system core files and makes missing core roles explicit (18.853417ms)
+✔ keeps an explicitly previewable design system example available when the profile names the same URL (27.994417ms)
+✔ shows the canonical category definition when a category is selected (20.264459ms)
+ℹ tests 38
+ℹ suites 0
+ℹ pass 38
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1530.120792

@@ -1,3 +1,4 @@
 
 # Keep captured process logs byte-for-byte, including their whitespace.
 docs/evidence/phase2/*.log -whitespace
+docs/evidence/template-decoupling/*.log -whitespace

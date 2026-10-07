@@ -26,9 +26,10 @@ test('gates host availability from the generated catalog projection', () => {
 
 test('paginates with clamped page bounds and retains total count', () => {
   const result = paginateResources(catalog.resources.resources, { page: 999, pageSize: 7 });
-  assert.equal(result.page, 3);
-  assert.equal(result.total, 20);
-  assert.equal(result.items.length, 6);
+  const total = catalog.resources.resources.length;
+  assert.equal(result.page, Math.ceil(total / 7));
+  assert.equal(result.total, total);
+  assert.deepEqual(result.items, catalog.resources.resources.slice((result.page - 1) * 7));
 });
 
 test('resolves only components linked by resource identity', () => {
@@ -49,5 +50,5 @@ test('rejects failed loads and schema version mismatch', async () => {
 
 test('loads the canonical generated catalog when the pinned catalog version matches', async () => {
   const loaded = await loadCatalog('/catalog.json', { expectedCatalogVersion: catalog.resources.meta.catalog_version, fetchImpl: async () => Response.json(catalog) });
-  assert.equal(loaded.resources.resources.length, 20);
+  assert.deepEqual(loaded, catalog);
 });

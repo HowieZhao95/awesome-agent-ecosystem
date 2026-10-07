@@ -1,0 +1,168 @@
+{
+  "audit_date": "2026-10-07",
+  "repository": {
+    "path": "repo root (audit workspace)",
+    "branch": "main",
+    "commit": "ad3ec20",
+    "initial_worktree_clean": true
+  },
+  "upstream_snapshot": {
+    "archive": "open-design-53231d40b778d88eba23f35547bf99485d3ae9fc.tar.gz",
+    "revision": "53231d40b778d88eba23f35547bf99485d3ae9fc",
+    "sha256": "edd9b2cf8f37f18bb26e070739a00149124adb3758572ae3bb4bc05e8816aba5"
+  },
+  "findings": {
+    "selected_template_candidates": 7,
+    "selected_template_candidates_with_independent_framework_evidence": 2,
+    "selected_design_systems_audited_separately": 1,
+    "design_templates_skill_count": 114,
+    "design_system_directory_count_including_schema": 153,
+    "design_system_schema_directories": 1,
+    "design_system_packages_with_manifest_design_tokens_triple": 152,
+    "design_system_valid_manifests_matching_slug_and_declared_paths": 152,
+    "design_system_readme_declared_package_count": 151,
+    "design_system_readme_count_is_stale": true,
+    "mockup_device_3d_skill_present": true,
+    "mockup_device_3d_example_present": true,
+    "mockup_device_3d_example_kind": "standalone CSS perspective device showcase HTML"
+  },
+  "selected_entries": [
+    {
+      "id": "opendesign.web-prototype",
+      "classification": "confirmed template framework / prototype",
+      "path": "plugins/_official/examples/web-prototype/SKILL.md",
+      "sha256": "a67a89159dc0182fdf58895067c95e68dd828afd38857f410bca41de7843778d",
+      "framework_files": [
+        "design-templates/web-prototype/assets/template.html",
+        "design-templates/web-prototype/references/layouts.md",
+        "design-templates/web-prototype/example.html",
+        "design-templates/web-prototype/references/checklist.md"
+      ],
+      "framework_evidence": "Skill says compose using bundled seed and layout library, not write CSS from scratch.",
+      "style_boundary_evidence": "Skill requires reading active DESIGN.md and mapping its colors to seed variables; example prompt separately requires preserving template visual signature.",
+      "supporting_sha256": {
+        "design-templates/web-prototype/SKILL.md": "8f36016a362c056b57ab7ded3ff3ab6048f9ce49980708aec468c351a0652855",
+        "design-templates/web-prototype/assets/template.html": "2927248194e18bb57ad0d30ad822b1c8e6e3162d27543c0e6934ed3403b55031",
+        "design-templates/web-prototype/references/layouts.md": "d2bf617ee2d82048e7d2d6e9874be0f740fe5ebaed9402e4e699b24929d1d7d2"
+      }
+    },
+    {
+      "id": "opendesign.html-ppt-pitch-deck",
+      "classification": "deck content recipe; not an independent framework",
+      "path": "plugins/_official/examples/html-ppt-pitch-deck/SKILL.md",
+      "sha256": "ab7a1947b4ff9bcde30af7a1c68d1eaeb499c108e48cf6f787440af83dc2a981",
+      "framework_files": [
+        "design-templates/html-ppt/SKILL.md",
+        "design-templates/html-ppt/templates/full-decks/pitch-deck/index.html",
+        "design-templates/html-ppt/templates/full-decks/pitch-deck/style.css"
+      ],
+      "framework_evidence": "Specialized entry routes to html-ppt master skill and pitch-deck template folder; master framework supports 36 themes.",
+      "style_boundary_evidence": "Specialized card example prompt asks for exactly pitch-deck visual identity; theme switching is supported at master framework level.",
+      "supporting_sha256": {
+        "design-templates/html-ppt/SKILL.md": "b5795fce89e2291afc829691a6a842a1a0b79a4be93e642e1251da4eea4f1b35",
+        "design-templates/html-ppt/templates/full-decks/pitch-deck/index.html": "05a02a090d18a0880b6b80269a0f8e85bd9e57610f650eb3f2c63bf1e3aa2879",
+        "design-templates/html-ppt/templates/full-decks/pitch-deck/style.css": "393e9e3175af3cbaeeec94aa056975e72289fdf592fd143ecf5b789a1d75e9ab"
+      }
+    },
+    {
+      "id": "opendesign.live-dashboard",
+      "classification": "confirmed template framework / dashboard",
+      "path": "plugins/_official/examples/live-dashboard/SKILL.md",
+      "sha256": "6a0409b63b52127f1e7d5d8078468dfd7e94777e1f6b3d3e0aa5df724539052d",
+      "framework_files": [
+        "design-templates/live-dashboard/assets/template.html",
+        "design-templates/live-dashboard/references/components.md",
+        "design-templates/live-dashboard/references/layouts.md",
+        "design-templates/live-dashboard/references/connectors.md",
+        "design-templates/live-dashboard/references/checklist.md",
+        "design-templates/live-dashboard/example.html"
+      ],
+      "framework_evidence": "Skill directs reading the template and component references, then re-skinning markup to active DESIGN.",
+      "style_boundary_evidence": "DESIGN determines visual direction, while example prompt fixes Notion-style content and Notion connector.",
+      "supporting_sha256": {
+        "design-templates/live-dashboard/assets/template.html": "9285e5fea96639c62039dc2411028c773693291569deecbb0e943ec24a0ff160"
+      }
+    },
+    {
+      "id": "opendesign.motion-frames",
+      "classification": "specialized skill/example; independent framework not established",
+      "path": "plugins/_official/examples/motion-frames/SKILL.md",
+      "sha256": "e500c2459ab87d89aecd43420db48d549fdf819faac7655e9b7a084a91721e81",
+      "framework_files": [
+        "plugins/_official/examples/motion-frames/example.html"
+      ],
+      "framework_evidence": "Only SKILL.md and example.html exist in the matching design-templates package; no seed, shared runtime, or supporting layout/code library was found.",
+      "style_boundary_evidence": "The skill prescribes a single-frame looping motion result; evidence does not establish a reusable motion framework that accepts arbitrary design systems."
+    },
+    {
+      "id": "opendesign.docs-page",
+      "classification": "page recipe/example; independent framework not established",
+      "path": "plugins/_official/examples/docs-page/SKILL.md",
+      "sha256": "2446a71d3513e764800d5bca07c7d718021413a412ed87dd5939ae36a9a2ee9b",
+      "framework_files": [
+        "plugins/_official/examples/docs-page/example.html"
+      ],
+      "framework_evidence": "Only SKILL.md and example.html exist in the matching design-templates package; no seed or supporting code/reference library was found.",
+      "style_boundary_evidence": "The skill specifies a page structure, but the fixed example alone does not demonstrate interchangeable design-system input."
+    },
+    {
+      "id": "opendesign.social-carousel",
+      "classification": "artifact recipe/example; independent framework not established",
+      "path": "plugins/_official/examples/social-carousel/SKILL.md",
+      "sha256": "cb0c3ac321cbd850a53da00a6ad1b901d40dc89e447c61ed697b456628776f28",
+      "framework_evidence": "Only SKILL.md and example.html exist in the matching design-templates package; no reusable seed or support library was found.",
+      "style_boundary_evidence": "Defines a three-card narrative structure; no evidence yet that the artifact can swap design systems without inheriting the example's visual identity."
+    },
+    {
+      "id": "opendesign.mockup-device-3d",
+      "classification": "3D showcase recipe/example; independent framework not established",
+      "path": "plugins/_official/examples/mockup-device-3d/SKILL.md",
+      "sha256": "76437e765e69ce4574605eccce8503cb189d2a71643b9b2161af55984a144389",
+      "framework_files": [
+        "plugins/_official/examples/mockup-device-3d/SKILL.md",
+        "plugins/_official/examples/mockup-device-3d/example.html"
+      ],
+      "supporting_sha256": {
+        "plugins/_official/examples/mockup-device-3d/example.html": "75d2d08da3cc4894b214f516163b231ce8a485d9fef7871a15a4d5bbc0b53654"
+      },
+      "framework_evidence": "Skill gives a detailed CSS device-stage recipe; the package contains only the skill and single HTML example, without a scene seed, component library, or support code.",
+      "style_boundary_evidence": "Device composition, glass highlights, reflections, and palette are prescribed by the recipe; user screen content is replaceable, but a neutral reusable 3D framework is not established."
+    }
+  ],
+  "separate_design_system_evidence": {
+    "path": "design-systems/agentic/",
+    "classification": "design system, outside the seven template candidates",
+    "core_files_sha256": {
+      "manifest.json": "74f6f434a43f6085910dac984d2a7f0a8649d3b6d8d28042ba5422965cd9a6de",
+      "DESIGN.md": "ce14e4eeab155ae072d31859a3a1867cc793ec2a725d0a5826ceaf417e919309",
+      "tokens.css": "c1d360c39f26ae02338c7292cf75aaa58ad017cc948f3bb31ffbf527ee82d5a6"
+    },
+    "readme_sha256": "935326ee7d7924f2fd0e02ed80d28cac05b8af8467f483bff185af6adbce52b3",
+    "cross_template_evidence": "Contains system artifacts for deck, email, form, landing, newsletter, and poster.",
+    "readme_count_discrepancy": "README says 151 bundled packages; direct archive content check found 152 valid packages."
+  },
+  "design_template_groups": {
+    "framework_candidates_with_physical_seed_runtime_or_schema_support_count_16": [
+      "flowai-live-dashboard-template", "github-dashboard", "guizang-ppt", "html-ppt", "ib-pitch-book", "live-artifact", "live-dashboard", "mobile-app", "open-design-landing", "open-design-landing-deck", "replit-deck", "simple-deck", "social-media-matrix-tracker-template", "trading-analysis-dashboard-template", "waitlist-page", "web-prototype"
+    ],
+    "style_variant_entries_sharing_a_master_framework_count_37": [
+      "html-ppt-taste-brutalist", "html-ppt-taste-editorial", "web-prototype-taste-brutalist", "web-prototype-taste-editorial", "web-prototype-taste-soft", "html-ppt-zhangzara-8-bit-orbit", "html-ppt-zhangzara-biennale-yellow", "html-ppt-zhangzara-block-frame", "html-ppt-zhangzara-blue-professional", "html-ppt-zhangzara-bold-poster", "html-ppt-zhangzara-broadside", "html-ppt-zhangzara-capsule", "html-ppt-zhangzara-cartesian", "html-ppt-zhangzara-cobalt-grid", "html-ppt-zhangzara-coral", "html-ppt-zhangzara-creative-mode", "html-ppt-zhangzara-daisy-days", "html-ppt-zhangzara-editorial-tri-tone", "html-ppt-zhangzara-grove", "html-ppt-zhangzara-long-table", "html-ppt-zhangzara-mat", "html-ppt-zhangzara-monochrome", "html-ppt-zhangzara-neo-grid-bold", "html-ppt-zhangzara-peoples-platform", "html-ppt-zhangzara-pin-and-paper", "html-ppt-zhangzara-pink-script", "html-ppt-zhangzara-playful", "html-ppt-zhangzara-raw-grid", "html-ppt-zhangzara-retro-windows", "html-ppt-zhangzara-retro-zine", "html-ppt-zhangzara-sakura-chroma", "html-ppt-zhangzara-scatterbrain", "html-ppt-zhangzara-signal", "html-ppt-zhangzara-soft-editorial", "html-ppt-zhangzara-stencil-tablet", "html-ppt-zhangzara-studio", "html-ppt-zhangzara-vellum"
+    ],
+    "deck_content_or_effect_entries_routed_to_html_ppt_master_count_13": [
+      "html-ppt-course-module", "html-ppt-graphify-dark-graph", "html-ppt-hermes-cyber-terminal", "html-ppt-knowledge-arch-blueprint", "html-ppt-obsidian-claude-gradient", "html-ppt-pitch-deck", "html-ppt-presenter-mode-reveal", "html-ppt-product-launch", "html-ppt-tech-sharing", "html-ppt-testing-safety-alert", "html-ppt-weekly-report", "html-ppt-xhs-pastel-card", "html-ppt-xhs-white-editorial"
+    ],
+    "other_task_skills_or_single_output_examples_count_48": [
+      "audio-jingle", "blog-post", "clinical-case-report", "contact-widget", "critique", "dashboard", "dating-web", "dcf-valuation", "digital-eguide", "docs-page", "email-marketing", "eng-runbook", "finance-report", "gamified-app", "hr-onboarding", "hyperframes", "image-poster", "invoice", "kami-deck", "kami-landing", "kanban-board", "last30days", "magazine-poster", "meeting-notes", "mobile-onboarding", "motion-frames", "orbit-general", "orbit-github", "orbit-gmail", "orbit-linear", "orbit-notion", "pm-spec", "pricing-page", "saas-landing", "social-carousel", "social-media-dashboard", "sprite-animation", "team-okrs", "tweaks", "video-shortform", "webgl-experience", "weekly-update", "wireframe-annotated", "wireframe-greybox", "wireframe-mobile-flow", "wireframe-sketch", "worker-visualizer", "x-research"
+    ],
+    "evidence_basis": "Physical package inventory and references in actual SKILL.md files: framework-candidate group has template/runtime/schema support beyond a single example; web-prototype taste entries contain only skill+example and explicitly describe visual taste; 32 html-ppt-zhangzara entries carry template.json plus example/license but reuse the html-ppt deck master; 13 html-ppt entries explicitly route to the master. Remaining group lacks evidence of an independent reusable scaffold and is retained as skill/example pending deeper semantic review.",
+    "groups_cover_exactly_114": true
+  },
+  "boundary_decisions": [
+    "Treat template as reusable content/code framework with SKILL.md, seed/code, examples, and support files.",
+    "Treat design system as independent asset with manifest.json, DESIGN.md, and tokens.css.",
+    "Treat visual taste variants as design-system presets/examples, not new template identities unless they change reusable structure or behavior.",
+    "Do not count image generation, research, or brand extraction task Skills as templates solely because they contain SKILL.md.",
+    "Do not count the standalone CSS perspective device showcase as evidence of a reusable 3D framework.",
+    "No broad migration of 114 design-template entries is supported by this audit."
+  ]
+}

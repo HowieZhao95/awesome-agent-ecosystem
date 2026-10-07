@@ -1,0 +1,10 @@
+{
+  "bundle": "http://localhost:3001/assets/index-hRDyIscW.js",
+  "sandbox": "allow-scripts",
+  "base": "https://raw.githubusercontent.com/nexu-io/open-design/53231d40b778d88eba23f35547bf99485d3ae9fc/design-systems/airbnb/preview/",
+  "stylesheetSources": [
+    "https://raw.githubusercontent.com/nexu-io/open-design/53231d40b778d88eba23f35547bf99485d3ae9fc/design-systems/airbnb/tokens.css"
+  ],
+  "actualAccent": true,
+  "count": "设计系统154"
+}

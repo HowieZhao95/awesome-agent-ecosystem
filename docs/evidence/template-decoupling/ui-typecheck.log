@@ -1,0 +1,2 @@
+Command: pnpm exec tsc --noEmit
+Result: exit 0

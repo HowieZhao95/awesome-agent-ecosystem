@@ -1,0 +1,5 @@
+
+> @public-agent-store/catalog@0.1.0 check:host
+> node scripts/check-host.mjs
+
+Packed package public-agent-store-catalog-0.1.0.tgz installed in a temporary consumer; the real host example typechecked and built with the public exports.

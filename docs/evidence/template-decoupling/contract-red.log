@@ -1,0 +1,3 @@
+TDD RED — before implementing profile validation
+Command: uv run --no-project --with pyyaml python -m unittest discover -s tests -p 'test_template_profiles.py' -v
+Result: 4 assertion failures because the validator accepted cross-category profiles, invalid profile roles, a mixed style boundary for usable templates, and a design-system usable profile missing core-role gating. Legacy no-profile v3 and valid profile fixtures passed. Initial system Python lacked PyYAML; the test was rerun under uv's transient --with pyyaml environment.

@@ -87,6 +87,8 @@ def build_outputs(root=ROOT):
                 ],
                 "authors": resource["authors"],
                 "publisher": resource["publisher"],
+                **({"template": resource["template"]} if "template" in resource else {}),
+                **({"design_system": resource["design_system"]} if "design_system" in resource else {}),
             })
         site_data["categories"].append({
             "id": category["id"],
@@ -141,6 +143,10 @@ def build_outputs(root=ROOT):
     for category in categories:
         items = [r for r in resources if r["classification"]["category"] == category["id"]]
         lines += [f'<a id="{category["id"]}"></a>', f"### {category['label']}", "", f"> {category['definition']}", ""]
+        if category["id"] == "templates":
+            lines += ["Templates are reusable content and code frameworks. Their examples are references; visual style is supplied by an independent design system.", ""]
+        elif category["id"] == "design-systems":
+            lines += ["Design-system profiles link the actual manifest, design rules and token CSS files when available; optional references may be incomplete.", ""]
         if not items:
             lines += ["No resources yet.", ""]
             continue

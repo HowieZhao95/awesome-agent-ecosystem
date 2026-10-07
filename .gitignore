@@ -10,3 +10,5 @@ web-dist/
 
 # Local visual QA may contain upstream reference media; do not redistribute it.
 docs/evidence/phase2/*.png
+
+docs/evidence/template-decoupling/*.png

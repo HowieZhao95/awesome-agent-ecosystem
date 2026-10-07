@@ -1,0 +1,34 @@
+[p1 "Agent 创作资源目录" | space "Template framework and design system separation acceptance"(162): 1 managed, 0 untracked — p1* "Agent 创作资源目录"]
+iframe [ref=26, loc=unstable]
+root
+  container
+    heading
+      text "Color roles"
+    container
+      container
+        text "Background"
+        text "--bg"
+      container
+        text "Surface"
+        text "--surface"
+      container
+        text "Foreground"
+        text "--fg"
+      container
+        text "Muted"
+        text "--muted"
+      container
+        text "Border"
+        text "--border"
+      container
+        text "Accent"
+        text "--accent"
+      container
+        text "Success"
+        text "--success"
+      container
+        text "Warning"
+        text "--warn"
+      container
+        text "Danger"
+        text "--danger"

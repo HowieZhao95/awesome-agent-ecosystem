@@ -19,10 +19,20 @@ export interface Resource {
   previews: { kind: string; url: string; status: 'reference' | 'verified'; evidence: Evidence[] }[];
   compatibility: { hosts: string[]; runtimes: { name: string; version: string | null; status: 'declared' | 'verified' | 'unknown' }[]; dependencies: { kind: string; name: string; version: string | null; source_id: string | null }[]; constraints: string[] };
   components: Component[];
+  template?: TemplateProfile;
+  design_system?: DesignSystemProfile;
   lifecycle: { state: LifecycleState; reason: string; replacement_id: string | null };
   review: { status: ReviewStatus; by: string | null; at: string | null; evidence: Evidence[] };
   verification: { level: VerificationLevel; tested_hosts: string[]; checked_at: string | null; by: string | null; evidence: Evidence[]; limits: string[] };
 }
+export type ProfileFile = { role: string; path: string; url: string };
+export type TemplateProfile = {
+  files: { role: 'instructions' | 'framework' | 'example' | 'support'; path: string; url: string }[];
+  style: { policy: 'external-design-system'; upstream_status: 'independent' | 'mixed' | 'unknown'; note: string };
+};
+export type DesignSystemProfile = {
+  files: { role: 'manifest' | 'rules' | 'tokens-css' | 'example' | 'support'; path: string; url: string }[];
+};
 export interface Category { id: CategoryId; label: string; definition: string; subtypes: { id: SubtypeId; label: string; definition: string }[]; excludes?: string[]; minimum_profile?: string }
 export interface Catalog {
   schema_version: number;

@@ -1,0 +1,17 @@
+WARN `--no-project` was provided, but no project was found
+test_accepts_optional_profile_free_legacy_v3_resource (test_template_profiles.TemplateProfileTests.test_accepts_optional_profile_free_legacy_v3_resource) ... ok
+test_accepts_template_profile_with_framework_instructions_and_example (test_template_profiles.TemplateProfileTests.test_accepts_template_profile_with_framework_instructions_and_example) ... ok
+test_build_projection_preserves_template_profile (test_template_profiles.TemplateProfileTests.test_build_projection_preserves_template_profile) ... ok
+test_design_system_profile_accepts_missing_optional_references_but_not_missing_core_roles_when_usable (test_template_profiles.TemplateProfileTests.test_design_system_profile_accepts_missing_optional_references_but_not_missing_core_roles_when_usable) ... ok
+test_profile_url_matches_actual_upstream_full_blob_locator (test_template_profiles.TemplateProfileTests.test_profile_url_matches_actual_upstream_full_blob_locator) ... ok
+test_rejects_design_system_profile_on_template_category (test_template_profiles.TemplateProfileTests.test_rejects_design_system_profile_on_template_category) ... ok
+test_rejects_style_binding_fields_in_template_profile (test_template_profiles.TemplateProfileTests.test_rejects_style_binding_fields_in_template_profile) ... ok
+test_rejects_template_file_role_from_design_system_profile (test_template_profiles.TemplateProfileTests.test_rejects_template_file_role_from_design_system_profile) ... ok
+test_rejects_template_reference_that_does_not_match_locked_upstream (test_template_profiles.TemplateProfileTests.test_rejects_template_reference_that_does_not_match_locked_upstream) ... ok
+test_unknown_git_ref_allows_only_exact_parent_file_locator (test_template_profiles.TemplateProfileTests.test_unknown_git_ref_allows_only_exact_parent_file_locator) ... ok
+test_usable_template_requires_complete_independent_profile (test_template_profiles.TemplateProfileTests.test_usable_template_requires_complete_independent_profile) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.696s
+
+OK

@@ -1,0 +1,65 @@
+✖ canonical template and design-system profiles appear in both generated v3 views (3.084958ms)
+✔ ordinary v3 resources remain valid without optional profiles (0.243458ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 1
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 295.656625
+
+✖ failing tests:
+
+test at tests/template-profiles.test.ts:2:120
+✖ canonical template and design-system profiles appear in both generated v3 views (3.084958ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + undefined
+  - {
+  -   files: [
+  -     {
+  -       path: 'plugins/_official/examples/web-prototype/SKILL.md',
+  -       role: 'instructions',
+  -       url: 'https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/web-prototype/SKILL.md'
+  -     },
+  -     {
+  -       path: 'plugins/_official/examples/web-prototype/assets/template.html',
+  -       role: 'framework',
+  -       url: 'https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/web-prototype/assets/template.html'
+  -     },
+  -     {
+  -       path: 'plugins/_official/examples/web-prototype/example.html',
+  -       role: 'example',
+  -       url: 'https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/web-prototype/example.html'
+  -     },
+  -     {
+  -       path: 'plugins/_official/examples/web-prototype/references/checklist.md',
+  -       role: 'support',
+  -       url: 'https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/web-prototype/references/checklist.md'
+  -     },
+  -     {
+  -       path: 'plugins/_official/examples/web-prototype/references/layouts.md',
+  -       role: 'support',
+  -       url: 'https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/_official/examples/web-prototype/references/layouts.md'
+  -     }
+  -   ],
+  -   style: {
+  -     note: '框架 seed 与布局辅助文件可读取活动 DESIGN.md 并映射语义变量；上游 example_prompt 仍要求固定视觉签名，需移除该示例风格约束后才能宣称完全解耦。',
+  -     policy: 'external-design-system',
+  -     upstream_status: 'mixed'
+  -   }
+  - }
+  
+      at TestContext.<anonymous> (/Users/howiez/Downloads/awesome-agent-ecosystem/tests/template-profiles.test.ts:28:12)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1062:25)
+      at Test.start (node:internal/test_runner/test:959:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:332:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: { files: [ [Object], [Object], [Object], [Object], [Object] ], style: { policy: 'external-design-system', upstream_status: 'mixed', note: '框架 seed 与布局辅助文件可读取活动 DESIGN.md 并映射语义变量；上游 example_prompt 仍要求固定视觉签名，需移除该示例风格约束后才能宣称完全解耦。' } },
+    operator: 'deepStrictEqual'
+  }

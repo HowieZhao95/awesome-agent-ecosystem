@@ -1,12 +1,13 @@
 # 分类正本；标签/枚举/网站分类只能由此生成或引用。
 schema_version: 3
 review_status: approved
-# 2026-10-07 用户批准阶段 1 契约冻结；分类定义审核通过。
+# 2026-10-07 阶段 1 冻结；同日用户追加模板/风格解耦与设计系统核心文件裁定。
 categories:
   - id: templates
     label: 设计模板
-    definition: 可反复用于创建特定形态设计产物的结构、起始文件、约束与示例；交付重点是产物形态。
-    excludes: [画布快照或画布布局模板, 仅讲任务方法的 Skill, 单独的图片或视频生成提示词]
+    definition: 一套可复用的内容与代码框架，包含 SKILL.md、框架代码、示例和辅助文件；框架描述内容结构与行为，视觉风格由独立设计系统提供。
+    minimum_profile: SKILL.md + 可定位的内容/代码框架 + 参考示例 + 辅助文件；示例的颜色、字体或品牌不成为模板身份。
+    excludes: [画布快照或画布布局模板, 仅讲任务方法而无框架代码的 Skill, 单独的图片或视频生成提示词, 仅换字体配色的风格条目, 只有成品展示而没有可复用框架的示例]
     subtypes:
       - id: prototype
         label: 原型
@@ -31,8 +32,8 @@ categories:
         definition: 明确具有可复用产物结构、且不符合前六类的模板；必须说明其具体形态，不作未知类别兜底。
   - id: design-systems
     label: 设计系统
-    definition: 可应用于产物的系统化视觉与交互规范，覆盖排版、色彩、间距、状态与可访问性，并能对应到 tokens 和 CSS 等实现文件。
-    minimum_profile: DESIGN.md 或等价设计规范 + 可追溯的 tokens + CSS；文件不必同名，必须解释映射。
+    definition: 独立于模板登记的视觉与交互规范，核心为 manifest.json + DESIGN.md + tokens.css，覆盖排版、色彩、间距、状态与可访问性；可供不同内容与代码框架使用。
+    minimum_profile: manifest.json + DESIGN.md + tokens.css；分别提供系统身份与文件映射、设计规范、CSS 语义 tokens。单文档或风格参考未具备三件套时不得标为完整可用系统。
     excludes: [只有风格描述或调色板的参考文档, 产品自身 UI 代码库未经资产化的内部实现, Agent 通用行为原则]
     subtypes: []
   - id: skills
@@ -64,6 +65,10 @@ classification_rules:
   - 先判断是否为有稳定身份的插件分发单元；插件整体归 plugins，内部组件分别描述，不据此把所有 SKILL.md 都归插件。
   - 单组件 MCP/CLI 只有独立安装、启用、版本或分发身份才单独登记为插件；仅随父插件提供的能力只记组件，外部要求只记依赖。已有独立资源的组件通过 resource_id 关联，不重复创建资源或把组件再加进资源计数。
   - 同一 SKILL.md 若核心是固定产物结构则归 templates；若核心是完成任务的方法则归 skills；纯行为约束归 prompts/principle。
+  - 模板身份由内容与代码框架确定，不由颜色、字体、品牌或示例截图确定。同一框架更换设计系统仍为同一模板，不按风格入口重复建模板。
+  - 模板文件按 instructions/framework/example/support 分工登记；SKILL.md 可以是模板使用说明，不据此另建同分发单元的 Skill。
+  - 只有任务指令与成品示例、没有独立框架代码的上游入口，按任务 Skill 或参考资料登记；不得把其风格示例当作框架。
+  - 模板与设计系统不互相内嵌身份绑定。上游仍含固定视觉要求时明确标为 mixed/待拆分候选，不声称完成解耦。
   - 模板子类按主要产物选一个；仪表盘优先于一般原型，Deck 优先于一般文档；其他重叠须写 rationale。
   - Remotion 是技术/运行依赖；Remotion 方法是 Skill，具体可复用动画工程才是 MG 模板。
   - DESIGN.md 单文件可登记为 design-systems 的 reference 或 candidate，完整性不足不能标为 usable。
@@ -102,6 +107,7 @@ dimensions:
   conventions:
     - {id: skill-md, label: SKILL.md, definition: Agent Skill 入口约定；也可能用于封装模板。}
     - {id: agents-md, label: AGENTS.md, definition: Agent 工作导引文件约定；私有上下文不在公共目录中。}
+    - {id: design-manifest, label: 设计系统 Manifest, definition: manifest.json 记录独立设计系统身份、来源及 DESIGN.md/tokens.css 文件映射，不等同于插件清单。}
     - {id: design-md, label: DESIGN.md, definition: Agent 可读设计规范约定，不包含所有名为 design.md 的工程设计文档。}
     - {id: tokens, label: Design Tokens, definition: 命名设计值及语义映射；不是主类或运行工具。}
     - {id: plugin-manifest, label: 插件清单, definition: 上游插件身份、组件和声明的清单；不强制所有上游采用同一格式。}

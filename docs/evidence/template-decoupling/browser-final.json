@@ -1,0 +1,32 @@
+{
+  "finalTemplate": {
+    "bundle": "http://localhost:3001/assets/index-hRDyIscW.js",
+    "hasFramework": true,
+    "hasExternalPolicy": true,
+    "awaitSeparation": true,
+    "noInstall": true
+  },
+  "templateNav": {
+    "subtypeOptions": [
+      "",
+      "prototype",
+      "deck",
+      "three-d",
+      "dashboard",
+      "motion-graphics",
+      "document",
+      "custom"
+    ],
+    "count": "设计模板3 项结果分类定义 一套可复用的内容与代码框架，包含 SKILL.md、框架代码、示例和辅助文件；框架描述内容结构与行为，视觉风格由独立设计系统提供。清除筛选",
+    "templateIDs": [
+      "opendesign.web-prototype",
+      "opendesign.html-ppt",
+      "opendesign.live-dashboard"
+    ]
+  },
+  "narrow": {
+    "width": 390,
+    "overflow": false
+  },
+  "paletteScreenshot": "design-system-palette.png"
+}

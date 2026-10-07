@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
-import type { Catalog, HostAdapter, Resource } from '../contracts.js';
+import type { Catalog, DesignSystemProfile, HostAdapter, ProfileFile, Resource, TemplateProfile } from '../contracts.js';
 import { filterResources, getResource, isAvailableForHost } from '../catalog.js';
 
 export interface CatalogAppProps {
@@ -42,6 +42,9 @@ const DEFAULT_MESSAGES: Record<string, string> = {
   'source.original': '打开上游文件 ↗', 'source.location': '原始位置', 'source.path': '文件路径', 'source.selector': '选择器', 'source.version': '来源版本', 'source.relation': '来源关系', 'source.author': '作者', 'source.license': '许可', 'source.content': '内容来源', 'source.public': '公开来源', 'source.restricted': '受限来源', 'source.unknown': '访问状态未知', 'source.noLicense': '获取、安装或再分发前，请在来源确认许可范围与权利状态。', 'source.distribution': '打开分发来源 ↗', 'source.openFile': '查看文件 ↗', 'source.noTestedHost': '无', 'source.noCheckDate': '尚无检查日期',
   'source.archive': '来源档案', 'source.access': '访问状态', 'source.roles': '来源角色', 'source.openWebsite': '打开来源网站 ↗', 'source.tracking': '来源追踪', 'source.resources': '目录中的资源', 'source.noResources': '当前目录没有关联资源。', 'source.accessWarning': '来源访问受限或尚未确认公开。页面只展示已登记的公开元数据，不承诺来源内容可获取。',
   'source.acquisition': '获取入口', 'source.metadataDetails': '作者、许可与来源版本', 'source.verificationDetails': '验证详情', 'source.compatibilityDetails': '运行环境、依赖与限制',
+  'template.framework': '内容与代码框架', 'template.examples': '参考示例（样式不属于模板）', 'template.pending': '文件角色待补充', 'template.independent': '上游框架与风格已独立', 'template.mixed': '上游框架与风格待拆分', 'template.unknown': '上游框架与风格关系未知', 'template.policy': '风格策略', 'template.policy.external-design-system': '由独立设计系统提供', 'template.note': '来源说明',
+  'designSystem.files': '设计系统文件', 'designSystem.missing': '缺少核心文件角色：{roles}', 'designSystem.role.manifest': 'manifest.json', 'designSystem.role.rules': 'DESIGN.md / 设计规范', 'designSystem.role.tokens-css': 'tokens.css', 'designSystem.role.example': '示例', 'designSystem.role.support': '辅助文件',
+  'fileRole.instructions': '操作指南', 'fileRole.framework': '框架文件', 'fileRole.example': '参考示例', 'fileRole.support': '辅助文件', 'category.definition': '分类定义',
   'source.viewResource': '查看关联资源 ↗', 'source.componentSource': '组件来源 ↗', 'source.hostProvided': '宿主提供 · 查看声明 ↗', 'source.type': '资源类别', 'source.testedHost': '检验宿主', 'source.verified': '已核实', 'source.reference': '来源引用', 'source.redistribution': '再分发', 'source.open': '打开',
 };
 type Translator = (key: string, fallback?: string) => string;
@@ -67,6 +70,45 @@ function stableRoute(type: 'resource' | 'source', id: string) {
 
 function externalRawUrl(url: string) {
   return url.replace(/^https:\/\/github\.com\/([^/]+\/[^/]+)\/blob\/([^/]+)\/(.+)$/, 'https://raw.githubusercontent.com/$1/$2/$3');
+}
+
+function rawGithubPinnedRoot(url: string) {
+  try {
+    const parsed = new URL(url);
+    if (parsed.hostname !== 'raw.githubusercontent.com') return null;
+    const [owner, repository, revision] = parsed.pathname.split('/').filter(Boolean);
+    if (!owner || !repository || !revision || !/^[a-f0-9]{40}$/i.test(revision)) return null;
+    return `${parsed.origin}/${owner}/${repository}/${revision}/`;
+  } catch { return null; }
+}
+
+async function prepareHTMLPreview(html: string, sourceUrl: string) {
+  if (typeof window === 'undefined' || !safeExternalUrl(sourceUrl)) return html;
+  const parsed = new window.DOMParser().parseFromString(html, 'text/html');
+  parsed.querySelectorAll('base').forEach((base) => base.remove());
+  const base = parsed.createElement('base');
+  const sourceDirectory = new URL('.', sourceUrl).href;
+  base.href = sourceDirectory;
+  parsed.head.insertBefore(base, parsed.head.firstChild);
+
+  const pinnedRoot = rawGithubPinnedRoot(sourceUrl);
+  if (pinnedRoot) {
+    for (const link of parsed.querySelectorAll<HTMLLinkElement>('link[rel~="stylesheet"][href]')) {
+      const href = link.getAttribute('href');
+      if (!href) continue;
+      const cssUrl = new URL(href, sourceDirectory);
+      if (!cssUrl.href.startsWith(pinnedRoot)) continue;
+      const response = await fetch(cssUrl.href);
+      if (!response.ok) throw new Error(`${response.status} ${response.statusText} while loading preview stylesheet`);
+      const style = parsed.createElement('style');
+      style.dataset.sourceUrl = cssUrl.href;
+      style.textContent = (await response.text()).replace(/</g, '\\3C ');
+      link.replaceWith(style);
+    }
+  }
+
+  const doctype = parsed.doctype ? `<!doctype ${parsed.doctype.name}>` : '';
+  return `${doctype}${parsed.documentElement.outerHTML}`;
 }
 
 function safeExternalUrl(url: string) {
@@ -168,7 +210,10 @@ export function CatalogApp({ catalog, host, status = catalog ? 'ready' : 'loadin
       const response = await fetch(url);
       if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
       const body = await response.text();
-      setPreviewText((previous) => ({ ...previous, [key]: body }));
+      const content = preview.kind.toLowerCase() === 'html' || /\.html?(?:\?|$)/i.test(url)
+        ? await prepareHTMLPreview(body, url)
+        : body;
+      setPreviewText((previous) => ({ ...previous, [key]: content }));
       setPreviewState((previous) => ({ ...previous, [key]: 'ready' }));
     } catch (cause) {
       setPreviewState((previous) => ({ ...previous, [key]: 'error' }));
@@ -232,7 +277,7 @@ export function CatalogApp({ catalog, host, status = catalog ? 'ready' : 'loadin
               <FilterSelect label={t('filter.lifecycle', '生命周期')} name="lifecycle" value={filters.lifecycle} options={unique(resources.map((item) => item.lifecycle.state)).map((id) => [id, t(`lifecycle.${id}`, human(id))])} onChange={(value) => setFilter('lifecycle', value)} />
             </div>
           </section>
-          <div className="pas-result-heading"><div><h2>{filters.category ? t(`category.${filters.category}`, categories.find((item) => item.id === filters.category)?.label ?? filters.category) : t('result.all', '全部资源')}</h2><span>{t('result.count', '{count} 项结果').replace('{count}', String(filtered.length))}</span></div>
+          <div className="pas-result-heading"><div><h2>{filters.category ? t(`category.${filters.category}`, categories.find((item) => item.id === filters.category)?.label ?? filters.category) : t('result.all', '全部资源')}</h2><span>{t('result.count', '{count} 项结果').replace('{count}', String(filtered.length))}</span>{selectedCategory?.definition && <p className="pas-category-definition"><b>{t('category.definition', '分类定义')}</b> {selectedCategory.definition}</p>}</div>
             {Object.values(filters).some(Boolean) && <button className="pas-text-button" type="button" onClick={() => { setFilters(EMPTY_FILTERS); setPage(1); }}>{t('filter.clear', '清除筛选')}</button>}
           </div>
           {filtered.length === 0 ? <div className="pas-state">{t('result.empty', '没有符合条件的资源。')}<button type="button" onClick={() => setFilters(EMPTY_FILTERS)}>{t('filter.clear', '清除筛选')}</button></div> : <>
@@ -258,6 +303,43 @@ function FilterSelect({ label, name, value, options, onChange }: { label: string
 
 function isImagePreview(preview: Resource['previews'][number]) {
   return ['image', 'carousel', 'screenshot'].includes(preview.kind.toLowerCase()) || /\.(png|jpe?g|webp|gif)(?:\?|$)/i.test(preview.url);
+}
+
+function ProfileFileList({ files, onHostLink }: { files: ProfileFile[]; onHostLink: (event: React.MouseEvent<HTMLAnchorElement>, url: string) => void }) {
+  const t = useText();
+  return <ul className="pas-profile-files">{files.map((file) => <li key={`${file.role}:${file.path}:${file.url}`}>
+    <span>{t(`fileRole.${file.role}`, human(file.role))}</span><code>{file.path}</code>
+    {safeExternalUrl(file.url) ? <a href={file.url} target="_blank" rel="noreferrer" onClick={(event) => onHostLink(event, file.url)}>{t('source.openFile', '查看文件 ↗')}</a> : <span>{t('source.invalidLink', '无法打开此来源地址')}</span>}
+  </li>)}</ul>;
+}
+
+function TemplateProfile({ profile, onHostLink }: { profile?: TemplateProfile; onHostLink: (event: React.MouseEvent<HTMLAnchorElement>, url: string) => void }) {
+  const t = useText();
+  if (!profile) return <MetaSection title={t('template.framework', '内容与代码框架')}><p>{t('template.pending', '文件角色待补充')}</p></MetaSection>;
+  const frameworkFiles = profile.files.filter((file) => file.role !== 'example');
+  const examples = profile.files.filter((file) => file.role === 'example');
+  const statusKey = `template.${profile.style.upstream_status}`;
+  const statusLabel = t(statusKey, profile.style.upstream_status === 'mixed' ? '上游框架与风格待拆分' : profile.style.upstream_status === 'independent' ? '上游框架与风格已独立' : '上游框架与风格关系未知');
+  return <section className="pas-profile-section" data-template-profile>
+    <MetaSection title={t('template.framework', '内容与代码框架')}>
+      {frameworkFiles.length ? <ProfileFileList files={frameworkFiles} onHostLink={onHostLink} /> : <p>{t('template.pending', '文件角色待补充')}</p>}
+      <p><b>{t('template.policy', '风格策略')}</b> {t(`template.policy.${profile.style.policy}`, human(profile.style.policy))}</p>
+      <p><b>{statusLabel}</b></p>
+      {profile.style.note && <p><b>{t('template.note', '来源说明')}</b> {profile.style.note}</p>}
+    </MetaSection>
+    {examples.length > 0 && <MetaSection title={t('template.examples', '参考示例（样式不属于模板）')}><ProfileFileList files={examples} onHostLink={onHostLink} /></MetaSection>}
+  </section>;
+}
+
+function DesignSystemProfile({ profile, onHostLink }: { profile?: DesignSystemProfile; onHostLink: (event: React.MouseEvent<HTMLAnchorElement>, url: string) => void }) {
+  const t = useText();
+  const coreRoles = ['manifest', 'rules', 'tokens-css'];
+  const files = profile?.files ?? [];
+  const missing = coreRoles.filter((role) => !files.some((file) => file.role === role));
+  return <MetaSection title={t('designSystem.files', '设计系统文件')}>
+    {files.length ? <ProfileFileList files={files} onHostLink={onHostLink} /> : <p>{t('template.pending', '文件角色待补充')}</p>}
+    {missing.length > 0 && <p className="pas-profile-missing">{t('designSystem.missing', '缺少核心文件角色：{roles}').replace('{roles}', missing.map((role) => t(`designSystem.role.${role}`, role)).join('、'))}</p>}
+  </MetaSection>;
 }
 
 function ImageCarousel({ resource, previews, onHostLink }: { resource: Resource; previews: Resource['previews']; onHostLink: (event: React.MouseEvent<HTMLAnchorElement>, url: string) => void }) {
@@ -337,10 +419,13 @@ function ResourceDetail({ resource, sourceRecords, host, availableForHost, catal
     } catch (cause) { setHostStatusError(`宿主状态读取失败：${cause instanceof Error ? cause.message : String(cause)}`); }
   }
   const source = sourceRecords.find((item) => item.id === resource.provenance.content_source);
+  const templateProfile = resource.template;
+  const designSystemProfile = resource.design_system;
+  const profiledUrls = new Set([...(templateProfile?.files ?? []), ...(designSystemProfile?.files ?? [])].map((file) => file.url));
   const detailPreviews = [...resource.previews];
   const sourceFileEvidence = resource.verification.evidence.map((item) => item.locator);
   const sourceFiles = [resource.provenance.upstream.url, ...sourceFileEvidence]
-    .filter((url): url is string => Boolean(url) && safeExternalUrl(url) && /\.(md|markdown|json|css)(?:\?|$)/i.test(url));
+    .filter((url): url is string => Boolean(url) && !profiledUrls.has(url) && safeExternalUrl(url) && /\.(md|markdown|json|css)(?:\?|$)/i.test(url));
   if (['skills', 'prompts', 'design-systems'].includes(category)) {
     for (const url of sourceFiles) {
       if (detailPreviews.some((item) => item.url === url)) continue;
@@ -376,7 +461,9 @@ function ResourceDetail({ resource, sourceRecords, host, availableForHost, catal
     </div>}
     {(hostStatusError || accountError) && <p className="pas-inline-error" role="alert">{accountError || hostStatusError}</p>}
     {operationError && <p className="pas-inline-error" role="alert">{operationError}</p>}
-    <section className="pas-preview-section"><div className="pas-section-title"><div><p className="pas-eyebrow">{t('preview.eyebrow', '预览与来源文件')}</p><h3>{t('preview.title', '资源内容')}</h3></div>{detailPreviews.length > 0 && <span>{detailPreviews.length} 个来源条目</span>}</div>
+    {category === 'templates' && <TemplateProfile profile={templateProfile} onHostLink={onHostLink} />}
+    {category === 'design-systems' && <DesignSystemProfile profile={designSystemProfile} onHostLink={onHostLink} />}
+    <section className="pas-preview-section"><div className="pas-section-title"><div><p className="pas-eyebrow">{t('preview.eyebrow', '预览与来源文件')}</p><h3>{category === 'templates' ? t('template.examples', '参考示例（样式不属于模板）') : t('preview.title', '资源内容')}</h3></div>{detailPreviews.length > 0 && <span>{detailPreviews.length} 个来源条目</span>}</div>
       {imagePreviews.length > 1 && <ImageCarousel resource={resource} previews={imagePreviews} onHostLink={onHostLink} />}
       {detailPreviews.length === 0 ? <div className="pas-preview-empty">{t('preview.empty', '暂无可内嵌预览；请使用下方原始来源入口。')}</div> : listedPreviews.length > 0 && <div className="pas-preview-list">{listedPreviews.map((preview) => {
         const index = detailPreviews.indexOf(preview);
