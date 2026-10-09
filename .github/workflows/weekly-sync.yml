@@ -43,6 +43,11 @@ jobs:
       - name: Validate discovery queue
         run: python scripts/validate-discovery.py
 
+      - name: Snapshot locked upstream sources
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN || github.token }}
+        run: python scripts/auto-source-sync.py --output-dir docs/evidence/source-sync
+
       - name: Sample link check (50 URLs)
         run: python scripts/link-check.py --sample 50
 
@@ -58,6 +63,7 @@ jobs:
             自动数据同步：
             - import-marketplace / import-skills-mcp 增量
             - stars 刷新
+            - locked upstream source snapshots (review-only)
             - 链接抽样检查（见 workflow 日志）
 
             人工确认无误后 merge 即可。

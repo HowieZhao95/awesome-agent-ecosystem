@@ -80,7 +80,7 @@ upstream 的 url 必须指向具体文件、目录或不可变条目。git 记�
 
 来源记录包括 `id/name/url/roles/access`，以及 `tracking` 的 scope、exclude、baseline、cadence、method、promotion、last_checked 和 limitations。source ID 不含需要更新的版本，版本放 baseline。access 为 public/restricted/unknown；未知入口 url 可为 null，但必须同时 access=unknown 且 limitations 写原因，不能用别的网站首页占位。scope 是实际跟踪目录/条目，baseline 是此次查证基线，不能把“仓库存在”说成“全仓收录完成”。代码仓库需要按路径比较时，scope 使用仓库相对路径数组，支持目录 `/**`；内容入口、manifest、seed、示例和许可证据的实际路径均须被覆盖，不能只跟踪另一个副本目录。其他发现/规范来源可保留可读的范围说明。所有自动更新只产生发现结果或审查提案，不静默晋级为 usable。
 
-Sources 中每个已知上游必须说明：更新时比较哪些文件，如何锁定引用，谁审核分类/许可/兼容变化，无法获取时怎样保留原证据。登记 weekly/manual 等节奏只是维护策略；只有现有 weekly-sync 旧发现脚本已接线，新上游持续监控未实现，不宣称已自动运行。
+Sources 中每个已知上游必须说明：更新时比较哪些文件，如何锁定引用，谁审核分类/许可/兼容变化，无法获取时怎样保留原证据。`cadence: weekly` 的锁定公开源由 `scripts/auto-source-sync.py` 在 weekly workflow 中生成 review-only 候选报告；它不修改资源正本、不自动晋级，失败保留旧证据。`cadence: manual` 的来源仍只走人工来源工具，不宣称已自动运行。
 
 ## 收录规则
 

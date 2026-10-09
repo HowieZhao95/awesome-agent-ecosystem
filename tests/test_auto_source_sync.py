@@ -1,0 +1,79 @@
+import importlib.util
+import json
+import tempfile
+import unittest
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+SPEC = importlib.util.spec_from_file_location(
+    "auto_source_sync", ROOT / "scripts/auto-source-sync.py"
+)
+auto = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(auto)
+
+
+class Response:
+    def __init__(self, body, status=200):
+        self._body = body
+        self.status_code = status
+
+    def raise_for_status(self):
+        if self.status_code >= 400:
+            raise RuntimeError(f"status {self.status_code}")
+
+    def json(self):
+        return self._body
+
+
+class AutoSourceSyncTests(unittest.TestCase):
+    def test_resolves_full_commit_and_builds_official_archive_url(self):
+        response = Response({"sha": "A" * 40})
+        self.assertEqual(
+            auto.resolve_commit(
+                "nexu-io/open-design", "main", get=lambda *args, **kwargs: response
+            ),
+            "a" * 40,
+        )
+        self.assertEqual(
+            auto.archive_url("nexu-io/open-design", "a" * 40),
+            "https://codeload.github.com/nexu-io/open-design/tar.gz/" + "a" * 40,
+        )
+
+    def test_resolves_only_weekly_locked_sources(self):
+        sources = {
+            "sources": [
+                {"id": "opendesign", "tracking": {"cadence": "weekly"}},
+                {"id": "remotion-dev.skills", "tracking": {"cadence": "manual"}},
+                {"id": "discover.github", "tracking": {"cadence": "weekly"}},
+            ]
+        }
+        self.assertEqual(auto.automated_source_ids(sources), ["opendesign"])
+
+    def test_candidate_reports_are_deterministic_and_write_only_on_change(self):
+        reports = {"opendesign": {"snapshot": {"ref": "a" * 40}, "diff": {"changes": []}}}
+        with tempfile.TemporaryDirectory() as td:
+            output = Path(td)
+            first = auto.write_candidate_reports(reports, output)
+            second = auto.write_candidate_reports(reports, output)
+            self.assertEqual(first, ["opendesign"])
+            self.assertEqual(second, [])
+            self.assertEqual(json.loads((output / "opendesign.json").read_text()), reports["opendesign"])
+
+    def test_batch_failure_writes_no_partial_candidate(self):
+        with tempfile.TemporaryDirectory() as td:
+            output = Path(td)
+            with self.assertRaises(RuntimeError):
+                auto.collect_reports(
+                    ["opendesign", "remotion"],
+                    runner=lambda source: (
+                        {"snapshot": {"source": source}}
+                        if source == "opendesign"
+                        else (_ for _ in ()).throw(RuntimeError("boom"))
+                    ),
+                )
+            self.assertEqual(list(output.glob("*.json")), [])
+
+
+if __name__ == "__main__":
+    unittest.main()

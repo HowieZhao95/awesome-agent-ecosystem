@@ -1,5 +1,21 @@
 # Source snapshot and review tool
 
+## Weekly candidate automation
+
+`.github/workflows/weekly-sync.yml` runs `scripts/auto-source-sync.py` for the
+locked sources whose `data/sources.yaml` record declares `tracking.cadence:
+weekly` (currently OpenDesign and Remotion). The job resolves the watched
+branch to a full commit SHA, downloads the official GitHub archive at that SHA,
+reuses `scripts/source-sync.py`, and writes deterministic candidate reports to
+`docs/evidence/source-sync/<source>.json`. The same workflow opens the review
+PR after all selected sources succeed.
+
+The automation never edits `data/resources.yaml`, `data/sources.yaml`, or
+generated site files. It writes no partial candidate set when one source
+fails, and an unchanged candidate produces no diff. Merging the PR remains the
+one-person review/promotion decision; reverting the PR restores the prior
+candidate evidence.
+
 `scripts/source-sync.py` creates metadata-only snapshots for the public sources selected in `data/sources.yaml`. The source scope is read from that file at runtime. The tool compares a candidate snapshot with an optional prior snapshot and writes a review report to the requested output path. It does not edit `data/resources.yaml`, `data/sources.yaml`, discovery data, or generated site files, and it never promotes a candidate.
 
 Install the project Python dependencies first with `python -m pip install -r requirements.txt`. Use a full commit SHA for every public Git snapshot. A branch name or tag is rejected. GitHub archive URLs must be HTTPS URLs for the declared repository and exact SHA. Tar archive roots must match `<repository-name>-<full-sha>`. A local directory is useful for inspection, but its relationship to the supplied SHA cannot be verified; the report marks that ref as caller-supplied. The archive URL path verifies the source locator and archive root, not the source publisher's rights claims.
