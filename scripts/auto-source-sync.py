@@ -122,7 +122,11 @@ def run_one(
 def collect_reports(source_keys: list[str], *, runner=run_one) -> dict[str, dict]:
     reports: dict[str, dict] = {}
     for source_key in source_keys:
-        reports[source_key] = runner(source_key)
+        report = runner(source_key)
+        snapshot = report.get("snapshot", {})
+        if snapshot.get("complete") is False or snapshot.get("failures"):
+            raise RuntimeError(f"incomplete source snapshot: {source_key}")
+        reports[source_key] = report
     return reports
 
 

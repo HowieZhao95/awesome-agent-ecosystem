@@ -27,6 +27,19 @@ class Response:
 
 
 class AutoSourceSyncTests(unittest.TestCase):
+    def test_incomplete_snapshot_fails_before_replacing_prior_candidate(self):
+        with tempfile.TemporaryDirectory() as td:
+            output = Path(td)
+            prior = output / "opendesign.json"
+            prior.write_text('{"snapshot":{"ref":"kept"}}\n')
+            before = prior.read_bytes()
+            partial = {"snapshot": {"ref": "b" * 40, "complete": False,
+                                    "failures": [{"path": "missing", "error": "unreadable"}]}}
+            with self.assertRaisesRegex(RuntimeError, "incomplete"):
+                reports = auto.collect_reports(["opendesign"], runner=lambda _: partial)
+                auto.write_candidate_reports(reports, output)
+            self.assertEqual(prior.read_bytes(), before)
+
     def test_resolves_full_commit_and_builds_official_archive_url(self):
         response = Response({"sha": "A" * 40})
         self.assertEqual(

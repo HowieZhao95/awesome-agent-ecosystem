@@ -27,7 +27,7 @@ try {
     dependencies: { '@public-agent-store/catalog': `file:${tarball}`, react: reactVersion, 'react-dom': reactDomVersion },
     devDependencies: typeVersions,
   }));
-  run('npm', ['install', '--offline', '--ignore-scripts', '--no-audit', '--no-fund'], consumer);
+  run('npm', ['install', '--prefer-offline', '--ignore-scripts', '--no-audit', '--no-fund'], consumer);
   await cp(resolve(root, 'examples/host'), consumer, { recursive: true });
   await mkdir(resolve(consumer, 'public'));
   await cp(resolve(root, 'site/catalog.json'), resolve(consumer, 'public/catalog.json'));

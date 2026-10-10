@@ -16,6 +16,13 @@ fails, and an unchanged candidate produces no diff. Merging the PR remains the
 one-person review/promotion decision; reverting the PR restores the prior
 candidate evidence.
 
+The weekly workflow regenerates catalog projections after discovery changes so
+the PR contains matching data and generated files. If the PR is created using
+the built-in GitHub token, trigger `quality-gate` manually on its
+`bot/weekly-sync` branch before review; GitHub does not automatically run PR
+workflows for events created with that token. A successful candidate scan is
+not a catalog release or a ThusDesign synchronization receipt.
+
 `scripts/source-sync.py` creates metadata-only snapshots for the public sources selected in `data/sources.yaml`. The source scope is read from that file at runtime. The tool compares a candidate snapshot with an optional prior snapshot and writes a review report to the requested output path. It does not edit `data/resources.yaml`, `data/sources.yaml`, discovery data, or generated site files, and it never promotes a candidate.
 
 Install the project Python dependencies first with `python -m pip install -r requirements.txt`. Use a full commit SHA for every public Git snapshot. A branch name or tag is rejected. GitHub archive URLs must be HTTPS URLs for the declared repository and exact SHA. Tar archive roots must match `<repository-name>-<full-sha>`. A local directory is useful for inspection, but its relationship to the supplied SHA cannot be verified; the report marks that ref as caller-supplied. The archive URL path verifies the source locator and archive root, not the source publisher's rights claims.

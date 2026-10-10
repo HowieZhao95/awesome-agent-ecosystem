@@ -23,7 +23,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
       - run: pip install -r requirements.txt
+      - run: npm ci
 
       - name: Test sync code
         run: python -m unittest discover -s tests -v
@@ -51,6 +57,9 @@ jobs:
       - name: Sample link check (50 URLs)
         run: python scripts/link-check.py --sample 50
 
+      - name: Generate catalog projections for the reviewed data
+        run: npm run generate
+
       - name: Open update PR
         uses: peter-evans/create-pull-request@v6
         with:
@@ -64,6 +73,7 @@ jobs:
             - import-marketplace / import-skills-mcp 增量
             - stars 刷新
             - locked upstream source snapshots (review-only)
+            - regenerated catalog projections for the discovery changes
             - 链接抽样检查（见 workflow 日志）
 
             人工确认无误后 merge 即可。
