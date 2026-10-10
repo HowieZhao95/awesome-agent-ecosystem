@@ -23,16 +23,25 @@ its commits are not part of this repository's publication history.
 - The empty-cache host failure was reproduced before replacing forced offline
   installation with cache-preferred installation. Partial snapshot replacement
   was reproduced before making collection fail on incomplete snapshots.
+- [quality-gate run 38073167632](https://github.com/HowieZhao95/awesome-agent-ecosystem/actions/runs/38073167632)
+  passed all gates at revision `509510d0f7c2e89c6034ac7c2e238335f759aade`.
+- Two real Remotion fetches returned the same 145-file report at the same commit.
+  Report SHA-256: `eb6a7854c5c0c8b915af5f8bd9f3289b802bfd2c9b566d10a3aec7f0641a7ad8`;
+  the second write returned `changed: []`.
+- `main` now requires a PR and the `validate` check, with zero required approving
+  reviewers (one-person operation). Force pushes and branch deletion are disabled.
+- The misplaced `my-apps/catalog-supply` workflow is `disabled_manually`; only
+  this public repository runs source acquisition.
 
 ## Not yet proven
 
 - The updated candidate PR must pass generated-output and external-host gates.
-- Branch protection is not yet enabled; no human approval has been inferred.
+- No candidate content approval has been inferred from successful CI.
 - Fixed catalog release, approved-content freezing to COS, product directory
   synchronization, failed-sync retry, and product rollback have no live receipt.
   Reverting a review report alone does not prove product rollback.
-- Repository secrets and Environments were empty when inspected. Confirm the
-  intended credential location before connecting publication to private systems.
+- The owner clarified that COS/database credentials are in the local private
+  myApps configuration. They are not copied into this public repository.
 
 The P0 objective remains incomplete until the publication and consumer receipts
 exist. Candidate collection success must not be reported as end-to-end closure.
