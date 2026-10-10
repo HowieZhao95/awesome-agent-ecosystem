@@ -34,31 +34,18 @@ jobs:
       - name: Test sync code
         run: python -m unittest discover -s tests -v
 
-      - name: Import from marketplaces & registries
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN || github.token }}
-        run: |
-          python scripts/import-marketplace.py
-          python scripts/import-skills-mcp.py
-
-      - name: Refresh stars
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN || github.token }}
-        run: python scripts/update-stars.py
-
-      - name: Validate discovery queue
-        run: python scripts/validate-discovery.py
+      - name: Validate configured catalog sources
+        run: python scripts/validate.py
 
       - name: Snapshot locked upstream sources
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN || github.token }}
         run: python scripts/auto-source-sync.py --output-dir docs/evidence/source-sync
 
-      - name: Sample link check (50 URLs)
-        run: python scripts/link-check.py --sample 50
-
-      - name: Generate catalog projections for the reviewed data
-        run: npm run generate
+      - name: Verify generated catalog remains unchanged
+        run: |
+          npm run generate
+          git diff --exit-code -- README.md site/data.js site/catalog.json src/generated
 
       - name: Open update PR
         uses: peter-evans/create-pull-request@v6
@@ -67,14 +54,12 @@ jobs:
           branch: bot/weekly-sync
           delete-branch: true
           title: "data: weekly sync ${{ github.run_number }}"
-          commit-message: "data: weekly sync (discovery imports + metadata scan)"
+          commit-message: "data: review configured source snapshots"
+          add-paths: |
+            docs/evidence/source-sync/*.json
           body: |
-            自动数据同步：
-            - import-marketplace / import-skills-mcp 增量
-            - stars 刷新
-            - locked upstream source snapshots (review-only)
-            - regenerated catalog projections for the discovery changes
-            - 链接抽样检查（见 workflow 日志）
+            已登记来源的固定 commit、完整性和候选差异，详见来源报告及 Actions 日志。
+            本 PR 不更改历史发现队列，不自动晋级资源，也不触发产品安装或生产同步。
 
             人工确认无误后 merge 即可。
           labels: data-sync

@@ -16,8 +16,9 @@ fails, and an unchanged candidate produces no diff. Merging the PR remains the
 one-person review/promotion decision; reverting the PR restores the prior
 candidate evidence.
 
-The weekly workflow regenerates catalog projections after discovery changes so
-the PR contains matching data and generated files. If the PR is created using
+The weekly workflow only stages source reports; marketplace discovery imports
+and stars refresh remain manual tools and cannot mutate the historical queue
+as a side effect of controlled source maintenance. If the PR is created using
 the built-in GitHub token, trigger `quality-gate` manually on its
 `bot/weekly-sync` branch before review; GitHub does not automatically run PR
 workflows for events created with that token. A successful candidate scan is

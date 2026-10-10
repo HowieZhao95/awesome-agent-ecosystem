@@ -4,7 +4,7 @@
 
 ## 当前执行范围
 
-- `.github/workflows/weekly-sync.yml` 保留旧市场/注册表发现与 GitHub 元数据刷新，只更新 `data/discovery/legacy-v2.yaml` 和扫描缓存，走 `bot/weekly-sync` PR，不直接写新公共资源正本。
+- `.github/workflows/weekly-sync.yml` 只跟踪已登记且 cadence=weekly 的受控来源，走 `bot/weekly-sync` 来源差异 PR。历史市场/注册表导入和 stars 刷新脚本保留手动入口，不在 P0 定时链路里扫描开放来源或修改历史队列。
 - OpenDesign、Remotion 的选定范围由 `scripts/auto-source-sync.py` 在 `weekly-sync` 中解析最新 main commit、下载固定 SHA 归档、复用来源快照工具并写入 review-only 候选证据；weekly workflow 通过 PR 提交差异。它不修改资源正本、不自动晋级或覆盖 baseline；失败不覆盖旧候选。受限 ThusDesign 内容不被采集。其他来源的 `cadence: manual` 仍只走人工来源工具。
 - `scripts/validate.py` 校验新分类、来源和具体记录契约；`scripts/validate-discovery.py` 校验旧发现队列。
 - `scripts/build.py` 从三份 YAML 正本生成 README、`site/data.js` 和 `site/catalog.json`；生成可重复，不把运行时校验或用户审核状态补为已通过。
