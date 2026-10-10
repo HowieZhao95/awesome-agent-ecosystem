@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Resolve selected upstream refs and write review-only candidate reports.
 
-This is the automation bridge around ``source-sync.py``. It never edits the
-catalog, the source registry, or generated site files. A successful run writes
-deterministic candidate evidence files; the existing weekly-sync workflow then
-opens a PR for one-person review.
+This is the automation bridge around ``source-sync.py``. It writes candidate
+source reports and the selected asset's pinned manifest, without changing the
+source registry or generated catalog. The existing weekly-sync workflow opens
+a PR for one-person review; this script never publishes asset content.
 """
 from __future__ import annotations
 
@@ -26,6 +26,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS_DIR = ROOT / "scripts"
 if str(SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_DIR))
+from source_tools.core import refresh_catalog_manifest
 SOURCE_SYNC_SPEC = importlib.util.spec_from_file_location(
     "source_sync", ROOT / "scripts/source-sync.py"
 )
@@ -143,6 +144,23 @@ def write_candidate_reports(reports: dict[str, dict], output_dir: Path) -> list[
     return changed
 
 
+def write_catalog_candidates(reports: dict[str, dict], output_dir: Path, manifest_path: Path) -> list[str]:
+    previous = None
+    candidate = None
+    if manifest_path.is_file():
+        previous = json.loads(manifest_path.read_text(encoding="utf-8"))
+        snapshot = next((report["snapshot"] for report in reports.values()
+                         if report["snapshot"].get("source") == previous.get("source_id")), None)
+        if snapshot is not None:
+            # Validate all candidate content before replacing any existing report.
+            candidate = refresh_catalog_manifest(previous, snapshot)
+    changed = write_candidate_reports(reports, output_dir)
+    if candidate is not None and candidate != previous:
+        manifest_path.write_text(json.dumps(candidate, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        changed.append("catalog-manifest")
+    return changed
+
+
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source", action="append", choices=sorted(AUTOMATED_SOURCE_MAP))
@@ -154,7 +172,7 @@ def main(argv=None) -> int:
         if not source_keys:
             raise RuntimeError("no weekly locked sources are configured")
         reports = collect_reports(source_keys, runner=lambda source: run_one(source, token=os.environ.get("GITHUB_TOKEN")))
-        changed = write_candidate_reports(reports, args.output_dir)
+        changed = write_catalog_candidates(reports, args.output_dir, ROOT / "data/catalog-manifest.json")
         print(json.dumps({"sources": source_keys, "changed": changed, "output_dir": str(args.output_dir)}, ensure_ascii=False))
         return 0
     except (OSError, RuntimeError, ValueError, requests.RequestException) as exc:
