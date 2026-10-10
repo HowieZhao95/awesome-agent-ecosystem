@@ -8,9 +8,10 @@ its commits are not part of this repository's publication history.
 
 - [weekly-sync run 38072615504](https://github.com/HowieZhao95/awesome-agent-ecosystem/actions/runs/38072615504)
   completed successfully at source revision `f12ecd10c67a721d1d9055974f8d659b18505b72`.
-- [Candidate PR #1](https://github.com/HowieZhao95/awesome-agent-ecosystem/pull/1)
-  was updated at head `8a61e2d8a7597af73f90c185c4c2e908e56d12c8`.
-  This head contains discovery metadata and source reports, not an approved release.
+- [Source report PR #1](https://github.com/HowieZhao95/awesome-agent-ecosystem/pull/1)
+  was approved by the owner and merged at `c60925acdd909f439d3e867db8e101159a6cdbe8`.
+  Its final head `d1f74ede63958e20d6b43552893205a3f7198317` changed only two
+  source report JSON files; it did not approve or publish asset content.
 - OpenDesign snapshot: commit `17e255959703a3fad7c8eb7f7b70dcafccc5629a`,
   5,172 files, `complete: true`, no read failures or missing catalog paths.
   Its 5,078 additions also reflect the expanded selected scope relative to the
@@ -32,10 +33,19 @@ its commits are not part of this repository's publication history.
   reviewers (one-person operation). Force pushes and branch deletion are disabled.
 - The misplaced `my-apps/catalog-supply` workflow is `disabled_manually`; only
   this public repository runs source acquisition.
+- [Scope correction PR #3](https://github.com/HowieZhao95/awesome-agent-ecosystem/pull/3)
+  merged at `d06e5bdcda0d439e44a3fb8c543e3de72e505360` after owner approval.
+  [weekly-sync 38073773581](https://github.com/HowieZhao95/awesome-agent-ecosystem/actions/runs/38073773581)
+  passed with only controlled source acquisition.
+- [Post-merge quality-gate 38074381601](https://github.com/HowieZhao95/awesome-agent-ecosystem/actions/runs/38074381601)
+  passed at the source-report merge commit `c60925acdd909f439d3e867db8e101159a6cdbe8`.
+- The owner selected Web Prototype as the sole content fixture. Its seven-file
+  inventory and license discrepancy are documented in
+  [the content review](2026-10-11-web-prototype-review.md).
 
 ## Not yet proven
 
-- The updated candidate PR must pass generated-output and external-host gates.
+- The content manifest PR must pass generated-output and external-host gates.
 - No candidate content approval has been inferred from successful CI.
 - Fixed catalog release, approved-content freezing to COS, product directory
   synchronization, failed-sync retry, and product rollback have no live receipt.
