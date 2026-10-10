@@ -1,47 +1,61 @@
 # Source supply P0 live acceptance — 2026-10-11
 
-Target repository: `HowieZhao95/awesome-agent-ecosystem`.
-The private product repository `HowieZhao95/my-apps` is a separate consumer;
-its commits are not part of this repository's publication history.
+Source truth: `HowieZhao95/awesome-agent-ecosystem`.
+Private consumer: `HowieZhao95/my-apps`, existing COS and asset library.
+No supply database, second producer/runtime, admin UI or approval platform was added.
 
-## Proven
+## Selected release
 
-- [weekly-sync run 38072615504](https://github.com/HowieZhao95/awesome-agent-ecosystem/actions/runs/38072615504)
-  completed successfully at source revision `f12ecd10c67a721d1d9055974f8d659b18505b72`.
-- [Candidate PR #1](https://github.com/HowieZhao95/awesome-agent-ecosystem/pull/1)
-  was updated at head `8a61e2d8a7597af73f90c185c4c2e908e56d12c8`.
-  This head contains discovery metadata and source reports, not an approved release.
-- OpenDesign snapshot: commit `17e255959703a3fad7c8eb7f7b70dcafccc5629a`,
-  5,172 files, `complete: true`, no read failures or missing catalog paths.
-  Its 5,078 additions also reflect the expanded selected scope relative to the
-  historical 94-file baseline; they are not proof of 5,078 newly authored files.
-- Remotion snapshot: commit `32b241b97f4e0e4ab61fe9a41b05e6e64503f8c5`,
-  145 files, `complete: true`, 22 changed files, no read failures or missing catalog paths.
-- Local checks after the corrective changes: 95 Python tests, 50 Node tests,
-  TypeScript check, package/site production build, and an external packaged host
-  typecheck/build from an empty npm cache passed.
-- The empty-cache host failure was reproduced before replacing forced offline
-  installation with cache-preferred installation. Partial snapshot replacement
-  was reproduced before making collection fail on incomplete snapshots.
-- [quality-gate run 38073167632](https://github.com/HowieZhao95/awesome-agent-ecosystem/actions/runs/38073167632)
-  passed all gates at revision `509510d0f7c2e89c6034ac7c2e238335f759aade`.
-- Two real Remotion fetches returned the same 145-file report at the same commit.
-  Report SHA-256: `eb6a7854c5c0c8b915af5f8bd9f3289b802bfd2c9b566d10a3aec7f0641a7ad8`;
-  the second write returned `changed: []`.
-- `main` now requires a PR and the `validate` check, with zero required approving
-  reviewers (one-person operation). Force pushes and branch deletion are disabled.
-- The misplaced `my-apps/catalog-supply` workflow is `disabled_manually`; only
-  this public repository runs source acquisition.
+- Resource `opendesign.web-prototype`, source `opendesign`, package `0.1.1`.
+- Upstream `nexu-io/open-design@17e255959703a3fad7c8eb7f7b70dcafccc5629a`.
+- Six complete package files plus repository LICENSE: seven files, 63,292 bytes.
+- Exact manifest SHA-256: `6425321571c33c9341f458647418337c046a2c8c7771ad5bbf8ce7207d60ebb8`.
+- Package MIT declaration and repository Apache-2.0 license are both retained.
+  The owner explicitly approved this single content packet in
+  [PR #4](https://github.com/HowieZhao95/awesome-agent-ecosystem/pull/4),
+  merged at `5356dc207bc2a99e7e3a7fb58673a6537a38f656`.
+  This does not promote the full discovery catalog or claim host usage testing.
 
-## Not yet proven
+## Real receipts
 
-- The updated candidate PR must pass generated-output and external-host gates.
-- No candidate content approval has been inferred from successful CI.
-- Fixed catalog release, approved-content freezing to COS, product directory
-  synchronization, failed-sync retry, and product rollback have no live receipt.
-  Reverting a review report alone does not prove product rollback.
-- The owner clarified that COS/database credentials are in the local private
-  myApps configuration. They are not copied into this public repository.
+| Scenario | Evidence |
+| --- | --- |
+| Source acquisition / repeat | [weekly-sync 38077102820](https://github.com/HowieZhao95/awesome-agent-ecosystem/actions/runs/38077102820) passed; no duplicate candidate PR. |
+| First directory import | [consumer 38077476093](https://github.com/HowieZhao95/my-apps/actions/runs/38077476093) passed; readback matched seven platform items, stable IDs and relative paths. |
+| Same-release repeat | [consumer 38079629609](https://github.com/HowieZhao95/my-apps/actions/runs/38079629609) returned `unchanged: true`, seven items, zero uploads. IDs, paths and row update timestamps were unchanged. |
+| Source change | [Real historical replay](2026-10-11-web-prototype-source-change.json) fetched both complete seven-file versions at `c12c816a44c2f10ce18423f074d2482046cfd869` and `17e255959703a3fad7c8eb7f7b70dcafccc5629a`. Five changed files updated the candidate report/manifest through production functions, preserving resource identity. Repeating the candidate write did nothing. The historical candidate was not published. |
+| Failure and retry | A single local process used an unreachable database, leaving the real directory at zero items after seven verified COS freezes. Consumer 38077476093 then retried the same approved release successfully. Production connection settings were not changed. |
+| Git revert | [PR #5](https://github.com/HowieZhao95/awesome-agent-ecosystem/pull/5) reverted the initial release and merged at `2a85b43f3f7955eeadd99eb4407e605c0b756126`. [Consumer 38080170728](https://github.com/HowieZhao95/my-apps/actions/runs/38080170728) succeeded; readback found zero collections and zero items for this resource. |
+| Frozen content after withdrawal | With the upstream content API explicitly blocked in one process, all seven frozen files verified from COS, missing objects = zero, attempted upstream calls = zero. |
 
-The P0 objective remains incomplete until the publication and consumer receipts
-exist. Candidate collection success must not be reported as end-to-end closure.
+This restoration reverts the rollback to the exact original manifest bytes.
+The post-merge restoration receipt is recorded in the private P0 plan and the
+catalog-projection Actions run; its expected result is the original seven IDs
+and frozen paths, with no re-upload. Source Git history remains the rollback authority.
+
+## Permissions and validation
+
+- Public main requires a PR and `validate`, with zero required approving reviewers,
+  administrator enforcement, and no force push or deletion.
+- The private consumer uses `contents: read`, manual dispatch and default dry-run.
+  Three credentials remain encrypted Secrets; non-sensitive storage configuration
+  uses Variables so boolean receipt fields remain readable.
+- Database role `td_catalog_projection_p0` has only the two existing asset tables;
+  no role creation, RLS bypass or writes outside those tables were granted.
+- COS API-only user `catalog-projection-p0` has HeadObject/GetObject/PutObject only
+  under `design/catalog/opendesign.web-prototype/*`. Live probes confirmed in-prefix
+  write/read, out-of-prefix write rejection and delete rejection. Probe files were cleaned.
+- The misplaced private producer was replaced by the thin consumer in
+  [PR #30](https://github.com/HowieZhao95/my-apps/pull/30) and
+  [PR #31](https://github.com/HowieZhao95/my-apps/pull/31).
+- Public checks: 109 Python tests, 50 Node tests, typecheck, package/site production
+  build and external packaged-host typecheck/build. Private affected checks:
+  77 asset-library tests, 169 skill-catalog tests, relevant typechecks and formatting.
+- Unrelated full-private-repository CI failures remain recorded: auth scanner
+  findings, plus desktop tests lacking Bun and containing stale assertions/mocks.
+  The owner explicitly authorized simple verification without a temporary worktree.
+  No canvas UI work was included in the private publication tree.
+
+The initial private publication's Vercel Production deployment reached Ready.
+These receipts establish the supply/directory path; they are not a Web/Desktop
+interactive template-usage acceptance or a claim that every monorepo check passed.

@@ -27,6 +27,41 @@ class Response:
 
 
 class AutoSourceSyncTests(unittest.TestCase):
+    def test_catalog_candidate_and_snapshot_are_updated_together_without_duplicate_writes(self):
+        writer = getattr(auto, 'write_catalog_candidates', None)
+        self.assertTrue(callable(writer), 'catalog candidate writer must be implemented')
+        manifest = json.loads((ROOT / 'data/catalog-manifest.json').read_text())
+        report = json.loads((ROOT / 'docs/evidence/source-sync/opendesign.json').read_text())
+        report['snapshot']['ref'] = 'f' * 40
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            target = root / 'catalog-manifest.json'
+            target.write_text(json.dumps(manifest))
+            self.assertEqual(writer({'opendesign': report}, root / 'reports', target), ['opendesign', 'catalog-manifest'])
+            updated = json.loads(target.read_text())
+            self.assertEqual(updated['source_commit'], 'f' * 40)
+            self.assertEqual(updated['resource_id'], manifest['resource_id'])
+            before = target.read_bytes()
+            self.assertEqual(writer({'opendesign': report}, root / 'reports', target), [])
+            self.assertEqual(target.read_bytes(), before)
+
+    def test_invalid_catalog_candidate_does_not_replace_existing_source_report(self):
+        writer = getattr(auto, 'write_catalog_candidates', None)
+        self.assertTrue(callable(writer), 'catalog candidate writer must be implemented')
+        manifest = json.loads((ROOT / 'data/catalog-manifest.json').read_text())
+        report = json.loads((ROOT / 'docs/evidence/source-sync/opendesign.json').read_text())
+        report['snapshot']['complete'] = False
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            target = root / 'catalog-manifest.json'
+            target.write_text(json.dumps(manifest))
+            output = root / 'reports'
+            output.mkdir()
+            prior = output / 'opendesign.json'
+            prior.write_text('kept')
+            with self.assertRaises(RuntimeError):
+                writer({'opendesign': report}, output, target)
+            self.assertEqual(prior.read_text(), 'kept')
     def test_incomplete_snapshot_fails_before_replacing_prior_candidate(self):
         with tempfile.TemporaryDirectory() as td:
             output = Path(td)
