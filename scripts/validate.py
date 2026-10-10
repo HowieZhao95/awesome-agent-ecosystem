@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Validate the draft v3 public catalog without mutating its source files."""
 import argparse
+import json
 import re
 import sys
 from pathlib import Path
@@ -12,6 +13,8 @@ except ImportError:
     sys.exit("Missing dep: pip install pyyaml")
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT / "scripts") not in sys.path:
+    sys.path.insert(0, str(ROOT / "scripts"))
 RESOURCE_REQUIRED = (
     "id", "title", "summary", "purpose", "classification", "provenance",
     "authors", "publisher", "license", "distribution", "previews",
@@ -456,7 +459,22 @@ def validate_catalog(root=ROOT):
     docs = [_read(root / "data" / f"{name}.yaml", errors) for name in ("categories", "sources", "resources")]
     if errors:
         return errors
-    return validate_data(*docs)
+    errors = validate_data(*docs)
+    manifest_path = root / "data/catalog-manifest.json"
+    if manifest_path.exists():
+        from source_tools.core import validate_catalog_manifest
+        try:
+            manifest = json.loads(manifest_path.read_text())
+            source_id = manifest.get("source_id", "")
+            if not isinstance(source_id, str) or not IDENTIFIER.fullmatch(source_id):
+                raise ValueError("invalid manifest source identity")
+            snapshot = json.loads((root / f"docs/evidence/source-sync/{source_id}.json").read_text())["snapshot"]
+            errors.extend(validate_catalog_manifest(manifest, snapshot))
+            if manifest.get("resource_id") not in {entry["id"] for entry in docs[2].get("resources", [])}:
+                errors.append("catalog manifest resource must exist in the catalog")
+        except (OSError, ValueError, KeyError, TypeError, AttributeError) as exc:
+            errors.append(f"catalog manifest cannot be verified: {type(exc).__name__}")
+    return errors
 
 
 def main():

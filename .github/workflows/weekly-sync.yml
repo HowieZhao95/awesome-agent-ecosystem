@@ -57,8 +57,10 @@ jobs:
           commit-message: "data: review configured source snapshots"
           add-paths: |
             docs/evidence/source-sync/*.json
+            data/catalog-manifest.json
           body: |
             已登记来源的固定 commit、完整性和候选差异，详见来源报告及 Actions 日志。
+            如已登记 P0 资产，catalog manifest 会随该资产的固定来源版本一起更新。
             本 PR 不更改历史发现队列，不自动晋级资源，也不触发产品安装或生产同步。
 
             人工确认无误后 merge 即可。

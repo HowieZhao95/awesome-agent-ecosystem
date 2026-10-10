@@ -1,0 +1,38 @@
+{
+  "source_id": "opendesign",
+  "resource_id": "opendesign.web-prototype",
+  "historical_commit": "c12c816a44c2f10ce18423f074d2482046cfd869",
+  "current_commit": "17e255959703a3fad7c8eb7f7b70dcafccc5629a",
+  "historical_files": 7,
+  "current_files": 7,
+  "complete": true,
+  "changed_files": [
+    {
+      "kind": "changed",
+      "path": "plugins/_official/examples/web-prototype/SKILL.md"
+    },
+    {
+      "kind": "changed",
+      "path": "plugins/_official/examples/web-prototype/assets/template.html"
+    },
+    {
+      "kind": "changed",
+      "path": "plugins/_official/examples/web-prototype/open-design.json"
+    },
+    {
+      "kind": "changed",
+      "path": "plugins/_official/examples/web-prototype/references/checklist.md"
+    },
+    {
+      "kind": "changed",
+      "path": "plugins/_official/examples/web-prototype/references/layouts.md"
+    }
+  ],
+  "candidate_outputs": [
+    "opendesign",
+    "catalog-manifest"
+  ],
+  "stable_resource_identity": true,
+  "repeat_candidate_write_unchanged": true,
+  "historical_candidate_published": false
+}

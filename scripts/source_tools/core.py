@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import fnmatch
+import copy
 import hashlib
 import json
 import re
@@ -211,3 +212,111 @@ def review_diff(baseline: dict, candidate: dict) -> dict:
             change for change in difference["changes"] if change["kind"] not in {"removed", "rename"}
         ]
     return difference
+
+
+def validate_catalog_manifest(manifest: dict, snapshot: dict) -> list[str]:
+    """Check a small release file list against its reviewed source snapshot.
+
+    This validates provenance and integrity, not redistribution permission.
+    The protected-branch PR remains the human publication gate.
+    """
+    errors = []
+    if manifest.get("schema_version") != 1:
+        errors.append("unsupported catalog manifest schema")
+    if manifest.get("source_id") != snapshot.get("source") or manifest.get("repository") != snapshot.get("repository"):
+        errors.append("source identity mismatch")
+    try:
+        commit = validate_locked_ref(manifest.get("source_commit"))
+        if commit != snapshot.get("ref"):
+            errors.append("source commit mismatch")
+    except SnapshotError:
+        errors.append("source commit must be immutable")
+    if snapshot.get("complete") is not True or snapshot.get("failures"):
+        errors.append("source snapshot is incomplete")
+
+    def safe_path(value):
+        return isinstance(value, str) and bool(value) and not value.startswith("/") and not any(
+            part in {"", ".", ".."} for part in value.split("/")
+        ) and not any(char in value for char in ("\\", ":", "\0", "%", "?", "#"))
+
+    root = manifest.get("root", "")
+    if not safe_path(root):
+        errors.append("invalid root path")
+    files = manifest.get("files", [])
+    if not isinstance(files, list) or not files:
+        return errors + ["manifest requires files"]
+    paths, destinations = set(), set()
+    source_files = snapshot.get("files", {})
+    for entry in files:
+        path, destination = entry.get("path"), entry.get("relative_path")
+        if not safe_path(path) or not safe_path(destination):
+            errors.append("invalid file path")
+            continue
+        if not path.startswith(root + "/") and path not in {"LICENSE", "NOTICE"}:
+            errors.append(f"file outside selected scope: {path}")
+        if path in paths or destination in destinations:
+            errors.append(f"duplicate file destination: {destination}")
+        paths.add(path)
+        destinations.add(destination)
+        expected = source_files.get(path)
+        if not expected or entry.get("sha256") != expected.get("sha256"):
+            errors.append(f"source digest mismatch: {path}")
+        if not expected or entry.get("size") != expected.get("size"):
+            errors.append(f"source size mismatch: {path}")
+    missing = {path for path in source_files if path.startswith(root + "/")} - paths
+    if missing:
+        errors.append("selected scope is incomplete: " + ", ".join(sorted(missing)))
+    evidence = manifest.get("license_evidence", [])
+    if not evidence or any(item.get("path") not in paths or not item.get("declared") for item in evidence):
+        errors.append("license evidence must be retained in the bundle")
+    return errors
+
+
+def refresh_catalog_manifest(previous: dict, snapshot: dict) -> dict:
+    """Prepare a versioned PR candidate without changing the resource identity."""
+    if previous.get("source_id") != snapshot.get("source") or previous.get("repository") != snapshot.get("repository"):
+        raise SnapshotError("catalog manifest source identity mismatch")
+    if snapshot.get("complete") is not True or snapshot.get("failures"):
+        raise SnapshotError("cannot refresh from an incomplete source snapshot")
+    result = copy.deepcopy(previous)
+    root = result["root"]
+    old_files = {entry["path"]: entry for entry in previous["files"]}
+    selected = {path for path in snapshot["files"] if path.startswith(root + "/")}
+    selected.update(item["path"] for item in result["license_evidence"])
+    records = []
+    # Preserve current file order and destinations; append newly discovered files.
+    order = [path for path in old_files if path in selected] + sorted(selected - old_files.keys())
+    mime_types = {".md": "text/markdown", ".html": "text/html", ".json": "application/json", ".txt": "text/plain"}
+    for path in order:
+        source_file = snapshot["files"].get(path)
+        if source_file is None:
+            raise SnapshotError(f"required catalog file missing: {path}")
+        entry = copy.deepcopy(old_files.get(path, {"path": path, "relative_path": path[len(root) + 1:]}))
+        if path not in old_files:
+            suffix = PurePosixPath(path).suffix
+            if suffix not in mime_types:
+                raise SnapshotError(f"new file type needs review: {path}")
+            entry["mime_type"] = mime_types[suffix]
+        entry.update(size=source_file["size"], sha256=source_file["sha256"])
+        records.append(entry)
+    result["files"] = records
+    result["source_commit"] = validate_locked_ref(snapshot["ref"])
+    package_path = root + "/open-design.json"
+    metadata = snapshot["files"].get(package_path, {}).get("metadata", {})
+    for target, source in (("title", "title"), ("summary", "description"), ("version", "version")):
+        if metadata.get(source):
+            result[target] = metadata[source]
+    if isinstance(metadata.get("author"), dict) and metadata["author"].get("name"):
+        result["author"] = metadata["author"]["name"]
+    for evidence in result["license_evidence"]:
+        path = evidence["path"]
+        if path == package_path:
+            evidence["declared"] = metadata.get("license") or "unknown"
+        elif path in old_files and old_files[path]["sha256"] != snapshot["files"][path]["sha256"]:
+            evidence["declared"] = "unknown"
+    if result != previous:
+        result["change"] = "update"
+    errors = validate_catalog_manifest(result, snapshot)
+    if errors:
+        raise SnapshotError("; ".join(errors))
+    return result
