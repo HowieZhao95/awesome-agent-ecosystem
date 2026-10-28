@@ -47,6 +47,9 @@ jobs:
           npm run generate
           git diff --exit-code -- README.md site/data.js site/catalog.json src/generated
 
+      # Prefer secrets.GH_TOKEN (PAT / fine-grained, not GITHUB_TOKEN) so the PR author is a
+      # real user and pull_request triggers quality-gate/validate. github.token fallback creates
+      # github-actions[bot] PRs that skip same-repo workflows; see MAINTENANCE.md "Bot PR 与 quality-gate".
       - name: Open update PR
         uses: peter-evans/create-pull-request@v6
         with:
@@ -63,5 +66,6 @@ jobs:
             如已登记 P0 资产，catalog manifest 会随该资产的固定来源版本一起更新。
             本 PR 不更改历史发现队列，不自动晋级资源，也不触发产品安装或生产同步。
 
-            人工确认无误后 merge 即可。
+            人工确认无误且 **quality-gate / validate 绿勾** 后 merge 即可。
+            若 Checks 无 validate（常见于默认 GITHUB_TOKEN 开的 bot PR）：Close → Reopen 后重跑，见 MAINTENANCE.md。
           labels: data-sync
