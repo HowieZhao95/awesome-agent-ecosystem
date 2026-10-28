@@ -32,11 +32,11 @@ sources:
       - design-templates/**
       - skills/**
     exclude: []
-    baseline: 'commit:53231d40b778d88eba23f35547bf99485d3ae9fc; 对照本地归档 open-design-53231d40b778d88eba23f35547bf99485d3ae9fc.tar.gz'
+    baseline: 'commit:26d60298f8129e229a1c10aab4df7ca25b1e9ad3; from weekly sync #7 to_ref (docs/evidence/source-sync/opendesign.json)'
     cadence: weekly
     method: 'Resolve candidate upstream commits and compare every scoped path, including per-example manifests, skills, seeds, examples, assets, references, design-system manifests/tokens/CSS/previews/source, craft guidance, and root license/agent instructions. Inspect per-item author and license claims; preserve old evidence if fetch fails and submit a review proposal without auto-promotion.'
     promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。
-    last_checked: '2026-10-07'
+    last_checked: '2026-10-28'
     limitations:
       - 本轮完整盘点固定提交下114个design-template指令入口、163个Skill入口和152套设计系统；按实际框架、方法或发现参考登记，不纳入执行内核，不推导许可和宿主实测。
       - 归档根 LICENSE 存在；根 NOTICE 不存在。根许可不足以确认外部素材、嵌入品牌资产或逐项授权。
@@ -46,10 +46,10 @@ sources:
   url: https://github.com/remotion-dev/skills
   roles: [content-upstream, distribution-channel]
   access: public
-  tracking: {scope: skills/remotion-best-practices/** and skills/remotion-render/** only; official source repo contains more skills., exclude: [], baseline: 'commit:473352613039e718e46655a26df224851e84c4aa;
-      GitHub main refInfo.currentOid read on 2026-10-07; both selected file pages opened at this fixed ref.', cadence: weekly, method: 'Resolve the live main ref to a full Git SHA first; compare only named
+  tracking: {scope: skills/remotion-best-practices/** and skills/remotion-render/** only; official source repo contains more skills., exclude: [], baseline: 'commit:6c67adcd9cdbe6eb84d76342da89b225f9161cb2;
+      from weekly sync #7 to_ref (docs/evidence/source-sync/remotion.json).', cadence: weekly, method: 'Resolve the live main ref to a full Git SHA first; compare only named
       SKILL.md and referenced assets, frontmatter/version declarations, root/per-file license and auxiliary files; npx CLI and frontmatter version are not substitutes for a pinned commit.', promotion: 发现或差异只进入人工审核；不得自动批准、标记
-      usable 或覆盖已核证基线。, last_checked: '2026-10-07', limitations: [已锁定本轮文件基线；文件声明版本 4.0.533 不代表执行兼容验证。, 根许可与逐文件许可尚未确认；不继承 Remotion 软件许可。, 本机历史安装目录版本不明，不作为当前固定版本证据。]}
+      usable 或覆盖已核证基线。, last_checked: '2026-10-28', limitations: [已锁定本轮文件基线；文件声明版本以 to_ref 快照为准，不代表执行兼容验证；tip 可能已超前于本钉。, 根许可与逐文件许可尚未确认；不继承 Remotion 软件许可。, 本机历史安装目录版本不明，不作为当前固定版本证据。]}
 - id: thusdesign.product-source
   name: ThusDesign 产品内受限 Skill/插件/CLI 源
   url: https://github.com/HowieZhao95/my-apps/tree/33a1feabbcd5129fc9c7f4a676e80c632f44bce1
