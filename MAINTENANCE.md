@@ -39,6 +39,29 @@ npm run check:host
 
 当前 myApps 的旧设计风格适配器仍读取 main 的旧栏目。该接入尚未迁移；发布后另行替换为固定版本，不能声称阶段 1 已完成客户端接入。
 
+## Bot PR 与 quality-gate（CI 门禁）
+
+`main` 分支保护要求 status check **`validate`**（来自 `.github/workflows/quality-gate.yml`）。未绿勾不得 merge。
+
+### 根因
+
+`weekly-sync.yml` 用 `peter-evans/create-pull-request` 开 PR。当 token 回落到默认 `github.token`（`GITHUB_TOKEN`）时，PR 作者是 `github-actions[bot]`。GitHub 安全策略下，**由 `GITHUB_TOKEN` 创建的 PR 不会再触发同仓 `pull_request` workflow**，于是 `quality-gate` / `validate` 缺席，保护规则卡住（见已合并的 weekly sync PR 处理过程）。
+
+### 推荐配置
+
+1. 在仓库 Actions secrets 配置 **`GH_TOKEN`**：使用 **非** `GITHUB_TOKEN` 的 fine-grained PAT（或 classic PAT），权限至少 `contents: write`、`pull-requests: write`，主体为维护者账号或专用 bot 用户。
+2. `weekly-sync.yml` 已写 `secrets.GH_TOKEN || github.token`：有有效 `GH_TOKEN` 时，weekly PR 以该用户身份创建，`pull_request` 会正常触发 `quality-gate`。
+3. **保持** `main` 上 required check `validate`；不要为 bot 关掉。
+4. **不要**用 `pull_request_target` 跑目录校验（密钥面过大）。
+
+### 兜底操作
+
+若 PR 作者仍是 `github-actions[bot]` 且 Checks 无 `validate`：维护者对该 PR **Close → Reopen**（或推一个空 commit）以人工身份重触发 `quality-gate`，确认绿勾后再 merge。无绿勾不 merge。
+
+### 验收
+
+下次 `weekly-sync` 或手动 `workflow_dispatch` 后：打开的 `bot/weekly-sync` PR 应自动出现 `quality-gate` / `validate`；作者不应再是仅因默认 token 导致的 `github-actions[bot]`（若仍是 bot，说明 `GH_TOKEN` 未生效或未配置）。
+
 ## 既有 PR 迁移注意
 
 2026-10-07 查到的 [PR #1 weekly-sync](https://github.com/HowieZhao95/awesome-agent-ecosystem/pull/1) 修改旧 resources.yaml、README 和网站数据，与本次正本切换冲突。不能原样合并其生成产物；后续需把增量变成发现队列更新，并重新生成新正本输出。[PR #2 Statsnet MCP](https://github.com/HowieZhao95/awesome-agent-ecosystem/pull/2) 是候选提案，仍需具体来源、组件与许可查证。
