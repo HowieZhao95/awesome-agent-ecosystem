@@ -45,8 +45,8 @@ test('shows all five resource categories and filters cards when a category is se
 test('labels registered resources, discovery entries, and total directory items separately', async () => {
   const ui = await mount({ catalog });
   try {
-    assert.ok(ui.container.textContent?.includes('1168 个目录条目'));
-    assert.ok(ui.container.textContent?.includes('369 个已登记资源 · 799 条发现线索'));
+    assert.ok(ui.container.textContent?.includes('1166 个目录条目'));
+    assert.ok(ui.container.textContent?.includes('369 个已登记资源 · 797 条发现线索'));
     assert.ok(ui.container.textContent?.includes('个关联发现入口'));
     assert.ok(!ui.container.textContent?.includes('26 个平台来源'), 'platform records are shown on their source page, not counted as browse items');
   } finally { ui.close(); }
