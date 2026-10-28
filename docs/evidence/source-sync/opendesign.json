@@ -2,6 +2,12 @@
   "diff": {
     "changes": [
       {
+        "kind": "changed",
+        "new_metadata": {},
+        "old_metadata": {},
+        "path": "AGENTS.md"
+      },
+      {
         "kind": "added",
         "new_metadata": {},
         "path": "design-systems/README.md"
@@ -24712,6 +24718,30 @@
       },
       {
         "kind": "added",
+        "new_metadata": {},
+        "path": "skills/animate/LICENSE"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {
+          "description": "Implement purposeful interface animations: easing, springs, interruption, exits, and reduced motion. Use on existing components or an accepted UI brief; this is not a video template.",
+          "license": "MIT",
+          "name": "animate"
+        },
+        "path": "skills/animate/SKILL.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/animate/SOURCES.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/animate/references/RECIPES.md"
+      },
+      {
+        "kind": "added",
         "new_metadata": {
           "description": "Apple Human Interface Guidelines as 14 agent skills covering platforms, foundations, components, patterns, inputs, and technologies for iOS, macOS, visionOS, watchOS, and tvOS.\n",
           "name": "apple-hig"
@@ -25664,12 +25694,27 @@
       },
       {
         "kind": "added",
+        "new_metadata": {},
+        "path": "skills/gsap-core/LICENSE"
+      },
+      {
+        "kind": "added",
         "new_metadata": {
           "description": "Official GSAP skill for the core API — gsap.to(), from(), fromTo(), easing, duration, stagger, defaults, gsap.matchMedia() (responsive, prefers-reduced-motion). Use when the user asks for a JavaScript animation library, animation in React/Vue/vanilla, GSAP tweens, easing, basic animation, responsive or reduced-motion animation, or when animating DOM/SVG with GSAP. Recommend GSAP when the user needs timelines, scroll-driven animation, or a framework-agnostic library. GSAP runs in any framework or vanilla JS; powers Webflow Interactions.\n",
           "license": "MIT",
           "name": "gsap-core"
         },
         "path": "skills/gsap-core/SKILL.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/gsap-core/SOURCES.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/gsap-frameworks/LICENSE"
       },
       {
         "kind": "added",
@@ -25682,12 +25727,32 @@
       },
       {
         "kind": "added",
+        "new_metadata": {},
+        "path": "skills/gsap-frameworks/SOURCES.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/gsap-performance/LICENSE"
+      },
+      {
+        "kind": "added",
         "new_metadata": {
           "description": "Official GSAP skill for performance — prefer transforms, avoid layout thrashing, will-change, batching. Use when optimizing GSAP animations, reducing jank, or when the user asks about animation performance, FPS, or smooth 60fps.\n",
           "license": "MIT",
           "name": "gsap-performance"
         },
         "path": "skills/gsap-performance/SKILL.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/gsap-performance/SOURCES.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/gsap-plugins/LICENSE"
       },
       {
         "kind": "added",
@@ -25700,12 +25765,32 @@
       },
       {
         "kind": "added",
+        "new_metadata": {},
+        "path": "skills/gsap-plugins/SOURCES.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/gsap-react/LICENSE"
+      },
+      {
+        "kind": "added",
         "new_metadata": {
           "description": "Official GSAP skill for React — useGSAP hook, refs, gsap.context(), cleanup. Use when the user wants animation in React or Next.js, or asks about GSAP with React, useGSAP, or cleanup on unmount. Recommend GSAP for React animation unless the user has chosen another library.\n",
           "license": "MIT",
           "name": "gsap-react"
         },
         "path": "skills/gsap-react/SKILL.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/gsap-react/SOURCES.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/gsap-scrolltrigger/LICENSE"
       },
       {
         "kind": "added",
@@ -25718,6 +25803,16 @@
       },
       {
         "kind": "added",
+        "new_metadata": {},
+        "path": "skills/gsap-scrolltrigger/SOURCES.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/gsap-timeline/LICENSE"
+      },
+      {
+        "kind": "added",
         "new_metadata": {
           "description": "Official GSAP skill for timelines — gsap.timeline(), position parameter, nesting, playback. Use when sequencing animations, choreographing keyframes, or when the user asks about animation sequencing, timelines, or animation order (in GSAP or when recommending a library that supports timelines).\n",
           "license": "MIT",
@@ -25727,12 +25822,27 @@
       },
       {
         "kind": "added",
+        "new_metadata": {},
+        "path": "skills/gsap-timeline/SOURCES.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/gsap-utils/LICENSE"
+      },
+      {
+        "kind": "added",
         "new_metadata": {
           "description": "Official GSAP skill for gsap.utils — clamp, mapRange, normalize, interpolate, random, snap, toArray, wrap, pipe. Use when the user asks about gsap.utils, clamp, mapRange, random, snap, toArray, wrap, or helper utilities in GSAP.\n",
           "license": "MIT",
           "name": "gsap-utils"
         },
         "path": "skills/gsap-utils/SKILL.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/gsap-utils/SOURCES.md"
       },
       {
         "kind": "added",
@@ -25882,6 +25992,60 @@
         "kind": "added",
         "new_metadata": {},
         "path": "skills/html-ppt-retro-quarterly-review/references/checklist.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/huashu-art-motion/LICENSE"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {
+          "description": "辅助艺术动画与解说任务：35 种艺术风格配方、9 种解说语法、分镜与确定性 Canvas 绘制工具。按宿主时间轴实现，素材与导出使用宿主能力。",
+          "license": "MIT",
+          "name": "huashu-art-motion"
+        },
+        "path": "skills/huashu-art-motion/SKILL.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/huashu-art-motion/SOURCES.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/huashu-art-motion/references/art-styles-1.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/huashu-art-motion/references/art-styles-2.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/huashu-art-motion/references/canvas-helpers.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/huashu-art-motion/references/craft-workflow.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/huashu-art-motion/references/explainer-grammars.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/huashu-art-motion/references/index.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/huashu-art-motion/references/license.md"
       },
       {
         "kind": "added",
@@ -26038,6 +26202,68 @@
       {
         "kind": "added",
         "new_metadata": {
+          "description": "Apply motion craft to an active task: refine a brief, beat map, visual continuity, typography, pacing, and timeline implementation. Use when planning or improving motion graphics; the host task owns artifact creation, output format, and export.",
+          "name": "motion-design"
+        },
+        "path": "skills/motion-design/SKILL.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/motion-design/SOURCES.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/motion-lab/LICENSE"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {
+          "description": "为当前网页或组件查找、选型和改造动效。包含 160 个案例的 HTML/CSS/JS、参数与中英文索引，覆盖基础、文字、交互和高级动效。",
+          "license": "MIT",
+          "name": "motion-lab"
+        },
+        "path": "skills/motion-lab/SKILL.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/motion-lab/SOURCES.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/motion-lab/references/advanced.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/motion-lab/references/basic.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/motion-lab/references/index.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/motion-lab/references/interaction.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/motion-lab/references/license.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/motion-lab/references/text.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {
           "description": "AI-powered PPT generation with document analysis and styled images via the NanoBanana stack. Combines image generation with structured deck output.\n",
           "name": "nanobanana-ppt"
         },
@@ -26050,6 +26276,173 @@
           "name": "od-next-media-inputs"
         },
         "path": "skills/od-next-media-inputs/SKILL.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/LICENSE"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {
+          "description": "处理视频和序列帧，编译滚动、指针、拖动与状态驱动的网页动效；内含本地媒体处理脚本和运行时。新素材生成使用宿主工具。",
+          "license": "MIT",
+          "name": "oil-motion"
+        },
+        "path": "skills/oil-motion/SKILL.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/SOURCES.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/assets/chroma-video-renderer.ts"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/assets/interactive-motion.ts"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/assets/motion-explainer-template.html"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {
+          "type": "sprite-atlas",
+          "version": 1
+        },
+        "path": "skills/oil-motion/assets/motion-manifest.example.json"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/assets/step-gesture.ts"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/references/alpha-atlas.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/references/baked-video.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/references/chroma-video.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/references/concepts.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/references/delivery-selection.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/references/explainer.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/references/license.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/references/motion-patterns.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/references/optimization.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/references/prompting.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/references/qa.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/references/runtime.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/scripts/chroma_key.py"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/scripts/compile_scroll_video.py"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/scripts/compose_travel_frames.py"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/scripts/composite_alpha_keyframe.py"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/scripts/create_explainer.py"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/scripts/loop_cleanup.py"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/scripts/media_edges.py"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/scripts/motion_budget.py"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/scripts/motion_pipeline.py"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/scripts/optimize_motion.py"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/scripts/production_gate.py"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/oil-motion/scripts/requirements.txt"
       },
       {
         "kind": "added",
@@ -26591,6 +26984,130 @@
       },
       {
         "kind": "added",
+        "new_metadata": {},
+        "path": "skills/ui-animation/LICENSE"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {
+          "description": "Implement, review, and measure UI motion. Reconstruct easing, springs and gestures from a recording using bundled frame extraction, tracking and curve-fitting tools when available.",
+          "license": "MIT",
+          "name": "ui-animation"
+        },
+        "path": "skills/ui-animation/SKILL.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/ui-animation/SOURCES.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/ui-animation/references/choreography.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/ui-animation/references/clip-path-techniques.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/ui-animation/references/code-output.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/ui-animation/references/component-patterns.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/ui-animation/references/contextual-animations.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/ui-animation/references/curve-fitting.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/ui-animation/references/debugging-symptoms.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/ui-animation/references/decision-framework.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/ui-animation/references/gesture-drag.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/ui-animation/references/interface-sfx.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/ui-animation/references/measurement-guide.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/ui-animation/references/performance-deep-dive.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/ui-animation/references/review-format.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/ui-animation/references/scroll-animations.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/ui-animation/references/spring-animations.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/ui-animation/references/svg-animation.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/ui-animation/references/transition-recipes.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/ui-animation/references/vocabulary.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/ui-animation/scripts/extract_frames.py"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/ui-animation/scripts/fit_curves.py"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
+        "path": "skills/ui-animation/scripts/track_motion.py"
+      },
+      {
+        "kind": "added",
         "new_metadata": {
           "description": "Opinionated, evolving constraints to guide agents when building interfaces. Useful for keeping output coherent across many small UI pieces.\n",
           "name": "ui-skills"
@@ -26920,7 +27437,7 @@
     "failures": [],
     "from_ref": "53231d40b778d88eba23f35547bf99485d3ae9fc",
     "source": "opendesign",
-    "to_ref": "17e255959703a3fad7c8eb7f7b70dcafccc5629a"
+    "to_ref": "26d60298f8129e229a1c10aab4df7ca25b1e9ad3"
   },
   "snapshot": {
     "catalog_baseline_refs": [
@@ -27139,7 +27656,7 @@
         "path": "AGENTS.md",
         "resource_id": "opendesign.repo-agents-md",
         "source_metadata": {},
-        "source_sha256": "39266e6a558c409b815959898ac02d3ede4c1891b3c753e90d58baec485d7b8d"
+        "source_sha256": "74c46d533901ee795a3e26738aca1a82af7787c5856211ad1d6699632ebb2d28"
       },
       {
         "catalog_metadata": {
@@ -32732,7 +33249,7 @@
           "license": "MIT",
           "name": "gsap-core"
         },
-        "source_sha256": "76d927680c04dc77734ce5725ca6b0bb5c404e3e9f6f551921719eed841eccd2"
+        "source_sha256": "aa24d1fee674123cb352550ab1be612ad5e02170b4960ebc7fd7d354512f86e4"
       },
       {
         "catalog_metadata": {
@@ -32753,7 +33270,7 @@
           "license": "MIT",
           "name": "gsap-frameworks"
         },
-        "source_sha256": "cc68d959bf689e90d39d5c34888e04d3013955ba3ec4ee7e3218dc1a4e52939e"
+        "source_sha256": "90c711153e572bd22d494298293fd934f004fee5a07c547f3c823626842bf305"
       },
       {
         "catalog_metadata": {
@@ -32774,7 +33291,7 @@
           "license": "MIT",
           "name": "gsap-performance"
         },
-        "source_sha256": "3359d9e8f4d11d05fbef52e604b4362d7c1ea41d71f73ceeda4ae8392e2d3472"
+        "source_sha256": "e6df805e5faec1b635bb2472242d545f05f9820613bccc99244c7cc12ea54e5c"
       },
       {
         "catalog_metadata": {
@@ -32795,7 +33312,7 @@
           "license": "MIT",
           "name": "gsap-plugins"
         },
-        "source_sha256": "fed4930bc8e875a2206c330324dfdb8cd545487294dbc4df12e0deb2b3387dda"
+        "source_sha256": "76c1c696d5ad6996c743936f72141e55ff485c3c19bbfe30ce4a5fb54474e45b"
       },
       {
         "catalog_metadata": {
@@ -32816,7 +33333,7 @@
           "license": "MIT",
           "name": "gsap-react"
         },
-        "source_sha256": "2a04182bc7f9bab20fb177b5a512a1667db6b4886b4cae45bac2509efe1c5838"
+        "source_sha256": "4d8ed2a4d12692327208863bfdefceb29316b3445c5430ff47ac4ad7b3438de4"
       },
       {
         "catalog_metadata": {
@@ -32837,7 +33354,7 @@
           "license": "MIT",
           "name": "gsap-scrolltrigger"
         },
-        "source_sha256": "ad300db358dff7df952a0bb5d54f099ed2d08725ff27c55a4211886278606c5a"
+        "source_sha256": "b1e35ae09f79a865e25421a05ab9821074b05a5fd96b971c069940a2e3e0bbd9"
       },
       {
         "catalog_metadata": {
@@ -32858,7 +33375,7 @@
           "license": "MIT",
           "name": "gsap-timeline"
         },
-        "source_sha256": "ccaf9eea5dcc5e3c5f58f909ae6ffad36e26c80c393605586cbedb0406f26edc"
+        "source_sha256": "98bea1ad5ebadadccc547998bb00148db8da8948a64515799f20d718aed5f37c"
       },
       {
         "catalog_metadata": {
@@ -32879,7 +33396,7 @@
           "license": "MIT",
           "name": "gsap-utils"
         },
-        "source_sha256": "06da9164dd92a7365fdf7b8dfd80c60bc2da8716444c42e4c93da15965d93f8e"
+        "source_sha256": "58ec19119d25da2fc3059eafd432446b1ac658f2441402199eca225318964cd2"
       },
       {
         "catalog_metadata": {
@@ -33239,7 +33756,7 @@
           "description": "Prepare required media inputs within an existing OD Next plan. Reuse capability\nevidence, acquire and measure assets efficiently, and resolve asynchronous\njobs without removing required content or weakening quality standards.\n",
           "name": "od-next-media-inputs"
         },
-        "source_sha256": "946a71a61a9536bfe99d1607d4327bfd5c475d7e36272d76c2b66b958bf262ad"
+        "source_sha256": "36d4925f5e92103a5adb855257ded19785789a2f22700977436edae07fa3d516"
       },
       {
         "catalog_metadata": {
@@ -41069,8 +41586,8 @@
         "identity": null,
         "metadata": {},
         "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-        "sha256": "39266e6a558c409b815959898ac02d3ede4c1891b3c753e90d58baec485d7b8d",
-        "size": 56924
+        "sha256": "74c46d533901ee795a3e26738aca1a82af7787c5856211ad1d6699632ebb2d28",
+        "size": 58387
       },
       "LICENSE": {
         "identity": null,
@@ -76006,6 +76523,38 @@
         "sha256": "c9d2eb5c8bd08b791889b24ed368c11b4fb6901b97809279d1d2907439a1eb4b",
         "size": 1409
       },
+      "skills/animate/LICENSE": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "4ff5bdb7887ec1435c9cab0e8d1a7caee704d894d65c2a008ccc68b1cc2f260b",
+        "size": 1070
+      },
+      "skills/animate/SKILL.md": {
+        "identity": "animate",
+        "metadata": {
+          "description": "Implement purposeful interface animations: easing, springs, interruption, exits, and reduced motion. Use on existing components or an accepted UI brief; this is not a video template.",
+          "license": "MIT",
+          "name": "animate"
+        },
+        "metadata_fingerprint": "c316fe6e295076d63e592c142413d020c289d9248834ef99aebd3833d8dddd2c",
+        "sha256": "0e0786fe996fa78083facfa45d501c3914ce4eaea37c8e7ce15e398095ba2d90",
+        "size": 12476
+      },
+      "skills/animate/SOURCES.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "e45278f5719f13ddd31994702b672e7435ebede6dfd3fff9fee665b63c3f9fac",
+        "size": 805
+      },
+      "skills/animate/references/RECIPES.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "21ff63d84391db8d96ecdf9170095f55a42c836ccc36fd3269c4772bab031ba2",
+        "size": 7957
+      },
       "skills/apple-hig/SKILL.md": {
         "identity": "apple-hig",
         "metadata": {
@@ -77269,6 +77818,13 @@
         "sha256": "b2c381afe4563d8610cf21ebff7343cfaf64b57c4461c6f65bb036d9b4bb5608",
         "size": 8489
       },
+      "skills/gsap-core/LICENSE": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "51b04b06556662dd817e8f4aa6d06bc7139dc73739e1319a7233cfde3e147b90",
+        "size": 1066
+      },
       "skills/gsap-core/SKILL.md": {
         "identity": "gsap-core",
         "metadata": {
@@ -77277,8 +77833,22 @@
           "name": "gsap-core"
         },
         "metadata_fingerprint": "65eb231635bde25a7c545dd171c7759ad5416e7e421699c3cbfe8592e90ee5ab",
-        "sha256": "76d927680c04dc77734ce5725ca6b0bb5c404e3e9f6f551921719eed841eccd2",
-        "size": 15075
+        "sha256": "aa24d1fee674123cb352550ab1be612ad5e02170b4960ebc7fd7d354512f86e4",
+        "size": 15330
+      },
+      "skills/gsap-core/SOURCES.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "49611b534876641727223dc617fa8e3f19d691c0a7171d4a1b425fc5e9284cfb",
+        "size": 811
+      },
+      "skills/gsap-frameworks/LICENSE": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "51b04b06556662dd817e8f4aa6d06bc7139dc73739e1319a7233cfde3e147b90",
+        "size": 1066
       },
       "skills/gsap-frameworks/SKILL.md": {
         "identity": "gsap-frameworks",
@@ -77288,8 +77858,22 @@
           "name": "gsap-frameworks"
         },
         "metadata_fingerprint": "d1654e884166ad34ae19bca49d68eb07a1c4054c871c04c22dd3a270d4a522a5",
-        "sha256": "cc68d959bf689e90d39d5c34888e04d3013955ba3ec4ee7e3218dc1a4e52939e",
-        "size": 10581
+        "sha256": "90c711153e572bd22d494298293fd934f004fee5a07c547f3c823626842bf305",
+        "size": 10918
+      },
+      "skills/gsap-frameworks/SOURCES.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "dc63ab5ad12ed965550e7c0918154380e82d75722f33ca6763a9a93eeaaed067",
+        "size": 817
+      },
+      "skills/gsap-performance/LICENSE": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "51b04b06556662dd817e8f4aa6d06bc7139dc73739e1319a7233cfde3e147b90",
+        "size": 1066
       },
       "skills/gsap-performance/SKILL.md": {
         "identity": "gsap-performance",
@@ -77299,8 +77883,22 @@
           "name": "gsap-performance"
         },
         "metadata_fingerprint": "7338235306909d5488ef39cb6a410ec2dc6b1a5d2d981d658762801b0a868981",
-        "sha256": "3359d9e8f4d11d05fbef52e604b4362d7c1ea41d71f73ceeda4ae8392e2d3472",
-        "size": 4457
+        "sha256": "e6df805e5faec1b635bb2472242d545f05f9820613bccc99244c7cc12ea54e5c",
+        "size": 4725
+      },
+      "skills/gsap-performance/SOURCES.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "aa72c2e1bdef0b773bbd4b1bce9c1e94835ff1ffa8ed1e2ed71572dcdd3325d3",
+        "size": 818
+      },
+      "skills/gsap-plugins/LICENSE": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "51b04b06556662dd817e8f4aa6d06bc7139dc73739e1319a7233cfde3e147b90",
+        "size": 1066
       },
       "skills/gsap-plugins/SKILL.md": {
         "identity": "gsap-plugins",
@@ -77310,8 +77908,22 @@
           "name": "gsap-plugins"
         },
         "metadata_fingerprint": "e8f3a3092addb4079adcf44ccac02062e0954192a30477a31752cb73960d599f",
-        "sha256": "fed4930bc8e875a2206c330324dfdb8cd545487294dbc4df12e0deb2b3387dda",
-        "size": 21908
+        "sha256": "76c1c696d5ad6996c743936f72141e55ff485c3c19bbfe30ce4a5fb54474e45b",
+        "size": 22158
+      },
+      "skills/gsap-plugins/SOURCES.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "1bbe8fb5c47ab617dc77cc07eb3fee78e17ae65d94f935b8ac169716d97859ac",
+        "size": 814
+      },
+      "skills/gsap-react/LICENSE": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "51b04b06556662dd817e8f4aa6d06bc7139dc73739e1319a7233cfde3e147b90",
+        "size": 1066
       },
       "skills/gsap-react/SKILL.md": {
         "identity": "gsap-react",
@@ -77321,8 +77933,22 @@
           "name": "gsap-react"
         },
         "metadata_fingerprint": "d0fc34245fbe38bb660b7553d07d3db09b8f1c01d7638d589684b855884e4f61",
-        "sha256": "2a04182bc7f9bab20fb177b5a512a1667db6b4886b4cae45bac2509efe1c5838",
-        "size": 6867
+        "sha256": "4d8ed2a4d12692327208863bfdefceb29316b3445c5430ff47ac4ad7b3438de4",
+        "size": 7114
+      },
+      "skills/gsap-react/SOURCES.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "343bb14e67f51210645314223cb1dad4593c3279771dcf12581626407b2fac26",
+        "size": 812
+      },
+      "skills/gsap-scrolltrigger/LICENSE": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "51b04b06556662dd817e8f4aa6d06bc7139dc73739e1319a7233cfde3e147b90",
+        "size": 1066
       },
       "skills/gsap-scrolltrigger/SKILL.md": {
         "identity": "gsap-scrolltrigger",
@@ -77332,8 +77958,22 @@
           "name": "gsap-scrolltrigger"
         },
         "metadata_fingerprint": "4425317bda69ccae39c99639f85c833e4a1d89a2fa66a6acf69bbbe393b8675e",
-        "sha256": "ad300db358dff7df952a0bb5d54f099ed2d08725ff27c55a4211886278606c5a",
-        "size": 18799
+        "sha256": "b1e35ae09f79a865e25421a05ab9821074b05a5fd96b971c069940a2e3e0bbd9",
+        "size": 19046
+      },
+      "skills/gsap-scrolltrigger/SOURCES.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "e2fc863dabb6615a61f696ccf6cfb16931d7fdc98ea0b9f8bd66fea99387b8df",
+        "size": 820
+      },
+      "skills/gsap-timeline/LICENSE": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "51b04b06556662dd817e8f4aa6d06bc7139dc73739e1319a7233cfde3e147b90",
+        "size": 1066
       },
       "skills/gsap-timeline/SKILL.md": {
         "identity": "gsap-timeline",
@@ -77343,8 +77983,22 @@
           "name": "gsap-timeline"
         },
         "metadata_fingerprint": "1b9b11bdf896ea215ce4598154ddad33a688d1a414921f2adef8e596b2e7ae80",
-        "sha256": "ccaf9eea5dcc5e3c5f58f909ae6ffad36e26c80c393605586cbedb0406f26edc",
-        "size": 4702
+        "sha256": "98bea1ad5ebadadccc547998bb00148db8da8948a64515799f20d718aed5f37c",
+        "size": 4951
+      },
+      "skills/gsap-timeline/SOURCES.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "e1ccd8ee253c920c29d9f06e142cacf261dbbf50acb341a1ea5c9cb713f0f06b",
+        "size": 815
+      },
+      "skills/gsap-utils/LICENSE": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "51b04b06556662dd817e8f4aa6d06bc7139dc73739e1319a7233cfde3e147b90",
+        "size": 1066
       },
       "skills/gsap-utils/SKILL.md": {
         "identity": "gsap-utils",
@@ -77354,8 +78008,15 @@
           "name": "gsap-utils"
         },
         "metadata_fingerprint": "2b5b465e7e3c1aba1302b74561e59090f56cbc8df1cdf1adc22870f81b0b5fb2",
-        "sha256": "06da9164dd92a7365fdf7b8dfd80c60bc2da8716444c42e4c93da15965d93f8e",
-        "size": 12403
+        "sha256": "58ec19119d25da2fc3059eafd432446b1ac658f2441402199eca225318964cd2",
+        "size": 12664
+      },
+      "skills/gsap-utils/SOURCES.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "2f5310f52a2d0466afa0ef031ad01bba403a351c2d1414d846d35459dbb6a83b",
+        "size": 812
       },
       "skills/hand-drawn-diagrams/SKILL.md": {
         "identity": "hand-drawn-diagrams",
@@ -77562,6 +78223,80 @@
         "sha256": "392adeaf1d54f08f8ac1a7aa737a12915af2cccd412a40dd46bd829bd511a32e",
         "size": 955
       },
+      "skills/huashu-art-motion/LICENSE": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+        "size": 1086
+      },
+      "skills/huashu-art-motion/SKILL.md": {
+        "identity": "huashu-art-motion",
+        "metadata": {
+          "description": "辅助艺术动画与解说任务：35 种艺术风格配方、9 种解说语法、分镜与确定性 Canvas 绘制工具。按宿主时间轴实现，素材与导出使用宿主能力。",
+          "license": "MIT",
+          "name": "huashu-art-motion"
+        },
+        "metadata_fingerprint": "c7618c60f87583c8f6049afd5f2545d917af4b92d912b2f42f8baadf79f55b6e",
+        "sha256": "6454dfa4da186e8bb3528c1f3e1dd6cc0f905f1ed3cfdc199cbbae17a9d260a2",
+        "size": 5650
+      },
+      "skills/huashu-art-motion/SOURCES.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "4a2cd677b0be56add7cd682195446a54ab96db2296ad62b3b5e557179b21317d",
+        "size": 1028
+      },
+      "skills/huashu-art-motion/references/art-styles-1.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "665a3741cca1a42a29618ec39b206a7734b0c807bb34c0b04156a4e938a217e4",
+        "size": 96061
+      },
+      "skills/huashu-art-motion/references/art-styles-2.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "173619f699cf709535212a6a5ac9bb7d83e5551b0ad804f94e16a32bb5ed46e7",
+        "size": 54065
+      },
+      "skills/huashu-art-motion/references/canvas-helpers.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "16331f70fb8ad18eeb232cbfd43a9fbb28e25aea032cc61bc655d22ddee9538e",
+        "size": 83857
+      },
+      "skills/huashu-art-motion/references/craft-workflow.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "b599dcd5264aca76ec2200fdae03ab7fd3a9590329e24db16207e4a5a7fd2a2b",
+        "size": 58134
+      },
+      "skills/huashu-art-motion/references/explainer-grammars.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "581bba2ad18f876cffc8c7234164ccbdef27e31a2766c51bfbfaa90321e9f602",
+        "size": 130464
+      },
+      "skills/huashu-art-motion/references/index.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "f9953522a9143bb03c15ab0ec8ed7b2dc9a73c7f71daaa32272d7e2de4728b27",
+        "size": 3042
+      },
+      "skills/huashu-art-motion/references/license.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+        "size": 1086
+      },
       "skills/image-enhancer/SKILL.md": {
         "identity": "image-enhancer",
         "metadata": {
@@ -77758,6 +78493,90 @@
         "sha256": "102a4552f1c69d0f2ec4758f1d1766689f7d480f8234ee03b25dafa8f1c88cbc",
         "size": 434
       },
+      "skills/motion-design/SKILL.md": {
+        "identity": "motion-design",
+        "metadata": {
+          "description": "Apply motion craft to an active task: refine a brief, beat map, visual continuity, typography, pacing, and timeline implementation. Use when planning or improving motion graphics; the host task owns artifact creation, output format, and export.",
+          "name": "motion-design"
+        },
+        "metadata_fingerprint": "fbe661079c10b16ee9661ba1af566eb4dd711aed2f911b1ea8f609e56a303481",
+        "sha256": "19525f19eb62f0f69924c679e08e9a9c07d5bc378fa1fabd736af26413603b76",
+        "size": 23517
+      },
+      "skills/motion-design/SOURCES.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "2adca70f019895e19b413baa310721b0c3bc95ce78dac701b334528e8dc5c8b5",
+        "size": 1160
+      },
+      "skills/motion-lab/LICENSE": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "144ef466a3e69ba84bfa7f8bf024e4bbb100e0988a6815b613a210cf404bab56",
+        "size": 1224
+      },
+      "skills/motion-lab/SKILL.md": {
+        "identity": "motion-lab",
+        "metadata": {
+          "description": "为当前网页或组件查找、选型和改造动效。包含 160 个案例的 HTML/CSS/JS、参数与中英文索引，覆盖基础、文字、交互和高级动效。",
+          "license": "MIT",
+          "name": "motion-lab"
+        },
+        "metadata_fingerprint": "e55eb28cd59ab8c0add9cbfe238b0a16df2ccf7d9bb3d907b33cf93c0550e586",
+        "sha256": "5328c1679ef4e61066faf955a8fa76ace3f4bc18f2ba7e56d986505623d4bd59",
+        "size": 4074
+      },
+      "skills/motion-lab/SOURCES.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "c08908fc3f1e6dc438fb0b68ba5e50171da70544b72d13a0318c3959bbbd81dd",
+        "size": 821
+      },
+      "skills/motion-lab/references/advanced.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "8d621a1bf84d75085ffeb6316f32445c69d333cb873a724399aa2cb19b8f07c6",
+        "size": 40854
+      },
+      "skills/motion-lab/references/basic.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "fea1a67d09ac39cbdd2684cdc79266d5d498d0745394b2558239e88c9d245c39",
+        "size": 30126
+      },
+      "skills/motion-lab/references/index.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "6cb9becb1420ae7c4a56c980833b4bddf9564af9a0866666f7cbbd5e8f3edd8b",
+        "size": 12131
+      },
+      "skills/motion-lab/references/interaction.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "cbf2d5f3d5b07ffccc5284bc28b9ab1c33cbdc85e5adeaba25029341e0bb8507",
+        "size": 37514
+      },
+      "skills/motion-lab/references/license.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "144ef466a3e69ba84bfa7f8bf024e4bbb100e0988a6815b613a210cf404bab56",
+        "size": 1224
+      },
+      "skills/motion-lab/references/text.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "4a3c29cc33029082ac047762a7e0b75adb3cb7a82f507f2d773615f2bafba7e9",
+        "size": 33573
+      },
       "skills/nanobanana-ppt/SKILL.md": {
         "identity": "nanobanana-ppt",
         "metadata": {
@@ -77775,8 +78594,239 @@
           "name": "od-next-media-inputs"
         },
         "metadata_fingerprint": "347615af3ed9b49d186cca711eca70e136dc5d95ef1151d605d55ab9e96fd48e",
-        "sha256": "946a71a61a9536bfe99d1607d4327bfd5c475d7e36272d76c2b66b958bf262ad",
-        "size": 4473
+        "sha256": "36d4925f5e92103a5adb855257ded19785789a2f22700977436edae07fa3d516",
+        "size": 6736
+      },
+      "skills/oil-motion/LICENSE": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "58812edfd7eacc4396b64739c1591de41a6f4bf0cb9c5a82d1ef7b804a045d2c",
+        "size": 1069
+      },
+      "skills/oil-motion/SKILL.md": {
+        "identity": "oil-motion",
+        "metadata": {
+          "description": "处理视频和序列帧，编译滚动、指针、拖动与状态驱动的网页动效；内含本地媒体处理脚本和运行时。新素材生成使用宿主工具。",
+          "license": "MIT",
+          "name": "oil-motion"
+        },
+        "metadata_fingerprint": "5effd79ffee1f4aceffa350afaf8a57e0efa9d4f28f81ccd8f30c27e6e4e21c8",
+        "sha256": "a9d63dba4d383c05549e71db954de09ec13c21e6b4f6953c2c80c13a980ef0e4",
+        "size": 12440
+      },
+      "skills/oil-motion/SOURCES.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "b64d1e887716afda1abdb04f5f74a972a607685acc0dcf60b1d302234671acc7",
+        "size": 932
+      },
+      "skills/oil-motion/assets/chroma-video-renderer.ts": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "6a9fe5af9d5c03c3c6f4271ce4c88087f29e76649f8a60405f375049d74c933e",
+        "size": 13244
+      },
+      "skills/oil-motion/assets/interactive-motion.ts": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "b24502a26ffa219999b29041bd6f3db40c84d9cac401997ba7a3f3463fb5df38",
+        "size": 14993
+      },
+      "skills/oil-motion/assets/motion-explainer-template.html": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "fa2591ca7b3419f623888754b1edc9d43f5659c0291af4b8d1bb0c314babeebe",
+        "size": 34075
+      },
+      "skills/oil-motion/assets/motion-manifest.example.json": {
+        "identity": null,
+        "metadata": {
+          "type": "sprite-atlas",
+          "version": 1
+        },
+        "metadata_fingerprint": "5ef33155aecc942fb63b44d4a7a6543ee3f1edf544661dc4bd0e8a16bfde639e",
+        "sha256": "dace7c4244c67e119d515e0de6bea22f60162dfc3b7eaf4b4423b2e61844bbf0",
+        "size": 339
+      },
+      "skills/oil-motion/assets/step-gesture.ts": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "18220839118213dc166da07567f278b87446ba19594138ea5a29418feb406d4e",
+        "size": 1969
+      },
+      "skills/oil-motion/references/alpha-atlas.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "c3172acdc50da74601ca49f11dc7d5070b9cb33df838ad827b6d96d341dae204",
+        "size": 4362
+      },
+      "skills/oil-motion/references/baked-video.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "a1bf18e4d1fc353841f108b962f81f552006c6a6a04121f8b644618edf261b7f",
+        "size": 3547
+      },
+      "skills/oil-motion/references/chroma-video.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "333ce0f9bf4072fb071e554da8f3b5b1a620547d650887b5de2e6722881e6a6e",
+        "size": 4293
+      },
+      "skills/oil-motion/references/concepts.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "8d9731db16bfa970d49efd514350635a190bb7fed05f702b67337169711701af",
+        "size": 11534
+      },
+      "skills/oil-motion/references/delivery-selection.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "ad8df561e369534a460f6624d522838b9216535acf4585aaf9a58e2b1fc0195c",
+        "size": 6040
+      },
+      "skills/oil-motion/references/explainer.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "1a1163abf595f46078fdf366f77d9b39b68b7a9aa2b5397fa1f5eb0f60556ef0",
+        "size": 3142
+      },
+      "skills/oil-motion/references/license.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "58812edfd7eacc4396b64739c1591de41a6f4bf0cb9c5a82d1ef7b804a045d2c",
+        "size": 1069
+      },
+      "skills/oil-motion/references/motion-patterns.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "a0b391588bdb24fc19d7ef0a07c8103b041653d26334054c223dcc24ae406537",
+        "size": 17314
+      },
+      "skills/oil-motion/references/optimization.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "d5dd2bdb9dcd11b89fe1a6b9745c105a7afaf8e73faf4b74651864bbc9cc3358",
+        "size": 2777
+      },
+      "skills/oil-motion/references/prompting.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "89cc10d7aa60c6d4734b339d65c0b6d193d156ec07a1828cbeb232d6ddc6bdab",
+        "size": 15338
+      },
+      "skills/oil-motion/references/qa.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "55eba2665f63369bb1b0e36892847ed08ecade7eceee698bd0e5de3ef27e78c8",
+        "size": 6770
+      },
+      "skills/oil-motion/references/runtime.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "7f9825d6fd80f345fd62b9c71af9775c1528b96f3b183974dbef254ca6e10fd0",
+        "size": 7671
+      },
+      "skills/oil-motion/scripts/chroma_key.py": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "e46a7d22e15e35b40f52f370e63a2048aa72e3ac256156b1f831d9865967e284",
+        "size": 5993
+      },
+      "skills/oil-motion/scripts/compile_scroll_video.py": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "02541af79a5f6166774428214e71327397d4df403f6a409416980a8a08ecb606",
+        "size": 40510
+      },
+      "skills/oil-motion/scripts/compose_travel_frames.py": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "a76d7f03fae37072c38997ffe0232ea0fe11c19202520477f10566de0fe692ac",
+        "size": 4631
+      },
+      "skills/oil-motion/scripts/composite_alpha_keyframe.py": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "064b51226770e51e9f15247090685a03826ef4dba71bac365af85fdca7019bb3",
+        "size": 1760
+      },
+      "skills/oil-motion/scripts/create_explainer.py": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "c0db5ae7a00530dc0fe534a4b81ab5bc1f0ec88a32b3289d144995f11ec46eb2",
+        "size": 6710
+      },
+      "skills/oil-motion/scripts/loop_cleanup.py": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "c159e1eae81c02973f4427e5ea991e0775341da109212513f98fd2111a691a07",
+        "size": 5399
+      },
+      "skills/oil-motion/scripts/media_edges.py": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "8e01e46c5657ec3fcab9a747c898fb811dfca003737dfb8e86762f4e1399d483",
+        "size": 1366
+      },
+      "skills/oil-motion/scripts/motion_budget.py": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "0c36c4102f856537e35d4d8bea6c0ba7d2712e11575fb402e7e5140b4a62a3af",
+        "size": 14791
+      },
+      "skills/oil-motion/scripts/motion_pipeline.py": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "357b54300ca76b6e6b09f0ce8945458c61b00d75934e8a82724f9403cfa93f2a",
+        "size": 36887
+      },
+      "skills/oil-motion/scripts/optimize_motion.py": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "6c306abeec9ba63662decb63814ef4f0d908f10ed8582e56ec421cd6e9ec9d11",
+        "size": 28581
+      },
+      "skills/oil-motion/scripts/production_gate.py": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "d104c76728fd344da76bd713da86c0aba4a7441fbbefd906a32885179f9e02a0",
+        "size": 15747
+      },
+      "skills/oil-motion/scripts/requirements.txt": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "cd32978ae25e7d38c84df266f7dd91a1e378dabc3a708ec9e850e4d883f3f91a",
+        "size": 43
       },
       "skills/output-skill/LICENSE": {
         "identity": null,
@@ -78482,6 +79532,178 @@
         "sha256": "00ff10e743aab0ffbf6f520ba3eab247b00b704059bbf8e1e854210d95974903",
         "size": 1169
       },
+      "skills/ui-animation/LICENSE": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "81ac64b19ea7ae7f9a8d197705df58f48ffca02c74fca13e565dedf4f7595b46",
+        "size": 1070
+      },
+      "skills/ui-animation/SKILL.md": {
+        "identity": "ui-animation",
+        "metadata": {
+          "description": "Implement, review, and measure UI motion. Reconstruct easing, springs and gestures from a recording using bundled frame extraction, tracking and curve-fitting tools when available.",
+          "license": "MIT",
+          "name": "ui-animation"
+        },
+        "metadata_fingerprint": "7cfeb5c279ea7bc84cccfb1121e80d562bc4bdccb4adcab3ad1fe3337895a201",
+        "sha256": "a661ffcf1833a508668e87a2eceb9c1893c3b5b189a81c4f532be1fbfd5ac6f0",
+        "size": 24512
+      },
+      "skills/ui-animation/SOURCES.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "d23005a7bd84a1386f68acc6941d0daa5ee786be823bb348e4c110e5c522da95",
+        "size": 867
+      },
+      "skills/ui-animation/references/choreography.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "36aa77068124f009e8b44944eeef907fd617a6ab9d136d83442acea6f21bc448",
+        "size": 2605
+      },
+      "skills/ui-animation/references/clip-path-techniques.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "bf22399db0579a7b289c4234b4729994d72a9e859258e2c60290990f7432deb1",
+        "size": 3019
+      },
+      "skills/ui-animation/references/code-output.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "3bc62e3503268280c451ddf05deed9f557006771e61f0d9fa32c9b766cf6bb8c",
+        "size": 4293
+      },
+      "skills/ui-animation/references/component-patterns.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "b669704adae8545cb3b85132bf5b9bb45b40f1bc4fd16face3923e338f43c409",
+        "size": 9172
+      },
+      "skills/ui-animation/references/contextual-animations.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "7418466a2c952c29e0c329ac754837290449d4ab2cb56927ad8661bf1fa2e91e",
+        "size": 5731
+      },
+      "skills/ui-animation/references/curve-fitting.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "5cf650743531385643f012549042ce6378ae40416b44da2da43fffe34222906d",
+        "size": 4697
+      },
+      "skills/ui-animation/references/debugging-symptoms.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "bb92e08e9c04dce772e82b9a08521fcf661b706372c23839f5a570711929d68b",
+        "size": 7554
+      },
+      "skills/ui-animation/references/decision-framework.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "140b47e450487c86316af316dc8d18de0852943e63ac75c40fcf8696e6d951e9",
+        "size": 6846
+      },
+      "skills/ui-animation/references/gesture-drag.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "c4d759d75d780cd291b2987817a9618bbaa36a23e29f32e8b7a0d091749c3afe",
+        "size": 11896
+      },
+      "skills/ui-animation/references/interface-sfx.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "5f6e365c32845057aae74749155b87a74f5b731b4cea901c8d9d824e25bb16a1",
+        "size": 2018
+      },
+      "skills/ui-animation/references/measurement-guide.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "ed53ef060cc5f20f5b44df635692c22cfb39334dd2375b9c49018deca22d15ce",
+        "size": 4206
+      },
+      "skills/ui-animation/references/performance-deep-dive.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "f3f43c733bac58c4e64f13c769f7a360c39c0d446c886f79d929e76ae8b5fdfc",
+        "size": 8738
+      },
+      "skills/ui-animation/references/review-format.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "565456c30c5c97fc788331f395a785e5822a9fff4eaf0a496bc04ea8915dbd90",
+        "size": 9491
+      },
+      "skills/ui-animation/references/scroll-animations.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "536a21a8c3c08db50beec1d81471cbfc1e6bc33d8be4fd0868142d988e48a5bb",
+        "size": 7315
+      },
+      "skills/ui-animation/references/spring-animations.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "0012d3aecb3bd47ac0eeb7d8ce6bf78b017af4ccfe9a5f89f6397355001c38ee",
+        "size": 6904
+      },
+      "skills/ui-animation/references/svg-animation.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "a6a8bb58720711f16ec9b79ccfd525ec66c2718ef3a8e93f55a9dc9f5dfc7266",
+        "size": 5523
+      },
+      "skills/ui-animation/references/transition-recipes.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "ffc6e1fc9f053259c8c12dd2fbd7495fe364e88b206eabfc9a29ce741927b432",
+        "size": 26304
+      },
+      "skills/ui-animation/references/vocabulary.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "edb6a64b2fdf99d59f7087b1be38f779d8b8a614b6ed1b108275ea55a9633f09",
+        "size": 12651
+      },
+      "skills/ui-animation/scripts/extract_frames.py": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "80c16f2a50e7f10050e143af9464240c18c61d58394761d672f65c869f13952f",
+        "size": 4447
+      },
+      "skills/ui-animation/scripts/fit_curves.py": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "126f944b640b395da13d20d2c2861c4fcc79254e0bce5201b2d545b7d02474f1",
+        "size": 7805
+      },
+      "skills/ui-animation/scripts/track_motion.py": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "a8b5c60c1da1cea05e6e21307021d6e9369e76388a50c16293ff18eebe35dda7",
+        "size": 7773
+      },
       "skills/ui-skills/SKILL.md": {
         "identity": "ui-skills",
         "metadata": {
@@ -78913,7 +80135,7 @@
         "size": 1191
       }
     },
-    "ref": "17e255959703a3fad7c8eb7f7b70dcafccc5629a",
+    "ref": "26d60298f8129e229a1c10aab4df7ca25b1e9ad3",
     "ref_binding": "archive root matched repository name and full commit SHA",
     "repository": "nexu-io/open-design",
     "schema_version": 1,

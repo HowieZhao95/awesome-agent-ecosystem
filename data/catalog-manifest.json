@@ -3,7 +3,7 @@
   "resource_id": "opendesign.web-prototype",
   "source_id": "opendesign",
   "repository": "nexu-io/open-design",
-  "source_commit": "17e255959703a3fad7c8eb7f7b70dcafccc5629a",
+  "source_commit": "26d60298f8129e229a1c10aab4df7ca25b1e9ad3",
   "root": "plugins/_official/examples/web-prototype",
   "title": "Web Prototype",
   "author": "OpenDesign",
@@ -72,7 +72,7 @@
       "mime_type": "text/plain"
     }
   ],
-  "change": "add",
+  "change": "update",
   "limits": [
     "Owner must review the differing package and repository license declarations before content publication.",
     "Includes only the six package text files plus the upstream repository license; no external assets or generated user output."
