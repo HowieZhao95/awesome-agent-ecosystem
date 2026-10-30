@@ -38584,3 +38584,219 @@ resources:
       claim: 固定上游归档中逐项读取实际 SKILL.md；SHA-256=c494328fdf79cfe7c57c3ac162697e6110a42f98261577da7bd1b41055f2bb9d。
     limits:
     - 未执行该 Skill、未渲染或运行模板、未测试宿主；许可和再分发范围仍待审核。
+- id: upstash.context7-mcp
+  title: Context7 MCP
+  summary: Upstash Context7 官方文档检索 MCP（npm @upstash/context7-mcp），为 Agent 提供最新库文档与示例。
+  purpose: 通过 MCP 解析库 ID 并查询最新文档片段，减少过时 API 幻觉。
+  classification:
+    category: plugins
+    subtype: null
+    domains:
+    - software-engineering
+    formats:
+    - typescript
+    - json
+    conventions:
+    - mcp
+    rationale: 主体是可安装的 MCP 服务器分发单元；MCP 记在 components，不是独立主类。
+  provenance:
+    relation: curated
+    content_source: upstash.context7
+    discovered_via:
+    - discover.github
+    upstream:
+      kind: git
+      url: https://github.com/upstash/context7
+      path: packages/mcp/package.json
+      selector: '@upstash/context7-mcp'
+      ref:
+        kind: commit
+        value: c7f80ce5af1ff1403d167579b76784482cf7f3e2
+    derives_from: []
+    changes: null
+  authors:
+    status: known
+    identities:
+    - name: abdush
+      url: null
+    evidence:
+    - locator: https://github.com/upstash/context7/blob/c7f80ce5af1ff1403d167579b76784482cf7f3e2/packages/mcp/package.json
+      claim: packages/mcp/package.json author 字段为 abdush。
+  publisher:
+    status: known
+    identities:
+    - name: Upstash, Inc.
+      url: https://github.com/upstash/context7
+    evidence:
+    - locator: https://github.com/upstash/context7/blob/c7f80ce5af1ff1403d167579b76784482cf7f3e2/LICENSE
+      claim: 根 LICENSE Copyright (c) 2021 Upstash, Inc.；GitHub 组织为 upstash。
+  license:
+    status: verified
+    expression: MIT
+    scope: repository-root
+    evidence:
+    - locator: https://github.com/upstash/context7/blob/c7f80ce5af1ff1403d167579b76784482cf7f3e2/LICENSE
+      claim: 根 LICENSE 为 MIT；packages/mcp/package.json license=MIT。
+    redistribution: allowed
+  distribution:
+  - kind: repository
+    channel_source: upstash.context7
+    url: https://github.com/upstash/context7
+  - kind: upstream-link
+    channel_source: upstash.context7
+    url: https://www.npmjs.com/package/@upstash/context7-mcp/v/4.4.4
+  previews: []
+  compatibility:
+    hosts:
+    - MCP-compatible client
+    runtimes:
+    - name: Node.js
+      version: '>=20.18.1'
+      status: declared
+    dependencies: []
+    constraints:
+    - 本轮仅验证 MCP initialize 与 tools/list；未调用 resolve-library-id/query-docs 实查文档。
+    - 钉死 git commit c7f80ce5… 与 npm @upstash/context7-mcp@4.4.4；tip≠后续未测版本。
+  components:
+  - id: context7-mcp-server
+    type: mcp-server
+    resource_id: null
+    upstream:
+      kind: git
+      url: https://github.com/upstash/context7
+      path: packages/mcp/dist/index.js
+      selector: '@upstash/context7-mcp'
+      ref:
+        kind: commit
+        value: c7f80ce5af1ff1403d167579b76784482cf7f3e2
+    subtype: null
+    delivery: contained
+  lifecycle:
+    state: candidate
+    reason: 安装/MCP 握手已实测；维护者审核后可议 usable；未做 live docs API 核证。
+    replacement_id: null
+  review:
+    status: pending
+    by: null
+    at: null
+    evidence: []
+  verification:
+    level: usage-tested
+    tested_hosts:
+    - mcp-stdio
+    checked_at: '2026-10-30'
+    by: Grok Bot catalog sweep
+    evidence:
+    - locator: docs/evidence/sweep-20261030/context7-mcp-smoke.md
+      claim: npx @upstash/context7-mcp@4.4.4 完成 initialize（serverInfo Context7 4.4.4）与 tools/list（resolve-library-id、query-docs）；随后清理 npx 缓存。
+    limits:
+    - 未调用 live Context7 docs API。
+    - 未在 Cursor/Claude Desktop 等宿主内长期配置验证。
+- id: czlonkowski.n8n-mcp
+  title: n8n MCP
+  summary: n8n 节点文档与工作流校验 MCP（npm n8n-mcp），帮助 Agent 构建/校验 n8n 工作流。
+  purpose: 通过 MCP 搜索 n8n 节点、读取属性、校验节点与工作流结构。
+  classification:
+    category: plugins
+    subtype: null
+    domains:
+    - software-engineering
+    formats:
+    - typescript
+    - json
+    conventions:
+    - mcp
+    rationale: 主体是可安装的 MCP 服务器分发单元；MCP 记在 components，不是独立主类。
+  provenance:
+    relation: curated
+    content_source: czlonkowski.n8n-mcp
+    discovered_via:
+    - discover.github
+    upstream:
+      kind: git
+      url: https://github.com/czlonkowski/n8n-mcp
+      path: package.json
+      selector: n8n-mcp
+      ref:
+        kind: commit
+        value: 09611fd663f17fe6976a0e027178421abbb2f041
+    derives_from: []
+    changes: null
+  authors:
+    status: known
+    identities:
+    - name: Romuald Czlonkowski
+      url: https://www.aiadvisors.pl/en
+    evidence:
+    - locator: https://github.com/czlonkowski/n8n-mcp/blob/09611fd663f17fe6976a0e027178421abbb2f041/package.json
+      claim: package.json author 字段为 Romuald Czlonkowski @ www.aiadvisors.pl/en。
+  publisher:
+    status: known
+    identities:
+    - name: Romuald Czlonkowski
+      url: https://github.com/czlonkowski/n8n-mcp
+    evidence:
+    - locator: https://github.com/czlonkowski/n8n-mcp/blob/09611fd663f17fe6976a0e027178421abbb2f041/LICENSE
+      claim: 根 LICENSE Copyright (c) 2024 Romuald Czlonkowski；仓库所有者为 czlonkowski。
+  license:
+    status: verified
+    expression: MIT
+    scope: repository-root
+    evidence:
+    - locator: https://github.com/czlonkowski/n8n-mcp/blob/09611fd663f17fe6976a0e027178421abbb2f041/LICENSE
+      claim: 根 LICENSE 为 MIT；package.json license=MIT。
+    redistribution: allowed
+  distribution:
+  - kind: repository
+    channel_source: czlonkowski.n8n-mcp
+    url: https://github.com/czlonkowski/n8n-mcp
+  - kind: upstream-link
+    channel_source: czlonkowski.n8n-mcp
+    url: https://www.npmjs.com/package/n8n-mcp/v/2.99.2
+  previews: []
+  compatibility:
+    hosts:
+    - MCP-compatible client
+    runtimes:
+    - name: Node.js
+      version: '^22.23.4 || ^24.22.1 || >=26.12.1'
+      status: declared
+    dependencies: []
+    constraints:
+    - 本轮仅验证 MCP initialize 与 tools/list；documentation 模式，未接 live n8n 实例。
+    - 钉死 git commit 09611fd6… 与 npm n8n-mcp@2.99.2；tip≠后续未测版本。
+  components:
+  - id: n8n-mcp-server
+    type: mcp-server
+    resource_id: null
+    upstream:
+      kind: git
+      url: https://github.com/czlonkowski/n8n-mcp
+      path: dist/mcp/stdio-wrapper.js
+      selector: n8n-mcp
+      ref:
+        kind: commit
+        value: 09611fd663f17fe6976a0e027178421abbb2f041
+    subtype: null
+    delivery: contained
+  lifecycle:
+    state: candidate
+    reason: 安装/MCP 握手已实测；维护者审核后可议 usable；未做 live n8n 实例核证。
+    replacement_id: null
+  review:
+    status: pending
+    by: null
+    at: null
+    evidence: []
+  verification:
+    level: usage-tested
+    tested_hosts:
+    - mcp-stdio
+    checked_at: '2026-10-30'
+    by: Grok Bot catalog sweep
+    evidence:
+    - locator: docs/evidence/sweep-20261030/n8n-mcp-smoke.md
+      claim: npx n8n-mcp@2.99.2 完成 initialize（serverInfo n8n-documentation-mcp 2.99.2）与 tools/list（7 tools，含 search_nodes/get_node/validate_workflow）；随后清理 npx 缓存。
+    limits:
+    - documentation MCP 模式；未接 live n8n 实例或部署工作流。
+    - 未在 Cursor/Claude Desktop 等宿主内长期配置验证。

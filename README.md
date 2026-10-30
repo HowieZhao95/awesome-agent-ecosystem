@@ -450,6 +450,8 @@ Design-system profiles link the actual manifest, design rules and token CSS file
 |---|---|---|---|---|---|---|
 | [td-drama-production](https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/packages/td-plugins/td-drama-production/plugin.json) (`thusdesign.td-drama-production`) | — | curated | candidate | source-inspected | — | unknown |
 | [@thusdesign/cli](https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/apps/aigc-cli/package.json) (`thusdesign.cli`) | — | curated | candidate | source-inspected | — | unknown |
+| [Context7 MCP](https://github.com/upstash/context7) (`upstash.context7-mcp`) | — | curated | candidate | usage-tested | — | verified |
+| [n8n MCP](https://github.com/czlonkowski/n8n-mcp) (`czlonkowski.n8n-mcp`) | — | curated | candidate | usage-tested | — | verified |
 
 
 **Components in td-drama-production**
@@ -474,11 +476,25 @@ Design-system profiles link the actual manifest, design rules and token CSS file
 | `cli` | `cli` | `contained` | `—` |
 | `stdio-mcp` | `mcp-server` | `contained` | `—` |
 
+
+**Components in Context7 MCP**
+
+| Component ID | Type | Delivery | Resource reference |
+|---|---|---|---|
+| `context7-mcp-server` | `mcp-server` | `contained` | `—` |
+
+
+**Components in n8n MCP**
+
+| Component ID | Type | Delivery | Resource reference |
+|---|---|---|---|
+| `n8n-mcp-server` | `mcp-server` | `contained` | `—` |
+
 ## Discovery entries
 
 The store also browses the complete historical discovery queue. These are unverified leads, collections or reference entries; they are not approved installation records.
 
-859 indexed discovery entries (777 historical asset leads), 799 additional browser entries after existing-resource matches; 26 platforms are listed as discovery channels.
+859 indexed discovery entries (777 historical asset leads), 798 additional browser entries after existing-resource matches; 26 platforms are listed as discovery channels.
 
 ### Discovery · 设计系统
 
@@ -1041,7 +1057,6 @@ The store also browses the complete historical discovery queue. These are unveri
 | Multi-Carrier Shipping API — powered by Secureship (`discovery.legacy.bcf3fe1646a36ed0`) | asset | [Original listing](https://secureship.ca) | Unverified |
 | multi-platform-apps (`discovery.legacy.e53a25fef41ad771`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
 | mysql_mcp_server (`discovery.legacy.0e3ae30e27082bb9`) | asset | [Original listing](https://github.com/designcomputer/mysql_mcp_server) | Unverified |
-| n8n-mcp (`discovery.legacy.8ac70800fec7cdbe`) | asset | [Original listing](https://github.com/czlonkowski/n8n-mcp) | Unverified |
 | n8n-workflow-designer (`discovery.legacy.9c57e6b07273f6cc`) | asset | [Original listing](https://github.com/jeremylongshore/tons-of-skills-marketplace) | Unverified |
 | nausika (`discovery.legacy.1df725e93f2dc62f`) | asset | [Original listing](https://nausika.app) | Unverified |
 | Naver Search (`discovery.legacy.a4388032591b11c1`) | asset | [Original listing](https://search.naver.com) | Unverified |
