@@ -303,10 +303,18 @@ class Phase1CatalogTests(unittest.TestCase):
         self.assertTrue(all(covered(path) for path in paths),
                         f"OpenDesign tracking scope misses: {sorted(path for path in paths if not covered(path))}")
 
-    def test_current_catalog_has_no_tested_host_claims(self):
+    def test_current_catalog_tested_hosts_only_on_usage_tested(self):
         resources = read_yaml(ROOT, "resources")["resources"]
         self.assertTrue(resources)
-        self.assertTrue(all(resource["verification"].get("tested_hosts", []) == [] for resource in resources))
+        for resource in resources:
+            hosts = resource["verification"].get("tested_hosts", []) or []
+            level = resource["verification"].get("level")
+            if hosts:
+                self.assertEqual(
+                    "usage-tested",
+                    level,
+                    f"{resource['id']} lists tested_hosts but verification.level={level!r}",
+                )
 
     def test_validator_rejects_wrong_source_role_and_unlocked_git_reference(self):
         temp, root = fixture_root()
