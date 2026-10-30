@@ -190,6 +190,38 @@ sources:
     baseline: official documentation pages read 2026-10-07, cadence: manual, method: 'Check official install documentation and commands for changes, then verify they still point to the pinned content repository;
       update only install metadata and never infer permissions or content version from the CLI.', promotion: Treat as distribution/install instructions only; never use as content provenance or skill license
       evidence., last_checked: '2026-10-07', limitations: ['npx skills is a distribution CLI, not the source repository/content.', Official skill repository full HEAD SHA was not retrieved this check.]}
+- id: microsoft.playwright-mcp
+  name: Microsoft Playwright MCP
+  url: https://github.com/microsoft/playwright-mcp
+  roles: [content-upstream, distribution-channel]
+  access: public
+  tracking:
+    scope: package root (package.json, cli.js, LICENSE) and npm @playwright/mcp releases
+    exclude: []
+    baseline: 'commit:0c4107acbecb75472b23c05c0e42471a0011874f; npm @playwright/mcp@0.0.83'
+    cadence: manual
+    method: 'Resolve tip main to full SHA; compare package.json version/license and MCP entrypoints; smoke via npx initialize/tools/list then uninstall; do not auto-promote.'
+    promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。
+    last_checked: '2026-10-29'
+    limitations:
+      - MCP initialize/tools/list smoke only; no browser automation scenario exercised this pass.
+      - Tip may move past the pinned commit; npm version and git SHA recorded separately.
+- id: chromedevtools.chrome-devtools-mcp
+  name: Chrome DevTools MCP
+  url: https://github.com/ChromeDevTools/chrome-devtools-mcp
+  roles: [content-upstream, distribution-channel]
+  access: public
+  tracking:
+    scope: package root (package.json, LICENSE, build entrypoints) and npm chrome-devtools-mcp releases
+    exclude: []
+    baseline: 'commit:bc0d93ee2df6f2410d9e9704903c3547acae7c9a; npm chrome-devtools-mcp@1.12.0'
+    cadence: manual
+    method: 'Resolve tip main to full SHA; compare package.json version/license and MCP entrypoints; smoke via npx initialize/tools/list then uninstall; do not auto-promote.'
+    promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。
+    last_checked: '2026-10-29'
+    limitations:
+      - MCP initialize/tools/list smoke only; no live Chrome DevTools session exercised this pass.
+      - Tip may move past the pinned commit; npm version and git SHA recorded separately.
 - id: upstash.context7
   name: Upstash Context7 MCP
   url: https://github.com/upstash/context7

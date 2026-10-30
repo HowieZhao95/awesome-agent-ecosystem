@@ -450,6 +450,8 @@ Design-system profiles link the actual manifest, design rules and token CSS file
 |---|---|---|---|---|---|---|
 | [td-drama-production](https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/packages/td-plugins/td-drama-production/plugin.json) (`thusdesign.td-drama-production`) | — | curated | candidate | source-inspected | — | unknown |
 | [@thusdesign/cli](https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/apps/aigc-cli/package.json) (`thusdesign.cli`) | — | curated | candidate | source-inspected | — | unknown |
+| [Playwright MCP](https://github.com/microsoft/playwright-mcp) (`microsoft.playwright-mcp`) | — | curated | candidate | usage-tested | — | verified |
+| [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp) (`chromedevtools.chrome-devtools-mcp`) | — | curated | candidate | usage-tested | — | verified |
 | [Context7](https://github.com/upstash/context7) (`upstash.context7-mcp`) | — | curated | candidate | usage-tested | — | verified |
 | [n8n MCP](https://github.com/czlonkowski/n8n-mcp) (`czlonkowski.n8n-mcp`) | — | curated | candidate | usage-tested | — | verified |
 
@@ -477,6 +479,20 @@ Design-system profiles link the actual manifest, design rules and token CSS file
 | `stdio-mcp` | `mcp-server` | `contained` | `—` |
 
 
+**Components in Playwright MCP**
+
+| Component ID | Type | Delivery | Resource reference |
+|---|---|---|---|
+| `playwright-mcp-server` | `mcp-server` | `contained` | `—` |
+
+
+**Components in Chrome DevTools MCP**
+
+| Component ID | Type | Delivery | Resource reference |
+|---|---|---|---|
+| `chrome-devtools-mcp-server` | `mcp-server` | `contained` | `—` |
+
+
 **Components in Context7**
 
 | Component ID | Type | Delivery | Resource reference |
@@ -494,7 +510,7 @@ Design-system profiles link the actual manifest, design rules and token CSS file
 
 The store also browses the complete historical discovery queue. These are unverified leads, collections or reference entries; they are not approved installation records.
 
-859 indexed discovery entries (777 historical asset leads), 797 additional browser entries after existing-resource matches; 26 platforms are listed as discovery channels.
+859 indexed discovery entries (777 historical asset leads), 795 additional browser entries after existing-resource matches; 26 platforms are listed as discovery channels.
 
 ### Discovery · 设计系统
 
@@ -763,7 +779,6 @@ The store also browses the complete historical discovery queue. These are unveri
 | census-mcp-server (`discovery.legacy.21e0b95848969a59`) | asset | [Original listing](https://census.caseyjhand.com/mcp) | Unverified |
 | cheatengine-mcp-bridge (`discovery.legacy.4bb745baf3aa30cc`) | asset | [Original listing](https://github.com/miscusi-peek/cheatengine-mcp-bridge) | Unverified |
 | Chessagine (`discovery.legacy.dc105271dedcaca2`) | asset | [Original listing](https://smithery.ai/servers/jalpp/chessagine) | Unverified |
-| chrome-devtools-mcp (`discovery.legacy.907b4823d2bd5fa8`) | asset | [Original listing](https://github.com/ChromeDevTools/chrome-devtools-mcp) | Unverified |
 | chronograph-gp (`discovery.legacy.015880f889a192a0`) | asset | [Original listing](https://www.chronograph.pe/) | Unverified |
 | chronograph-lp (`discovery.legacy.3fa46bc421eddab9`) | asset | [Original listing](https://www.chronograph.pe/) | Unverified |
 | cicd-automation (`discovery.legacy.e72ffe99c4a17261`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
@@ -1112,7 +1127,6 @@ The store also browses the complete historical discovery queue. These are unveri
 | planetscale (`discovery.legacy.1feb3345eab01ab1`) | asset | [Original listing](https://planetscale.com/) | Unverified |
 | playground (`discovery.legacy.690d0f5918ad8dba`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/playground) | Unverified |
 | playwright (`discovery.legacy.db616548e0e347bc`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/playwright) | Unverified |
-| playwright-mcp (`discovery.legacy.f2b14f1d9f94b27e`) | asset | [Original listing](https://github.com/microsoft/playwright-mcp) | Unverified |
 | playwright-skill (`discovery.legacy.d449e9388513907e`) | asset | [Original listing](https://github.com/lackeyjb/playwright-skill) | Unverified |
 | plugin-dev (`discovery.legacy.906fd966e8e79999`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-public/tree/main/plugins/plugin-dev) | Unverified |
 | plugin-orchestrator (`discovery.legacy.7710d0b6cb3963d5`) | asset | [Original listing](https://github.com/jeremylongshore/claude-code-plugins-plus) | Unverified |

@@ -58050,6 +58050,346 @@ const DATA = {
           }
         },
         {
+          "id": "microsoft.playwright-mcp",
+          "name": "Playwright MCP",
+          "url": "https://github.com/microsoft/playwright-mcp",
+          "source": "curated",
+          "relation": "curated",
+          "platform": "repository, upstream-link",
+          "subcat": "",
+          "note": "Microsoft 官方 Playwright 浏览器自动化 MCP 服务器（npm @playwright/mcp）。",
+          "stars": null,
+          "installs": null,
+          "verified": "2026-10-29",
+          "vmethod": "",
+          "purpose": "通过 MCP 让 Agent 驱动浏览器完成测试、抓取与页面交互。",
+          "classification": {
+            "category": "plugins",
+            "subtype": null,
+            "domains": [
+              "software-engineering"
+            ],
+            "formats": [
+              "typescript",
+              "json"
+            ],
+            "conventions": [
+              "mcp"
+            ],
+            "rationale": "主体是可安装的 MCP 服务器分发单元；MCP 记在 components，不是独立主类。"
+          },
+          "provenance": {
+            "relation": "curated",
+            "content_source": "microsoft.playwright-mcp",
+            "discovered_via": [
+              "discover.github"
+            ],
+            "upstream": {
+              "kind": "git",
+              "url": "https://github.com/microsoft/playwright-mcp",
+              "path": "package.json",
+              "selector": "@playwright/mcp",
+              "ref": {
+                "kind": "commit",
+                "value": "0c4107acbecb75472b23c05c0e42471a0011874f"
+              }
+            },
+            "derives_from": [],
+            "changes": null
+          },
+          "license": {
+            "status": "verified",
+            "expression": "Apache-2.0",
+            "scope": "repository-root",
+            "evidence": [
+              {
+                "locator": "https://github.com/microsoft/playwright-mcp/blob/0c4107acbecb75472b23c05c0e42471a0011874f/LICENSE",
+                "claim": "根 LICENSE 为 Apache License 2.0；package.json license=Apache-2.0。"
+              }
+            ],
+            "redistribution": "allowed"
+          },
+          "distribution": [
+            {
+              "kind": "repository",
+              "channel_source": "microsoft.playwright-mcp",
+              "url": "https://github.com/microsoft/playwright-mcp"
+            },
+            {
+              "kind": "upstream-link",
+              "channel_source": "microsoft.playwright-mcp",
+              "url": "https://www.npmjs.com/package/@playwright/mcp/v/0.0.83"
+            }
+          ],
+          "previews": [],
+          "compatibility": {
+            "hosts": [
+              "MCP-compatible client"
+            ],
+            "runtimes": [
+              {
+                "name": "Node.js",
+                "version": ">=18",
+                "status": "declared"
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "tool",
+                "name": "Playwright / Chromium (bundled via @playwright/mcp)",
+                "version": null,
+                "source_id": null
+              }
+            ],
+            "constraints": [
+              "本轮仅验证 MCP initialize 与 tools/list；未跑真实浏览器场景。",
+              "钉死 git commit 0c4107ac… 与 npm 0.0.83；tip≠后续未测版本。"
+            ]
+          },
+          "components": [
+            {
+              "id": "playwright-mcp-server",
+              "type": "mcp-server",
+              "resource_id": null,
+              "upstream": {
+                "kind": "git",
+                "url": "https://github.com/microsoft/playwright-mcp",
+                "path": "cli.js",
+                "selector": "@playwright/mcp",
+                "ref": {
+                  "kind": "commit",
+                  "value": "0c4107acbecb75472b23c05c0e42471a0011874f"
+                }
+              },
+              "subtype": null,
+              "delivery": "contained"
+            }
+          ],
+          "lifecycle": {
+            "state": "candidate",
+            "reason": "安装/MCP 握手已实测；维护者审核后可议 usable；未做全场景浏览器核证。",
+            "replacement_id": null
+          },
+          "review": {
+            "status": "pending",
+            "by": null,
+            "at": null,
+            "evidence": []
+          },
+          "verification": {
+            "level": "usage-tested",
+            "tested_hosts": [
+              "mcp-stdio"
+            ],
+            "checked_at": "2026-10-29",
+            "by": "Grok Bot catalog sweep",
+            "evidence": [
+              {
+                "locator": "docs/evidence/sweep-20261029/playwright-mcp-smoke.md",
+                "claim": "npx @playwright/mcp@0.0.83 完成 initialize（serverInfo Playwright 1.64.0-alpha…）与 tools/list；随后清理 npx 缓存与临时目录。"
+              }
+            ],
+            "limits": [
+              "未打开页面或执行 browser_* 工具。",
+              "未在 Cursor/Claude Desktop 等宿主内长期配置验证。"
+            ]
+          },
+          "tested_hosts": [
+            "mcp-stdio"
+          ],
+          "usable_for_hosts": [],
+          "authors": {
+            "status": "unknown",
+            "identities": [],
+            "evidence": []
+          },
+          "publisher": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "Microsoft Corporation",
+                "url": "https://github.com/microsoft/playwright-mcp"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/microsoft/playwright-mcp/blob/0c4107acbecb75472b23c05c0e42471a0011874f/package.json",
+                "claim": "package.json author 字段为 Microsoft Corporation；GitHub 组织为 microsoft。"
+              }
+            ]
+          }
+        },
+        {
+          "id": "chromedevtools.chrome-devtools-mcp",
+          "name": "Chrome DevTools MCP",
+          "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+          "source": "curated",
+          "relation": "curated",
+          "platform": "repository, upstream-link",
+          "subcat": "",
+          "note": "Chrome DevTools 官方 MCP 服务器（npm chrome-devtools-mcp），用于检查与驱动 Chrome。",
+          "stars": null,
+          "installs": null,
+          "verified": "2026-10-29",
+          "vmethod": "",
+          "purpose": "通过 MCP 让 Agent 连接 Chrome DevTools 做调试、性能与页面操控。",
+          "classification": {
+            "category": "plugins",
+            "subtype": null,
+            "domains": [
+              "software-engineering"
+            ],
+            "formats": [
+              "typescript",
+              "json"
+            ],
+            "conventions": [
+              "mcp"
+            ],
+            "rationale": "主体是可安装的 MCP 服务器分发单元；MCP 记在 components，不是独立主类。"
+          },
+          "provenance": {
+            "relation": "curated",
+            "content_source": "chromedevtools.chrome-devtools-mcp",
+            "discovered_via": [
+              "discover.github"
+            ],
+            "upstream": {
+              "kind": "git",
+              "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+              "path": "package.json",
+              "selector": "chrome-devtools-mcp",
+              "ref": {
+                "kind": "commit",
+                "value": "bc0d93ee2df6f2410d9e9704903c3547acae7c9a"
+              }
+            },
+            "derives_from": [],
+            "changes": null
+          },
+          "license": {
+            "status": "verified",
+            "expression": "Apache-2.0",
+            "scope": "repository-root",
+            "evidence": [
+              {
+                "locator": "https://github.com/ChromeDevTools/chrome-devtools-mcp/blob/bc0d93ee2df6f2410d9e9704903c3547acae7c9a/LICENSE",
+                "claim": "仓库 SPDX Apache-2.0；package.json license=Apache-2.0。"
+              }
+            ],
+            "redistribution": "allowed"
+          },
+          "distribution": [
+            {
+              "kind": "repository",
+              "channel_source": "chromedevtools.chrome-devtools-mcp",
+              "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp"
+            },
+            {
+              "kind": "upstream-link",
+              "channel_source": "chromedevtools.chrome-devtools-mcp",
+              "url": "https://www.npmjs.com/package/chrome-devtools-mcp/v/1.12.0"
+            }
+          ],
+          "previews": [],
+          "compatibility": {
+            "hosts": [
+              "MCP-compatible client"
+            ],
+            "runtimes": [
+              {
+                "name": "Node.js",
+                "version": "^20.19.0 || ^22.12.0 || >=23",
+                "status": "declared"
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "tool",
+                "name": "Chrome / Chromium",
+                "version": null,
+                "source_id": null
+              }
+            ],
+            "constraints": [
+              "本轮仅验证 MCP initialize 与 tools/list；未附着真实 Chrome 调试会话。",
+              "钉死 git commit bc0d93ee… 与 npm 1.12.0；tip≠后续未测版本。"
+            ]
+          },
+          "components": [
+            {
+              "id": "chrome-devtools-mcp-server",
+              "type": "mcp-server",
+              "resource_id": null,
+              "upstream": {
+                "kind": "git",
+                "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+                "path": "build/src/bin/chrome-devtools-mcp.js",
+                "selector": "chrome-devtools-mcp",
+                "ref": {
+                  "kind": "commit",
+                  "value": "bc0d93ee2df6f2410d9e9704903c3547acae7c9a"
+                }
+              },
+              "subtype": null,
+              "delivery": "contained"
+            }
+          ],
+          "lifecycle": {
+            "state": "candidate",
+            "reason": "安装/MCP 握手已实测；维护者审核后可议 usable；未做全场景 DevTools 核证。",
+            "replacement_id": null
+          },
+          "review": {
+            "status": "pending",
+            "by": null,
+            "at": null,
+            "evidence": []
+          },
+          "verification": {
+            "level": "usage-tested",
+            "tested_hosts": [
+              "mcp-stdio"
+            ],
+            "checked_at": "2026-10-29",
+            "by": "Grok Bot catalog sweep",
+            "evidence": [
+              {
+                "locator": "docs/evidence/sweep-20261029/chrome-devtools-mcp-smoke.md",
+                "claim": "npx chrome-devtools-mcp@1.12.0 完成 initialize（serverInfo chrome_devtools 1.12.0）与 tools/list；随后清理 npx 缓存与临时目录。"
+              }
+            ],
+            "limits": [
+              "未附着 Chrome 或执行 click/navigate 等工具。",
+              "未在 Cursor/Claude Desktop 等宿主内长期配置验证。"
+            ]
+          },
+          "tested_hosts": [
+            "mcp-stdio"
+          ],
+          "usable_for_hosts": [],
+          "authors": {
+            "status": "unknown",
+            "identities": [],
+            "evidence": []
+          },
+          "publisher": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "Google LLC",
+                "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/ChromeDevTools/chrome-devtools-mcp/blob/bc0d93ee2df6f2410d9e9704903c3547acae7c9a/package.json",
+                "claim": "package.json author 字段为 Google LLC；GitHub 组织为 ChromeDevTools。"
+              }
+            ]
+          }
+        },
+        {
           "id": "upstash.context7-mcp",
           "name": "Context7",
           "url": "https://github.com/upstash/context7",
@@ -62805,7 +63145,8 @@ const DATA = {
           "content source or exact upstream path is unverified",
           "author and license were not independently verified",
           "historical entry does not establish a real plugin manifest or install boundary"
-        ]
+        ],
+        "mapped_resource_id": "chromedevtools.chrome-devtools-mcp"
       },
       {
         "id": "discovery.legacy.015880f889a192a0",
@@ -78406,7 +78747,8 @@ const DATA = {
           "content source or exact upstream path is unverified",
           "author and license were not independently verified",
           "component type is only an expectation from the historical category; no real component manifest was verified"
-        ]
+        ],
+        "mapped_resource_id": "microsoft.playwright-mcp"
       },
       {
         "id": "discovery.legacy.d449e9388513907e",
@@ -92806,9 +93148,9 @@ const DATA = {
         },
         {
           "legacy_key": "mcp/playwright-mcp",
-          "target_id": "discovery.legacy.f2b14f1d9f94b27e",
-          "disposition": "discovery",
-          "reason": "retained as a discovery entry with provenance and usability gaps disclosed"
+          "target_id": "microsoft.playwright-mcp",
+          "disposition": "mapped",
+          "reason": "matches an existing canonical resource"
         },
         {
           "legacy_key": "mcp/postgres",
@@ -93442,9 +93784,9 @@ const DATA = {
         },
         {
           "legacy_key": "plugins/chrome-devtools-mcp",
-          "target_id": "discovery.legacy.907b4823d2bd5fa8",
-          "disposition": "discovery",
-          "reason": "retained as a discovery entry with provenance and usability gaps disclosed"
+          "target_id": "chromedevtools.chrome-devtools-mcp",
+          "disposition": "mapped",
+          "reason": "matches an existing canonical resource"
         },
         {
           "legacy_key": "plugins/chronograph-gp",
