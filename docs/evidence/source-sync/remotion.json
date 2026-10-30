@@ -207,7 +207,7 @@
     "failures": [],
     "from_ref": "473352613039e718e46655a26df224851e84c4aa",
     "source": "remotion",
-    "to_ref": "6c67adcd9cdbe6eb84d76342da89b225f9161cb2"
+    "to_ref": "30d4553ecd46fbc5212fd0ff006ae43af522158b"
   },
   "snapshot": {
     "catalog_baseline_refs": [
@@ -232,7 +232,7 @@
           "description": "Router for all Remotion skills",
           "name": "remotion-best-practices"
         },
-        "source_sha256": "23c5c52d379ccca73dfdc644b700bf0286518c842b3bb61441c675d1c14f8eca"
+        "source_sha256": "b4cfddd463ca44b6127aac813c5f8330f5fe2587f516af5ddfdb0fda453cf8eb"
       },
       {
         "catalog_metadata": {
@@ -252,7 +252,7 @@
           "description": "Export a Remotion video",
           "name": "remotion-render"
         },
-        "source_sha256": "e63ccad00121c09c0b25279187f3065b60b3bd5f86d7cb01c5d8b65a641c5ca7"
+        "source_sha256": "f0a0cdb799a01793861faa9a81be004d48eac4df77b659479c91038b13c9436c"
       }
     ],
     "catalog_missing_paths": [],
@@ -306,7 +306,7 @@
           "name": "remotion-best-practices"
         },
         "metadata_fingerprint": "f1a726cb7747ab18c56d0470f9cf8464ae87bb7f807a803461dbdcc4f5f14fb0",
-        "sha256": "23c5c52d379ccca73dfdc644b700bf0286518c842b3bb61441c675d1c14f8eca",
+        "sha256": "b4cfddd463ca44b6127aac813c5f8330f5fe2587f516af5ddfdb0fda453cf8eb",
         "size": 4215
       },
       "skills/remotion-best-practices/agents/openai.yaml": {
@@ -327,7 +327,7 @@
         "identity": null,
         "metadata": {},
         "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-        "sha256": "d7ca89b4e6bf2689dd1cefafebdfb12181efe8894428b2213a779e726b588b85",
+        "sha256": "108fc39c3bd31dd4635d3ea674af7e4a1ce7c626c25363a04b9d23a10a58b262",
         "size": 1152
       },
       "skills/remotion-best-practices/remotion-captions/agents/openai.yaml": {
@@ -369,7 +369,7 @@
         "identity": null,
         "metadata": {},
         "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-        "sha256": "1a7afecc8277a629de0d12efad2dfeb6d0a9f49bd8c19375b9a9c738098c4935",
+        "sha256": "d6149e3540b634915667a5207bea8455597d1003cc10038cc554b438bcf4618f",
         "size": 2973
       },
       "skills/remotion-best-practices/remotion-create/agents/openai.yaml": {
@@ -404,7 +404,7 @@
         "identity": null,
         "metadata": {},
         "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-        "sha256": "3cedd441c00e8614dd135d28106ad46f0dcf2ed7f3330c292808bbfebe089320",
+        "sha256": "5891f6d51899eb81313432549c3be5fc144b27917c197daaa0e391e3ed488873",
         "size": 1355
       },
       "skills/remotion-best-practices/remotion-docs/agents/openai.yaml": {
@@ -425,7 +425,7 @@
         "identity": null,
         "metadata": {},
         "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-        "sha256": "8853985e798eb06d5f74c4f5662a833505fa1f10913ee4015ed7b306d7d5e596",
+        "sha256": "b494d97ab68aa70e757d69f137db549ac09c0251840dbca566d49600c2041c71",
         "size": 13829
       },
       "skills/remotion-best-practices/remotion-interactivity/agents/openai.yaml": {
@@ -460,7 +460,7 @@
         "identity": null,
         "metadata": {},
         "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-        "sha256": "da116f9bf15fed3eadc48b5ced196a651a9e233ed0cc7a8572ca55d7f4788358",
+        "sha256": "19b8b3b18bbddfd494ecac5c602c261b661344520cea1989f16d73c61c2335ad",
         "size": 1030
       },
       "skills/remotion-best-practices/remotion-maps/agents/openai.yaml": {
@@ -691,8 +691,8 @@
         "identity": null,
         "metadata": {},
         "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-        "sha256": "343ff8e312423a3fd4b1b674b17f8f744fb985d00024ec35de17025c212f0926",
-        "size": 13514
+        "sha256": "ebb8b3ec23b0aa5c20999799869536bd2c2da9b22ec1b2f69f73be1c61f952c6",
+        "size": 13560
       },
       "skills/remotion-best-practices/remotion-markup/agents/openai.yaml": {
         "identity": null,
@@ -740,8 +740,8 @@
         "identity": null,
         "metadata": {},
         "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-        "sha256": "0cab0efa3cc9bce42f136e4f22f58d7f332ba229997bb8b79dbdb923b5bb59f9",
-        "size": 4396
+        "sha256": "d3cf205d54a75b8f484746b5049dd13461c1a6bad5afb15aaa0464402ba24b9d",
+        "size": 7476
       },
       "skills/remotion-best-practices/remotion-markup/compositions.md": {
         "identity": null,
@@ -768,8 +768,8 @@
         "identity": null,
         "metadata": {},
         "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-        "sha256": "f32d2ac56711a83b674022e7439bec725f859dffe0d82b4d65429428ee8bb188",
-        "size": 10891
+        "sha256": "02ba183684b9acecc6e48cae47c2e69c28ba132b3e2a1d0bc8716970f3f7fea7",
+        "size": 10900
       },
       "skills/remotion-best-practices/remotion-markup/embedding-videos.md": {
         "identity": null,
@@ -873,7 +873,7 @@
         "identity": null,
         "metadata": {},
         "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-        "sha256": "da116f9bf15fed3eadc48b5ced196a651a9e233ed0cc7a8572ca55d7f4788358",
+        "sha256": "19b8b3b18bbddfd494ecac5c602c261b661344520cea1989f16d73c61c2335ad",
         "size": 1030
       },
       "skills/remotion-best-practices/remotion-markup/remotion-maps/agents/openai.yaml": {
@@ -1160,7 +1160,7 @@
         "identity": null,
         "metadata": {},
         "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-        "sha256": "259db7738731b3cce6183994688f2472088ae3ac46b5870d1e039a8900bff28c",
+        "sha256": "c7dd92f7ec6480a283649b077ca3c70f051d6886789525687a1ae201bb0f02ed",
         "size": 705
       },
       "skills/remotion-best-practices/remotion-multimedia/agents/openai.yaml": {
@@ -1202,7 +1202,7 @@
         "identity": null,
         "metadata": {},
         "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-        "sha256": "e63ccad00121c09c0b25279187f3065b60b3bd5f86d7cb01c5d8b65a641c5ca7",
+        "sha256": "f0a0cdb799a01793861faa9a81be004d48eac4df77b659479c91038b13c9436c",
         "size": 711
       },
       "skills/remotion-best-practices/remotion-render/agents/openai.yaml": {
@@ -1230,7 +1230,7 @@
         "identity": null,
         "metadata": {},
         "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-        "sha256": "3a39b08776b794f5734f6e7b7af9e9cec024d5bfb55eeaa07bd004567b66dd76",
+        "sha256": "c7e0b31069296a4fc7bc3ea8902a256cb629abdc8c18f4d15d5f1d53f96aaa34",
         "size": 1053
       },
       "skills/remotion-best-practices/remotion-saas/agents/openai.yaml": {
@@ -1272,7 +1272,7 @@
         "identity": null,
         "metadata": {},
         "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-        "sha256": "10f6c2c0bccf118696723137f31db18d1ccae426fd263611bc333d9c78eb367b",
+        "sha256": "24277f37e24354a3c04bad303e2b07cbeb4076344bbbc686b7389dbe4b5bacb4",
         "size": 1611
       },
       "skills/remotion-best-practices/remotion-studio/agents/openai.yaml": {
@@ -1293,7 +1293,7 @@
         "identity": null,
         "metadata": {},
         "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-        "sha256": "0445e0d1a1355dd32cae9fc8ab4473951a4a6235196109b96fc93db58289229c",
+        "sha256": "8dcfbe598ace53ae0bc7015dce573294c9653285b14e58e7021fc8d0454b5294",
         "size": 1930
       },
       "skills/remotion-best-practices/remotion-upgrade/agents/openai.yaml": {
@@ -1317,7 +1317,7 @@
           "name": "remotion-render"
         },
         "metadata_fingerprint": "0abeeddf8190d058792fd56ff9e4dc0dc2f9abd98e672beb0184bbd031dc4907",
-        "sha256": "e63ccad00121c09c0b25279187f3065b60b3bd5f86d7cb01c5d8b65a641c5ca7",
+        "sha256": "f0a0cdb799a01793861faa9a81be004d48eac4df77b659479c91038b13c9436c",
         "size": 711
       },
       "skills/remotion-render/agents/openai.yaml": {
@@ -1342,7 +1342,7 @@
         "size": 2267
       }
     },
-    "ref": "6c67adcd9cdbe6eb84d76342da89b225f9161cb2",
+    "ref": "30d4553ecd46fbc5212fd0ff006ae43af522158b",
     "ref_binding": "archive root matched repository name and full commit SHA",
     "repository": "remotion-dev/skills",
     "schema_version": 1,
