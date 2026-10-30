@@ -38585,7 +38585,7 @@ resources:
     limits:
     - 未执行该 Skill、未渲染或运行模板、未测试宿主；许可和再分发范围仍待审核。
 - id: upstash.context7-mcp
-  title: Context7 MCP
+  title: Context7
   summary: Upstash Context7 官方文档检索 MCP（npm @upstash/context7-mcp），为 Agent 提供最新库文档与示例。
   purpose: 通过 MCP 解析库 ID 并查询最新文档片段，减少过时 API 幻觉。
   classification:

@@ -450,7 +450,7 @@ Design-system profiles link the actual manifest, design rules and token CSS file
 |---|---|---|---|---|---|---|
 | [td-drama-production](https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/packages/td-plugins/td-drama-production/plugin.json) (`thusdesign.td-drama-production`) | — | curated | candidate | source-inspected | — | unknown |
 | [@thusdesign/cli](https://github.com/HowieZhao95/my-apps/blob/33a1feabbcd5129fc9c7f4a676e80c632f44bce1/apps/aigc-cli/package.json) (`thusdesign.cli`) | — | curated | candidate | source-inspected | — | unknown |
-| [Context7 MCP](https://github.com/upstash/context7) (`upstash.context7-mcp`) | — | curated | candidate | usage-tested | — | verified |
+| [Context7](https://github.com/upstash/context7) (`upstash.context7-mcp`) | — | curated | candidate | usage-tested | — | verified |
 | [n8n MCP](https://github.com/czlonkowski/n8n-mcp) (`czlonkowski.n8n-mcp`) | — | curated | candidate | usage-tested | — | verified |
 
 
@@ -477,7 +477,7 @@ Design-system profiles link the actual manifest, design rules and token CSS file
 | `stdio-mcp` | `mcp-server` | `contained` | `—` |
 
 
-**Components in Context7 MCP**
+**Components in Context7**
 
 | Component ID | Type | Delivery | Resource reference |
 |---|---|---|---|
@@ -494,7 +494,7 @@ Design-system profiles link the actual manifest, design rules and token CSS file
 
 The store also browses the complete historical discovery queue. These are unverified leads, collections or reference entries; they are not approved installation records.
 
-859 indexed discovery entries (777 historical asset leads), 798 additional browser entries after existing-resource matches; 26 platforms are listed as discovery channels.
+859 indexed discovery entries (777 historical asset leads), 797 additional browser entries after existing-resource matches; 26 platforms are listed as discovery channels.
 
 ### Discovery · 设计系统
 
@@ -812,7 +812,6 @@ The store also browses the complete historical discovery queue. These are unveri
 | confidence (`discovery.legacy.04c1fa660563e642`) | asset | [Original listing](https://confidence.spotify.com) | Unverified |
 | content-marketing (`discovery.legacy.f3313e84f90632e6`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
 | context-management (`discovery.legacy.60c2316c5b1e3203`) | asset | [Original listing](https://github.com/wshobson/agents) | Unverified |
-| context7 (`discovery.legacy.857b5e7dfaaec5d0`) | asset | [Original listing](https://github.com/upstash/context7) | Unverified |
 | context7-docs-fetcher (`discovery.legacy.75b9cf5da56663bc`) | asset | [Original listing](https://github.com/ananddtyagi/claude-code-marketplace) | Unverified |
 | convex (`discovery.legacy.3ab3ea2b761dfb69`) | asset | [Original listing](https://github.com/get-convex/convex-backend-skill) | Unverified |
 | crowdsec (`discovery.legacy.8645b48277a47a5a`) | asset | [Original listing](https://www.crowdsec.net) | Unverified |

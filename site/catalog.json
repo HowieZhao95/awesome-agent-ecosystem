@@ -54829,7 +54829,7 @@
       },
       {
         "id": "upstash.context7-mcp",
-        "title": "Context7 MCP",
+        "title": "Context7",
         "summary": "Upstash Context7 官方文档检索 MCP（npm @upstash/context7-mcp），为 Agent 提供最新库文档与示例。",
         "purpose": "通过 MCP 解析库 ID 并查询最新文档片段，减少过时 API 幻觉。",
         "classification": {
@@ -62242,7 +62242,8 @@
           "content source or exact upstream path is unverified",
           "author and license were not independently verified",
           "component type is only an expectation from the historical category; no real component manifest was verified"
-        ]
+        ],
+        "mapped_resource_id": "upstash.context7-mcp"
       },
       {
         "id": "discovery.legacy.75b9cf5da56663bc",
@@ -89399,9 +89400,9 @@
         },
         {
           "legacy_key": "mcp/context7",
-          "target_id": "discovery.legacy.857b5e7dfaaec5d0",
-          "disposition": "discovery",
-          "reason": "retained as a discovery entry with provenance and usability gaps disclosed"
+          "target_id": "upstash.context7-mcp",
+          "disposition": "mapped",
+          "reason": "matches an existing canonical resource"
         },
         {
           "legacy_key": "mcp/cultural-intelligence",

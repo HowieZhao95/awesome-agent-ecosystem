@@ -58051,7 +58051,7 @@ const DATA = {
         },
         {
           "id": "upstash.context7-mcp",
-          "name": "Context7 MCP",
+          "name": "Context7",
           "url": "https://github.com/upstash/context7",
           "source": "curated",
           "relation": "curated",
@@ -65120,7 +65120,8 @@ const DATA = {
           "content source or exact upstream path is unverified",
           "author and license were not independently verified",
           "component type is only an expectation from the historical category; no real component manifest was verified"
-        ]
+        ],
+        "mapped_resource_id": "upstash.context7-mcp"
       },
       {
         "id": "discovery.legacy.75b9cf5da56663bc",
@@ -92277,9 +92278,9 @@ const DATA = {
         },
         {
           "legacy_key": "mcp/context7",
-          "target_id": "discovery.legacy.857b5e7dfaaec5d0",
-          "disposition": "discovery",
-          "reason": "retained as a discovery entry with provenance and usability gaps disclosed"
+          "target_id": "upstash.context7-mcp",
+          "disposition": "mapped",
+          "reason": "matches an existing canonical resource"
         },
         {
           "legacy_key": "mcp/cultural-intelligence",
