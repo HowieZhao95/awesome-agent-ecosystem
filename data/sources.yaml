@@ -222,3 +222,35 @@ sources:
     limitations:
       - MCP initialize/tools/list smoke only; no live Chrome DevTools session exercised this pass.
       - Tip may move past the pinned commit; npm version and git SHA recorded separately.
+- id: upstash.context7
+  name: Upstash Context7 MCP
+  url: https://github.com/upstash/context7
+  roles: [content-upstream, distribution-channel]
+  access: public
+  tracking:
+    scope: packages/mcp (package.json, dist entry, LICENSE) and npm @upstash/context7-mcp releases
+    exclude: []
+    baseline: 'commit:c7f80ce5af1ff1403d167579b76784482cf7f3e2; npm @upstash/context7-mcp@4.4.4'
+    cadence: manual
+    method: 'Resolve tip main to full SHA; compare packages/mcp package.json version/license and MCP entrypoints; smoke via npx initialize/tools/list then uninstall; do not auto-promote.'
+    promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。
+    last_checked: '2026-10-30'
+    limitations:
+      - MCP initialize/tools/list smoke only; no live Context7 docs API query this pass.
+      - Tip may move past the pinned commit; npm version and git SHA recorded separately.
+- id: czlonkowski.n8n-mcp
+  name: n8n MCP (documentation server)
+  url: https://github.com/czlonkowski/n8n-mcp
+  roles: [content-upstream, distribution-channel]
+  access: public
+  tracking:
+    scope: package root (package.json, LICENSE, dist/mcp entrypoints) and npm n8n-mcp releases
+    exclude: []
+    baseline: 'commit:09611fd663f17fe6976a0e027178421abbb2f041; npm n8n-mcp@2.99.2'
+    cadence: manual
+    method: 'Resolve tip main to full SHA; compare package.json version/license and MCP entrypoints; smoke via npx initialize/tools/list then uninstall; do not auto-promote.'
+    promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。
+    last_checked: '2026-10-30'
+    limitations:
+      - MCP initialize/tools/list smoke only; documentation mode; no live n8n instance API this pass.
+      - Tip may move past the pinned commit; npm version and git SHA recorded separately.
