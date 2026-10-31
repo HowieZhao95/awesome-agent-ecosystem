@@ -885,6 +885,32 @@
             "Tip may move past the pinned commit; npm version and git SHA recorded separately."
           ]
         }
+      },
+      {
+        "id": "vostride.agent-qa",
+        "name": "agent-qa 内容上游",
+        "url": "https://github.com/vostride/agent-qa",
+        "roles": [
+          "content-upstream",
+          "distribution-channel"
+        ],
+        "access": "public",
+        "tracking": {
+          "scope": [
+            "packages/cli/**",
+            "LICENSE.md"
+          ],
+          "exclude": [],
+          "baseline": "commit:1b8a9daf46dd0ec1b2c4503d2f1c0e26b0002293",
+          "cadence": "manual",
+          "method": "人工锁定完整提交，比较 CLI 包清单、README、许可证、CLI/MCP 入口与随包分发的 skills；由维护者审核身份、许可和兼容变化。获取失败时保留旧证据。",
+          "promotion": "仅提出人工审核候选；不自动批准或标记 usable。",
+          "last_checked": "2026-10-31",
+          "limitations": [
+            "仅登记 packages/cli 分发单元及其公开组件，不声称覆盖整个 monorepo。",
+            "未安装或运行产品，也未验证任何宿主兼容。"
+          ]
+        }
       }
     ]
   },
@@ -55506,6 +55532,294 @@
             "未在 Cursor/Claude Desktop 等宿主内长期配置验证。"
           ]
         }
+      },
+      {
+        "id": "vostride.agent-qa",
+        "title": "agent-qa",
+        "summary": "通过 CLI 和本地 MCP 测试网页与移动应用，具备 memidex 持久记忆和经验证的自我改进能力。",
+        "purpose": "供编码 Agent 执行应用测试、读取可复核证据并复用测试知识。",
+        "classification": {
+          "category": "plugins",
+          "subtype": null,
+          "domains": [
+            "software-engineering"
+          ],
+          "formats": [
+            "typescript",
+            "json",
+            "markdown"
+          ],
+          "conventions": [
+            "mcp",
+            "skill-md"
+          ],
+          "rationale": "packages/cli 是具有独立 agent-qa 包名、版本和 CLI 入口的分发单元；CLI、MCP 与四个随包 Skills 作为其组件登记，不重复计为独立资源。"
+        },
+        "provenance": {
+          "relation": "curated",
+          "content_source": "vostride.agent-qa",
+          "discovered_via": [],
+          "upstream": {
+            "kind": "git",
+            "url": "https://github.com/vostride/agent-qa/blob/1b8a9daf46dd0ec1b2c4503d2f1c0e26b0002293/packages/cli/package.json",
+            "path": "packages/cli/package.json",
+            "selector": "agent-qa",
+            "ref": {
+              "kind": "commit",
+              "value": "1b8a9daf46dd0ec1b2c4503d2f1c0e26b0002293"
+            }
+          },
+          "derives_from": [],
+          "changes": null
+        },
+        "authors": {
+          "status": "unknown",
+          "identities": [],
+          "evidence": []
+        },
+        "publisher": {
+          "status": "known",
+          "identities": [
+            {
+              "name": "vostride",
+              "url": "https://vostride.com"
+            }
+          ],
+          "evidence": [
+            {
+              "locator": "https://github.com/vostride/agent-qa/blob/1b8a9daf46dd0ec1b2c4503d2f1c0e26b0002293/packages/cli/package.json",
+              "claim": "分发单元关联 vostride/agent-qa 仓库；包内 README 指向 vostride.com 产品文档。"
+            },
+            {
+              "locator": "https://github.com/vostride/agent-qa/blob/1b8a9daf46dd0ec1b2c4503d2f1c0e26b0002293/packages/cli/README.md",
+              "claim": "README 指向 vostride.com/docs/agent-qa。"
+            }
+          ]
+        },
+        "license": {
+          "status": "verified",
+          "expression": "FSL-1.1-ALv2",
+          "scope": "packages/cli 的包声明与随包许可证；第三方依赖、外部服务和用户内容不据此获得许可。",
+          "evidence": [
+            {
+              "locator": "https://github.com/vostride/agent-qa/blob/1b8a9daf46dd0ec1b2c4503d2f1c0e26b0002293/packages/cli/package.json",
+              "claim": "包声明 license=FSL-1.1-ALv2。"
+            },
+            {
+              "locator": "https://github.com/vostride/agent-qa/blob/1b8a9daf46dd0ec1b2c4503d2f1c0e26b0002293/packages/cli/LICENSE.md",
+              "claim": "分发包包含自身 LICENSE.md；使用与再分发须遵守其适用条件。"
+            }
+          ],
+          "redistribution": "unknown"
+        },
+        "distribution": [
+          {
+            "kind": "upstream-link",
+            "channel_source": "vostride.agent-qa",
+            "url": "https://vostride.com"
+          },
+          {
+            "kind": "repository",
+            "channel_source": "vostride.agent-qa",
+            "url": "https://github.com/vostride/agent-qa/tree/1b8a9daf46dd0ec1b2c4503d2f1c0e26b0002293/packages/cli"
+          }
+        ],
+        "previews": [],
+        "compatibility": {
+          "hosts": [
+            "CLI-capable coding agent",
+            "MCP-compatible client"
+          ],
+          "runtimes": [
+            {
+              "name": "Node.js",
+              "version": ">=24",
+              "status": "declared"
+            }
+          ],
+          "dependencies": [
+            {
+              "kind": "service",
+              "name": "Configured compatible model provider or local model server",
+              "version": null,
+              "source_id": null
+            },
+            {
+              "kind": "tool",
+              "name": "Appium and platform SDKs for mobile testing",
+              "version": null,
+              "source_id": null
+            }
+          ],
+          "constraints": [
+            "固定提交中的包版本为 0.2.4；本条不声明已验证 npm 发布包或其他版本。",
+            "移动端另需 Android SDK；iOS 需要 macOS/Xcode。",
+            "模型/API 与外部服务费用另计；许可条件须单独审核。",
+            "声明支持 CLI/MCP，不代表已在 ThusDesign、OpenDesign 或其他宿主实测。"
+          ]
+        },
+        "components": [
+          {
+            "id": "agent-qa-cli",
+            "type": "cli",
+            "resource_id": null,
+            "upstream": {
+              "kind": "git",
+              "url": "https://github.com/vostride/agent-qa/blob/1b8a9daf46dd0ec1b2c4503d2f1c0e26b0002293/packages/cli/package.json",
+              "path": "packages/cli/package.json",
+              "selector": "bin.agent-qa",
+              "ref": {
+                "kind": "commit",
+                "value": "1b8a9daf46dd0ec1b2c4503d2f1c0e26b0002293"
+              }
+            },
+            "subtype": null,
+            "delivery": "contained"
+          },
+          {
+            "id": "agent-qa-mcp",
+            "type": "mcp-server",
+            "resource_id": null,
+            "upstream": {
+              "kind": "git",
+              "url": "https://github.com/vostride/agent-qa/blob/1b8a9daf46dd0ec1b2c4503d2f1c0e26b0002293/packages/cli/src/commands/mcp.ts",
+              "path": "packages/cli/src/commands/mcp.ts",
+              "selector": null,
+              "ref": {
+                "kind": "commit",
+                "value": "1b8a9daf46dd0ec1b2c4503d2f1c0e26b0002293"
+              }
+            },
+            "subtype": null,
+            "delivery": "contained"
+          },
+          {
+            "id": "agent-qa-authoring",
+            "type": "skill",
+            "resource_id": null,
+            "upstream": {
+              "kind": "git",
+              "url": "https://github.com/vostride/agent-qa/blob/1b8a9daf46dd0ec1b2c4503d2f1c0e26b0002293/packages/cli/skills/agent-qa-authoring/SKILL.md",
+              "path": "packages/cli/skills/agent-qa-authoring/SKILL.md",
+              "selector": null,
+              "ref": {
+                "kind": "commit",
+                "value": "1b8a9daf46dd0ec1b2c4503d2f1c0e26b0002293"
+              }
+            },
+            "subtype": null,
+            "delivery": "contained"
+          },
+          {
+            "id": "agent-qa-debug-fix",
+            "type": "skill",
+            "resource_id": null,
+            "upstream": {
+              "kind": "git",
+              "url": "https://github.com/vostride/agent-qa/blob/1b8a9daf46dd0ec1b2c4503d2f1c0e26b0002293/packages/cli/skills/agent-qa-debug-fix/SKILL.md",
+              "path": "packages/cli/skills/agent-qa-debug-fix/SKILL.md",
+              "selector": null,
+              "ref": {
+                "kind": "commit",
+                "value": "1b8a9daf46dd0ec1b2c4503d2f1c0e26b0002293"
+              }
+            },
+            "subtype": null,
+            "delivery": "contained"
+          },
+          {
+            "id": "agent-qa-knowledge",
+            "type": "skill",
+            "resource_id": null,
+            "upstream": {
+              "kind": "git",
+              "url": "https://github.com/vostride/agent-qa/blob/1b8a9daf46dd0ec1b2c4503d2f1c0e26b0002293/packages/cli/skills/agent-qa-knowledge/SKILL.md",
+              "path": "packages/cli/skills/agent-qa-knowledge/SKILL.md",
+              "selector": null,
+              "ref": {
+                "kind": "commit",
+                "value": "1b8a9daf46dd0ec1b2c4503d2f1c0e26b0002293"
+              }
+            },
+            "subtype": null,
+            "delivery": "contained"
+          },
+          {
+            "id": "agent-qa-result-triage",
+            "type": "skill",
+            "resource_id": null,
+            "upstream": {
+              "kind": "git",
+              "url": "https://github.com/vostride/agent-qa/blob/1b8a9daf46dd0ec1b2c4503d2f1c0e26b0002293/packages/cli/skills/agent-qa-result-triage/SKILL.md",
+              "path": "packages/cli/skills/agent-qa-result-triage/SKILL.md",
+              "selector": null,
+              "ref": {
+                "kind": "commit",
+                "value": "1b8a9daf46dd0ec1b2c4503d2f1c0e26b0002293"
+              }
+            },
+            "subtype": null,
+            "delivery": "contained"
+          }
+        ],
+        "lifecycle": {
+          "state": "candidate",
+          "reason": "公开源码与包声明已查阅；待维护者审核、许可适用性及具体宿主验证。",
+          "replacement_id": null
+        },
+        "review": {
+          "status": "pending",
+          "by": null,
+          "at": null,
+          "evidence": []
+        },
+        "verification": {
+          "level": "source-inspected",
+          "tested_hosts": [],
+          "checked_at": "2026-10-31",
+          "by": "vostride listing contributor",
+          "evidence": [
+            {
+              "locator": "https://github.com/vostride/agent-qa/blob/1b8a9daf46dd0ec1b2c4503d2f1c0e26b0002293/packages/cli/package.json",
+              "claim": "name=agent-qa、version=0.2.4、Node.js >=24、bin.agent-qa，以及 files 包含 skills。"
+            },
+            {
+              "locator": "https://github.com/vostride/agent-qa/blob/1b8a9daf46dd0ec1b2c4503d2f1c0e26b0002293/packages/cli/src/commands/mcp.ts",
+              "claim": "CLI 的 MCP 命令提供 stdio 和回环 HTTP 入口。"
+            },
+            {
+              "locator": "https://vostride.com/docs/agent-qa/memory",
+              "claim": "官方文档描述 memidex 持久记忆。"
+            },
+            {
+              "locator": "https://vostride.com/docs/agent-qa/self-improvement",
+              "claim": "官方文档描述基于验证证据的自我改进。"
+            },
+            {
+              "locator": "https://github.com/vostride/agent-qa/blob/1b8a9daf46dd0ec1b2c4503d2f1c0e26b0002293/packages/cli/skills/agent-qa-authoring/SKILL.md",
+              "claim": "公开 Skill 的名称与用途声明已查阅，作为包内组件登记。"
+            },
+            {
+              "locator": "https://github.com/vostride/agent-qa/blob/1b8a9daf46dd0ec1b2c4503d2f1c0e26b0002293/packages/cli/skills/agent-qa-debug-fix/SKILL.md",
+              "claim": "公开 Skill 的名称与用途声明已查阅，作为包内组件登记。"
+            },
+            {
+              "locator": "https://github.com/vostride/agent-qa/blob/1b8a9daf46dd0ec1b2c4503d2f1c0e26b0002293/packages/cli/skills/agent-qa-knowledge/SKILL.md",
+              "claim": "公开 Skill 的名称与用途声明已查阅，作为包内组件登记。"
+            },
+            {
+              "locator": "https://github.com/vostride/agent-qa/blob/1b8a9daf46dd0ec1b2c4503d2f1c0e26b0002293/packages/cli/skills/agent-qa-result-triage/SKILL.md",
+              "claim": "公开 Skill 的名称与用途声明已查阅，作为包内组件登记。"
+            }
+          ],
+          "limits": [
+            "未安装、运行 agent-qa 或进行宿主实测，tested_hosts 为空。",
+            "未逐一核查贡献者作者身份；不从仓库 owner 推导作者。",
+            "无独立预览；previews 为空。",
+            "FSL-1.1-ALv2 的具体适用与第三方权利未完成审核，再分发保持 unknown。",
+            "文档描述不构成独立效果评测；不登记排名、排他性或域名评分主张。"
+          ]
+        }
       }
     ]
   },
@@ -55880,7 +56194,8 @@
     "microsoft.playwright-mcp": [],
     "chromedevtools.chrome-devtools-mcp": [],
     "upstash.context7-mcp": [],
-    "czlonkowski.n8n-mcp": []
+    "czlonkowski.n8n-mcp": [],
+    "vostride.agent-qa": []
   },
   "discovery": {
     "schema_version": 1,

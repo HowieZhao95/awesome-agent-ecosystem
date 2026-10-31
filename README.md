@@ -454,6 +454,7 @@ Design-system profiles link the actual manifest, design rules and token CSS file
 | [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp) (`chromedevtools.chrome-devtools-mcp`) | — | curated | candidate | usage-tested | — | verified |
 | [Context7](https://github.com/upstash/context7) (`upstash.context7-mcp`) | — | curated | candidate | usage-tested | — | verified |
 | [n8n MCP](https://github.com/czlonkowski/n8n-mcp) (`czlonkowski.n8n-mcp`) | — | curated | candidate | usage-tested | — | verified |
+| [agent-qa](https://github.com/vostride/agent-qa/blob/1b8a9daf46dd0ec1b2c4503d2f1c0e26b0002293/packages/cli/package.json) (`vostride.agent-qa`) | — | curated | candidate | source-inspected | — | verified |
 
 
 **Components in td-drama-production**
@@ -505,6 +506,18 @@ Design-system profiles link the actual manifest, design rules and token CSS file
 | Component ID | Type | Delivery | Resource reference |
 |---|---|---|---|
 | `n8n-mcp-server` | `mcp-server` | `contained` | `—` |
+
+
+**Components in agent-qa**
+
+| Component ID | Type | Delivery | Resource reference |
+|---|---|---|---|
+| `agent-qa-cli` | `cli` | `contained` | `—` |
+| `agent-qa-mcp` | `mcp-server` | `contained` | `—` |
+| `agent-qa-authoring` | `skill` | `contained` | `—` |
+| `agent-qa-debug-fix` | `skill` | `contained` | `—` |
+| `agent-qa-knowledge` | `skill` | `contained` | `—` |
+| `agent-qa-result-triage` | `skill` | `contained` | `—` |
 
 ## Discovery entries
 
