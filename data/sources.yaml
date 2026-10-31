@@ -254,3 +254,23 @@ sources:
     limitations:
       - MCP initialize/tools/list smoke only; documentation mode; no live n8n instance API this pass.
       - Tip may move past the pinned commit; npm version and git SHA recorded separately.
+- id: vostride.agent-qa
+  name: agent-qa 内容上游
+  url: https://github.com/vostride/agent-qa
+  roles:
+  - content-upstream
+  - distribution-channel
+  access: public
+  tracking:
+    scope:
+    - packages/cli/**
+    - LICENSE.md
+    exclude: []
+    baseline: commit:1b8a9daf46dd0ec1b2c4503d2f1c0e26b0002293
+    cadence: manual
+    method: 人工锁定完整提交，比较 CLI 包清单、README、许可证、CLI/MCP 入口与随包分发的 skills；由维护者审核身份、许可和兼容变化。获取失败时保留旧证据。
+    promotion: 仅提出人工审核候选；不自动批准或标记 usable。
+    last_checked: '2026-10-31'
+    limitations:
+    - 仅登记 packages/cli 分发单元及其公开组件，不声称覆盖整个 monorepo。
+    - 未安装或运行产品，也未验证任何宿主兼容。
