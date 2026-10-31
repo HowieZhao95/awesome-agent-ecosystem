@@ -254,3 +254,19 @@ sources:
     limitations:
       - MCP initialize/tools/list smoke only; documentation mode; no live n8n instance API this pass.
       - Tip may move past the pinned commit; npm version and git SHA recorded separately.
+- id: seifip.kilobat-cli
+  name: Kilobat CLI
+  url: https://github.com/seifip/kilobat-cli
+  roles: [content-upstream, distribution-channel]
+  access: public
+  tracking:
+    scope: [README.md, LICENSE, Package.swift, Sources/KilobatCLI/MCPCLI.swift, Sources/KilobatCore/Services/MCPServer.swift]
+    exclude: []
+    baseline: 'commit:da3b65f24d32e8e6f91b7d37cc0be85a2b9410e4'
+    cadence: manual
+    method: 'Resolve main to a full commit SHA and compare license, package and MCP entrypoints; review any changes without automatic promotion.'
+    promotion: 差异仅供人工审核，不自动批准或标记 usable。
+    last_checked: '2026-10-31'
+    limitations:
+      - The CLI is macOS-only; some operations require permissions or the separately licensed desktop app.
+      - No clean Homebrew installation or full agent-driven workflow was verified.

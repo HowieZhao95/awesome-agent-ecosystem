@@ -454,6 +454,7 @@ Design-system profiles link the actual manifest, design rules and token CSS file
 | [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp) (`chromedevtools.chrome-devtools-mcp`) | — | curated | candidate | usage-tested | — | verified |
 | [Context7](https://github.com/upstash/context7) (`upstash.context7-mcp`) | — | curated | candidate | usage-tested | — | verified |
 | [n8n MCP](https://github.com/czlonkowski/n8n-mcp) (`czlonkowski.n8n-mcp`) | — | curated | candidate | usage-tested | — | verified |
+| [Kilobat CLI](https://github.com/seifip/kilobat-cli) (`seifip.kilobat-cli`) | — | curated | candidate | source-inspected | — | verified |
 
 
 **Components in td-drama-production**
@@ -505,6 +506,14 @@ Design-system profiles link the actual manifest, design rules and token CSS file
 | Component ID | Type | Delivery | Resource reference |
 |---|---|---|---|
 | `n8n-mcp-server` | `mcp-server` | `contained` | `—` |
+
+
+**Components in Kilobat CLI**
+
+| Component ID | Type | Delivery | Resource reference |
+|---|---|---|---|
+| `cli` | `cli` | `contained` | `—` |
+| `stdio-mcp` | `mcp-server` | `contained` | `—` |
 
 ## Discovery entries
 

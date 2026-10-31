@@ -885,6 +885,35 @@
             "Tip may move past the pinned commit; npm version and git SHA recorded separately."
           ]
         }
+      },
+      {
+        "id": "seifip.kilobat-cli",
+        "name": "Kilobat CLI",
+        "url": "https://github.com/seifip/kilobat-cli",
+        "roles": [
+          "content-upstream",
+          "distribution-channel"
+        ],
+        "access": "public",
+        "tracking": {
+          "scope": [
+            "README.md",
+            "LICENSE",
+            "Package.swift",
+            "Sources/KilobatCLI/MCPCLI.swift",
+            "Sources/KilobatCore/Services/MCPServer.swift"
+          ],
+          "exclude": [],
+          "baseline": "commit:da3b65f24d32e8e6f91b7d37cc0be85a2b9410e4",
+          "cadence": "manual",
+          "method": "Resolve main to a full commit SHA and compare license, package and MCP entrypoints; review any changes without automatic promotion.",
+          "promotion": "差异仅供人工审核，不自动批准或标记 usable。",
+          "last_checked": "2026-10-31",
+          "limitations": [
+            "The CLI is macOS-only; some operations require permissions or the separately licensed desktop app.",
+            "No clean Homebrew installation or full agent-driven workflow was verified."
+          ]
+        }
       }
     ]
   },
@@ -55506,6 +55535,168 @@
             "未在 Cursor/Claude Desktop 等宿主内长期配置验证。"
           ]
         }
+      },
+      {
+        "id": "seifip.kilobat-cli",
+        "title": "Kilobat CLI",
+        "summary": "macOS 网络诊断 CLI，含本地 stdio MCP 服务器和 JSON 输出。",
+        "purpose": "通过终端或 MCP 查询本机网络状态与诊断连接问题。",
+        "classification": {
+          "category": "plugins",
+          "subtype": null,
+          "domains": [
+            "software-engineering"
+          ],
+          "formats": [
+            "markdown"
+          ],
+          "conventions": [
+            "mcp"
+          ],
+          "rationale": "独立分发的 CLI 同时提供本地 stdio MCP 入口；Mac 桌面应用为另一个专有产品。"
+        },
+        "provenance": {
+          "relation": "curated",
+          "content_source": "seifip.kilobat-cli",
+          "discovered_via": [],
+          "upstream": {
+            "kind": "git",
+            "url": "https://github.com/seifip/kilobat-cli",
+            "path": "Package.swift",
+            "selector": "KilobatCLI",
+            "ref": {
+              "kind": "commit",
+              "value": "da3b65f24d32e8e6f91b7d37cc0be85a2b9410e4"
+            }
+          },
+          "derives_from": [],
+          "changes": null
+        },
+        "authors": {
+          "status": "unknown",
+          "identities": [],
+          "evidence": []
+        },
+        "publisher": {
+          "status": "known",
+          "identities": [
+            {
+              "name": "Philip Seifi",
+              "url": "https://github.com/seifip"
+            }
+          ],
+          "evidence": [
+            {
+              "locator": "https://kilobat.app/",
+              "claim": "产品网站页脚将 Kilobat 归于 Philip Seifi。"
+            }
+          ]
+        },
+        "license": {
+          "status": "verified",
+          "expression": "GPL-3.0-only",
+          "scope": "repository-root",
+          "evidence": [
+            {
+              "locator": "https://github.com/seifip/kilobat-cli/blob/da3b65f24d32e8e6f91b7d37cc0be85a2b9410e4/LICENSE",
+              "claim": "CLI 仓库根许可证为 GPL-3.0-only；不覆盖另行分发的专有桌面应用。"
+            }
+          ],
+          "redistribution": "unknown"
+        },
+        "distribution": [
+          {
+            "kind": "repository",
+            "channel_source": "seifip.kilobat-cli",
+            "url": "https://github.com/seifip/kilobat-cli"
+          }
+        ],
+        "previews": [],
+        "compatibility": {
+          "hosts": [
+            "CLI",
+            "MCP-compatible client"
+          ],
+          "runtimes": [
+            {
+              "name": "macOS",
+              "version": ">=14",
+              "status": "declared"
+            }
+          ],
+          "dependencies": [],
+          "constraints": [
+            "Homebrew 源码构建需要 Xcode 16 或更新版本；部分能力需系统权限或专有桌面应用。",
+            "本机已安装或下载的 CLI 经过有限测试，不表示在其他 Mac 上全新安装或完整 Agent 工作流已核证。"
+          ]
+        },
+        "components": [
+          {
+            "id": "cli",
+            "type": "cli",
+            "resource_id": null,
+            "upstream": {
+              "kind": "git",
+              "url": "https://github.com/seifip/kilobat-cli",
+              "path": "Package.swift",
+              "selector": "kilobat",
+              "ref": {
+                "kind": "commit",
+                "value": "da3b65f24d32e8e6f91b7d37cc0be85a2b9410e4"
+              }
+            },
+            "subtype": null,
+            "delivery": "contained"
+          },
+          {
+            "id": "stdio-mcp",
+            "type": "mcp-server",
+            "resource_id": null,
+            "upstream": {
+              "kind": "git",
+              "url": "https://github.com/seifip/kilobat-cli",
+              "path": "Sources/KilobatCLI/MCPCLI.swift",
+              "selector": "mcp",
+              "ref": {
+                "kind": "commit",
+                "value": "da3b65f24d32e8e6f91b7d37cc0be85a2b9410e4"
+              }
+            },
+            "subtype": null,
+            "delivery": "contained"
+          }
+        ],
+        "lifecycle": {
+          "state": "candidate",
+          "reason": "已固定源码和许可；完整安装及各宿主兼容仍待审核。",
+          "replacement_id": null
+        },
+        "review": {
+          "status": "pending",
+          "by": null,
+          "at": null,
+          "evidence": []
+        },
+        "verification": {
+          "level": "source-inspected",
+          "tested_hosts": [],
+          "checked_at": "2026-10-31",
+          "by": "Philip Seifi submission",
+          "evidence": [
+            {
+              "locator": "https://github.com/seifip/kilobat-cli/blob/da3b65f24d32e8e6f91b7d37cc0be85a2b9410e4/Package.swift",
+              "claim": "包声明 kilobat 可执行目标和 macOS 14 最低版本。"
+            },
+            {
+              "locator": "https://github.com/seifip/kilobat-cli/blob/da3b65f24d32e8e6f91b7d37cc0be85a2b9410e4/Sources/KilobatCLI/MCPCLI.swift",
+              "claim": "CLI 源码包含 MCP 子命令。"
+            }
+          ],
+          "limits": [
+            "未在全新 Mac 上验证 Homebrew 安装或完整 Agent 工作流。",
+            "当前记录为候选，未代表目录审核通过或 ThusDesign 宿主已测试。"
+          ]
+        }
       }
     ]
   },
@@ -55880,7 +56071,8 @@
     "microsoft.playwright-mcp": [],
     "chromedevtools.chrome-devtools-mcp": [],
     "upstash.context7-mcp": [],
-    "czlonkowski.n8n-mcp": []
+    "czlonkowski.n8n-mcp": [],
+    "seifip.kilobat-cli": []
   },
   "discovery": {
     "schema_version": 1,
