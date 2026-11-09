@@ -26215,6 +26215,11 @@
       {
         "kind": "added",
         "new_metadata": {},
+        "path": "skills/motion-design/references/replicate.md"
+      },
+      {
+        "kind": "added",
+        "new_metadata": {},
         "path": "skills/motion-lab/LICENSE"
       },
       {
@@ -27437,7 +27442,7 @@
     "failures": [],
     "from_ref": "53231d40b778d88eba23f35547bf99485d3ae9fc",
     "source": "opendesign",
-    "to_ref": "26d60298f8129e229a1c10aab4df7ca25b1e9ad3"
+    "to_ref": "87a4f91c308170a8270458fc40fc66a86ed69aac"
   },
   "snapshot": {
     "catalog_baseline_refs": [
@@ -27656,7 +27661,7 @@
         "path": "AGENTS.md",
         "resource_id": "opendesign.repo-agents-md",
         "source_metadata": {},
-        "source_sha256": "74c46d533901ee795a3e26738aca1a82af7787c5856211ad1d6699632ebb2d28"
+        "source_sha256": "9584b9dc7d863771d8c69233bfd63c66856965c09c8c8d4238228bce01cde4d8"
       },
       {
         "catalog_metadata": {
@@ -41586,8 +41591,8 @@
         "identity": null,
         "metadata": {},
         "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-        "sha256": "74c46d533901ee795a3e26738aca1a82af7787c5856211ad1d6699632ebb2d28",
-        "size": 58387
+        "sha256": "9584b9dc7d863771d8c69233bfd63c66856965c09c8c8d4238228bce01cde4d8",
+        "size": 59523
       },
       "LICENSE": {
         "identity": null,
@@ -78500,8 +78505,8 @@
           "name": "motion-design"
         },
         "metadata_fingerprint": "fbe661079c10b16ee9661ba1af566eb4dd711aed2f911b1ea8f609e56a303481",
-        "sha256": "19525f19eb62f0f69924c679e08e9a9c07d5bc378fa1fabd736af26413603b76",
-        "size": 23517
+        "sha256": "5fdc15676abc9206ab9ca28655da2282fb6be3b99e60e5cac0c60a8c288aec45",
+        "size": 27363
       },
       "skills/motion-design/SOURCES.md": {
         "identity": null,
@@ -78509,6 +78514,13 @@
         "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
         "sha256": "2adca70f019895e19b413baa310721b0c3bc95ce78dac701b334528e8dc5c8b5",
         "size": 1160
+      },
+      "skills/motion-design/references/replicate.md": {
+        "identity": null,
+        "metadata": {},
+        "metadata_fingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "sha256": "1fc7656c70fde870d515fcef40b439d17f5b79bdab3a2c136816741ca8a95d43",
+        "size": 6891
       },
       "skills/motion-lab/LICENSE": {
         "identity": null,
@@ -80135,7 +80147,7 @@
         "size": 1191
       }
     },
-    "ref": "26d60298f8129e229a1c10aab4df7ca25b1e9ad3",
+    "ref": "87a4f91c308170a8270458fc40fc66a86ed69aac",
     "ref_binding": "archive root matched repository name and full commit SHA",
     "repository": "nexu-io/open-design",
     "schema_version": 1,
