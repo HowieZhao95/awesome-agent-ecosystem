@@ -3,7 +3,7 @@
   "resource_id": "opendesign.web-prototype",
   "source_id": "opendesign",
   "repository": "nexu-io/open-design",
-  "source_commit": "26d60298f8129e229a1c10aab4df7ca25b1e9ad3",
+  "source_commit": "84dd08b5709bfa4bf4108ece8424d15e4062c982",
   "root": "plugins/_official/examples/web-prototype",
   "title": "Web Prototype",
   "author": "OpenDesign",
