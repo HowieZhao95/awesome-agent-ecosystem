@@ -56764,6 +56764,702 @@ const DATA = {
             "identities": [],
             "evidence": []
           }
+        },
+        {
+          "id": "anthropics.frontend-design",
+          "name": "Frontend Design (Anthropic Skill)",
+          "url": "https://github.com/anthropics/skills",
+          "source": "curated",
+          "relation": "curated",
+          "platform": "repository",
+          "subcat": "",
+          "note": "Anthropic 官方前端设计 Skill（skills/frontend-design），指导视觉风格、布局、响应式设计与 UI 最佳实践。",
+          "stars": null,
+          "installs": null,
+          "verified": "2026-11-19",
+          "vmethod": "",
+          "purpose": "为 Agent 提供前端设计决策指南与视觉规范，不依赖具体框架。",
+          "classification": {
+            "category": "skills",
+            "subtype": null,
+            "domains": [
+              "visual-design",
+              "software-engineering"
+            ],
+            "formats": [
+              "markdown"
+            ],
+            "conventions": [
+              "skill-md"
+            ],
+            "rationale": "方法技能，不是模板或执行组件。"
+          },
+          "provenance": {
+            "relation": "curated",
+            "content_source": "anthropics.skills",
+            "discovered_via": [
+              "discover.github"
+            ],
+            "upstream": {
+              "kind": "git",
+              "url": "https://github.com/anthropics/skills",
+              "path": "skills/frontend-design/SKILL.md",
+              "selector": "frontend-design",
+              "ref": {
+                "kind": "commit",
+                "value": "1780c5e5a552fd4d1c9d6a7b0cab26b0c2bef064"
+              }
+            },
+            "derives_from": [],
+            "changes": null
+          },
+          "license": {
+            "status": "verified",
+            "expression": "Apache-2.0",
+            "scope": "skills/frontend-design/ only",
+            "evidence": [
+              {
+                "locator": "https://github.com/anthropics/skills/blob/1780c5e5a552fd4d1c9d6a7b0cab26b0c2bef064/skills/frontend-design/LICENSE.txt",
+                "claim": "技能路径 LICENSE.txt 为 Apache License 2.0；frontmatter 指向 LICENSE.txt。"
+              }
+            ],
+            "redistribution": "allowed"
+          },
+          "distribution": [
+            {
+              "kind": "repository",
+              "channel_source": "anthropics.skills",
+              "url": "https://github.com/anthropics/skills/tree/1780c5e5a552fd4d1c9d6a7b0cab26b0c2bef064/skills/frontend-design"
+            }
+          ],
+          "previews": [],
+          "compatibility": {
+            "hosts": [
+              "Skills-compatible client (e.g. Cursor, Claude Desktop with skills support)"
+            ],
+            "runtimes": [],
+            "dependencies": [],
+            "constraints": [
+              "源文件查证；钉死 commit 1780c5e5…；tip（e4bb5d96…）对该路径未变。",
+              "仓库无根 LICENSE；逐技能 Apache-2.0 LICENSE.txt 存在。"
+            ]
+          },
+          "components": [],
+          "lifecycle": {
+            "state": "candidate",
+            "reason": "来源已查证；维护者审核后可议 usable；未在宿主内实际加载运行。",
+            "replacement_id": null
+          },
+          "review": {
+            "status": "pending",
+            "by": null,
+            "at": null,
+            "evidence": []
+          },
+          "verification": {
+            "level": "source-inspected",
+            "tested_hosts": [],
+            "checked_at": "2026-11-19",
+            "by": "Grok Bot catalog sweep",
+            "evidence": [
+              {
+                "locator": "docs/evidence/sweep-20261119/frontend-design-smoke.md",
+                "claim": "先于 2026-11-16 查证 commit 1780c5e5 路径 skills/frontend-design/（SKILL.md + LICENSE.txt）格式完好；本钉于 2026-11-19 再次确认该路径在 tip 未变；未在宿主内加载技能。"
+              }
+            ],
+            "limits": [
+              "未加载到 Cursor/Claude 或其他 skills host。",
+              "技能内容自 ca45fc49 起未变；钉记录为 1780c5e5 因提交图变动。"
+            ]
+          },
+          "tested_hosts": [],
+          "usable_for_hosts": [],
+          "authors": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "Anthropic",
+                "url": "https://github.com/anthropics"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/anthropics/skills/blob/1780c5e5a552fd4d1c9d6a7b0cab26b0c2bef064/skills/frontend-design/SKILL.md",
+                "claim": "SKILL.md frontmatter name=frontend-design；Anthropic 组织仓库。"
+              }
+            ]
+          },
+          "publisher": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "Anthropic",
+                "url": "https://github.com/anthropics/skills"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/anthropics/skills/blob/1780c5e5a552fd4d1c9d6a7b0cab26b0c2bef064/skills/frontend-design/LICENSE.txt",
+                "claim": "路径具体 LICENSE.txt；仓库所有者为 anthropics。"
+              }
+            ]
+          }
+        },
+        {
+          "id": "anthropics.mcp-builder",
+          "name": "MCP Builder (Anthropic Skill)",
+          "url": "https://github.com/anthropics/skills",
+          "source": "curated",
+          "relation": "curated",
+          "platform": "repository",
+          "subcat": "",
+          "note": "Anthropic 官方 MCP 构建方法技能（skills/mcp-builder），指导设计与实现 MCP 服务器。",
+          "stars": null,
+          "installs": null,
+          "verified": "2026-11-19",
+          "vmethod": "",
+          "purpose": "为 Agent 提供 MCP 服务器架构、工具定义、资源管理与测试最佳实践。",
+          "classification": {
+            "category": "skills",
+            "subtype": null,
+            "domains": [
+              "software-engineering"
+            ],
+            "formats": [
+              "markdown"
+            ],
+            "conventions": [
+              "skill-md"
+            ],
+            "rationale": "方法技能，不是 MCP 服务器本身。"
+          },
+          "provenance": {
+            "relation": "curated",
+            "content_source": "anthropics.skills",
+            "discovered_via": [
+              "discover.github"
+            ],
+            "upstream": {
+              "kind": "git",
+              "url": "https://github.com/anthropics/skills",
+              "path": "skills/mcp-builder/SKILL.md",
+              "selector": "mcp-builder",
+              "ref": {
+                "kind": "commit",
+                "value": "1780c5e5a552fd4d1c9d6a7b0cab26b0c2bef064"
+              }
+            },
+            "derives_from": [],
+            "changes": null
+          },
+          "license": {
+            "status": "verified",
+            "expression": "Apache-2.0",
+            "scope": "skills/mcp-builder/ only",
+            "evidence": [
+              {
+                "locator": "https://github.com/anthropics/skills/blob/1780c5e5a552fd4d1c9d6a7b0cab26b0c2bef064/skills/mcp-builder/LICENSE.txt",
+                "claim": "技能路径 LICENSE.txt 为 Apache License 2.0；frontmatter 指向 LICENSE.txt。"
+              }
+            ],
+            "redistribution": "allowed"
+          },
+          "distribution": [
+            {
+              "kind": "repository",
+              "channel_source": "anthropics.skills",
+              "url": "https://github.com/anthropics/skills/tree/1780c5e5a552fd4d1c9d6a7b0cab26b0c2bef064/skills/mcp-builder"
+            }
+          ],
+          "previews": [],
+          "compatibility": {
+            "hosts": [
+              "Skills-compatible client (e.g. Cursor, Claude Desktop with skills support)"
+            ],
+            "runtimes": [],
+            "dependencies": [],
+            "constraints": [
+              "源文件查证；钉死 commit 1780c5e5…；tip（e4bb5d96…）对该路径未变。",
+              "仓库无根 LICENSE；逐技能 Apache-2.0 LICENSE.txt 存在。",
+              "若目录后续登记整个 example-skills marketplace plugin，会与本逐技能行重复计数；按当前 frontend-design 一致性登记为技能行。"
+            ]
+          },
+          "components": [],
+          "lifecycle": {
+            "state": "candidate",
+            "reason": "来源已查证；维护者审核后可议 usable；未在宿主内实际加载运行。",
+            "replacement_id": null
+          },
+          "review": {
+            "status": "pending",
+            "by": null,
+            "at": null,
+            "evidence": []
+          },
+          "verification": {
+            "level": "source-inspected",
+            "tested_hosts": [],
+            "checked_at": "2026-11-19",
+            "by": "Grok Bot catalog sweep",
+            "evidence": [
+              {
+                "locator": "docs/evidence/sweep-20261119/mcp-builder-smoke.md",
+                "claim": "源文件查证 commit 1780c5e5 路径 skills/mcp-builder/（SKILL.md + LICENSE.txt）格式完好；本钉于 2026-11-19 再次确认该路径在 tip 未变；未在宿主内加载技能。"
+              }
+            ],
+            "limits": [
+              "未加载到 Cursor/Claude 或其他 skills host。"
+            ]
+          },
+          "tested_hosts": [],
+          "usable_for_hosts": [],
+          "authors": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "Anthropic",
+                "url": "https://github.com/anthropics"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/anthropics/skills/blob/1780c5e5a552fd4d1c9d6a7b0cab26b0c2bef064/skills/mcp-builder/SKILL.md",
+                "claim": "SKILL.md frontmatter name=mcp-builder；Anthropic 组织仓库。"
+              }
+            ]
+          },
+          "publisher": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "Anthropic",
+                "url": "https://github.com/anthropics/skills"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/anthropics/skills/blob/1780c5e5a552fd4d1c9d6a7b0cab26b0c2bef064/skills/mcp-builder/LICENSE.txt",
+                "claim": "路径具体 LICENSE.txt；仓库所有者为 anthropics。"
+              }
+            ]
+          }
+        },
+        {
+          "id": "anthropics.skill-creator",
+          "name": "Skill Creator (Anthropic Skill)",
+          "url": "https://github.com/anthropics/skills",
+          "source": "curated",
+          "relation": "curated",
+          "platform": "repository",
+          "subcat": "",
+          "note": "Anthropic 官方技能创建方法技能（skills/skill-creator），指导设计与编写高质量 SKILL.md。",
+          "stars": null,
+          "installs": null,
+          "verified": "2026-11-19",
+          "vmethod": "",
+          "purpose": "为 Agent 提供 Skill 规范、最佳实践与调试策略。",
+          "classification": {
+            "category": "skills",
+            "subtype": null,
+            "domains": [
+              "software-engineering"
+            ],
+            "formats": [
+              "markdown"
+            ],
+            "conventions": [
+              "skill-md"
+            ],
+            "rationale": "方法技能，不是模板。"
+          },
+          "provenance": {
+            "relation": "curated",
+            "content_source": "anthropics.skills",
+            "discovered_via": [
+              "discover.github"
+            ],
+            "upstream": {
+              "kind": "git",
+              "url": "https://github.com/anthropics/skills",
+              "path": "skills/skill-creator/SKILL.md",
+              "selector": "skill-creator",
+              "ref": {
+                "kind": "commit",
+                "value": "1780c5e5a552fd4d1c9d6a7b0cab26b0c2bef064"
+              }
+            },
+            "derives_from": [],
+            "changes": null
+          },
+          "license": {
+            "status": "verified",
+            "expression": "Apache-2.0",
+            "scope": "skills/skill-creator/ only",
+            "evidence": [
+              {
+                "locator": "https://github.com/anthropics/skills/blob/1780c5e5a552fd4d1c9d6a7b0cab26b0c2bef064/skills/skill-creator/LICENSE.txt",
+                "claim": "技能路径 LICENSE.txt 为 Apache License 2.0；frontmatter 指向 LICENSE.txt。"
+              }
+            ],
+            "redistribution": "allowed"
+          },
+          "distribution": [
+            {
+              "kind": "repository",
+              "channel_source": "anthropics.skills",
+              "url": "https://github.com/anthropics/skills/tree/1780c5e5a552fd4d1c9d6a7b0cab26b0c2bef064/skills/skill-creator"
+            }
+          ],
+          "previews": [],
+          "compatibility": {
+            "hosts": [
+              "Skills-compatible client (e.g. Cursor, Claude Desktop with skills support)"
+            ],
+            "runtimes": [],
+            "dependencies": [],
+            "constraints": [
+              "源文件查证；钉死 commit 1780c5e5…；tip（e4bb5d96…）对该路径未变。",
+              "仓库无根 LICENSE；逐技能 Apache-2.0 LICENSE.txt 存在。",
+              "不把 template/SKILL.md 模板文件自身登记为此技能。"
+            ]
+          },
+          "components": [],
+          "lifecycle": {
+            "state": "candidate",
+            "reason": "来源已查证；维护者审核后可议 usable；未在宿主内实际加载运行。",
+            "replacement_id": null
+          },
+          "review": {
+            "status": "pending",
+            "by": null,
+            "at": null,
+            "evidence": []
+          },
+          "verification": {
+            "level": "source-inspected",
+            "tested_hosts": [],
+            "checked_at": "2026-11-19",
+            "by": "Grok Bot catalog sweep",
+            "evidence": [
+              {
+                "locator": "docs/evidence/sweep-20261119/skill-creator-smoke.md",
+                "claim": "源文件查证 commit 1780c5e5 路径 skills/skill-creator/（SKILL.md + LICENSE.txt）格式完好；本钉于 2026-11-19 再次确认该路径在 tip 未变；未在宿主内加载技能。"
+              }
+            ],
+            "limits": [
+              "未加载到 Cursor/Claude 或其他 skills host。"
+            ]
+          },
+          "tested_hosts": [],
+          "usable_for_hosts": [],
+          "authors": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "Anthropic",
+                "url": "https://github.com/anthropics"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/anthropics/skills/blob/1780c5e5a552fd4d1c9d6a7b0cab26b0c2bef064/skills/skill-creator/SKILL.md",
+                "claim": "SKILL.md frontmatter name=skill-creator；Anthropic 组织仓库。"
+              }
+            ]
+          },
+          "publisher": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "Anthropic",
+                "url": "https://github.com/anthropics/skills"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/anthropics/skills/blob/1780c5e5a552fd4d1c9d6a7b0cab26b0c2bef064/skills/skill-creator/LICENSE.txt",
+                "claim": "路径具体 LICENSE.txt；仓库所有者为 anthropics。"
+              }
+            ]
+          }
+        },
+        {
+          "id": "vercel-labs.react-best-practices",
+          "name": "React Best Practices (Vercel Labs Skill)",
+          "url": "https://github.com/vercel-labs/agent-skills",
+          "source": "curated",
+          "relation": "curated",
+          "platform": "repository",
+          "subcat": "",
+          "note": "Vercel Labs React 最佳实践技能（skills/react-best-practices），指导 React 组件设计、性能与代码质量。",
+          "stars": null,
+          "installs": null,
+          "verified": "2026-11-19",
+          "vmethod": "",
+          "purpose": "为 Agent 提供 React 编码规范、模式与反模式指南。",
+          "classification": {
+            "category": "skills",
+            "subtype": null,
+            "domains": [
+              "software-engineering"
+            ],
+            "formats": [
+              "markdown"
+            ],
+            "conventions": [
+              "skill-md"
+            ],
+            "rationale": "方法技能，不是模板或框架。"
+          },
+          "provenance": {
+            "relation": "curated",
+            "content_source": "vercel-labs.agent-skills",
+            "discovered_via": [
+              "discover.github"
+            ],
+            "upstream": {
+              "kind": "git",
+              "url": "https://github.com/vercel-labs/agent-skills",
+              "path": "skills/react-best-practices/SKILL.md",
+              "selector": "vercel-react-best-practices",
+              "ref": {
+                "kind": "commit",
+                "value": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62"
+              }
+            },
+            "derives_from": [],
+            "changes": null
+          },
+          "license": {
+            "status": "verified",
+            "expression": "MIT",
+            "scope": "frontmatter-declared only (no repository-root LICENSE file)",
+            "evidence": [
+              {
+                "locator": "https://github.com/vercel-labs/agent-skills/blob/1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62/skills/react-best-practices/SKILL.md",
+                "claim": "SKILL.md frontmatter license=MIT；仓库无根 LICENSE 文件；按已证明 frontmatter 记录 MIT。"
+              }
+            ],
+            "redistribution": "unknown"
+          },
+          "distribution": [
+            {
+              "kind": "repository",
+              "channel_source": "vercel-labs.agent-skills",
+              "url": "https://github.com/vercel-labs/agent-skills/tree/1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62/skills/react-best-practices"
+            }
+          ],
+          "previews": [],
+          "compatibility": {
+            "hosts": [
+              "Skills-compatible client (e.g. Cursor, Claude Desktop with skills support)"
+            ],
+            "runtimes": [],
+            "dependencies": [],
+            "constraints": [
+              "源文件查证；钉死 commit 1a2c79d4…；tip 等于本钉。",
+              "仓库无根 LICENSE；MIT 仅由 frontmatter 声明；不捏造 LICENSE 文件。",
+              "仓库有 AGENTS.md；不另行添加该文件为独立提示行。",
+              "Snapshot releases named agent-skills-<sha> 存在；不钉旧 snapshot 而钉 default-branch commit。"
+            ]
+          },
+          "components": [],
+          "lifecycle": {
+            "state": "candidate",
+            "reason": "来源已查证；维护者审核后可议 usable；未在宿主内实际加载运行。",
+            "replacement_id": null
+          },
+          "review": {
+            "status": "pending",
+            "by": null,
+            "at": null,
+            "evidence": []
+          },
+          "verification": {
+            "level": "source-inspected",
+            "tested_hosts": [],
+            "checked_at": "2026-11-19",
+            "by": "Grok Bot catalog sweep",
+            "evidence": [
+              {
+                "locator": "docs/evidence/sweep-20261119/react-best-practices-smoke.md",
+                "claim": "先于 2026-11-16 查证 commit 1a2c79d4 路径 skills/react-best-practices/（SKILL.md + 40+ rule files）格式完好；本钉于 2026-11-19 再次确认 tip 等于本钉；未在宿主内加载技能。"
+              }
+            ],
+            "limits": [
+              "未加载到 Cursor/Claude 或其他 skills host。"
+            ]
+          },
+          "tested_hosts": [],
+          "usable_for_hosts": [],
+          "authors": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "Vercel",
+                "url": "https://github.com/vercel-labs"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/vercel-labs/agent-skills/blob/1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62/skills/react-best-practices/SKILL.md",
+                "claim": "SKILL.md frontmatter name=vercel-react-best-practices, author vercel；Vercel Labs 组织仓库。"
+              }
+            ]
+          },
+          "publisher": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "Vercel",
+                "url": "https://github.com/vercel-labs/agent-skills"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/vercel-labs/agent-skills/blob/1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62/skills/react-best-practices/SKILL.md",
+                "claim": "仓库所有者为 vercel-labs；技能 frontmatter 声明 license MIT 与 author vercel。"
+              }
+            ]
+          }
+        },
+        {
+          "id": "leonxlnx.taste-skill",
+          "name": "Design Taste Skill (leonxlnx)",
+          "url": "https://github.com/leonxlnx/taste-skill",
+          "source": "curated",
+          "relation": "curated",
+          "platform": "repository",
+          "subcat": "",
+          "note": "leonxlnx/taste-skill（tag v2.5.1），前端设计品味与美学判断方法技能。",
+          "stars": null,
+          "installs": null,
+          "verified": "2026-11-19",
+          "vmethod": "",
+          "purpose": "为 Agent 提供视觉设计判断力与美学决策指南。",
+          "classification": {
+            "category": "skills",
+            "subtype": null,
+            "domains": [
+              "visual-design"
+            ],
+            "formats": [
+              "markdown"
+            ],
+            "conventions": [
+              "skill-md"
+            ],
+            "rationale": "方法技能。"
+          },
+          "provenance": {
+            "relation": "curated",
+            "content_source": "leonxlnx.taste-skill",
+            "discovered_via": [
+              "discover.github"
+            ],
+            "upstream": {
+              "kind": "git",
+              "url": "https://github.com/leonxlnx/taste-skill",
+              "path": "SKILL.md",
+              "selector": "design-taste-frontend",
+              "ref": {
+                "kind": "commit",
+                "value": "f6b76575f949707b4e3c37cd86cb44b0b98643e8"
+              }
+            },
+            "derives_from": [],
+            "changes": null
+          },
+          "license": {
+            "status": "verified",
+            "expression": "MIT",
+            "scope": "repository-root",
+            "evidence": [
+              {
+                "locator": "https://github.com/leonxlnx/taste-skill/blob/f6b76575f949707b4e3c37cd86cb44b0b98643e8/LICENSE",
+                "claim": "根 LICENSE MIT；frontmatter 指向 LICENSE。"
+              }
+            ],
+            "redistribution": "allowed"
+          },
+          "distribution": [
+            {
+              "kind": "repository",
+              "channel_source": "leonxlnx.taste-skill",
+              "url": "https://github.com/leonxlnx/taste-skill"
+            }
+          ],
+          "previews": [],
+          "compatibility": {
+            "hosts": [
+              "Skills-compatible client (e.g. Cursor, Claude Desktop with skills support)"
+            ],
+            "runtimes": [],
+            "dependencies": [],
+            "constraints": [
+              "源文件查证；钉死 tag v2.5.1 / commit f6b76575…；tip 等于本钉。",
+              "未运行 gate/browser checks。"
+            ]
+          },
+          "components": [],
+          "lifecycle": {
+            "state": "candidate",
+            "reason": "来源已查证；维护者审核后可议 usable；未在宿主内实际加载运行。",
+            "replacement_id": null
+          },
+          "review": {
+            "status": "pending",
+            "by": null,
+            "at": null,
+            "evidence": []
+          },
+          "verification": {
+            "level": "source-inspected",
+            "tested_hosts": [],
+            "checked_at": "2026-11-19",
+            "by": "Grok Bot catalog sweep",
+            "evidence": [
+              {
+                "locator": "docs/evidence/sweep-20261119/taste-skill-smoke.md",
+                "claim": "源文件查证 tag v2.5.1（commit f6b76575）SKILL.md + LICENSE 格式完好；本钉于 2026-11-19 再次确认 tip 等于本钉；未在宿主内加载技能或运行 gate/browser checks。"
+              }
+            ],
+            "limits": [
+              "未加载到宿主或运行 gate/browser checks。"
+            ]
+          },
+          "tested_hosts": [],
+          "usable_for_hosts": [],
+          "authors": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "leonxlnx",
+                "url": "https://github.com/leonxlnx"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/leonxlnx/taste-skill/blob/f6b76575f949707b4e3c37cd86cb44b0b98643e8/SKILL.md",
+                "claim": "SKILL.md frontmatter name=design-taste-frontend；GitHub 所有者为 leonxlnx。"
+              }
+            ]
+          },
+          "publisher": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "leonxlnx",
+                "url": "https://github.com/leonxlnx/taste-skill"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/leonxlnx/taste-skill/blob/f6b76575f949707b4e3c37cd86cb44b0b98643e8/LICENSE",
+                "claim": "根 LICENSE MIT；仓库所有者为 leonxlnx。"
+              }
+            ]
+          }
         }
       ]
     },
@@ -58060,7 +58756,7 @@ const DATA = {
           "note": "Microsoft 官方 Playwright 浏览器自动化 MCP 服务器（npm @playwright/mcp）。",
           "stars": null,
           "installs": null,
-          "verified": "2026-10-29",
+          "verified": "2026-11-19",
           "vmethod": "",
           "purpose": "通过 MCP 让 Agent 驱动浏览器完成测试、抓取与页面交互。",
           "classification": {
@@ -58091,7 +58787,7 @@ const DATA = {
               "selector": "@playwright/mcp",
               "ref": {
                 "kind": "commit",
-                "value": "0c4107acbecb75472b23c05c0e42471a0011874f"
+                "value": "2337aff0213d28db41d3e3daf48cee19b3d0bd82"
               }
             },
             "derives_from": [],
@@ -58103,7 +58799,7 @@ const DATA = {
             "scope": "repository-root",
             "evidence": [
               {
-                "locator": "https://github.com/microsoft/playwright-mcp/blob/0c4107acbecb75472b23c05c0e42471a0011874f/LICENSE",
+                "locator": "https://github.com/microsoft/playwright-mcp/blob/2337aff0213d28db41d3e3daf48cee19b3d0bd82/LICENSE",
                 "claim": "根 LICENSE 为 Apache License 2.0；package.json license=Apache-2.0。"
               }
             ],
@@ -58118,7 +58814,7 @@ const DATA = {
             {
               "kind": "upstream-link",
               "channel_source": "microsoft.playwright-mcp",
-              "url": "https://www.npmjs.com/package/@playwright/mcp/v/0.0.83"
+              "url": "https://www.npmjs.com/package/@playwright/mcp/v/0.0.86"
             }
           ],
           "previews": [],
@@ -58142,8 +58838,8 @@ const DATA = {
               }
             ],
             "constraints": [
-              "本轮仅验证 MCP initialize 与 tools/list；未跑真实浏览器场景。",
-              "钉死 git commit 0c4107ac… 与 npm 0.0.83；tip≠后续未测版本。"
+              "本轮仅验证 MCP initialize 与 tools/list（2026-11-19）；25 工具；未跑真实浏览器场景。",
+              "钉死 git commit 2337aff0… / tag v0.0.86 与 npm 0.0.86；tip 于查证时等于本钉。"
             ]
           },
           "components": [
@@ -58158,7 +58854,7 @@ const DATA = {
                 "selector": "@playwright/mcp",
                 "ref": {
                   "kind": "commit",
-                  "value": "0c4107acbecb75472b23c05c0e42471a0011874f"
+                  "value": "2337aff0213d28db41d3e3daf48cee19b3d0bd82"
                 }
               },
               "subtype": null,
@@ -58181,12 +58877,12 @@ const DATA = {
             "tested_hosts": [
               "mcp-stdio"
             ],
-            "checked_at": "2026-10-29",
+            "checked_at": "2026-11-19",
             "by": "Grok Bot catalog sweep",
             "evidence": [
               {
-                "locator": "docs/evidence/sweep-20261029/playwright-mcp-smoke.md",
-                "claim": "npx @playwright/mcp@0.0.83 完成 initialize（serverInfo Playwright 1.64.0-alpha…）与 tools/list；随后清理 npx 缓存与临时目录。"
+                "locator": "docs/evidence/sweep-20261119/playwright-mcp-smoke.md",
+                "claim": "npx @playwright/mcp@0.0.86 完成 initialize（serverInfo Playwright 1.66.0-alpha-2026-11-18）与 tools/list（25 工具）；随后清理 npx 缓存与临时目录。"
               }
             ],
             "limits": [
@@ -58213,7 +58909,7 @@ const DATA = {
             ],
             "evidence": [
               {
-                "locator": "https://github.com/microsoft/playwright-mcp/blob/0c4107acbecb75472b23c05c0e42471a0011874f/package.json",
+                "locator": "https://github.com/microsoft/playwright-mcp/blob/2337aff0213d28db41d3e3daf48cee19b3d0bd82/package.json",
                 "claim": "package.json author 字段为 Microsoft Corporation；GitHub 组织为 microsoft。"
               }
             ]
@@ -58230,7 +58926,7 @@ const DATA = {
           "note": "Chrome DevTools 官方 MCP 服务器（npm chrome-devtools-mcp），用于检查与驱动 Chrome。",
           "stars": null,
           "installs": null,
-          "verified": "2026-10-29",
+          "verified": "2026-11-19",
           "vmethod": "",
           "purpose": "通过 MCP 让 Agent 连接 Chrome DevTools 做调试、性能与页面操控。",
           "classification": {
@@ -58261,7 +58957,7 @@ const DATA = {
               "selector": "chrome-devtools-mcp",
               "ref": {
                 "kind": "commit",
-                "value": "bc0d93ee2df6f2410d9e9704903c3547acae7c9a"
+                "value": "b1e35e3ab1774664dfc66a2cb813a392535fe160"
               }
             },
             "derives_from": [],
@@ -58273,7 +58969,7 @@ const DATA = {
             "scope": "repository-root",
             "evidence": [
               {
-                "locator": "https://github.com/ChromeDevTools/chrome-devtools-mcp/blob/bc0d93ee2df6f2410d9e9704903c3547acae7c9a/LICENSE",
+                "locator": "https://github.com/ChromeDevTools/chrome-devtools-mcp/blob/b1e35e3ab1774664dfc66a2cb813a392535fe160/LICENSE",
                 "claim": "仓库 SPDX Apache-2.0；package.json license=Apache-2.0。"
               }
             ],
@@ -58288,7 +58984,7 @@ const DATA = {
             {
               "kind": "upstream-link",
               "channel_source": "chromedevtools.chrome-devtools-mcp",
-              "url": "https://www.npmjs.com/package/chrome-devtools-mcp/v/1.12.0"
+              "url": "https://www.npmjs.com/package/chrome-devtools-mcp/v/1.13.0"
             }
           ],
           "previews": [],
@@ -58312,8 +59008,8 @@ const DATA = {
               }
             ],
             "constraints": [
-              "本轮仅验证 MCP initialize 与 tools/list；未附着真实 Chrome 调试会话。",
-              "钉死 git commit bc0d93ee… 与 npm 1.12.0；tip≠后续未测版本。"
+              "MCP smoke 2026-11-16（33 工具）；本钉于 2026-11-19 再次确认但未重测；未附着真实 Chrome 调试会话。",
+              "钉死 git commit b1e35e3a… / tag chrome-devtools-mcp-v1.13.0 与 npm 1.13.0；tip 于查证时（cf98d8b8…）已超前 41 提交。"
             ]
           },
           "components": [
@@ -58328,7 +59024,7 @@ const DATA = {
                 "selector": "chrome-devtools-mcp",
                 "ref": {
                   "kind": "commit",
-                  "value": "bc0d93ee2df6f2410d9e9704903c3547acae7c9a"
+                  "value": "b1e35e3ab1774664dfc66a2cb813a392535fe160"
                 }
               },
               "subtype": null,
@@ -58351,12 +59047,12 @@ const DATA = {
             "tested_hosts": [
               "mcp-stdio"
             ],
-            "checked_at": "2026-10-29",
+            "checked_at": "2026-11-19",
             "by": "Grok Bot catalog sweep",
             "evidence": [
               {
-                "locator": "docs/evidence/sweep-20261029/chrome-devtools-mcp-smoke.md",
-                "claim": "npx chrome-devtools-mcp@1.12.0 完成 initialize（serverInfo chrome_devtools 1.12.0）与 tools/list；随后清理 npx 缓存与临时目录。"
+                "locator": "docs/evidence/sweep-20261119/chrome-devtools-mcp-smoke.md",
+                "claim": "先于 2026-11-16 用 chrome-devtools-mcp 1.13.0 完成 initialize（serverInfo chrome_devtools 1.13.0）与 tools/list（33 工具）；本钉于 2026-11-19 再次确认未重跑烟测。"
               }
             ],
             "limits": [
@@ -58383,7 +59079,7 @@ const DATA = {
             ],
             "evidence": [
               {
-                "locator": "https://github.com/ChromeDevTools/chrome-devtools-mcp/blob/bc0d93ee2df6f2410d9e9704903c3547acae7c9a/package.json",
+                "locator": "https://github.com/ChromeDevTools/chrome-devtools-mcp/blob/b1e35e3ab1774664dfc66a2cb813a392535fe160/package.json",
                 "claim": "package.json author 字段为 Google LLC；GitHub 组织为 ChromeDevTools。"
               }
             ]
@@ -58400,7 +59096,7 @@ const DATA = {
           "note": "Upstash Context7 官方文档检索 MCP（npm @upstash/context7-mcp），为 Agent 提供最新库文档与示例。",
           "stars": null,
           "installs": null,
-          "verified": "2026-10-30",
+          "verified": "2026-11-19",
           "vmethod": "",
           "purpose": "通过 MCP 解析库 ID 并查询最新文档片段，减少过时 API 幻觉。",
           "classification": {
@@ -58431,7 +59127,7 @@ const DATA = {
               "selector": "@upstash/context7-mcp",
               "ref": {
                 "kind": "commit",
-                "value": "c7f80ce5af1ff1403d167579b76784482cf7f3e2"
+                "value": "c36522f3d4446288a272aedd727d665f7b8175f2"
               }
             },
             "derives_from": [],
@@ -58443,7 +59139,7 @@ const DATA = {
             "scope": "repository-root",
             "evidence": [
               {
-                "locator": "https://github.com/upstash/context7/blob/c7f80ce5af1ff1403d167579b76784482cf7f3e2/LICENSE",
+                "locator": "https://github.com/upstash/context7/blob/c36522f3d4446288a272aedd727d665f7b8175f2/LICENSE",
                 "claim": "根 LICENSE 为 MIT；packages/mcp/package.json license=MIT。"
               }
             ],
@@ -58458,7 +59154,7 @@ const DATA = {
             {
               "kind": "upstream-link",
               "channel_source": "upstash.context7",
-              "url": "https://www.npmjs.com/package/@upstash/context7-mcp/v/4.4.4"
+              "url": "https://www.npmjs.com/package/@upstash/context7-mcp/v/4.7.3"
             }
           ],
           "previews": [],
@@ -58475,8 +59171,8 @@ const DATA = {
             ],
             "dependencies": [],
             "constraints": [
-              "本轮仅验证 MCP initialize 与 tools/list；未调用 resolve-library-id/query-docs 实查文档。",
-              "钉死 git commit c7f80ce5… 与 npm @upstash/context7-mcp@4.4.4；tip≠后续未测版本。"
+              "MCP smoke 2026-11-18（2 工具 resolve-library-id、query-docs）；本钉于 2026-11-19 再次确认但未重测；未调用 live docs API。",
+              "钉死 git commit c36522f3… / tags mcpb-v4.7.3 + @upstash/context7-mcp@4.7.3 与 npm @upstash/context7-mcp@4.7.3；tip 于查证时（018a603b…）已超前；11-18 tip 等于本钉。"
             ]
           },
           "components": [
@@ -58491,7 +59187,7 @@ const DATA = {
                 "selector": "@upstash/context7-mcp",
                 "ref": {
                   "kind": "commit",
-                  "value": "c7f80ce5af1ff1403d167579b76784482cf7f3e2"
+                  "value": "c36522f3d4446288a272aedd727d665f7b8175f2"
                 }
               },
               "subtype": null,
@@ -58514,12 +59210,12 @@ const DATA = {
             "tested_hosts": [
               "mcp-stdio"
             ],
-            "checked_at": "2026-10-30",
+            "checked_at": "2026-11-19",
             "by": "Grok Bot catalog sweep",
             "evidence": [
               {
-                "locator": "docs/evidence/sweep-20261030/context7-mcp-smoke.md",
-                "claim": "npx @upstash/context7-mcp@4.4.4 完成 initialize（serverInfo Context7 4.4.4）与 tools/list（resolve-library-id、query-docs）；随后清理 npx 缓存。"
+                "locator": "docs/evidence/sweep-20261119/context7-mcp-smoke.md",
+                "claim": "先于 2026-11-18 用 @upstash/context7-mcp@4.7.3 完成 initialize（serverInfo Context7 4.7.3）与 tools/list（resolve-library-id、query-docs）；本钉于 2026-11-19 再次确认未重跑烟测。"
               }
             ],
             "limits": [
@@ -58541,7 +59237,7 @@ const DATA = {
             ],
             "evidence": [
               {
-                "locator": "https://github.com/upstash/context7/blob/c7f80ce5af1ff1403d167579b76784482cf7f3e2/packages/mcp/package.json",
+                "locator": "https://github.com/upstash/context7/blob/c36522f3d4446288a272aedd727d665f7b8175f2/packages/mcp/package.json",
                 "claim": "packages/mcp/package.json author 字段为 abdush。"
               }
             ]
@@ -58556,7 +59252,7 @@ const DATA = {
             ],
             "evidence": [
               {
-                "locator": "https://github.com/upstash/context7/blob/c7f80ce5af1ff1403d167579b76784482cf7f3e2/LICENSE",
+                "locator": "https://github.com/upstash/context7/blob/c36522f3d4446288a272aedd727d665f7b8175f2/LICENSE",
                 "claim": "根 LICENSE Copyright (c) 2021 Upstash, Inc.；GitHub 组织为 upstash。"
               }
             ]
@@ -58573,7 +59269,7 @@ const DATA = {
           "note": "n8n 节点文档与工作流校验 MCP（npm n8n-mcp），帮助 Agent 构建/校验 n8n 工作流。",
           "stars": null,
           "installs": null,
-          "verified": "2026-10-30",
+          "verified": "2026-11-19",
           "vmethod": "",
           "purpose": "通过 MCP 搜索 n8n 节点、读取属性、校验节点与工作流结构。",
           "classification": {
@@ -58604,7 +59300,7 @@ const DATA = {
               "selector": "n8n-mcp",
               "ref": {
                 "kind": "commit",
-                "value": "09611fd663f17fe6976a0e027178421abbb2f041"
+                "value": "c0400c1c209b305482ee0cef6eaa234f4e611224"
               }
             },
             "derives_from": [],
@@ -58616,7 +59312,7 @@ const DATA = {
             "scope": "repository-root",
             "evidence": [
               {
-                "locator": "https://github.com/czlonkowski/n8n-mcp/blob/09611fd663f17fe6976a0e027178421abbb2f041/LICENSE",
+                "locator": "https://github.com/czlonkowski/n8n-mcp/blob/c0400c1c209b305482ee0cef6eaa234f4e611224/LICENSE",
                 "claim": "根 LICENSE 为 MIT；package.json license=MIT。"
               }
             ],
@@ -58631,7 +59327,7 @@ const DATA = {
             {
               "kind": "upstream-link",
               "channel_source": "czlonkowski.n8n-mcp",
-              "url": "https://www.npmjs.com/package/n8n-mcp/v/2.99.2"
+              "url": "https://www.npmjs.com/package/n8n-mcp/v/2.103.1"
             }
           ],
           "previews": [],
@@ -58648,8 +59344,8 @@ const DATA = {
             ],
             "dependencies": [],
             "constraints": [
-              "本轮仅验证 MCP initialize 与 tools/list；documentation 模式，未接 live n8n 实例。",
-              "钉死 git commit 09611fd6… 与 npm n8n-mcp@2.99.2；tip≠后续未测版本。"
+              "本轮仅验证 MCP initialize 与 tools/list（2026-11-19）；documentation 模式 7 工具；n8n_manage_variables 需 live n8n API；未接实例。",
+              "钉死 git commit c0400c1c… / tag v2.103.1 与 npm n8n-mcp@2.103.1；tip 于查证时等于本钉。"
             ]
           },
           "components": [
@@ -58664,7 +59360,7 @@ const DATA = {
                 "selector": "n8n-mcp",
                 "ref": {
                   "kind": "commit",
-                  "value": "09611fd663f17fe6976a0e027178421abbb2f041"
+                  "value": "c0400c1c209b305482ee0cef6eaa234f4e611224"
                 }
               },
               "subtype": null,
@@ -58687,12 +59383,12 @@ const DATA = {
             "tested_hosts": [
               "mcp-stdio"
             ],
-            "checked_at": "2026-10-30",
+            "checked_at": "2026-11-19",
             "by": "Grok Bot catalog sweep",
             "evidence": [
               {
-                "locator": "docs/evidence/sweep-20261030/n8n-mcp-smoke.md",
-                "claim": "npx n8n-mcp@2.99.2 完成 initialize（serverInfo n8n-documentation-mcp 2.99.2）与 tools/list（7 tools，含 search_nodes/get_node/validate_workflow）；随后清理 npx 缓存。"
+                "locator": "docs/evidence/sweep-20261119/n8n-mcp-smoke.md",
+                "claim": "npx n8n-mcp@2.103.1 完成 initialize（serverInfo n8n-documentation-mcp 2.103.1）与 tools/list（7 documentation 模式工具：tools_documentation、search_nodes、get_node、validate_node、get_template、search_templates、validate_workflow；n8n_manage_variables 仅当配置 n8n API 时列出）；随后清理 npx 缓存。"
               }
             ],
             "limits": [
@@ -58714,7 +59410,7 @@ const DATA = {
             ],
             "evidence": [
               {
-                "locator": "https://github.com/czlonkowski/n8n-mcp/blob/09611fd663f17fe6976a0e027178421abbb2f041/package.json",
+                "locator": "https://github.com/czlonkowski/n8n-mcp/blob/c0400c1c209b305482ee0cef6eaa234f4e611224/package.json",
                 "claim": "package.json author 字段为 Romuald Czlonkowski @ www.aiadvisors.pl/en。"
               }
             ]
@@ -58729,8 +59425,1707 @@ const DATA = {
             ],
             "evidence": [
               {
-                "locator": "https://github.com/czlonkowski/n8n-mcp/blob/09611fd663f17fe6976a0e027178421abbb2f041/LICENSE",
+                "locator": "https://github.com/czlonkowski/n8n-mcp/blob/c0400c1c209b305482ee0cef6eaa234f4e611224/LICENSE",
                 "claim": "根 LICENSE Copyright (c) 2024 Romuald Czlonkowski；仓库所有者为 czlonkowski。"
+              }
+            ]
+          }
+        },
+        {
+          "id": "github.github-mcp-server",
+          "name": "GitHub MCP Server",
+          "url": "https://github.com/github/github-mcp-server",
+          "source": "curated",
+          "relation": "curated",
+          "platform": "repository, upstream-link",
+          "subcat": "",
+          "note": "GitHub 官方 MCP 服务器（tag v2.2.0），为 Agent 提供 GitHub 仓库、Issue、PR 等完整操作能力。",
+          "stars": null,
+          "installs": null,
+          "verified": "2026-11-19",
+          "vmethod": "",
+          "purpose": "通过 MCP 让 Agent 读写 GitHub 仓库、创建与合并 PR、管理 Issue、搜索代码与用户。",
+          "classification": {
+            "category": "plugins",
+            "subtype": null,
+            "domains": [
+              "software-engineering"
+            ],
+            "formats": [
+              "json"
+            ],
+            "conventions": [
+              "mcp"
+            ],
+            "rationale": "主体是可安装的 MCP 服务器分发单元；MCP 记在 components，不是独立主类。"
+          },
+          "provenance": {
+            "relation": "curated",
+            "content_source": "github.github-mcp-server",
+            "discovered_via": [
+              "discover.github"
+            ],
+            "upstream": {
+              "kind": "git",
+              "url": "https://github.com/github/github-mcp-server",
+              "path": "README.md",
+              "selector": "github-mcp-server",
+              "ref": {
+                "kind": "commit",
+                "value": "67d4dc489700ec955ad255d098396dd86c729523"
+              }
+            },
+            "derives_from": [],
+            "changes": null
+          },
+          "license": {
+            "status": "verified",
+            "expression": "MIT",
+            "scope": "repository-root",
+            "evidence": [
+              {
+                "locator": "https://github.com/github/github-mcp-server/blob/67d4dc489700ec955ad255d098396dd86c729523/LICENSE",
+                "claim": "根 LICENSE 为 MIT；release tarball 包含 LICENSE。"
+              }
+            ],
+            "redistribution": "allowed"
+          },
+          "distribution": [
+            {
+              "kind": "repository",
+              "channel_source": "github.github-mcp-server",
+              "url": "https://github.com/github/github-mcp-server"
+            },
+            {
+              "kind": "upstream-link",
+              "channel_source": "github.github-mcp-server",
+              "url": "https://github.com/github/github-mcp-server/releases/tag/v2.2.0"
+            }
+          ],
+          "previews": [],
+          "compatibility": {
+            "hosts": [
+              "MCP-compatible client"
+            ],
+            "runtimes": [
+              {
+                "name": "official Linux x86_64 binary or official remote MCP",
+                "version": "v2.2.0",
+                "status": "declared"
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "tool",
+                "name": "GitHub API (requires token for write tools; read-only mode available)",
+                "version": null,
+                "source_id": null
+              }
+            ],
+            "constraints": [
+              "MCP smoke 2026-11-17（46 default-toolset tools，包含写工具如 create_pull_request / merge_pull_request）；本钉于 2026-11-19 再次确认但未重测。",
+              "钉死 git commit 67d4dc48… / tag v2.2.0；tip 于查证时（df32d7ec…）已超前 2 提交。",
+              "优先使用 --read-only 除非需要写工具；官方 remote MCP 是同一分发单元，不拆分为两行。"
+            ]
+          },
+          "components": [
+            {
+              "id": "github-mcp-server-binary",
+              "type": "mcp-server",
+              "resource_id": null,
+              "upstream": {
+                "kind": "git",
+                "url": "https://github.com/github/github-mcp-server",
+                "path": "README.md",
+                "selector": "github-mcp-server",
+                "ref": {
+                  "kind": "commit",
+                  "value": "67d4dc489700ec955ad255d098396dd86c729523"
+                }
+              },
+              "subtype": null,
+              "delivery": "contained"
+            }
+          ],
+          "lifecycle": {
+            "state": "candidate",
+            "reason": "二进制/MCP 握手已实测；维护者审核后可议 usable；未做 live GitHub API 工具调用核证。",
+            "replacement_id": null
+          },
+          "review": {
+            "status": "pending",
+            "by": null,
+            "at": null,
+            "evidence": []
+          },
+          "verification": {
+            "level": "usage-tested",
+            "tested_hosts": [
+              "mcp-stdio"
+            ],
+            "checked_at": "2026-11-19",
+            "by": "Grok Bot catalog sweep",
+            "evidence": [
+              {
+                "locator": "docs/evidence/sweep-20261119/github-mcp-server-smoke.md",
+                "claim": "先于 2026-11-17 用官方 Linux x86_64 binary stdio 完成 initialize（serverInfo github-mcp-server 2.2.0）与 tools/list（46 default-toolset tools）；本钉于 2026-11-19 再次确认未重跑烟测。"
+              }
+            ],
+            "limits": [
+              "握手仅；未附 GitHub token 或执行 live API 工具。",
+              "未在 Cursor/Claude Desktop 等宿主内长期配置验证；官方 remote 与 OAuth/PAT 是常见宿主路径。"
+            ]
+          },
+          "tested_hosts": [
+            "mcp-stdio"
+          ],
+          "usable_for_hosts": [],
+          "authors": {
+            "status": "unknown",
+            "identities": [],
+            "evidence": []
+          },
+          "publisher": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "GitHub, Inc.",
+                "url": "https://github.com/github/github-mcp-server"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/github/github-mcp-server/blob/67d4dc489700ec955ad255d098396dd86c729523/LICENSE",
+                "claim": "根 LICENSE Copyright (c) 2025 GitHub；GitHub 组织为 github。"
+              }
+            ]
+          }
+        },
+        {
+          "id": "anthropics.document-skills",
+          "name": "Document Skills (Anthropic Plugin Pack)",
+          "url": "https://github.com/anthropics/skills",
+          "source": "curated",
+          "relation": "curated",
+          "platform": "repository",
+          "subcat": "",
+          "note": "Anthropic 官方文档技能插件包（xlsx/docx/pptx/pdf），一个 marketplace.json 登记的分发单元。",
+          "stars": null,
+          "installs": null,
+          "verified": "2026-11-19",
+          "vmethod": "",
+          "purpose": "为 Agent 提供 Office 文档与 PDF 的读写、格式化与校验能力。",
+          "classification": {
+            "category": "plugins",
+            "subtype": null,
+            "domains": [
+              "documents"
+            ],
+            "formats": [
+              "markdown",
+              "python"
+            ],
+            "conventions": [
+              "skill-md"
+            ],
+            "rationale": "一个插件包（包含四个技能）；不拆分为四行独立资源。"
+          },
+          "provenance": {
+            "relation": "curated",
+            "content_source": "anthropics.skills",
+            "discovered_via": [
+              "discover.github"
+            ],
+            "upstream": {
+              "kind": "git",
+              "url": "https://github.com/anthropics/skills",
+              "path": ".claude-plugin/marketplace.json",
+              "selector": "document-skills",
+              "ref": {
+                "kind": "commit",
+                "value": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba"
+              }
+            },
+            "derives_from": [],
+            "changes": null
+          },
+          "license": {
+            "status": "verified",
+            "expression": "Apache-2.0",
+            "scope": "plugin pack scope: skills/xlsx, skills/docx, skills/pptx, skills/pdf; per-skill LICENSE.txt",
+            "evidence": [
+              {
+                "locator": "https://github.com/anthropics/skills/blob/e4bb5d960d87126ff3b3a8af1a104b7db67560ba/skills/docx/LICENSE.txt",
+                "claim": "逐技能路径 LICENSE.txt 为 Apache License 2.0；frontmatter 指向 LICENSE.txt。"
+              }
+            ],
+            "redistribution": "allowed"
+          },
+          "distribution": [
+            {
+              "kind": "repository",
+              "channel_source": "anthropics.skills",
+              "url": "https://github.com/anthropics/skills/tree/e4bb5d960d87126ff3b3a8af1a104b7db67560ba"
+            }
+          ],
+          "previews": [],
+          "compatibility": {
+            "hosts": [
+              "Plugins-compatible client (e.g. Claude with plugin support)"
+            ],
+            "runtimes": [
+              {
+                "name": "Python (for Office scripts soffice.py / validate.py)",
+                "version": null,
+                "status": "declared"
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "tool",
+                "name": "LibreOffice / unoconv (for docx/pptx/xlsx scripts)",
+                "version": null,
+                "source_id": null
+              }
+            ],
+            "constraints": [
+              "源文件查证；钉死 commit e4bb5d96…；tip 等于本钉。",
+              "仓库无根 LICENSE；逐技能 Apache-2.0 LICENSE.txt 存在。",
+              "Office scripts 未执行；不代表运行时兼容验证。"
+            ]
+          },
+          "components": [
+            {
+              "id": "anthropics-document-skills-plugin",
+              "type": "skill",
+              "resource_id": null,
+              "upstream": {
+                "kind": "git",
+                "url": "https://github.com/anthropics/skills",
+                "path": ".claude-plugin/marketplace.json",
+                "selector": "document-skills",
+                "ref": {
+                  "kind": "commit",
+                  "value": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba"
+                }
+              },
+              "subtype": null,
+              "delivery": "contained"
+            }
+          ],
+          "lifecycle": {
+            "state": "candidate",
+            "reason": "来源已查证；维护者审核后可议 usable；Office scripts 未执行。",
+            "replacement_id": null
+          },
+          "review": {
+            "status": "pending",
+            "by": null,
+            "at": null,
+            "evidence": []
+          },
+          "verification": {
+            "level": "source-inspected",
+            "tested_hosts": [],
+            "checked_at": "2026-11-19",
+            "by": "Grok Bot catalog sweep",
+            "evidence": [
+              {
+                "locator": "docs/evidence/sweep-20261119/document-skills-smoke.md",
+                "claim": "先于 2026-11-17 查证 commit e4bb5d96 包含 marketplace.json 登记的 document-skills 插件包（skills/xlsx、docx、pptx、pdf）及各自 LICENSE.txt；本钉于 2026-11-19 再次确认 tip 等于本钉；未在宿主内安装插件或运行 Office scripts。"
+              }
+            ],
+            "limits": [
+              "未加载到 Claude plugin host 或执行 Office 格式脚本。",
+              "一个插件包登记；不拆分为四个独立技能行。"
+            ]
+          },
+          "tested_hosts": [],
+          "usable_for_hosts": [],
+          "authors": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "Anthropic",
+                "url": "https://github.com/anthropics"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/anthropics/skills/blob/e4bb5d960d87126ff3b3a8af1a104b7db67560ba/.claude-plugin/marketplace.json",
+                "claim": "marketplace.json name=document-skills；Anthropic 组织仓库。"
+              }
+            ]
+          },
+          "publisher": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "Anthropic",
+                "url": "https://github.com/anthropics/skills"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/anthropics/skills/blob/e4bb5d960d87126ff3b3a8af1a104b7db67560ba/skills/xlsx/LICENSE.txt",
+                "claim": "各技能路径（xlsx/docx/pptx/pdf）具体 LICENSE.txt；仓库所有者为 anthropics。"
+              }
+            ]
+          }
+        },
+        {
+          "id": "obra.superpowers",
+          "name": "Superpowers (obra Skills Pack)",
+          "url": "https://github.com/obra/superpowers",
+          "source": "curated",
+          "relation": "curated",
+          "platform": "repository",
+          "subcat": "",
+          "note": "obra/superpowers 技能包（tag v7.0.2），包含 15 个技能的一个分发单元。",
+          "stars": null,
+          "installs": null,
+          "verified": "2026-11-19",
+          "vmethod": "",
+          "purpose": "为 Agent 提供测试驱动开发、计划编写、调试策略等工作流指南。",
+          "classification": {
+            "category": "plugins",
+            "subtype": null,
+            "domains": [
+              "software-engineering"
+            ],
+            "formats": [
+              "markdown"
+            ],
+            "conventions": [
+              "skill-md"
+            ],
+            "rationale": "一个插件包（15 个技能）；不拆分为 15 行独立资源。"
+          },
+          "provenance": {
+            "relation": "curated",
+            "content_source": "obra.superpowers",
+            "discovered_via": [
+              "discover.github"
+            ],
+            "upstream": {
+              "kind": "git",
+              "url": "https://github.com/obra/superpowers",
+              "path": "package.json",
+              "selector": "superpowers",
+              "ref": {
+                "kind": "commit",
+                "value": "22f0b463e7a5e579904dd6211a520321035526f7"
+              }
+            },
+            "derives_from": [],
+            "changes": null
+          },
+          "license": {
+            "status": "verified",
+            "expression": "MIT",
+            "scope": "repository-root",
+            "evidence": [
+              {
+                "locator": "https://github.com/obra/superpowers/blob/22f0b463e7a5e579904dd6211a520321035526f7/LICENSE",
+                "claim": "根 LICENSE 为 MIT；package.json 无 license 字段。"
+              }
+            ],
+            "redistribution": "allowed"
+          },
+          "distribution": [
+            {
+              "kind": "repository",
+              "channel_source": "obra.superpowers",
+              "url": "https://github.com/obra/superpowers"
+            }
+          ],
+          "previews": [],
+          "compatibility": {
+            "hosts": [
+              "Plugins-compatible client (e.g. Claude Code, Cursor with plugin support)"
+            ],
+            "runtimes": [],
+            "dependencies": [],
+            "constraints": [
+              "源文件查证；钉死 tag v7.0.2 / commit 22f0b463…；tip 等于本钉。",
+              "这是 GitHub 插件包，不是 npm superpowers@0.0.2。"
+            ]
+          },
+          "components": [
+            {
+              "id": "obra-superpowers-plugin",
+              "type": "skill",
+              "resource_id": null,
+              "upstream": {
+                "kind": "git",
+                "url": "https://github.com/obra/superpowers",
+                "path": "package.json",
+                "selector": "superpowers",
+                "ref": {
+                  "kind": "commit",
+                  "value": "22f0b463e7a5e579904dd6211a520321035526f7"
+                }
+              },
+              "subtype": null,
+              "delivery": "contained"
+            }
+          ],
+          "lifecycle": {
+            "state": "candidate",
+            "reason": "来源已查证；维护者审核后可议 usable；未在宿主内实际安装运行。",
+            "replacement_id": null
+          },
+          "review": {
+            "status": "pending",
+            "by": null,
+            "at": null,
+            "evidence": []
+          },
+          "verification": {
+            "level": "source-inspected",
+            "tested_hosts": [],
+            "checked_at": "2026-11-19",
+            "by": "Grok Bot catalog sweep",
+            "evidence": [
+              {
+                "locator": "docs/evidence/sweep-20261119/superpowers-smoke.md",
+                "claim": "先于 2026-11-16 查证 tag v7.0.2（commit 22f0b463）包含 package.json 与 15 个 SKILL.md 文件；本钉于 2026-11-19 再次确认 tip 等于本钉；未在宿主内安装插件。"
+              }
+            ],
+            "limits": [
+              "未安装到 Claude Code/Cursor 作为 live plugin。"
+            ]
+          },
+          "tested_hosts": [],
+          "usable_for_hosts": [],
+          "authors": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "obra (Jesse Vincent)",
+                "url": "https://github.com/obra"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/obra/superpowers/blob/22f0b463e7a5e579904dd6211a520321035526f7/package.json",
+                "claim": "package.json author Jesse Vincent；GitHub 所有者为 obra。"
+              }
+            ]
+          },
+          "publisher": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "obra",
+                "url": "https://github.com/obra/superpowers"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/obra/superpowers/blob/22f0b463e7a5e579904dd6211a520321035526f7/LICENSE",
+                "claim": "根 LICENSE MIT；仓库所有者为 obra。"
+              }
+            ]
+          }
+        },
+        {
+          "id": "addyosmani.agent-skills",
+          "name": "Agent Skills (Addy Osmani Pack)",
+          "url": "https://github.com/addyosmani/agent-skills",
+          "source": "curated",
+          "relation": "curated",
+          "platform": "repository",
+          "subcat": "",
+          "note": "Addy Osmani agent-skills 插件包（tag 0.6.17），包含 26 个技能的一个分发单元。",
+          "stars": null,
+          "installs": null,
+          "verified": "2026-11-19",
+          "vmethod": "",
+          "purpose": "为 Agent 提供前端性能、TypeScript、API 设计、安全等多领域工作流指南。",
+          "classification": {
+            "category": "plugins",
+            "subtype": null,
+            "domains": [
+              "software-engineering"
+            ],
+            "formats": [
+              "markdown"
+            ],
+            "conventions": [
+              "skill-md"
+            ],
+            "rationale": "一个插件包（26 个技能）；不拆分为 26 行独立资源。"
+          },
+          "provenance": {
+            "relation": "curated",
+            "content_source": "addyosmani.agent-skills",
+            "discovered_via": [
+              "discover.github"
+            ],
+            "upstream": {
+              "kind": "git",
+              "url": "https://github.com/addyosmani/agent-skills",
+              "path": "plugin.json",
+              "selector": "agent-skills",
+              "ref": {
+                "kind": "commit",
+                "value": "8c99fa36d90068c82d547f7c12a9d67a3e95f4ee"
+              }
+            },
+            "derives_from": [],
+            "changes": null
+          },
+          "license": {
+            "status": "verified",
+            "expression": "MIT",
+            "scope": "repository-root",
+            "evidence": [
+              {
+                "locator": "https://github.com/addyosmani/agent-skills/blob/8c99fa36d90068c82d547f7c12a9d67a3e95f4ee/LICENSE",
+                "claim": "根 LICENSE MIT；plugin.json license=MIT, version 0.6.17。"
+              }
+            ],
+            "redistribution": "allowed"
+          },
+          "distribution": [
+            {
+              "kind": "repository",
+              "channel_source": "addyosmani.agent-skills",
+              "url": "https://github.com/addyosmani/agent-skills"
+            }
+          ],
+          "previews": [],
+          "compatibility": {
+            "hosts": [
+              "Plugins-compatible client (e.g. Claude Code, Cursor with plugin support)"
+            ],
+            "runtimes": [],
+            "dependencies": [],
+            "constraints": [
+              "归档查证 2026-11-19；钉死 tag 0.6.17 / commit 8c99fa36…；tip 等于本钉。",
+              "26 个技能（0.6.16 有 25 个）；仍一行目录记录，不拆 26 行。",
+              "仓库有 AGENTS.md；不另行添加该文件为独立提示行。"
+            ]
+          },
+          "components": [
+            {
+              "id": "addyosmani-agent-skills-plugin",
+              "type": "skill",
+              "resource_id": null,
+              "upstream": {
+                "kind": "git",
+                "url": "https://github.com/addyosmani/agent-skills",
+                "path": "plugin.json",
+                "selector": "agent-skills",
+                "ref": {
+                  "kind": "commit",
+                  "value": "8c99fa36d90068c82d547f7c12a9d67a3e95f4ee"
+                }
+              },
+              "subtype": null,
+              "delivery": "contained"
+            }
+          ],
+          "lifecycle": {
+            "state": "candidate",
+            "reason": "来源已查证；维护者审核后可议 usable；未在宿主产品内安装。",
+            "replacement_id": null
+          },
+          "review": {
+            "status": "pending",
+            "by": null,
+            "at": null,
+            "evidence": []
+          },
+          "verification": {
+            "level": "source-inspected",
+            "tested_hosts": [],
+            "checked_at": "2026-11-19",
+            "by": "Grok Bot catalog sweep",
+            "evidence": [
+              {
+                "locator": "docs/evidence/sweep-20261119/addyosmani-agent-skills-smoke.md",
+                "claim": "2026-11-19 归档查证 tag 0.6.17（commit 8c99fa36）包含 plugin.json 与 26 个 skills/*/SKILL.md；未在宿主产品内安装。"
+              }
+            ],
+            "limits": [
+              "未安装到宿主产品。"
+            ]
+          },
+          "tested_hosts": [],
+          "usable_for_hosts": [],
+          "authors": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "Addy Osmani",
+                "url": "https://addyosmani.com"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/addyosmani/agent-skills/blob/8c99fa36d90068c82d547f7c12a9d67a3e95f4ee/plugin.json",
+                "claim": "plugin.json author Addy Osmani；GitHub 所有者为 addyosmani。"
+              }
+            ]
+          },
+          "publisher": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "Addy Osmani",
+                "url": "https://github.com/addyosmani/agent-skills"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/addyosmani/agent-skills/blob/8c99fa36d90068c82d547f7c12a9d67a3e95f4ee/LICENSE",
+                "claim": "根 LICENSE Copyright 2025 Addy Osmani；plugin.json license=MIT。"
+              }
+            ]
+          }
+        },
+        {
+          "id": "pbakaus.impeccable",
+          "name": "Impeccable CLI",
+          "url": "https://github.com/pbakaus/impeccable",
+          "source": "curated",
+          "relation": "curated",
+          "platform": "repository, upstream-link",
+          "subcat": "",
+          "note": "pbakaus/impeccable CLI（npm impeccable, tag cli-v4.10.0），用于检测与安装 UI 设计改进技能。",
+          "stars": null,
+          "installs": null,
+          "verified": "2026-11-19",
+          "vmethod": "",
+          "purpose": "扫描应用 UI 并推荐/安装相关设计技能。",
+          "classification": {
+            "category": "plugins",
+            "subtype": null,
+            "domains": [
+              "software-engineering",
+              "visual-design"
+            ],
+            "formats": [
+              "typescript",
+              "json"
+            ],
+            "conventions": [
+              "skill-md"
+            ],
+            "rationale": "CLI 工具是主要分发单元；技能作为依赖安装。"
+          },
+          "provenance": {
+            "relation": "curated",
+            "content_source": "pbakaus.impeccable",
+            "discovered_via": [
+              "discover.github"
+            ],
+            "upstream": {
+              "kind": "git",
+              "url": "https://github.com/pbakaus/impeccable",
+              "path": "packages/cli/package.json",
+              "selector": "impeccable",
+              "ref": {
+                "kind": "commit",
+                "value": "ab3617920fcdb5009163a725ba8ff59927a63474"
+              }
+            },
+            "derives_from": [],
+            "changes": null
+          },
+          "license": {
+            "status": "verified",
+            "expression": "Apache-2.0",
+            "scope": "repository-root",
+            "evidence": [
+              {
+                "locator": "https://github.com/pbakaus/impeccable/blob/ab3617920fcdb5009163a725ba8ff59927a63474/LICENSE",
+                "claim": "根 LICENSE Apache-2.0；packages/cli/package.json license=Apache-2.0。"
+              }
+            ],
+            "redistribution": "allowed"
+          },
+          "distribution": [
+            {
+              "kind": "repository",
+              "channel_source": "pbakaus.impeccable",
+              "url": "https://github.com/pbakaus/impeccable"
+            },
+            {
+              "kind": "upstream-link",
+              "channel_source": "pbakaus.impeccable",
+              "url": "https://www.npmjs.com/package/impeccable/v/4.10.0"
+            }
+          ],
+          "previews": [],
+          "compatibility": {
+            "hosts": [
+              "Node.js CLI environment"
+            ],
+            "runtimes": [
+              {
+                "name": "Node.js",
+                "version": null,
+                "status": "declared"
+              }
+            ],
+            "dependencies": [],
+            "constraints": [
+              "CLI smoke 2026-11-19（--version 4.10.0，--help OK）；未运行 impeccable install。",
+              "钉死 git commit ab361792… / tag cli-v4.10.0 与 npm impeccable@4.10.0；tip（b49177d3…）等于 skill-v4.10.0 不是 CLI 钉。"
+            ]
+          },
+          "components": [
+            {
+              "id": "impeccable-cli",
+              "type": "cli",
+              "resource_id": null,
+              "upstream": {
+                "kind": "git",
+                "url": "https://github.com/pbakaus/impeccable",
+                "path": "packages/cli",
+                "selector": "impeccable",
+                "ref": {
+                  "kind": "commit",
+                  "value": "ab3617920fcdb5009163a725ba8ff59927a63474"
+                }
+              },
+              "subtype": null,
+              "delivery": "contained"
+            }
+          ],
+          "lifecycle": {
+            "state": "candidate",
+            "reason": "CLI version/help 已实测；维护者审核后可议 usable；未做 UI 扫描或技能安装核证。",
+            "replacement_id": null
+          },
+          "review": {
+            "status": "pending",
+            "by": null,
+            "at": null,
+            "evidence": []
+          },
+          "verification": {
+            "level": "usage-tested",
+            "tested_hosts": [
+              "node-cli"
+            ],
+            "checked_at": "2026-11-19",
+            "by": "Grok Bot catalog sweep",
+            "evidence": [
+              {
+                "locator": "docs/evidence/sweep-20261119/impeccable-smoke.md",
+                "claim": "npx impeccable@4.10.0 --version → 4.10.0，--help 列出命令；未运行 install 或 detect。"
+              }
+            ],
+            "limits": [
+              "未扫描真实 UI 或安装技能到项目。"
+            ]
+          },
+          "tested_hosts": [
+            "node-cli"
+          ],
+          "usable_for_hosts": [],
+          "authors": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "Paul Bakaus",
+                "url": "https://paulbakaus.com"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/pbakaus/impeccable/blob/ab3617920fcdb5009163a725ba8ff59927a63474/packages/cli/package.json",
+                "claim": "package.json author Paul Bakaus；GitHub 所有者为 pbakaus。"
+              }
+            ]
+          },
+          "publisher": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "Paul Bakaus",
+                "url": "https://github.com/pbakaus/impeccable"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/pbakaus/impeccable/blob/ab3617920fcdb5009163a725ba8ff59927a63474/LICENSE",
+                "claim": "根 LICENSE Apache-2.0；仓库所有者为 pbakaus。"
+              }
+            ]
+          }
+        },
+        {
+          "id": "vercel-labs.agent-browser",
+          "name": "Agent Browser (Vercel Labs CLI + MCP)",
+          "url": "https://github.com/vercel-labs/agent-browser",
+          "source": "curated",
+          "relation": "curated",
+          "platform": "repository, upstream-link",
+          "subcat": "",
+          "note": "Vercel Labs agent-browser（npm agent-browser, tag v0.43.0），CLI 与 MCP 浏览器控制工具。",
+          "stars": null,
+          "installs": null,
+          "verified": "2026-11-19",
+          "vmethod": "",
+          "purpose": "为 Agent 提供浏览器操作与页面交互能力（非 Playwright MCP / Chrome DevTools MCP 重复）。",
+          "classification": {
+            "category": "plugins",
+            "subtype": null,
+            "domains": [
+              "software-engineering"
+            ],
+            "formats": [
+              "typescript",
+              "json"
+            ],
+            "conventions": [
+              "mcp"
+            ],
+            "rationale": "CLI + MCP 一个分发单元；MCP 记在 components。"
+          },
+          "provenance": {
+            "relation": "curated",
+            "content_source": "vercel-labs.agent-browser",
+            "discovered_via": [
+              "discover.github"
+            ],
+            "upstream": {
+              "kind": "git",
+              "url": "https://github.com/vercel-labs/agent-browser",
+              "path": "packages/agent-browser/package.json",
+              "selector": "agent-browser",
+              "ref": {
+                "kind": "commit",
+                "value": "1cc19526f3641c8543d55aa6700e7c55b37ac356"
+              }
+            },
+            "derives_from": [],
+            "changes": null
+          },
+          "license": {
+            "status": "verified",
+            "expression": "Apache-2.0",
+            "scope": "repository-root",
+            "evidence": [
+              {
+                "locator": "https://github.com/vercel-labs/agent-browser/blob/1cc19526f3641c8543d55aa6700e7c55b37ac356/LICENSE",
+                "claim": "根 LICENSE Apache-2.0；package.json license=Apache-2.0。"
+              }
+            ],
+            "redistribution": "allowed"
+          },
+          "distribution": [
+            {
+              "kind": "repository",
+              "channel_source": "vercel-labs.agent-browser",
+              "url": "https://github.com/vercel-labs/agent-browser"
+            },
+            {
+              "kind": "upstream-link",
+              "channel_source": "vercel-labs.agent-browser",
+              "url": "https://www.npmjs.com/package/agent-browser/v/0.43.0"
+            }
+          ],
+          "previews": [],
+          "compatibility": {
+            "hosts": [
+              "MCP-compatible client (MCP component); Node CLI (CLI component)"
+            ],
+            "runtimes": [
+              {
+                "name": "Node.js",
+                "version": null,
+                "status": "declared"
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "tool",
+                "name": "Chrome / Chromium (agent-browser install downloads Chrome)",
+                "version": null,
+                "source_id": null
+              }
+            ],
+            "constraints": [
+              "MCP handshake smoke 先于 2026-11-16/17（33 tools）；本钉于 2026-11-19 再次确认但未重测；未运行 install 或浏览器场景。",
+              "钉死 git commit 1cc19526… / tag v0.43.0 与 npm agent-browser@0.43.0；tip 于查证时（a897b24d…）已超前 22 提交。",
+              "不是 Playwright MCP 或 Chrome DevTools MCP 重复。"
+            ]
+          },
+          "components": [
+            {
+              "id": "agent-browser-cli",
+              "type": "cli",
+              "resource_id": null,
+              "upstream": {
+                "kind": "git",
+                "url": "https://github.com/vercel-labs/agent-browser",
+                "path": "packages/agent-browser",
+                "selector": "agent-browser",
+                "ref": {
+                  "kind": "commit",
+                  "value": "1cc19526f3641c8543d55aa6700e7c55b37ac356"
+                }
+              },
+              "subtype": null,
+              "delivery": "contained"
+            },
+            {
+              "id": "agent-browser-mcp",
+              "type": "mcp-server",
+              "resource_id": null,
+              "upstream": {
+                "kind": "git",
+                "url": "https://github.com/vercel-labs/agent-browser",
+                "path": "packages/agent-browser",
+                "selector": "agent-browser",
+                "ref": {
+                  "kind": "commit",
+                  "value": "1cc19526f3641c8543d55aa6700e7c55b37ac356"
+                }
+              },
+              "subtype": null,
+              "delivery": "contained"
+            }
+          ],
+          "lifecycle": {
+            "state": "candidate",
+            "reason": "MCP 握手已实测；维护者审核后可议 usable；未做浏览器场景核证。",
+            "replacement_id": null
+          },
+          "review": {
+            "status": "pending",
+            "by": null,
+            "at": null,
+            "evidence": []
+          },
+          "verification": {
+            "level": "usage-tested",
+            "tested_hosts": [
+              "mcp-stdio"
+            ],
+            "checked_at": "2026-11-19",
+            "by": "Grok Bot catalog sweep",
+            "evidence": [
+              {
+                "locator": "docs/evidence/sweep-20261119/agent-browser-smoke.md",
+                "claim": "先于 2026-11-16/17 MCP handshake（33 tools）；本钉于 2026-11-19 再次确认未重跑；未运行 install 或 browser 场景。"
+              }
+            ],
+            "limits": [
+              "未运行 agent-browser install / download Chrome 或浏览器场景。"
+            ]
+          },
+          "tested_hosts": [
+            "mcp-stdio"
+          ],
+          "usable_for_hosts": [],
+          "authors": {
+            "status": "unknown",
+            "identities": [],
+            "evidence": []
+          },
+          "publisher": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "Vercel",
+                "url": "https://github.com/vercel-labs/agent-browser"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/vercel-labs/agent-browser/blob/1cc19526f3641c8543d55aa6700e7c55b37ac356/LICENSE",
+                "claim": "根 LICENSE Apache-2.0；仓库所有者为 vercel-labs。"
+              }
+            ]
+          }
+        },
+        {
+          "id": "graphify-labs.graphify",
+          "name": "Graphify CLI and MCP",
+          "url": "https://github.com/Graphify-Labs/graphify",
+          "source": "curated",
+          "relation": "curated",
+          "platform": "repository, upstream-link",
+          "subcat": "",
+          "note": "Graphify Labs graphifyy（PyPI graphifyy==0.9.112, tag v0.9.112），CLI 与可选 MCP 知识图谱工具。",
+          "stars": null,
+          "installs": null,
+          "verified": "2026-11-19",
+          "vmethod": "",
+          "purpose": "为 Agent 提供知识图谱构建与查询能力。",
+          "classification": {
+            "category": "plugins",
+            "subtype": null,
+            "domains": [
+              "software-engineering"
+            ],
+            "formats": [
+              "python",
+              "json"
+            ],
+            "conventions": [
+              "mcp"
+            ],
+            "rationale": "CLI 是主要分发；MCP 作为可选 extra。"
+          },
+          "provenance": {
+            "relation": "curated",
+            "content_source": "graphify-labs.graphify",
+            "discovered_via": [
+              "discover.github"
+            ],
+            "upstream": {
+              "kind": "git",
+              "url": "https://github.com/Graphify-Labs/graphify",
+              "path": "pyproject.toml",
+              "selector": "graphifyy",
+              "ref": {
+                "kind": "commit",
+                "value": "340268a70a83588d6b3c6de1fffb05326350ef1d"
+              }
+            },
+            "derives_from": [],
+            "changes": null
+          },
+          "license": {
+            "status": "verified",
+            "expression": "Apache-2.0",
+            "scope": "repository-root (note LICENSE-MIT also exists)",
+            "evidence": [
+              {
+                "locator": "https://github.com/Graphify-Labs/graphify/blob/340268a70a83588d6b3c6de1fffb05326350ef1d/LICENSE",
+                "claim": "根 LICENSE Apache-2.0（LICENSE-MIT 也存在但不作主许可）；pyproject.toml 无 license。"
+              }
+            ],
+            "redistribution": "allowed"
+          },
+          "distribution": [
+            {
+              "kind": "repository",
+              "channel_source": "graphify-labs.graphify",
+              "url": "https://github.com/Graphify-Labs/graphify"
+            },
+            {
+              "kind": "upstream-link",
+              "channel_source": "graphify-labs.graphify",
+              "url": "https://pypi.org/project/graphifyy/0.9.112/"
+            }
+          ],
+          "previews": [],
+          "compatibility": {
+            "hosts": [
+              "Python CLI environment; MCP-compatible client (MCP extra)"
+            ],
+            "runtimes": [
+              {
+                "name": "Python",
+                "version": null,
+                "status": "declared"
+              }
+            ],
+            "dependencies": [],
+            "constraints": [
+              "CLI smoke 2026-11-18（--version 0.9.112）；本钉于 2026-11-19 再次确认但未重测；MCP extra 未测。",
+              "钉死 git commit 340268a7… / tag v0.9.112 与 PyPI graphifyy==0.9.112；tip 等于本钉。",
+              "包名 graphifyy（两个 y）；命令 graphify 和 graphify-mcp；不钉 git tag v1.0.0 或 npm graphifyy@0.10.0。"
+            ]
+          },
+          "components": [
+            {
+              "id": "graphify-cli",
+              "type": "cli",
+              "resource_id": null,
+              "upstream": {
+                "kind": "git",
+                "url": "https://github.com/Graphify-Labs/graphify",
+                "path": "pyproject.toml",
+                "selector": "graphifyy",
+                "ref": {
+                  "kind": "commit",
+                  "value": "340268a70a83588d6b3c6de1fffb05326350ef1d"
+                }
+              },
+              "subtype": null,
+              "delivery": "contained"
+            }
+          ],
+          "lifecycle": {
+            "state": "candidate",
+            "reason": "CLI version 已实测；维护者审核后可议 usable；MCP extra 未测。",
+            "replacement_id": null
+          },
+          "review": {
+            "status": "pending",
+            "by": null,
+            "at": null,
+            "evidence": []
+          },
+          "verification": {
+            "level": "usage-tested",
+            "tested_hosts": [
+              "python-cli"
+            ],
+            "checked_at": "2026-11-19",
+            "by": "Grok Bot catalog sweep",
+            "evidence": [
+              {
+                "locator": "docs/evidence/sweep-20261119/graphify-smoke.md",
+                "claim": "先于 2026-11-18 CLI --version 0.9.112；本钉于 2026-11-19 再次确认未重测；MCP extra 未测。"
+              }
+            ],
+            "limits": [
+              "MCP extra 未测；未运行图谱构建或查询场景。"
+            ]
+          },
+          "tested_hosts": [
+            "python-cli"
+          ],
+          "usable_for_hosts": [],
+          "authors": {
+            "status": "unknown",
+            "identities": [],
+            "evidence": []
+          },
+          "publisher": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "Graphify Labs",
+                "url": "https://github.com/Graphify-Labs/graphify"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/Graphify-Labs/graphify/blob/340268a70a83588d6b3c6de1fffb05326350ef1d/LICENSE",
+                "claim": "根 LICENSE Apache-2.0；GitHub 组织为 Graphify-Labs。"
+              }
+            ]
+          }
+        },
+        {
+          "id": "microsoft.azure-mcp",
+          "name": "Azure MCP",
+          "url": "https://github.com/microsoft/mcp",
+          "source": "curated",
+          "relation": "curated",
+          "platform": "repository, upstream-link",
+          "subcat": "",
+          "note": "Microsoft Azure MCP 服务器（npm @azure/mcp, tag Azure.Mcp.Server-3.0.0），为 Agent 提供 Azure 服务操作能力。",
+          "stars": null,
+          "installs": null,
+          "verified": "2026-11-19",
+          "vmethod": "",
+          "purpose": "通过 MCP 让 Agent 管理 Azure 资源、部署与监控。",
+          "classification": {
+            "category": "plugins",
+            "subtype": null,
+            "domains": [
+              "software-engineering"
+            ],
+            "formats": [
+              "typescript",
+              "json"
+            ],
+            "conventions": [
+              "mcp"
+            ],
+            "rationale": "主体是可安装的 MCP 服务器分发单元；MCP 记在 components。"
+          },
+          "provenance": {
+            "relation": "curated",
+            "content_source": "microsoft.mcp",
+            "discovered_via": [
+              "discover.github"
+            ],
+            "upstream": {
+              "kind": "git",
+              "url": "https://github.com/microsoft/mcp",
+              "path": "packages/azure/mcp/package.json",
+              "selector": "@azure/mcp",
+              "ref": {
+                "kind": "commit",
+                "value": "61715e6a9054d7922809b01e08a2efa85e032a6d"
+              }
+            },
+            "derives_from": [],
+            "changes": null
+          },
+          "license": {
+            "status": "verified",
+            "expression": "MIT",
+            "scope": "repository-root",
+            "evidence": [
+              {
+                "locator": "https://github.com/microsoft/mcp/blob/61715e6a9054d7922809b01e08a2efa85e032a6d/LICENSE",
+                "claim": "根 LICENSE MIT；packages/azure/mcp/package.json license=MIT。"
+              }
+            ],
+            "redistribution": "allowed"
+          },
+          "distribution": [
+            {
+              "kind": "repository",
+              "channel_source": "microsoft.mcp",
+              "url": "https://github.com/microsoft/mcp"
+            },
+            {
+              "kind": "upstream-link",
+              "channel_source": "microsoft.mcp",
+              "url": "https://www.npmjs.com/package/@azure/mcp/v/3.0.0"
+            }
+          ],
+          "previews": [],
+          "compatibility": {
+            "hosts": [
+              "MCP-compatible client"
+            ],
+            "runtimes": [
+              {
+                "name": "Node.js",
+                "version": null,
+                "status": "declared"
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "tool",
+                "name": "Azure CLI / Azure credentials (no az login required for initialize)",
+                "version": null,
+                "source_id": null
+              }
+            ],
+            "constraints": [
+              "MCP smoke 2026-11-18（69 tools，initialize 无需 az login）；本钉于 2026-11-19 再次确认但未重测。",
+              "钉死 git commit 61715e6a… / tag Azure.Mcp.Server-3.0.0 与 npm @azure/mcp@3.0.0；tip 于查证时（0e0945a1…）已超前 167 提交。",
+              "不钉 npm latest=4.0.0-beta.9 或 GitHub release 4.0.0-beta.9；不折叠 Fabric/DevOps/Foundry MCP 到本行。"
+            ]
+          },
+          "components": [
+            {
+              "id": "azure-mcp-server",
+              "type": "mcp-server",
+              "resource_id": null,
+              "upstream": {
+                "kind": "git",
+                "url": "https://github.com/microsoft/mcp",
+                "path": "packages/azure/mcp",
+                "selector": "@azure/mcp",
+                "ref": {
+                  "kind": "commit",
+                  "value": "61715e6a9054d7922809b01e08a2efa85e032a6d"
+                }
+              },
+              "subtype": null,
+              "delivery": "contained"
+            }
+          ],
+          "lifecycle": {
+            "state": "candidate",
+            "reason": "MCP 握手已实测；维护者审核后可议 usable；未做 live Azure API 核证。",
+            "replacement_id": null
+          },
+          "review": {
+            "status": "pending",
+            "by": null,
+            "at": null,
+            "evidence": []
+          },
+          "verification": {
+            "level": "usage-tested",
+            "tested_hosts": [
+              "mcp-stdio"
+            ],
+            "checked_at": "2026-11-19",
+            "by": "Grok Bot catalog sweep",
+            "evidence": [
+              {
+                "locator": "docs/evidence/sweep-20261119/azure-mcp-smoke.md",
+                "claim": "先于 2026-11-18 npx @azure/mcp@3.0.0 server start 完成 initialize（69 tools，无需 az login）；本钉于 2026-11-19 再次确认未重跑。"
+              }
+            ],
+            "limits": [
+              "握手仅；未附 Azure credentials 或执行 live API 工具。"
+            ]
+          },
+          "tested_hosts": [
+            "mcp-stdio"
+          ],
+          "usable_for_hosts": [],
+          "authors": {
+            "status": "unknown",
+            "identities": [],
+            "evidence": []
+          },
+          "publisher": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "Microsoft Corporation",
+                "url": "https://github.com/microsoft/mcp"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/microsoft/mcp/blob/61715e6a9054d7922809b01e08a2efa85e032a6d/LICENSE",
+                "claim": "根 LICENSE MIT；GitHub 组织为 microsoft。"
+              }
+            ]
+          }
+        },
+        {
+          "id": "grafana.mcp-grafana",
+          "name": "Grafana MCP",
+          "url": "https://github.com/grafana/mcp-grafana",
+          "source": "curated",
+          "relation": "curated",
+          "platform": "repository, upstream-link",
+          "subcat": "",
+          "note": "Grafana 官方 MCP 服务器（tag v2.3.0），为 Agent 提供 Grafana 仪表板与监控查询能力。",
+          "stars": null,
+          "installs": null,
+          "verified": "2026-11-19",
+          "vmethod": "",
+          "purpose": "通过 MCP 让 Agent 创建仪表板、查询指标与日志。",
+          "classification": {
+            "category": "plugins",
+            "subtype": null,
+            "domains": [
+              "software-engineering"
+            ],
+            "formats": [
+              "json"
+            ],
+            "conventions": [
+              "mcp"
+            ],
+            "rationale": "主体是可安装的 MCP 服务器分发单元；MCP 记在 components。"
+          },
+          "provenance": {
+            "relation": "curated",
+            "content_source": "grafana.mcp-grafana",
+            "discovered_via": [
+              "discover.github"
+            ],
+            "upstream": {
+              "kind": "git",
+              "url": "https://github.com/grafana/mcp-grafana",
+              "path": "README.md",
+              "selector": "mcp-grafana",
+              "ref": {
+                "kind": "commit",
+                "value": "c8cafb67854c45e79f8f9b5fca7d9b3a403f1771"
+              }
+            },
+            "derives_from": [],
+            "changes": null
+          },
+          "license": {
+            "status": "verified",
+            "expression": "Apache-2.0",
+            "scope": "repository-root",
+            "evidence": [
+              {
+                "locator": "https://github.com/grafana/mcp-grafana/blob/c8cafb67854c45e79f8f9b5fca7d9b3a403f1771/LICENSE",
+                "claim": "根 LICENSE Apache-2.0；无 npm 包。"
+              }
+            ],
+            "redistribution": "allowed"
+          },
+          "distribution": [
+            {
+              "kind": "repository",
+              "channel_source": "grafana.mcp-grafana",
+              "url": "https://github.com/grafana/mcp-grafana"
+            },
+            {
+              "kind": "upstream-link",
+              "channel_source": "grafana.mcp-grafana",
+              "url": "https://github.com/grafana/mcp-grafana/releases/tag/v2.3.0"
+            }
+          ],
+          "previews": [],
+          "compatibility": {
+            "hosts": [
+              "MCP-compatible client"
+            ],
+            "runtimes": [
+              {
+                "name": "official Linux x86_64 binary",
+                "version": "v2.3.0",
+                "status": "declared"
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "tool",
+                "name": "Grafana API (no token required for initialize)",
+                "version": null,
+                "source_id": null
+              }
+            ],
+            "constraints": [
+              "MCP smoke 2026-11-18（80 tools，initialize 无需 Grafana token）；本钉于 2026-11-19 再次确认但未重测。",
+              "钉死 git commit c8cafb67… / tag v2.3.0；tip 于查证时（70b04944…）已超前 50 提交。",
+              "这是 Grafana MCP，不是 Notion MCP；无官方 npm 包。"
+            ]
+          },
+          "components": [
+            {
+              "id": "grafana-mcp-server-binary",
+              "type": "mcp-server",
+              "resource_id": null,
+              "upstream": {
+                "kind": "git",
+                "url": "https://github.com/grafana/mcp-grafana",
+                "path": "README.md",
+                "selector": "mcp-grafana",
+                "ref": {
+                  "kind": "commit",
+                  "value": "c8cafb67854c45e79f8f9b5fca7d9b3a403f1771"
+                }
+              },
+              "subtype": null,
+              "delivery": "contained"
+            }
+          ],
+          "lifecycle": {
+            "state": "candidate",
+            "reason": "二进制/MCP 握手已实测；维护者审核后可议 usable；未做 live Grafana API 核证。",
+            "replacement_id": null
+          },
+          "review": {
+            "status": "pending",
+            "by": null,
+            "at": null,
+            "evidence": []
+          },
+          "verification": {
+            "level": "usage-tested",
+            "tested_hosts": [
+              "mcp-stdio"
+            ],
+            "checked_at": "2026-11-19",
+            "by": "Grok Bot catalog sweep",
+            "evidence": [
+              {
+                "locator": "docs/evidence/sweep-20261119/mcp-grafana-smoke.md",
+                "claim": "先于 2026-11-18 官方 Linux x86_64 binary stdio 完成 initialize（version 2.3.0，80 tools，无需 Grafana token）；本钉于 2026-11-19 再次确认未重跑。"
+              }
+            ],
+            "limits": [
+              "握手仅；未附 Grafana credentials 或执行 live queries。"
+            ]
+          },
+          "tested_hosts": [
+            "mcp-stdio"
+          ],
+          "usable_for_hosts": [],
+          "authors": {
+            "status": "unknown",
+            "identities": [],
+            "evidence": []
+          },
+          "publisher": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "Grafana Labs",
+                "url": "https://github.com/grafana/mcp-grafana"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/grafana/mcp-grafana/blob/c8cafb67854c45e79f8f9b5fca7d9b3a403f1771/LICENSE",
+                "claim": "根 LICENSE Apache-2.0；GitHub 组织为 grafana。"
+              }
+            ]
+          }
+        },
+        {
+          "id": "vercel-labs.agent-desktop",
+          "name": "Agent Desktop (Vercel Labs CLI + MCP)",
+          "url": "https://github.com/vercel-labs/agent-desktop",
+          "source": "curated",
+          "relation": "curated",
+          "platform": "repository, upstream-link",
+          "subcat": "",
+          "note": "Vercel Labs agent-desktop（npm agent-desktop, tag v1.3.1），CLI 与 MCP 桌面控制工具。",
+          "stars": null,
+          "installs": null,
+          "verified": "2026-11-19",
+          "vmethod": "",
+          "purpose": "为 Agent 提供桌面 UI 操作与自动化能力（非 agent-browser）。",
+          "classification": {
+            "category": "plugins",
+            "subtype": null,
+            "domains": [
+              "software-engineering"
+            ],
+            "formats": [
+              "typescript",
+              "json"
+            ],
+            "conventions": [
+              "mcp"
+            ],
+            "rationale": "CLI + MCP 一个分发单元；MCP 记在 components。"
+          },
+          "provenance": {
+            "relation": "curated",
+            "content_source": "vercel-labs.agent-desktop",
+            "discovered_via": [
+              "discover.github"
+            ],
+            "upstream": {
+              "kind": "git",
+              "url": "https://github.com/vercel-labs/agent-desktop",
+              "path": "packages/agent-desktop/package.json",
+              "selector": "agent-desktop",
+              "ref": {
+                "kind": "commit",
+                "value": "b0b7277bea09b770ef9d1fb45aad667bc432cd57"
+              }
+            },
+            "derives_from": [],
+            "changes": null
+          },
+          "license": {
+            "status": "verified",
+            "expression": "Apache-2.0",
+            "scope": "repository-root",
+            "evidence": [
+              {
+                "locator": "https://github.com/vercel-labs/agent-desktop/blob/b0b7277bea09b770ef9d1fb45aad667bc432cd57/LICENSE",
+                "claim": "根 LICENSE Apache-2.0；package.json license=Apache-2.0。"
+              }
+            ],
+            "redistribution": "allowed"
+          },
+          "distribution": [
+            {
+              "kind": "repository",
+              "channel_source": "vercel-labs.agent-desktop",
+              "url": "https://github.com/vercel-labs/agent-desktop"
+            },
+            {
+              "kind": "upstream-link",
+              "channel_source": "vercel-labs.agent-desktop",
+              "url": "https://www.npmjs.com/package/agent-desktop/v/1.3.1"
+            }
+          ],
+          "previews": [],
+          "compatibility": {
+            "hosts": [
+              "MCP-compatible client (MCP component); Node CLI (CLI component)"
+            ],
+            "runtimes": [
+              {
+                "name": "Node.js",
+                "version": null,
+                "status": "declared"
+              }
+            ],
+            "dependencies": [],
+            "constraints": [
+              "MCP smoke 2026-11-18（--version OK，mcp initialize OK，75 tools）；本钉于 2026-11-19 再次确认但未重测；未调用桌面 UI actions。",
+              "钉死 git commit b0b7277b… / tag v1.3.1 与 npm agent-desktop@1.3.1；tip 于查证时（e8934a5e…）已超前 6 提交（自 11-18 未变）。",
+              "不是 agent-browser 的同一行资源。"
+            ]
+          },
+          "components": [
+            {
+              "id": "agent-desktop-cli",
+              "type": "cli",
+              "resource_id": null,
+              "upstream": {
+                "kind": "git",
+                "url": "https://github.com/vercel-labs/agent-desktop",
+                "path": "packages/agent-desktop",
+                "selector": "agent-desktop",
+                "ref": {
+                  "kind": "commit",
+                  "value": "b0b7277bea09b770ef9d1fb45aad667bc432cd57"
+                }
+              },
+              "subtype": null,
+              "delivery": "contained"
+            },
+            {
+              "id": "agent-desktop-mcp",
+              "type": "mcp-server",
+              "resource_id": null,
+              "upstream": {
+                "kind": "git",
+                "url": "https://github.com/vercel-labs/agent-desktop",
+                "path": "packages/agent-desktop",
+                "selector": "agent-desktop",
+                "ref": {
+                  "kind": "commit",
+                  "value": "b0b7277bea09b770ef9d1fb45aad667bc432cd57"
+                }
+              },
+              "subtype": null,
+              "delivery": "contained"
+            }
+          ],
+          "lifecycle": {
+            "state": "candidate",
+            "reason": "CLI version/MCP 握手已实测；维护者审核后可议 usable；未做桌面 UI actions 核证。",
+            "replacement_id": null
+          },
+          "review": {
+            "status": "pending",
+            "by": null,
+            "at": null,
+            "evidence": []
+          },
+          "verification": {
+            "level": "usage-tested",
+            "tested_hosts": [
+              "mcp-stdio",
+              "node-cli"
+            ],
+            "checked_at": "2026-11-19",
+            "by": "Grok Bot catalog sweep",
+            "evidence": [
+              {
+                "locator": "docs/evidence/sweep-20261119/agent-desktop-smoke.md",
+                "claim": "先于 2026-11-18 agent-desktop@1.3.1 --version OK，mcp initialize OK（75 tools）；本钉于 2026-11-19 再次确认未重跑；未调用桌面 UI actions。"
+              }
+            ],
+            "limits": [
+              "未调用桌面 UI actions。"
+            ]
+          },
+          "tested_hosts": [
+            "mcp-stdio",
+            "node-cli"
+          ],
+          "usable_for_hosts": [],
+          "authors": {
+            "status": "unknown",
+            "identities": [],
+            "evidence": []
+          },
+          "publisher": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "Vercel",
+                "url": "https://github.com/vercel-labs/agent-desktop"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/vercel-labs/agent-desktop/blob/b0b7277bea09b770ef9d1fb45aad667bc432cd57/LICENSE",
+                "claim": "根 LICENSE Apache-2.0；仓库所有者为 vercel-labs。"
               }
             ]
           }
@@ -69500,7 +71895,8 @@ const DATA = {
           "content source or exact upstream path is unverified",
           "author and license were not independently verified",
           "component type is only an expectation from the historical category; no real component manifest was verified"
-        ]
+        ],
+        "mapped_resource_id": "github.github-mcp-server"
       },
       {
         "id": "discovery.legacy.3df4679723600685",
@@ -92728,9 +95124,9 @@ const DATA = {
         },
         {
           "legacy_key": "mcp/github-mcp-server",
-          "target_id": "discovery.legacy.adbb87e540bf0af3",
-          "disposition": "discovery",
-          "reason": "retained as a discovery entry with provenance and usability gaps disclosed"
+          "target_id": "github.github-mcp-server",
+          "disposition": "mapped",
+          "reason": "matches an existing canonical resource"
         },
         {
           "legacy_key": "mcp/golf",
