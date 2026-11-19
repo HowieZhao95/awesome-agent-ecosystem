@@ -425,6 +425,11 @@ Design-system profiles link the actual manifest, design rules and token CSS file
 | [wpds](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/wpds/SKILL.md) (`opendesign.wpds`) | — | curated | candidate | source-inspected | — | unknown |
 | [writing-guidelines](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/writing-guidelines/SKILL.md) (`opendesign.writing-guidelines`) | — | curated | candidate | source-inspected | — | unknown |
 | [youtube-clipper](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/youtube-clipper/SKILL.md) (`opendesign.youtube-clipper`) | — | curated | candidate | source-inspected | — | unknown |
+| [Frontend Design (Anthropic Skill)](https://github.com/anthropics/skills) (`anthropics.frontend-design`) | — | curated | candidate | source-inspected | — | verified |
+| [MCP Builder (Anthropic Skill)](https://github.com/anthropics/skills) (`anthropics.mcp-builder`) | — | curated | candidate | source-inspected | — | verified |
+| [Skill Creator (Anthropic Skill)](https://github.com/anthropics/skills) (`anthropics.skill-creator`) | — | curated | candidate | source-inspected | — | verified |
+| [React Best Practices (Vercel Labs Skill)](https://github.com/vercel-labs/agent-skills) (`vercel-labs.react-best-practices`) | — | curated | candidate | source-inspected | — | verified |
+| [Design Taste Skill (leonxlnx)](https://github.com/leonxlnx/taste-skill) (`leonxlnx.taste-skill`) | — | curated | candidate | source-inspected | — | verified |
 
 <a id="prompts"></a>
 ### 提示词
@@ -454,6 +459,16 @@ Design-system profiles link the actual manifest, design rules and token CSS file
 | [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp) (`chromedevtools.chrome-devtools-mcp`) | — | curated | candidate | usage-tested | — | verified |
 | [Context7](https://github.com/upstash/context7) (`upstash.context7-mcp`) | — | curated | candidate | usage-tested | — | verified |
 | [n8n MCP](https://github.com/czlonkowski/n8n-mcp) (`czlonkowski.n8n-mcp`) | — | curated | candidate | usage-tested | — | verified |
+| [GitHub MCP Server](https://github.com/github/github-mcp-server) (`github.github-mcp-server`) | — | curated | candidate | usage-tested | — | verified |
+| [Document Skills (Anthropic Plugin Pack)](https://github.com/anthropics/skills) (`anthropics.document-skills`) | — | curated | candidate | source-inspected | — | verified |
+| [Superpowers (obra Skills Pack)](https://github.com/obra/superpowers) (`obra.superpowers`) | — | curated | candidate | source-inspected | — | verified |
+| [Agent Skills (Addy Osmani Pack)](https://github.com/addyosmani/agent-skills) (`addyosmani.agent-skills`) | — | curated | candidate | source-inspected | — | verified |
+| [Impeccable CLI](https://github.com/pbakaus/impeccable) (`pbakaus.impeccable`) | — | curated | candidate | usage-tested | — | verified |
+| [Agent Browser (Vercel Labs CLI + MCP)](https://github.com/vercel-labs/agent-browser) (`vercel-labs.agent-browser`) | — | curated | candidate | usage-tested | — | verified |
+| [Graphify CLI and MCP](https://github.com/Graphify-Labs/graphify) (`graphify-labs.graphify`) | — | curated | candidate | usage-tested | — | verified |
+| [Azure MCP](https://github.com/microsoft/mcp) (`microsoft.azure-mcp`) | — | curated | candidate | usage-tested | — | verified |
+| [Grafana MCP](https://github.com/grafana/mcp-grafana) (`grafana.mcp-grafana`) | — | curated | candidate | usage-tested | — | verified |
+| [Agent Desktop (Vercel Labs CLI + MCP)](https://github.com/vercel-labs/agent-desktop) (`vercel-labs.agent-desktop`) | — | curated | candidate | usage-tested | — | verified |
 
 
 **Components in td-drama-production**
@@ -506,11 +521,83 @@ Design-system profiles link the actual manifest, design rules and token CSS file
 |---|---|---|---|
 | `n8n-mcp-server` | `mcp-server` | `contained` | `—` |
 
+
+**Components in GitHub MCP Server**
+
+| Component ID | Type | Delivery | Resource reference |
+|---|---|---|---|
+| `github-mcp-server-binary` | `mcp-server` | `contained` | `—` |
+
+
+**Components in Document Skills (Anthropic Plugin Pack)**
+
+| Component ID | Type | Delivery | Resource reference |
+|---|---|---|---|
+| `anthropics-document-skills-plugin` | `skill` | `contained` | `—` |
+
+
+**Components in Superpowers (obra Skills Pack)**
+
+| Component ID | Type | Delivery | Resource reference |
+|---|---|---|---|
+| `obra-superpowers-plugin` | `skill` | `contained` | `—` |
+
+
+**Components in Agent Skills (Addy Osmani Pack)**
+
+| Component ID | Type | Delivery | Resource reference |
+|---|---|---|---|
+| `addyosmani-agent-skills-plugin` | `skill` | `contained` | `—` |
+
+
+**Components in Impeccable CLI**
+
+| Component ID | Type | Delivery | Resource reference |
+|---|---|---|---|
+| `impeccable-cli` | `cli` | `contained` | `—` |
+
+
+**Components in Agent Browser (Vercel Labs CLI + MCP)**
+
+| Component ID | Type | Delivery | Resource reference |
+|---|---|---|---|
+| `agent-browser-cli` | `cli` | `contained` | `—` |
+| `agent-browser-mcp` | `mcp-server` | `contained` | `—` |
+
+
+**Components in Graphify CLI and MCP**
+
+| Component ID | Type | Delivery | Resource reference |
+|---|---|---|---|
+| `graphify-cli` | `cli` | `contained` | `—` |
+
+
+**Components in Azure MCP**
+
+| Component ID | Type | Delivery | Resource reference |
+|---|---|---|---|
+| `azure-mcp-server` | `mcp-server` | `contained` | `—` |
+
+
+**Components in Grafana MCP**
+
+| Component ID | Type | Delivery | Resource reference |
+|---|---|---|---|
+| `grafana-mcp-server-binary` | `mcp-server` | `contained` | `—` |
+
+
+**Components in Agent Desktop (Vercel Labs CLI + MCP)**
+
+| Component ID | Type | Delivery | Resource reference |
+|---|---|---|---|
+| `agent-desktop-cli` | `cli` | `contained` | `—` |
+| `agent-desktop-mcp` | `mcp-server` | `contained` | `—` |
+
 ## Discovery entries
 
 The store also browses the complete historical discovery queue. These are unverified leads, collections or reference entries; they are not approved installation records.
 
-859 indexed discovery entries (777 historical asset leads), 795 additional browser entries after existing-resource matches; 26 platforms are listed as discovery channels.
+859 indexed discovery entries (777 historical asset leads), 794 additional browser entries after existing-resource matches; 26 platforms are listed as discovery channels.
 
 ### Discovery · 设计系统
 
@@ -919,7 +1006,6 @@ The store also browses the complete historical discovery queue. These are unveri
 | ghidra-mcp (`discovery.legacy.22d89b21c089b81b`) | asset | [Original listing](https://github.com/bethington/ghidra-mcp) | Unverified |
 | github (`discovery.legacy.7ad75c00b7b270c3`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/github) | Unverified |
 | GitHub Analytics MCP — Repo & Trend Research (`discovery.legacy.fb5212e9df24e419`) | asset | [Original listing](https://thenextgennexus.com) | Unverified |
-| github-mcp-server (`discovery.legacy.adbb87e540bf0af3`) | asset | [Original listing](https://github.com/github/github-mcp-server) | Unverified |
 | gitkraken (`discovery.legacy.3df4679723600685`) | asset | [Original listing](https://www.gitkraken.com) | Unverified |
 | gitlab (`discovery.legacy.a14eac508e3d00c4`) | asset | [Original listing](https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/gitlab) | Unverified |
 | Gmail (`discovery.legacy.f832ab7dd605ce95`) | asset | [Original listing](https://smithery.ai/servers/gmail) | Unverified |

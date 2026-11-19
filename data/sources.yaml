@@ -198,14 +198,14 @@ sources:
   tracking:
     scope: package root (package.json, cli.js, LICENSE) and npm @playwright/mcp releases
     exclude: []
-    baseline: 'commit:0c4107acbecb75472b23c05c0e42471a0011874f; npm @playwright/mcp@0.0.83'
+    baseline: 'commit:2337aff0213d28db41d3e3daf48cee19b3d0bd82; tag v0.0.86; npm @playwright/mcp@0.0.86'
     cadence: manual
     method: 'Resolve tip main to full SHA; compare package.json version/license and MCP entrypoints; smoke via npx initialize/tools/list then uninstall; do not auto-promote.'
     promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。
-    last_checked: '2026-10-29'
+    last_checked: '2026-11-19'
     limitations:
-      - MCP initialize/tools/list smoke only; no browser automation scenario exercised this pass.
-      - Tip may move past the pinned commit; npm version and git SHA recorded separately.
+      - MCP initialize/tools/list smoke only (2026-11-19); 25 tools; no browser automation scenario exercised.
+      - Tip at check equals this pin; npm version and git SHA recorded separately.
 - id: chromedevtools.chrome-devtools-mcp
   name: Chrome DevTools MCP
   url: https://github.com/ChromeDevTools/chrome-devtools-mcp
@@ -214,14 +214,14 @@ sources:
   tracking:
     scope: package root (package.json, LICENSE, build entrypoints) and npm chrome-devtools-mcp releases
     exclude: []
-    baseline: 'commit:bc0d93ee2df6f2410d9e9704903c3547acae7c9a; npm chrome-devtools-mcp@1.12.0'
+    baseline: 'commit:b1e35e3ab1774664dfc66a2cb813a392535fe160; tag chrome-devtools-mcp-v1.13.0; npm chrome-devtools-mcp@1.13.0'
     cadence: manual
     method: 'Resolve tip main to full SHA; compare package.json version/license and MCP entrypoints; smoke via npx initialize/tools/list then uninstall; do not auto-promote.'
     promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。
-    last_checked: '2026-10-29'
+    last_checked: '2026-11-19'
     limitations:
-      - MCP initialize/tools/list smoke only; no live Chrome DevTools session exercised this pass.
-      - Tip may move past the pinned commit; npm version and git SHA recorded separately.
+      - MCP smoke 2026-11-16 (33 tools); pin reconfirmed 2026-11-19 but not re-smoked.
+      - Tip at check (cf98d8b88d74bfaa684412625fc89b58626919a5) is 41 commits ahead of pin; npm version and git SHA recorded separately.
 - id: upstash.context7
   name: Upstash Context7 MCP
   url: https://github.com/upstash/context7
@@ -230,14 +230,14 @@ sources:
   tracking:
     scope: packages/mcp (package.json, dist entry, LICENSE) and npm @upstash/context7-mcp releases
     exclude: []
-    baseline: 'commit:c7f80ce5af1ff1403d167579b76784482cf7f3e2; npm @upstash/context7-mcp@4.4.4'
+    baseline: 'commit:c36522f3d4446288a272aedd727d665f7b8175f2; tags mcpb-v4.7.3 + @upstash/context7-mcp@4.7.3; npm @upstash/context7-mcp@4.7.3 (do NOT pin 4.7.0/4.7.1/4.7.2)'
     cadence: manual
     method: 'Resolve tip main to full SHA; compare packages/mcp package.json version/license and MCP entrypoints; smoke via npx initialize/tools/list then uninstall; do not auto-promote.'
     promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。
-    last_checked: '2026-10-30'
+    last_checked: '2026-11-19'
     limitations:
-      - MCP initialize/tools/list smoke only; no live Context7 docs API query this pass.
-      - Tip may move past the pinned commit; npm version and git SHA recorded separately.
+      - MCP smoke 2026-11-18 (2 tools resolve-library-id, query-docs); pin reconfirmed 2026-11-19 but not re-smoked; no live docs API query.
+      - Tip at check (018a603bc99d4cd21feaac1021501185d092ac09) moved past the pin; 11-18 tip equaled the pin; npm version and git SHA recorded separately.
 - id: czlonkowski.n8n-mcp
   name: n8n MCP (documentation server)
   url: https://github.com/czlonkowski/n8n-mcp
@@ -246,11 +246,214 @@ sources:
   tracking:
     scope: package root (package.json, LICENSE, dist/mcp entrypoints) and npm n8n-mcp releases
     exclude: []
-    baseline: 'commit:09611fd663f17fe6976a0e027178421abbb2f041; npm n8n-mcp@2.99.2'
+    baseline: 'commit:c0400c1c209b305482ee0cef6eaa234f4e611224; tag v2.103.1; npm n8n-mcp@2.103.1 (do NOT pin 2.103.0)'
     cadence: manual
     method: 'Resolve tip main to full SHA; compare package.json version/license and MCP entrypoints; smoke via npx initialize/tools/list then uninstall; do not auto-promote.'
     promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。
-    last_checked: '2026-10-30'
+    last_checked: '2026-11-19'
     limitations:
-      - MCP initialize/tools/list smoke only; documentation mode; no live n8n instance API this pass.
-      - Tip may move past the pinned commit; npm version and git SHA recorded separately.
+      - MCP initialize/tools/list smoke only (2026-11-19); documentation mode with 7 tools; n8n_manage_variables requires live n8n API; no live instance this pass.
+      - Tip at check equals this pin; npm version and git SHA recorded separately.
+- id: github.github-mcp-server
+  name: GitHub MCP Server
+  url: https://github.com/github/github-mcp-server
+  roles: [content-upstream, distribution-channel]
+  access: public
+  tracking:
+    scope: repository-root (binaries, LICENSE, README)
+    exclude: []
+    baseline: 'commit:67d4dc489700ec955ad255d098396dd86c729523; tag v2.2.0'
+    cadence: manual
+    method: 'Resolve tip main to full SHA; inspect tagged release tarball/binaries, LICENSE, and official remote MCP service; smoke via stdio initialize/tools/list; do not auto-promote.'
+    promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。
+    last_checked: '2026-11-19'
+    limitations:
+      - MCP smoke 2026-11-17 (46 default-toolset tools, no GitHub token, handshake only); pin reconfirmed 2026-11-19 but not re-smoked.
+      - Tip at check (df32d7ec5786e0e71932767fce9982409cbaec40) is 2 commits ahead of pin.
+      - Official remote MCP is the same distribution unit; do not split into two resources.
+- id: anthropics.skills
+  name: Anthropic Official Skills Repository
+  url: https://github.com/anthropics/skills
+  roles: [content-upstream, distribution-channel]
+  access: public
+  tracking:
+    scope: 'skills/{frontend-design,xlsx,docx,pptx,pdf,mcp-builder,skill-creator}/** and .claude-plugin/marketplace.json'
+    exclude: []
+    baseline: 'commit:1780c5e5a552fd4d1c9d6a7b0cab26b0c2bef064 (for frontend-design, mcp-builder, skill-creator); commit:e4bb5d960d87126ff3b3a8af1a104b7db67560ba (for document-skills plugin pack)'
+    cadence: manual
+    method: 'Resolve tip main to full SHA; compare tracked skill SKILL.md + LICENSE.txt and marketplace.json plugin metadata; source-inspect only, do not execute Office scripts; do not auto-promote.'
+    promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。
+    last_checked: '2026-11-19'
+    limitations:
+      - Source-inspected only; skills not loaded into a host or executed.
+      - frontend-design / mcp-builder / skill-creator at 1780c5e5 (pin reconfirmed 2026-11-19; tip e4bb5d96 unchanged for these paths).
+      - document-skills plugin at e4bb5d96 (pin reconfirmed 2026-11-19; tip unchanged).
+      - Repository has no root LICENSE; per-skill Apache-2.0 LICENSE.txt files exist.
+- id: vercel-labs.agent-skills
+  name: Vercel Labs Agent Skills Repository
+  url: https://github.com/vercel-labs/agent-skills
+  roles: [content-upstream, distribution-channel]
+  access: public
+  tracking:
+    scope: skills/react-best-practices/**
+    exclude: []
+    baseline: 'commit:1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62'
+    cadence: manual
+    method: 'Resolve tip main to full SHA; compare skill SKILL.md and license metadata; source-inspect only; do not auto-promote.'
+    promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。
+    last_checked: '2026-11-19'
+    limitations:
+      - Source-inspected only; pin reconfirmed 2026-11-19; tip still equals this commit.
+      - Repository has no root LICENSE file; skill declares MIT in SKILL.md frontmatter only.
+      - Snapshot releases named agent-skills-<sha> exist; do not pin those over default-branch commit.
+- id: obra.superpowers
+  name: obra/superpowers Skills Pack
+  url: https://github.com/obra/superpowers
+  roles: [content-upstream, distribution-channel]
+  access: public
+  tracking:
+    scope: 'repository-root (15 skills as one package: .claude-plugin/marketplace.json and skills/**/SKILL.md)'
+    exclude: []
+    baseline: 'commit:22f0b463e7a5e579904dd6211a520321035526f7; tag v7.0.2'
+    cadence: manual
+    method: 'Resolve tip main to full SHA; inspect marketplace.json and all skill frontmatter/licenses; source-inspect only; do not auto-promote.'
+    promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。
+    last_checked: '2026-11-19'
+    limitations:
+      - Source-inspected only; not re-smoked 2026-11-19.
+      - Tip at check equals this tag.
+      - This is the GitHub plugin pack, not npm superpowers@0.0.2.
+- id: addyosmani.agent-skills
+  name: Addy Osmani Agent Skills Pack
+  url: https://github.com/addyosmani/agent-skills
+  roles: [content-upstream, distribution-channel]
+  access: public
+  tracking:
+    scope: 'repository-root (26 skills as one package: plugin.json and skills/**/SKILL.md)'
+    exclude: []
+    baseline: 'commit:8c99fa36d90068c82d547f7c12a9d67a3e95f4ee; tag 0.6.17 (do NOT pin 0.6.16)'
+    cadence: manual
+    method: 'Resolve tip main to full SHA; inspect plugin.json (version, license MIT) and all skill frontmatter; archive-inspect only; do not auto-promote.'
+    promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。
+    last_checked: '2026-11-19'
+    limitations:
+      - Archive-inspected 2026-11-19; 26 skills (0.6.16 had 25); not installed into a host.
+      - Tip at check equals this tag.
+      - One catalog row for the pack; do not create 26 separate skill rows.
+- id: pbakaus.impeccable
+  name: pbakaus/impeccable CLI and Skills
+  url: https://github.com/pbakaus/impeccable
+  roles: [content-upstream, distribution-channel]
+  access: public
+  tracking:
+    scope: packages/cli (CLI entrypoint, package.json, LICENSE) and npm impeccable releases
+    exclude: []
+    baseline: 'commit:ab3617920fcdb5009163a725ba8ff59927a63474; tag cli-v4.10.0; npm impeccable@4.10.0 (do NOT pin skill-v4.10.0, engine-v0.1.27, or loop-v0.2.0)'
+    cadence: manual
+    method: 'Resolve tip main to full SHA; compare CLI package.json version/license; smoke via npx --version/--help; do not run impeccable install; do not auto-promote.'
+    promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。
+    last_checked: '2026-11-19'
+    limitations:
+      - CLI smoke 2026-11-19 (--version 4.10.0, --help OK); did not run install.
+      - Tip at check (b49177d32788f2dc585c42831d845dacf1ebed2c) equals skill-v4.10.0, not cli-v4.10.0.
+- id: leonxlnx.taste-skill
+  name: leonxlnx/taste-skill (Design Taste Skill)
+  url: https://github.com/leonxlnx/taste-skill
+  roles: [content-upstream, distribution-channel]
+  access: public
+  tracking:
+    scope: repository-root (SKILL.md, LICENSE)
+    exclude: []
+    baseline: 'commit:f6b76575f949707b4e3c37cd86cb44b0b98643e8; tag v2.5.1'
+    cadence: manual
+    method: 'Resolve tip main to full SHA; inspect SKILL.md frontmatter (name design-taste-frontend) and LICENSE; source-inspect only; do not auto-promote.'
+    promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。
+    last_checked: '2026-11-19'
+    limitations:
+      - Source-inspected only; not re-smoked 2026-11-19; did not run gate/browser checks.
+      - Tip at check equals this tag.
+- id: vercel-labs.agent-browser
+  name: Vercel Labs Agent Browser (CLI + MCP)
+  url: https://github.com/vercel-labs/agent-browser
+  roles: [content-upstream, distribution-channel]
+  access: public
+  tracking:
+    scope: packages/agent-browser (CLI/MCP package.json, LICENSE) and npm agent-browser releases
+    exclude: []
+    baseline: 'commit:1cc19526f3641c8543d55aa6700e7c55b37ac356; tag v0.43.0; npm agent-browser@0.43.0'
+    cadence: manual
+    method: 'Resolve tip main to full SHA; compare package.json version/license; MCP handshake smoke; do not run agent-browser install/download Chrome; do not auto-promote.'
+    promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。
+    last_checked: '2026-11-19'
+    limitations:
+      - MCP handshake smoke (prior 2026-11-16/17, 33 tools); not re-smoked 2026-11-19; did not run install or browser scenario.
+      - Tip at check (a897b24d7e6624ed7e5d6ef1eed836f7200f4b40) is 22 commits ahead of pin.
+      - Not a duplicate of Playwright MCP or Chrome DevTools MCP.
+- id: graphify-labs.graphify
+  name: Graphify Labs graphifyy CLI and MCP
+  url: https://github.com/Graphify-Labs/graphify
+  roles: [content-upstream, distribution-channel]
+  access: public
+  tracking:
+    scope: repository-root (pyproject.toml, LICENSE, LICENSE-MIT) and PyPI graphifyy releases
+    exclude: []
+    baseline: 'commit:340268a70a83588d6b3c6de1fffb05326350ef1d; tag v0.9.112; PyPI graphifyy==0.9.112 (do NOT pin v1.0.0 / 0a31c086… or npm graphifyy@0.10.0)'
+    cadence: manual
+    method: 'Resolve tip main to full SHA; compare pyproject.toml/LICENSE; smoke via CLI --version; do not run graphify-mcp; do not auto-promote.'
+    promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。
+    last_checked: '2026-11-19'
+    limitations:
+      - CLI smoke 2026-11-18 (--version 0.9.112); not re-smoked 2026-11-19; MCP extra not tested.
+      - Tip at check equals this tag.
+      - Package name is graphifyy (two y's); commands are graphify and graphify-mcp; LICENSE is Apache-2.0; LICENSE-MIT also exists but not used as primary license.
+- id: microsoft.mcp
+  name: Microsoft MCP Servers Repository
+  url: https://github.com/microsoft/mcp
+  roles: [content-upstream, distribution-channel]
+  access: public
+  tracking:
+    scope: packages/azure/mcp (package.json, LICENSE) and npm @azure/mcp releases
+    exclude: []
+    baseline: 'commit:61715e6a9054d7922809b01e08a2efa85e032a6d; tag Azure.Mcp.Server-3.0.0; npm @azure/mcp@3.0.0 (do NOT pin npm latest=4.0.0-beta.9 or tag 4.0.0-beta.9)'
+    cadence: manual
+    method: 'Resolve tip main to full SHA; compare Azure MCP package.json version/license; smoke via npx server start initialize/tools/list; no az login required for initialize; do not auto-promote.'
+    promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。
+    last_checked: '2026-11-19'
+    limitations:
+      - MCP smoke 2026-11-18 (69 tools, no az login required for initialize); not re-smoked 2026-11-19.
+      - Tip at check (0e0945a19be7efd99ffe0ae17625e70f1b8f221d) is 167 commits ahead of 3.0.0.
+      - Do not fold Fabric MCP / DevOps MCP / Foundry MCP into this Azure MCP resource.
+- id: grafana.mcp-grafana
+  name: Grafana MCP Server
+  url: https://github.com/grafana/mcp-grafana
+  roles: [content-upstream, distribution-channel]
+  access: public
+  tracking:
+    scope: repository-root (binaries, LICENSE, README)
+    exclude: []
+    baseline: 'commit:c8cafb67854c45e79f8f9b5fca7d9b3a403f1771; tag v2.3.0 (no official npm package)'
+    cadence: manual
+    method: 'Resolve tip main to full SHA; inspect tagged release binaries and LICENSE; smoke via stdio initialize/tools/list; no Grafana token required for initialize; do not auto-promote.'
+    promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。
+    last_checked: '2026-11-19'
+    limitations:
+      - MCP smoke 2026-11-18 (80 tools, no Grafana token, handshake only); not re-smoked 2026-11-19.
+      - Tip at check (70b04944ed598cfa811d168d7b96a797fd3ee291) is 50 commits ahead of pin.
+      - This is Grafana MCP, not Notion MCP.
+- id: vercel-labs.agent-desktop
+  name: Vercel Labs Agent Desktop (CLI + MCP)
+  url: https://github.com/vercel-labs/agent-desktop
+  roles: [content-upstream, distribution-channel]
+  access: public
+  tracking:
+    scope: packages/agent-desktop (CLI/MCP package.json, LICENSE) and npm agent-desktop releases
+    exclude: []
+    baseline: 'commit:b0b7277bea09b770ef9d1fb45aad667bc432cd57; tag v1.3.1; npm agent-desktop@1.3.1'
+    cadence: manual
+    method: 'Resolve tip main to full SHA; compare package.json version/license; smoke via npx --version and mcp initialize/tools/list; do not invoke desktop UI actions; do not auto-promote.'
+    promotion: 发现或差异只进入人工审核；不得自动批准、标记 usable 或覆盖已核证基线。
+    last_checked: '2026-11-19'
+    limitations:
+      - MCP smoke 2026-11-18 (--version OK, mcp initialize OK, 75 tools); not re-smoked 2026-11-19; no desktop UI actions invoked.
+      - Tip at check (e8934a5e95e1d212c74ead95cd3e4701c04eca31) is 6 commits ahead of pin; unchanged since 11-18.
+      - Not the same resource as agent-browser.
