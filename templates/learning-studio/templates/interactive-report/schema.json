@@ -1,0 +1,509 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Interactive report",
+  "type": "object",
+  "properties": {
+    "id": {
+      "$ref": "#/$defs/__schema2"
+    },
+    "sourceIds": {
+      "$ref": "#/$defs/__schema1"
+    },
+    "language": {
+      "$ref": "#/$defs/__schema4"
+    },
+    "title": {
+      "$ref": "#/$defs/__schema7"
+    },
+    "createdAt": {
+      "$ref": "#/$defs/__schema9"
+    },
+    "module": {
+      "$ref": "#/$defs/__schema13"
+    },
+    "sections": {
+      "$ref": "#/$defs/__schema14"
+    },
+    "format": {
+      "type": "string",
+      "const": "interactive"
+    },
+    "embeds": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/__schema2"
+              },
+              "sourceIds": {
+                "$ref": "#/$defs/__schema1"
+              },
+              "language": {
+                "$ref": "#/$defs/__schema4"
+              },
+              "title": {
+                "$ref": "#/$defs/__schema7"
+              },
+              "createdAt": {
+                "$ref": "#/$defs/__schema9"
+              },
+              "module": {
+                "type": "string",
+                "const": "flashcards"
+              },
+              "cards": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/__schema18"
+                }
+              }
+            },
+            "required": [
+              "id",
+              "sourceIds",
+              "language",
+              "title",
+              "createdAt",
+              "module",
+              "cards"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/__schema2"
+              },
+              "sourceIds": {
+                "$ref": "#/$defs/__schema1"
+              },
+              "language": {
+                "$ref": "#/$defs/__schema4"
+              },
+              "title": {
+                "$ref": "#/$defs/__schema7"
+              },
+              "createdAt": {
+                "$ref": "#/$defs/__schema9"
+              },
+              "module": {
+                "type": "string",
+                "const": "quiz"
+              },
+              "questions": {
+                "minItems": 1,
+                "maxItems": 50,
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/__schema20"
+                }
+              }
+            },
+            "required": [
+              "id",
+              "sourceIds",
+              "language",
+              "title",
+              "createdAt",
+              "module",
+              "questions"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "id",
+    "sourceIds",
+    "language",
+    "title",
+    "createdAt",
+    "module",
+    "sections",
+    "format",
+    "embeds"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "__schema2": {
+      "type": "string",
+      "minLength": 1
+    },
+    "__schema1": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/__schema2"
+      },
+      "uniqueItems": true,
+      "description": "IDs of the selected workspace files and folders. Each folder is represented by its own ID."
+    },
+    "__schema4": {
+      "type": "string",
+      "enum": [
+        "en",
+        "zh",
+        "fr",
+        "de",
+        "ja",
+        "it",
+        "es",
+        "pt"
+      ]
+    },
+    "__schema7": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "__schema9": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+    },
+    "__schema13": {
+      "type": "string",
+      "const": "reports"
+    },
+    "__schema14": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/__schema15"
+      }
+    },
+    "__schema15": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "$ref": "#/$defs/__schema7"
+        },
+        "body": {
+          "$ref": "#/$defs/__schema7"
+        },
+        "table": {
+          "type": "object",
+          "properties": {
+            "headers": {
+              "minItems": 1,
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/__schema7"
+              }
+            },
+            "rows": {
+              "minItems": 1,
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/__schema16"
+              }
+            }
+          },
+          "required": [
+            "headers",
+            "rows"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "title",
+        "body"
+      ],
+      "additionalProperties": false
+    },
+    "__schema16": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/__schema17"
+      }
+    },
+    "__schema17": {
+      "type": "string"
+    },
+    "__schema18": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/__schema2"
+        },
+        "front": {
+          "$ref": "#/$defs/__schema7"
+        },
+        "back": {
+          "$ref": "#/$defs/__schema7"
+        },
+        "image": {
+          "$ref": "#/$defs/__schema19"
+        },
+        "explanation": {
+          "$ref": "#/$defs/__schema7"
+        }
+      },
+      "required": [
+        "id",
+        "front",
+        "back"
+      ],
+      "additionalProperties": false
+    },
+    "__schema19": {
+      "type": "object",
+      "properties": {
+        "storagePath": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?![/.])[^:\\\\?#]+$",
+          "description": "Relative path resolved by the host at display or download time."
+        },
+        "mimeType": {
+          "type": "string",
+          "enum": [
+            "image/png",
+            "image/jpeg",
+            "image/webp"
+          ]
+        },
+        "alt": {
+          "$ref": "#/$defs/__schema7"
+        }
+      },
+      "required": [
+        "storagePath",
+        "mimeType",
+        "alt"
+      ],
+      "additionalProperties": false
+    },
+    "__schema20": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "$ref": "#/$defs/__schema2"
+            },
+            "prompt": {
+              "$ref": "#/$defs/__schema7"
+            },
+            "explanation": {
+              "$ref": "#/$defs/__schema7"
+            },
+            "hint": {
+              "$ref": "#/$defs/__schema21"
+            },
+            "image": {
+              "$ref": "#/$defs/__schema22"
+            },
+            "type": {
+              "type": "string",
+              "const": "multipleChoice"
+            },
+            "options": {
+              "minItems": 2,
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/__schema23"
+              },
+              "contains": {
+                "type": "object",
+                "required": [
+                  "correct"
+                ],
+                "properties": {
+                  "correct": {
+                    "const": true
+                  }
+                }
+              },
+              "minContains": 1,
+              "maxContains": 1
+            }
+          },
+          "required": [
+            "id",
+            "prompt",
+            "explanation",
+            "type",
+            "options"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "$ref": "#/$defs/__schema2"
+            },
+            "prompt": {
+              "$ref": "#/$defs/__schema7"
+            },
+            "explanation": {
+              "$ref": "#/$defs/__schema7"
+            },
+            "hint": {
+              "$ref": "#/$defs/__schema21"
+            },
+            "image": {
+              "$ref": "#/$defs/__schema22"
+            },
+            "type": {
+              "type": "string",
+              "const": "multipleSelect"
+            },
+            "options": {
+              "minItems": 3,
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/__schema23"
+              },
+              "contains": {
+                "type": "object",
+                "required": [
+                  "correct"
+                ],
+                "properties": {
+                  "correct": {
+                    "const": true
+                  }
+                }
+              },
+              "minContains": 2,
+              "allOf": [
+                {
+                  "contains": {
+                    "type": "object",
+                    "required": [
+                      "correct"
+                    ],
+                    "properties": {
+                      "correct": {
+                        "const": false
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "prompt",
+            "explanation",
+            "type",
+            "options"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "$ref": "#/$defs/__schema2"
+            },
+            "prompt": {
+              "$ref": "#/$defs/__schema7"
+            },
+            "explanation": {
+              "$ref": "#/$defs/__schema7"
+            },
+            "hint": {
+              "$ref": "#/$defs/__schema21"
+            },
+            "image": {
+              "$ref": "#/$defs/__schema22"
+            },
+            "type": {
+              "type": "string",
+              "const": "fillInTheBlank"
+            },
+            "acceptedAnswers": {
+              "minItems": 1,
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/__schema7"
+              }
+            }
+          },
+          "required": [
+            "id",
+            "prompt",
+            "explanation",
+            "type",
+            "acceptedAnswers"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "$ref": "#/$defs/__schema2"
+            },
+            "prompt": {
+              "$ref": "#/$defs/__schema7"
+            },
+            "explanation": {
+              "$ref": "#/$defs/__schema7"
+            },
+            "hint": {
+              "$ref": "#/$defs/__schema21"
+            },
+            "image": {
+              "$ref": "#/$defs/__schema22"
+            },
+            "type": {
+              "type": "string",
+              "const": "shortAnswer"
+            },
+            "acceptedAnswers": {
+              "minItems": 1,
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/__schema7"
+              }
+            }
+          },
+          "required": [
+            "id",
+            "prompt",
+            "explanation",
+            "type",
+            "acceptedAnswers"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "__schema21": {
+      "$ref": "#/$defs/__schema7"
+    },
+    "__schema22": {
+      "$ref": "#/$defs/__schema19"
+    },
+    "__schema23": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "$ref": "#/$defs/__schema7"
+        },
+        "correct": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "label",
+        "correct"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

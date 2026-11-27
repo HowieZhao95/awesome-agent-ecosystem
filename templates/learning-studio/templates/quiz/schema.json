@@ -1,0 +1,329 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Quiz",
+  "type": "object",
+  "properties": {
+    "id": {
+      "$ref": "#/$defs/__schema2"
+    },
+    "sourceIds": {
+      "$ref": "#/$defs/__schema1"
+    },
+    "language": {
+      "$ref": "#/$defs/__schema3"
+    },
+    "title": {
+      "$ref": "#/$defs/__schema5"
+    },
+    "createdAt": {
+      "$ref": "#/$defs/__schema6"
+    },
+    "module": {
+      "type": "string",
+      "const": "quiz"
+    },
+    "questions": {
+      "minItems": 1,
+      "maxItems": 50,
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/__schema10"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "sourceIds",
+    "language",
+    "title",
+    "createdAt",
+    "module",
+    "questions"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "__schema2": {
+      "type": "string",
+      "minLength": 1
+    },
+    "__schema1": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/__schema2"
+      },
+      "uniqueItems": true,
+      "description": "IDs of the selected workspace files and folders. Each folder is represented by its own ID."
+    },
+    "__schema3": {
+      "type": "string",
+      "enum": [
+        "en",
+        "zh",
+        "fr",
+        "de",
+        "ja",
+        "it",
+        "es",
+        "pt"
+      ]
+    },
+    "__schema5": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "__schema6": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+    },
+    "__schema10": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "$ref": "#/$defs/__schema2"
+            },
+            "prompt": {
+              "$ref": "#/$defs/__schema5"
+            },
+            "explanation": {
+              "$ref": "#/$defs/__schema5"
+            },
+            "hint": {
+              "$ref": "#/$defs/__schema11"
+            },
+            "image": {
+              "$ref": "#/$defs/__schema12"
+            },
+            "type": {
+              "type": "string",
+              "const": "multipleChoice"
+            },
+            "options": {
+              "minItems": 2,
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/__schema13"
+              },
+              "contains": {
+                "type": "object",
+                "required": [
+                  "correct"
+                ],
+                "properties": {
+                  "correct": {
+                    "const": true
+                  }
+                }
+              },
+              "minContains": 1,
+              "maxContains": 1
+            }
+          },
+          "required": [
+            "id",
+            "prompt",
+            "explanation",
+            "type",
+            "options"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "$ref": "#/$defs/__schema2"
+            },
+            "prompt": {
+              "$ref": "#/$defs/__schema5"
+            },
+            "explanation": {
+              "$ref": "#/$defs/__schema5"
+            },
+            "hint": {
+              "$ref": "#/$defs/__schema11"
+            },
+            "image": {
+              "$ref": "#/$defs/__schema12"
+            },
+            "type": {
+              "type": "string",
+              "const": "multipleSelect"
+            },
+            "options": {
+              "minItems": 3,
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/__schema13"
+              },
+              "contains": {
+                "type": "object",
+                "required": [
+                  "correct"
+                ],
+                "properties": {
+                  "correct": {
+                    "const": true
+                  }
+                }
+              },
+              "minContains": 2,
+              "allOf": [
+                {
+                  "contains": {
+                    "type": "object",
+                    "required": [
+                      "correct"
+                    ],
+                    "properties": {
+                      "correct": {
+                        "const": false
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "prompt",
+            "explanation",
+            "type",
+            "options"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "$ref": "#/$defs/__schema2"
+            },
+            "prompt": {
+              "$ref": "#/$defs/__schema5"
+            },
+            "explanation": {
+              "$ref": "#/$defs/__schema5"
+            },
+            "hint": {
+              "$ref": "#/$defs/__schema11"
+            },
+            "image": {
+              "$ref": "#/$defs/__schema12"
+            },
+            "type": {
+              "type": "string",
+              "const": "fillInTheBlank"
+            },
+            "acceptedAnswers": {
+              "minItems": 1,
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/__schema5"
+              }
+            }
+          },
+          "required": [
+            "id",
+            "prompt",
+            "explanation",
+            "type",
+            "acceptedAnswers"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "$ref": "#/$defs/__schema2"
+            },
+            "prompt": {
+              "$ref": "#/$defs/__schema5"
+            },
+            "explanation": {
+              "$ref": "#/$defs/__schema5"
+            },
+            "hint": {
+              "$ref": "#/$defs/__schema11"
+            },
+            "image": {
+              "$ref": "#/$defs/__schema12"
+            },
+            "type": {
+              "type": "string",
+              "const": "shortAnswer"
+            },
+            "acceptedAnswers": {
+              "minItems": 1,
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/__schema5"
+              }
+            }
+          },
+          "required": [
+            "id",
+            "prompt",
+            "explanation",
+            "type",
+            "acceptedAnswers"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "__schema11": {
+      "$ref": "#/$defs/__schema5"
+    },
+    "__schema12": {
+      "type": "object",
+      "properties": {
+        "storagePath": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?![/.])[^:\\\\?#]+$",
+          "description": "Relative path resolved by the host at display or download time."
+        },
+        "mimeType": {
+          "type": "string",
+          "enum": [
+            "image/png",
+            "image/jpeg",
+            "image/webp"
+          ]
+        },
+        "alt": {
+          "$ref": "#/$defs/__schema5"
+        }
+      },
+      "required": [
+        "storagePath",
+        "mimeType",
+        "alt"
+      ],
+      "additionalProperties": false
+    },
+    "__schema13": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "$ref": "#/$defs/__schema5"
+        },
+        "correct": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "label",
+        "correct"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

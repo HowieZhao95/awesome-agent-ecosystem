@@ -1,0 +1,161 @@
+{
+  "language": "zh",
+  "sourceIds": [
+    "framing",
+    "light",
+    "color"
+  ],
+  "createdAt": "2026-11-27T09:00:00Z",
+  "module": "reports",
+  "id": "detail-report",
+  "title": "按下快门前的三个判断",
+  "format": "interactive",
+  "sections": [
+    {
+      "title": "内容提要",
+      "body": "把一只杯子放在窗边，拍下三组对照照片。每组只改变主体位置、光线方向或白平衡中的一项，比较这些选择怎样改变观看者的注意力。",
+      "table": {
+        "headers": [
+          "观察对象",
+          "拍摄时试一试"
+        ],
+        "rows": [
+          [
+            "取景与构图",
+            "将主体放在网格交点附近，用留白集中视线。"
+          ],
+          [
+            "光线方向",
+            "侧光产生细小阴影，衬出质感和深度。"
+          ],
+          [
+            "色彩与氛围",
+            "调暖白平衡会让中性色偏黄或偏橙。"
+          ]
+        ]
+      }
+    },
+    {
+      "title": "取景与构图",
+      "body": "将主体放在网格交点附近，用留白集中视线。\n\n让杯沿落在右上交点，再把杯子移回正中。比较哪一个构图能让周围的留白更有方向感。"
+    },
+    {
+      "title": "光线方向",
+      "body": "侧光产生细小阴影，衬出质感和深度。\n\n固定机位，把杯把转向窗户。再从侧面照亮杯身，观察釉面纹理和投影的边缘。"
+    },
+    {
+      "title": "色彩与氛围",
+      "body": "调暖白平衡会让中性色偏黄或偏橙。\n\n固定曝光，把白平衡从日光切换到阴天。对比杯子的白色，并判断哪一张更接近你想保留的氛围。"
+    }
+  ],
+  "embeds": [
+    {
+      "language": "zh",
+      "sourceIds": [
+        "framing",
+        "light",
+        "color"
+      ],
+      "createdAt": "2026-11-27T09:00:00Z",
+      "module": "flashcards",
+      "id": "detail-cards",
+      "title": "闪卡",
+      "cards": [
+        {
+          "id": "card-1",
+          "explanation": "让杯沿落在右上交点，再把杯子移回正中。比较哪一个构图能让周围的留白更有方向感。",
+          "front": "把主体放在网格交点附近，用的是哪种构图方法？",
+          "back": "三分法"
+        },
+        {
+          "id": "card-2",
+          "explanation": "固定机位，把杯把转向窗户。再从侧面照亮杯身，观察釉面纹理和投影的边缘。",
+          "front": "想让杯壁的细纹更明显，应该从哪个方向打光？",
+          "back": "侧光"
+        },
+        {
+          "id": "card-3",
+          "explanation": "固定曝光，把白平衡从日光切换到阴天。对比杯子的白色，并判断哪一张更接近你想保留的氛围。",
+          "front": "控制中性色偏暖或偏冷，要调哪项设置？",
+          "back": "白平衡"
+        }
+      ]
+    },
+    {
+      "language": "zh",
+      "sourceIds": [
+        "framing",
+        "light",
+        "color"
+      ],
+      "createdAt": "2026-11-27T09:00:00Z",
+      "module": "quiz",
+      "id": "detail-quiz",
+      "title": "测验",
+      "questions": [
+        {
+          "id": "question-1",
+          "hint": "想象一个三行三列的网格。",
+          "explanation": "将主体放在网格交点附近，用留白集中视线。",
+          "type": "multipleChoice",
+          "prompt": "把主体放在网格交点附近，用的是哪种构图方法？",
+          "options": [
+            {
+              "label": "三分法",
+              "correct": true
+            },
+            {
+              "label": "侧光",
+              "correct": false
+            },
+            {
+              "label": "白平衡",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "question-2",
+          "hint": "想一想光从一侧照来时投下的影子。",
+          "explanation": "侧光产生细小阴影，衬出质感和深度。",
+          "type": "multipleSelect",
+          "prompt": "在「光线方向」中，哪两个概念有关联？",
+          "options": [
+            {
+              "label": "侧光",
+              "correct": true
+            },
+            {
+              "label": "三分法",
+              "correct": false
+            },
+            {
+              "label": "质感",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "question-3",
+          "hint": "想一想哪个相机设置能改变中性色。",
+          "explanation": "调暖白平衡会让中性色偏黄或偏橙。",
+          "type": "fillInTheBlank",
+          "prompt": "补全术语 · 想一想哪个相机设置能改变中性色。",
+          "acceptedAnswers": [
+            "白平衡"
+          ]
+        },
+        {
+          "id": "question-4",
+          "hint": "想象一个三行三列的网格。",
+          "explanation": "将主体放在网格交点附近，用留白集中视线。",
+          "type": "shortAnswer",
+          "prompt": "写出与「三分法」相关的概念。",
+          "acceptedAnswers": [
+            "留白"
+          ]
+        }
+      ]
+    }
+  ]
+}
