@@ -254,3 +254,20 @@ sources:
     limitations:
       - MCP initialize/tools/list smoke only; documentation mode; no live n8n instance API this pass.
       - Tip may move past the pinned commit; npm version and git SHA recorded separately.
+- id: thusdesign.learning-templates-source
+  name: Learning Studio Templates
+  url: https://github.com/HowieZhao95/awesome-agent-ecosystem/tree/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio
+  roles:
+  - content-upstream
+  access: public
+  tracking:
+    scope:
+    - templates/learning-studio/**
+    exclude: []
+    baseline: learning-studio-templates-v0.1.0 at bb0b9f10db0dcbc19803cc6d394026155f433540
+    cadence: manual
+    method: Check the scoped release manifest, code, schemas, sample HTML and accompanying license notices at each tagged release.
+    promotion: Review source changes and the tested HTML before changing resource records.
+    last_checked: '2026-11-27'
+    limitations:
+    - The referenced OpenDesign course deck retains its own catalog identity.
