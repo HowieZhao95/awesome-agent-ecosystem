@@ -74,6 +74,9 @@ Templates are reusable content and code frameworks. Their examples are reference
 | [swiss-creative-mode-template](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/swiss-creative-mode-template/SKILL.md) (`opendesign.swiss-creative-mode-template`) | motion-graphics | curated | candidate | source-inspected | — | unknown |
 | [swiss-user-research-video-template](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/swiss-user-research-video-template/SKILL.md) (`opendesign.swiss-user-research-video-template`) | motion-graphics | curated | candidate | source-inspected | — | unknown |
 | [weread-year-in-review-video-template](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/weread-year-in-review-video-template/SKILL.md) (`opendesign.weread-year-in-review-video-template`) | motion-graphics | curated | candidate | source-inspected | — | unknown |
+| [交互报告 · Interactive Report](https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/templates/interactive-report/SKILL.md) (`thusdesign.learning-interactive-report`) | document | original | candidate | usage-tested | — | verified |
+| [学习闪卡 · Flashcards](https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/templates/flashcards/SKILL.md) (`thusdesign.learning-flashcards`) | prototype | original | candidate | usage-tested | — | verified |
+| [学习测验 · Quiz](https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/templates/quiz/SKILL.md) (`thusdesign.learning-quiz`) | prototype | original | candidate | usage-tested | — | verified |
 
 <a id="design-systems"></a>
 ### 设计系统

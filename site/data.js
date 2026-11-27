@@ -4568,6 +4568,687 @@ const DATA = {
               "note": "视觉风格属于独立输入；本条只定义框架结构、行为与支持文件。上游风格耦合待人工复核。"
             }
           }
+        },
+        {
+          "id": "thusdesign.learning-interactive-report",
+          "name": "交互报告 · Interactive Report",
+          "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/templates/interactive-report/SKILL.md",
+          "source": "original",
+          "relation": "original",
+          "platform": "repository, release, repository, repository",
+          "subcat": "document",
+          "note": "按目录阅读章节与表格，在报告内打开闪卡或测验并保留练习进度。",
+          "stars": null,
+          "installs": null,
+          "verified": "2026-11-27",
+          "vmethod": "",
+          "purpose": "用 0.1.0 模板将项目资料生成可独立打开的 HTML 成果。按输出 schema 填充 learning-artifact 数据，使用项目提供的资料引用。",
+          "classification": {
+            "category": "templates",
+            "subtype": "document",
+            "domains": [
+              "documents"
+            ],
+            "formats": [
+              "html",
+              "typescript",
+              "css",
+              "javascript",
+              "json",
+              "markdown"
+            ],
+            "conventions": [
+              "skill-md"
+            ],
+            "rationale": "可独立运行的内容与交互框架，含可编辑代码、数据 schema、示例和宿主适配入口。"
+          },
+          "provenance": {
+            "relation": "original",
+            "content_source": "thusdesign.learning-templates-source",
+            "discovered_via": [],
+            "upstream": {
+              "kind": "git",
+              "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/templates/interactive-report/SKILL.md",
+              "path": "templates/learning-studio/templates/interactive-report/SKILL.md",
+              "selector": null,
+              "ref": {
+                "kind": "commit",
+                "value": "bb0b9f10db0dcbc19803cc6d394026155f433540"
+              }
+            },
+            "derives_from": [],
+            "changes": null
+          },
+          "license": {
+            "status": "verified",
+            "expression": "MIT",
+            "scope": "Original Learning Studio template source. Bundled dependencies retain their own notices in each standalone HTML and dist/THIRD-PARTY-NOTICES.txt.",
+            "evidence": [
+              {
+                "locator": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/LICENSE",
+                "claim": "MIT license for this template package."
+              },
+              {
+                "locator": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/dist/THIRD-PARTY-NOTICES.txt",
+                "claim": "Redistributed dependency notices for the standalone examples."
+              }
+            ],
+            "redistribution": "allowed"
+          },
+          "distribution": [
+            {
+              "kind": "repository",
+              "channel_source": "discover.github",
+              "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/tree/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio"
+            },
+            {
+              "kind": "release",
+              "channel_source": "discover.github",
+              "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/releases/tag/learning-studio-templates-v0.1.0"
+            },
+            {
+              "kind": "repository",
+              "channel_source": "discover.github",
+              "url": "https://raw.githubusercontent.com/HowieZhao95/awesome-agent-ecosystem/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/dist/interactive-report.html"
+            },
+            {
+              "kind": "repository",
+              "channel_source": "discover.github",
+              "url": "https://raw.githubusercontent.com/HowieZhao95/awesome-agent-ecosystem/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/templates/interactive-report/schema.json"
+            }
+          ],
+          "previews": [
+            {
+              "kind": "html",
+              "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/dist/interactive-report.html",
+              "status": "reference",
+              "evidence": [
+                {
+                  "locator": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/dist/interactive-report.html",
+                  "claim": "Self-contained example using the same template source as the host."
+                }
+              ]
+            }
+          ],
+          "compatibility": {
+            "hosts": [
+              "HTML/CSS browser with JavaScript",
+              "React 19 host"
+            ],
+            "runtimes": [
+              {
+                "name": "Web browser",
+                "version": null,
+                "status": "declared"
+              }
+            ],
+            "dependencies": [],
+            "constraints": [
+              "The standalone HTML bundles its scripts and styles. The React integration takes host controls, translations and media resolution."
+            ]
+          },
+          "components": [],
+          "lifecycle": {
+            "state": "candidate",
+            "reason": "Published v0.1.0 with independently tested HTML and host adapters. Catalog review is tracked separately.",
+            "replacement_id": null
+          },
+          "review": {
+            "status": "pending",
+            "by": null,
+            "at": null,
+            "evidence": []
+          },
+          "verification": {
+            "level": "usage-tested",
+            "tested_hosts": [
+              "chromium-browser",
+              "react-storybook"
+            ],
+            "checked_at": "2026-11-27",
+            "by": "Learning Studio release verification",
+            "evidence": [
+              {
+                "locator": "https://github.com/HowieZhao95/awesome-agent-ecosystem/releases/tag/learning-studio-templates-v0.1.0",
+                "claim": "Clean build and package checks passed. The standalone HTML was operated in Chromium at 375px."
+              },
+              {
+                "locator": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/scripts/verify.test.mjs",
+                "claim": "Schema, fixture, self-contained file and translation checks for each released template."
+              }
+            ],
+            "limits": [
+              "Project file opening and conversation citation controls are provided by the embedding host."
+            ]
+          },
+          "tested_hosts": [
+            "chromium-browser",
+            "react-storybook"
+          ],
+          "usable_for_hosts": [],
+          "authors": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "Learning Studio Templates contributors",
+                "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/LICENSE"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/LICENSE",
+                "claim": "The scoped MIT notice identifies the copyright holder of the original template code."
+              }
+            ]
+          },
+          "publisher": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "HowieZhao95/awesome-agent-ecosystem",
+                "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/releases/tag/learning-studio-templates-v0.1.0"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/HowieZhao95/awesome-agent-ecosystem/releases/tag/learning-studio-templates-v0.1.0",
+                "claim": "The versioned public release contains the three templates and package checksums."
+              }
+            ]
+          },
+          "template": {
+            "files": [
+              {
+                "role": "instructions",
+                "path": "templates/learning-studio/templates/interactive-report/SKILL.md",
+                "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/templates/interactive-report/SKILL.md"
+              },
+              {
+                "role": "framework",
+                "path": "templates/learning-studio/src/interactive-report-template.tsx",
+                "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/src/interactive-report-template.tsx"
+              },
+              {
+                "role": "example",
+                "path": "templates/learning-studio/dist/interactive-report.html",
+                "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/dist/interactive-report.html"
+              },
+              {
+                "role": "support",
+                "path": "templates/learning-studio/templates/interactive-report/schema.json",
+                "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/templates/interactive-report/schema.json"
+              },
+              {
+                "role": "support",
+                "path": "templates/learning-studio/templates/interactive-report/example.json",
+                "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/templates/interactive-report/example.json"
+              },
+              {
+                "role": "support",
+                "path": "templates/learning-studio/manifest.json",
+                "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/manifest.json"
+              }
+            ],
+            "style": {
+              "policy": "external-design-system",
+              "upstream_status": "independent",
+              "note": "Host controls, color tokens, typography and translations are supplied separately from the content structure. The standalone stylesheet provides example defaults."
+            }
+          }
+        },
+        {
+          "id": "thusdesign.learning-flashcards",
+          "name": "学习闪卡 · Flashcards",
+          "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/templates/flashcards/SKILL.md",
+          "source": "original",
+          "relation": "original",
+          "platform": "repository, release, repository, repository",
+          "subcat": "prototype",
+          "note": "翻面练习、标记掌握程度、打乱顺序和复习错卡。",
+          "stars": null,
+          "installs": null,
+          "verified": "2026-11-27",
+          "vmethod": "",
+          "purpose": "用 0.1.0 模板将项目资料生成可独立打开的 HTML 成果。按输出 schema 填充 learning-artifact 数据，使用项目提供的资料引用。",
+          "classification": {
+            "category": "templates",
+            "subtype": "prototype",
+            "domains": [
+              "documents"
+            ],
+            "formats": [
+              "html",
+              "typescript",
+              "css",
+              "javascript",
+              "json",
+              "markdown"
+            ],
+            "conventions": [
+              "skill-md"
+            ],
+            "rationale": "可独立运行的内容与交互框架，含可编辑代码、数据 schema、示例和宿主适配入口。"
+          },
+          "provenance": {
+            "relation": "original",
+            "content_source": "thusdesign.learning-templates-source",
+            "discovered_via": [],
+            "upstream": {
+              "kind": "git",
+              "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/templates/flashcards/SKILL.md",
+              "path": "templates/learning-studio/templates/flashcards/SKILL.md",
+              "selector": null,
+              "ref": {
+                "kind": "commit",
+                "value": "bb0b9f10db0dcbc19803cc6d394026155f433540"
+              }
+            },
+            "derives_from": [],
+            "changes": null
+          },
+          "license": {
+            "status": "verified",
+            "expression": "MIT",
+            "scope": "Original Learning Studio template source. Bundled dependencies retain their own notices in each standalone HTML and dist/THIRD-PARTY-NOTICES.txt.",
+            "evidence": [
+              {
+                "locator": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/LICENSE",
+                "claim": "MIT license for this template package."
+              },
+              {
+                "locator": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/dist/THIRD-PARTY-NOTICES.txt",
+                "claim": "Redistributed dependency notices for the standalone examples."
+              }
+            ],
+            "redistribution": "allowed"
+          },
+          "distribution": [
+            {
+              "kind": "repository",
+              "channel_source": "discover.github",
+              "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/tree/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio"
+            },
+            {
+              "kind": "release",
+              "channel_source": "discover.github",
+              "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/releases/tag/learning-studio-templates-v0.1.0"
+            },
+            {
+              "kind": "repository",
+              "channel_source": "discover.github",
+              "url": "https://raw.githubusercontent.com/HowieZhao95/awesome-agent-ecosystem/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/dist/flashcards.html"
+            },
+            {
+              "kind": "repository",
+              "channel_source": "discover.github",
+              "url": "https://raw.githubusercontent.com/HowieZhao95/awesome-agent-ecosystem/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/templates/flashcards/schema.json"
+            }
+          ],
+          "previews": [
+            {
+              "kind": "html",
+              "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/dist/flashcards.html",
+              "status": "reference",
+              "evidence": [
+                {
+                  "locator": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/dist/flashcards.html",
+                  "claim": "Self-contained example using the same template source as the host."
+                }
+              ]
+            }
+          ],
+          "compatibility": {
+            "hosts": [
+              "HTML/CSS browser with JavaScript",
+              "React 19 host"
+            ],
+            "runtimes": [
+              {
+                "name": "Web browser",
+                "version": null,
+                "status": "declared"
+              }
+            ],
+            "dependencies": [],
+            "constraints": [
+              "The standalone HTML bundles its scripts and styles. The React integration takes host controls, translations and media resolution."
+            ]
+          },
+          "components": [],
+          "lifecycle": {
+            "state": "candidate",
+            "reason": "Published v0.1.0 with independently tested HTML and host adapters. Catalog review is tracked separately.",
+            "replacement_id": null
+          },
+          "review": {
+            "status": "pending",
+            "by": null,
+            "at": null,
+            "evidence": []
+          },
+          "verification": {
+            "level": "usage-tested",
+            "tested_hosts": [
+              "chromium-browser",
+              "react-storybook"
+            ],
+            "checked_at": "2026-11-27",
+            "by": "Learning Studio release verification",
+            "evidence": [
+              {
+                "locator": "https://github.com/HowieZhao95/awesome-agent-ecosystem/releases/tag/learning-studio-templates-v0.1.0",
+                "claim": "Clean build and package checks passed. The standalone HTML was operated in Chromium at 375px."
+              },
+              {
+                "locator": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/scripts/verify.test.mjs",
+                "claim": "Schema, fixture, self-contained file and translation checks for each released template."
+              }
+            ],
+            "limits": [
+              "Project file opening and conversation citation controls are provided by the embedding host."
+            ]
+          },
+          "tested_hosts": [
+            "chromium-browser",
+            "react-storybook"
+          ],
+          "usable_for_hosts": [],
+          "authors": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "Learning Studio Templates contributors",
+                "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/LICENSE"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/LICENSE",
+                "claim": "The scoped MIT notice identifies the copyright holder of the original template code."
+              }
+            ]
+          },
+          "publisher": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "HowieZhao95/awesome-agent-ecosystem",
+                "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/releases/tag/learning-studio-templates-v0.1.0"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/HowieZhao95/awesome-agent-ecosystem/releases/tag/learning-studio-templates-v0.1.0",
+                "claim": "The versioned public release contains the three templates and package checksums."
+              }
+            ]
+          },
+          "template": {
+            "files": [
+              {
+                "role": "instructions",
+                "path": "templates/learning-studio/templates/flashcards/SKILL.md",
+                "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/templates/flashcards/SKILL.md"
+              },
+              {
+                "role": "framework",
+                "path": "templates/learning-studio/src/flashcard-template.tsx",
+                "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/src/flashcard-template.tsx"
+              },
+              {
+                "role": "example",
+                "path": "templates/learning-studio/dist/flashcards.html",
+                "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/dist/flashcards.html"
+              },
+              {
+                "role": "support",
+                "path": "templates/learning-studio/templates/flashcards/schema.json",
+                "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/templates/flashcards/schema.json"
+              },
+              {
+                "role": "support",
+                "path": "templates/learning-studio/templates/flashcards/example.json",
+                "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/templates/flashcards/example.json"
+              },
+              {
+                "role": "support",
+                "path": "templates/learning-studio/manifest.json",
+                "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/manifest.json"
+              }
+            ],
+            "style": {
+              "policy": "external-design-system",
+              "upstream_status": "independent",
+              "note": "Host controls, color tokens, typography and translations are supplied separately from the content structure. The standalone stylesheet provides example defaults."
+            }
+          }
+        },
+        {
+          "id": "thusdesign.learning-quiz",
+          "name": "学习测验 · Quiz",
+          "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/templates/quiz/SKILL.md",
+          "source": "original",
+          "relation": "original",
+          "platform": "repository, release, repository, repository",
+          "subcat": "prototype",
+          "note": "单选、多选、填空和简答，带提示、答案解析、成绩和逐题复盘。",
+          "stars": null,
+          "installs": null,
+          "verified": "2026-11-27",
+          "vmethod": "",
+          "purpose": "用 0.1.0 模板将项目资料生成可独立打开的 HTML 成果。按输出 schema 填充 learning-artifact 数据，使用项目提供的资料引用。",
+          "classification": {
+            "category": "templates",
+            "subtype": "prototype",
+            "domains": [
+              "documents"
+            ],
+            "formats": [
+              "html",
+              "typescript",
+              "css",
+              "javascript",
+              "json",
+              "markdown"
+            ],
+            "conventions": [
+              "skill-md"
+            ],
+            "rationale": "可独立运行的内容与交互框架，含可编辑代码、数据 schema、示例和宿主适配入口。"
+          },
+          "provenance": {
+            "relation": "original",
+            "content_source": "thusdesign.learning-templates-source",
+            "discovered_via": [],
+            "upstream": {
+              "kind": "git",
+              "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/templates/quiz/SKILL.md",
+              "path": "templates/learning-studio/templates/quiz/SKILL.md",
+              "selector": null,
+              "ref": {
+                "kind": "commit",
+                "value": "bb0b9f10db0dcbc19803cc6d394026155f433540"
+              }
+            },
+            "derives_from": [],
+            "changes": null
+          },
+          "license": {
+            "status": "verified",
+            "expression": "MIT",
+            "scope": "Original Learning Studio template source. Bundled dependencies retain their own notices in each standalone HTML and dist/THIRD-PARTY-NOTICES.txt.",
+            "evidence": [
+              {
+                "locator": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/LICENSE",
+                "claim": "MIT license for this template package."
+              },
+              {
+                "locator": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/dist/THIRD-PARTY-NOTICES.txt",
+                "claim": "Redistributed dependency notices for the standalone examples."
+              }
+            ],
+            "redistribution": "allowed"
+          },
+          "distribution": [
+            {
+              "kind": "repository",
+              "channel_source": "discover.github",
+              "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/tree/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio"
+            },
+            {
+              "kind": "release",
+              "channel_source": "discover.github",
+              "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/releases/tag/learning-studio-templates-v0.1.0"
+            },
+            {
+              "kind": "repository",
+              "channel_source": "discover.github",
+              "url": "https://raw.githubusercontent.com/HowieZhao95/awesome-agent-ecosystem/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/dist/quiz.html"
+            },
+            {
+              "kind": "repository",
+              "channel_source": "discover.github",
+              "url": "https://raw.githubusercontent.com/HowieZhao95/awesome-agent-ecosystem/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/templates/quiz/schema.json"
+            }
+          ],
+          "previews": [
+            {
+              "kind": "html",
+              "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/dist/quiz.html",
+              "status": "reference",
+              "evidence": [
+                {
+                  "locator": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/dist/quiz.html",
+                  "claim": "Self-contained example using the same template source as the host."
+                }
+              ]
+            }
+          ],
+          "compatibility": {
+            "hosts": [
+              "HTML/CSS browser with JavaScript",
+              "React 19 host"
+            ],
+            "runtimes": [
+              {
+                "name": "Web browser",
+                "version": null,
+                "status": "declared"
+              }
+            ],
+            "dependencies": [],
+            "constraints": [
+              "The standalone HTML bundles its scripts and styles. The React integration takes host controls, translations and media resolution."
+            ]
+          },
+          "components": [],
+          "lifecycle": {
+            "state": "candidate",
+            "reason": "Published v0.1.0 with independently tested HTML and host adapters. Catalog review is tracked separately.",
+            "replacement_id": null
+          },
+          "review": {
+            "status": "pending",
+            "by": null,
+            "at": null,
+            "evidence": []
+          },
+          "verification": {
+            "level": "usage-tested",
+            "tested_hosts": [
+              "chromium-browser",
+              "react-storybook"
+            ],
+            "checked_at": "2026-11-27",
+            "by": "Learning Studio release verification",
+            "evidence": [
+              {
+                "locator": "https://github.com/HowieZhao95/awesome-agent-ecosystem/releases/tag/learning-studio-templates-v0.1.0",
+                "claim": "Clean build and package checks passed. The standalone HTML was operated in Chromium at 375px."
+              },
+              {
+                "locator": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/scripts/verify.test.mjs",
+                "claim": "Schema, fixture, self-contained file and translation checks for each released template."
+              }
+            ],
+            "limits": [
+              "Project file opening and conversation citation controls are provided by the embedding host."
+            ]
+          },
+          "tested_hosts": [
+            "chromium-browser",
+            "react-storybook"
+          ],
+          "usable_for_hosts": [],
+          "authors": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "Learning Studio Templates contributors",
+                "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/LICENSE"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/LICENSE",
+                "claim": "The scoped MIT notice identifies the copyright holder of the original template code."
+              }
+            ]
+          },
+          "publisher": {
+            "status": "known",
+            "identities": [
+              {
+                "name": "HowieZhao95/awesome-agent-ecosystem",
+                "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/releases/tag/learning-studio-templates-v0.1.0"
+              }
+            ],
+            "evidence": [
+              {
+                "locator": "https://github.com/HowieZhao95/awesome-agent-ecosystem/releases/tag/learning-studio-templates-v0.1.0",
+                "claim": "The versioned public release contains the three templates and package checksums."
+              }
+            ]
+          },
+          "template": {
+            "files": [
+              {
+                "role": "instructions",
+                "path": "templates/learning-studio/templates/quiz/SKILL.md",
+                "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/templates/quiz/SKILL.md"
+              },
+              {
+                "role": "framework",
+                "path": "templates/learning-studio/src/quiz-template.tsx",
+                "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/src/quiz-template.tsx"
+              },
+              {
+                "role": "example",
+                "path": "templates/learning-studio/dist/quiz.html",
+                "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/dist/quiz.html"
+              },
+              {
+                "role": "support",
+                "path": "templates/learning-studio/templates/quiz/schema.json",
+                "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/templates/quiz/schema.json"
+              },
+              {
+                "role": "support",
+                "path": "templates/learning-studio/templates/quiz/example.json",
+                "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/templates/quiz/example.json"
+              },
+              {
+                "role": "support",
+                "path": "templates/learning-studio/manifest.json",
+                "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem/blob/bb0b9f10db0dcbc19803cc6d394026155f433540/templates/learning-studio/manifest.json"
+              }
+            ],
+            "style": {
+              "policy": "external-design-system",
+              "upstream_status": "independent",
+              "note": "Host controls, color tokens, typography and translations are supplied separately from the content structure. The standalone stylesheet provides example defaults."
+            }
+          }
         }
       ]
     },
