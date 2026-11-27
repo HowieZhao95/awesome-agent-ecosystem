@@ -1,0 +1,76 @@
+{
+  "language": "zh",
+  "sourceIds": [
+    "framing",
+    "light",
+    "color"
+  ],
+  "createdAt": "2026-11-27T09:00:00Z",
+  "module": "quiz",
+  "id": "detail-quiz",
+  "title": "摄影基础",
+  "questions": [
+    {
+      "id": "question-1",
+      "hint": "想象一个三行三列的网格。",
+      "explanation": "将主体放在网格交点附近，用留白集中视线。",
+      "type": "multipleChoice",
+      "prompt": "把主体放在网格交点附近，用的是哪种构图方法？",
+      "options": [
+        {
+          "label": "三分法",
+          "correct": true
+        },
+        {
+          "label": "侧光",
+          "correct": false
+        },
+        {
+          "label": "白平衡",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "question-2",
+      "hint": "想一想光从一侧照来时投下的影子。",
+      "explanation": "侧光产生细小阴影，衬出质感和深度。",
+      "type": "multipleSelect",
+      "prompt": "在「光线方向」中，哪两个概念有关联？",
+      "options": [
+        {
+          "label": "侧光",
+          "correct": true
+        },
+        {
+          "label": "三分法",
+          "correct": false
+        },
+        {
+          "label": "质感",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "question-3",
+      "hint": "想一想哪个相机设置能改变中性色。",
+      "explanation": "调暖白平衡会让中性色偏黄或偏橙。",
+      "type": "fillInTheBlank",
+      "prompt": "补全术语 · 想一想哪个相机设置能改变中性色。",
+      "acceptedAnswers": [
+        "白平衡"
+      ]
+    },
+    {
+      "id": "question-4",
+      "hint": "想象一个三行三列的网格。",
+      "explanation": "将主体放在网格交点附近，用留白集中视线。",
+      "type": "shortAnswer",
+      "prompt": "写出与「三分法」相关的概念。",
+      "acceptedAnswers": [
+        "留白"
+      ]
+    }
+  ]
+}

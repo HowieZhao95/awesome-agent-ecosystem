@@ -1,0 +1,60 @@
+{
+  "name": "learning-studio-templates",
+  "version": "0.1.0",
+  "description": "Interactive report, flashcard and quiz templates for source-based learning.",
+  "type": "module",
+  "files": [
+    "src",
+    "standalone",
+    "scripts",
+    "templates",
+    "locales",
+    "dist",
+    "manifest.json",
+    "README.md",
+    "LICENSE",
+    "tsconfig.json"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./manifest": "./manifest.json"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test scripts/verify.test.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  },
+  "dependencies": {
+    "clsx": "2.1.1",
+    "tailwind-merge": "3.4.0",
+    "lucide-react": "0.548.0",
+    "radix-ui": "1.5.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/node": "4.1.18",
+    "tailwindcss": "4.1.18",
+    "esbuild": "0.25.12",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "typescript": "5.9.3",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "ajv": "8.17.1",
+    "ajv-formats": "3.0.1",
+    "@tailwindcss/oxide": "4.1.18"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HowieZhao95/awesome-agent-ecosystem.git",
+    "directory": "templates/learning-studio"
+  }
+}

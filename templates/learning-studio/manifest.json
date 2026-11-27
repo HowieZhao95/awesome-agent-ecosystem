@@ -1,0 +1,45 @@
+{
+  "name": "learning-studio-templates",
+  "version": "0.1.0",
+  "repository": "https://github.com/HowieZhao95/awesome-agent-ecosystem",
+  "directory": "templates/learning-studio",
+  "tag": "learning-studio-templates-v0.1.0",
+  "templates": [
+    {
+      "id": "thusdesign.learning-interactive-report",
+      "module": "reports",
+      "entry": "src/interactive-report-template.tsx",
+      "instructions": "templates/interactive-report/SKILL.md",
+      "example": "templates/interactive-report/example.json",
+      "schema": "templates/interactive-report/schema.json",
+      "preview": "dist/interactive-report.html"
+    },
+    {
+      "id": "thusdesign.learning-flashcards",
+      "module": "flashcards",
+      "entry": "src/flashcard-template.tsx",
+      "instructions": "templates/flashcards/SKILL.md",
+      "example": "templates/flashcards/example.json",
+      "schema": "templates/flashcards/schema.json",
+      "preview": "dist/flashcards.html"
+    },
+    {
+      "id": "thusdesign.learning-quiz",
+      "module": "quiz",
+      "entry": "src/quiz-template.tsx",
+      "instructions": "templates/quiz/SKILL.md",
+      "example": "templates/quiz/example.json",
+      "schema": "templates/quiz/schema.json",
+      "preview": "dist/quiz.html"
+    }
+  ],
+  "references": [
+    {
+      "module": "slideDeck",
+      "resourceId": "opendesign.html-ppt",
+      "revision": "53231d40b778d88eba23f35547bf99485d3ae9fc",
+      "path": "design-templates/html-ppt/templates/full-decks/course-module",
+      "url": "https://www.thusdesign.ai/agent#/resource/opendesign.html-ppt"
+    }
+  ]
+}
